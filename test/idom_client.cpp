@@ -45,20 +45,19 @@ void iDom_client::on_pushButton_released()
 void iDom_client::on_swiatlo_clicked()
 {
     // start the sensor
-      QSensor sensor("QAccelerometer");
+      QLightSensor sensor;
       sensor.start();
 
       // later
       QSensorReading *reading = sensor.reading();
-      qreal x = reading->property("x").value<qreal>();
-      qreal y = reading->value(1).value<qreal>();
+
+      int y = reading->valueCount();
 
 
 
 
 
-
-    ui->lcdNumber->display(  x         );
+    ui->lcdNumber->display(  y        );
 }
 
 void iDom_client::on_lineEdit_editingFinished()

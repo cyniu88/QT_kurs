@@ -13,12 +13,14 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollBar>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 
@@ -34,6 +36,8 @@ public:
     QPushButton *pushButton;
     QLineEdit *lineEdit;
     QPushButton *swiatlo;
+    QFrame *line;
+    QScrollBar *horizontalScrollBar;
 
     void setupUi(QMainWindow *iDom_client)
     {
@@ -62,6 +66,15 @@ public:
         swiatlo = new QPushButton(centralWidget);
         swiatlo->setObjectName(QStringLiteral("swiatlo"));
         swiatlo->setGeometry(QRect(340, 170, 121, 61));
+        line = new QFrame(centralWidget);
+        line->setObjectName(QStringLiteral("line"));
+        line->setGeometry(QRect(360, 150, 118, 3));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+        horizontalScrollBar = new QScrollBar(centralWidget);
+        horizontalScrollBar->setObjectName(QStringLiteral("horizontalScrollBar"));
+        horizontalScrollBar->setGeometry(QRect(450, 340, 160, 16));
+        horizontalScrollBar->setOrientation(Qt::Horizontal);
         iDom_client->setCentralWidget(centralWidget);
 
         retranslateUi(iDom_client);
