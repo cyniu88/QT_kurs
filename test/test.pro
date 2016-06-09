@@ -22,3 +22,5 @@ FORMS    += idom_client.ui
 CONFIG += mobility
 MOBILITY = 
 
+DISTFILES +=
+
