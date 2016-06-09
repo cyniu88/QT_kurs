@@ -48,7 +48,6 @@ void iDom_client::on_swiatlo_clicked()
       QLightSensor sensor;
       sensor.start();
 
-      // later
       QSensorReading *reading = sensor.reading();
 
       int y = reading->valueCount();
