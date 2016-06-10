@@ -31,6 +31,8 @@ private slots:
 
     void on_lineEdit_editingFinished();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::iDom_client *ui;
     int i = 0;

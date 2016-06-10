@@ -63,3 +63,8 @@ void iDom_client::on_lineEdit_editingFinished()
 {
      QMessageBox::information(this,"Wiadomosc",ui->lineEdit->text());
 }
+
+void iDom_client::on_pushButton_2_clicked()
+{
+
+}
