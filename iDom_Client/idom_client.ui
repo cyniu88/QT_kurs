@@ -38,39 +38,127 @@
    <property name="minimumSize">
     <size>
      <width>480</width>
-     <height>800</height>
+     <height>480</height>
     </size>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QLabel" name="LOGO">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="LOGO">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../build-iDom-cli/f/logo.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>1</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="text">
+           <string>PushButton</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>PushButton</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tabWidget">
       <property name="minimumSize">
        <size>
-        <width>234</width>
-        <height>89</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>234</width>
-        <height>151</height>
-       </size>
-      </property>
-      <property name="sizeIncrement">
-       <size>
         <width>0</width>
-        <height>0</height>
+        <height>350</height>
        </size>
       </property>
-      <property name="text">
-       <string/>
+      <property name="tabPosition">
+       <enum>QTabWidget::South</enum>
       </property>
-      <property name="pixmap">
-       <pixmap>../build-iDom_Client-Desktop_Qt_5_6_0_MinGW_32bit-Release/f/logo.png</pixmap>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
       </property>
-      <property name="scaledContents">
-       <bool>true</bool>
+      <property name="iconSize">
+       <size>
+        <width>160</width>
+        <height>160</height>
+       </size>
       </property>
+      <property name="elideMode">
+       <enum>Qt::ElideRight</enum>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="icon">
+        <iconset>
+         <normaloff>../build-iDom-cli/f/logo.png</normaloff>../build-iDom-cli/f/logo.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Tab 1</string>
+       </attribute>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>610</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="icona">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>100</y>
+          <width>221</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777211</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>OK</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../build-iDom-cli/f/logo.png</normaloff>../build-iDom-cli/f/logo.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>150</width>
+          <height>125</height>
+         </size>
+        </property>
+       </widget>
+       <zorder>gridLayoutWidget</zorder>
+       <zorder>pushButton_3</zorder>
+       <zorder>icona</zorder>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
      </widget>
     </item>
    </layout>
