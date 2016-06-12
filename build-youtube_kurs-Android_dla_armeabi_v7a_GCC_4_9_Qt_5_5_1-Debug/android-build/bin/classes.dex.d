@@ -1,0 +1,26 @@
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes.dex : \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistro$Stub$Proxy.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistro$Stub.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistro.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistroCallback$Stub$Proxy.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistroCallback$Stub.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistroCallback.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\example\youtube_kurs\BuildConfig.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\example\youtube_kurs\R$array.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\example\youtube_kurs\R$attr.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\example\youtube_kurs\R$layout.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\example\youtube_kurs\R$string.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\example\youtube_kurs\R.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$1.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$2.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$3$1$1.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$3$1.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$3.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$4.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$5.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$6.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtApplication$InvokeResult.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtApplication.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\dexedLibs\QtAndroid-bundled-064297b5c86318c64ba948c3823e4511.jar \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-youtube_kurs-Android_dla_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\bin\dexedLibs\QtAndroidAccessibility-bundled-9ce8e2885651bbf9d183115e9f2d0615.jar \
