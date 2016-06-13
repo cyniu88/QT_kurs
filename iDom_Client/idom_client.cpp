@@ -1,12 +1,14 @@
 #include "idom_client.h"
 #include "ui_idom_client.h"
 #include <QPixmap>
+#include <QStackedWidget>
 
 iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::iDom_Client)
 {
     ui->setupUi(this);
+    ////  //////////////////////////    Ladowanie grafiki  ////////////////////////
     QPixmap pix;
 
     if (pix.load(config->background_img_w.c_str()))
@@ -36,6 +38,27 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     }
     ui->LOGO->setPixmap(pix);
     //ui->icona->setIcon(pix);
+    /////////////////////////////   ustawienie przezroczystosci tabWidgetu /////////////
+    ui->tabWidget->setStyleSheet("background-color: transparent;"
+            "border-style: outset;"
+            "border-width: 2px;"
+            "border-radius: 10px;"
+            "border-color: beige;"
+            "font: bold italic 24px;"
+
+            "padding: 6px;"
+                                   );
+    /////////////////////////////  ustawianie przezroczystosci i koloru  pola tekstowego ///////////
+    QPalette p;
+    p.setColor(QPalette::Text,Qt::green);
+    p.setColor(ui->titleTXT->backgroundRole(), Qt::transparent);
+
+    ui->titleTXT->setPalette(p);
+    ui->titleTXT->setFrame(false);
+    p.setColor(ui->volumeTXT->backgroundRole(),Qt::transparent);
+
+    ui->volumeTXT->setPalette(p);
+    ui->volumeTXT->setFrame(false);
 }
 
 iDom_Client::~iDom_Client()

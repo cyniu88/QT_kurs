@@ -20,6 +20,7 @@ private slots:
 
     void on_label_linkActivated(const QString &link);
 
+
 private:
     Ui::iDom_Client *ui;
 };
