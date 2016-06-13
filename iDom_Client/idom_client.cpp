@@ -35,7 +35,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
         qDebug("udalo sie android");
     }
     ui->LOGO->setPixmap(pix);
-    ui->icona->setIcon(pix);
+    //ui->icona->setIcon(pix);
 }
 
 iDom_Client::~iDom_Client()
