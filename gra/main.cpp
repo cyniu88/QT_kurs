@@ -10,18 +10,20 @@ struct scene_size{
     int w=600;
 };
 
+#include <sstream>
+
+
 int main(int argc, char *argv[])
 {
     scene_size _sceneSize;
     QApplication a(argc, argv);
-    std::cout << "START!"<<std::endl;
+    std::cout << "START!"<<  std::to_string (88)<<std::endl;
 
     QGraphicsScene *scene = new QGraphicsScene();
 
     MyRect *player = new MyRect();
     QProgressBar *prog = new QProgressBar();
 
-    scene->addItem(prog);
 
     player->setRect(0,0,100,100);
 
@@ -44,12 +46,12 @@ int main(int argc, char *argv[])
     view->setFixedSize(_sceneSize.h,_sceneSize.w);
     scene->setSceneRect(0,0,_sceneSize.h,_sceneSize.w);
     player->setPos(view->width()/2,view->height()-player->rect().height());
-//view->setFocus();
+    //view->setFocus();
 
     Bullet *bullet = new Bullet();
     bullet->setPos(view->width()/2,view->height()-player->rect().height());
 
-      scene->addItem(bullet);
+    scene->addItem(bullet);
 
     return a.exec();
 }

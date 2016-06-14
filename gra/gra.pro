@@ -11,7 +11,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = gra
 TEMPLATE = app
 
-
 SOURCES += main.cpp \
     myrect.cpp \
     bullet.cpp
@@ -22,6 +21,7 @@ HEADERS  += \
 
 FORMS    +=
 
-CONFIG += mobility
+CONFIG += mobility c++11
+
 MOBILITY = 
 
