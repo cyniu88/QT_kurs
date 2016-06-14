@@ -2,13 +2,14 @@
 #include "variable.h"
 #include <QApplication>
 
-
+#include "workerip.h"
 
 
 int main(int argc, char *argv[])
 {
     iDom_CONFIG config;
-
+    WorkerIP worker;
+    worker.start();
     QApplication a(argc, argv);
     iDom_Client w(&config);
 

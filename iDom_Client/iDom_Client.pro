@@ -13,10 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        idom_client.cpp
+        idom_client.cpp \
+    workerip.cpp
 
 HEADERS  += idom_client.h \
-    variable.h
+    variable.h \
+    workerip.h
 
 FORMS    += idom_client.ui
 

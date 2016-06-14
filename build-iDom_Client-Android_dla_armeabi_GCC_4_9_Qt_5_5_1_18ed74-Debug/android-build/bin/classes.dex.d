@@ -1,0 +1,26 @@
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes.dex : \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistro$Stub$Proxy.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistro$Stub.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistro.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistroCallback$Stub$Proxy.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistroCallback$Stub.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\kde\necessitas\ministro\IMinistroCallback.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\example\iDom_Client\BuildConfig.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\example\iDom_Client\R$array.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\example\iDom_Client\R$attr.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\example\iDom_Client\R$layout.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\example\iDom_Client\R$string.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\example\iDom_Client\R.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$1.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$2.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$3$1$1.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$3$1.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$3.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$4.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$5.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity$6.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtActivity.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtApplication$InvokeResult.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\classes\org\qtproject\qt5\android\bindings\QtApplication.class \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\dexedLibs\QtAndroid-bundled-11bc8c60c10f70dfde6f105d5c0c9eba.jar \
+D:\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Android_dla_armeabi_GCC_4_9_Qt_5_5_1_18ed74-Debug\android-build\bin\dexedLibs\QtAndroidAccessibility-bundled-541c405b59bb6c46c0caf9da2aacdcf3.jar \

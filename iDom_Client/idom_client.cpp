@@ -1,5 +1,6 @@
 #include "idom_client.h"
 #include "ui_idom_client.h"
+
 #include <QPixmap>
 #include <QStackedWidget>
 
@@ -69,6 +70,7 @@ iDom_Client::~iDom_Client()
 void iDom_Client::on_EXITButton_released()
 {
     ui->centralWidget->close();
+
 
 }
 
