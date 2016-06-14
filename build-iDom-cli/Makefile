@@ -192,6 +192,7 @@ Makefile: ../iDom_Client/iDom_Client.pro C:/Qt/5.6/mingw49_32/mkspecs/win32-g++/
 		C:/Qt/5.6/mingw49_32/lib/qtmain.prl \
 		C:/Qt/5.6/mingw49_32/lib/Qt5Widgets.prl \
 		C:/Qt/5.6/mingw49_32/lib/Qt5Gui.prl \
+		C:/Qt/5.6/mingw49_32/lib/Qt5Network.prl \
 		C:/Qt/5.6/mingw49_32/lib/Qt5Core.prl
 	$(QMAKE) -spec win32-g++ -o Makefile ../iDom_Client/iDom_Client.pro
 C:/Qt/5.6/mingw49_32/mkspecs/features/spec_pre.prf:
@@ -327,6 +328,7 @@ C:/Qt/5.6/mingw49_32/mkspecs/features/lex.prf:
 C:/Qt/5.6/mingw49_32/lib/qtmain.prl:
 C:/Qt/5.6/mingw49_32/lib/Qt5Widgets.prl:
 C:/Qt/5.6/mingw49_32/lib/Qt5Gui.prl:
+C:/Qt/5.6/mingw49_32/lib/Qt5Network.prl:
 C:/Qt/5.6/mingw49_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -spec win32-g++ -o Makefile ../iDom_Client/iDom_Client.pro

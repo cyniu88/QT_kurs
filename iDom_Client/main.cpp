@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
     iDom_CONFIG config;
-    WorkerIP worker;
+    WorkerIP worker(&config);
     worker.start();
     QApplication a(argc, argv);
     iDom_Client w(&config);

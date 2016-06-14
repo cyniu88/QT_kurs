@@ -2,11 +2,15 @@
 #define WORKERIP_H
 
 #include <QThread>
+#include "functions.h"
+#include "variable.h"
 class WorkerIP : public QThread
 {
 public:
-    WorkerIP();
+    WorkerIP(iDom_CONFIG * config);
     void run();
+public:
+    iDom_CONFIG *config;
 };
 
 #endif // WORKERIP_H

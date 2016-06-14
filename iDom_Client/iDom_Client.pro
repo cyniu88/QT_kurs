@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,11 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         idom_client.cpp \
-    workerip.cpp
+    workerip.cpp \
+    functions.cpp
 
 HEADERS  += idom_client.h \
     variable.h \
-    workerip.h
+    workerip.h \
+    functions.h
 
 FORMS    += idom_client.ui
 
