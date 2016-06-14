@@ -21,6 +21,8 @@ private slots:
     void on_label_linkActivated(const QString &link);
 
 
+    void on_disconnectButton_released();
+
 private:
     Ui::iDom_Client *ui;
 };

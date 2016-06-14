@@ -9,5 +9,6 @@ struct iDom_CONFIG {
     std::string background_img_a = "/storage/emulated/0/f/background.png";
     std::string serverIP = "cyniu88.no-ip.pl";
     int serverPort = 8833;
+    bool goWhile = false;
 };
 #endif // VARIABLE_H

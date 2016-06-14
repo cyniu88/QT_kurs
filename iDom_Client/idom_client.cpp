@@ -78,3 +78,8 @@ void iDom_Client::on_label_linkActivated(const QString &link)
 {
 
 }
+
+void iDom_Client::on_disconnectButton_released()
+{
+    config.
+}
