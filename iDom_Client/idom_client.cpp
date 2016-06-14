@@ -1,12 +1,13 @@
 #include "idom_client.h"
 #include "ui_idom_client.h"
-
+#include "workerip.h"
 #include <QPixmap>
 #include <QStackedWidget>
 
 iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::iDom_Client)
+    ui(new Ui::iDom_Client),
+    config(config)
 {
     ui->setupUi(this);
     ////  //////////////////////////    Ladowanie grafiki  ////////////////////////
@@ -81,5 +82,15 @@ void iDom_Client::on_label_linkActivated(const QString &link)
 
 void iDom_Client::on_disconnectButton_released()
 {
-    config.
+    if (ui->disconnectButton->text()=="DISCONNECT"){
+    config->goWhile = false;
+    ui->disconnectButton->setText("  CONNECT  ");
+    }
+    else
+    {
+        ui->disconnectButton->setText("DISCONNECT");
+        config->goWhile = true;
+
+
+    }
 }

@@ -44,13 +44,29 @@ void WorkerIP::run()
         }
 
         while (config->goWhile){
-        socket->write( "hello");
+        socket->write( "show log");
         socket->waitForBytesWritten(1000);
-        socket->waitForReadyRead(3000);
+        while (true){
 
-        qDebug() << "Reading: " << socket->bytesAvailable();
-        qDebug() <<"przeczytano " << socket->readAll();
-        //qDebug() << wiadomosc;
+
+            socket->waitForReadyRead(3000);
+
+            qDebug() << "Reading: " << socket->bytesAvailable();
+            buffor = socket->readAll();
+            qDebug() << buffor;
+            s_buffor = buffor.toStdString();
+
+
+            if (s_buffor[1]=='E' && s_buffor[2]=='N' && s_buffor[3]=='D'){
+                qDebug ()<< "koniec";
+                QThread::sleep(2);
+                break;
+            }
+            else{
+                qDebug() << "dalej";
+                socket->write("OK");
+            }
+        }
 
         }
         // close the connection

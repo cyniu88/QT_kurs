@@ -25,6 +25,7 @@ private slots:
 
 private:
     Ui::iDom_Client *ui;
+    iDom_CONFIG *config;
 };
 
 #endif // IDOM_CLIENT_H
