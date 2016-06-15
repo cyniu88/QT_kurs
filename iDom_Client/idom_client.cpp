@@ -37,6 +37,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     else if ( pix.load(config->logo_android.c_str()))
     {
         qDebug("udalo sie android");
+        config->isWindows = false;
     }
     ui->LOGO->setPixmap(pix);
     //ui->icona->setIcon(pix);
@@ -61,6 +62,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     ui->volumeTXT->setPalette(p);
     ui->volumeTXT->setFrame(false);
+
+    ui->lineEdit->setStyleSheet("background:#0F0;");
 }
 
 iDom_Client::~iDom_Client()
@@ -93,4 +96,16 @@ void iDom_Client::on_disconnectButton_released()
 
 
     }
+}
+
+void iDom_Client::on_lineEdit_editingFinished()
+{
+    config->command = ui->lineEdit->text().toStdString();
+}
+
+void iDom_Client::on_pushButton_released()
+{
+    config->IPMutex.unlock();
+    QThread::sleep(1);
+    config->IPMutex.lock();
 }

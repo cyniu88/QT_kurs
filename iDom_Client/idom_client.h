@@ -23,6 +23,10 @@ private slots:
 
     void on_disconnectButton_released();
 
+    void on_lineEdit_editingFinished();
+
+    void on_pushButton_released();
+
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;

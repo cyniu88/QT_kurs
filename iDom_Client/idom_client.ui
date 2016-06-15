@@ -73,13 +73,38 @@
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="icon">
-        <iconset theme="black"/>
+        <iconset theme="black">
+         <normaloff>.</normaloff>.</iconset>
        </attribute>
        <attribute name="title">
         <string>Tab 1</string>
        </attribute>
-       <zorder></zorder>
-       <zorder></zorder>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>20</y>
+          <width>381</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>40</y>
+          <width>111</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">

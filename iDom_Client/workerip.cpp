@@ -1,6 +1,7 @@
 #include "workerip.h"
 #include <QDebug>
 #include <QTcpSocket>
+
 WorkerIP::WorkerIP(iDom_CONFIG *config) : config(config)
 {
 
@@ -44,29 +45,35 @@ void WorkerIP::run()
         }
 
         while (config->goWhile){
-        socket->write( "show log");
-        socket->waitForBytesWritten(1000);
-        while (true){
+            qDebug() << " before lock";
+            config->IPMutex.lock();
+            qDebug() << " after e lock";
+            socket->write( config->command.c_str());
+            config->IPMutex.unlock();
+
+            socket->waitForBytesWritten(1000);
+            while (true){
 
 
-            socket->waitForReadyRead(3000);
+                socket->waitForReadyRead(3000);
 
-            qDebug() << "Reading: " << socket->bytesAvailable();
-            buffor = socket->readAll();
-            qDebug() << buffor;
-            s_buffor = buffor.toStdString();
+                qDebug() << "Reading: " << socket->bytesAvailable();
+                buffor = socket->readAll();
+
+                qDebug() << buffor;
+                s_buffor = buffor.toStdString();
 
 
-            if (s_buffor[1]=='E' && s_buffor[2]=='N' && s_buffor[3]=='D'){
-                qDebug ()<< "koniec";
-                QThread::sleep(2);
-                break;
+                if (s_buffor[1]=='E' && s_buffor[2]=='N' && s_buffor[3]=='D'){
+                    qDebug ()<< "koniec";
+                    QThread::sleep(2);
+                    break;
+                }
+                else{
+                    qDebug() << "dalej";
+                    socket->write("OK");
+                }
             }
-            else{
-                qDebug() << "dalej";
-                socket->write("OK");
-            }
-        }
 
         }
         // close the connection
@@ -77,5 +84,5 @@ void WorkerIP::run()
         qDebug() << "Not connected!";
     }
 
-    qDebug() << "wynik polacznie to: " ;
+
 }

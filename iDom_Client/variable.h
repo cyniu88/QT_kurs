@@ -2,6 +2,7 @@
 #define VARIABLE_H
 #include <iostream>
 #include <string>
+#include <QMutex>
 struct iDom_CONFIG {
     std::string logo_windows = "f/logo.png";
     std::string logo_android = "/storage/emulated/0/f/logo.png";
@@ -10,5 +11,8 @@ struct iDom_CONFIG {
     std::string serverIP = "cyniu88.no-ip.pl";
     int serverPort = 8833;
     bool goWhile = false;
+    std::string command = "OK";
+    bool isWindows = true;
+    QMutex IPMutex;
 };
 #endif // VARIABLE_H

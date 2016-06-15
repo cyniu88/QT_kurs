@@ -8,6 +8,7 @@
 int main(int argc, char *argv[])
 {
     iDom_CONFIG config;
+    config.IPMutex.lock();
     WorkerIP worker(&config);
     worker.start();
     QApplication a(argc, argv);
