@@ -62,6 +62,9 @@
       <property name="tabShape">
        <enum>QTabWidget::Rounded</enum>
       </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
       <property name="iconSize">
        <size>
         <width>160</width>
@@ -97,12 +100,25 @@
          <rect>
           <x>610</x>
           <y>40</y>
-          <width>111</width>
+          <width>361</width>
           <height>61</height>
          </rect>
         </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>go</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="wynik">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>190</y>
+          <width>1111</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>wynik</string>
         </property>
        </widget>
       </widget>

@@ -64,6 +64,10 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->volumeTXT->setFrame(false);
 
     ui->lineEdit->setStyleSheet("background:#0F0;");
+
+    p.setColor(QPalette::Text,Qt::green);
+    p.setColor(ui->wynik->backgroundRole(), Qt::transparent);
+    ui->wynik->setText("co to jest ma byc tego  bardzo dzuo wiec nie wiem co powstanie ");
 }
 
 iDom_Client::~iDom_Client()
@@ -108,4 +112,6 @@ void iDom_Client::on_pushButton_released()
     config->IPMutex.unlock();
     QThread::sleep(1);
     config->IPMutex.lock();
+    QThread::sleep(2);
+    ui->wynik->setText(QString::fromStdString( s_buffor));
 }

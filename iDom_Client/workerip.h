@@ -4,6 +4,7 @@
 #include <QThread>
 #include "functions.h"
 #include "variable.h"
+extern std::string s_buffor;
 class WorkerIP : public QThread
 {
 public:

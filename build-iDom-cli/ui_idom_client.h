@@ -35,6 +35,7 @@ public:
     QWidget *tab;
     QLineEdit *lineEdit;
     QPushButton *pushButton;
+    QLabel *wynik;
     QWidget *tab_2;
     QGridLayout *gridLayout_2;
     QLabel *LOGO;
@@ -85,7 +86,10 @@ public:
         lineEdit->setClearButtonEnabled(true);
         pushButton = new QPushButton(tab);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(610, 40, 111, 61));
+        pushButton->setGeometry(QRect(610, 40, 361, 61));
+        wynik = new QLabel(tab);
+        wynik->setObjectName(QStringLiteral("wynik"));
+        wynik->setGeometry(QRect(120, 190, 1111, 171));
         QIcon icon;
         QString iconThemeName = QStringLiteral("black");
         if (QIcon::hasThemeIcon(iconThemeName)) {
@@ -229,13 +233,17 @@ public:
         retranslateUi(iDom_Client);
         QObject::connect(EXIT_button, SIGNAL(clicked()), iDom_Client, SLOT(close()));
 
+        tabWidget->setCurrentIndex(1);
+
+
         QMetaObject::connectSlotsByName(iDom_Client);
     } // setupUi
 
     void retranslateUi(QMainWindow *iDom_Client)
     {
         iDom_Client->setWindowTitle(QApplication::translate("iDom_Client", "iDom_Client", 0));
-        pushButton->setText(QApplication::translate("iDom_Client", "PushButton", 0));
+        pushButton->setText(QApplication::translate("iDom_Client", "go", 0));
+        wynik->setText(QApplication::translate("iDom_Client", "wynik", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("iDom_Client", "Tab 1", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("iDom_Client", "Tab 2", 0));
         LOGO->setText(QString());
