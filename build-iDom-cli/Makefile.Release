@@ -13,7 +13,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DUNICODE -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -pipe -fno-keep-inline-dllexport -O2 -Wall -Wextra $(DEFINES)
-CXXFLAGS      = -pipe -fno-keep-inline-dllexport -O2 -std=gnu++0x -frtti -Wall -Wextra -fexceptions -mthreads $(DEFINES)
+CXXFLAGS      = -pipe -fno-keep-inline-dllexport -std=c++11 -Wall -Wextra -pedantic -O2 -std=gnu++0x -frtti -Wall -Wextra -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I..\iDom_Client -I. -IC:\Qt\5.6\mingw49_32\include -IC:\Qt\5.6\mingw49_32\include\QtWidgets -IC:\Qt\5.6\mingw49_32\include\QtGui -IC:\Qt\5.6\mingw49_32\include\QtANGLE -IC:\Qt\5.6\mingw49_32\include\QtNetwork -IC:\Qt\5.6\mingw49_32\include\QtCore -Irelease -I. -IC:\Qt\5.6\mingw49_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
@@ -102,10 +102,8 @@ compiler_moc_header_make_all: release/moc_idom_client.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) release\moc_idom_client.cpp
 release/moc_idom_client.cpp: ../iDom_Client/variable.h \
-		C:/Qt/5.6/mingw49_32/include/QtWidgets/QMainWindow \
-		C:/Qt/5.6/mingw49_32/include/QtWidgets/qmainwindow.h \
-		C:/Qt/5.6/mingw49_32/include/QtWidgets/qwidget.h \
-		C:/Qt/5.6/mingw49_32/include/QtGui/qwindowdefs.h \
+		C:/Qt/5.6/mingw49_32/include/QtCore/QMutex \
+		C:/Qt/5.6/mingw49_32/include/QtCore/qmutex.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qglobal.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qconfig.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qfeatures.h \
@@ -132,9 +130,12 @@ release/moc_idom_client.cpp: ../iDom_Client/variable.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qatomic_x86.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qatomic_unix.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qglobalstatic.h \
-		C:/Qt/5.6/mingw49_32/include/QtCore/qmutex.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qnumeric.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qversiontagging.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QMainWindow \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.6/mingw49_32/include/QtGui/qwindowdefs.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qobjectdefs.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qnamespace.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qobjectdefs_impl.h \
@@ -234,10 +235,8 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 
 release/main.o: ../iDom_Client/main.cpp ../iDom_Client/idom_client.h \
 		../iDom_Client/variable.h \
-		C:/Qt/5.6/mingw49_32/include/QtWidgets/QMainWindow \
-		C:/Qt/5.6/mingw49_32/include/QtWidgets/qmainwindow.h \
-		C:/Qt/5.6/mingw49_32/include/QtWidgets/qwidget.h \
-		C:/Qt/5.6/mingw49_32/include/QtGui/qwindowdefs.h \
+		C:/Qt/5.6/mingw49_32/include/QtCore/QMutex \
+		C:/Qt/5.6/mingw49_32/include/QtCore/qmutex.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qglobal.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qconfig.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qfeatures.h \
@@ -264,9 +263,12 @@ release/main.o: ../iDom_Client/main.cpp ../iDom_Client/idom_client.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qatomic_x86.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qatomic_unix.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qglobalstatic.h \
-		C:/Qt/5.6/mingw49_32/include/QtCore/qmutex.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qnumeric.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qversiontagging.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QMainWindow \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.6/mingw49_32/include/QtGui/qwindowdefs.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qobjectdefs.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qnamespace.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qobjectdefs_impl.h \
@@ -356,10 +358,8 @@ release/main.o: ../iDom_Client/main.cpp ../iDom_Client/idom_client.h \
 
 release/idom_client.o: ../iDom_Client/idom_client.cpp ../iDom_Client/idom_client.h \
 		../iDom_Client/variable.h \
-		C:/Qt/5.6/mingw49_32/include/QtWidgets/QMainWindow \
-		C:/Qt/5.6/mingw49_32/include/QtWidgets/qmainwindow.h \
-		C:/Qt/5.6/mingw49_32/include/QtWidgets/qwidget.h \
-		C:/Qt/5.6/mingw49_32/include/QtGui/qwindowdefs.h \
+		C:/Qt/5.6/mingw49_32/include/QtCore/QMutex \
+		C:/Qt/5.6/mingw49_32/include/QtCore/qmutex.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qglobal.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qconfig.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qfeatures.h \
@@ -386,9 +386,12 @@ release/idom_client.o: ../iDom_Client/idom_client.cpp ../iDom_Client/idom_client
 		C:/Qt/5.6/mingw49_32/include/QtCore/qatomic_x86.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qatomic_unix.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qglobalstatic.h \
-		C:/Qt/5.6/mingw49_32/include/QtCore/qmutex.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qnumeric.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qversiontagging.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/QMainWindow \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.6/mingw49_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.6/mingw49_32/include/QtGui/qwindowdefs.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qobjectdefs.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qnamespace.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qobjectdefs_impl.h \
@@ -514,6 +517,10 @@ release/idom_client.o: ../iDom_Client/idom_client.cpp ../iDom_Client/idom_client
 		C:/Qt/5.6/mingw49_32/include/QtWidgets/QTabWidget \
 		C:/Qt/5.6/mingw49_32/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.6/mingw49_32/include/QtWidgets/QWidget \
+		../iDom_Client/workerip.h \
+		C:/Qt/5.6/mingw49_32/include/QtCore/QThread \
+		C:/Qt/5.6/mingw49_32/include/QtCore/qthread.h \
+		../iDom_Client/functions.h \
 		C:/Qt/5.6/mingw49_32/include/QtGui/QPixmap \
 		C:/Qt/5.6/mingw49_32/include/QtWidgets/QStackedWidget \
 		C:/Qt/5.6/mingw49_32/include/QtWidgets/qstackedwidget.h
@@ -578,6 +585,7 @@ release/workerip.o: ../iDom_Client/workerip.cpp ../iDom_Client/workerip.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qobject_impl.h \
 		../iDom_Client/functions.h \
 		../iDom_Client/variable.h \
+		C:/Qt/5.6/mingw49_32/include/QtCore/QMutex \
 		C:/Qt/5.6/mingw49_32/include/QtCore/QDebug \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qdebug.h \
 		C:/Qt/5.6/mingw49_32/include/QtCore/qhash.h \

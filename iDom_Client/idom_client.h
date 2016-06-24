@@ -3,6 +3,7 @@
 #include <variable.h>
 #include <QMainWindow>
 
+
 namespace Ui {
 class iDom_Client;
 }

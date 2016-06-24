@@ -6,11 +6,11 @@
 
 QT       += core gui network
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = iDom_Client
 TEMPLATE = app
-
+#LIBS = -landroid
 
 SOURCES += main.cpp\
         idom_client.cpp \
@@ -24,6 +24,7 @@ HEADERS  += idom_client.h \
 
 FORMS    += idom_client.ui
 
-CONFIG += mobility
+CONFIG += mobility   c++11
+QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra -pedantic
 MOBILITY = 
 

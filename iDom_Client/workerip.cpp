@@ -11,7 +11,6 @@ void WorkerIP::run()
 {
     QTcpSocket *socket;
     QByteArray buffor;
-    std::string s_buffor;
 
     socket = new QTcpSocket(this );
     QThread::sleep(3);
@@ -32,7 +31,13 @@ void WorkerIP::run()
 
         // get the data
         buffor = socket->readAll();
-        qDebug() << buffor;
+        socket->waitForReadyRead(3000);
+
+        qDebug() << "Reading2: " << socket->bytesAvailable();
+
+        // get the data
+        buffor = socket->readAll();
+        qDebug() << "wiadomosc2"<<buffor;
         s_buffor = buffor.toStdString();
 
 
@@ -43,7 +48,8 @@ void WorkerIP::run()
         else{
             qDebug() << "Autentykacja faild";
         }
-
+        unsigned int len_send = 0;
+        unsigned int len_temp = 0;
         while (config->goWhile){
             qDebug() << " before lock";
             config->IPMutex.lock();
@@ -52,28 +58,31 @@ void WorkerIP::run()
             config->IPMutex.unlock();
 
             socket->waitForBytesWritten(1000);
+            socket->waitForReadyRead(3000);
+
+            qDebug() << "Reading: " << socket->bytesAvailable();
+            buffor = socket->readAll();
+
+            qDebug() << buffor;
+            s_buffor = buffor.toStdString();
+            len_send = atoi (s_buffor.c_str());
+            buffor.clear();
+            s_buffor.erase();
             while (true){
-
-
                 socket->waitForReadyRead(3000);
 
                 qDebug() << "Reading: " << socket->bytesAvailable();
                 buffor = socket->readAll();
-
-                qDebug() << buffor;
-                s_buffor = buffor.toStdString();
-
-
-                if (s_buffor[1]=='E' && s_buffor[2]=='N' && s_buffor[3]=='D'){
-                    qDebug ()<< "koniec";
-                    QThread::sleep(2);
-                    break;
+                s_buffor += buffor.toStdString();
+                if (s_buffor.length()==len_send){
+                   qDebug("mam wsztstko!");
+                   qDebug() << QString::fromStdString(s_buffor);
+                   break;
                 }
-                else{
-                    qDebug() << "dalej";
-                    socket->write("OK");
-                }
+
+
             }
+
 
         }
         // close the connection
