@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>800</height>
+    <width>720</width>
+    <height>1280</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -85,8 +85,8 @@
        <widget class="QLineEdit" name="lineEdit">
         <property name="geometry">
          <rect>
-          <x>120</x>
-          <y>20</y>
+          <x>0</x>
+          <y>0</y>
           <width>381</width>
           <height>91</height>
          </rect>
@@ -98,9 +98,9 @@
        <widget class="QPushButton" name="pushButton">
         <property name="geometry">
          <rect>
-          <x>610</x>
-          <y>40</y>
-          <width>361</width>
+          <x>410</x>
+          <y>0</y>
+          <width>151</width>
           <height>61</height>
          </rect>
         </property>
@@ -108,30 +108,23 @@
          <string>go</string>
         </property>
        </widget>
-       <widget class="QScrollBar" name="verticalScrollBar">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>50</y>
-          <width>51</width>
-          <height>281</height>
-         </rect>
-        </property>
-        <property name="autoFillBackground">
-         <bool>true</bool>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
        <widget class="QTextEdit" name="wynik">
         <property name="geometry">
          <rect>
-          <x>130</x>
-          <y>130</y>
-          <width>871</width>
-          <height>271</height>
+          <x>0</x>
+          <y>100</y>
+          <width>701</width>
+          <height>781</height>
          </rect>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOn</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOn</enum>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
         <property name="html">
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
