@@ -32,7 +32,9 @@ void WorkerIP::run()
         // get the data
         buffor = socket->readAll();
         socket->waitForReadyRead(3000);
-
+        socket->write("OK");
+        socket->waitForBytesWritten(1000);
+        socket->waitForReadyRead(3000);
         qDebug() << "Reading2: " << socket->bytesAvailable();
 
         // get the data
@@ -62,7 +64,9 @@ void WorkerIP::run()
 
             qDebug() << "Reading: " << socket->bytesAvailable();
             buffor = socket->readAll();
-
+            //socket->waitForBytesWritten(1000);
+            //socket->waitForReadyRead(3000);
+            socket->write("OK");
             qDebug() << buffor;
             s_buffor = buffor.toStdString();
             len_send = atoi (s_buffor.c_str());

@@ -67,7 +67,10 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     p.setColor(QPalette::Text,Qt::green);
     p.setColor(ui->wynik->backgroundRole(), Qt::transparent);
+
+
     ui->wynik->setText("co to jest ma byc tego  bardzo dzuo wiec nie wiem co powstanie ");
+     ui->wynik->setStyleSheet("background:#0F0;");
 }
 
 iDom_Client::~iDom_Client()
