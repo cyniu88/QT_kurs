@@ -10,6 +10,11 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     config(config)
 {
     ui->setupUi(this);
+
+
+
+
+
     ////  //////////////////////////    Ladowanie grafiki  ////////////////////////
     QPixmap pix;
 
@@ -90,6 +95,17 @@ void iDom_Client::on_label_linkActivated(const QString &link)
 
 }
 
+void iDom_Client::odb_answer(QString s){
+ ui->wynik->setText(s);   ;
+}
+
+void iDom_Client::zmienCounter(int c)
+{
+   ui->lcdNumber->display(c);
+}
+
+
+
 void iDom_Client::on_disconnectButton_released()
 {
     if (ui->disconnectButton->text()=="DISCONNECT"){
@@ -112,9 +128,10 @@ void iDom_Client::on_lineEdit_editingFinished()
 
 void iDom_Client::on_pushButton_released()
 {
-    config->IPMutex.unlock();
-    QThread::sleep(1);
-    config->IPMutex.lock();
-    QThread::sleep(2);
-    ui->wynik->setText(QString::fromStdString( s_buffor));
+   // QString *s = (config->command);
+    //QDebug() << " mamy komende: " << s;
+    emit sendTCP("button",config->command);
+
 }
+
+

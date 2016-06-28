@@ -2,6 +2,7 @@
 #define IDOM_CLIENT_H
 #include <variable.h>
 #include <QMainWindow>
+#include "workerip.h"
 
 
 namespace Ui {
@@ -22,15 +23,29 @@ private slots:
     void on_label_linkActivated(const QString &link);
 
 
+
     void on_disconnectButton_released();
 
     void on_lineEdit_editingFinished();
 
     void on_pushButton_released();
 
+
+
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
+
+public slots:
+      void zmienCounter(int c);
+      void odb_answer(QString s);
+
+signals:
+
+    void sendTCP(QString addres, std::string s);
+
+
+
 };
 
 #endif // IDOM_CLIENT_H

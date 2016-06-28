@@ -1,7 +1,7 @@
 #include "workerip.h"
 #include <QDebug>
 #include <QTcpSocket>
-
+#include <QString>
 WorkerIP::WorkerIP(iDom_CONFIG *config) : config(config)
 {
 
@@ -27,7 +27,7 @@ void WorkerIP::run()
         socket->waitForBytesWritten(1000);
         socket->waitForReadyRead(3000);
 
-        qDebug() << "Reading: " << socket->bytesAvailable();
+        qDebug() << "Reading ready : " << socket->bytesAvailable();
 
         // get the data
         buffor = socket->readAll();
@@ -54,10 +54,14 @@ void WorkerIP::run()
         unsigned int len_temp = 0;
         while (config->goWhile){
             qDebug() << " before lock";
-            config->IPMutex.lock();
-            qDebug() << " after e lock";
-            socket->write( config->command.c_str());
-            config->IPMutex.unlock();
+
+            if (to_send == false){
+                QThread::usleep(100);
+                continue;
+            }
+            socket->write( msg.c_str());
+            to_send = false;
+            //config->IPMutex.unlock();
 
             socket->waitForBytesWritten(1000);
             socket->waitForReadyRead(3000);
@@ -74,14 +78,21 @@ void WorkerIP::run()
             s_buffor.erase();
             while (true){
                 socket->waitForReadyRead(3000);
+                /////////////
+
+                emit sygnal(++counter);
+
+
+
 
                 qDebug() << "Reading: " << socket->bytesAvailable();
                 buffor = socket->readAll();
                 s_buffor += buffor.toStdString();
                 if (s_buffor.length()==len_send){
-                   qDebug("mam wsztstko!");
-                   qDebug() << QString::fromStdString(s_buffor);
-                   break;
+                    qDebug("mam wsztstko!");
+                    qDebug() << QString::fromStdString(s_buffor);
+                    emit answer( buffor);
+                    break;
                 }
 
 
@@ -98,4 +109,11 @@ void WorkerIP::run()
     }
 
 
+}
+
+void WorkerIP::fromTCP(QString addres , std::string qmsg)
+{
+    to_send = true;
+   // msg=   QString::toStdString(qmsg);
+    msg = qmsg ;
 }
