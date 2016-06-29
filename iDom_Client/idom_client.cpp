@@ -47,15 +47,15 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->LOGO->setPixmap(pix);
     //ui->icona->setIcon(pix);
     /////////////////////////////   ustawienie przezroczystosci tabWidgetu /////////////
-    ui->tabWidget->setStyleSheet("background-color: transparent;"
-            "border-style: outset;"
-            "border-width: 2px;"
-            "border-radius: 10px;"
-            "border-color: beige;"
-            "font: bold italic 24px;"
-
-            "padding: 6px;"
-                                   );
+//    border-width: 2px;"
+//            "border-radius: 10px;"
+//            "border-color: beige;"
+//            "font: bold italic 24px;"
+//    ui->tabWidget->setStyleSheet("background-color: transparent;"
+//            "border-style: outset;"
+//            "
+//            "padding: 6px;"
+//                                   );
     /////////////////////////////  ustawianie przezroczystosci i koloru  pola tekstowego ///////////
     QPalette p;
     p.setColor(QPalette::Text,Qt::green);
