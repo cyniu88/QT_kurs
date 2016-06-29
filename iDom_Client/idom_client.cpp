@@ -68,14 +68,15 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->volumeTXT->setPalette(p);
     ui->volumeTXT->setFrame(false);
 
-    ui->lineEdit->setStyleSheet("background:#0F0;");
+    ui->lineEdit->setPalette(p);
+    // ui->lineEdit->setStyleSheet("background:#0F0;");
 
     p.setColor(QPalette::Text,Qt::green);
     p.setColor(ui->wynik->backgroundRole(), Qt::transparent);
-
+   ui->wynik->setPalette(p);
 
     ui->wynik->setText("co to jest ma byc tego  bardzo dzuo wiec nie wiem co powstanie ");
-     ui->wynik->setStyleSheet("background:#0F0;");
+     //ui->wynik->setStyleSheet("background:#0F0;");
 }
 
 iDom_Client::~iDom_Client()

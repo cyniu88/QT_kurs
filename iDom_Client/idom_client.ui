@@ -174,6 +174,12 @@
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="0" column="0">
          <widget class="QPushButton" name="playButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
           <property name="text">
            <string>PLAY</string>
           </property>
@@ -181,6 +187,12 @@
         </item>
         <item row="0" column="1">
          <widget class="QPushButton" name="exitButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
           <property name="text">
            <string>EXIT</string>
           </property>
@@ -188,6 +200,12 @@
         </item>
         <item row="1" column="0">
          <widget class="QPushButton" name="stopButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
           <property name="text">
            <string>STOP</string>
           </property>
@@ -195,6 +213,12 @@
         </item>
         <item row="1" column="1">
          <widget class="QPushButton" name="disconnectButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
           <property name="text">
            <string>DISCONNECT</string>
           </property>
@@ -218,6 +242,9 @@
         <height>350</height>
        </size>
       </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
       <property name="tabPosition">
        <enum>QTabWidget::South</enum>
       </property>
@@ -230,19 +257,22 @@
       <property name="iconSize">
        <size>
         <width>10</width>
-        <height>10</height>
+        <height>25</height>
        </size>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideRight</enum>
       </property>
       <widget class="QWidget" name="tab">
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
        <attribute name="icon">
         <iconset theme="black">
          <normaloff>.</normaloff>.</iconset>
        </attribute>
        <attribute name="title">
-        <string>Tab 1</string>
+        <string>CONSOLE</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
@@ -251,7 +281,32 @@
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
           <item row="2" column="0" colspan="3">
-           <widget class="QLCDNumber" name="lcdNumber"/>
+           <widget class="QLCDNumber" name="lcdNumber">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="autoFillBackground">
+             <bool>true</bool>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Outline</enum>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0" colspan="3">
            <widget class="QTextEdit" name="wynik">
@@ -268,8 +323,8 @@
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;tu beda wyniki&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tu beda wyniki&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -278,8 +333,16 @@ p, li { white-space: pre-wrap; }
             <property name="minimumSize">
              <size>
               <width>150</width>
-              <height>0</height>
+              <height>50</height>
              </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="autoFillBackground">
+             <bool>true</bool>
             </property>
             <property name="clearButtonEnabled">
              <bool>true</bool>
@@ -288,6 +351,12 @@ p, li { white-space: pre-wrap; }
           </item>
           <item row="0" column="2">
            <widget class="QPushButton" name="pushButton">
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
             <property name="text">
              <string>SEND</string>
             </property>
@@ -296,12 +365,13 @@ p, li { white-space: pre-wrap; }
          </layout>
         </item>
        </layout>
-       <zorder>gridLayoutWidget</zorder>
-       <zorder>wynik</zorder>
       </widget>
       <widget class="QWidget" name="tab_2">
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>INFO</string>
        </attribute>
        <widget class="QPushButton" name="pushButton_2">
         <property name="geometry">
