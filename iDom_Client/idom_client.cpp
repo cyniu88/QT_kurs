@@ -75,8 +75,9 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     p.setColor(ui->wynik->backgroundRole(), Qt::transparent);
    ui->wynik->setPalette(p);
 
-    ui->wynik->setText("co to jest ma byc tego  bardzo dzuo wiec nie wiem co powstanie ");
-     //ui->wynik->setStyleSheet("background:#0F0;");
+    ui->wynik->setText("...................... ");
+
+
 }
 
 iDom_Client::~iDom_Client()
@@ -97,12 +98,23 @@ void iDom_Client::on_label_linkActivated(const QString &link)
 }
 
 void iDom_Client::odb_answer(QString s){
- ui->wynik->setText(s);   ;
+    ui->wynik->setText(s);
+     ui->lcdNumber_2->display(s.size());
+}
+
+void iDom_Client::readProgress(int c)
+{
+    ui->progressBar->setValue(c);
 }
 
 void iDom_Client::zmienCounter(int c)
 {
-   ui->lcdNumber->display(c);
+    ui->lcdNumber->display(c);
+}
+
+void iDom_Client::zmienCounter2(int c)
+{
+
 }
 
 

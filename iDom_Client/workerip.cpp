@@ -59,6 +59,7 @@ void WorkerIP::run()
                 QThread::usleep(100);
                 continue;
             }
+            emit progress(0);
             socket->write( msg.c_str());
             to_send = false;
             //config->IPMutex.unlock();
@@ -74,6 +75,9 @@ void WorkerIP::run()
             qDebug() << buffor;
             s_buffor = buffor.toStdString();
             len_send = atoi (s_buffor.c_str());
+
+
+            emit sygnal2(len_send);
             buffor.clear();
             s_buffor.erase();
             while (true){
@@ -83,15 +87,21 @@ void WorkerIP::run()
                 emit sygnal(++counter);
 
 
+                emit progress(    (100*s_buffor.length())/len_send          );
+
 
 
                 qDebug() << "Reading: " << socket->bytesAvailable();
                 buffor = socket->readAll();
                 s_buffor += buffor.toStdString();
                 if (s_buffor.length()==len_send){
+
+
+                    emit sygnal(s_buffor.length());
                     qDebug("mam wsztstko!");
                     qDebug() << QString::fromStdString(s_buffor);
                     emit answer( buffor);
+
                     break;
                 }
 

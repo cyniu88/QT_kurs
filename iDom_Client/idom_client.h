@@ -38,7 +38,9 @@ private:
 
 public slots:
       void zmienCounter(int c);
+      void zmienCounter2(int c);
       void odb_answer(QString s);
+      void readProgress(int c);
 
 signals:
 
