@@ -53,7 +53,7 @@ void WorkerIP::run()
         unsigned int len_send = 0;
         unsigned int len_temp = 0;
         while (config->goWhile){
-            qDebug() << " before lock";
+            //qDebug() << " before lock";
 
             if (to_send == false){
                 QThread::usleep(100);
@@ -100,7 +100,7 @@ void WorkerIP::run()
                     emit sygnal(s_buffor.length());
                     qDebug("mam wsztstko!");
                     qDebug() << QString::fromStdString(s_buffor);
-                    emit answer( buffor);
+                    emit answer( QString::fromStdString(s_buffor));
 
                     break;
                 }

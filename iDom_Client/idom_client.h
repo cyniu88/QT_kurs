@@ -32,6 +32,8 @@ private slots:
 
 
 
+    void on_playButton_released();
+
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;

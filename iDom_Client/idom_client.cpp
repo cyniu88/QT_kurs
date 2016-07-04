@@ -100,6 +100,7 @@ void iDom_Client::on_label_linkActivated(const QString &link)
 void iDom_Client::odb_answer(QString s){
     ui->wynik->setText(s);
      ui->lcdNumber_2->display(s.size());
+     ui->progressBar->setValue(100);
 }
 
 void iDom_Client::readProgress(int c)
@@ -148,3 +149,7 @@ void iDom_Client::on_pushButton_released()
 }
 
 
+
+void iDom_Client::on_playButton_released()
+{
+}
