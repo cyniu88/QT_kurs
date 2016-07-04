@@ -291,7 +291,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -681,15 +681,21 @@ background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(205, 94, 2
         </item>
         <item row="0" column="4">
          <widget class="QPushButton" name="pushButton_5">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 0, 128);</string>
+          </property>
           <property name="text">
-           <string>PushButton</string>
+           <string/>
           </property>
          </widget>
         </item>
         <item row="0" column="3">
          <widget class="QPushButton" name="pushButton_4">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(254, 254, 51);</string>
+          </property>
           <property name="text">
-           <string>PushButton</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -727,6 +733,10 @@ background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(205, 94, 2
         </item>
         <item row="7" column="0" colspan="5">
          <widget class="QPushButton" name="LED_OFF_Button_37">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+          </property>
           <property name="text">
            <string>LED OFF</string>
           </property>

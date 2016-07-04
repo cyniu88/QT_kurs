@@ -510,11 +510,13 @@ public:
 
         pushButton_5 = new QPushButton(tab_2);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setStyleSheet(QStringLiteral("background-color: rgb(255, 0, 128);"));
 
         gridLayout_5->addWidget(pushButton_5, 0, 4, 1, 1);
 
         pushButton_4 = new QPushButton(tab_2);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setStyleSheet(QStringLiteral("background-color: rgb(254, 254, 51);"));
 
         gridLayout_5->addWidget(pushButton_4, 0, 3, 1, 1);
 
@@ -534,6 +536,8 @@ public:
 
         LED_OFF_Button_37 = new QPushButton(tab_2);
         LED_OFF_Button_37->setObjectName(QStringLiteral("LED_OFF_Button_37"));
+        LED_OFF_Button_37->setStyleSheet(QLatin1String("color: rgb(255, 255, 255);\n"
+"background-color: rgb(0, 0, 0);"));
 
         gridLayout_5->addWidget(LED_OFF_Button_37, 7, 0, 1, 5);
 
@@ -603,8 +607,8 @@ public:
         pushButton_8->setText(QApplication::translate("iDom_Client", "PushButton", 0));
         pushButton_7->setText(QApplication::translate("iDom_Client", "PushButton", 0));
         pushButton_6->setText(QApplication::translate("iDom_Client", "PushButton", 0));
-        pushButton_5->setText(QApplication::translate("iDom_Client", "PushButton", 0));
-        pushButton_4->setText(QApplication::translate("iDom_Client", "PushButton", 0));
+        pushButton_5->setText(QString());
+        pushButton_4->setText(QString());
         pushButton_3->setText(QString());
         pushButton_2->setText(QString());
         LED_OFF_Button_37->setText(QApplication::translate("iDom_Client", "LED OFF", 0));

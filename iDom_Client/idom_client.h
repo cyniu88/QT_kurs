@@ -34,6 +34,18 @@ private slots:
 
     void on_playButton_released();
 
+    void on_LED_OFF_Button_37_released();
+
+    void on_redButton_22_released();
+
+    void on_pushButton_2_released();
+
+    void on_pushButton_3_released();
+
+    void on_pushButton_4_released();
+
+    void on_pushButton_5_released();
+
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
