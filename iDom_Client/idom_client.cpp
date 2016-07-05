@@ -1,9 +1,21 @@
 #include "idom_client.h"
 #include "ui_idom_client.h"
 #include "workerip.h"
+#include "functions.h"
 #include <QPixmap>
 #include <QStackedWidget>
+#include <QDebug>
 
+namespace std {
+
+template <typename T>
+std::string to_string(T value)
+{
+    std::ostringstream os ;
+    os << value ;
+    return os.str() ;
+}
+}
 iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::iDom_Client),
@@ -148,6 +160,14 @@ void iDom_Client::on_pushButton_released()
 
 }
 
+void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
+{
+     emit sendTCP("button",
+    "RS232 send LED:["+std::to_string(from)+"-"+std::to_string(to)+"-"+std::to_string(r)+"-"+std::to_string(g)+"-"+std::to_string(b)+"];"
+     );
+    std::string s_buffor = "RS232 send LED:["+std::to_string(from)+"-"+std::to_string(to)+"-"+std::to_string(r)+"-"+std::to_string(g)+"-"+std::to_string(b)+"];";
+    qDebug() << QString::fromStdString(s_buffor);
+}
 
 
 void iDom_Client::on_playButton_released()
@@ -156,38 +176,47 @@ void iDom_Client::on_playButton_released()
 
 void iDom_Client::on_LED_OFF_Button_37_released()
 {
-    config->command="RS232 send LED_STOP:2;";
-    emit sendTCP("button",config->command);
+
+    emit sendTCP("button","RS232 send LED_STOP:2;");
 }
 
 void iDom_Client::on_redButton_22_released()
 {
-    config->command="RS232 send LED:[1-60-255-0-0];";
-    emit sendTCP("button",config->command);
+
+    sendSignalColor(255,0,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 
 }
 
 void iDom_Client::on_pushButton_2_released()
 {
-    config->command="RS232 send LED:[1-60-0-0-255];";
-    emit sendTCP("button",config->command);
+   // config->command="RS232 send LED:[1-60-0-0-255];";
+    sendSignalColor(0,0,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 
 }
 
 void iDom_Client::on_pushButton_3_released()
 {
-    config->command="RS232 send LED:[1-60-0-255-0];";
-    emit sendTCP("button",config->command);
+    //config->command="RS232 send LED:[1-60-0-255-0];";
+    //emit sendTCP("button",config->command);
+    sendSignalColor(0,255,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
 void iDom_Client::on_pushButton_4_released()
 {
-    config->command="RS232 send LED:[1-60-254-254-51];";
-    emit sendTCP("button",config->command);
+//    config->command="RS232 send LED:[1-60-254-254-51];";
+//    emit sendTCP("button",config->command);
+    sendSignalColor(255,255,51,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
 void iDom_Client::on_pushButton_5_released()
 {
-    config->command="RS232 send LED:[1-60-254-0-128];";
-    emit sendTCP("button",config->command);
+    //config->command="RS232 send LED:[1-60-254-0-128];";
+    sendSignalColor(255,0,128,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+
+void iDom_Client::on_RESET_pushButton_released()
+{
+    ui->spinBox_fromLED->setValue(0);
+    ui->spinBox_toLED->setValue(60);
 }

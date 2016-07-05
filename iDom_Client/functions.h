@@ -5,7 +5,8 @@
 #include <stdlib.h>
 
 
-
+template <typename T>
+std::string to_string(T value);
 
 std::string  RSHash(int offset =0);
 #endif // FUNCTIONS_H

@@ -3,8 +3,9 @@
 #include <variable.h>
 #include <QMainWindow>
 #include "workerip.h"
-
-
+#include <iostream>
+#include <stdlib.h>
+#include <sstream>
 namespace Ui {
 class iDom_Client;
 }
@@ -46,10 +47,12 @@ private slots:
 
     void on_pushButton_5_released();
 
+    void on_RESET_pushButton_released();
+
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
-
+    void sendSignalColor(int r,int g, int b, int from=0, int to=60);
 public slots:
       void zmienCounter(int c);
       void zmienCounter2(int c);
