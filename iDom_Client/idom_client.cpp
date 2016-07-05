@@ -153,3 +153,41 @@ void iDom_Client::on_pushButton_released()
 void iDom_Client::on_playButton_released()
 {
 }
+
+void iDom_Client::on_LED_OFF_Button_37_released()
+{
+    config->command="RS232 send LED_STOP:2;";
+    emit sendTCP("button",config->command);
+}
+
+void iDom_Client::on_redButton_22_released()
+{
+    config->command="RS232 send LED:[1-60-255-0-0];";
+    emit sendTCP("button",config->command);
+
+}
+
+void iDom_Client::on_pushButton_2_released()
+{
+    config->command="RS232 send LED:[1-60-0-0-255];";
+    emit sendTCP("button",config->command);
+
+}
+
+void iDom_Client::on_pushButton_3_released()
+{
+    config->command="RS232 send LED:[1-60-0-255-0];";
+    emit sendTCP("button",config->command);
+}
+
+void iDom_Client::on_pushButton_4_released()
+{
+    config->command="RS232 send LED:[1-60-254-254-51];";
+    emit sendTCP("button",config->command);
+}
+
+void iDom_Client::on_pushButton_5_released()
+{
+    config->command="RS232 send LED:[1-60-254-0-128];";
+    emit sendTCP("button",config->command);
+}
