@@ -219,4 +219,74 @@ void iDom_Client::on_RESET_pushButton_released()
 {
     ui->spinBox_fromLED->setValue(0);
     ui->spinBox_toLED->setValue(60);
+    ui->from_horizontalSlider->setValue(0);
+    ui->to_horizontalSlider_2->setValue(60);
+    ui->lcdNumber_fromLED->display(0);
+    ui->lcdNumber_toLED->display(60);
+}
+
+void iDom_Client::on_pushButton_23_released()
+{
+    sendSignalColor(255,255,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_6_released()
+{
+    sendSignalColor(255,128,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_7_released()
+{
+    sendSignalColor(0,128,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_8_released()
+{
+    sendSignalColor(0,255,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_9_released()
+{
+    sendSignalColor(204, 93, 43,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_24_released()
+{
+    sendSignalColor(0, 127, 255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_to_horizontalSlider_2_valueChanged(int value)
+{
+    ui->spinBox_toLED->setValue(ui->to_horizontalSlider_2->value());
+
+    ui->lcdNumber_toLED->display(ui->to_horizontalSlider_2->value());
+}
+
+void iDom_Client::on_from_horizontalSlider_valueChanged(int value)
+{
+    ui->spinBox_fromLED->setValue(ui->from_horizontalSlider->value());
+    ui->lcdNumber_fromLED->display(ui->from_horizontalSlider->value());
+}
+
+void iDom_Client::on_spinBox_toLED_valueChanged(int arg1)
+{
+    ui->to_horizontalSlider_2->setValue(ui->spinBox_toLED->value());
+    ui->lcdNumber_toLED->display(ui->to_horizontalSlider_2->value());
+}
+
+void iDom_Client::on_spinBox_fromLED_valueChanged(int arg1)
+{
+
+    ui->from_horizontalSlider->setValue(ui->spinBox_fromLED->value());
+    ui->lcdNumber_fromLED->display(ui->from_horizontalSlider->value());
+}
+
+void iDom_Client::on_pushButton_10_released()
+{
+    sendSignalColor(255, 165, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_11_released()
+{
+    sendSignalColor(128, 0, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }

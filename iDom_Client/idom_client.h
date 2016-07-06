@@ -49,6 +49,30 @@ private slots:
 
     void on_RESET_pushButton_released();
 
+    void on_pushButton_23_released();
+
+    void on_pushButton_6_released();
+
+    void on_pushButton_7_released();
+
+    void on_pushButton_8_released();
+
+    void on_pushButton_9_released();
+
+    void on_pushButton_24_released();
+
+    void on_to_horizontalSlider_2_valueChanged(int value);
+
+    void on_from_horizontalSlider_valueChanged(int value);
+
+    void on_spinBox_toLED_valueChanged(int arg1);
+
+    void on_spinBox_fromLED_valueChanged(int arg1);
+
+    void on_pushButton_10_released();
+
+    void on_pushButton_11_released();
+
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
