@@ -82,10 +82,12 @@ public slots:
       void zmienCounter2(int c);
       void odb_answer(QString s);
       void readProgress(int c);
+      void odb_answer_LED(QString s);
+
 
 signals:
 
-    void sendTCP(QString addres, std::string s);
+    void sendTCP(std::string addres, std::string s);
 
 
 

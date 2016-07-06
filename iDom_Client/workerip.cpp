@@ -100,7 +100,15 @@ void WorkerIP::run()
                     emit sygnal(s_buffor.length());
                     qDebug("mam wsztstko!");
                     qDebug() << QString::fromStdString(s_buffor);
-                    emit answer( QString::fromStdString(s_buffor));
+
+
+                    if (what == "console"){
+                        emit answer( QString::fromStdString(s_buffor));
+                    }
+                    else if(what == "LED")
+                    {
+                        emit answerLED(QString::fromStdString(s_buffor));
+                    }
 
                     break;
                 }
@@ -121,9 +129,10 @@ void WorkerIP::run()
 
 }
 
-void WorkerIP::fromTCP(QString addres , std::string qmsg)
+void WorkerIP::fromTCP(std::string addres , std::string qmsg)
 {
     to_send = true;
-   // msg=   QString::toStdString(qmsg);
+    what = addres;
     msg = qmsg ;
+    qDebug("przyzedl sygnal");
 }

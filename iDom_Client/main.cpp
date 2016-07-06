@@ -23,8 +23,9 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(sygnal(int )), w, SLOT(zmienCounter(int )));
     QObject::connect(worker,SIGNAL(sygnal2(int )), w, SLOT(zmienCounter2(int )));
     QObject::connect(worker,SIGNAL(answer(QString)),w,SLOT(odb_answer(QString)));
-    QObject::connect(w,SIGNAL(sendTCP(QString,std::string)), worker,SLOT(fromTCP(QString,std::string)));
+    QObject::connect(w,SIGNAL(sendTCP(std::string,std::string)), worker,SLOT(fromTCP(std::string,std::string)));
     QObject::connect(worker,SIGNAL(progress(int)),w,SLOT(readProgress(int)));
+    QObject::connect(worker,SIGNAL(answerLED(QString)),w,SLOT(odb_answer_LED(QString))    );
 
     worker->start();
     w->show();

@@ -21,13 +21,15 @@ private:
     int progresCounter =0;
     bool to_send= false;
     std::string msg;
+    std::string what;
 signals:
     void sygnal(int c);
     void sygnal2(int c);
     void progress(int c);
     void answer(QString s);
+    void answerLED(QString s);
 public slots:
-    void fromTCP(QString addres, std::string qmsg);
+    void fromTCP(std::string addres, std::string qmsg);
 
 };
 

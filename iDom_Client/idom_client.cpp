@@ -120,6 +120,11 @@ void iDom_Client::readProgress(int c)
     ui->progressBar->setValue(c);
 }
 
+void iDom_Client::odb_answer_LED(QString s)
+{
+    ui->lineEditLED->setText(s);
+}
+
 void iDom_Client::zmienCounter(int c)
 {
     ui->lcdNumber->display(c);
@@ -156,13 +161,13 @@ void iDom_Client::on_pushButton_released()
 {
    // QString *s = (config->command);
     //QDebug() << " mamy komende: " << s;
-    emit sendTCP("button",config->command);
+    emit sendTCP("console",config->command);
 
 }
 
 void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
 {
-     emit sendTCP("button",
+     emit sendTCP("LED",
     "RS232 send LED:["+std::to_string(from)+"-"+std::to_string(to)+"-"+std::to_string(r)+"-"+std::to_string(g)+"-"+std::to_string(b)+"];"
      );
     std::string s_buffor = "RS232 send LED:["+std::to_string(from)+"-"+std::to_string(to)+"-"+std::to_string(r)+"-"+std::to_string(g)+"-"+std::to_string(b)+"];";
@@ -177,7 +182,7 @@ void iDom_Client::on_playButton_released()
 void iDom_Client::on_LED_OFF_Button_37_released()
 {
 
-    emit sendTCP("button","RS232 send LED_STOP:2;");
+    emit sendTCP("LED","RS232 send LED_STOP:2;");
 }
 
 void iDom_Client::on_redButton_22_released()
