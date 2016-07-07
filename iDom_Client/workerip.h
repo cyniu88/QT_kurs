@@ -1,6 +1,7 @@
 #ifndef WORKERIP_H
 #define WORKERIP_H
 
+#include <QMessageBox>
 #include <QThread>
 #include "functions.h"
 #include "variable.h"
@@ -28,6 +29,7 @@ signals:
     void progress(int c);
     void answer(QString s);
     void answerLED(QString s);
+    void errorInfo(QString tit, QString msg);
 public slots:
     void fromTCP(std::string addres, std::string qmsg);
 

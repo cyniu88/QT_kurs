@@ -125,6 +125,11 @@ void iDom_Client::odb_answer_LED(QString s)
     ui->lineEditLED->setText(s);
 }
 
+void iDom_Client::errorRead(QString tit, QString msg)
+{
+    QMessageBox::information(this,tit,  msg);
+}
+
 void iDom_Client::zmienCounter(int c)
 {
     ui->lcdNumber->display(c);
@@ -228,6 +233,7 @@ void iDom_Client::on_RESET_pushButton_released()
     ui->to_horizontalSlider_2->setValue(60);
     ui->lcdNumber_fromLED->display(0);
     ui->lcdNumber_toLED->display(60);
+
 }
 
 void iDom_Client::on_pushButton_23_released()

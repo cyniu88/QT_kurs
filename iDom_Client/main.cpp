@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     QObject::connect(w,SIGNAL(sendTCP(std::string,std::string)), worker,SLOT(fromTCP(std::string,std::string)));
     QObject::connect(worker,SIGNAL(progress(int)),w,SLOT(readProgress(int)));
     QObject::connect(worker,SIGNAL(answerLED(QString)),w,SLOT(odb_answer_LED(QString))    );
+    QObject::connect(worker,SIGNAL(errorInfo(QString,QString)),w,SLOT(errorRead(QString,QString))  );
 
     worker->start();
     w->show();

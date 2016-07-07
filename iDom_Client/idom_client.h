@@ -2,6 +2,7 @@
 #define IDOM_CLIENT_H
 #include <variable.h>
 #include <QMainWindow>
+#include<QMessageBox>
 #include "workerip.h"
 #include <iostream>
 #include <stdlib.h>
@@ -83,6 +84,7 @@ public slots:
       void odb_answer(QString s);
       void readProgress(int c);
       void odb_answer_LED(QString s);
+      void errorRead(QString tit, QString msg);
 
 
 signals:

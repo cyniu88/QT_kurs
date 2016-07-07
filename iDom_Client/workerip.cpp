@@ -2,6 +2,7 @@
 #include <QDebug>
 #include <QTcpSocket>
 #include <QString>
+
 WorkerIP::WorkerIP(iDom_CONFIG *config) : config(config)
 {
 
@@ -18,7 +19,7 @@ void WorkerIP::run()
     socket->connectToHost(config->serverIP.c_str(),config->serverPort);
     //socket->connectToHost("cyniu88.no-ip.pl",8833);
 
-    if(socket->waitForConnected(5000))
+    if(socket->waitForConnected(500))
     {
         qDebug() << "Connected!";
 
@@ -124,6 +125,7 @@ void WorkerIP::run()
     else
     {
         qDebug() << "Not connected!";
+        emit errorInfo ("INFO","Not connected!");
     }
 
 
