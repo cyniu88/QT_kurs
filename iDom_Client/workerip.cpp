@@ -50,6 +50,7 @@ void WorkerIP::run()
         }
         else{
             qDebug() << "Autentykacja faild";
+            emit errorInfo ("INFO","Authentication failed”");
         }
         unsigned int len_send = 0;
         unsigned int len_temp = 0;

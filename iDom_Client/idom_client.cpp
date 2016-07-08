@@ -5,7 +5,7 @@
 #include <QPixmap>
 #include <QStackedWidget>
 #include <QDebug>
-
+#include <QDesktopWidget>
 namespace std {
 
 template <typename T>
@@ -90,6 +90,14 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->wynik->setText("...................... ");
 
 
+
+    QRect rec = QApplication::desktop()->screenGeometry();
+   int  height = rec.height();
+    int width = rec.width();
+
+        std::string s =  std::to_string(height) +" and " + std::to_string(width)  ;
+
+         ui->wynik->setText( QString::fromStdString( s));
 }
 
 iDom_Client::~iDom_Client()
