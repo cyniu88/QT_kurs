@@ -19,7 +19,7 @@ void WorkerIP::run()
     socket->connectToHost(config->serverIP.c_str(),config->serverPort);
     //socket->connectToHost("cyniu88.no-ip.pl",8833);
 
-    if(socket->waitForConnected(500))
+    if(socket->waitForConnected(5000))
     {
         qDebug() << "Connected!";
 
@@ -47,6 +47,7 @@ void WorkerIP::run()
         if (s_buffor[0]=='O' && s_buffor[1]=='K'){
             qDebug ()<< "Autentykacja ok";
             config->goWhile=true;
+            emit errorInfo ("INFO","GOTOWE DO UZYWANIA");
         }
         else{
             qDebug() << "Autentykacja faild";
@@ -110,6 +111,10 @@ void WorkerIP::run()
                     else if(what == "LED")
                     {
                         emit answerLED(QString::fromStdString(s_buffor));
+                    }
+                    else if (what == "MPD")
+                    {
+                        emit answerMPD(QString::fromStdString(s_buffor));
                     }
 
                     break;

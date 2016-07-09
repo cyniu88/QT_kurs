@@ -74,6 +74,22 @@ private slots:
 
     void on_pushButton_11_released();
 
+    void on_stopButton_released();
+
+
+
+    void on_pushButtonPREV_released();
+
+    void on_pushButtonNext_released();
+
+    void on_pushButton_pause_released();
+
+    void on_pushButton_volumeUP_released();
+
+    void on_pushButton_volumeDOWN_released();
+
+    void on_exitButton_pressed();
+
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
@@ -84,6 +100,7 @@ public slots:
       void odb_answer(QString s);
       void readProgress(int c);
       void odb_answer_LED(QString s);
+      void odb_answer_MPD(QString s);
       void errorRead(QString tit, QString msg);
 
 

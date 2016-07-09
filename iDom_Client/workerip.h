@@ -29,6 +29,7 @@ signals:
     void progress(int c);
     void answer(QString s);
     void answerLED(QString s);
+    void answerMPD(QString s);
     void errorInfo(QString tit, QString msg);
 public slots:
     void fromTCP(std::string addres, std::string qmsg);

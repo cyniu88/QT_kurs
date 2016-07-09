@@ -107,6 +107,7 @@ iDom_Client::~iDom_Client()
 
 void iDom_Client::on_EXITButton_released()
 {
+
     ui->centralWidget->close();
 
 
@@ -131,7 +132,15 @@ void iDom_Client::readProgress(int c)
 void iDom_Client::odb_answer_LED(QString s)
 {
     ui->lineEditLED->setText(s);
+
 }
+
+void iDom_Client::odb_answer_MPD(QString s)
+{
+    ui->lineEdit_MPD_ACK->setText(s);
+}
+
+
 
 void iDom_Client::errorRead(QString tit, QString msg)
 {
@@ -190,6 +199,7 @@ void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
 
 void iDom_Client::on_playButton_released()
 {
+    emit sendTCP("MPD","MPD start");
 }
 
 void iDom_Client::on_LED_OFF_Button_37_released()
@@ -308,4 +318,39 @@ void iDom_Client::on_pushButton_10_released()
 void iDom_Client::on_pushButton_11_released()
 {
     sendSignalColor(128, 0, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_stopButton_released()
+{
+    emit sendTCP("MPD","MPD stop");
+}
+
+void iDom_Client::on_pushButtonPREV_released()
+{
+    emit sendTCP("MPD","MPD prev");
+}
+
+void iDom_Client::on_pushButtonNext_released()
+{
+    emit sendTCP("MPD","MPD next");
+}
+
+void iDom_Client::on_pushButton_pause_released()
+{
+    emit sendTCP("MPD","MPD pause");
+}
+
+void iDom_Client::on_pushButton_volumeUP_released()
+{
+    emit sendTCP("MPD","MPD volume_up");
+}
+
+void iDom_Client::on_pushButton_volumeDOWN_released()
+{
+    emit sendTCP("MPD","MPD volume_down");
+}
+
+void iDom_Client::on_exitButton_pressed()
+{
+    emit sendTCP("console","exit");
 }
