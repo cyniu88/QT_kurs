@@ -29,8 +29,17 @@ QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra -pedantic
 MOBILITY = 
 
 DISTFILES += \
-    iDom_client.ico
+    iDom_client.ico \
+    android/AndroidManifest.xml \
+    android/gradle/wrapper/gradle-wrapper.jar \
+    android/gradlew \
+    android/res/values/libs.xml \
+    android/build.gradle \
+    android/gradle/wrapper/gradle-wrapper.properties \
+    android/gradlew.bat
 
 RESOURCES += \
     ikony.qrc
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 

@@ -26,7 +26,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
 
 
-
     ////  //////////////////////////    Ladowanie grafiki  ////////////////////////
     QPixmap pix;
 

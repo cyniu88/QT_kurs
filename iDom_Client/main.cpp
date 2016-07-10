@@ -18,6 +18,8 @@ int main(int argc, char *argv[])
 
 
     QApplication a(argc, argv);
+    a.setWindowIcon( QIcon(":/new/prefix1/iDom_client.ico"));
+
     iDom_Client * w = new iDom_Client(&config);
 
     QObject::connect(worker,SIGNAL(sygnal(int )), w, SLOT(zmienCounter(int )));
