@@ -4,8 +4,30 @@
 #include <QMainWindow>
 #include <QObject>
 #include <QSensorReading>
+#include <QGeoPositionInfo>
+#include <QGeoPositionInfoSource>
+#include <QDebug>
+class MyClass : public QObject
+{
+    Q_OBJECT
+public:
+    MyClass(QObject *parent = 0)
+        : QObject(parent)
+    {
+        QGeoPositionInfoSource *source = QGeoPositionInfoSource::createDefaultSource(this);
+        if (source) {
+            connect(source, SIGNAL(positionUpdated(QGeoPositionInfo)),
+                    this, SLOT(positionUpdated(QGeoPositionInfo)));
+            source->startUpdates();
+        }
+    }
 
-
+private slots:
+    void positionUpdated(const QGeoPositionInfo &info)
+    {
+        qDebug() << "Position updated:" << info;
+    }
+};
 namespace Ui {
 class iDom_client;
 }

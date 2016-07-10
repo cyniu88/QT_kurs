@@ -14,6 +14,8 @@ iDom_client::iDom_client(QWidget *parent) :
     ui(new Ui::iDom_client)
 {
     ui->setupUi(this);
+
+    MyClass gps;
 }
 
 iDom_client::~iDom_client()

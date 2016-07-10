@@ -28,3 +28,9 @@ CONFIG += mobility   c++11
 QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra -pedantic
 MOBILITY = 
 
+DISTFILES += \
+    iDom_client.ico
+
+RESOURCES += \
+    ikony.qrc
+

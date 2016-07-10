@@ -291,7 +291,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="iconSize">
        <size>
@@ -302,6 +302,14 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
       <property name="elideMode">
        <enum>Qt::ElideRight</enum>
       </property>
+      <widget class="QWidget" name="tab_4">
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <attribute name="title">
+        <string>INFO</string>
+       </attribute>
+      </widget>
       <widget class="QWidget" name="tab_3">
        <property name="autoFillBackground">
         <bool>true</bool>
@@ -336,6 +344,9 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
         </item>
         <item row="2" column="1">
          <widget class="QPushButton" name="pushButton_pause">
+          <property name="styleSheet">
+           <string notr="true">image: url(:/new/prefix1/iDom_client.ico);</string>
+          </property>
           <property name="text">
            <string>pause</string>
           </property>
@@ -358,6 +369,16 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 255, 0);
 background-color: rgba(170, 0, 0, 10);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="label">
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/new/prefix1/iDom_client.ico);</string>
+          </property>
+          <property name="text">
+           <string>TextLabel</string>
           </property>
          </widget>
         </item>

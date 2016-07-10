@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sensors
+QT       += core gui sensors positioning
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
