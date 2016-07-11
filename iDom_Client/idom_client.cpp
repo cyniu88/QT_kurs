@@ -36,6 +36,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     else if ( pix.load(config->background_img_a.c_str()))
     {
         qDebug("udalo sie android");
+
     }
 
 
@@ -264,15 +265,26 @@ void iDom_Client::on_pushButton_24_released()
 }
 
 void iDom_Client::on_to_horizontalSlider_2_valueChanged(int value)
-{
-    ui->spinBox_toLED->setValue(ui->to_horizontalSlider_2->value());
+{   int temp_value = ui->to_horizontalSlider_2->value();
 
+    if (temp_value <= ui->from_horizontalSlider->value())
+    {
+        ui->from_horizontalSlider->setValue(temp_value-1);
+        ui->spinBox_fromLED->setValue(temp_value-1);
+    }
+    ui->spinBox_toLED->setValue(ui->to_horizontalSlider_2->value());
     ui->lcdNumber_toLED->display(ui->to_horizontalSlider_2->value());
 }
 
 void iDom_Client::on_from_horizontalSlider_valueChanged(int value)
 {
-    ui->spinBox_fromLED->setValue(ui->from_horizontalSlider->value());
+    int temp_value = ui->from_horizontalSlider->value();
+    if (temp_value >= ui->to_horizontalSlider_2->value())
+    {
+        ui->to_horizontalSlider_2->setValue(temp_value+1);
+        ui->spinBox_toLED->setValue(temp_value+1);
+    }
+    ui->spinBox_fromLED->setValue(value);
     ui->lcdNumber_fromLED->display(ui->from_horizontalSlider->value());
 }
 
