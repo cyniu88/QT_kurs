@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/new/prefix1">
         <file>iDom_client.ico</file>
+        <file>files/background.png</file>
+        <file>files/background2.png</file>
+        <file>files/logo.png</file>
     </qresource>
 </RCC>

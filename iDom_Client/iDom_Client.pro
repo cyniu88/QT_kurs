@@ -43,3 +43,4 @@ RESOURCES += \
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
+win32:RC_ICONS += iDom_client.ico

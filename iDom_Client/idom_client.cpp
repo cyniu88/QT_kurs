@@ -46,26 +46,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
 
 
-    if (pix.load(config->logo_windows.c_str()))
-    {
-        qDebug("udalo sie Windows");
-    }
-    else if ( pix.load(config->logo_android.c_str()))
-    {
-        qDebug("udalo sie android");
-        config->isWindows = false;
-    }
-    ui->LOGO->setPixmap(pix);
-    //ui->icona->setIcon(pix);
-    /////////////////////////////   ustawienie przezroczystosci tabWidgetu /////////////
-//    border-width: 2px;"
-//            "border-radius: 10px;"
-//            "border-color: beige;"
-//            "font: bold italic 24px;"
-//    ui->tabWidget->setStyleSheet("background-color: transparent;"
-//            "border-style: outset;"
-//            "
-//            "padding: 6px;"
 //                                   );
     /////////////////////////////  ustawianie przezroczystosci i koloru  pola tekstowego ///////////
     QPalette p;
