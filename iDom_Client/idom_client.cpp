@@ -120,6 +120,16 @@ void iDom_Client::odb_answer_MPD(QString s)
     ui->lineEdit_MPD_ACK->setText(s);
 }
 
+void iDom_Client::odb_mpd_title(QString s)
+{
+    ui->titleTXT->setText(s);
+}
+
+void iDom_Client::odbMpdVolume(QString s)
+{
+    ui->volumeTXT->setText("volume: " +s+"%");
+}
+
 
 
 void iDom_Client::errorRead(QString tit, QString msg)
@@ -344,4 +354,12 @@ void iDom_Client::on_pushButton_volumeDOWN_released()
 void iDom_Client::on_exitButton_pressed()
 {
     emit sendTCP("console","exit");
+}
+
+void iDom_Client::on_pushButtonupdateinfo_released()
+{
+    emit sendTCP("MPD_title","MPD get_info");
+    QThread::sleep(1);
+    emit sendTCP("MPD_volume","MPD get_volume");
+
 }

@@ -29,6 +29,8 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(progress(int)),w,SLOT(readProgress(int)));
     QObject::connect(worker,SIGNAL(answerLED(QString)),w,SLOT(odb_answer_LED(QString))    );
     QObject::connect(worker,SIGNAL(answerMPD(QString)),w,SLOT(odb_answer_MPD(QString))  );
+    QObject::connect(worker,SIGNAL(mpd_title_info(QString)),w,SLOT(odb_mpd_title(QString)) );
+    QObject::connect(worker,SIGNAL(mpd_volumeInfo(QString)),w,SLOT(odbMpdVolume(QString))  );
     QObject::connect(worker,SIGNAL(errorInfo(QString,QString)),w,SLOT(errorRead(QString,QString))  );
 
     worker->start();

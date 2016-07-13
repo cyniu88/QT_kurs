@@ -31,6 +31,8 @@ signals:
     void answerLED(QString s);
     void answerMPD(QString s);
     void errorInfo(QString tit, QString msg);
+    void mpd_title_info(QString s);
+    void mpd_volumeInfo(QString s);
 public slots:
     void fromTCP(std::string addres, std::string qmsg);
 

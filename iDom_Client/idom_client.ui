@@ -174,7 +174,10 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
            </font>
           </property>
           <property name="inputMask">
-           <string>reerewreerereererfevfvev</string>
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -198,7 +201,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
            </font>
           </property>
           <property name="inputMask">
-           <string>34254545345</string>
+           <string/>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -288,7 +291,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -320,8 +323,8 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>488</width>
-               <height>579</height>
+               <width>480</width>
+               <height>568</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -372,28 +375,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
         <string/>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_6">
-        <item row="1" column="1">
-         <widget class="QPushButton" name="pushButtonPREV">
-          <property name="text">
-           <string>prev</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QPushButton" name="pushButtonNext">
-          <property name="text">
-           <string>next</string>
-          </property>
-         </widget>
-        </item>
         <item row="3" column="1">
-         <widget class="QPushButton" name="pushButton_volumeUP">
-          <property name="text">
-           <string>volume UP</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
          <widget class="QPushButton" name="pushButton_pause">
           <property name="styleSheet">
            <string notr="true">image: url(:/new/prefix1/iDom_client.ico);</string>
@@ -403,7 +385,44 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
           </property>
          </widget>
         </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="pushButtonPREV">
+          <property name="text">
+           <string>prev</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="pushButtonNext">
+          <property name="text">
+           <string>next</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="pushButton_volumeUP">
+          <property name="text">
+           <string>volume UP</string>
+          </property>
+         </widget>
+        </item>
         <item row="3" column="2">
+         <widget class="QLabel" name="label">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>250</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/new/prefix1/iDom_client.ico);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
          <widget class="QPushButton" name="pushButton_volumeDOWN">
           <property name="text">
            <string>volume DOWN</string>
@@ -423,19 +442,10 @@ background-color: rgba(170, 0, 0, 10);</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="2">
-         <widget class="QLabel" name="label">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>250</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-image: url(:/new/prefix1/iDom_client.ico);</string>
-          </property>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="pushButtonupdateinfo">
           <property name="text">
-           <string/>
+           <string>update info</string>
           </property>
          </widget>
         </item>
@@ -476,8 +486,8 @@ background-color: rgba(170, 0, 0, 10);</string>
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;tu beda wyniki&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tu beda wyniki&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>

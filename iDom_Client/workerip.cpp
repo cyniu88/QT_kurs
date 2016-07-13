@@ -116,6 +116,14 @@ void WorkerIP::run()
                     {
                         emit answerMPD(QString::fromStdString(s_buffor));
                     }
+                    else if (what == "MPD_volume")
+                    {
+                        emit mpd_volumeInfo   (QString::fromStdString(s_buffor));
+                    }
+                    else if (what == "MPD_title")
+                    {
+                        emit mpd_title_info (QString::fromStdString(s_buffor));
+                    }
 
                     break;
                 }
