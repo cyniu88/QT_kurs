@@ -291,7 +291,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -323,30 +323,23 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>480</width>
-               <height>568</height>
+               <width>488</width>
+               <height>579</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <item>
                <layout class="QGridLayout" name="gridLayout_7">
                 <item row="0" column="0">
-                 <widget class="QScrollBar" name="horizontalScrollBar">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
+                 <widget class="QTextEdit" name="temperatureTXT">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
                   </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QScrollBar" name="verticalScrollBar">
-                  <property name="minimumSize">
-                   <size>
-                    <width>100</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgba(0, 0, 0, 0);
+color: rgb(0, 255, 0);</string>
                   </property>
                  </widget>
                 </item>
@@ -486,8 +479,8 @@ background-color: rgba(170, 0, 0, 10);</string>
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tu beda wyniki&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;tu beda wyniki&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>

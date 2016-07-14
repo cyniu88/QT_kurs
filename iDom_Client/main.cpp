@@ -1,13 +1,17 @@
+#include <QTimer>
+#include <QApplication>
+#include <QObject>
+
+#include "workerip.h"
 #include "idom_client.h"
 #include "variable.h"
-#include <QApplication>
-//#include <android/api-level.h>
-#include "workerip.h"
-#include "QObject"
 
 std::string s_buffor;
 int main(int argc, char *argv[])
 {
+
+    QTimer *infoMPDtimer = new QTimer ();
+    QTimer *infoTemperatureTimer = new QTimer();
 
     iDom_CONFIG config;
 
@@ -32,9 +36,12 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(mpd_title_info(QString)),w,SLOT(odb_mpd_title(QString)) );
     QObject::connect(worker,SIGNAL(mpd_volumeInfo(QString)),w,SLOT(odbMpdVolume(QString))  );
     QObject::connect(worker,SIGNAL(errorInfo(QString,QString)),w,SLOT(errorRead(QString,QString))  );
-
+    QObject::connect(infoMPDtimer,SIGNAL(timeout()),w,SLOT(updateMPDinfo()) );
+    QObject::connect(infoTemperatureTimer,SIGNAL(timeout()),w,SLOT(updateTemepretureInfo()) );
+    QObject::connect(worker,SIGNAL(temperature(QString)),w,SLOT(odb_temperature(QString)) );
     worker->start();
     w->show();
-
+    infoTemperatureTimer->start(1000*120);
+    infoMPDtimer->start(20000);
     return a.exec();
 }

@@ -124,6 +124,10 @@ void WorkerIP::run()
                     {
                         emit mpd_title_info (QString::fromStdString(s_buffor));
                     }
+                    else if (what == "temperature")
+                    {
+                        emit temperature (QString::fromStdString(s_buffor));
+                    }
 
                     break;
                 }

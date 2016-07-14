@@ -135,6 +135,25 @@ void iDom_Client::odbMpdVolume(QString s)
 void iDom_Client::errorRead(QString tit, QString msg)
 {
     QMessageBox::information(this,tit,  msg);
+    emit sendTCP("temperature","RS232 get temperature");
+}
+
+void iDom_Client::updateMPDinfo()
+{
+    emit sendTCP("MPD_title","MPD get_info");
+    QThread::sleep(1);
+    emit sendTCP("MPD_volume","MPD get_volume");
+    qDebug("timer mpd info ");
+}
+
+void iDom_Client::updateTemepretureInfo()
+{
+    emit sendTCP("temperature","RS232 get temperature");
+}
+
+void iDom_Client::odb_temperature(QString s)
+{
+    ui->temperatureTXT->setText(s+"\n Inside:Outside");
 }
 
 void iDom_Client::zmienCounter(int c)
