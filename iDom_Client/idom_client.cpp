@@ -38,7 +38,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
         qDebug("udalo sie android");
 
     }
-
+//ui->scrollArea->setWidget(ui->wynik);
 
     pix = pix.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
@@ -123,6 +123,7 @@ void iDom_Client::odb_answer_MPD(QString s)
 void iDom_Client::odb_mpd_title(QString s)
 {
     ui->titleTXT->setText(s);
+    ui->titleTXT->scroll(1,10);
 }
 
 void iDom_Client::odbMpdVolume(QString s)
@@ -134,7 +135,7 @@ void iDom_Client::odbMpdVolume(QString s)
 
 void iDom_Client::errorRead(QString tit, QString msg)
 {
-    QMessageBox::information(this,tit,  msg);
+   // QMessageBox::information(this,tit,  msg);
     emit sendTCP("temperature","RS232 get temperature");
 }
 
@@ -153,7 +154,12 @@ void iDom_Client::updateTemepretureInfo()
 
 void iDom_Client::odb_temperature(QString s)
 {
-    ui->temperatureTXT->setText(s+"\n Inside:Outside");
+    QString in = s.split(":")[0];
+    QString out =s.split(":")[1];
+    out = out.split("\r")[0];
+    qDebug() << out;
+    ui->InsideLCD->display( in   );
+    ui->OutsideLCD->display( out);
 }
 
 void iDom_Client::zmienCounter(int c)

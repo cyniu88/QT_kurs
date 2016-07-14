@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(temperature(QString)),w,SLOT(odb_temperature(QString)) );
     worker->start();
     w->show();
-    infoTemperatureTimer->start(1000*120);
+    infoTemperatureTimer->start(60000);
     infoMPDtimer->start(20000);
     return a.exec();
 }

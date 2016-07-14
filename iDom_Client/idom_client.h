@@ -3,6 +3,7 @@
 #include <variable.h>
 #include <QMainWindow>
 #include<QMessageBox>
+#include <QScroller>
 #include "workerip.h"
 #include <iostream>
 #include <stdlib.h>
