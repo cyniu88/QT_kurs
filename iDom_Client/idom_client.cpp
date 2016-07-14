@@ -23,8 +23,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-
+// dodajemy scrolla area  ajki widget  i czym scrolujemy
+QScroller::grabGesture(ui->wynik,QScroller::TouchGesture);
 
     ////  //////////////////////////    Ladowanie grafiki  ////////////////////////
     QPixmap pix;
