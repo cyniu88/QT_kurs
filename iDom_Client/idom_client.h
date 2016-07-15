@@ -93,6 +93,8 @@ private slots:
 
     void on_pushButtonupdateinfo_released();
 
+    void on_pushButton_22_released();
+
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;

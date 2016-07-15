@@ -6,6 +6,8 @@
 #include <QStackedWidget>
 #include <QDebug>
 #include <QDesktopWidget>
+#include <QtAndroidExtras/QAndroidJniObject> // For JNI, need to select Android Build
+#include <QAndroidJniObject>
 namespace std {
 
 template <typename T>
@@ -135,7 +137,7 @@ void iDom_Client::odbMpdVolume(QString s)
 
 void iDom_Client::errorRead(QString tit, QString msg)
 {
-   // QMessageBox::information(this,tit,  msg);
+    QMessageBox::information(this,tit,  msg);
     emit sendTCP("temperature","RS232 get temperature");
 }
 
@@ -387,4 +389,47 @@ void iDom_Client::on_pushButtonupdateinfo_released()
     QThread::sleep(1);
     emit sendTCP("MPD_volume","MPD get_volume");
 
+}
+
+void iDom_Client::on_pushButton_22_released()
+{
+    // get the Qt android activity
+       QAndroidJniObject activity = QAndroidJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative",
+                                                                               "activity",
+                                                                               "()Landroid/app/Activity;");
+       if (activity.isValid()){
+
+           //get the default SmsManager
+           QAndroidJniObject mySmsManager = QAndroidJniObject::callStaticObjectMethod("android/telephony/SmsManager",
+                                                                                      "getDefault",
+                                                                                      "()Landroid/telephony/SmsManager;");
+           if (!mySmsManager.isValid()) {
+               qDebug() << "Something wrong with SMS manager...";
+               QMessageBox::information(this,"ERROR",  "Something wrong with SMS manager...");
+           } else {
+
+               // get phone number & text from UI and convert to Java String
+               QAndroidJniObject myPhoneNumber = QAndroidJniObject::fromString("506496722");
+               QAndroidJniObject myTextMessage = QAndroidJniObject::fromString("ui->lineEditTexte->text(");
+               QAndroidJniObject scAddress = NULL;
+               //QAndroidJniObject sentIntent = NULL;
+               //QAndroidJniObject deliveryIntent = NULL;
+
+               // call the java function:
+               // public void SmsManager.sendTextMessage(String destinationAddress,
+               //                                        String scAddress, String text,
+               //                                        PendingIntent sentIntent, PendingIntent deliveryIntent)
+               // see: http://developer.android.com/reference/android/telephony/SmsManager.html
+
+               mySmsManager.callMethod<void>("sendTextMessage",
+                                             "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
+                                             myPhoneNumber.object<jstring>(),
+                                             scAddress.object<jstring>(),
+                                             myTextMessage.object<jstring>(), NULL, NULL );
+           }
+
+       } else {
+           qDebug() << "Something wrong with Qt activity...";
+           QMessageBox::information(this,"ERROR",  "Something wrong with Qt activity...");
+       }
 }
