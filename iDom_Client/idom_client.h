@@ -1,13 +1,16 @@
 #ifndef IDOM_CLIENT_H
 #define IDOM_CLIENT_H
-#include <variable.h>
-#include <QMainWindow>
-#include<QMessageBox>
-#include <QScroller>
-#include "workerip.h"
+
 #include <iostream>
 #include <stdlib.h>
 #include <sstream>
+
+#include <QMainWindow>
+#include <QMessageBox>
+#include <QScroller>
+
+#include "workerip.h"
+#include "variable.h"
 namespace Ui {
 class iDom_Client;
 }

@@ -1,13 +1,22 @@
-#include "idom_client.h"
-#include "ui_idom_client.h"
-#include "workerip.h"
-#include "functions.h"
+
 #include <QPixmap>
 #include <QStackedWidget>
 #include <QDebug>
 #include <QDesktopWidget>
+
+#ifdef Q_OS_ANDROID
+
 #include <QtAndroidExtras/QAndroidJniObject> // For JNI, need to select Android Build
 #include <QAndroidJniObject>
+
+#endif
+
+#include "idom_client.h"
+#include "ui_idom_client.h"
+#include "workerip.h"
+#include "functions.h"
+
+
 namespace std {
 
 template <typename T>
@@ -394,42 +403,23 @@ void iDom_Client::on_pushButtonupdateinfo_released()
 void iDom_Client::on_pushButton_22_released()
 {
     // get the Qt android activity
-       QAndroidJniObject activity = QAndroidJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative",
-                                                                               "activity",
-                                                                               "()Landroid/app/Activity;");
-       if (activity.isValid()){
+#ifdef Q_OS_ANDROID
+//    QAndroidJniObject javaNotification = QAndroidJniObject::fromString("dupa");
+//    QAndroidJniObject::callStaticMethod<void>("NotificationClient",
+//                                       "notify",
+//                                       "(Ljava/lang/String;)V",
+//                                       javaNotification.object<jstring>());
+//
+    ui->information->setText("start");
 
-           //get the default SmsManager
-           QAndroidJniObject mySmsManager = QAndroidJniObject::callStaticObjectMethod("android/telephony/SmsManager",
-                                                                                      "getDefault",
-                                                                                      "()Landroid/telephony/SmsManager;");
-           if (!mySmsManager.isValid()) {
-               qDebug() << "Something wrong with SMS manager...";
-               QMessageBox::information(this,"ERROR",  "Something wrong with SMS manager...");
-           } else {
+    QMessageBox::information(this,"start",  "juz andek");
 
-               // get phone number & text from UI and convert to Java String
-               QAndroidJniObject myPhoneNumber = QAndroidJniObject::fromString("506496722");
-               QAndroidJniObject myTextMessage = QAndroidJniObject::fromString("ui->lineEditTexte->text(");
-               QAndroidJniObject scAddress = NULL;
-               //QAndroidJniObject sentIntent = NULL;
-               //QAndroidJniObject deliveryIntent = NULL;
+    int value_in = 10;
+    ui->information->setText("przed");
+    jint  value_out = QAndroidJniObject::callStaticMethod<jint>("Vibrate", "start", "(I)V;",  value_in);
 
-               // call the java function:
-               // public void SmsManager.sendTextMessage(String destinationAddress,
-               //                                        String scAddress, String text,
-               //                                        PendingIntent sentIntent, PendingIntent deliveryIntent)
-               // see: http://developer.android.com/reference/android/telephony/SmsManager.html
+    QMessageBox::information(this,"start",  "IN = "  + QString::number( value_in) + ", OUT = " + QString::number(value_out));
+    qDebug() << "IN = "  << value_in << ", OUT = " << value_out;
 
-               mySmsManager.callMethod<void>("sendTextMessage",
-                                             "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
-                                             myPhoneNumber.object<jstring>(),
-                                             scAddress.object<jstring>(),
-                                             myTextMessage.object<jstring>(), NULL, NULL );
-           }
-
-       } else {
-           qDebug() << "Something wrong with Qt activity...";
-           QMessageBox::information(this,"ERROR",  "Something wrong with Qt activity...");
-       }
+#endif
 }

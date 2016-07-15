@@ -4,9 +4,12 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network androidextras
-
-
+QT += core gui network sensors
+android {
+            message("* Using settings for Android.")
+            QT +=  androidextras
+        }
+MOBILITY = androidextras
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = iDom_Client
 TEMPLATE = app
@@ -26,9 +29,9 @@ FORMS    += idom_client.ui
 
 CONFIG += mobility   c++11
 QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra -pedantic
-MOBILITY = 
 
-DISTFILES += \
+
+OTHER_FILES += \
     iDom_client.ico \
     android/AndroidManifest.xml \
     android/gradle/wrapper/gradle-wrapper.jar \
@@ -36,7 +39,10 @@ DISTFILES += \
     android/res/values/libs.xml \
     android/build.gradle \
     android/gradle/wrapper/gradle-wrapper.properties \
-    android/gradlew.bat
+    android/gradlew.bat \
+    android/src/org/qtproject/example/Chronometer/Vibrate.java \
+    android/src/NotificationClient.java \
+    android/src/Vibrate.java
 
 RESOURCES += \
     ikony.qrc
