@@ -404,22 +404,17 @@ void iDom_Client::on_pushButton_22_released()
 {
     // get the Qt android activity
 #ifdef Q_OS_ANDROID
-//    QAndroidJniObject javaNotification = QAndroidJniObject::fromString("dupa");
-//    QAndroidJniObject::callStaticMethod<void>("NotificationClient",
-//                                       "notify",
-//                                       "(Ljava/lang/String;)V",
-//                                       javaNotification.object<jstring>());
-//
+
+
     ui->information->setText("start");
 
-    QMessageBox::information(this,"start",  "juz andek");
+//    QMessageBox::information(this,"start",  "juz andek");
 
-    int value_in = 10;
-    ui->information->setText("przed");
-    jint  value_out = QAndroidJniObject::callStaticMethod<jint>("Vibrate", "start", "(I)V;",  value_in);
-
-    QMessageBox::information(this,"start",  "IN = "  + QString::number( value_in) + ", OUT = " + QString::number(value_out));
-    qDebug() << "IN = "  << value_in << ", OUT = " << value_out;
+//    int value_in = 10;
+//    ui->information->setText("przed");
+      QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/Vibrate", "start", "(I)V", 300);
+    QMessageBox::information(this,"start",  "  OUT = " );
+//    qDebug() << "IN = "  << value_in << ", OUT = " << value_out;
 
 #endif
 }

@@ -40,9 +40,7 @@ OTHER_FILES += \
     android/build.gradle \
     android/gradle/wrapper/gradle-wrapper.properties \
     android/gradlew.bat \
-    android/src/org/qtproject/example/Chronometer/Vibrate.java \
-    android/src/NotificationClient.java \
-    android/src/Vibrate.java
+    android/src/org/qtproject/example/Chronometer/Vibrate.java
 
 RESOURCES += \
     ikony.qrc
@@ -50,3 +48,5 @@ RESOURCES += \
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 win32:RC_ICONS += iDom_client.ico
+
+DISTFILES +=
