@@ -412,7 +412,7 @@ void iDom_Client::on_pushButton_22_released()
 
 //    int value_in = 10;
 //    ui->information->setText("przed");
-      QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/Vibrate", "start", "(I)V", 300);
+      QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "vibrate", "(I)V", 300);
     QMessageBox::information(this,"start",  "  OUT = " );
 //    qDebug() << "IN = "  << value_in << ", OUT = " << value_out;
 
