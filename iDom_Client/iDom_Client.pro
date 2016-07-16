@@ -18,12 +18,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         idom_client.cpp \
     workerip.cpp \
-    functions.cpp
+    functions.cpp \
+    androidhelper_cyniu.cpp
 
 HEADERS  += idom_client.h \
     variable.h \
     workerip.h \
-    functions.h
+    functions.h \
+    androidhelper_cyniu.h
 
 FORMS    += idom_client.ui
 

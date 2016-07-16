@@ -11,6 +11,7 @@
 
 #include "workerip.h"
 #include "variable.h"
+#include "androidhelper_cyniu.h"
 namespace Ui {
 class iDom_Client;
 }
