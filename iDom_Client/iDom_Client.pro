@@ -18,14 +18,21 @@ TEMPLATE = app
 SOURCES += main.cpp\
         idom_client.cpp \
     workerip.cpp \
-    functions.cpp \
-    androidhelper_cyniu.cpp
+    functions.cpp
+android {
+            message("* Using settings for Android.")
+            SOURCES  +=  androidhelper_cyniu.cpp
+        }
 
 HEADERS  += idom_client.h \
     variable.h \
     workerip.h \
-    functions.h \
-    androidhelper_cyniu.h
+    functions.h
+android {
+            message("* Using settings for Android.")
+            HEADERS +=  androidhelper_cyniu.h
+        }
+
 
 FORMS    += idom_client.ui
 
