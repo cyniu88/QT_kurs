@@ -18,7 +18,8 @@ TEMPLATE = app
 SOURCES += main.cpp\
         idom_client.cpp \
     workerip.cpp \
-    functions.cpp
+    functions.cpp \
+    blocking_queue/blocking_queue.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  +=  androidhelper_cyniu.cpp
@@ -27,7 +28,8 @@ android {
 HEADERS  += idom_client.h \
     variable.h \
     workerip.h \
-    functions.h
+    functions.h \
+    blocking_queue/blocking_queue.h
 android {
             message("* Using settings for Android.")
             HEADERS +=  androidhelper_cyniu.h

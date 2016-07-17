@@ -404,11 +404,24 @@ void iDom_Client::on_pushButton_22_released()
 
 AndroidHelper_cyniu *android = new AndroidHelper_cyniu();
 
+
+
 android->vibrate(300);
 
+ui->information->setText( QString::number(android->fibo(5)));
+android->makeToast(3);
 delete android;
 
+QSensor sensor("QAccelerometer");
+ sensor.start();
+ QSensorReading *reading = sensor.reading();
+int x = reading->property("x").value<int>();
+ int y = reading->value(1).value<int>();
 
+
+ui->information->setText(  QString::number(x)+"  "+ QString::number(y));
 
 #endif
+
+
 }

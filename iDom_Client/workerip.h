@@ -5,6 +5,7 @@
 #include <QThread>
 #include "functions.h"
 #include "variable.h"
+#include "blocking_queue/blocking_queue.h"
 #include <QObject>
 extern std::string s_buffor;
 class WorkerIP : public QThread
@@ -21,8 +22,9 @@ private:
     int counter2 =0;
     int progresCounter =0;
     bool to_send= false;
-    std::string msg;
-    std::string what;
+    ADRESS_WHAT addresIN;
+    ADRESS_WHAT addresOUT;
+    BlockingQueue<ADRESS_WHAT> workerQueue;
 signals:
     void sygnal(int c);
     void sygnal2(int c);

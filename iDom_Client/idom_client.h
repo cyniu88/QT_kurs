@@ -4,10 +4,12 @@
 #include <iostream>
 #include <stdlib.h>
 #include <sstream>
+#include <memory>
 
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QScroller>
+#include <QProximitySensor>
 
 #include "workerip.h"
 #include "variable.h"

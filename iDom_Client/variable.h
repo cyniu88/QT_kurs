@@ -15,4 +15,10 @@ struct iDom_CONFIG {
     bool isWindows = true;
     QMutex IPMutex;
 };
+
+struct ADRESS_WHAT{
+    std::string address;
+    std::string what;
+};
+
 #endif // VARIABLE_H

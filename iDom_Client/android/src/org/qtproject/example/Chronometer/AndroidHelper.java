@@ -7,6 +7,8 @@ import android.content.Context;
 import android.os.Vibrator;
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Toast;
+
 
 public class AndroidHelper extends org.qtproject.qt5.android.bindings.QtActivity
 {
@@ -33,4 +35,18 @@ m_vibrator.vibrate(x);
    else m_vibrator.vibrate(x);
 
 }
+
+
+
+
+
+public  void makeToast(int n)
+{
+    Toast.makeText(getApplicationContext(),
+                                  "Button is clicked", Toast.LENGTH_LONG).show();
+
+                              }
+
+//////end class
+
 }

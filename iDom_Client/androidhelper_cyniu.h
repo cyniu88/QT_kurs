@@ -11,6 +11,8 @@ public:
     AndroidHelper_cyniu();
     ~AndroidHelper_cyniu();
     void vibrate(int msec);
+    int fibo(int n);
+    void makeToast(int text);
 };
 
 #endif // ANDROIDHELPER_CYNIU_H
