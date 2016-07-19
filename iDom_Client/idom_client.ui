@@ -313,7 +313,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
         <bool>true</bool>
        </property>
        <attribute name="icon">
-        <iconset resource="ikony.qrc">
+        <iconset>
          <normaloff>:/new/prefix1/files/INFO_TXT.png</normaloff>:/new/prefix1/files/INFO_TXT.png</iconset>
        </attribute>
        <attribute name="title">
@@ -332,13 +332,16 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>672</width>
-               <height>568</height>
+               <width>680</width>
+               <height>579</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <item>
-               <layout class="QGridLayout" name="gridLayout_7">
+               <layout class="QGridLayout" name="gridLayout_7" columnstretch="0,0,0,0,0,0,0,0,0,0" rowminimumheight="0,0,0">
+                <property name="sizeConstraint">
+                 <enum>QLayout::SetFixedSize</enum>
+                </property>
                 <item row="1" column="9">
                  <widget class="QLineEdit" name="OutsideDEG">
                   <property name="maximumSize">
@@ -506,7 +509,7 @@ font: 10pt &quot;Comic Sans MS&quot;;</string>
         <string notr="true"/>
        </property>
        <attribute name="icon">
-        <iconset resource="ikony.qrc">
+        <iconset>
          <normaloff>:/new/prefix1/files/MUSIC_TXT.png</normaloff>:/new/prefix1/files/MUSIC_TXT.png</iconset>
        </attribute>
        <attribute name="title">
@@ -600,7 +603,7 @@ background-color: rgba(170, 0, 0, 10);</string>
         <bool>true</bool>
        </property>
        <attribute name="icon">
-        <iconset resource="ikony.qrc">
+        <iconset>
          <normaloff>:/new/prefix1/files/CONSOLE_TXT.png</normaloff>:/new/prefix1/files/CONSOLE_TXT.png</iconset>
        </attribute>
        <attribute name="title">
@@ -630,8 +633,8 @@ background-color: rgba(170, 0, 0, 10);</string>
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tu beda wyniki&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;tu beda wyniki&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -742,7 +745,7 @@ background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(205, 94, 2
         <bool>true</bool>
        </property>
        <attribute name="icon">
-        <iconset resource="ikony.qrc">
+        <iconset>
          <normaloff>:/new/prefix1/files/LED_TXT.png</normaloff>:/new/prefix1/files/LED_TXT.png</iconset>
        </attribute>
        <attribute name="title">
@@ -1272,9 +1275,7 @@ background-color: rgb(204, 93, 43);</string>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="ikony.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>exitButton</sender>
