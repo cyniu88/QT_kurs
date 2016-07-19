@@ -3,6 +3,12 @@
 #include <iostream>
 #include <string>
 #include <QMutex>
+
+#include"blocking_queue/blocking_queue.h"
+struct ADRESS_WHAT{
+    std::string address;
+    std::string what;
+};
 struct iDom_CONFIG {
     std::string logo_windows = "f/logo.png";
     std::string logo_android = "/storage/emulated/0/f/logo.png";
@@ -14,11 +20,9 @@ struct iDom_CONFIG {
     std::string command = "OK";
     bool isWindows = true;
     QMutex IPMutex;
+   BlockingQueue<ADRESS_WHAT> workerQueue;
 };
 
-struct ADRESS_WHAT{
-    std::string address;
-    std::string what;
-};
+
 
 #endif // VARIABLE_H

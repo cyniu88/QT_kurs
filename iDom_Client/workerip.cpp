@@ -70,11 +70,11 @@ void WorkerIP::run()
     while (config->goWhile){
 
 
-        if (workerQueue.Size()<1){
+        if (config->workerQueue.Size()<1){
             QThread::usleep(100);
             continue;
         }
-        addresOUT = workerQueue.Take();
+        addresOUT = config->workerQueue.Take();
         emit progress(0);
         socket->write( addresOUT.what.c_str());
         to_send = false;
@@ -164,7 +164,7 @@ void WorkerIP::fromTCP(std::string addres , std::string qmsg)
     addresIN.address = addres;
     addresIN.what = qmsg ;
 
-    workerQueue.Put(addresIN);
+    config->workerQueue.Put(addresIN);
 
-    qDebug()<< "przyzedl sygnal " << QString::number(workerQueue.Size()) ;
+    qDebug()<< "przyzedl sygnal " << QString::number(config->workerQueue.Size()) ;
 }
