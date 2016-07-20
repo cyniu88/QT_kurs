@@ -10,6 +10,7 @@
 #include <QMessageBox>
 #include <QScroller>
 #include <QProximitySensor>
+#include <QSystemTrayIcon>
 
 #include "workerip.h"
 #include "variable.h"
@@ -107,6 +108,7 @@ private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
     void sendSignalColor(int r,int g, int b, int from=0, int to=60);
+    QSystemTrayIcon trayIcon;
 public slots:
       void zmienCounter(int c);
       void zmienCounter2(int c);

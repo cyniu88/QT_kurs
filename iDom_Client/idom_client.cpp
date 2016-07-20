@@ -30,7 +30,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     config(config)
 {
     ui->setupUi(this);
-
+    trayIcon.setIcon(QIcon(":/new/prefix1/iDom_client.ico"));
+    trayIcon.show();
 // dodajemy scrolla area  ajki widget  i czym scrolujemy
 QScroller::grabGesture(ui->wynik,QScroller::TouchGesture);
 
@@ -144,6 +145,7 @@ void iDom_Client::odbMpdVolume(QString s)
 void iDom_Client::errorRead(QString tit, QString msg)
 {
     QMessageBox::information(this,tit,  msg);
+    trayIcon.showMessage(tit,msg);
     emit sendTCP("temperature","RS232 get temperature");
 }
 
@@ -399,6 +401,8 @@ void iDom_Client::on_pushButtonupdateinfo_released()
 
 void iDom_Client::on_pushButton_22_released()
 {
+
+
     // get the Qt android activity
 #ifdef Q_OS_ANDROID
 
