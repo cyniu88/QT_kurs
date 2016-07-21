@@ -30,7 +30,16 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     config(config)
 {
     ui->setupUi(this);
+#ifdef Q_OS_WIN
+    if(QSystemTrayIcon::isSystemTrayAvailable() == false)
+    {
+        QMessageBox::critical(this,":(","Ninja Mode is not available on this computer. Try again later :P");
+    }
 
+    trayIcon = new  QSystemTrayIcon();
+    trayIcon->setIcon(QIcon(":/new/prefix1/iDom_client.ico"));
+    trayIcon->show();
+#endif
     // dodajemy scrolla area  ajki widget  i czym scrolujemy
     QScroller::grabGesture(ui->wynik,QScroller::TouchGesture);
 
@@ -75,7 +84,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     p.setColor(ui->wynik->backgroundRole(), Qt::transparent);
     ui->wynik->setPalette(p);
 
-    ui->wynik->setText("...................... ");
+
 
 
 
@@ -90,6 +99,9 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
 iDom_Client::~iDom_Client()
 {
+#ifdef Q_OS_WIN
+    delete trayIcon;
+#endif
     delete ui;
 }
 
@@ -151,6 +163,9 @@ void iDom_Client::errorRead(QString tit, QString msg)
     delete android;
 #endif
     QMessageBox::information(this,tit,  msg);
+#ifdef Q_OS_WIN
+    trayIcon->showMessage(tit,msg);
+#endif
     emit sendTCP("temperature","RS232 get temperature");
 }
 

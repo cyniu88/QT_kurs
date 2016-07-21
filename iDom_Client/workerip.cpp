@@ -74,6 +74,8 @@ void WorkerIP::run()
             QThread::usleep(100);
             continue;
         }
+
+
         addresOUT = config->workerQueue.Take();
         emit progress(0);
         socket->write( addresOUT.what.c_str());
