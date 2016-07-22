@@ -12,11 +12,10 @@
 #include <QProximitySensor>
 #include <QSystemTrayIcon>
 
+#include "android_interface/android_interface.h"
 #include "workerip.h"
 #include "variable.h"
-#ifdef Q_OS_ANDROID
-#include "androidhelper_cyniu.h"
-#endif
+
 namespace Ui {
 class iDom_Client;
 }
@@ -108,7 +107,12 @@ private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
     void sendSignalColor(int r,int g, int b, int from=0, int to=60);
-    QSystemTrayIcon trayIcon;
+    android_interface droid;
+
+#ifdef Q_OS_WIN
+    QSystemTrayIcon *trayIcon;
+#endif
+
 public slots:
       void zmienCounter(int c);
       void zmienCounter2(int c);

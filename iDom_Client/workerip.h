@@ -24,7 +24,7 @@ private:
     bool to_send= false;
     ADRESS_WHAT addresIN;
     ADRESS_WHAT addresOUT;
-    BlockingQueue<ADRESS_WHAT> workerQueue;
+
 signals:
     void sygnal(int c);
     void sygnal2(int c);

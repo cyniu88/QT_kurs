@@ -7,7 +7,7 @@
 #include <condition_variable>
 #include <assert.h>
 
-#define MAX_CAPACITY 20
+
 
 template<typename T>
 class BlockingQueue{
@@ -30,6 +30,7 @@ class BlockingQueue{
 		std::condition_variable empty_;
 		std::queue<T> queue_;
 		size_t capacity_; 
+       static constexpr int MAX_CAPACITY = 20;
 };
 
 #endif

@@ -30,10 +30,19 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     config(config)
 {
     ui->setupUi(this);
-    trayIcon.setIcon(QIcon(":/new/prefix1/iDom_client.ico"));
-    trayIcon.show();
-// dodajemy scrolla area  ajki widget  i czym scrolujemy
-QScroller::grabGesture(ui->wynik,QScroller::TouchGesture);
+
+#ifdef Q_OS_WIN
+    if(QSystemTrayIcon::isSystemTrayAvailable() == false)
+    {
+        QMessageBox::critical(this,":(","Ninja Mode is not available on this computer. Try again later :P");
+    }
+
+    trayIcon = new  QSystemTrayIcon();
+    trayIcon->setIcon(QIcon(":/new/prefix1/iDom_client.ico"));
+    trayIcon->show();
+#endif
+    // dodajemy scrolla area  ajki widget  i czym scrolujemy
+    QScroller::grabGesture(ui->wynik,QScroller::TouchGesture);
 
     ////  //////////////////////////    Ladowanie grafiki  ////////////////////////
     QPixmap pix;
@@ -47,7 +56,7 @@ QScroller::grabGesture(ui->wynik,QScroller::TouchGesture);
         qDebug("udalo sie android");
 
     }
-//ui->scrollArea->setWidget(ui->wynik);
+    //ui->scrollArea->setWidget(ui->wynik);
 
     pix = pix.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
@@ -56,7 +65,7 @@ QScroller::grabGesture(ui->wynik,QScroller::TouchGesture);
 
 
 
-//                                   );
+    //                                   );
     /////////////////////////////  ustawianie przezroczystosci i koloru  pola tekstowego ///////////
     QPalette p;
     p.setColor(QPalette::Text,Qt::green);
@@ -74,23 +83,26 @@ QScroller::grabGesture(ui->wynik,QScroller::TouchGesture);
 
     p.setColor(QPalette::Text,Qt::green);
     p.setColor(ui->wynik->backgroundRole(), Qt::transparent);
-   ui->wynik->setPalette(p);
+    ui->wynik->setPalette(p);
 
-    ui->wynik->setText("...................... ");
+
 
 
 
     QRect rec = QApplication::desktop()->screenGeometry();
-   int  height = rec.height();
+    int  height = rec.height();
     int width = rec.width();
 
-        std::string s =  std::to_string(height) +" and " + std::to_string(width)  ;
+    std::string s =  std::to_string(height) +" and " + std::to_string(width)  ;
 
-         ui->wynik->setText( QString::fromStdString( s));
+    ui->wynik->setText( QString::fromStdString( s));
 }
 
 iDom_Client::~iDom_Client()
 {
+#ifdef Q_OS_WIN
+    delete trayIcon;
+#endif
     delete ui;
 }
 
@@ -109,8 +121,8 @@ void iDom_Client::on_label_linkActivated(const QString &link)
 
 void iDom_Client::odb_answer(QString s){
     ui->wynik->setText(s);
-     ui->lcdNumber_2->display(s.size());
-     ui->progressBar->setValue(100);
+    ui->lcdNumber_2->display(s.size());
+    ui->progressBar->setValue(100);
 }
 
 void iDom_Client::readProgress(int c)
@@ -144,8 +156,13 @@ void iDom_Client::odbMpdVolume(QString s)
 
 void iDom_Client::errorRead(QString tit, QString msg)
 {
+    droid.vibrate(300);
     QMessageBox::information(this,tit,  msg);
-    trayIcon.showMessage(tit,msg);
+
+#ifdef Q_OS_WIN
+    trayIcon->showMessage(tit,msg);
+#endif
+
     emit sendTCP("temperature","RS232 get temperature");
 }
 
@@ -187,8 +204,8 @@ void iDom_Client::zmienCounter2(int c)
 void iDom_Client::on_disconnectButton_released()
 {
     if (ui->disconnectButton->text()=="DISCONNECT"){
-    config->goWhile = false;
-    ui->disconnectButton->setText("  CONNECT  ");
+        config->goWhile = false;
+        ui->disconnectButton->setText("  CONNECT  ");
     }
     else
     {
@@ -206,7 +223,7 @@ void iDom_Client::on_lineEdit_editingFinished()
 
 void iDom_Client::on_pushButton_released()
 {
-   // QString *s = (config->command);
+    // QString *s = (config->command);
     //QDebug() << " mamy komende: " << s;
     emit sendTCP("console",config->command);
 
@@ -214,9 +231,9 @@ void iDom_Client::on_pushButton_released()
 
 void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
 {
-     emit sendTCP("LED",
-    "RS232 send LED:["+std::to_string(from)+"-"+std::to_string(to)+"-"+std::to_string(r)+"-"+std::to_string(g)+"-"+std::to_string(b)+"];"
-     );
+    emit sendTCP("LED",
+                 "RS232 send LED:["+std::to_string(from)+"-"+std::to_string(to)+"-"+std::to_string(r)+"-"+std::to_string(g)+"-"+std::to_string(b)+"];"
+                 );
     std::string s_buffor = "RS232 send LED:["+std::to_string(from)+"-"+std::to_string(to)+"-"+std::to_string(r)+"-"+std::to_string(g)+"-"+std::to_string(b)+"];";
     qDebug() << QString::fromStdString(s_buffor);
 }
@@ -242,7 +259,7 @@ void iDom_Client::on_redButton_22_released()
 
 void iDom_Client::on_pushButton_2_released()
 {
-   // config->command="RS232 send LED:[1-60-0-0-255];";
+    // config->command="RS232 send LED:[1-60-0-0-255];";
     sendSignalColor(0,0,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 
 }
@@ -256,8 +273,8 @@ void iDom_Client::on_pushButton_3_released()
 
 void iDom_Client::on_pushButton_4_released()
 {
-//    config->command="RS232 send LED:[1-60-254-254-51];";
-//    emit sendTCP("button",config->command);
+    //    config->command="RS232 send LED:[1-60-254-254-51];";
+    //    emit sendTCP("button",config->command);
     sendSignalColor(255,255,51,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
@@ -402,30 +419,7 @@ void iDom_Client::on_pushButtonupdateinfo_released()
 void iDom_Client::on_pushButton_22_released()
 {
 
-
+    droid.vibrate(300);
     // get the Qt android activity
-#ifdef Q_OS_ANDROID
-
-AndroidHelper_cyniu *android = new AndroidHelper_cyniu();
-
-
-
-android->vibrate(300);
-
-ui->information->setText( QString::number(android->fibo(5)));
-android->makeToast(3);
-delete android;
-
-QSensor sensor("QAccelerometer");
- sensor.start();
- QSensorReading *reading = sensor.reading();
-int x = reading->property("x").value<int>();
- int y = reading->value(1).value<int>();
-
-
-ui->information->setText(  QString::number(x)+"  "+ QString::number(y));
-
-#endif
-
 
 }
