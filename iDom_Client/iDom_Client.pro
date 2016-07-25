@@ -8,6 +8,7 @@ QT += core gui network sensors
 android {
             message("* Using settings for Android.")
             QT +=  androidextras
+
         }
 MOBILITY = androidextras
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets

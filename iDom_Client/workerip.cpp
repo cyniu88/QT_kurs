@@ -20,23 +20,40 @@ void WorkerIP::run()
         socket->connectToHost(config->serverIP.c_str(),config->serverPort);
 
 
-        if(socket->waitForConnected(5000))
+        if(socket->waitForConnected())
         {
             qDebug() << "Connected!";
 
             // send
             socket->write(  RSHash().c_str());
-            socket->waitForBytesWritten(1000);
-            socket->waitForReadyRead(3000);
+            while (socket->waitForBytesWritten(1000)){
+                qDebug() << "czekam na zapis : ";
+            }
+            while (true){
+                qDebug() << "czekam na ODCZYT : ";
+                if (socket->waitForReadyRead(100)==true)
+                {
+                    break;
+                }
+
+            }
 
             qDebug() << "Reading ready : " << socket->bytesAvailable();
 
             // get the data
             buffor = socket->readAll();
-            socket->waitForReadyRead(3000);
+
+
             socket->write("OK");
             socket->waitForBytesWritten(1000);
-            socket->waitForReadyRead(3000);
+            while (true){
+                qDebug() << "czekam na ODCZYT 2 : ";
+                if (socket->waitForReadyRead(100)==true)
+                {
+                    break;
+                }
+
+            }
             qDebug() << "Reading2: " << socket->bytesAvailable();
 
             // get the data
@@ -70,7 +87,14 @@ void WorkerIP::run()
     while (config->goWhile){
 
 
-        if (config->workerQueue.Size()<1){
+        if ( config->goWhile == false)
+        {
+            ADRESS_WHAT temp;
+            temp.address="console";
+            temp.what="exit";
+            config->workerQueue.Put(temp);
+        }
+        if (config->workerQueue.Size()<1  ){
             QThread::usleep(100);
             continue;
         }
@@ -83,7 +107,14 @@ void WorkerIP::run()
         //config->IPMutex.unlock();
 
         socket->waitForBytesWritten(1000);
-        socket->waitForReadyRead(3000);
+        while (true){
+            qDebug() << "czekam na ODCZYT 2 : ";
+            if (socket->waitForReadyRead(100)==true)
+            {
+                break;
+            }
+
+        }
 
         qDebug() << "Reading: " << socket->bytesAvailable();
         buffor = socket->readAll();
@@ -99,7 +130,14 @@ void WorkerIP::run()
         buffor.clear();
         s_buffor.erase();
         while (true){
-            socket->waitForReadyRead(3000);
+            while (true){
+                qDebug() << "czekam na ODCZYT 2 : ";
+                if (socket->waitForReadyRead(100)==true)
+                {
+                    break;
+                }
+
+            }
             /////////////
 
             emit sygnal(++counter);

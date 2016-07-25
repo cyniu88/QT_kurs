@@ -7,6 +7,8 @@
 #include "variable.h"
 #include "blocking_queue/blocking_queue.h"
 #include <QObject>
+
+
 extern std::string s_buffor;
 class WorkerIP : public QThread
 {

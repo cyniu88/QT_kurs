@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
     WorkerIP * worker = new WorkerIP(&config);
 
 
-
     QApplication a(argc, argv);
     a.setWindowIcon( QIcon(":/new/prefix1/iDom_client.ico"));
 

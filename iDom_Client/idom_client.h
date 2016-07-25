@@ -31,8 +31,6 @@ public:
 private slots:
     void on_EXITButton_released();
 
-    void on_label_linkActivated(const QString &link);
-
 
 
     void on_disconnectButton_released();
