@@ -96,6 +96,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     std::string s =  std::to_string(height) +" and " + std::to_string(width)  ;
 
     ui->wynik->setText( QString::fromStdString( s));
+
+
 }
 
 iDom_Client::~iDom_Client()
@@ -235,10 +237,105 @@ void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
     qDebug() << QString::fromStdString(s_buffor);
 }
 
-
-void iDom_Client::on_playButton_released()
+void iDom_Client::on_pushButton_12_released()
 {
-    emit sendTCP("MPD","MPD start");
+    sendSignalColor(70, 0, 130,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+
+}
+
+void iDom_Client::on_pushButton_13_released()
+{
+    sendSignalColor(255, 192, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+
+}
+
+void iDom_Client::on_pushButton_25_released()
+{
+    sendSignalColor(147, 246, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_18_released()
+{
+    sendSignalColor(178, 34, 34,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_19_released()
+{
+    sendSignalColor(128, 0, 128,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_20_released()
+{
+    sendSignalColor(8, 37, 103,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_21_released()
+{
+    sendSignalColor(255, 255, 153,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_17_released()
+{
+    sendSignalColor(207, 47, 47,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_16_released()
+{
+    sendSignalColor(128, 128, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_15_released()
+{
+    sendSignalColor(159, 159, 223,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_14_released()
+{
+    sendSignalColor(112, 32, 31,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_26_released()
+{
+    sendSignalColor(98, 0, 44,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+void iDom_Client::on_pushButton_10_released()
+{
+    sendSignalColor(255, 165, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_11_released()
+{
+    sendSignalColor(128, 0, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_23_released()
+{
+    sendSignalColor(255,255,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_6_released()
+{
+    sendSignalColor(255,128,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_7_released()
+{
+    sendSignalColor(0,128,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_8_released()
+{
+    sendSignalColor(0,255,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_9_released()
+{
+    sendSignalColor(204, 93, 43,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+}
+
+void iDom_Client::on_pushButton_24_released()
+{
+    sendSignalColor(0, 127, 255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
 void iDom_Client::on_LED_OFF_Button_37_released()
@@ -282,6 +379,13 @@ void iDom_Client::on_pushButton_5_released()
 }
 
 
+void iDom_Client::on_playButton_released()
+{
+    emit sendTCP("MPD","MPD start");
+}
+
+
+
 void iDom_Client::on_RESET_pushButton_released()
 {
     ui->spinBox_fromLED->setValue(0);
@@ -291,36 +395,6 @@ void iDom_Client::on_RESET_pushButton_released()
     ui->lcdNumber_fromLED->display(0);
     ui->lcdNumber_toLED->display(60);
 
-}
-
-void iDom_Client::on_pushButton_23_released()
-{
-    sendSignalColor(255,255,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_pushButton_6_released()
-{
-    sendSignalColor(255,128,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_pushButton_7_released()
-{
-    sendSignalColor(0,128,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_pushButton_8_released()
-{
-    sendSignalColor(0,255,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_pushButton_9_released()
-{
-    sendSignalColor(204, 93, 43,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_pushButton_24_released()
-{
-    sendSignalColor(0, 127, 255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
 void iDom_Client::on_to_horizontalSlider_2_valueChanged(int value)
@@ -360,15 +434,7 @@ void iDom_Client::on_spinBox_fromLED_valueChanged(int arg1)
     ui->lcdNumber_fromLED->display(ui->from_horizontalSlider->value());
 }
 
-void iDom_Client::on_pushButton_10_released()
-{
-    sendSignalColor(255, 165, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
 
-void iDom_Client::on_pushButton_11_released()
-{
-    sendSignalColor(128, 0, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
 
 void iDom_Client::on_stopButton_released()
 {
@@ -421,3 +487,4 @@ void iDom_Client::on_pushButton_22_released()
     // get the Qt android activity
     //ui->information->setText(droid.getAccelerometer());
 }
+

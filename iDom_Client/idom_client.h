@@ -12,6 +12,8 @@
 #include <QProximitySensor>
 #include <QSystemTrayIcon>
 
+
+
 #include "android_interface/android_interface.h"
 #include "workerip.h"
 #include "variable.h"
@@ -27,6 +29,17 @@ class iDom_Client : public QMainWindow
 public:
     explicit iDom_Client(iDom_CONFIG *config, QWidget *parent = 0);
     ~iDom_Client();
+private:
+    Ui::iDom_Client *ui;
+    iDom_CONFIG *config;
+    void sendSignalColor(int r,int g, int b, int from=0, int to=60);
+    android_interface droid;
+
+
+
+#ifdef Q_OS_WIN
+    QSystemTrayIcon *trayIcon;
+#endif
 
 private slots:
     void on_EXITButton_released();
@@ -101,15 +114,31 @@ private slots:
 
     void on_pushButton_22_released();
 
-private:
-    Ui::iDom_Client *ui;
-    iDom_CONFIG *config;
-    void sendSignalColor(int r,int g, int b, int from=0, int to=60);
-    android_interface droid;
+    void on_pushButton_12_released();
 
-#ifdef Q_OS_WIN
-    QSystemTrayIcon *trayIcon;
-#endif
+    void on_pushButton_13_released();
+
+    void on_pushButton_25_released();
+
+    void on_pushButton_18_released();
+
+    void on_pushButton_19_released();
+
+    void on_pushButton_20_released();
+
+    void on_pushButton_21_released();
+
+    void on_pushButton_17_released();
+
+    void on_pushButton_16_released();
+
+    void on_pushButton_15_released();
+
+    void on_pushButton_14_released();
+
+    void on_pushButton_26_released();
+
+
 
 public slots:
       void zmienCounter(int c);

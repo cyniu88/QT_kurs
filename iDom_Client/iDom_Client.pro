@@ -17,22 +17,22 @@ TEMPLATE = app
 #LIBS = -landroid
 
 SOURCES += main.cpp\
-        idom_client.cpp \
-    workerip.cpp \
-    functions.cpp \
-    blocking_queue/blocking_queue.cpp \
-    android_interface/android_interface.cpp
+            idom_client.cpp \
+            workerip.cpp \
+            functions.cpp \
+            blocking_queue/blocking_queue.cpp \
+            android_interface/android_interface.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  +=  androidhelper_cyniu.cpp
         }
 
 HEADERS  += idom_client.h \
-    variable.h \
-    workerip.h \
-    functions.h \
-    blocking_queue/blocking_queue.h \
-    android_interface/android_interface.h
+            variable.h \
+            workerip.h \
+            functions.h \
+            blocking_queue/blocking_queue.h \
+            android_interface/android_interface.h
 android {
             message("* Using settings for Android.")
             HEADERS +=  androidhelper_cyniu.h
@@ -42,7 +42,7 @@ android {
 FORMS    += idom_client.ui
 
 CONFIG += mobility   c++11
-QMAKE_CXXFLAGS += -std=c++11 -Wall -Wextra -pedantic
+QMAKE_CXXFLAGS += -std=c++11 -Wall  -pedantic
 
 
 OTHER_FILES += \

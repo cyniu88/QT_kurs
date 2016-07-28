@@ -93,6 +93,7 @@ void WorkerIP::run()
             temp.address="console";
             temp.what="exit";
             config->workerQueue.Put(temp);
+            socket->close();
         }
         if (config->workerQueue.Size()<1  ){
             QThread::usleep(100);

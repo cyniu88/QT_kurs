@@ -41,6 +41,6 @@ int main(int argc, char *argv[])
     worker->start();
     w->show();
     infoTemperatureTimer->start(60000);
-    infoMPDtimer->start(20000);
+    infoMPDtimer->start(10000);
     return a.exec();
 }
