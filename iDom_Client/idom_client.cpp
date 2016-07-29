@@ -105,6 +105,7 @@ iDom_Client::~iDom_Client()
 #ifdef Q_OS_WIN
     delete trayIcon;
 #endif
+    delete okno;
     delete ui;
 }
 
@@ -468,6 +469,7 @@ void iDom_Client::on_pushButton_volumeDOWN_released()
 
 void iDom_Client::on_exitButton_pressed()
 {
+    config->goWhile==false;
     emit sendTCP("console","exit");
 }
 
@@ -488,3 +490,18 @@ void iDom_Client::on_pushButton_22_released()
     //ui->information->setText(droid.getAccelerometer());
 }
 
+
+void iDom_Client::on_pushButton_27_released()
+{
+
+    okno = new MainWindow();
+    okno->show();
+
+
+  //delete okno;
+}
+
+void iDom_Client::on_pushButton_28_clicked()
+{
+
+}

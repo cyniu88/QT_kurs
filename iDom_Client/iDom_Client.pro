@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT += core gui network sensors
+QT += core gui network sensors  multimedia multimediawidgets
 android {
             message("* Using settings for Android.")
             QT +=  androidextras
@@ -21,7 +21,8 @@ SOURCES += main.cpp\
             workerip.cpp \
             functions.cpp \
             blocking_queue/blocking_queue.cpp \
-            android_interface/android_interface.cpp
+            android_interface/android_interface.cpp \
+    mainwindow.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  +=  androidhelper_cyniu.cpp
@@ -32,14 +33,16 @@ HEADERS  += idom_client.h \
             workerip.h \
             functions.h \
             blocking_queue/blocking_queue.h \
-            android_interface/android_interface.h
+            android_interface/android_interface.h \
+    mainwindow.h
 android {
             message("* Using settings for Android.")
             HEADERS +=  androidhelper_cyniu.h
         }
 
 
-FORMS    += idom_client.ui
+FORMS    += idom_client.ui \
+    mainwindow.ui
 
 CONFIG += mobility   c++11
 QMAKE_CXXFLAGS += -std=c++11 -Wall  -pedantic

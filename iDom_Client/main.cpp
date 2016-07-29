@@ -2,6 +2,8 @@
 #include <QApplication>
 #include <QObject>
 
+
+
 #include "workerip.h"
 #include "idom_client.h"
 #include "variable.h"
@@ -42,5 +44,17 @@ int main(int argc, char *argv[])
     w->show();
     infoTemperatureTimer->start(60000);
     infoMPDtimer->start(10000);
-    return a.exec();
+
+
+     a.exec();
+     config.goWhile=false;
+     QThread::sleep(5);
+     delete worker;
+     infoMPDtimer->stop();
+     infoTemperatureTimer->stop();
+     delete infoMPDtimer;
+     delete infoTemperatureTimer;
+     delete w;
+
+    return 0;
 }

@@ -84,16 +84,14 @@ void WorkerIP::run()
 
     unsigned int len_send = 0;
     unsigned int len_temp = 0;
-    while (config->goWhile){
+    bool goNow = true;
+    while (goNow){
 
 
         if ( config->goWhile == false)
         {
-            ADRESS_WHAT temp;
-            temp.address="console";
-            temp.what="exit";
-            config->workerQueue.Put(temp);
-            socket->close();
+
+            break;
         }
         if (config->workerQueue.Size()<1  ){
             QThread::usleep(100);
@@ -109,7 +107,7 @@ void WorkerIP::run()
 
         socket->waitForBytesWritten(1000);
         while (true){
-            qDebug() << "czekam na ODCZYT 2 : ";
+           // qDebug() << "czekam na ODCZYT 2 : ";
             if (socket->waitForReadyRead(100)==true)
             {
                 break;
@@ -117,7 +115,7 @@ void WorkerIP::run()
 
         }
 
-        qDebug() << "Reading: " << socket->bytesAvailable();
+       // qDebug() << "Reading: " << socket->bytesAvailable();
         buffor = socket->readAll();
         //socket->waitForBytesWritten(1000);
         //socket->waitForReadyRead(3000);
@@ -132,7 +130,7 @@ void WorkerIP::run()
         s_buffor.erase();
         while (true){
             while (true){
-                qDebug() << "czekam na ODCZYT 2 : ";
+                //qDebug() << "czekam na ODCZYT 2 : ";
                 if (socket->waitForReadyRead(100)==true)
                 {
                     break;
@@ -148,7 +146,7 @@ void WorkerIP::run()
 
 
 
-            qDebug() << "Reading: " << socket->bytesAvailable();
+            //qDebug() << "Reading: " << socket->bytesAvailable();
             buffor = socket->readAll();
             s_buffor += buffor.toStdString();
             if (s_buffor.length()==len_send){
@@ -156,7 +154,7 @@ void WorkerIP::run()
 
                 emit sygnal(s_buffor.length());
                 qDebug("mam wsztstko!");
-                qDebug() << QString::fromStdString(s_buffor);
+              //  qDebug() << QString::fromStdString(s_buffor);
 
 
                 if (addresOUT.address == "console"){
@@ -194,7 +192,7 @@ void WorkerIP::run()
     // close the connection
     socket->close();
 
-
+    qDebug("koniec koncow workera @@@@@@@@@@@@");
 
 
 }

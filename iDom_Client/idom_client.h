@@ -11,8 +11,10 @@
 #include <QScroller>
 #include <QProximitySensor>
 #include <QSystemTrayIcon>
+#include <QtMultimediaWidgets/QVideoWidget>
+#include <QtMultimedia/QMediaPlayer>
 
-
+#include "mainwindow.h"
 
 #include "android_interface/android_interface.h"
 #include "workerip.h"
@@ -32,6 +34,8 @@ public:
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
+
+    MainWindow *okno;
     void sendSignalColor(int r,int g, int b, int from=0, int to=60);
     android_interface droid;
 
@@ -139,6 +143,10 @@ private slots:
     void on_pushButton_26_released();
 
 
+
+    void on_pushButton_27_released();
+
+    void on_pushButton_28_clicked();
 
 public slots:
       void zmienCounter(int c);
