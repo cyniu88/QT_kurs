@@ -1,16 +1,25 @@
-#include "mainwindow.h"
+
 #include <QApplication>
+#include <QGraphicsView>
 
-int main(int argc, char *argv[])
+#include "knob.h"
+
+int main(int argc, char **argv)
 {
-    QApplication a(argc, argv);
-    MainWindow *w = new MainWindow();
+    QApplication app(argc, argv);
 
+    QGraphicsScene scene;
+    QGraphicsView view(&scene);
 
-    QTimer *timer= new QTimer();
-    QObject::connect(timer,SIGNAL(timeout()),   w,SLOT(update()));
-    timer->start(1500);
-    w->show();
+    Knob *knob1 = new Knob();
+    knob1->setPos( -110, 0);
+    Knob *knob2 = new Knob();
+    knob2->setPos( 0,0);
+    scene.addItem(knob1);
+    scene.addItem(knob2);
 
-    return a.exec();
+    view.showMaximized();
+    view.fitInView(scene.sceneRect().adjusted(-20, -20, 20, 20), Qt::KeepAspectRatio);
+
+    return app.exec();
 }

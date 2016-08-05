@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,9 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        pilotwindow.cpp
+        pilotwindow.cpp \
+    joypad.cpp
 
-HEADERS  += pilotwindow.h
+HEADERS  += pilotwindow.h \
+    joypad.h
 
 FORMS    += pilotwindow.ui
 
