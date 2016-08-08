@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.0.3, 2016-08-08T16:27:38. -->
+<!-- Written by QtCreator 4.0.3, 2016-08-03T16:37:46. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{97c27ecc-2151-4ff0-8fd4-f6c913775498}</value>
+  <value type="QByteArray">{05fd2b93-636f-4c76-80e1-57e8f765f8c9}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -308,7 +308,7 @@
   <valuemap type="QVariantMap">
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Android dla armeabi-v7a (GCC 4.9, Qt 5.7.0)</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Android dla armeabi-v7a (GCC 4.9, Qt 5.7.0)</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{df9d7714-107f-471f-a39b-3eb43bd4859d}</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{ba92aa74-ea14-4a37-aa71-e77990042dac}</value>
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">1</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
@@ -346,7 +346,7 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.AndroidPackageInstallationStep</value>
      </valuemap>
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.3">
-      <value type="QString" key="BuildTargetSdk">android-23</value>
+      <value type="QString" key="BuildTargetSdk">android-22</value>
       <value type="QString" key="KeystoreLocation"></value>
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Zbuduj Android APK</value>
@@ -423,7 +423,7 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.AndroidPackageInstallationStep</value>
      </valuemap>
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.3">
-      <value type="QString" key="BuildTargetSdk">android-23</value>
+      <value type="QString" key="BuildTargetSdk">android-22</value>
       <value type="QString" key="KeystoreLocation"></value>
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Zbuduj Android APK</value>
@@ -500,7 +500,7 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.AndroidPackageInstallationStep</value>
      </valuemap>
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.3">
-      <value type="QString" key="BuildTargetSdk">android-23</value>
+      <value type="QString" key="BuildTargetSdk">android-22</value>
       <value type="QString" key="KeystoreLocation"></value>
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Zbuduj Android APK</value>
