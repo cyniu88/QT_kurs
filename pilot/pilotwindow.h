@@ -4,10 +4,11 @@
 #include <QMainWindow>
 #include <QTouchEvent>
 #include <QtEvents>
-#include <QScroller>
+#include <QObject>
 #include <QGraphicsView>
 #include <QPushButton>
 #include "joypad.h"
+#include "mybutton.h"
 
 namespace Ui {
 class pilotWindow;
@@ -15,22 +16,25 @@ class pilotWindow;
 
 class pilotWindow : public QMainWindow
 {
-    //Q_OBJECT
-private:
-     QGraphicsScene sceneGaz, sceneSkret;
+    Q_OBJECT
+public:
+    QGraphicsScene sceneGaz, sceneSkret;
     JoyPad *joyPadGaz;
     JoyPad *joyPadSkret;
+
+
     bool autoReturnGaz   = true;
     bool autoReturnSkret = true;
     double *test;
+myButton *przy;
+public slots:
+    void getPosGaz(int x, int y);
+    void getPosSkret(int x, int y);
 
-
-
-
-  //  QTouchEvent event;
-  //  bool sceneEvent(QTouchEvent *e);
+    //  QTouchEvent event;
+    //  bool sceneEvent(QTouchEvent *e);
 protected:
-bool touchEvent(QTouchEvent *ev);
+    bool touchEvent(QTouchEvent *ev);
 public:
     explicit pilotWindow(QWidget *parent = 0);
     ~pilotWindow();

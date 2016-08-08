@@ -1,16 +1,16 @@
 #include "mybutton.h"
 
-mybutton::mybutton(QWidget *parent) : QPushButton(parent)
+myButton::myButton(QObject *parent)
 {
-
+grabGesture(Qt::TapAndHoldGesture);
 }
 
-bool mybutton::touchEvent(QEvent *event)
+bool myButton::Event(QEvent *event)
 {
     switch (event->type()) {
     case QEvent::TouchBegin:{
         qDebug("start!!! ") ;
-
+        // emit startTouch();
         break;
     }
     case QEvent::TouchUpdate:{
@@ -20,12 +20,13 @@ bool mybutton::touchEvent(QEvent *event)
     }
     case QEvent::TouchEnd:
     {
-        qDebug("END!!! ") ;
+
+
         break;
     }
 
-
-
+    default:
+        return QPushButton::event(event);
     }
 
     return true;

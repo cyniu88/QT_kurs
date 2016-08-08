@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.0.3, 2016-08-05T16:28:07. -->
+<!-- Written by QtCreator 4.0.3, 2016-08-08T16:27:38. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -565,7 +565,7 @@
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.DeployConfigurationCount">1</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.PluginSettings">
-    <value type="QString" key="AndroidDeviceSerialNumber">ZDJNOVU4IRQCUSZH</value>
+    <value type="QString" key="AndroidDeviceSerialNumber">420082a2c426c200</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.0">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>

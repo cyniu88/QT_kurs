@@ -8,14 +8,17 @@
 #include <QDebug>
 #include <QDesktopWidget>
 
-class JoyPad: public QGraphicsEllipseItem
+
+class JoyPad:  public QObject, public QGraphicsEllipseItem
 {
+ Q_OBJECT
 public:
     JoyPad(int posX, int posY, int circleX, int circleY, Qt::GlobalColor maxColor, Qt::GlobalColor minColor);
-    ~JoyPad();
+    virtual ~JoyPad();
     QGraphicsEllipseItem *centralItem;
     bool sceneEvent(QEvent *event);
-
+signals:
+    void sendPos(int x , int y);
 private:
     int posX;
     int posY;

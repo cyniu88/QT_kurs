@@ -9,20 +9,43 @@
 
 
 
+void pilotWindow::getPosGaz(int x, int y)
+{
+    ui->gazLCD_x->display(x);
+    ui->gazLCD_y->display(y);
+}
+
+void pilotWindow::getPosSkret(int x, int y)
+{
+    ui->skretLCD_x->display(x);
+    ui->skretLCD_y->display(y);
+}
+
 pilotWindow::pilotWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::pilotWindow)
 {
 
     ui->setupUi(this);
-QRect n = QApplication::desktop()->screenGeometry();
-int w = n.height();
-joyPadGaz = new JoyPad(0,0, w-100 ,150,Qt::red,Qt::yellow);
-joyPadSkret = new JoyPad(0,0,w-100  ,150,Qt::red,Qt::yellow);
-sceneGaz.addItem(joyPadGaz);
-sceneSkret.addItem(joyPadSkret);
-ui->graphicsView_skret->setScene(&sceneSkret);
-ui->graphicsView_gaz ->setScene(&sceneGaz);
+ui->graphicsView_gaz->resize(QSize(200,200));
+    qDebug()<< " wielkosc: " << ui->graphicsView_gaz->sceneRect().height()<<" & "
+            << ui->graphicsView_gaz->size();
+
+    joyPadGaz   = new JoyPad(0,0,300 , 100,Qt::red,Qt::yellow);
+    joyPadSkret = new JoyPad(0,0,300 , 100,Qt::red,Qt::yellow);
+
+    QObject::connect(joyPadGaz  , SIGNAL(sendPos(int,int) ),this,SLOT(  getPosGaz(int,int) )  );
+    QObject::connect(joyPadSkret, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\
+
+
+    sceneGaz.addItem(joyPadGaz);
+    sceneSkret.addItem(joyPadSkret);
+    ui->graphicsView_skret->setScene(&sceneSkret);
+    ui->graphicsView_gaz ->setScene(&sceneGaz);
+
+przy = new myButton();
+przy->setText("dodo");
+ui->gridLayout->addWidget(przy);
 
     test = new double[100000];
     //this->setAttribute(Qt::WA_NativeWindow);
@@ -31,6 +54,7 @@ ui->graphicsView_gaz ->setScene(&sceneGaz);
 
 pilotWindow::~pilotWindow()
 {
+    delete przy;
     delete joyPadGaz;
     delete joyPadSkret;
     delete test;

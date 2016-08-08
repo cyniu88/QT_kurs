@@ -37,12 +37,14 @@ bool JoyPad::sceneEvent(QEvent *event)
         qDebug()<< touchPoint1.scenePos().x()<< "   +  " <<touchPoint1.scenePos().y();
         centralItem->setPos(touchPoint1.scenePos().x()-circleY,touchPoint1.scenePos().y()-circleY );
         //  emit sendPos(touchPoint1.scenePos().x()-140,touchPoint1.scenePos().y()-140);
+        emit sendPos(  touchPoint1.scenePos().x()-circleY,touchPoint1.scenePos().y()-circleY  );
         break;
     }
     case QEvent::TouchEnd:
     {
 
         centralItem->setPos(0,0 );
+        emit sendPos(  0,0  );
         break;
     }
 

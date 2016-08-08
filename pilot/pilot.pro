@@ -14,10 +14,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         pilotwindow.cpp \
-    joypad.cpp
+    joypad.cpp \
+    mybutton.cpp
 
 HEADERS  += pilotwindow.h \
-    joypad.h
+    joypad.h \
+    mybutton.h
 
 FORMS    += pilotwindow.ui
 
