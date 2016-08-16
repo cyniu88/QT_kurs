@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>711</width>
-    <height>315</height>
+    <width>923</width>
+    <height>449</height>
    </rect>
   </property>
   <property name="cursor">
@@ -37,7 +37,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="7" colspan="2">
+    <item row="2" column="6" colspan="2">
      <widget class="QCheckBox" name="checkBoxWheel">
       <property name="styleSheet">
        <string notr="true">color: rgb(255, 255, 255);</string>
@@ -92,7 +92,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="7">
+    <item row="0" column="6">
      <widget class="QLineEdit" name="adresIP">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
@@ -108,7 +108,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="8">
+    <item row="0" column="7">
      <widget class="QSpinBox" name="port">
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -121,7 +121,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="5">
+    <item row="0" column="4">
      <widget class="QLCDNumber" name="skretLCD_x">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -150,7 +150,7 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="5" colspan="4">
+    <item row="1" column="4" colspan="4">
      <widget class="QGraphicsView" name="graphicsView_skret">
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -163,7 +163,7 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="2" colspan="4">
+    <item row="2" column="2" colspan="3">
      <widget class="QPushButton" name="reset">
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -176,10 +176,10 @@
     <item row="0" column="3">
      <widget class="QLCDNumber" name="gazLCD_y"/>
     </item>
-    <item row="0" column="6">
+    <item row="0" column="5">
      <widget class="QLCDNumber" name="skretLCD_y"/>
     </item>
-    <item row="1" column="0" colspan="5">
+    <item row="1" column="0" colspan="4">
      <widget class="QGraphicsView" name="graphicsView_gaz">
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOff</enum>

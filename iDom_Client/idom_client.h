@@ -48,7 +48,7 @@ private:
 private slots:
     void on_EXITButton_released();
 
-
+    void scrollTitle();
 
     void on_disconnectButton_released();
 

@@ -28,11 +28,10 @@ pilotWindow::pilotWindow(QWidget *parent) :
 
     ui->setupUi(this);
 ui->graphicsView_gaz->resize(QSize(200,200));
-    qDebug()<< " wielkosc: " << ui->graphicsView_gaz->sceneRect().height()<<" & "
-            << ui->graphicsView_gaz->size();
 
-    joyPadGaz   = new JoyPad(0,0,300 , 100,Qt::red,Qt::yellow);
-    joyPadSkret = new JoyPad(0,0,300 , 100,Qt::red,Qt::yellow);
+
+    joyPadGaz   = new JoyPad( 300 , 100,Qt::red,Qt::yellow);
+    joyPadSkret = new JoyPad( 300 , 100,Qt::red,Qt::yellow);
 
     QObject::connect(joyPadGaz  , SIGNAL(sendPos(int,int) ),this,SLOT(  getPosGaz(int,int) )  );
     QObject::connect(joyPadSkret, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\
@@ -49,7 +48,8 @@ ui->gridLayout->addWidget(przy);
 
     test = new double[100000];
     //this->setAttribute(Qt::WA_NativeWindow);
-
+    qDebug()<< " wielkosc: " << ui->graphicsView_gaz->sceneRect().height()<<" & "
+            << ui->graphicsView_gaz->size();
 }
 
 pilotWindow::~pilotWindow()

@@ -119,6 +119,16 @@ void iDom_Client::on_EXITButton_released()
 
 }
 
+void iDom_Client::scrollTitle()
+{
+    //toDo
+    qDebug()<<ui->titleTXT->text();
+    QString temp = ui->titleTXT->text();
+    temp.push_back(temp[0]);
+    temp.remove(0,1);
+    ui->titleTXT->setText(temp);
+}
+
 
 
 void iDom_Client::odb_answer(QString s){
@@ -145,8 +155,8 @@ void iDom_Client::odb_answer_MPD(QString s)
 
 void iDom_Client::odb_mpd_title(QString s)
 {
-    ui->titleTXT->setText(s);
-    ui->titleTXT->scroll(1,10);
+    ui->titleTXT->setText(s+"     ");
+
 }
 
 void iDom_Client::odbMpdVolume(QString s)

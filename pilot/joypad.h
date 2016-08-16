@@ -13,7 +13,7 @@ class JoyPad:  public QObject, public QGraphicsEllipseItem
 {
  Q_OBJECT
 public:
-    JoyPad(int posX, int posY, int circleX, int circleY, Qt::GlobalColor maxColor, Qt::GlobalColor minColor);
+    JoyPad( int circleX, int circleY, Qt::GlobalColor maxColor, Qt::GlobalColor minColor);
     virtual ~JoyPad();
     QGraphicsEllipseItem *centralItem;
     bool sceneEvent(QEvent *event);

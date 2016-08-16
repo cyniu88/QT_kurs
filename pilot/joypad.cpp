@@ -1,10 +1,9 @@
 #include "joypad.h"
 
-JoyPad::JoyPad(int posX, int posY, int circleX, int circleY , Qt::GlobalColor maxColor, Qt::GlobalColor minColor)
+JoyPad::JoyPad(int circleX, int circleY , Qt::GlobalColor maxColor, Qt::GlobalColor minColor)
     : QGraphicsEllipseItem(posX, posY, circleX,circleX)//(posX,posY, circleX,circleX)
 {
-    this->posX = posX;
-    this->posY = posY;
+
     this->circleX = circleX;
     this->circleY = circleY;
 
@@ -27,17 +26,24 @@ bool JoyPad::sceneEvent(QEvent *event)
     switch (event->type()) {
     case QEvent::TouchBegin:{
         qDebug("start!!! ") ;
-        // emit startTouch();
+        QTouchEvent *touchEvent = static_cast<QTouchEvent *>(event);
+        const QTouchEvent::TouchPoint &touchPoint1 = touchEvent->touchPoints().first();
+        posX = touchPoint1.scenePos().x();
+        posY = touchPoint1.scenePos().y();
+        delete touchEvent;
         break;
     }
     case QEvent::TouchUpdate:{
         qDebug("UPDATE!!! ") ;
         QTouchEvent *touchEvent = static_cast<QTouchEvent *>(event);
         const QTouchEvent::TouchPoint &touchPoint1 = touchEvent->touchPoints().first();
-        qDebug()<< touchPoint1.scenePos().x()<< "   +  " <<touchPoint1.scenePos().y();
-        centralItem->setPos(touchPoint1.scenePos().x()-circleY,touchPoint1.scenePos().y()-circleY );
-        //  emit sendPos(touchPoint1.scenePos().x()-140,touchPoint1.scenePos().y()-140);
+
+        centralItem->setPos(touchPoint1.scenePos().x()-posX,touchPoint1.scenePos().y()-posY );
+
         emit sendPos(  touchPoint1.scenePos().x()-circleY,touchPoint1.scenePos().y()-circleY  );
+
+
+        delete touchEvent;
         break;
     }
     case QEvent::TouchEnd:

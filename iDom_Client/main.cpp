@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 
     QTimer *infoMPDtimer = new QTimer ();
     QTimer *infoTemperatureTimer = new QTimer();
+    QTimer *scroller = new QTimer ();
 
     iDom_CONFIG config;
 
@@ -39,11 +40,13 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(errorInfo(QString,QString)),w,SLOT(errorRead(QString,QString))  );
     QObject::connect(infoMPDtimer,SIGNAL(timeout()),w,SLOT(updateMPDinfo()) );
     QObject::connect(infoTemperatureTimer,SIGNAL(timeout()),w,SLOT(updateTemepretureInfo()) );
+    QObject::connect(scroller, SIGNAL(timeout()),w,SLOT(scrollTitle()));
     QObject::connect(worker,SIGNAL(temperature(QString)),w,SLOT(odb_temperature(QString)) );
     worker->start();
     w->show();
     infoTemperatureTimer->start(60000);
     infoMPDtimer->start(10000);
+    scroller->start(500);
 
 
      a.exec();
@@ -52,8 +55,10 @@ int main(int argc, char *argv[])
      delete worker;
      infoMPDtimer->stop();
      infoTemperatureTimer->stop();
+     scroller->stop();
      delete infoMPDtimer;
      delete infoTemperatureTimer;
+     delete scroller;
      delete w;
 
     return 0;
