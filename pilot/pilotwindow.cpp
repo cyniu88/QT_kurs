@@ -27,11 +27,11 @@ pilotWindow::pilotWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
-ui->graphicsView_gaz->resize(QSize(200,200));
 
 
-    joyPadGaz   = new JoyPad( 300 , 100,Qt::red,Qt::yellow);
-    joyPadSkret = new JoyPad( 300 , 100,Qt::red,Qt::yellow);
+
+    joyPadGaz   = new JoyPad( 500 , 150,Qt::red,Qt::yellow);
+    joyPadSkret = new JoyPad( 500 , 150,Qt::red,Qt::yellow);
 
     QObject::connect(joyPadGaz  , SIGNAL(sendPos(int,int) ),this,SLOT(  getPosGaz(int,int) )  );
     QObject::connect(joyPadSkret, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\

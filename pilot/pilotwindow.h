@@ -7,6 +7,8 @@
 #include <QObject>
 #include <QGraphicsView>
 #include <QPushButton>
+#include <QDebug>
+
 #include "joypad.h"
 #include "mybutton.h"
 
