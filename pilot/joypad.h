@@ -17,6 +17,7 @@ public:
     virtual ~JoyPad();
     QGraphicsEllipseItem *centralItem;
     bool sceneEvent(QEvent *event);
+    void setResetPos(bool flag);
 signals:
     void sendPos(int x , int y);
 private:
@@ -24,6 +25,8 @@ private:
     int posY;
     int circleX;
     int circleY;
+    bool resetPos = true;
+
 };
 
 #endif // JOYPAD_H

@@ -28,9 +28,11 @@ bool JoyPad::sceneEvent(QEvent *event)
         qDebug("start!!! ") ;
         QTouchEvent *touchEvent = static_cast<QTouchEvent *>(event);
         const QTouchEvent::TouchPoint &touchPoint1 = touchEvent->touchPoints().first();
-        posX = touchPoint1.scenePos().x();
-        posY = touchPoint1.scenePos().y();
-        delete touchEvent;
+        if (resetPos == true){
+            posX = touchPoint1.scenePos().x();
+            posY = touchPoint1.scenePos().y();
+        }
+        // delete touchEvent;
         break;
     }
     case QEvent::TouchUpdate:{
@@ -40,17 +42,18 @@ bool JoyPad::sceneEvent(QEvent *event)
 
         centralItem->setPos(touchPoint1.scenePos().x()-posX,touchPoint1.scenePos().y()-posY );
 
-        emit sendPos(  touchPoint1.scenePos().x()-circleY,touchPoint1.scenePos().y()-circleY  );
+        emit sendPos(  touchPoint1.scenePos().x()-posX ,touchPoint1.scenePos().y()-posY   );
 
 
-        delete touchEvent;
+        //delete touchEvent;
         break;
     }
     case QEvent::TouchEnd:
     {
-
-        centralItem->setPos(0,0 );
-        emit sendPos(  0,0  );
+        if (resetPos== true){
+            centralItem->setPos(0,0 );
+            emit sendPos(  0,0  );
+        }
         break;
     }
 
@@ -59,4 +62,9 @@ bool JoyPad::sceneEvent(QEvent *event)
     }
 
     return true;
+}
+
+void JoyPad::setResetPos(bool flag)
+{
+    resetPos= flag;
 }

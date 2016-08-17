@@ -27,11 +27,13 @@ pilotWindow::pilotWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
-
-
-
-    joyPadGaz   = new JoyPad( 500 , 150,Qt::red,Qt::yellow);
-    joyPadSkret = new JoyPad( 500 , 150,Qt::red,Qt::yellow);
+    double i = 0.55;
+    int w  =  QApplication::desktop()->height()*i;
+    if (w > QApplication::desktop()->width()*i){
+        w= QApplication::desktop()->width()*i;
+    }
+    joyPadGaz   = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+    joyPadSkret = new JoyPad( w , w/4,Qt::red,Qt::yellow);
 
     QObject::connect(joyPadGaz  , SIGNAL(sendPos(int,int) ),this,SLOT(  getPosGaz(int,int) )  );
     QObject::connect(joyPadSkret, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\
@@ -42,9 +44,30 @@ pilotWindow::pilotWindow(QWidget *parent) :
     ui->graphicsView_skret->setScene(&sceneSkret);
     ui->graphicsView_gaz ->setScene(&sceneGaz);
 
-przy = new myButton();
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+
+    A = new touchButton("A", Qt::red);
+    B = new touchButton("B", Qt::red);
+    C = new touchButton("C", Qt::red);
+    D = new touchButton("D", Qt::red);
+
+
+    sceneA.addItem(A);
+    sceneB.addItem(B);
+    sceneC.addItem(C);
+    sceneD.addItem(D);
+
+    ui->graphicsView_A->setScene(&sceneA);
+    ui->graphicsView_B->setScene(&sceneB);
+    ui->graphicsView_C->setScene(&sceneC);
+    ui->graphicsView_D->setScene(&sceneD);
+
+    /*przy = new myButton();
 przy->setText("dodo");
 ui->gridLayout->addWidget(przy);
+*/
+    QApplication::desktop()->height();
+    ui->infoTxt->setText(QString::number(QApplication::desktop()->height()      ));
 
     test = new double[100000];
     //this->setAttribute(Qt::WA_NativeWindow);
@@ -54,10 +77,15 @@ ui->gridLayout->addWidget(przy);
 
 pilotWindow::~pilotWindow()
 {
-    delete przy;
+    // delete przy;
     delete joyPadGaz;
     delete joyPadSkret;
     delete test;
+    delete A;
+    delete B;
+    delete C;
+    delete D;
+
     delete ui;
 }
 
@@ -77,9 +105,12 @@ void pilotWindow::on_reset_clicked()
 void pilotWindow::on_checkBoxPower_toggled(bool checked)
 {
     autoReturnGaz =checked;
+    joyPadGaz->setResetPos(autoReturnGaz);
 }
 
 void pilotWindow::on_checkBoxWheel_toggled(bool checked)
 {
     autoReturnSkret = checked;
+    joyPadSkret->setResetPos(autoReturnSkret);
 }
+
