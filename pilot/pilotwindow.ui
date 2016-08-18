@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>714</width>
-    <height>335</height>
+    <width>1312</width>
+    <height>476</height>
    </rect>
   </property>
   <property name="cursor">
@@ -33,20 +33,10 @@
     <normaloff>:/ikony/games_256.png</normaloff>:/ikony/games_256.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-color: rgba(107, 107, 107, 231);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="2" colspan="4">
-     <widget class="QPushButton" name="reset">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>RESET</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="0" colspan="4">
      <widget class="QGraphicsView" name="graphicsView_gaz">
       <property name="verticalScrollBarPolicy">
@@ -92,7 +82,7 @@
     <item row="0" column="1">
      <widget class="QPushButton" name="klakson">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <sizepolicy hsizetype="Ignored" vsizetype="Minimum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -121,24 +111,14 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="7" colspan="2">
-     <widget class="QCheckBox" name="checkBoxWheel">
-      <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>powrot kierownicy na neutralna pozycje</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="tristate">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QPushButton" name="swiatla">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
@@ -176,22 +156,6 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0" colspan="2">
-     <widget class="QCheckBox" name="checkBoxPower">
-      <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>powrot gazu na neutralna pozycje</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="tristate">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="2">
      <widget class="QGraphicsView" name="graphicsView_C">
       <property name="sizePolicy">
@@ -199,6 +163,9 @@
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
       <property name="horizontalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -212,6 +179,9 @@
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
       <property name="horizontalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -229,7 +199,7 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>55</height>
+        <height>60</height>
        </size>
       </property>
       <property name="verticalScrollBarPolicy">
@@ -273,7 +243,11 @@
      </widget>
     </item>
     <item row="4" column="0" colspan="4">
-     <widget class="QLineEdit" name="infoTxt"/>
+     <widget class="QLineEdit" name="infoTxt">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="3" column="5" rowspan="2" colspan="4">
      <widget class="QGraphicsView" name="graphicsView_barV">
@@ -285,6 +259,48 @@
       </property>
       <property name="horizontalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <widget class="QPushButton" name="reset">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>RESET</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="5" colspan="4">
+     <widget class="QCheckBox" name="checkBoxWheel">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>powrot kierownicy na neutralna pozycje</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="tristate">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="3">
+     <widget class="QCheckBox" name="checkBoxPower">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>powrot gazu na neutralna pozycje</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="tristate">
+       <bool>false</bool>
       </property>
      </widget>
     </item>

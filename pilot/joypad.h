@@ -9,6 +9,7 @@
 #include <QDesktopWidget>
 
 
+
 class JoyPad:  public QObject, public QGraphicsEllipseItem
 {
  Q_OBJECT
@@ -25,7 +26,11 @@ private:
     int posY;
     int circleX;
     int circleY;
+
     bool resetPos = true;
+public:
+    double JoyX;
+    double JoyY;
 
 };
 

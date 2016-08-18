@@ -13,21 +13,52 @@ void pilotWindow::getPosGaz(int x, int y)
 {
     ui->gazLCD_x->display(x);
     ui->gazLCD_y->display(y);
+    message.leftX=x;
+    message.leftY=y;
 }
 
 void pilotWindow::getPosSkret(int x, int y)
 {
     ui->skretLCD_x->display(x);
     ui->skretLCD_y->display(y);
+    message.rightX=x;
+    message.rightY=y;
 }
 
+void pilotWindow::getStateA(bool state)
+{
+
+    message.stateA=state;
+}
+void pilotWindow::getStateB(bool state)
+{
+    message.stateB=state;
+}
+void pilotWindow::getStateC(bool state)
+{
+    message.stateC=state;
+}
+void pilotWindow::getStateD(bool state)
+{
+    message.stateD=state;
+}
+
+void pilotWindow::showMessage()
+{
+    ui->infoTxt->setText(  message.getString()   );
+}
 pilotWindow::pilotWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::pilotWindow)
 {
 
     ui->setupUi(this);
-    double i = 0.55;
+    t1 = new QTimer();
+
+    QObject::connect(t1,SIGNAL(timeout()),this,SLOT(showMessage()));
+
+    t1->start(100);
+    double i = 0.50;
     int w  =  QApplication::desktop()->height()*i;
     if (w > QApplication::desktop()->width()*i){
         w= QApplication::desktop()->width()*i;
@@ -51,6 +82,10 @@ pilotWindow::pilotWindow(QWidget *parent) :
     C = new touchButton("C", Qt::red);
     D = new touchButton("D", Qt::red);
 
+    QObject::connect( A,SIGNAL(sendState(bool)),this,SLOT(getStateA(bool)));
+    QObject::connect( B,SIGNAL(sendState(bool)),this,SLOT(getStateB(bool)));
+    QObject::connect( C,SIGNAL(sendState(bool)),this,SLOT(getStateC(bool)));
+    QObject::connect( D,SIGNAL(sendState(bool)),this,SLOT(getStateD(bool)));
 
     sceneA.addItem(A);
     sceneB.addItem(B);
@@ -67,7 +102,7 @@ przy->setText("dodo");
 ui->gridLayout->addWidget(przy);
 */
     QApplication::desktop()->height();
-    ui->infoTxt->setText(QString::number(QApplication::desktop()->height()      ));
+    ui->infoTxt->setText(QString::number(w      ));
 
     test = new double[100000];
     //this->setAttribute(Qt::WA_NativeWindow);
@@ -77,6 +112,7 @@ ui->gridLayout->addWidget(przy);
 
 pilotWindow::~pilotWindow()
 {
+    t1->stop();
     // delete przy;
     delete joyPadGaz;
     delete joyPadSkret;
@@ -85,8 +121,9 @@ pilotWindow::~pilotWindow()
     delete B;
     delete C;
     delete D;
-
-    delete ui;
+    delete t1;
+    /*
+*/   //delete ui;
 }
 
 void pilotWindow::on_reset_clicked()

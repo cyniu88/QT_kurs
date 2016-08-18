@@ -113,7 +113,7 @@ iDom_Client::~iDom_Client()
 
 void iDom_Client::on_EXITButton_released()
 {
-
+  auto i = 9;
     ui->centralWidget->close();
 
 

@@ -15,9 +15,14 @@ class touchButton : public QObject, public QGraphicsRectItem
 public:
     touchButton(QString _name, Qt::GlobalColor _color);
     virtual ~touchButton();
+     bool sceneEvent(QEvent *event);
+signals:
+    void sendState(bool state);
 private:
     QGraphicsRectItem *centralItem;
     QString name;
+    bool isPressed = false;
+    QGraphicsTextItem *text;
 };
 
 #endif // TOUCHBUTTON_H

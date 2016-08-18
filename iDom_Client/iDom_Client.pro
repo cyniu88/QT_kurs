@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT += core gui network sensors  multimedia multimediawidgets
+QT += core gui network sensors  multimedia multimediawidgets androidextras
 android {
             message("* Using settings for Android.")
             QT +=  androidextras

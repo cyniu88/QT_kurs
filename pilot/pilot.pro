@@ -16,16 +16,19 @@ SOURCES += main.cpp\
         pilotwindow.cpp \
     joypad.cpp \
     mybutton.cpp \
-    touchbutton.cpp
+    touchbutton.cpp \
+    functions.cpp
 
 HEADERS  += pilotwindow.h \
     joypad.h \
     mybutton.h \
-    touchbutton.h
+    touchbutton.h \
+    functions.h
 
 FORMS    += pilotwindow.ui
+CONFIG += mobility   c++14
+QMAKE_CXXFLAGS += -std=c++14 -Wall
 
-CONFIG += mobility
 MOBILITY = 
 
 RESOURCES += \
