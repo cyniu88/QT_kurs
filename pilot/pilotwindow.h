@@ -14,6 +14,7 @@
 #include "joypad.h"
 #include "mybutton.h"
 #include "touchbutton.h"
+#include "mytouchslider.h"
 
 struct MSG {
     int leftX;
@@ -63,6 +64,13 @@ public:
     myButton *przy;
 
     QString msg;
+
+    QGraphicsScene sceneSliderA;
+    QGraphicsScene sceneSliderB;
+
+    myTouchslider *sliderA;
+    myTouchslider *sliderB;
+
 public slots:
     void getPosGaz(int x, int y);
     void getPosSkret(int x, int y);

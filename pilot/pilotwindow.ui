@@ -230,7 +230,7 @@
      </widget>
     </item>
     <item row="1" column="4">
-     <widget class="QGraphicsView" name="graphicsView_barH">
+     <widget class="QGraphicsView" name="graphicsView_barV">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -238,7 +238,7 @@
        </sizepolicy>
       </property>
       <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
+       <enum>Qt::ScrollBarAsNeeded</enum>
       </property>
      </widget>
     </item>
@@ -250,7 +250,7 @@
      </widget>
     </item>
     <item row="3" column="5" rowspan="2" colspan="4">
-     <widget class="QGraphicsView" name="graphicsView_barV">
+     <widget class="QGraphicsView" name="graphicsView_barH">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
         <horstretch>0</horstretch>
@@ -258,7 +258,7 @@
        </sizepolicy>
       </property>
       <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
+       <enum>Qt::ScrollBarAsNeeded</enum>
       </property>
      </widget>
     </item>

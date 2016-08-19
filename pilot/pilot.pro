@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     joypad.cpp \
     mybutton.cpp \
     touchbutton.cpp \
-    functions.cpp
+    functions.cpp \
+    mytouchslider.cpp
 
 HEADERS  += pilotwindow.h \
     joypad.h \
     mybutton.h \
     touchbutton.h \
-    functions.h
+    functions.h \
+    mytouchslider.h
 
 FORMS    += pilotwindow.ui
 CONFIG += mobility   c++14

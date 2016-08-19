@@ -97,10 +97,18 @@ pilotWindow::pilotWindow(QWidget *parent) :
     ui->graphicsView_C->setScene(&sceneC);
     ui->graphicsView_D->setScene(&sceneD);
 
-    /*przy = new myButton();
-przy->setText("dodo");
-ui->gridLayout->addWidget(przy);
-*/
+
+    sliderA = new myTouchslider(0,0,20,w*1.1);
+    sliderB = new myTouchslider(0,0,w*1.1,10);
+
+    sceneSliderA.addItem(sliderA);
+    sceneSliderB.addItem(sliderB);
+
+    ui->graphicsView_barV->setScene(&sceneSliderA);
+    ui->graphicsView_barH->setScene(&sceneSliderB);
+
+
+
     QApplication::desktop()->height();
     ui->infoTxt->setText(QString::number(w      ));
 
@@ -122,6 +130,8 @@ pilotWindow::~pilotWindow()
     delete C;
     delete D;
     delete t1;
+    delete sliderA;
+    delete sliderB;
     /*
 */   //delete ui;
 }
