@@ -71,97 +71,35 @@
       </item>
       <item row="1" column="4">
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="0" column="0">
-         <widget class="QPushButton" name="playButton">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Impact</family>
-            <pointsize>12</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;Impact&quot;;
- 
-color: rgb(170, 255, 0);
-background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 235, 235, 206), stop:0.35 rgba(255, 188, 188, 80), stop:0.4 rgba(255, 162, 162, 80), stop:0.425 rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255, 255, 255, 0));</string>
-          </property>
-          <property name="text">
-           <string>PLAY</string>
-          </property>
-          <property name="default">
-           <bool>false</bool>
-          </property>
-          <property name="flat">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
+        <item row="0" column="0" colspan="2">
          <widget class="QPushButton" name="exitButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>50</height>
+            <height>80</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;Impact&quot;;
- 
+           <string notr="true">
 color: rgb(170, 255, 0);
-background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 235, 235, 206), stop:0.35 rgba(255, 188, 188, 80), stop:0.4 rgba(255, 162, 162, 80), stop:0.425 rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255, 255, 255, 0));</string>
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+ </string>
           </property>
           <property name="text">
            <string>EXIT</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="stopButton">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;stop play music&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;Impact&quot;;
- 
-color: rgb(170, 255, 0);
-background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 235, 235, 206), stop:0.35 rgba(255, 188, 188, 80), stop:0.4 rgba(255, 162, 162, 80), stop:0.425 rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255, 255, 255, 0));</string>
-          </property>
-          <property name="text">
-           <string>STOP</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QPushButton" name="disconnectButton">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">font: 10pt &quot;Impact&quot;;
- 
-color: rgb(170, 255, 0);
-background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 235, 235, 206), stop:0.35 rgba(255, 188, 188, 80), stop:0.4 rgba(255, 162, 162, 80), stop:0.425 rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255, 255, 255, 0));</string>
-          </property>
-          <property name="text">
-           <string>DISCONNECT</string>
           </property>
          </widget>
         </item>
@@ -303,7 +241,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -335,8 +273,8 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>771</width>
-               <height>568</height>
+               <width>779</width>
+               <height>605</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -345,7 +283,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
                 <property name="sizeConstraint">
                  <enum>QLayout::SetFixedSize</enum>
                 </property>
-                <item row="2" column="8">
+                <item row="1" column="8">
                  <widget class="QLCDNumber" name="OutsideLCD">
                   <property name="font">
                    <font>
@@ -363,7 +301,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="4">
+                <item row="1" column="4">
                  <widget class="QLCDNumber" name="InsideLCD">
                   <property name="font">
                    <font>
@@ -378,7 +316,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="2" colspan="2">
+                <item row="1" column="2" colspan="2">
                  <widget class="QLineEdit" name="InsideLine">
                   <property name="font">
                    <font>
@@ -403,10 +341,10 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="4" colspan="4">
+                <item row="2" column="4" colspan="4">
                  <widget class="QPushButton" name="pushButton_22">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -416,73 +354,14 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="2">
-                 <spacer name="horizontalSpacer">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::Minimum</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item row="1" column="3">
-                 <spacer name="verticalSpacer">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item row="3" column="2">
+                <item row="2" column="2">
                  <widget class="QPushButton" name="pushButton_27">
                   <property name="text">
                    <string>PushButton</string>
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="2" colspan="7">
-                 <widget class="QTextBrowser" name="information">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>150</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Comic Sans MS</family>
-                    <pointsize>10</pointsize>
-                    <weight>50</weight>
-                    <italic>false</italic>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color: rgb(0, 255, 0);
-background-color: rgba(0, 0, 0, 0);
-font: 10pt &quot;Comic Sans MS&quot;;</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="9">
+                <item row="1" column="9">
                  <widget class="QLineEdit" name="OutsideDEG">
                   <property name="maximumSize">
                    <size>
@@ -507,7 +386,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="5">
+                <item row="1" column="5">
                  <widget class="QLineEdit" name="InsideDEG">
                   <property name="maximumSize">
                    <size>
@@ -535,7 +414,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="6" colspan="2">
+                <item row="1" column="6" colspan="2">
                  <widget class="QLineEdit" name="OutsideLine">
                   <property name="font">
                    <font>
@@ -557,10 +436,40 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="3">
+                <item row="2" column="3">
                  <widget class="QPushButton" name="pushButton_28">
                   <property name="text">
                    <string>deleter</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2" colspan="8">
+                 <widget class="QTextBrowser" name="information">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>150</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Comic Sans MS</family>
+                    <pointsize>10</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(0, 255, 0);
+background-color: rgba(0, 0, 0, 0);
+font: 10pt &quot;Comic Sans MS&quot;;</string>
                   </property>
                  </widget>
                 </item>
@@ -591,8 +500,23 @@ background-color: rgba(0, 0, 0, 0);</string>
        <layout class="QGridLayout" name="gridLayout_6">
         <item row="3" column="1">
          <widget class="QPushButton" name="pushButton_pause">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/iDom_client.ico);</string>
+           <string notr="true">color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 34px;
+ 
+    padding: 6px;</string>
           </property>
           <property name="text">
            <string>pause</string>
@@ -607,13 +531,49 @@ background-color: rgba(0, 0, 0, 0);</string>
         </item>
         <item row="2" column="1">
          <widget class="QPushButton" name="pushButtonPREV">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 34px;
+ 
+    padding: 6px;</string>
+          </property>
           <property name="text">
-           <string>prev</string>
+           <string>previous</string>
           </property>
          </widget>
         </item>
         <item row="2" column="2">
          <widget class="QPushButton" name="pushButtonNext">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 34px;
+ 
+    padding: 6px;</string>
+          </property>
           <property name="text">
            <string>next</string>
           </property>
@@ -621,29 +581,60 @@ background-color: rgba(0, 0, 0, 0);</string>
         </item>
         <item row="4" column="1">
          <widget class="QPushButton" name="pushButton_volumeUP">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 34px;
+ 
+    padding: 6px;</string>
+          </property>
           <property name="text">
            <string>volume UP</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="2">
-         <widget class="QLabel" name="label">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>250</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-image: url(:/new/prefix1/iDom_client.ico);</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
         <item row="4" column="2">
          <widget class="QPushButton" name="pushButton_volumeDOWN">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: bold 34px;
+ 
+color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 34px;
+ 
+    padding: 6px;</string>
+          </property>
           <property name="text">
            <string>volume DOWN</string>
           </property>
@@ -662,10 +653,111 @@ background-color: rgba(170, 0, 0, 10);</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
+        <item row="1" column="2">
+         <widget class="QPushButton" name="playButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(170, 255, 0);
+
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 34px;
+ 
+    padding: 6px;
+
+ </string>
+          </property>
+          <property name="text">
+           <string>PLAY</string>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
          <widget class="QPushButton" name="pushButtonupdateinfo">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 34px;
+ 
+    padding: 6px;</string>
+          </property>
           <property name="text">
            <string>update info</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="stopButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;stop play music&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 34px;
+ 
+    padding: 6px;</string>
+          </property>
+          <property name="text">
+           <string>STOP</string>
           </property>
          </widget>
         </item>
@@ -706,8 +798,8 @@ background-color: rgba(170, 0, 0, 10);</string>
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tu beda wyniki&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;tu beda wyniki&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -773,8 +865,20 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
               <height>50</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">text-align: center;
+QProgressBar::chunk {
+    background-color: #CD96CD;
+    width: 10px;
+    margin: 0.5px;
+
+}</string>
+            </property>
             <property name="value">
              <number>0</number>
+            </property>
+            <property name="invertedAppearance">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -806,10 +910,10 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
              <bool>false</bool>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(85, 85, 255);</string>
+             <string notr="true">color: rgb(170, 255, 0);</string>
             </property>
             <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+             <enum>QFrame::Box</enum>
             </property>
             <property name="segmentStyle">
              <enum>QLCDNumber::Outline</enum>
@@ -841,7 +945,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+           <string notr="true">background-color: rgb(255, 255, 255);
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;</string>
           </property>
           <property name="text">
            <string>biały</string>
@@ -857,7 +969,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 128, 0);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(0, 128, 0);</string>
           </property>
           <property name="text">
            <string>ciemny zielony</string>
@@ -873,7 +993,16 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 0, 128);</string>
+           <string notr="true">background-color: rgb(255, 0, 128); 
+  
+ 
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px; 
+    padding: 6px;</string>
           </property>
           <property name="text">
            <string>magenta</string>
@@ -889,7 +1018,19 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(254, 254, 51);</string>
+           <string notr="true">background-color: rgb(254, 254, 51);
+ 
+ 
+ 
+ 
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;</string>
           </property>
           <property name="text">
            <string>żółty</string>
@@ -905,7 +1046,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(178, 34, 34);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(178, 34, 34);</string>
           </property>
           <property name="text">
            <string>minia</string>
@@ -921,7 +1070,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 192, 0);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(255, 192, 0);</string>
           </property>
           <property name="text">
            <string>marchewkowy</string>
@@ -937,7 +1094,16 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 255, 255);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+
+background-color: rgb(0, 255, 255);</string>
           </property>
           <property name="text">
            <string>cyjan</string>
@@ -959,7 +1125,18 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 0, 255);</string>
+           <string notr="true">background-color: rgb(0, 0, 255);
+ 
+ 
+ 
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;</string>
           </property>
           <property name="text">
            <string>niebieski</string>
@@ -981,7 +1158,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 0, 0);</string>
+           <string notr="true">background-color: rgb(255, 0, 0);
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;</string>
           </property>
           <property name="text">
            <string>czerwony</string>
@@ -1003,7 +1188,21 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">QSlider::groove:horizontal {
+border: 6px solid #AAA;
+height: 4px;
+background: #9AD9EB;
+margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+ 
+	background-color: rgb(85, 255, 0);
+border: 1px solid gray;
+width: 48px;
+margin: -26px 0;
+border-radius:   23px;
+}</string>
           </property>
           <property name="maximum">
            <number>59</number>
@@ -1028,7 +1227,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(75, 0, 130);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(75, 0, 130);</string>
           </property>
           <property name="text">
            <string>indygo</string>
@@ -1044,7 +1251,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(8, 37, 103);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(8, 37, 103);</string>
           </property>
           <property name="text">
            <string>szafirowy</string>
@@ -1060,7 +1275,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(98, 0, 44);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(98, 0, 44);</string>
           </property>
           <property name="text">
            <string>buraczkowy</string>
@@ -1076,7 +1299,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(112, 32, 31);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(112, 32, 31);</string>
           </property>
           <property name="text">
            <string>brunatny</string>
@@ -1122,7 +1353,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 127, 255);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(0, 127, 255);</string>
           </property>
           <property name="text">
            <string>lazurowy</string>
@@ -1138,7 +1377,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(159, 159, 223);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(159, 159, 223);</string>
           </property>
           <property name="text">
            <string>niebieskofioletowy</string>
@@ -1154,7 +1401,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(147, 246, 0);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(147, 246, 0);</string>
           </property>
           <property name="text">
            <string>limonkowy</string>
@@ -1170,7 +1425,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(128, 0, 128);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(128, 0, 128);</string>
           </property>
           <property name="text">
            <string>purpurowy</string>
@@ -1191,6 +1454,18 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
             <height>50</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true"> border-style: outset;
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 19px;
+    padding: 6px;
+ </string>
+          </property>
           <property name="text">
            <string>ALL LED</string>
           </property>
@@ -1205,7 +1480,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 165, 0);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(255, 165, 0);</string>
           </property>
           <property name="text">
            <string>pomarańczowy</string>
@@ -1221,7 +1504,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 153);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(255, 255, 153);</string>
           </property>
           <property name="text">
            <string>słomkowy</string>
@@ -1237,7 +1528,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"> 
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+ 
 background-color: rgb(204, 93, 43);</string>
           </property>
           <property name="text">
@@ -1286,7 +1585,7 @@ background-color: rgb(204, 93, 43);</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>15</pointsize>
+            <pointsize>21</pointsize>
            </font>
           </property>
           <property name="maximum">
@@ -1313,7 +1612,15 @@ background-color: rgb(204, 93, 43);</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(128, 0, 0);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(128, 0, 0);</string>
           </property>
           <property name="text">
            <string>rdzawy</string>
@@ -1358,9 +1665,25 @@ background-color: rgba(0, 0, 0, 0);</string>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);</string>
+background-color: rgb(0, 0, 0);
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 34px;
+ 
+    padding: 6px;</string>
           </property>
           <property name="text">
            <string>LED OFF</string>
@@ -1376,7 +1699,15 @@ background-color: rgb(0, 0, 0);</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(128, 128, 0);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(128, 128, 0);</string>
           </property>
           <property name="text">
            <string>oliwkowy</string>
@@ -1398,7 +1729,21 @@ background-color: rgb(0, 0, 0);</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">QSlider::groove:horizontal {
+border: 6px solid #AAA;
+height: 4px;
+background: #9AD9EB;
+margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+ 
+	background-color: rgb(85, 255, 0);
+border: 1px solid gray;
+width: 48px;
+margin: -26px 0;
+border-radius:   23px;
+}</string>
           </property>
           <property name="minimum">
            <number>1</number>
@@ -1435,7 +1780,19 @@ background-color: rgb(0, 0, 0);</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 255, 0);</string>
+           <string notr="true">background-color: rgb(0, 255, 0);
+ 
+ 
+ 
+ 
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;</string>
           </property>
           <property name="text">
            <string>zielony</string>
@@ -1479,7 +1836,15 @@ background-color: rgb(0, 0, 0);</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 128, 0);</string>
+           <string notr="true">background-color: rgb(255, 128, 0);
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;</string>
           </property>
           <property name="text">
            <string>tycjan</string>
@@ -1495,7 +1860,15 @@ background-color: rgb(0, 0, 0);</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(207, 47, 47);</string>
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(207, 47, 47);</string>
           </property>
           <property name="text">
            <string>poziomkowy</string>

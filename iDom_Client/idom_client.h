@@ -50,7 +50,6 @@ private slots:
 
     void scrollTitle();
 
-    void on_disconnectButton_released();
 
     void on_lineEdit_editingFinished();
 

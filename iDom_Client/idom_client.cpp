@@ -213,21 +213,6 @@ void iDom_Client::zmienCounter2(int c)
 
 
 
-void iDom_Client::on_disconnectButton_released()
-{
-    if (ui->disconnectButton->text()=="DISCONNECT"){
-        config->goWhile = false;
-        ui->disconnectButton->setText("  CONNECT  ");
-    }
-    else
-    {
-        ui->disconnectButton->setText("DISCONNECT");
-        config->goWhile = true;
-
-
-    }
-}
-
 void iDom_Client::on_lineEdit_editingFinished()
 {
     config->command = ui->lineEdit->text().toStdString();
