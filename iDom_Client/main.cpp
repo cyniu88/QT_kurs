@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
     QObject::connect(scroller, SIGNAL(timeout()),w,SLOT(scrollTitle()));
     QObject::connect(worker,SIGNAL(temperature(QString)),w,SLOT(odb_temperature(QString)) );
     worker->start();
+    w->updateMPDinfo();
     w->show();
     infoTemperatureTimer->start(60000);
     infoMPDtimer->start(10000);

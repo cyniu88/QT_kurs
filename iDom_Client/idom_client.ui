@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>825</width>
+    <width>1080</width>
     <height>805</height>
    </rect>
   </property>
@@ -241,7 +241,7 @@ border-color: rgb(255, 255, 255);
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -273,17 +273,17 @@ border-color: rgb(255, 255, 255);
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>779</width>
+               <width>1034</width>
                <height>605</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <item>
-               <layout class="QGridLayout" name="gridLayout_7" columnstretch="0,0,0,0,0,0,0,0,0,0">
+               <layout class="QGridLayout" name="gridLayout_7" columnstretch="0,0,0,0,0,0,0,0">
                 <property name="sizeConstraint">
                  <enum>QLayout::SetFixedSize</enum>
                 </property>
-                <item row="1" column="8">
+                <item row="2" column="6">
                  <widget class="QLCDNumber" name="OutsideLCD">
                   <property name="font">
                    <font>
@@ -301,7 +301,7 @@ border-color: rgb(255, 255, 255);
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="4">
+                <item row="2" column="2">
                  <widget class="QLCDNumber" name="InsideLCD">
                   <property name="font">
                    <font>
@@ -316,7 +316,7 @@ border-color: rgb(255, 255, 255);
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="2" colspan="2">
+                <item row="2" column="0" colspan="2">
                  <widget class="QLineEdit" name="InsideLine">
                   <property name="font">
                    <font>
@@ -341,7 +341,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="4" colspan="4">
+                <item row="3" column="2" colspan="4">
                  <widget class="QPushButton" name="pushButton_22">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
@@ -354,14 +354,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="2">
-                 <widget class="QPushButton" name="pushButton_27">
-                  <property name="text">
-                   <string>PushButton</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="9">
+                <item row="2" column="7">
                  <widget class="QLineEdit" name="OutsideDEG">
                   <property name="maximumSize">
                    <size>
@@ -386,7 +379,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="5">
+                <item row="2" column="3">
                  <widget class="QLineEdit" name="InsideDEG">
                   <property name="maximumSize">
                    <size>
@@ -414,7 +407,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="6" colspan="2">
+                <item row="2" column="4" colspan="2">
                  <widget class="QLineEdit" name="OutsideLine">
                   <property name="font">
                    <font>
@@ -436,14 +429,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="3">
-                 <widget class="QPushButton" name="pushButton_28">
-                  <property name="text">
-                   <string>deleter</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="2" colspan="8">
+                <item row="1" column="0" colspan="8">
                  <widget class="QTextBrowser" name="information">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -473,6 +459,38 @@ font: 10pt &quot;Comic Sans MS&quot;;</string>
                   </property>
                  </widget>
                 </item>
+                <item row="0" column="0" colspan="3">
+                 <layout class="QGridLayout" name="gridLayout_10">
+                  <item row="1" column="1">
+                   <widget class="QLabel" name="label">
+                    <property name="text">
+                     <string>TextLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_2">
+                    <property name="text">
+                     <string>TextLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_3">
+                    <property name="text">
+                     <string>TextLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLabel" name="label_4">
+                    <property name="text">
+                     <string>TextLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
                </layout>
               </item>
              </layout>
@@ -498,37 +516,6 @@ font: 10pt &quot;Comic Sans MS&quot;;</string>
         <string/>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_6">
-        <item row="3" column="1">
-         <widget class="QPushButton" name="pushButton_pause">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 34px;
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>pause</string>
-          </property>
-          <property name="default">
-           <bool>true</bool>
-          </property>
-          <property name="flat">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
         <item row="2" column="1">
          <widget class="QPushButton" name="pushButtonPREV">
           <property name="sizePolicy">
@@ -539,18 +526,20 @@ border-color: rgb(255, 255, 255);
           </property>
           <property name="styleSheet">
            <string notr="true">color: rgb(170, 255, 0);
+image: url(:/new/prefix1/files/player/rewind.png);
 background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+  border-radius: 60px;
     border-color: beige;
     font: bold 34px;
- 
+ Text-align:right;
+
     padding: 6px;</string>
           </property>
           <property name="text">
-           <string>previous</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -564,18 +553,20 @@ border-color: rgb(255, 255, 255);
           </property>
           <property name="styleSheet">
            <string notr="true">color: rgb(170, 255, 0);
+image: url(:/new/prefix1/files/player/forward.png);
 background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+  border-radius: 60px;
     border-color: beige;
     font: bold 34px;
- 
+ Text-align:right;
+
     padding: 6px;</string>
           </property>
           <property name="text">
-           <string>next</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -588,20 +579,20 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">
+           <string notr="true">image: url(:/new/prefix1/files/player/sound decrease.png);
 color: rgb(170, 255, 0);
 background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+      border-radius: 60px;
     border-color: beige;
     font: bold 34px;
- 
+  Text-align:right;
     padding: 6px;</string>
           </property>
           <property name="text">
-           <string>volume UP</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -624,19 +615,20 @@ border-color: rgb(255, 255, 255);
           <property name="styleSheet">
            <string notr="true">font: bold 34px;
  
+image: url(:/new/prefix1/files/player/sound increase.png);
 color: rgb(170, 255, 0);
 background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+     border-radius: 60px;
     border-color: beige;
     font: bold 34px;
- 
+  Text-align:right;
     padding: 6px;</string>
           </property>
           <property name="text">
-           <string>volume DOWN</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -677,12 +669,13 @@ background-color: rgba(170, 0, 0, 10);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">color: rgb(170, 255, 0);
-
+Text-align:right;
+image: url(:/new/prefix1/files/player/play.png);
 background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+      border-radius: 60px;
     border-color: beige;
     font: bold 34px;
  
@@ -691,39 +684,13 @@ border-color: rgb(255, 255, 255);
  </string>
           </property>
           <property name="text">
-           <string>PLAY</string>
+           <string/>
           </property>
           <property name="default">
            <bool>false</bool>
           </property>
           <property name="flat">
            <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="2">
-         <widget class="QPushButton" name="pushButtonupdateinfo">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">
-color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 34px;
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>update info</string>
           </property>
          </widget>
         </item>
@@ -746,18 +713,53 @@ border-color: rgb(255, 255, 255);
           </property>
           <property name="styleSheet">
            <string notr="true">color: rgb(170, 255, 0);
+image: url(:/new/prefix1/files/player/stop.png); 
 background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+    border-radius: 60px;
     border-color: beige;
     font: bold 34px;
- 
+ Text-align:right;
+
     padding: 6px;</string>
           </property>
           <property name="text">
-           <string>STOP</string>
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1" colspan="2">
+         <widget class="QPushButton" name="pushButton_pause">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(170, 255, 0);
+image: url(:/new/prefix1/files/player/pause.png);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+     border-radius: 60px;
+    border-color: beige;
+    font: bold 34px;
+ Text-align:right;
+
+    padding: 6px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="default">
+           <bool>true</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
