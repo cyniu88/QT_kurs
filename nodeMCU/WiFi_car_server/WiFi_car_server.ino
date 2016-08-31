@@ -8,7 +8,7 @@ int licznik =0;
 int speed_ = 0;
 String speed_s;
 String kat_s;
-
+constexpr int port = 8833;
 #define LED D4
 #define IN1 D1
 #define IN2 D2
@@ -16,7 +16,7 @@ String kat_s;
 #define SERVO_PIN D0
 // Create an instance of the server
 // specify the port to listen on as an argument
-WiFiServer server(8802);
+WiFiServer server(port);
 WiFiClient client;
 Servo servomotor;
 void setup() {
@@ -61,7 +61,12 @@ void wait_for_client ()
   {
     if (licznik == 0){
    kat=random (36,106);
-  servomotor.write(kat);   
+   
+
+  
+
+
+   
 Serial.println(kat);
     }
 ++licznik;
@@ -100,29 +105,30 @@ void working (){
     break;
   }
   
-   kat_s = req.substring(11,15);
+   kat_s = req.substring(16,20);
   Serial.println("kat: "+ kat_s);
   kat = kat_s.toInt();
   kat = map(kat,-255,255,36,106);
   Serial.println(kat);
  servomotor.write(kat);
- speed_s=req.substring(26,31);
+ speed_s=req.substring(12,15);
+ Serial.println(speed_s);
  speed_ = speed_s.toInt();
- Serial.println("speed");
- Serial.println(speed_);
+ Serial.print("speed_s: ");
+ Serial.println(speed_s);
  if (speed_ < 0 )
  {
   speed_ = speed_*-1;
   digitalWrite(IN2, LOW);
   digitalWrite(IN1, HIGH);
-  analogWrite (PWMa, speed_);
-  
+  analogWrite (PWMa, map(speed_,0,255,0,1020)  );
+   
  }
  else if ( speed_ == 0)
  {
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, HIGH);
-  analogWrite (PWMa, 255);
+  analogWrite (PWMa, 0);
   Serial.println("STOP");
  }
 
@@ -130,7 +136,8 @@ void working (){
  {
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
-  analogWrite (PWMa, speed_);
+  Serial.println (map(speed_,0,255,0,1020));
+  analogWrite (PWMa,  map(speed_,0,255,0,1020) );
  }
  
 
