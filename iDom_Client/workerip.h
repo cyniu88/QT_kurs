@@ -26,6 +26,7 @@ private:
     bool to_send= false;
     ADRESS_WHAT addresIN;
     ADRESS_WHAT addresOUT;
+    int waitTime = 100;
 
 signals:
     void sygnal(int c);

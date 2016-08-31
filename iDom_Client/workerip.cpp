@@ -26,12 +26,12 @@ void WorkerIP::run()
 
             // send
             socket->write(  RSHash().c_str());
-            while (socket->waitForBytesWritten(1000)){
+            while (socket->waitForBytesWritten(waitTime)){
                 qDebug() << "czekam na zapis : ";
             }
             while (true){
                 qDebug() << "czekam na ODCZYT : ";
-                if (socket->waitForReadyRead(100)==true)
+                if (socket->waitForReadyRead(waitTime)==true)
                 {
                     break;
                 }
@@ -45,10 +45,10 @@ void WorkerIP::run()
 
 
             socket->write("OK");
-            socket->waitForBytesWritten(1000);
+            socket->waitForBytesWritten(waitTime);
             while (true){
                 qDebug() << "czekam na ODCZYT 2 : ";
-                if (socket->waitForReadyRead(100)==true)
+                if (socket->waitForReadyRead(waitTime)==true)
                 {
                     break;
                 }
@@ -94,7 +94,7 @@ void WorkerIP::run()
             break;
         }
         if (config->workerQueue.Size()<1  ){
-            QThread::usleep(100);
+            QThread::usleep(10);
             continue;
         }
 
@@ -105,10 +105,10 @@ void WorkerIP::run()
         to_send = false;
         //config->IPMutex.unlock();
 
-        socket->waitForBytesWritten(1000);
+        socket->waitForBytesWritten(waitTime);
         while (true){
            // qDebug() << "czekam na ODCZYT 2 : ";
-            if (socket->waitForReadyRead(100)==true)
+            if (socket->waitForReadyRead(waitTime)==true)
             {
                 break;
             }
@@ -131,7 +131,7 @@ void WorkerIP::run()
         while (true){
             while (true){
                 //qDebug() << "czekam na ODCZYT 2 : ";
-                if (socket->waitForReadyRead(100)==true)
+                if (socket->waitForReadyRead(waitTime)==true)
                 {
                     break;
                 }
