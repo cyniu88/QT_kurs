@@ -241,9 +241,7 @@ border-color: rgb(255, 255, 255);
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-
-       <number>0</number>
-
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -275,11 +273,8 @@ border-color: rgb(255, 255, 255);
               <rect>
                <x>0</x>
                <y>0</y>
-
-               <width>1034</width>
-               <height>605</height>
-
-
+               <width>1026</width>
+               <height>565</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -584,7 +579,7 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/files/player/sound decrease.png);
+           <string notr="true">image: url(:/new/prefix1/files/player/sound increase.png);
 color: rgb(170, 255, 0);
 background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
  border-style: outset;
@@ -619,8 +614,8 @@ border-color: rgb(255, 255, 255);
           </property>
           <property name="styleSheet">
            <string notr="true">font: bold 34px;
- 
-image: url(:/new/prefix1/files/player/sound increase.png);
+ image: url(:/new/prefix1/files/player/sound decrease.png);
+
 color: rgb(170, 255, 0);
 background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
  border-style: outset;
