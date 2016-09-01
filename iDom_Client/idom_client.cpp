@@ -163,6 +163,7 @@ void iDom_Client::odb_mpd_title(QString s)
 void iDom_Client::odbMpdVolume(QString s)
 {
     ui->volumeTXT->setText("volume: " +s+"%");
+    ui->volumeBar->setValue(s.toInt());
 }
 
 
@@ -458,11 +459,13 @@ void iDom_Client::on_pushButton_pause_released()
 void iDom_Client::on_pushButton_volumeUP_released()
 {
     emit sendTCP("MPD","MPD volume_up");
+    ui->volumeBar->setValue(ui->volumeBar->value()+1);
 }
 
 void iDom_Client::on_pushButton_volumeDOWN_released()
 {
     emit sendTCP("MPD","MPD volume_down");
+    ui->volumeBar->setValue(ui->volumeBar->value()-1);
 }
 
 void iDom_Client::on_exitButton_pressed()
