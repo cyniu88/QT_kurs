@@ -767,7 +767,8 @@ border-color: rgb(255, 255, 255);
          <widget class="QProgressBar" name="volumeBar">
           <property name="styleSheet">
            <string notr="true">QProgressBar::chunk {
-    background-color: #CD96CD;
+ 
+    background-color: green;
     width: 10px;
     margin: 0.5px;
 }</string>
