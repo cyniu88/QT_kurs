@@ -15,7 +15,7 @@ void WorkerIP::run()
 
     socket = new QTcpSocket(this );
     //QThread::sleep(3);
-    for (int i =0 ; i<3 ;++i)
+    for (int i =1 ; i<4 ;++i)
     {
         socket->connectToHost(config->serverIP.c_str(),config->serverPort);
 
