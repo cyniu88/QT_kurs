@@ -4,7 +4,6 @@
 #include <iostream>
 #include <stdlib.h>
 
-
 template <typename T>
 std::string to_string(T value);
 
