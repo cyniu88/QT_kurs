@@ -69,27 +69,14 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
 
     //                                   );
-    /////////////////////////////  ustawianie przezroczystosci i koloru  pola tekstowego ///////////
-    QPalette p;
-    p.setColor(QPalette::Text,Qt::green);
-    p.setColor(ui->titleTXT->backgroundRole(), Qt::transparent);
-
-    ui->titleTXT->setPalette(p);
-    ui->titleTXT->setFrame(false);
-    p.setColor(ui->volumeTXT->backgroundRole(),Qt::transparent);
-
-    ui->volumeTXT->setPalette(p);
-    ui->volumeTXT->setFrame(false);
-
-    ui->lineEdit->setPalette(p);
-    // ui->lineEdit->setStyleSheet("background:#0F0;");
-
-    p.setColor(QPalette::Text,Qt::green);
-    p.setColor(ui->wynik->backgroundRole(), Qt::transparent);
-    ui->wynik->setPalette(p);
-
-
-
+ //////////  add to combobox
+ ///
+ ///
+ ///
+ ///
+    QStringList list ;
+    list <<"..."<< "stop server"<<"uptime"<<"show log"<< "show log no INFO"<< "cmd"<<"help";
+    ui->comboBox->addItems(list);
 
 
     QRect rec = QApplication::desktop()->screenGeometry();
@@ -220,7 +207,7 @@ void iDom_Client::on_lineEdit_editingFinished()
     config->command = ui->lineEdit->text().toStdString();
 }
 
-void iDom_Client::on_pushButton_released()
+void iDom_Client::on_sendButton_released()
 {
     // QString *s = (config->command);
     //QDebug() << " mamy komende: " << s;
@@ -505,4 +492,10 @@ void iDom_Client::on_pushButton_27_released()
 void iDom_Client::on_pushButton_28_clicked()
 {
 
+}
+
+void iDom_Client::on_comboBox_currentTextChanged(const QString &arg1)
+{
+    ui->lineEdit->setText(ui->comboBox->currentText());
+    config->command = ui->comboBox->currentText().toStdString();
 }

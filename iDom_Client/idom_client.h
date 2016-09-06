@@ -53,7 +53,7 @@ private slots:
 
     void on_lineEdit_editingFinished();
 
-    void on_pushButton_released();
+    void on_sendButton_released();
 
 
 
@@ -146,6 +146,10 @@ private slots:
     void on_pushButton_27_released();
 
     void on_pushButton_28_clicked();
+
+    void on_comboBox_currentTextChanged(const QString &arg1);
+
+
 
 public slots:
       void zmienCounter(int c);
