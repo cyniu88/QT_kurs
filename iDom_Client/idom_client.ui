@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>821</height>
+    <height>840</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -120,14 +120,10 @@ border-color: rgb(255, 255, 255);
             <pointsize>12</pointsize>
            </font>
           </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgba(0, 0, 0, 0);
-border-color: rgba(0, 0, 0, 0);
-color: rgb(0, 255, 0);
-border: none </string>
+border: none ;
+color: rgb(0, 255, 0);</string>
           </property>
           <property name="inputMask">
            <string/>
@@ -160,9 +156,9 @@ border: none </string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgba(0, 0, 0, 0);
-color: rgb(0, 255, 0);
-border: none </string>
+           <string notr="true">color: rgb(0, 255, 0);
+border: none ;
+background-color: rgba(0, 0, 0, 0);</string>
           </property>
           <property name="inputMask">
            <string/>
@@ -288,7 +284,7 @@ border: none </string>
                <x>0</x>
                <y>0</y>
                <width>1026</width>
-               <height>581</height>
+               <height>600</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -829,81 +825,56 @@ border-color: rgb(255, 255, 255);
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
-          <item row="2" column="0" colspan="3">
-           <widget class="QTextEdit" name="wynik">
+          <item row="4" column="0">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLCDNumber" name="lcdNumber_2">
             <property name="styleSheet">
-             <string notr="true">background-color: transparent;
-color: rgb(0, 255, 0);</string>
-            </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAsNeeded</enum>
-            </property>
-            <property name="horizontalScrollBarPolicy">
-             <enum>Qt::ScrollBarAsNeeded</enum>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-            <property name="html">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tu beda wyniki&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string notr="true">color: rgb(255, 255, 0);
+border: none ;</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="0" colspan="2">
-           <widget class="QLineEdit" name="lineEdit">
+          <item row="5" column="0" colspan="2">
+           <widget class="QLCDNumber" name="lcdNumber">
             <property name="minimumSize">
              <size>
-              <width>150</width>
-              <height>75</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
             <property name="font">
              <font>
-              <pointsize>21</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
              </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::RightToLeft</enum>
             </property>
             <property name="autoFillBackground">
              <bool>false</bool>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(0, 255, 0);
-background-color: rgb(170, 0, 255,25);
- </string>
+             <string notr="true">color: rgb(170, 255, 0);
+border: none ;</string>
             </property>
-            <property name="clearButtonEnabled">
-             <bool>true</bool>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
             </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QPushButton" name="sendButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>75</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="whatsThis">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wyslij  komende na serwer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 255);
-border-color: rgb(255, 255, 255);
-font: 18pt &quot;Impact&quot;;
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
-            </property>
-            <property name="text">
-             <string>SEND</string>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Outline</enum>
             </property>
            </widget>
           </item>
@@ -932,55 +903,144 @@ QProgressBar::chunk {
             </property>
            </widget>
           </item>
-          <item row="4" column="2">
-           <widget class="QLCDNumber" name="lcdNumber_2">
+          <item row="0" column="2" rowspan="2">
+           <widget class="QPushButton" name="pushButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>75</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wyslij  komende na serwer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 0);</string>
+             <string notr="true">color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+     border-radius: 30px;
+    border-color: beige;
+    font: bold 34px;
+  Text-align:center;
+    padding: 3px;</string>
+            </property>
+            <property name="text">
+             <string>SEND</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="0" colspan="2">
-           <widget class="QLCDNumber" name="lcdNumber">
+          <item row="2" column="0" colspan="3">
+           <widget class="QTextEdit" name="wynik">
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: rgb(0, 255, 0);
+border: none ;</string>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tu beda wyniki&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QComboBox" name="comboBox">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>100</height>
              </size>
             </property>
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
             <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="autoFillBackground">
-             <bool>false</bool>
+             <enum>Qt::LeftToRight</enum>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(170, 255, 0);</string>
+             <string notr="true">
+QComboBox {
+ 
+background-color: rgba(0, 255, 0, 100);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  22px;
+}
+QComboBox::drop-down {
+     width:19px;
+   
+    margin-right:50px;
+   
+}
+QComboBox::down-arrow {
+   image: url(:/new/prefix1/files/down_arrow.png);
+}
+	</string>
             </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="segmentStyle">
-             <enum>QLCDNumber::Outline</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="3">
-           <widget class="QComboBox" name="comboBox">
             <property name="editable">
              <bool>true</bool>
             </property>
-            <property name="currentText">
-             <string/>
-            </property>
-            <property name="sizeAdjustPolicy">
-             <enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum>
-            </property>
+            <item>
+             <property name="text">
+              <string/>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>show log</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>uptime</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>show log no INFO</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>sleep</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>show thread all</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>cmd</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>stop server</string>
+             </property>
+            </item>
            </widget>
           </item>
          </layout>

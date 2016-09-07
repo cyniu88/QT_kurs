@@ -102,6 +102,7 @@ void WorkerIP::run()
         addresOUT = config->workerQueue.Take();
         emit progress(0);
         socket->write( addresOUT.what.c_str());
+        qDebug() << "WYSLANO!! : " << addresOUT.what.c_str();
         to_send = false;
         //config->IPMutex.unlock();
 
@@ -120,7 +121,7 @@ void WorkerIP::run()
         //socket->waitForBytesWritten(1000);
         //socket->waitForReadyRead(3000);
         socket->write("OK");
-        qDebug() << buffor;
+
         s_buffor = buffor.toStdString();
         len_send = atoi (s_buffor.c_str());
 

@@ -69,14 +69,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
 
     //                                   );
- //////////  add to combobox
- ///
- ///
- ///
- ///
-    QStringList list ;
-    list <<"..."<< "stop server"<<"uptime"<<"show log"<< "show log no INFO"<< "cmd"<<"help";
-    ui->comboBox->addItems(list);
 
 
     QRect rec = QApplication::desktop()->screenGeometry();
@@ -110,7 +102,7 @@ void iDom_Client::on_EXITButton_released()
 void iDom_Client::scrollTitle()
 {
     //toDo
-    qDebug()<<ui->titleTXT->text();
+
     QString temp = ui->titleTXT->text();
     temp.push_back(temp[0]);
     temp.remove(0,1);
@@ -202,15 +194,11 @@ void iDom_Client::zmienCounter2(int c)
 
 
 
-void iDom_Client::on_lineEdit_editingFinished()
-{
-    config->command = ui->lineEdit->text().toStdString();
-}
 
-void iDom_Client::on_sendButton_released()
+
+void iDom_Client::on_pushButton_released()
 {
-    // QString *s = (config->command);
-    //QDebug() << " mamy komende: " << s;
+    config->command = ui->comboBox->currentText().toStdString();
     emit sendTCP("console",config->command);
 
 }
@@ -492,10 +480,4 @@ void iDom_Client::on_pushButton_27_released()
 void iDom_Client::on_pushButton_28_clicked()
 {
 
-}
-
-void iDom_Client::on_comboBox_currentTextChanged(const QString &arg1)
-{
-    ui->lineEdit->setText(ui->comboBox->currentText());
-    config->command = ui->comboBox->currentText().toStdString();
 }
