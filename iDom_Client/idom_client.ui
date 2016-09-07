@@ -251,7 +251,7 @@ background-color: rgba(0, 0, 0, 0);</string>
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -842,6 +842,7 @@ border-color: rgb(255, 255, 255);
            <widget class="QLCDNumber" name="lcdNumber_2">
             <property name="styleSheet">
              <string notr="true">color: rgb(255, 255, 0);
+ 
 border: none ;</string>
             </property>
            </widget>
@@ -867,7 +868,7 @@ border: none ;</string>
              <bool>false</bool>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(170, 255, 0);
+             <string notr="true">color: rgb(0, 255, 0);
 border: none ;</string>
             </property>
             <property name="frameShape">
@@ -970,7 +971,7 @@ p, li { white-space: pre-wrap; }
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>100</height>
+              <height>75</height>
              </size>
             </property>
             <property name="layoutDirection">
@@ -980,12 +981,12 @@ p, li { white-space: pre-wrap; }
              <string notr="true">
 QComboBox {
  
-background-color: rgba(0, 255, 0, 100);
+background-color: rgba(0, 255, 0, 10);
  border: true;
 	border-color: rgb(0, 255, 0);
 	color: rgb(0, 255, 0);
     font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  22px;
+    font-size:  25px;
 }
 QComboBox::drop-down {
      width:19px;

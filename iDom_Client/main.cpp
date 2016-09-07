@@ -52,7 +52,10 @@ int main(int argc, char *argv[])
 
      a.exec();
      config.goWhile=false;
-     QThread::sleep(5);
+     while (config.goWhile==false)
+     {
+         qDebug("czekam");
+     }
      delete worker;
      infoMPDtimer->stop();
      infoTemperatureTimer->stop();

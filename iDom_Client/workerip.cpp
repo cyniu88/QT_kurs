@@ -108,7 +108,7 @@ void WorkerIP::run()
 
         socket->waitForBytesWritten(waitTime);
         while (true){
-           // qDebug() << "czekam na ODCZYT 2 : ";
+            // qDebug() << "czekam na ODCZYT 2 : ";
             if (socket->waitForReadyRead(waitTime)==true)
             {
                 break;
@@ -116,7 +116,7 @@ void WorkerIP::run()
 
         }
 
-       // qDebug() << "Reading: " << socket->bytesAvailable();
+        // qDebug() << "Reading: " << socket->bytesAvailable();
         buffor = socket->readAll();
         //socket->waitForBytesWritten(1000);
         //socket->waitForReadyRead(3000);
@@ -155,7 +155,7 @@ void WorkerIP::run()
 
                 emit sygnal(s_buffor.length());
                 qDebug("mam wsztstko!");
-              //  qDebug() << QString::fromStdString(s_buffor);
+                //  qDebug() << QString::fromStdString(s_buffor);
 
 
                 if (addresOUT.address == "console"){
@@ -194,7 +194,7 @@ void WorkerIP::run()
     socket->close();
 
     qDebug("koniec koncow workera @@@@@@@@@@@@");
-
+    config->goWhile=true;
 
 }
 

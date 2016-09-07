@@ -87,7 +87,7 @@ iDom_Client::~iDom_Client()
 #ifdef Q_OS_WIN
     delete trayIcon;
 #endif
-    delete okno;
+   // delete okno;
     delete ui;
 }
 
@@ -115,6 +115,7 @@ void iDom_Client::odb_answer(QString s){
     ui->wynik->setText(s);
     ui->lcdNumber_2->display(s.size());
     ui->progressBar->setValue(100);
+    droid.vibrate(100);
 }
 
 void iDom_Client::readProgress(int c)
@@ -156,7 +157,7 @@ void iDom_Client::errorRead(QString tit, QString msg)
     trayIcon->showMessage(tit,msg);
 #endif
 
-    emit sendTCP("temperature","RS232 get temperature");
+
 }
 
 void iDom_Client::updateMPDinfo()
@@ -164,6 +165,7 @@ void iDom_Client::updateMPDinfo()
     emit sendTCP("MPD_title","MPD get_info");
     QThread::sleep(1);
     emit sendTCP("MPD_volume","MPD get_volume");
+    emit sendTCP("temperature","RS232 get temperature");
     qDebug("timer mpd info ");
 }
 
