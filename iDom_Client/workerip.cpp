@@ -83,7 +83,7 @@ void WorkerIP::run()
     }//end for authentication
 
     unsigned int len_send = 0;
-    unsigned int len_temp = 0;
+    //unsigned int len_temp = 0;
     bool goNow = true;
     while (goNow){
 

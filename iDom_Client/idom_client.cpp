@@ -93,10 +93,7 @@ iDom_Client::~iDom_Client()
 
 void iDom_Client::on_EXITButton_released()
 {
-  auto i = 9;
-    ui->centralWidget->close();
-
-
+     ui->centralWidget->close();
 }
 
 void iDom_Client::scrollTitle()
@@ -113,6 +110,8 @@ void iDom_Client::scrollTitle()
 
 void iDom_Client::odb_answer(QString s){
     ui->wynik->setText(s);
+    ui->wynik->moveCursor(QTextCursor::End);
+
     ui->lcdNumber_2->display(s.size());
     ui->progressBar->setValue(100);
     droid.vibrate(100);
@@ -188,13 +187,6 @@ void iDom_Client::zmienCounter(int c)
 {
     ui->lcdNumber->display(c);
 }
-
-void iDom_Client::zmienCounter2(int c)
-{
-
-}
-
-
 
 
 
@@ -374,7 +366,7 @@ void iDom_Client::on_RESET_pushButton_released()
 
 }
 
-void iDom_Client::on_to_horizontalSlider_2_valueChanged(int value)
+void iDom_Client::on_to_horizontalSlider_2_valueChanged( )
 {   int temp_value = ui->to_horizontalSlider_2->value();
 
     if (temp_value <= ui->from_horizontalSlider->value())
@@ -398,13 +390,13 @@ void iDom_Client::on_from_horizontalSlider_valueChanged(int value)
     ui->lcdNumber_fromLED->display(ui->from_horizontalSlider->value());
 }
 
-void iDom_Client::on_spinBox_toLED_valueChanged(int arg1)
+void iDom_Client::on_spinBox_toLED_valueChanged()
 {
     ui->to_horizontalSlider_2->setValue(ui->spinBox_toLED->value());
     ui->lcdNumber_toLED->display(ui->to_horizontalSlider_2->value());
 }
 
-void iDom_Client::on_spinBox_fromLED_valueChanged(int arg1)
+void iDom_Client::on_spinBox_fromLED_valueChanged()
 {
 
     ui->from_horizontalSlider->setValue(ui->spinBox_fromLED->value());
@@ -447,7 +439,7 @@ void iDom_Client::on_pushButton_volumeDOWN_released()
 
 void iDom_Client::on_exitButton_pressed()
 {
-    config->goWhile==false;
+
     emit sendTCP("console","exit");
 }
 
@@ -461,25 +453,8 @@ void iDom_Client::on_pushButtonupdateinfo_released()
 
 void iDom_Client::on_pushButton_22_released()
 {
-
     droid.vibrate(300);
     ui->information->setText(QString::number(droid.getProximity()));
-    // get the Qt android activity
-    //ui->information->setText(droid.getAccelerometer());
 }
 
 
-void iDom_Client::on_pushButton_27_released()
-{
-
-    okno = new MainWindow();
-    okno->show();
-
-
-  //delete okno;
-}
-
-void iDom_Client::on_pushButton_28_clicked()
-{
-
-}
