@@ -52,9 +52,10 @@ int main(int argc, char *argv[])
 
      a.exec();
      config.goWhile=false;
+     int i = 0;
      while (config.goWhile==false)
      {
-         qDebug("czekam");
+         qDebug() << "czekam: "+QString::number(++i) ;
      }
      delete worker;
      infoMPDtimer->stop();
