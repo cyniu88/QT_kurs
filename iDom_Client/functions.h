@@ -7,5 +7,5 @@
 template <typename T>
 std::string to_string(T value);
 
-std::string  RSHash(int offset =0);
+std::string  RSHash();
 #endif // FUNCTIONS_H

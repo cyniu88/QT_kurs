@@ -80,13 +80,13 @@ private slots:
 
     void on_pushButton_24_released();
 
-    void on_to_horizontalSlider_2_valueChanged(int value);
+    void on_to_horizontalSlider_2_valueChanged();
 
     void on_from_horizontalSlider_valueChanged(int value);
 
-    void on_spinBox_toLED_valueChanged(int arg1);
+    void on_spinBox_toLED_valueChanged();
 
-    void on_spinBox_fromLED_valueChanged(int arg1);
+    void on_spinBox_fromLED_valueChanged( );
 
     void on_pushButton_10_released();
 
@@ -136,15 +136,9 @@ private slots:
 
     void on_pushButton_26_released();
 
-
-
-    void on_pushButton_27_released();
-
-    void on_pushButton_28_clicked();
-
 public slots:
       void zmienCounter(int c);
-      void zmienCounter2(int c);
+
       void odb_answer(QString s);
       void readProgress(int c);
       void odb_answer_LED(QString s);

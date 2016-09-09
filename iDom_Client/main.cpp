@@ -56,7 +56,9 @@ int main(int argc, char *argv[])
      while (config.goWhile==false)
      {
          qDebug() << "czekam: "+QString::number(++i) ;
+
          if (i>100000)
+
          {
              break;
          }

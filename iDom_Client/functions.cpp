@@ -11,7 +11,7 @@ std::string to_string(T value)
     return os.str() ;
 }
 }
-std::string RSHash(int offset)
+std::string RSHash( )
 {
     time_t act_time;
        struct tm * act_date;
