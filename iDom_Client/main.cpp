@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     infoTemperatureTimer->start(60000);
     infoMPDtimer->start(10000);
     scroller->start(500);
-
+    w->updateTemepretureInfo();
 
      a.exec();
      config.goWhile=false;
@@ -56,6 +56,10 @@ int main(int argc, char *argv[])
      while (config.goWhile==false)
      {
          qDebug() << "czekam: "+QString::number(++i) ;
+         if (i>100000)
+         {
+             break;
+         }
      }
      delete worker;
      infoMPDtimer->stop();

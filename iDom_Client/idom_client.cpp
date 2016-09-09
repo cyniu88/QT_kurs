@@ -165,7 +165,7 @@ void iDom_Client::updateMPDinfo()
     emit sendTCP("MPD_title","MPD get_info");
     QThread::sleep(1);
     emit sendTCP("MPD_volume","MPD get_volume");
-    emit sendTCP("temperature","RS232 get temperature");
+    //emit sendTCP("temperature","RS232 get temperature");
     qDebug("timer mpd info ");
 }
 
@@ -359,6 +359,7 @@ void iDom_Client::on_pushButton_5_released()
 void iDom_Client::on_playButton_released()
 {
     emit sendTCP("MPD","MPD start");
+    emit sendTCP("MPD_title","MPD get_info");
 }
 
 
@@ -416,33 +417,39 @@ void iDom_Client::on_spinBox_fromLED_valueChanged(int arg1)
 void iDom_Client::on_stopButton_released()
 {
     emit sendTCP("MPD","MPD stop");
+    emit sendTCP("MPD_title","MPD get_info");
 }
 
 void iDom_Client::on_pushButtonPREV_released()
 {
     emit sendTCP("MPD","MPD prev");
+    emit sendTCP("MPD_title","MPD get_info");
 }
 
 void iDom_Client::on_pushButtonNext_released()
 {
     emit sendTCP("MPD","MPD next");
+    emit sendTCP("MPD_title","MPD get_info");
 }
 
 void iDom_Client::on_pushButton_pause_released()
 {
     emit sendTCP("MPD","MPD pause");
+    emit sendTCP("MPD_title","MPD get_info");
 }
 
 void iDom_Client::on_pushButton_volumeUP_released()
 {
     emit sendTCP("MPD","MPD volume_up");
     ui->volumeBar->setValue(ui->volumeBar->value()+1);
+    emit sendTCP("MPD_volume","MPD get_volume");
 }
 
 void iDom_Client::on_pushButton_volumeDOWN_released()
 {
     emit sendTCP("MPD","MPD volume_down");
     ui->volumeBar->setValue(ui->volumeBar->value()-1);
+    emit sendTCP("MPD_volume","MPD get_volume");
 }
 
 void iDom_Client::on_exitButton_pressed()

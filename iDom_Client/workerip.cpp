@@ -26,8 +26,13 @@ void WorkerIP::run()
 
             // send
             socket->write(  RSHash().c_str());
-            while (socket->waitForBytesWritten(waitTime)){
-                qDebug() << "czekam na zapis : ";
+            while (true){
+                qDebug() << "czekam na zapis 2 : ";
+                if (socket->waitForBytesWritten(waitTime)==true)
+                {
+                    break;
+                }
+
             }
             while (true){
                 qDebug() << "czekam na ODCZYT : ";
@@ -45,7 +50,15 @@ void WorkerIP::run()
 
 
             socket->write("OK");
-            socket->waitForBytesWritten(waitTime);
+
+            while (true){
+                qDebug() << "czekam na zapis 2 : ";
+                if (socket->waitForBytesWritten(waitTime)==true)
+                {
+                    break;
+                }
+
+            }
             while (true){
                 qDebug() << "czekam na ODCZYT 2 : ";
                 if (socket->waitForReadyRead(waitTime)==true)
@@ -85,6 +98,8 @@ void WorkerIP::run()
     unsigned int len_send = 0;
     unsigned int len_temp = 0;
     bool goNow = true;
+    ///////////// po autentykacji //////////////////////
+
     while (goNow){
 
 
@@ -102,13 +117,21 @@ void WorkerIP::run()
         addresOUT = config->workerQueue.Take();
         emit progress(0);
         socket->write( addresOUT.what.c_str());
+        while (true){
+            qDebug() << "czekam na zapis 2 : ";
+            if (socket->waitForBytesWritten(waitTime)==true)
+            {
+                break;
+            }
+
+        }
         qDebug() << "WYSLANO!! : " << addresOUT.what.c_str();
         to_send = false;
         //config->IPMutex.unlock();
 
         socket->waitForBytesWritten(waitTime);
         while (true){
-            // qDebug() << "czekam na ODCZYT 2 : ";
+             qDebug() << "czekam na ODCZYT 1 : ";
             if (socket->waitForReadyRead(waitTime)==true)
             {
                 break;
@@ -121,7 +144,14 @@ void WorkerIP::run()
         //socket->waitForBytesWritten(1000);
         //socket->waitForReadyRead(3000);
         socket->write("OK");
+        while (true){
+            qDebug() << "czekam na zapis 2 : ";
+            if (socket->waitForBytesWritten(waitTime)==true)
+            {
+                break;
+            }
 
+        }
         s_buffor = buffor.toStdString();
         len_send = atoi (s_buffor.c_str());
 
@@ -131,7 +161,7 @@ void WorkerIP::run()
         s_buffor.erase();
         while (true){
             while (true){
-                //qDebug() << "czekam na ODCZYT 2 : ";
+                qDebug() << "czekam na ODCZYT 2 : ";
                 if (socket->waitForReadyRead(waitTime)==true)
                 {
                     break;
