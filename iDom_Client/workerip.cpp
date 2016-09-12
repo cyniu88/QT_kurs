@@ -10,6 +10,7 @@ WorkerIP::WorkerIP(iDom_CONFIG *config) : config(config)
 
 void WorkerIP::run()
 {
+    int counter = 100;
     QTcpSocket *socket;
     QByteArray buffor;
 
@@ -27,32 +28,8 @@ void WorkerIP::run()
             // send
             socket->write(  RSHash().c_str());
             while (true){
-                qDebug() << "czekam na zapis 2 : ";
-                if (socket->waitForBytesWritten(waitTime)==true)
-                {
-                    break;
-                }
+                qDebug() << "wyslalem write KEY : ";
 
-            }
-            while (true){
-                qDebug() << "czekam na ODCZYT : ";
-                if (socket->waitForReadyRead(waitTime)==true)
-                {
-                    break;
-                }
-
-            }
-
-            qDebug() << "Reading ready : " << socket->bytesAvailable();
-
-            // get the data
-            buffor = socket->readAll();
-
-
-            socket->write("OK");
-
-            while (true){
-                qDebug() << "czekam na zapis 2 : ";
                 if (socket->waitForBytesWritten(waitTime)==true)
                 {
                     break;
@@ -69,11 +46,9 @@ void WorkerIP::run()
             }
             qDebug() << "Reading2: " << socket->bytesAvailable();
 
-            // get the data
             buffor = socket->readAll();
             qDebug() << "wiadomosc2"<<buffor;
             s_buffor = buffor.toStdString();
-
 
             if (s_buffor[0]=='O' && s_buffor[1]=='K'){
                 qDebug ()<< "Autentykacja ok";
@@ -98,8 +73,9 @@ void WorkerIP::run()
     unsigned int len_send = 0;
     //unsigned int len_temp = 0;
     bool goNow = true;
+    ////////////////////////////////////////////////////
     ///////////// po autentykacji //////////////////////
-
+    ////////////////////////////////////////////////////
     while (goNow){
 
 
@@ -118,7 +94,7 @@ void WorkerIP::run()
         emit progress(0);
         socket->write( addresOUT.what.c_str());
         while (true){
-            qDebug() << "czekam na zapis 2 : ";
+            qDebug() << "czekam na zapis pierwsza komenda  : ";
             if (socket->waitForBytesWritten(waitTime)==true)
             {
                 break;
@@ -139,10 +115,8 @@ void WorkerIP::run()
 
         }
 
-        // qDebug() << "Reading: " << socket->bytesAvailable();
         buffor = socket->readAll();
-        //socket->waitForBytesWritten(1000);
-        //socket->waitForReadyRead(3000);
+
         socket->write("OK");
         while (true){
             qDebug() << "czekam na zapis 2 : ";
@@ -176,8 +150,6 @@ void WorkerIP::run()
             emit progress(    (100*s_buffor.length())/len_send          );
 
 
-
-            //qDebug() << "Reading: " << socket->bytesAvailable();
             buffor = socket->readAll();
             s_buffor += buffor.toStdString();
             if (s_buffor.length()==len_send){
@@ -185,7 +157,6 @@ void WorkerIP::run()
 
                 emit sygnal(s_buffor.length());
                 qDebug("mam wsztstko!");
-                //  qDebug() << QString::fromStdString(s_buffor);
 
 
                 if (addresOUT.address == "console"){
@@ -222,7 +193,7 @@ void WorkerIP::run()
     }
     // close the connection
     socket->close();
-
+    delete socket;
     qDebug("koniec koncow workera @@@@@@@@@@@@");
     config->goWhile=true;
 
