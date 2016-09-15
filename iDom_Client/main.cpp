@@ -28,8 +28,8 @@ int main(int argc, char *argv[])
 
     iDom_Client * w = new iDom_Client(&config);
 
-    QObject::connect(worker,SIGNAL(sygnal(int )), w, SLOT(zmienCounter(int )));
-    QObject::connect(worker,SIGNAL(sygnal2(int )), w, SLOT(zmienCounter2(int )));
+    QObject::connect(worker,SIGNAL(sendActual(int )), w, SLOT(setLcdActual(int)));
+    QObject::connect(worker,SIGNAL(sendAll(int )), w, SLOT(setLcdAll(int)));
     QObject::connect(worker,SIGNAL(answer(QString)),w,SLOT(odb_answer(QString)));
     QObject::connect(w,SIGNAL(sendTCP(std::string,std::string)), worker,SLOT(fromTCP(std::string,std::string)));
     QObject::connect(worker,SIGNAL(progress(int)),w,SLOT(readProgress(int)));

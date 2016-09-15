@@ -27,7 +27,8 @@ private:
     bool to_send= false;
     ADRESS_WHAT addresIN;
     ADRESS_WHAT addresOUT;
-    int waitTime = 1000000000;
+    int waitTime = 1000;
+    int counterWaitTime = 20;
     QTcpSocket *socket;
     QByteArray buffor;
 
@@ -37,8 +38,8 @@ private:
     void waitRecv(int waitTime, int counter);
 
 signals:
-    void sygnal(int c);
-    void sygnal2(int c);
+    void sendActual(int c);
+    void sendAll(int c);
     void progress(int c);
     void answer(QString s);
     void answerLED(QString s);

@@ -10,7 +10,7 @@ WorkerIP::WorkerIP(iDom_CONFIG *config) : config(config)
 
 void WorkerIP::run()
 {
-    int counter = 100;
+   // int counter = 100;
     config->goWhile = connectAndAuthentication();
 
     unsigned int len_send = 0;
@@ -38,36 +38,33 @@ void WorkerIP::run()
         emit progress(0);
 
         socket->write( addresOUT.what.c_str());
-        waitSend(100,10);            //socket->waitForBytesWritten(waitTime);
-        waitRecv(100,10); // socket->waitForReadyRead(waitTime);
+        waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
+        waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
 
         buffor = socket->readAll();
         s_buffor = buffor.toStdString();
         len_send = atoi (s_buffor.c_str());
-        emit sygnal2(len_send);
+        emit sendAll(len_send);
 
         socket->write("OK");
-        waitSend(100,10);            //socket->waitForBytesWritten(waitTime);
+        waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
 
 
         buffor.clear();
         s_buffor.erase();
 
         while (true){
-            waitRecv(100,10); // socket->waitForReadyRead(waitTime);
-
-            emit sygnal(++counter);
-
-
-            emit progress(    (100*s_buffor.length())/len_send          );
-
-
+            waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
+            emit sendActual(s_buffor.length());
+            emit progress(    (100*s_buffor.length())/len_send  );
+            emit sendAll(len_send);
             buffor = socket->readAll();
             s_buffor += buffor.toStdString();
-            if (s_buffor.length()==len_send){
+            if (s_buffor.length()>=len_send){
 
 
-                emit sygnal(s_buffor.length());
+                emit sendActual(s_buffor.length());
+                emit sendAll(len_send);
                 qDebug("mam wsztstko!");
 
 
@@ -122,12 +119,12 @@ bool WorkerIP::connectAndAuthentication()
         if(socket->waitForConnected())
         {
             socket->write(  RSHash().c_str());
-            waitSend(100,10);            //socket->waitForBytesWritten(waitTime);
-            waitRecv(100,10); // socket->waitForReadyRead(waitTime);
+            waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
+            waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
             buffor = socket->readAll();
             socket->write( "OK");
-            waitSend(100,10);            //socket->waitForBytesWritten(waitTime);
-            waitRecv(1000,10); // socket->waitForReadyRead(waitTime);
+            waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
+            waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
             buffor = socket->readAll();
             s_buffor = buffor.toStdString();
 
@@ -139,7 +136,7 @@ bool WorkerIP::connectAndAuthentication()
             }
             else{
                 qDebug() << "Autentykacja faild";
-                emit errorInfo ("INFO","Authentication failed " +QString::number(i)+" times! +" + buffor);
+                emit errorInfo ("INFO","Authentication failed " +QString::number(i)+" times!" );
                 socket->disconnect();
             }
 
@@ -149,6 +146,8 @@ bool WorkerIP::connectAndAuthentication()
             qDebug() << "Not connected!";
             emit errorInfo ("INFO","Not connected!");
         }
+
+        QThread::sleep(1);
     }//end for authentication
   delete socket;
     return false;
@@ -164,25 +163,29 @@ bool WorkerIP::disconnectFromServer()
 void WorkerIP::waitSend(int waitTime, int counter)
 {
     for (int i = 0; i< counter;++i){
-        qDebug() << "czekam na zapis pierwsza komenda  : ";
+        qDebug() << "czekam na zapis "<< QString::number(i);
         if (socket->waitForBytesWritten(waitTime)==true)
         {
-            break;
+           return;
         }
 
     }
+    socket->write("OK");
 }
 
 void WorkerIP::waitRecv(int waitTime, int counter)
-{
+{   bool temp;
     for (int i = 0; i< counter;++i){
-        qDebug() << "czekam na zapis pierwsza komenda  : ";
-        if (socket->waitForReadyRead(waitTime)==true)
+        temp = socket->waitForReadyRead(waitTime);
+        qDebug() << "czekam na odczyt "<< QString::number(i) <<" bool:"<<temp;
+
+        if (temp ==true)
         {
-            break;
+            return;
         }
 
     }
+ socket->write("OK");
 }
 
 void WorkerIP::fromTCP(std::string addres , std::string qmsg)
@@ -193,5 +196,4 @@ void WorkerIP::fromTCP(std::string addres , std::string qmsg)
 
     config->workerQueue.Put(addresIN);
 
-    qDebug()<< "przyzedl sygnal " << QString::number(config->workerQueue.Size()) ;
 }

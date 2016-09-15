@@ -112,7 +112,7 @@ void iDom_Client::odb_answer(QString s){
     ui->wynik->setText(s);
     ui->wynik->moveCursor(QTextCursor::End);
 
-    ui->lcdNumber_2->display(s.size());
+    ui->lcdNumberActual ->display(s.size());
     ui->progressBar->setValue(100);
     droid.vibrate(100);
 }
@@ -163,9 +163,9 @@ void iDom_Client::errorRead(QString tit, QString msg)
 void iDom_Client::updateMPDinfo()
 {
     emit sendTCP("MPD_title","MPD get_info");
-    QThread::sleep(1);
+
     emit sendTCP("MPD_volume","MPD get_volume");
-    //emit sendTCP("temperature","RS232 get temperature");
+
     qDebug("timer mpd info ");
 }
 
@@ -184,10 +184,7 @@ void iDom_Client::odb_temperature(QString s)
     ui->OutsideLCD->display( out);
 }
 
-void iDom_Client::zmienCounter(int c)
-{
-    ui->lcdNumber->display(c);
-}
+
 
 
 
@@ -268,6 +265,7 @@ void iDom_Client::on_pushButton_26_released()
 {
     sendSignalColor(98, 0, 44,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
+
 void iDom_Client::on_pushButton_10_released()
 {
     sendSignalColor(255, 165, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
@@ -465,4 +463,14 @@ void iDom_Client::on_pushButton_22_released()
     ui->information->setText(QString::number(droid.getProximity()));
 }
 
+
+void iDom_Client::setLcdActual(int c)
+{
+    ui->lcdNumberActual->display(c);
+}
+
+void iDom_Client::setLcdAll(int c)
+{
+   ui->lcdNumberAll->display(c);
+}
 

@@ -137,8 +137,8 @@ private slots:
     void on_pushButton_26_released();
 
 public slots:
-      void zmienCounter(int c);
-
+      void setLcdActual(int c);
+      void setLcdAll(int c);
       void odb_answer(QString s);
       void readProgress(int c);
       void odb_answer_LED(QString s);

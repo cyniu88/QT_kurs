@@ -251,7 +251,7 @@ background-color: rgba(0, 0, 0, 0);</string>
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -793,57 +793,12 @@ border-color: rgb(255, 255, 255);
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
-          <item row="4" column="0">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
           <item row="5" column="2">
-           <widget class="QLCDNumber" name="lcdNumber_2">
+           <widget class="QLCDNumber" name="lcdNumberAll">
             <property name="styleSheet">
              <string notr="true">color: rgb(255, 255, 0);
  
 border: none ;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="0" colspan="2">
-           <widget class="QLCDNumber" name="lcdNumber">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(0, 255, 0);
-border: none ;</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="segmentStyle">
-             <enum>QLCDNumber::Outline</enum>
             </property>
            </widget>
           </item>
@@ -1031,6 +986,51 @@ QComboBox::down-arrow {
              </property>
             </item>
            </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLCDNumber" name="lcdNumberActual">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 255, 0);
+border: none ;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Outline</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </item>
