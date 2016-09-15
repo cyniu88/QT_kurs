@@ -251,7 +251,7 @@ background-color: rgba(0, 0, 0, 0);</string>
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -425,6 +425,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                  <widget class="QLCDNumber" name="OutsideLCD">
                   <property name="font">
                    <font>
+                    <family>MS PGothic</family>
                     <pointsize>14</pointsize>
                    </font>
                   </property>
@@ -436,6 +437,9 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                   <property name="smallDecimalPoint">
                    <bool>false</bool>
+                  </property>
+                  <property name="segmentStyle">
+                   <enum>QLCDNumber::Filled</enum>
                   </property>
                  </widget>
                 </item>

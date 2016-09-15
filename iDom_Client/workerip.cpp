@@ -158,6 +158,7 @@ bool WorkerIP::disconnectFromServer()
     socket->disconnect();
     socket->close();
     delete socket;
+    return true;
 }
 
 void WorkerIP::waitSend(int waitTime, int counter)

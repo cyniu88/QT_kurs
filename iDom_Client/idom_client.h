@@ -11,8 +11,7 @@
 #include <QScroller>
 #include <QProximitySensor>
 #include <QSystemTrayIcon>
-#include <QtMultimediaWidgets/QVideoWidget>
-#include <QtMultimedia/QMediaPlayer>
+
 
 #include "mainwindow.h"
 
