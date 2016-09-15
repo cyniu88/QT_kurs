@@ -4,7 +4,10 @@
 template<typename T>
 void BlockingQueue<T>::Put(const T& task){
 	std::unique_lock<std::mutex> lock(mtx);
-
+    if (queue_.size() > capacity_ - 2){
+        qDebug("za duzo w kolejce!!!!!");
+        return;
+    }
 
 	full_.wait(lock, [this]{return (queue_.size() < capacity_);} );
     //assert(queue_.size() < capacity_);

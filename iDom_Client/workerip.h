@@ -2,6 +2,7 @@
 #define WORKERIP_H
 
 #include <QMessageBox>
+#include <QTcpSocket>
 #include <QThread>
 #include "functions.h"
 #include "variable.h"
@@ -26,7 +27,14 @@ private:
     bool to_send= false;
     ADRESS_WHAT addresIN;
     ADRESS_WHAT addresOUT;
-    int waitTime = 100;
+    int waitTime = 1000000000;
+    QTcpSocket *socket;
+    QByteArray buffor;
+
+    bool connectAndAuthentication();
+    bool disconnectFromServer();
+    void waitSend(int waitTime, int counter);
+    void waitRecv(int waitTime, int counter);
 
 signals:
     void sygnal(int c);
