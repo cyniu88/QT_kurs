@@ -37,7 +37,7 @@ void WorkerIP::run()
 
         emit progress(0);
 
-        socket->write( addresOUT.what.c_str());
+        qDebug() << "wyslano: "<<socket->write( addresOUT.what.c_str());
         waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
         waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
 
@@ -163,21 +163,21 @@ bool WorkerIP::disconnectFromServer()
 void WorkerIP::waitSend(int waitTime, int counter)
 {
     for (int i = 0; i< counter;++i){
-        qDebug() << "czekam na zapis "<< QString::number(i);
+        //qDebug() << "czekam na zapis "<< QString::number(i);
         if (socket->waitForBytesWritten(waitTime)==true)
         {
            return;
         }
 
     }
-    socket->write("OK");
+
 }
 
 void WorkerIP::waitRecv(int waitTime, int counter)
 {   bool temp;
     for (int i = 0; i< counter;++i){
         temp = socket->waitForReadyRead(waitTime);
-        qDebug() << "czekam na odczyt "<< QString::number(i) <<" bool:"<<temp;
+       // qDebug() << "czekam na odczyt "<< QString::number(i) <<" bool:"<<temp;
 
         if (temp ==true)
         {
@@ -185,7 +185,7 @@ void WorkerIP::waitRecv(int waitTime, int counter)
         }
 
     }
- socket->write("OK");
+
 }
 
 void WorkerIP::fromTCP(std::string addres , std::string qmsg)
