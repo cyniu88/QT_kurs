@@ -251,7 +251,7 @@ background-color: rgba(0, 0, 0, 0);</string>
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="iconSize">
        <size>
@@ -929,7 +929,7 @@ p, li { white-space: pre-wrap; }
              <string notr="true">
 QComboBox {
  
-background-color: rgba(0, 255, 0, 10);
+background-color: rgba(0, 255, 0, 50);
  border: true;
 	border-color: rgb(0, 255, 0);
 	color: rgb(0, 255, 0);
