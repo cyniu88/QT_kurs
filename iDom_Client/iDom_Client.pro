@@ -4,7 +4,11 @@
 #
 #-------------------------------------------------
 
-QT += core gui network sensors  multimedia multimediawidgets
+QT += core gui network sensors
+windows {
+            message("* Using settings for Windows.")
+            QT +=  axcontainer
+}
 android {
             message("* Using settings for Android.")
             QT +=  androidextras

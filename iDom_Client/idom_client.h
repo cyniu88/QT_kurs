@@ -135,6 +135,7 @@ private slots:
 
     void on_pushButton_26_released();
 
+
 public slots:
       void setLcdActual(int c);
       void setLcdAll(int c);

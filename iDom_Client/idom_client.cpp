@@ -79,7 +79,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     ui->wynik->setText( QString::fromStdString( s));
 
-
+        ui->axWidget->dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+                //WebBrowser->dynamicCall("Navigate(const QString&)", url);
 }
 
 iDom_Client::~iDom_Client()
