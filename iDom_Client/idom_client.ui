@@ -251,7 +251,7 @@ background-color: rgba(0, 0, 0, 0);</string>
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -293,7 +293,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                 <property name="sizeConstraint">
                  <enum>QLayout::SetFixedSize</enum>
                 </property>
-                <item row="2" column="4" colspan="2">
+                <item row="1" column="4" colspan="2">
                  <widget class="QLineEdit" name="OutsideLine">
                   <property name="font">
                    <font>
@@ -315,7 +315,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="3">
+                <item row="1" column="3">
                  <widget class="QLineEdit" name="InsideDEG">
                   <property name="maximumSize">
                    <size>
@@ -343,7 +343,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="7">
+                <item row="1" column="7">
                  <widget class="QLineEdit" name="OutsideDEG">
                   <property name="maximumSize">
                    <size>
@@ -368,20 +368,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="2" colspan="4">
-                 <widget class="QPushButton" name="pushButton_22">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>sendSMS</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0" colspan="2">
+                <item row="1" column="0" colspan="2">
                  <widget class="QLineEdit" name="InsideLine">
                   <property name="font">
                    <font>
@@ -406,7 +393,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="2">
+                <item row="1" column="2">
                  <widget class="QLCDNumber" name="InsideLCD">
                   <property name="font">
                    <font>
@@ -421,7 +408,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="6">
+                <item row="1" column="6">
                  <widget class="QLCDNumber" name="OutsideLCD">
                   <property name="font">
                    <font>
@@ -443,37 +430,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="0" colspan="8">
-                 <widget class="QTextBrowser" name="information">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>50</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Comic Sans MS</family>
-                    <pointsize>10</pointsize>
-                    <weight>50</weight>
-                    <italic>false</italic>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color: rgb(0, 255, 0);
-background-color: rgba(0, 0, 0, 0);
-font: 10pt &quot;Comic Sans MS&quot;;</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0" colspan="8">
+                <item row="2" column="0" colspan="8">
                  <widget class="QAxWidget" name="axWidget">
                   <property name="control" stdset="0">
                    <string>{8856f961-340a-11d0-a96b-00c04fd705a2}</string>

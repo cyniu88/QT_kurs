@@ -55,8 +55,6 @@ private slots:
 
     void on_LED_OFF_Button_37_released();
 
-    void on_redButton_22_released();
-
     void on_pushButton_2_released();
 
     void on_pushButton_3_released();
@@ -109,7 +107,7 @@ private slots:
 
     void on_pushButtonupdateinfo_released();
 
-    void on_pushButton_22_released();
+    void on_redButton_22_released();
 
     void on_pushButton_12_released();
 
@@ -135,6 +133,8 @@ private slots:
 
     void on_pushButton_26_released();
 
+
+    void on_tabWidget_currentChanged();
 
 public slots:
       void setLcdActual(int c);

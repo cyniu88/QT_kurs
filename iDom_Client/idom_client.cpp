@@ -79,8 +79,11 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     ui->wynik->setText( QString::fromStdString( s));
 
+    if (ui->tabWidget->currentIndex() == 0 )
+    {
         ui->axWidget->dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
-                //WebBrowser->dynamicCall("Navigate(const QString&)", url);
+
+    }
 }
 
 iDom_Client::~iDom_Client()
@@ -461,12 +464,6 @@ void iDom_Client::on_pushButtonupdateinfo_released()
 
 }
 
-void iDom_Client::on_pushButton_22_released()
-{
-    droid.vibrate(300);
-    ui->information->setText(QString::number(droid.getProximity()));
-
-}
 
 
 void iDom_Client::setLcdActual(int c)
@@ -479,3 +476,12 @@ void iDom_Client::setLcdAll(int c)
    ui->lcdNumberAll->display(c);
 }
 
+
+void iDom_Client::on_tabWidget_currentChanged( )
+{
+    if (ui->tabWidget->currentIndex() == 0 )
+    {
+        ui->axWidget->dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+
+    }
+}
