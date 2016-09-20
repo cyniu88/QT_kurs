@@ -89,7 +89,9 @@ iDom_Client::~iDom_Client()
     delete trayIcon;
 #endif
    // delete okno;
+    ui->axWidget->deleteLater();
     delete ui;
+
 }
 
 void iDom_Client::on_EXITButton_released()
