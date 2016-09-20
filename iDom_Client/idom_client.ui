@@ -293,53 +293,25 @@ background-color: rgba(0, 0, 0, 0);</string>
                 <property name="sizeConstraint">
                  <enum>QLayout::SetFixedSize</enum>
                 </property>
-                <item row="1" column="4" colspan="2">
-                 <widget class="QLineEdit" name="OutsideLine">
+                <item row="1" column="6">
+                 <widget class="QLCDNumber" name="OutsideLCD">
                   <property name="font">
                    <font>
+                    <family>MS PGothic</family>
                     <pointsize>14</pointsize>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">color: rgb(0, 255, 0);
-background-color: rgba(0, 0, 0, 0);</string>
+                   <string notr="true">color: rgb(0, 255, 0);</string>
                   </property>
-                  <property name="text">
-                   <string>Outside temp:</string>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
                   </property>
-                  <property name="frame">
+                  <property name="smallDecimalPoint">
                    <bool>false</bool>
                   </property>
-                  <property name="alignment">
-                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="3">
-                 <widget class="QLineEdit" name="InsideDEG">
-                  <property name="maximumSize">
-                   <size>
-                    <width>30</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <pointsize>14</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color: rgb(0, 255, 0);
-background-color: rgba(0, 0, 0, 0);</string>
-                  </property>
-                  <property name="text">
-                   <string>°C</string>
-                  </property>
-                  <property name="frame">
-                   <bool>false</bool>
-                  </property>
-                  <property name="readOnly">
-                   <bool>true</bool>
+                  <property name="segmentStyle">
+                   <enum>QLCDNumber::Filled</enum>
                   </property>
                  </widget>
                 </item>
@@ -393,6 +365,28 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
+                <item row="1" column="4" colspan="2">
+                 <widget class="QLineEdit" name="OutsideLine">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(0, 255, 0);
+background-color: rgba(0, 0, 0, 0);</string>
+                  </property>
+                  <property name="text">
+                   <string>Outside temp:</string>
+                  </property>
+                  <property name="frame">
+                   <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
                 <item row="1" column="2">
                  <widget class="QLCDNumber" name="InsideLCD">
                   <property name="font">
@@ -408,33 +402,37 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="6">
-                 <widget class="QLCDNumber" name="OutsideLCD">
+                <item row="1" column="3">
+                 <widget class="QLineEdit" name="InsideDEG">
+                  <property name="maximumSize">
+                   <size>
+                    <width>30</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
                   <property name="font">
                    <font>
-                    <family>MS PGothic</family>
                     <pointsize>14</pointsize>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">color: rgb(0, 255, 0);</string>
+                   <string notr="true">color: rgb(0, 255, 0);
+background-color: rgba(0, 0, 0, 0);</string>
                   </property>
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
+                  <property name="text">
+                   <string>°C</string>
                   </property>
-                  <property name="smallDecimalPoint">
+                  <property name="frame">
                    <bool>false</bool>
                   </property>
-                  <property name="segmentStyle">
-                   <enum>QLCDNumber::Filled</enum>
+                  <property name="readOnly">
+                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="0" colspan="8">
-                 <widget class="QAxWidget" name="axWidget">
-                  <property name="control" stdset="0">
-                   <string>{8856f961-340a-11d0-a96b-00c04fd705a2}</string>
-                  </property>
+                 <widget class="QWidget" name="widgetWWW" native="true">
+                  <layout class="QGridLayout" name="gridLayout_10"/>
                  </widget>
                 </item>
                </layout>
@@ -1969,13 +1967,6 @@ background-color: rgb(207, 47, 47);</string>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>QAxWidget</class>
-   <extends>QWidget</extends>
-   <header>qaxwidget.h</header>
-  </customwidget>
- </customwidgets>
  <resources>
   <include location="ikony.qrc"/>
  </resources>

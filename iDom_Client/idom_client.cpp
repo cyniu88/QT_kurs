@@ -78,28 +78,36 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     std::string s =  std::to_string(height) +" and " + std::to_string(width)  ;
 
     ui->wynik->setText( QString::fromStdString( s));
+#ifdef Q_OS_WIN
+    axWidgetTemperature = new QAxWidget(parent);
+    axWidgetTemperature->setControl("{8856f961-340a-11d0-a96b-00c04fd705a2}");
+    ui->widgetWWW->layout()->addWidget(axWidgetTemperature);
 
     if (ui->tabWidget->currentIndex() == 0 )
     {
-        ui->axWidget->dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+        axWidgetTemperature->dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
 
     }
+
+#endif
 }
 
 iDom_Client::~iDom_Client()
 {
 #ifdef Q_OS_WIN
+    axWidgetTemperature->deleteLater();
+
     delete trayIcon;
+    delete axWidgetTemperature;
 #endif
-   // delete okno;
-    ui->axWidget->deleteLater();
+    // delete okno;
     delete ui;
 
 }
 
 void iDom_Client::on_EXITButton_released()
 {
-     ui->centralWidget->close();
+    ui->centralWidget->close();
 }
 
 void iDom_Client::scrollTitle()
@@ -156,7 +164,7 @@ void iDom_Client::odbMpdVolume(QString s)
 void iDom_Client::errorRead(QString tit, QString msg)
 {
     droid.vibrate(300);
- #ifdef Q_OS_ANDROID
+#ifdef Q_OS_ANDROID
     QMessageBox::information(this,tit,  msg);
 #endif
 #ifdef Q_OS_WIN
@@ -473,7 +481,7 @@ void iDom_Client::setLcdActual(int c)
 
 void iDom_Client::setLcdAll(int c)
 {
-   ui->lcdNumberAll->display(c);
+    ui->lcdNumberAll->display(c);
 }
 
 
@@ -481,7 +489,8 @@ void iDom_Client::on_tabWidget_currentChanged( )
 {
     if (ui->tabWidget->currentIndex() == 0 )
     {
-        ui->axWidget->dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
-
+#ifdef Q_OS_WIN
+        axWidgetTemperature ->dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+#endif
     }
 }

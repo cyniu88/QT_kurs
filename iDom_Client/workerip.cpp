@@ -138,6 +138,7 @@ bool WorkerIP::connectAndAuthentication()
                 qDebug() << "Autentykacja faild";
                 emit errorInfo ("INFO","Authentication failed " +QString::number(i)+" times!" );
                 socket->disconnect();
+                QThread::sleep(1);
             }
 
         }

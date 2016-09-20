@@ -12,6 +12,9 @@
 #include <QProximitySensor>
 #include <QSystemTrayIcon>
 
+#ifdef Q_OS_WIN
+#include <QAxWidget>
+#endif
 
 #include "mainwindow.h"
 
@@ -42,6 +45,7 @@ private:
 
 #ifdef Q_OS_WIN
     QSystemTrayIcon *trayIcon;
+    QAxWidget * axWidgetTemperature;
 #endif
 
 private slots:
