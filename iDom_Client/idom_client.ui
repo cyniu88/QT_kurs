@@ -251,7 +251,7 @@ background-color: rgba(0, 0, 0, 0);</string>
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="iconSize">
        <size>
@@ -915,6 +915,11 @@ QComboBox::down-arrow {
             <item>
              <property name="text">
               <string/>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>RS232 send temperature_error:00;</string>
              </property>
             </item>
             <item>
