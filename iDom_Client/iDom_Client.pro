@@ -11,7 +11,7 @@ windows {
 }
 android {
             message("* Using settings for Android.")
-            QT +=  androidextras
+            QT +=  androidextras webview
 
         }
 MOBILITY = androidextras

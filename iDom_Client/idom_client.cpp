@@ -36,10 +36,11 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     {
         QMessageBox::critical(this,":(","Ninja Mode is not available on this computer. Try again later :P");
     }
-
-    trayIcon = new  QSystemTrayIcon();
-    trayIcon->setIcon(QIcon(":/new/prefix1/iDom_client.ico"));
-    trayIcon->show();
+    else
+    {
+        trayIcon.setIcon(QIcon(":/new/prefix1/iDom_client.ico"));
+        trayIcon.show();
+    }
 #endif
     // dodajemy scrolla area  ajki widget  i czym scrolujemy
     QScroller::grabGesture(ui->wynik,QScroller::TouchGesture);
@@ -59,7 +60,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
         qDebug("udalo sie android");
 
     }
-    //ui->scrollArea->setWidget(ui->wynik);
+
 
     pix = pix.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
@@ -73,32 +74,35 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     QRect rec = QApplication::desktop()->screenGeometry();
     int  height = rec.height();
-    int width = rec.width();
+    int  width  = rec.width();
 
     std::string s =  std::to_string(height) +" and " + std::to_string(width)  ;
 
     ui->wynik->setText( QString::fromStdString( s));
 #ifdef Q_OS_WIN
-    axWidgetTemperature = new QAxWidget(parent);
-    axWidgetTemperature->setControl("{8856f961-340a-11d0-a96b-00c04fd705a2}");
-    ui->widgetWWW->layout()->addWidget(axWidgetTemperature);
+
+    axWidgetTemperature.setControl("{8856f961-340a-11d0-a96b-00c04fd705a2}");
+
+    ui->widgetWWW->layout()->addWidget( axWidgetTemperaturePTR);
 
     if (ui->tabWidget->currentIndex() == 0 )
     {
-        axWidgetTemperature->dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
-
+        axWidgetTemperature.dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
     }
-
 #endif
+#ifdef Q_OS_ANDROID
+    QtWebView::initialize();
+#endif
+
+
+
 }
 
 iDom_Client::~iDom_Client()
 {
 #ifdef Q_OS_WIN
-    axWidgetTemperature->deleteLater();
-
-    delete trayIcon;
-    delete axWidgetTemperature;
+    axWidgetTemperature.deleteLater();
+    //delete axWidgetTemperature;
 #endif
     // delete okno;
     delete ui;
@@ -168,7 +172,7 @@ void iDom_Client::errorRead(QString tit, QString msg)
     QMessageBox::information(this,tit,  msg);
 #endif
 #ifdef Q_OS_WIN
-    trayIcon->showMessage(tit,msg);
+    trayIcon.showMessage(tit,msg);
 #endif
 
 
@@ -366,6 +370,7 @@ void iDom_Client::on_playButton_released()
 {
     emit sendTCP("MPD","MPD start");
     emit sendTCP("MPD_title","MPD get_info");
+    droid.vibrate(100);
 }
 
 
@@ -424,24 +429,28 @@ void iDom_Client::on_stopButton_released()
 {
     emit sendTCP("MPD","MPD stop");
     emit sendTCP("MPD_title","MPD get_info");
+    droid.vibrate(100);
 }
 
 void iDom_Client::on_pushButtonPREV_released()
 {
     emit sendTCP("MPD","MPD prev");
     emit sendTCP("MPD_title","MPD get_info");
+    droid.vibrate(100);
 }
 
 void iDom_Client::on_pushButtonNext_released()
 {
     emit sendTCP("MPD","MPD next");
     emit sendTCP("MPD_title","MPD get_info");
+    droid.vibrate(100);
 }
 
 void iDom_Client::on_pushButton_pause_released()
 {
     emit sendTCP("MPD","MPD pause");
     emit sendTCP("MPD_title","MPD get_info");
+    droid.vibrate(100);
 }
 
 void iDom_Client::on_pushButton_volumeUP_released()
@@ -449,6 +458,7 @@ void iDom_Client::on_pushButton_volumeUP_released()
     emit sendTCP("MPD","MPD volume_up");
     ui->volumeBar->setValue(ui->volumeBar->value()+1);
     emit sendTCP("MPD_volume","MPD get_volume");
+    droid.vibrate(100);
 }
 
 void iDom_Client::on_pushButton_volumeDOWN_released()
@@ -456,6 +466,7 @@ void iDom_Client::on_pushButton_volumeDOWN_released()
     emit sendTCP("MPD","MPD volume_down");
     ui->volumeBar->setValue(ui->volumeBar->value()-1);
     emit sendTCP("MPD_volume","MPD get_volume");
+    droid.vibrate(100);
 }
 
 void iDom_Client::on_exitButton_pressed()
@@ -490,7 +501,7 @@ void iDom_Client::on_tabWidget_currentChanged( )
     if (ui->tabWidget->currentIndex() == 0 )
     {
 #ifdef Q_OS_WIN
-        axWidgetTemperature ->dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+        axWidgetTemperature .dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
 #endif
     }
 }

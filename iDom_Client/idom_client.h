@@ -15,6 +15,10 @@
 #ifdef Q_OS_WIN
 #include <QAxWidget>
 #endif
+#ifdef Q_OS_ANDROID
+#include <QtWebView/QtWebView>
+#include <QtWebViewVersion>
+#endif
 
 #include "mainwindow.h"
 
@@ -44,8 +48,12 @@ private:
 
 
 #ifdef Q_OS_WIN
-    QSystemTrayIcon *trayIcon;
-    QAxWidget * axWidgetTemperature;
+    QSystemTrayIcon  trayIcon;
+    QAxWidget  axWidgetTemperature;
+    QAxWidget *  axWidgetTemperaturePTR = &axWidgetTemperature;
+#endif
+#ifdef Q_OS_ANDROID
+
 #endif
 
 private slots:
