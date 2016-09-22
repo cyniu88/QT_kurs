@@ -505,3 +505,8 @@ void iDom_Client::on_tabWidget_currentChanged( )
 #endif
     }
 }
+
+void iDom_Client::on_sendEXTRA_clicked()
+{
+    emit sendExtra();
+}

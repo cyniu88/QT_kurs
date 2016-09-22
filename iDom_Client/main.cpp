@@ -42,6 +42,8 @@ int main(int argc, char *argv[])
     QObject::connect(infoTemperatureTimer,SIGNAL(timeout()),w,SLOT(updateTemepretureInfo()) );
     QObject::connect(scroller, SIGNAL(timeout()),w,SLOT(scrollTitle()));
     QObject::connect(worker,SIGNAL(temperature(QString)),w,SLOT(odb_temperature(QString)) );
+
+    QObject::connect(  w,SIGNAL(sendExtra()),worker , SLOT(sendExtra()));
     worker->start();
     w->updateMPDinfo();
     w->show();

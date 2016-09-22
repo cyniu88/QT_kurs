@@ -50,6 +50,7 @@ signals:
     void temperature (QString s);
 public slots:
     void fromTCP(std::string addres, std::string qmsg);
+    void sendExtra();
 
 };
 

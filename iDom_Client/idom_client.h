@@ -148,6 +148,8 @@ private slots:
 
     void on_tabWidget_currentChanged();
 
+    void on_sendEXTRA_clicked();
+
 public slots:
       void setLcdActual(int c);
       void setLcdAll(int c);
@@ -168,6 +170,7 @@ public slots:
 signals:
 
     void sendTCP(std::string addres, std::string s);
+    void sendExtra();
 
 
 
