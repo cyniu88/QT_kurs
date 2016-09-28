@@ -182,8 +182,8 @@ background-color: rgba(0, 0, 0, 0);</string>
          <bool>true</bool>
         </property>
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>9</horstretch>
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>1</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
@@ -209,7 +209,7 @@ background-color: rgba(0, 0, 0, 0);</string>
          <enum>Qt::LeftToRight</enum>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-image: url(:/new/prefix1/files/logo.png);</string>
+         <string notr="true">image: url(:/new/prefix1/files/logo.png);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>

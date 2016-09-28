@@ -1,8 +1,8 @@
 #include <Servo.h>
 #include <ESP8266WiFi.h>
 
-const char* ssid = "staniki_w_gore";
-const char* password = "kiniacynia_458";
+const char* ssid = "EPOL_kd@012";
+const char* password = "epolepol";
 int kat;
 int licznik =0;
 int speed_ = 0;
