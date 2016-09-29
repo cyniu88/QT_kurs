@@ -24,7 +24,7 @@ void MainWindow::on_connect_Button_clicked()
     else
     {
         ui->connect_Button->setText("CONNECT");
-        mySocket.write("DISCONNECT");
+        mySocket.write("DISCONNECT#");
         waitSend(100,20);
         mySocket.disconnect();
         isConnected= false;
@@ -62,7 +62,8 @@ void MainWindow::on_send_Button_clicked()
     QString buffor;
     int waitTime = 100;
     int counterWaitTime = 20;
-    mySocket.write(  ui->to_send->text().toStdString().c_str());
+    buffor = ui->to_send->text()+ '#';
+    mySocket.write(  buffor.toStdString().c_str() );
     waitSend(waitTime, counterWaitTime);             //socket->waitForBytesWritten(waitTime);
     waitRecv(waitTime, counterWaitTime);             // socket->waitForReadyRead(waitTime);
     buffor = mySocket.readAll();

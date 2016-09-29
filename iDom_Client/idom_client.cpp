@@ -67,11 +67,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     palette.setBrush(QPalette::Background, pix);
     this->setPalette(palette);
 
-
-
-    //                                   );
-
-
     QRect rec = QApplication::desktop()->screenGeometry();
     int  height = rec.height();
     int  width  = rec.width();
@@ -93,8 +88,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 #ifdef Q_OS_ANDROID
     QtWebView::initialize();
 #endif
-
-
 
 }
 

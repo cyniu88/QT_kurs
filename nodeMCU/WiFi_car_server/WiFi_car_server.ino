@@ -13,7 +13,7 @@ constexpr int port = 8833;
 #define IN1 D1
 #define IN2 D2
 #define PWMa D3
-#define SERVO_PIN D0
+#define SERVO_PIN D7
 // Create an instance of the server
 // specify the port to listen on as an argument
 WiFiServer server(port);
@@ -63,7 +63,7 @@ void wait_for_client ()
    kat=random (36,106);
    
 
-  
+ servomotor.write(kat);
 
 
    
@@ -104,6 +104,11 @@ void working (){
     Serial.println("disconnect");
     break;
   }
+
+  if (req == "SLEEP")
+  {
+    ESP.deepSleep(10000000);
+  }
   
    kat_s = req.substring(16,20);
   Serial.println("kat: "+ kat_s);
@@ -141,7 +146,7 @@ void working (){
  }
  
 
-  String s = "\nEND.\n";
+  String s = req+"\nEND.\n";
 
   // Send the response to the client
   client.print(s);

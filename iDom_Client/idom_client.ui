@@ -835,7 +835,7 @@ border-color: rgb(255, 255, 255);
             <property name="font">
              <font>
               <family>Courier New</family>
-              <pointsize>10</pointsize>
+              <pointsize>13</pointsize>
              </font>
             </property>
             <property name="styleSheet">
@@ -868,7 +868,7 @@ border: none ;</string>
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Courier New'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Courier New'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt;&quot;&gt;tu beda wyniki&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="textInteractionFlags">
@@ -1009,7 +1009,7 @@ border: none ;</string>
             </property>
            </spacer>
           </item>
-          <item row="3" column="0">
+          <item row="3" column="2">
            <widget class="QPushButton" name="sendEXTRA">
             <property name="text">
              <string>sendEXTRA</string>

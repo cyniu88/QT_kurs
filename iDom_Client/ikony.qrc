@@ -17,5 +17,6 @@
         <file>files/player/sound increase.png</file>
         <file>files/player/stop.png</file>
         <file>files/down_arrow.png</file>
+        <file>files/font/DK_Trashtype.ttf</file>
     </qresource>
 </RCC>
