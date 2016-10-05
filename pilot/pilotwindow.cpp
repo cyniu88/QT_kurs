@@ -46,13 +46,18 @@ void pilotWindow::getStateD(bool state)
 void pilotWindow::showMessage()
 {
     ui->infoTxt->setText(  message.getString()   );
+    conf->messageS = message;
 }
-pilotWindow::pilotWindow(QWidget *parent) :
+pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::pilotWindow)
 {
 
     ui->setupUi(this);
+
+    conf = c;
+    c->addressIP=ui->adresIP->text().toStdString();
+    c->port =  ui->port->text().toInt();
     t1 = new QTimer();
 
     QObject::connect(t1,SIGNAL(timeout()),this,SLOT(showMessage()));
@@ -161,3 +166,13 @@ void pilotWindow::on_checkBoxWheel_toggled(bool checked)
     joyPadSkret->setResetPos(autoReturnSkret);
 }
 
+
+void pilotWindow::on_port_editingFinished()
+{
+
+}
+
+void pilotWindow::on_pushButton_pressed()
+{
+    conf->goWhile=false;
+}
