@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui widgets
+QT       += core gui widgets network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,14 +18,17 @@ SOURCES += main.cpp\
     mybutton.cpp \
     touchbutton.cpp \
     functions.cpp \
-    mytouchslider.cpp
+    mytouchslider.cpp \
+    workerip.cpp
 
 HEADERS  += pilotwindow.h \
     joypad.h \
     mybutton.h \
     touchbutton.h \
     functions.h \
-    mytouchslider.h
+    mytouchslider.h \
+    workerip.h \
+    variable.h
 
 FORMS    += pilotwindow.ui
 CONFIG += mobility   c++14

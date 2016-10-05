@@ -15,24 +15,9 @@
 #include "mybutton.h"
 #include "touchbutton.h"
 #include "mytouchslider.h"
-
-struct MSG {
-    int leftX;
-    int leftY;
-    int rightX;
-    int rightY;
-    int stateA;
-    int stateB;
-    int stateC;
-    int stateD;
-    QString getString(){
-
-        return QString::number(leftX)+":"+QString::number(leftY,'g',4)+":"+QString::number(rightX)+":"+QString::number(rightY)+":"+ QString::number(stateA)+":"+QString::number(stateB)+":"+QString::number(stateC)+":"+QString::number(stateD)+";";
-
-   };
+#include "variable.h"
 
 
-};
 
 
 
@@ -44,7 +29,7 @@ class pilotWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    MSG message;
+    msg_s message;
     QTimer *t1;
 
     QGraphicsScene sceneGaz, sceneSkret;
@@ -85,7 +70,7 @@ public slots:
 protected:
     bool touchEvent(QTouchEvent *ev);
 public:
-    explicit pilotWindow(QWidget *parent = 0);
+    explicit pilotWindow(my_config *c,  QWidget *parent = 0);
     ~pilotWindow();
 
 private slots:
@@ -98,7 +83,12 @@ private slots:
     void on_checkBoxWheel_toggled(bool checked);
 
 
+    void on_port_editingFinished();
+
+    void on_pushButton_pressed();
+
 private:
+    my_config *conf;
     Ui::pilotWindow *ui;
 };
 
