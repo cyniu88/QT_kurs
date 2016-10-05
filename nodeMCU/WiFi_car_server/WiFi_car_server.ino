@@ -1,8 +1,8 @@
 #include <Servo.h>
 #include <ESP8266WiFi.h>
 
-const char* ssid = "EPOL_kd@012";
-const char* password = "epolepol";
+const char* ssid = "staniki_w_gore";
+const char* password = "kiniacynia_458";
 int kat;
 int licznik =0;
 int speed_ = 0;
@@ -67,7 +67,7 @@ void wait_for_client ()
 
 
    
-Serial.println(kat);
+Serial.println(analogRead(A0));
     }
 ++licznik;
 if (licznik == 90000)
