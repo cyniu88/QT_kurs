@@ -92,6 +92,7 @@ void setup() {
 
   // Print the IP address
   Serial.println(WiFi.localIP());
+ // ArduinoOTA.setHostname("esp8266_wifi_car");
   ArduinoOTA.setPassword((const char *)"123");
 
   ArduinoOTA.onStart([]() {
