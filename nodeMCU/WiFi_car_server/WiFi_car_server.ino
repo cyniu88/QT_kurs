@@ -1,10 +1,10 @@
 #include <Servo.h>
 #include <ESP8266WiFi.h>
 
-//const char* ssid = "EPOL_kd@012";
-//const char* password = "epolepol";
-const char* ssid = "cyniu";
-const char* password = "123456789";
+const char* ssid = "EPOL_kd@012";
+const char* password = "epolepol";
+//const char* ssid = "cyniu";
+//const char* password = "123456789";
 int kat;
 int licznik =0;
 int speed_ = 0;
@@ -67,8 +67,7 @@ void wait_for_client ()
 
  servomotor.write(kat);
 
-
-   
+  
 Serial.println(kat);
     }
 ++licznik;
