@@ -14,7 +14,7 @@ int speed_ = 0;
 String speed_s;
 String kat_s;
 constexpr int port = 8833;
-#define LED D4
+
 #define IN1 D1
 #define IN2 D2
 #define PWMa D3

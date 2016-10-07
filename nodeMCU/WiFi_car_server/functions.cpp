@@ -1,6 +1,7 @@
 #include "functions.h"
 
 void setupWiFi(){
+  bool ledState = true;
   const int networkNumber = 3;
   Wifi_data data[networkNumber];
   data[0].ssid      = "cyniu";
@@ -19,6 +20,8 @@ void setupWiFi(){
      while (WiFi.status() != WL_CONNECTED) {
           delay(500);
           Serial.print(".");
+          ledState = !ledState;
+           digitalWrite(LED, ledState);
           if(++counter>20){
            break;
           }
