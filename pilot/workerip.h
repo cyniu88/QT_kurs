@@ -36,7 +36,8 @@ private:
     void waitSend(int waitTime, int counter);
     void waitRecv(int waitTime, int counter);
 
-
+ signals:
+    void sendResponse(QString s);
 
 };
 

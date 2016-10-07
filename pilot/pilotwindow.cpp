@@ -48,6 +48,11 @@ void pilotWindow::showMessage()
     ui->infoTxt->setText(  message.getString()   );
     conf->messageS = message;
 }
+
+void pilotWindow::showServerREsponse(QString s)
+{
+    ui->responsTxt->setText(s);
+}
 pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::pilotWindow),
@@ -55,13 +60,14 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 {
 
     ui->setupUi(this);
-
+    workerPTR = &worker;
     conf = c;
     c->addressIP=ui->adresIP->text().toStdString();
     c->port =  ui->port->text().toInt();
     t1 = new QTimer();
 
     QObject::connect(t1,SIGNAL(timeout()),this,SLOT(showMessage()));
+    QObject::connect( workerPTR,SIGNAL(sendResponse(QString)),this,SLOT(showServerREsponse(QString)));
 
     t1->start(100);
     double i = 0.50;

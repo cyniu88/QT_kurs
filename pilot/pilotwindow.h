@@ -64,6 +64,7 @@ public slots:
     void getStateC(bool state);
     void getStateD(bool state);
     void showMessage();
+    void showServerREsponse(QString s);
 
     //  QTouchEvent event;
     //  bool sceneEvent(QTouchEvent *e);
@@ -99,6 +100,7 @@ private:
     my_config *conf;
     Ui::pilotWindow *ui;
     WorkerIP   worker ;
+    WorkerIP   *workerPTR ;
 
 };
 

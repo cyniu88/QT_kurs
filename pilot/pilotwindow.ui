@@ -279,6 +279,9 @@
       </property>
      </widget>
     </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLineEdit" name="responsTxt"/>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
