@@ -16,7 +16,7 @@
 #include "touchbutton.h"
 #include "mytouchslider.h"
 #include "variable.h"
-
+#include "workerip.h"
 
 
 
@@ -87,9 +87,17 @@ private slots:
 
     void on_pushButton_pressed();
 
+    void on_actionConnect_triggered();
+
+    void on_actionDisconnect_triggered();
+
+    void on_adresIP_editingFinished();
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;
+    WorkerIP   worker ;
+
 };
 
 #endif // PILOTWINDOW_H

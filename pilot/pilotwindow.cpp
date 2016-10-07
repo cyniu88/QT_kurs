@@ -50,7 +50,8 @@ void pilotWindow::showMessage()
 }
 pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::pilotWindow)
+    ui(new Ui::pilotWindow),
+    worker(c)
 {
 
     ui->setupUi(this);
@@ -169,10 +170,25 @@ void pilotWindow::on_checkBoxWheel_toggled(bool checked)
 
 void pilotWindow::on_port_editingFinished()
 {
-
+   conf->port =  ui->port->text().toInt();
 }
 
 void pilotWindow::on_pushButton_pressed()
 {
     conf->goWhile=false;
+}
+
+void pilotWindow::on_actionConnect_triggered()
+{
+    worker.start();
+}
+
+void pilotWindow::on_actionDisconnect_triggered()
+{
+    conf->goWhile=false;
+}
+
+void pilotWindow::on_adresIP_editingFinished()
+{
+    conf->addressIP = ui->adresIP->text().toStdString();
 }
