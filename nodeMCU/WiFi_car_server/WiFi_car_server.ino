@@ -4,13 +4,10 @@
 #include <ESP8266mDNS.h>
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
- const char* ssid3  =  "EPOL_kd@012" ;
- const char* password3 = "epolepol";
- const char* ssid1 = "cyniu";
- const char* password1 = "123456789";
-const char* ssid2 = "staniki_w_gore";
-const char* password2 = "kiniacynia_458"; 
- 
+
+#include "mytype.h"
+#include "functions.h"
+
 int kat;
 int licznik =0;
 int speed_ = 0;
@@ -42,49 +39,9 @@ void setup() {
   // Connect to WiFi network
   Serial.println();
   Serial.println();
-  Serial.print("Connecting to ");
-  Serial.println(ssid1);
-  
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid1, password1);
-  int counter =0;
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-    if(++counter>20){
-      break;
-    }
-    
-  }
-   if (counter > 15){
-  WiFi.begin(ssid2, password2);
-   }
-   counter =0;
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print("2");
-    if(++counter>10){
-      break;
-    }
-    
-  }
-  if (counter > 15){
-  WiFi.begin(ssid3, password3);
-  }
-    counter =0;
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-    if(++counter>10){
-      ESP.restart();
-    }
-    
-  }
-//  while (WiFi.waitForConnectResult() != WL_CONNECTED) {
-//    Serial.println("Connection Failed! Rebooting...");
-//    delay(5000);
-//    ESP.restart();
-//  }
+
+  setupWiFi();
+ 
   Serial.println("");
   Serial.println("WiFi connected");
   
@@ -94,6 +51,7 @@ void setup() {
 
   // Print the IP address
   Serial.println(WiFi.localIP());
+ // ArduinoOTA.setHostname("esp8266_wifi_car");
   ArduinoOTA.setPassword((const char *)"123");
 
   ArduinoOTA.onStart([]() {

@@ -300,7 +300,7 @@
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>192.168.43.208</string>
+       <string>192.168.43.246</string>
       </property>
      </widget>
     </item>
