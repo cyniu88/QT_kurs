@@ -192,3 +192,8 @@ void pilotWindow::on_adresIP_editingFinished()
 {
     conf->addressIP = ui->adresIP->text().toStdString();
 }
+
+void pilotWindow::on_actionEXIT_triggered()
+{
+  qApp->exit();
+}

@@ -295,8 +295,9 @@
      <string>połączenie</string>
     </property>
     <addaction name="actionConnect"/>
-    <addaction name="separator"/>
     <addaction name="actionDisconnect"/>
+    <addaction name="separator"/>
+    <addaction name="actionEXIT"/>
    </widget>
    <addaction name="menuPo_czenie"/>
   </widget>
@@ -308,6 +309,11 @@
   <action name="actionDisconnect">
    <property name="text">
     <string>disconnect</string>
+   </property>
+  </action>
+  <action name="actionEXIT">
+   <property name="text">
+    <string>EXIT</string>
    </property>
   </action>
  </widget>

@@ -93,6 +93,8 @@ private slots:
 
     void on_adresIP_editingFinished();
 
+    void on_actionEXIT_triggered();
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;
