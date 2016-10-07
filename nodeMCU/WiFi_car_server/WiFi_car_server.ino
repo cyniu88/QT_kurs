@@ -1,10 +1,16 @@
 #include <Servo.h>
 #include <ESP8266WiFi.h>
-
-const char* ssid = "EPOL_kd@012";
-const char* password = "epolepol";
-//const char* ssid = "cyniu";
-//const char* password = "123456789";
+ 
+#include <ESP8266mDNS.h>
+#include <WiFiUdp.h>
+#include <ArduinoOTA.h>
+ const char* ssid3  =  "EPOL_kd@012" ;
+ const char* password3 = "epolepol";
+ const char* ssid1 = "cyniu";
+ const char* password1 = "123456789";
+const char* ssid2 = "staniki_w_gore";
+const char* password2 = "kiniacynia_458"; 
+ 
 int kat;
 int licznik =0;
 int speed_ = 0;
@@ -37,14 +43,48 @@ void setup() {
   Serial.println();
   Serial.println();
   Serial.print("Connecting to ");
-  Serial.println(ssid);
+  Serial.println(ssid1);
   
-  WiFi.begin(ssid, password);
-  
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid1, password1);
+  int counter =0;
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
+    if(++counter>20){
+      break;
+    }
+    
   }
+   if (counter > 15){
+  WiFi.begin(ssid2, password2);
+   }
+   counter =0;
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print("2");
+    if(++counter>10){
+      break;
+    }
+    
+  }
+  if (counter > 15){
+  WiFi.begin(ssid3, password3);
+  }
+    counter =0;
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+    if(++counter>10){
+      ESP.restart();
+    }
+    
+  }
+//  while (WiFi.waitForConnectResult() != WL_CONNECTED) {
+//    Serial.println("Connection Failed! Rebooting...");
+//    delay(5000);
+//    ESP.restart();
+//  }
   Serial.println("");
   Serial.println("WiFi connected");
   
@@ -54,21 +94,48 @@ void setup() {
 
   // Print the IP address
   Serial.println(WiFi.localIP());
+  ArduinoOTA.setPassword((const char *)"123");
+
+  ArduinoOTA.onStart([]() {
+    Serial.println("Start");
+  });
+  ArduinoOTA.onEnd([]() {
+    Serial.println("\nEnd");
+  });
+  ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
+    Serial.printf("Progress: %u%%\r", (progress / (total / 100)));
+  });
+  ArduinoOTA.onError([](ota_error_t error) {
+    Serial.printf("Error[%u]: ", error);
+    if (error == OTA_AUTH_ERROR) Serial.println("Auth Failed");
+    else if (error == OTA_BEGIN_ERROR) Serial.println("Begin Failed");
+    else if (error == OTA_CONNECT_ERROR) Serial.println("Connect Failed");
+    else if (error == OTA_RECEIVE_ERROR) Serial.println("Receive Failed");
+    else if (error == OTA_END_ERROR) Serial.println("End Failed");
+  });
+  ArduinoOTA.begin();
+  Serial.println("Ready");
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
 }
 
 void wait_for_client ()
 {
+  
    digitalWrite(LED, 0);
   while (1)
   {
     if (licznik == 0){
    kat=random (36,106);
-   
-
  servomotor.write(kat);
+ 
 
   
 Serial.println(kat);
+ 
+Serial.println(analogRead(A0));
+ArduinoOTA.handle();
+ 
     }
 ++licznik;
 if (licznik == 90000)
@@ -156,7 +223,7 @@ void working (){
   // Send the response to the client
   client.print(s);
   delay(1);
-  Serial.println("done");
+  Serial.println("done :)");
 
   // The client will actually be disconnected 
   // when the function returns and 'client' object is detroyed
