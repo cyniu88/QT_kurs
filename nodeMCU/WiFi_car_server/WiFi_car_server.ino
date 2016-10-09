@@ -15,10 +15,10 @@ String speed_s;
 String kat_s;
 constexpr int port = 8833;
 
-#define IN1 D1
-#define IN2 D2
-#define PWMa D3
-#define SERVO_PIN D7
+#define IN1 D1   // GPIO 5
+#define IN2 D2  //  GPIO 4
+#define PWMa D3     // GPIO 2
+#define SERVO_PIN D7   // GPIO 13
 // Create an instance of the server
 // specify the port to listen on as an argument
 WiFiServer server(port);
