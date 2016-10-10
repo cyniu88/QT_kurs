@@ -1,197 +1,151 @@
 #include <Servo.h>
 #include <ESP8266WiFi.h>
- 
-#include <ESP8266mDNS.h>
-#include <WiFiUdp.h>
-#include <ArduinoOTA.h>
 
 #include "mytype.h"
 #include "functions.h"
+#include "light.h"
+#include "engine.h"
 
 int kat;
-int licznik =0;
+int licznik = 0;
 int speed_ = 0;
 String speed_s;
 String kat_s;
 constexpr int port = 8833;
 
-#define IN1 D1   // GPIO 5
-#define IN2 D2  //  GPIO 4
-#define PWMa D3     // GPIO 2
-#define SERVO_PIN D7   // GPIO 13
+
+Engine mainMotor;
+Light lightFront(FRONT_LED);
+Light lightBack  (BACK_LED);
+
 // Create an instance of the server
 // specify the port to listen on as an argument
 WiFiServer server(port);
 WiFiClient client;
 Servo servomotor;
+
+
 void setup() {
   Serial.begin(74880);
   delay(10);
- servomotor.attach(SERVO_PIN);
+  servomotor.attach(SERVO_PIN);
   // prepare GPIO2
-  pinMode(LED, OUTPUT);
-  pinMode(IN1, OUTPUT);
-  pinMode(IN2, OUTPUT);
-  digitalWrite ( IN1, HIGH);
-  digitalWrite (IN2 , HIGH );
+ 
+ 
   digitalWrite(LED, 0);
-  analogWrite(PWMa, 255);
+ 
   // Connect to WiFi network
-  Serial.println();
-  Serial.println();
 
   setupWiFi();
- 
+  OTA_update_setup();
   Serial.println("");
   Serial.println("WiFi connected");
-  
+
   // Start the server
   server.begin();
   Serial.println("Server started");
 
-  // Print the IP address
-  Serial.println(WiFi.localIP());
- // ArduinoOTA.setHostname("esp8266_wifi_car");
-  ArduinoOTA.setPassword((const char *)"123");
 
-  ArduinoOTA.onStart([]() {
-    Serial.println("Start");
-  });
-  ArduinoOTA.onEnd([]() {
-    Serial.println("\nEnd");
-  });
-  ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
-    Serial.printf("Progress: %u%%\r", (progress / (total / 100)));
-  });
-  ArduinoOTA.onError([](ota_error_t error) {
-    Serial.printf("Error[%u]: ", error);
-    if (error == OTA_AUTH_ERROR) Serial.println("Auth Failed");
-    else if (error == OTA_BEGIN_ERROR) Serial.println("Begin Failed");
-    else if (error == OTA_CONNECT_ERROR) Serial.println("Connect Failed");
-    else if (error == OTA_RECEIVE_ERROR) Serial.println("Receive Failed");
-    else if (error == OTA_END_ERROR) Serial.println("End Failed");
-  });
-  ArduinoOTA.begin();
-  Serial.println("Ready");
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());
 }
 
-void wait_for_client ()
-{
-  
-   digitalWrite(LED, 0);
-  while (1)
-  {
-    if (licznik == 0){
-   kat=random (36,106);
- servomotor.write(kat);
- 
+void wait_for_client() {
+  digitalWrite(LED, 0);
+  while (1) {
+    if (licznik == 0) {
+      kat = random(36, 106);
+      servomotor.write(kat);
 
-  
-Serial.println(kat);
- 
-Serial.println(analogRead(A0));
-ArduinoOTA.handle();
- 
+      Serial.println(kat);
+
+      Serial.println(analogRead(A0));
+      OTA_handle();
     }
-++licznik;
-if (licznik == 90000)
-{
-  licznik =0;
-} 
-     // Check if a client has connected
+    ++licznik;
+    if (licznik == 90000) {
+      licznik = 0;
+    }
+    // Check if a client has connected
     client = server.available();
-  if (!client) {
-    //Serial.print(".");
-  }
-  else
-  {
-    break;
-  }
-  }
-  
-} // end wait_for_clietn
-
-void working (){
-   digitalWrite(LED, 1);
-  while (1){
-     Serial.println("wait");
-  while(!client.available()){
-   // delay(1);
-  }
-  
-  // Read the first line of the request
-  String req = client.readStringUntil('#');
-   
-  client.flush();
-  Serial.println ("odebralem: "+req);
-  if (req =="DISCONNECT"){
-    Serial.println("disconnect");
-    break;
+    if (!client) {
+      // Serial.print(".");
+    } else {
+      break;
+    }
   }
 
-  if (req == "SLEEP")
-  {
-    ESP.deepSleep(10000000);
+}  // end wait_for_clietn
+
+void working() {
+  digitalWrite(LED, 1);
+  while (1) {
+    Serial.println("wait");
+    while (!client.available()) {
+      // delay(1);
+    }
+
+    // Read the first line of the request
+    String req = client.readStringUntil('#');
+
+    client.flush();
+    Serial.println("odebralem: " + req);
+    if (req == "DISCONNECT") {
+      Serial.println("disconnect");
+      break;
+    }
+
+    if (req == "SLEEP") {
+      ESP.deepSleep(10000000);
+    }
+
+    kat_s = req.substring(10, 14);
+    Serial.print("kat str: ");
+    Serial.println(kat_s);
+    kat = kat_s.toInt();
+    kat = map(kat, -100, 100, 36, 106);
+    Serial.print("kat int: ");
+
+    Serial.println(kat);
+    servomotor.write(kat);
+    speed_s = req.substring(5, 9);
+    Serial.print("speed str: ");
+    Serial.println(speed_s);
+    speed_ = speed_s.toInt();
+    Serial.print("speed_int: ");
+    Serial.println(speed_);
+    if (speed_ < 0) {
+      speed_ = speed_ * -1;
+      digitalWrite(IN2, LOW);
+      digitalWrite(IN1, HIGH);
+      analogWrite(PWMa, map(speed_, 0, 100, 0, 1020));
+
+    } else if (speed_ == 0) {
+      digitalWrite(IN1, HIGH);
+      digitalWrite(IN2, HIGH);
+      analogWrite(PWMa, 0);
+      Serial.println("STOP");
+    }
+
+    else {
+      digitalWrite(IN1, LOW);
+      digitalWrite(IN2, HIGH);
+      Serial.println(map(speed_, 0, 100, 0, 1020));
+      analogWrite(PWMa, map(speed_, 0, 100, 0, 1020));
+    }
+
+    String s = req;
+
+    // Send the response to the client
+    client.print(s);
+    delay(1);
+    Serial.println("done :)");
+
+    // The client will actually be disconnected
+    // when the function returns and 'client' object is detroyed
   }
-  
-   kat_s = req.substring(10,14);
- Serial.print("kat str: ");
- Serial.println(kat_s);
-  kat = kat_s.toInt();
-  kat = map(kat,-100,100,36,106);
-  Serial.print("kat int: ");
- 
-  Serial.println(kat);
- servomotor.write(kat);
- speed_s=req.substring(5,9);
- Serial.print("speed str: ");
- Serial.println(speed_s);
- speed_ = speed_s.toInt();
- Serial.print("speed_int: ");
- Serial.println(speed_);
- if (speed_ < 0 )
- {
-  speed_ = speed_*-1;
-  digitalWrite(IN2, LOW);
-  digitalWrite(IN1, HIGH);
-  analogWrite (PWMa, map(speed_,0,100,0,1020)  );
-   
- }
- else if ( speed_ == 0)
- {
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, HIGH);
-  analogWrite (PWMa, 0);
-  Serial.println("STOP");
- }
-
- else
- {
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
-  Serial.println (map(speed_,0,100,0,1020));
-  analogWrite (PWMa,  map(speed_,0,100,0,1020) );
- }
- 
-
-  String s = req+"\nEND.\n";
-
-  // Send the response to the client
-  client.print(s);
-  delay(1);
-  Serial.println("done :)");
-
-  // The client will actually be disconnected 
-  // when the function returns and 'client' object is detroyed
-  }
-} // end working
+}  // end working
 void loop() {
- 
   wait_for_client();
   // Wait until the client sends some data
   working();
 }
-
 
