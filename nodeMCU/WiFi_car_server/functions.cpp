@@ -39,7 +39,7 @@ void setupWiFi(){
 }
 
 void OTA_update_setup(){
-// ArduinoOTA.setHostname("esp8266-wifi-car");
+  ArduinoOTA.setHostname("esp8266-wifi-car");
   ArduinoOTA.setPassword((const char *)"123");
 
   ArduinoOTA.onStart([]() {
