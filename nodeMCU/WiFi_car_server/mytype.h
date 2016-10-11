@@ -9,7 +9,7 @@
 #define BACK_LED    D6
 #define IN1         D1      // GPIO 5
 #define IN2         D2      // GPIO 4
-#define PWMa        D3      // GPIO 2
+#define PWMa        D3      // GPIO 0
 #define SERVO_PIN   D7      // GPIO 13
 
 struct Wifi_data {

@@ -33,7 +33,7 @@ void setup() {
  
  
   digitalWrite(LED, 0);
- 
+ //analogWriteFreq(20);
   // Connect to WiFi network
 
   setupWiFi();
@@ -45,6 +45,7 @@ void setup() {
   server.begin();
   Serial.println("Server started");
 
+  mainMotor.init(PWMa, IN1, IN2);
 
 }
 
@@ -114,22 +115,18 @@ void working() {
     Serial.println(speed_);
     if (speed_ < 0) {
       speed_ = speed_ * -1;
-      digitalWrite(IN2, LOW);
-      digitalWrite(IN1, HIGH);
-      analogWrite(PWMa, map(speed_, 0, 100, 0, 1020));
+       
+      mainMotor.go_back(  map(speed_, 0, 100, 0, 1020));
+      req = "back";
 
     } else if (speed_ == 0) {
-      digitalWrite(IN1, HIGH);
-      digitalWrite(IN2, HIGH);
-      analogWrite(PWMa, 0);
-      Serial.println("STOP");
+      mainMotor.hard_stop();
+      req = "stop";
     }
 
     else {
-      digitalWrite(IN1, LOW);
-      digitalWrite(IN2, HIGH);
-      Serial.println(map(speed_, 0, 100, 0, 1020));
-      analogWrite(PWMa, map(speed_, 0, 100, 0, 1020));
+      mainMotor.go_forward( map(speed_, 0, 100, 0, 1020));
+      req="forward";
     }
 
     String s = req;
