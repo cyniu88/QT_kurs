@@ -56,7 +56,8 @@ public:
 
     myTouchslider *sliderA;
     myTouchslider *sliderB;
-
+signals:
+    void resetPosNOW();
 public slots:
     void getPosGaz(int x, int y);
     void getPosSkret(int x, int y);

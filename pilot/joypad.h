@@ -31,6 +31,8 @@ private:
 public:
     double JoyX;
     double JoyY;
+public slots:
+    void resetPosNOW();
 
 };
 

@@ -1,6 +1,5 @@
 <RCC>
-    <qresource prefix="/ikony">
-        <file>games_256.png</file>
+    <qresource prefix="/new/images">
         <file>files/down_arrow.png</file>
     </qresource>
 </RCC>

@@ -84,6 +84,8 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 
     QObject::connect(joyPadDirection, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\
     QObject::connect(joyPadPower  , SIGNAL(sendPos(int,int) ),this,SLOT(  getPosGaz(int,int) )  );
+    QObject::connect(this,SIGNAL(resetPosNOW()),joyPadDirection,SLOT(resetPosNOW()));
+    QObject::connect(this,SIGNAL(resetPosNOW()),joyPadPower,SLOT(resetPosNOW()));
 
     sceneDirection.addItem(joyPadDirection);
     scenePower.addItem(joyPadPower);
@@ -154,7 +156,7 @@ pilotWindow::~pilotWindow()
 
 void pilotWindow::on_reset_clicked()
 {
-
+    emit resetPosNOW();
 
 }
 
