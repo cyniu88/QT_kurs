@@ -32,10 +32,11 @@ public:
     msg_s message;
     QTimer *t1;
 
-    QGraphicsScene sceneGaz, sceneSkret;
+    QGraphicsScene scenePower, sceneDirection;
     QGraphicsScene sceneA,sceneB,sceneC,sceneD;
-    JoyPad *joyPadGaz;
-    JoyPad *joyPadSkret;
+    JoyPad *joyPadPower;
+    JoyPad *joyPadDummy;
+    JoyPad *joyPadDirection;
 
     touchButton *A;
     touchButton *B;
@@ -43,8 +44,8 @@ public:
     touchButton *D;
 
 
-    bool autoReturnGaz   = true;
-    bool autoReturnSkret = true;
+    bool autoReturnPower   = true;
+    bool autoReturnDirection = true;
     double *test;
     myButton *przy;
 
@@ -92,9 +93,10 @@ private slots:
 
     void on_actionDisconnect_triggered();
 
-    void on_adresIP_editingFinished();
 
     void on_actionEXIT_triggered();
+
+    void on_adresIP_currentTextChanged( );
 
 private:
     my_config *conf;

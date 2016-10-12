@@ -62,7 +62,7 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     ui->setupUi(this);
     workerPTR = &worker;
     conf = c;
-    c->addressIP=ui->adresIP->text().toStdString();
+    c->addressIP=ui->adresIP->currentText().toStdString();
     c->port =  ui->port->text().toInt();
     t1 = new QTimer();
 
@@ -72,20 +72,24 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     t1->start(100);
     double i = 0.50;
     int w  =  QApplication::desktop()->height()*i;
-    if (w > QApplication::desktop()->width()*i){
+    if (w > QApplication::desktop()->width()*i)
+    {
         w= QApplication::desktop()->width()*i;
     }
-    joyPadGaz   = new JoyPad( w , w/4,Qt::red,Qt::yellow);
-    joyPadSkret = new JoyPad( w , w/4,Qt::red,Qt::yellow);
-
-    QObject::connect(joyPadGaz  , SIGNAL(sendPos(int,int) ),this,SLOT(  getPosGaz(int,int) )  );
-    QObject::connect(joyPadSkret, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\
+    joyPadDummy   = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+    joyPadDirection = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+    joyPadPower   = new JoyPad( w , w/4,Qt::red,Qt::yellow);
 
 
-    sceneGaz.addItem(joyPadGaz);
-    sceneSkret.addItem(joyPadSkret);
-    ui->graphicsView_skret->setScene(&sceneSkret);
-    ui->graphicsView_gaz ->setScene(&sceneGaz);
+
+    QObject::connect(joyPadDirection, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\
+    QObject::connect(joyPadPower  , SIGNAL(sendPos(int,int) ),this,SLOT(  getPosGaz(int,int) )  );
+
+    sceneDirection.addItem(joyPadDirection);
+    scenePower.addItem(joyPadPower);
+
+    ui->graphicsView_gaz ->setScene(&scenePower);
+    ui->graphicsView_skret->setScene(&sceneDirection);
 
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -134,8 +138,8 @@ pilotWindow::~pilotWindow()
 {
     t1->stop();
     // delete przy;
-    delete joyPadGaz;
-    delete joyPadSkret;
+    delete joyPadPower;
+    delete joyPadDirection;
     delete test;
     delete A;
     delete B;
@@ -163,20 +167,20 @@ void pilotWindow::on_reset_clicked()
 
 void pilotWindow::on_checkBoxPower_toggled(bool checked)
 {
-    autoReturnGaz =checked;
-    joyPadGaz->setResetPos(autoReturnGaz);
+    autoReturnPower =checked;
+    joyPadPower->setResetPos(autoReturnPower);
 }
 
 void pilotWindow::on_checkBoxWheel_toggled(bool checked)
 {
-    autoReturnSkret = checked;
-    joyPadSkret->setResetPos(autoReturnSkret);
+    autoReturnDirection = checked;
+    joyPadDirection->setResetPos(autoReturnDirection);
 }
 
 
 void pilotWindow::on_port_editingFinished()
 {
-   conf->port =  ui->port->text().toInt();
+    conf->port =  ui->port->text().toInt();
 }
 
 void pilotWindow::on_pushButton_pressed()
@@ -194,12 +198,13 @@ void pilotWindow::on_actionDisconnect_triggered()
     conf->goWhile=false;
 }
 
-void pilotWindow::on_adresIP_editingFinished()
-{
-    conf->addressIP = ui->adresIP->text().toStdString();
-}
 
 void pilotWindow::on_actionEXIT_triggered()
 {
-  qApp->exit();
+    qApp->exit();
+}
+
+void pilotWindow::on_adresIP_currentTextChanged()
+{
+    conf->addressIP = ui->adresIP->currentText().toStdString();
 }
