@@ -116,8 +116,8 @@ void working() {
     if (speed_ < 0) {
       speed_ = speed_ * -1;
        
-      mainMotor.go_back(  map(speed_, 0, 100, 0, 1020));
-      req = "back";
+      mainMotor.go_forward(  map(speed_, 0, 100, 0, 1020));
+      req = "forward";
 
     } else if (speed_ == 0) {
       mainMotor.hard_stop();
@@ -125,8 +125,8 @@ void working() {
     }
 
     else {
-      mainMotor.go_forward( map(speed_, 0, 100, 0, 1020));
-      req="forward";
+      mainMotor.go_back( map(speed_, 0, 100, 0, 1020));
+      req="back";
     }
 
     String s = req;
@@ -144,5 +144,6 @@ void loop() {
   wait_for_client();
   // Wait until the client sends some data
   working();
+  mainMotor.hard_stop();
 }
 

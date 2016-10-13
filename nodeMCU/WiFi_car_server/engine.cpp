@@ -11,14 +11,14 @@ void Engine::init(int pwm, int BN1, int BN2){
   digitalWrite(BN2, LOW);
 }
 
-void Engine::go_forward(int power){
+void Engine::go_back(int power){
 
     digitalWrite(BN1, LOW );
     digitalWrite(BN2, HIGH);
     analogWrite (pwm, power);
 }
 
-void Engine::go_back(int power){
+void Engine::go_forward(int power){
 
     digitalWrite(BN1, HIGH);
     digitalWrite(BN2, LOW );
