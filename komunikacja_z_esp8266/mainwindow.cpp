@@ -7,6 +7,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->dial->setAttribute(Qt::WA_AcceptTouchEvents);
+    ui->dial_2->setAttribute(Qt::WA_AcceptTouchEvents);
+
+    ui->dial->grabGesture(Qt::TapAndHoldGesture);
+    ui->dial_2->grabGesture(Qt::TapAndHoldGesture);
 }
 
 MainWindow::~MainWindow()
