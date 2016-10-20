@@ -5,7 +5,7 @@
 #include "Light.h"
 
 #define LED         D4
-#define FRONT_LED   D4
+#define FRONT_LED   D5
 #define BACK_LED    D6
 #define IN1         D1      // GPIO 5
 #define IN2         D2      // GPIO 4
