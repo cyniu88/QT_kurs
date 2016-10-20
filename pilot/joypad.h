@@ -9,7 +9,6 @@
 #include <QDesktopWidget>
 
 
-
 class JoyPad:  public QObject, public QGraphicsEllipseItem
 {
  Q_OBJECT
