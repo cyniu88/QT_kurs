@@ -99,6 +99,8 @@ private slots:
 
     void on_adresIP_currentTextChanged( );
 
+    void on_checkBoxWheel_stateChanged(int arg1);
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;

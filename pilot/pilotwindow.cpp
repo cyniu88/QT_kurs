@@ -211,3 +211,8 @@ void pilotWindow::on_adresIP_currentTextChanged()
 {
     conf->addressIP = ui->adresIP->currentText().toStdString();
 }
+
+void pilotWindow::on_checkBoxWheel_stateChanged(int arg1)
+{
+    emit resetPosNOW();
+}
