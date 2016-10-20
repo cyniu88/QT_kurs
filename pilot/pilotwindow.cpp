@@ -59,6 +59,7 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     worker(c)
 {
 
+
     ui->setupUi(this);
     workerPTR = &worker;
     conf = c;
