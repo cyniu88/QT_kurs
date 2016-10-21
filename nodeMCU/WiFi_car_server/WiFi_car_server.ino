@@ -46,19 +46,20 @@ void setup() {
   Serial.println("Server started");
 
   mainMotor.init(PWMa, IN1, IN2);
-
+   lightBack.turnOFF();
+   lightFront.turnOFF();
 }
 
 void wait_for_client() {
   digitalWrite(LED, 0);
   while (1) {
     if (licznik == 0) {
-      kat = random(36, 106);
-      servomotor.write(kat);
+      //kat = random(36, 106);
+      //servomotor.write(kat);
 
-      Serial.println(kat);
+      //Serial.println(kat);
 
-      Serial.println(analogRead(A0));
+      //Serial.println(analogRead(A0));
       OTA_handle();
     }
     ++licznik;
@@ -117,19 +118,34 @@ void working() {
       speed_ = speed_ * -1;
        
       mainMotor.go_forward(  map(speed_, 0, 100, 0, 1020));
-      req = "forward";
+      //req = "forward";
 
     } else if (speed_ == 0) {
       mainMotor.hard_stop();
-      req = "stop";
+      //req = "stop";
     }
 
     else {
       mainMotor.go_back( map(speed_, 0, 100, 0, 1020));
-      req="back";
+      //req="back";
     }
+/// light ///////////////
 
-    String s = req;
+if (1 == req.substring(20, 21).toInt()){
+  
+   lightFront.turnON_max();
+}
+else{
+  lightFront.turnOFF();
+}
+if (1 == req.substring(22, 23).toInt()){
+  lightBack.turnON_half();
+}
+else{
+  lightBack.turnOFF();
+}
+
+    String s = " 15-16"+req.substring(20, 21)+" "+req.substring(22, 23) ;
 
     // Send the response to the client
     client.print(s);

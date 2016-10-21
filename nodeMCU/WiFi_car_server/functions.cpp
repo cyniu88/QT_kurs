@@ -1,9 +1,11 @@
 #include "functions.h"
 
 void setupWiFi(){
+  pinMode(LED,OUTPUT);
   Serial.println();
   Serial.println();
-
+  Light lightFront(FRONT_LED);
+  Light lightBack  (BACK_LED);
   bool ledState = true;
   const int networkNumber = 3;
   Wifi_data data[networkNumber];
@@ -24,7 +26,16 @@ void setupWiFi(){
           delay(500);
           Serial.print(".");
           ledState = !ledState;
-           digitalWrite(LED, ledState);
+          digitalWrite(LED, ledState);
+          if (ledState)
+          {
+            lightFront.turnON_max();
+            lightBack.turnOFF();
+          }
+          else{
+            lightBack.turnON_max();
+            lightFront.turnOFF();
+          }
           if(++counter>20){
            break;
           }
