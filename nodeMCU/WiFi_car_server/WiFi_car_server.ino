@@ -29,7 +29,7 @@ void setup() {
   Serial.begin(74880);
   delay(10);
   servomotor.attach(SERVO_PIN);
-  // prepare GPIO2
+  servomotor.write(60);
  
  
   digitalWrite(LED, 0);
