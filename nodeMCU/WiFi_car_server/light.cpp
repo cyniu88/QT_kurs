@@ -10,15 +10,15 @@ Light::Light(int _ledPIN)
 
 void Light::turnON_half()
 {
-    analogWrite(ledPIN, 512);
+    analogWrite(ledPIN, 112);
 }
 
 void Light::turnON_max()
 {
-    digitalWrite(ledPIN, HIGH);
+    analogWrite(ledPIN, 1023);
 }
 void Light::turnOFF()
 {
-    digitalWrite(ledPIN, LOW);
+    analogWrite(ledPIN, 0);
 }
 
