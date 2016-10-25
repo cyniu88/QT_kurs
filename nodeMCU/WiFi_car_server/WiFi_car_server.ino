@@ -133,16 +133,18 @@ void working() {
 
 if (1 == req.substring(20, 21).toInt()){
   
-   lightFront.turnON_max();
+   lightFront.turnON_half();
+   lightBack.turnON_half();
 }
 else{
   lightFront.turnOFF();
+  lightBack.turnOFF();
 }
 if (1 == req.substring(22, 23).toInt()){
-  lightBack.turnON_half();
+  lightBack.turnON_half()();
 }
 else{
-  lightBack.turnOFF();
+  lightBack.turnOFF_half();
 }
 
     String s = " 15-16"+req.substring(20, 21)+" "+req.substring(22, 23) ;

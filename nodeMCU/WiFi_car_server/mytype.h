@@ -12,6 +12,7 @@
 #define PWMa        D3      // GPIO 0
 #define SERVO_PIN   D7      // GPIO 13
 
+ 
 struct Wifi_data {
   String ssid;
   String password;
