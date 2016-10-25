@@ -1,6 +1,5 @@
 #include <Servo.h>
 #include <ESP8266WiFi.h>
-
 #include "mytype.h"
 #include "functions.h"
 #include "light.h"
@@ -24,13 +23,14 @@ WiFiServer server(port);
 WiFiClient client;
 Servo servomotor;
 
-
 void setup() {
   Serial.begin(74880);
   delay(10);
   servomotor.attach(SERVO_PIN);
-  // prepare GPIO2
- 
+  servomotor.write(60);
+  mainMotor.init(PWMa, IN1, IN2);
+  lightBack.turnOFF();
+  lightFront.turnOFF();
  
   digitalWrite(LED, 0);
  //analogWriteFreq(20);
@@ -44,22 +44,12 @@ void setup() {
   // Start the server
   server.begin();
   Serial.println("Server started");
-
-  mainMotor.init(PWMa, IN1, IN2);
-   lightBack.turnOFF();
-   lightFront.turnOFF();
 }
 
 void wait_for_client() {
   digitalWrite(LED, 0);
   while (1) {
     if (licznik == 0) {
-      //kat = random(36, 106);
-      //servomotor.write(kat);
-
-      //Serial.println(kat);
-
-      //Serial.println(analogRead(A0));
       OTA_handle();
     }
     ++licznik;
@@ -164,4 +154,4 @@ void loop() {
   working();
   mainMotor.hard_stop();
 }
-
+
