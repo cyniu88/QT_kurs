@@ -29,7 +29,7 @@ void setup() {
   Serial.begin(74880);
   delay(10);
   servomotor.attach(SERVO_PIN);
-  servomotor.write(60);
+  // prepare GPIO2
  
  
   digitalWrite(LED, 0);
@@ -141,7 +141,7 @@ else{
   lightBack.turnOFF();
 }
 if (1 == req.substring(22, 23).toInt()){
-  lightBack.turnON_half()();
+  lightBack.turnON_half();
 }
 else{
   lightBack.turnOFF_half();
