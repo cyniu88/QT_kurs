@@ -29,11 +29,11 @@ void setupWiFi(){
           digitalWrite(LED, ledState);
           if (ledState)
           {
-            lightFront.turnON_max();
+            lightFront.turnON();
             lightBack.turnOFF();
           }
           else{
-            lightBack.turnON_max();
+            lightBack.turnON();
             lightFront.turnOFF();
           }
           if(++counter>20){
@@ -41,6 +41,8 @@ void setupWiFi(){
           }
        }
       if (WiFi.status() == WL_CONNECTED){
+        lightFront.turnOFF();
+        lightBack.turnOFF();
         return;
       }
       

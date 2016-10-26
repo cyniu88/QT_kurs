@@ -11,6 +11,7 @@ int speed_ = 0;
 String speed_s;
 String kat_s;
 constexpr int port = 8833;
+int lastSpeed =0;
 
 
 Engine mainMotor;
@@ -116,25 +117,32 @@ void working() {
     }
 
     else {
-      mainMotor.go_back( map(speed_, 0, 100, 0, 1020));
-      //req="back";
+      mainMotor.go_back( map(speed_, 0, 100, 0, 1020)); 
     }
+    if (speed_ < lastSpeed)
+      {
+        lightBack.maximal();
+      }
+      else if (speed_ > lastSpeed) {
+        lightBack.maximalEnd();
+      }
+      lastSpeed = speed_;
 /// light ///////////////
 
 if (1 == req.substring(20, 21).toInt()){
   
-   lightFront.turnON_half();
-   lightBack.turnON_half();
+   lightFront.turnON();
+   lightBack.turnON();
 }
 else{
   lightFront.turnOFF();
   lightBack.turnOFF();
 }
 if (1 == req.substring(22, 23).toInt()){
-  lightBack.turnON_half();
+  lightFront.maximal();
 }
 else{
-  lightBack.turnOFF_half();
+  lightFront.maximalEnd();
 }
 
     String s = " 15-16"+req.substring(20, 21)+" "+req.substring(22, 23) ;
@@ -154,4 +162,5 @@ void loop() {
   working();
   mainMotor.hard_stop();
 }
-
+
+

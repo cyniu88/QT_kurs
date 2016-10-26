@@ -11,10 +11,10 @@ class  Light {
   int halfPower = 100;
   public:
   Light(int _ledPIN);
-  void turnON_half();
-  void turnOFF_half();
-  void turnON_max();
+  void turnON();
   void turnOFF();
+  void maximal();
+  void maximalEnd();
   
 };
 

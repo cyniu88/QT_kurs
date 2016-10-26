@@ -8,35 +8,38 @@ Light::Light(int _ledPIN)
     digitalWrite(ledPIN, LOW);
 }
 
-void Light::turnON_half()
+void Light::turnON()
 {
     if (lightStatus == OFF  && lightExtraStatus == OFF){
       analogWrite(ledPIN, halfPower);
       lightStatus = ON;
     }
 }
-void Light::turnOFF_half(){
-   if (lightExtraStatus == ON ){
+void Light::turnOFF(){
+   if (lightExtraStatus == OFF ){
       if (lightStatus == ON){
-        analogWrite(ledPIN, halfPower);
-      }
-      else{
+         
         analogWrite(ledPIN, 0);
+        lightStatus = OFF;
       }
-    lightExtraStatus = OFF;
+    
    }
 }
-void Light::turnON_max()
+void Light::maximal()
 {      if (lightExtraStatus == OFF) {
         analogWrite(ledPIN, 1023);
         lightExtraStatus = ON; 
       }
 }
-void Light::turnOFF()
+void Light::maximalEnd()
 {
-   if (lightStatus == ON && lightExtraStatus == OFF){
-     analogWrite(ledPIN, 0);
-     lightStatus = OFF;
+   if (lightStatus == ON && lightExtraStatus == ON){
+     analogWrite(ledPIN, halfPower);
+     lightExtraStatus = OFF;
+   }
+   else if (lightStatus == OFF && lightExtraStatus == ON){
+      analogWrite(ledPIN, 0);
+     lightExtraStatus = OFF;
    }
 }
 
