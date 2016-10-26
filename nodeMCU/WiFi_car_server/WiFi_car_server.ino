@@ -6,13 +6,15 @@
 #include "engine.h"
 
 int kat;
-int licznik = 0;
-int speed_ = 0;
+int licznik           = 0;
+int speed_            = 0;
 String speed_s;
 String kat_s;
-constexpr int port = 8833;
-int lastSpeed =0;
-
+constexpr int port    = 8833;
+int lastSpeed         = 0;
+const int  servoLeft  = 36;
+const int  servoRight = 106;
+int stopLedTimer     = STOP_LED_TIMER;
 
 Engine mainMotor;
 Light lightFront(FRONT_LED);
@@ -36,9 +38,10 @@ void setup() {
   digitalWrite(LED, 0);
  //analogWriteFreq(20);
   // Connect to WiFi network
-
   setupWiFi();
+
   OTA_update_setup();
+  
   Serial.println("");
   Serial.println("WiFi connected");
 
@@ -94,7 +97,7 @@ void working() {
     Serial.print("kat str: ");
     Serial.println(kat_s);
     kat = kat_s.toInt();
-    kat = map(kat, -100, 100, 36, 106);
+    kat = map(kat, -100, 100, servoLeft, servoRight);
     Serial.print("kat int: ");
 
     Serial.println(kat);
@@ -125,6 +128,15 @@ void working() {
       }
       else if (speed_ > lastSpeed) {
         lightBack.maximalEnd();
+      }
+      else if (speed_ == lastSpeed){
+        if ( stopLedTimer == 0 ){
+          lightBack.maximalEnd();
+          stopLedTimer = STOP_LED_TIMER;
+        }
+        else{
+          --stopLedTimer;
+        }
       }
       lastSpeed = speed_;
 /// light ///////////////
