@@ -4,6 +4,8 @@
 #include "functions.h"
 #include "light.h"
 #include "engine.h"
+#include "driver.h"
+#include "stopLight.h"
 
 int kat;
 int licznik           = 0;
@@ -11,15 +13,16 @@ int speed_            = 0;
 String speed_s;
 String kat_s;
 constexpr int port    = 8833;
-int lastSpeed         = 0;
-const int  servoLeft  = 36;
-const int  servoRight = 106;
-int stopLedTimer     = STOP_LED_TIMER;
+
+const int  servoLeft  = 0;
+const int  servoRight = 86;
+//int stopLedTimer     = STOP_LED_TIMER;
 
 Engine mainMotor;
+Driver mainDriver(&mainMotor);
 Light lightFront(FRONT_LED);
 Light lightBack  (BACK_LED);
-
+StopLight mainStopLight(&lightBack, STOP_LED_TIMER);
 // Create an instance of the server
 // specify the port to listen on as an argument
 WiFiServer server(port);
@@ -108,38 +111,11 @@ void working() {
     speed_ = speed_s.toInt();
     Serial.print("speed_int: ");
     Serial.println(speed_);
-    if (speed_ < 0) {
-      speed_ = speed_ * -1;
-       
-      mainMotor.go_forward(  map(speed_, 0, 100, 0, 1020));
-      //req = "forward";
+    
+    mainDriver.runMotor(speed_);
 
-    } else if (speed_ == 0) {
-      mainMotor.hard_stop();
-      //req = "stop";
-    }
-
-    else {
-      mainMotor.go_back( map(speed_, 0, 100, 0, 1020)); 
-    }
-    if (speed_ < lastSpeed)
-      {
-        lightBack.maximal();
-      }
-      else if (speed_ > lastSpeed) {
-        lightBack.maximalEnd();
-      }
-      else if (speed_ == lastSpeed){
-        if ( stopLedTimer == 0 ){
-          lightBack.maximalEnd();
-          stopLedTimer = STOP_LED_TIMER;
-        }
-        else{
-          --stopLedTimer;
-        }
-      }
-      lastSpeed = speed_;
-/// light ///////////////
+    mainStopLight.handle(speed_);
+   
 
 if (1 == req.substring(20, 21).toInt()){
   
