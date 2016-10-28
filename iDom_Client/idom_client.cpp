@@ -51,15 +51,11 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ////  //////////////////////////    Ladowanie grafiki  ////////////////////////
     QPixmap pix;
 
-    if (pix.load(config->background_img_w.c_str()))
+    if (pix.load( ":/new/prefix1/files/background.png"   ))
     {
-        qDebug("udalo sie Windows");
+        qDebug("udalo sie  ");
     }
-    else if ( pix.load(config->background_img_a.c_str()))
-    {
-        qDebug("udalo sie android");
 
-    }
 
 
     pix = pix.scaled(this->size(), Qt::IgnoreAspectRatio);

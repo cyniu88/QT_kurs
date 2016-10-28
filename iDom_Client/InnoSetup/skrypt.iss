@@ -5,8 +5,7 @@
 #define MyAppVersion "1.5"
 #define MyAppPublisher "cyniu, Inc."
 #define MyAppURL "http://www.example.com/"
-#define MyAppExeName "iDom_Client.exe"
-
+#define MyAppExeName "iDom_Client.exe"       
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
@@ -43,7 +42,6 @@ Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_Mi
 Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\f\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
