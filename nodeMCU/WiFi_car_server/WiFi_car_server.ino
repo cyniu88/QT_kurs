@@ -8,7 +8,7 @@
 #include "stopLight.h"
 
 int kat;
-int licznik           = 0;
+int counter           = 0;
 int speed_            = 0;
 String speed_s;
 String kat_s;
@@ -56,12 +56,12 @@ void setup() {
 void wait_for_client() {
   digitalWrite(LED, 0);
   while (1) {
-    if (licznik == 0) {
+    if (counter == 0) {
       OTA_handle();
     }
-    ++licznik;
-    if (licznik == 90000) {
-      licznik = 0;
+    ++counter;
+    if (counter == 90000) {
+      counter = 0;
     }
     // Check if a client has connected
     client = server.available();
@@ -76,10 +76,16 @@ void wait_for_client() {
 
 void working() {
   digitalWrite(LED, 1);
+  counter = 50;
   while (1) {
     Serial.println("wait");
     while (!client.available()) {
-      // delay(1);
+      --counter;
+      if (counter == 0)
+      {
+        mainMotor.hard_stop();
+        counter = 50;
+      }
     }
 
     // Read the first line of the request

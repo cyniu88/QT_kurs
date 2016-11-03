@@ -11,6 +11,8 @@
 #include <QScroller>
 #include <QProximitySensor>
 #include <QSystemTrayIcon>
+#include <QInputDialog>
+#include <QDir>
 
 #ifdef Q_OS_WIN
 #include <QAxWidget>
@@ -149,6 +151,10 @@ private slots:
     void on_tabWidget_currentChanged();
 
     void on_sendEXTRA_clicked();
+
+    void on_fontComboBox_currentTextChanged();
+
+    void on_setNumberMPD_clicked();
 
 public slots:
       void setLcdActual(int c);
