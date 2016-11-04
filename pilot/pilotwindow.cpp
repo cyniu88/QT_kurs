@@ -52,6 +52,7 @@ void pilotWindow::showMessage()
 void pilotWindow::showServerREsponse(QString s)
 {
     ui->responsTxt->setText(s);
+    ++fpsCounter;
 }
 pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     QMainWindow(parent),
@@ -66,11 +67,14 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     c->addressIP=ui->adresIP->currentText().toStdString();
     c->port =  ui->port->text().toInt();
     t1 = new QTimer();
+    tFPS = new QTimer();
+    QObject::connect(tFPS,SIGNAL(timeout()),this,SLOT(display_FPS()));
 
     QObject::connect(t1,SIGNAL(timeout()),this,SLOT(showMessage()));
     QObject::connect( workerPTR,SIGNAL(sendResponse(QString)),this,SLOT(showServerREsponse(QString)));
 
     t1->start(100);
+    tFPS->start(1000);
     double i = 0.50;
     int w  =  QApplication::desktop()->height()*i;
     if (w > QApplication::desktop()->width()*i)
@@ -140,6 +144,7 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 pilotWindow::~pilotWindow()
 {
     t1->stop();
+    tFPS->stop();
     // delete przy;
     delete joyPadPower;
     delete joyPadDirection;
@@ -149,6 +154,7 @@ pilotWindow::~pilotWindow()
     delete C;
     delete D;
     delete t1;
+    delete tFPS;
     delete sliderA;
     delete sliderB;
     /*
@@ -186,11 +192,6 @@ void pilotWindow::on_port_editingFinished()
     conf->port =  ui->port->text().toInt();
 }
 
-void pilotWindow::on_pushButton_pressed()
-{
-    conf->goWhile=false;
-}
-
 void pilotWindow::on_actionConnect_triggered()
 {
     worker.start();
@@ -201,9 +202,10 @@ void pilotWindow::on_actionDisconnect_triggered()
     conf->goWhile=false;
 }
 
-
 void pilotWindow::on_actionEXIT_triggered()
 {
+    conf->goWhile=false;
+    QThread::sleep(1);
     qApp->exit();
 }
 
@@ -212,7 +214,13 @@ void pilotWindow::on_adresIP_currentTextChanged()
     conf->addressIP = ui->adresIP->currentText().toStdString();
 }
 
-void pilotWindow::on_checkBoxWheel_stateChanged(int arg1)
+void pilotWindow::on_checkBoxWheel_stateChanged()
 {
     emit resetPosNOW();
+}
+
+void pilotWindow::display_FPS()
+{
+    ui->FPS_LCD->display(fpsCounter);
+    fpsCounter = 0;
 }

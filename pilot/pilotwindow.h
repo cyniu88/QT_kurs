@@ -18,9 +18,6 @@
 #include "variable.h"
 #include "workerip.h"
 
-
-
-
 namespace Ui {
 class pilotWindow;
 }
@@ -28,9 +25,11 @@ class pilotWindow;
 class pilotWindow : public QMainWindow
 {
     Q_OBJECT
+
 public:
     msg_s message;
     QTimer *t1;
+    QTimer *tFPS;
 
     QGraphicsScene scenePower, sceneDirection;
     QGraphicsScene sceneA,sceneB,sceneC,sceneD;
@@ -42,7 +41,6 @@ public:
     touchButton *B;
     touchButton *C;
     touchButton *D;
-
 
     bool autoReturnPower   = true;
     bool autoReturnDirection = true;
@@ -56,8 +54,10 @@ public:
 
     myTouchslider *sliderA;
     myTouchslider *sliderB;
+
 signals:
     void resetPosNOW();
+
 public slots:
     void getPosGaz(int x, int y);
     void getPosSkret(int x, int y);
@@ -68,10 +68,9 @@ public slots:
     void showMessage();
     void showServerREsponse(QString s);
 
-    //  QTouchEvent event;
-    //  bool sceneEvent(QTouchEvent *e);
 protected:
     bool touchEvent(QTouchEvent *ev);
+
 public:
     explicit pilotWindow(my_config *c,  QWidget *parent = 0);
     ~pilotWindow();
@@ -79,33 +78,30 @@ public:
 private slots:
     void on_reset_clicked();
 
-
-
     void on_checkBoxPower_toggled(bool checked);
 
     void on_checkBoxWheel_toggled(bool checked);
 
-
     void on_port_editingFinished();
-
-    void on_pushButton_pressed();
 
     void on_actionConnect_triggered();
 
     void on_actionDisconnect_triggered();
 
-
     void on_actionEXIT_triggered();
 
     void on_adresIP_currentTextChanged( );
 
-    void on_checkBoxWheel_stateChanged(int arg1);
+    void on_checkBoxWheel_stateChanged();
+
+    void display_FPS();
 
 private:
     my_config *conf;
     Ui::pilotWindow *ui;
     WorkerIP   worker ;
     WorkerIP   *workerPTR ;
+    int fpsCounter = 0;
 
 };
 
