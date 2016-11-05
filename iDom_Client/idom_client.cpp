@@ -169,9 +169,9 @@ void iDom_Client::errorRead(QString tit, QString msg)
 
 void iDom_Client::updateMPDinfo()
 {
-    emit sendTCP("MPD_title","MPD get_info");
+    emit sendTCP("MPD_title","MPD get info");
 
-    emit sendTCP("MPD_volume","MPD get_volume");
+    emit sendTCP("MPD_volume","MPD get volume");
 
     qDebug("timer mpd info ");
 }
@@ -358,7 +358,7 @@ void iDom_Client::on_pushButton_5_released()
 void iDom_Client::on_playButton_released()
 {
     emit sendTCP("MPD","MPD start");
-    emit sendTCP("MPD_title","MPD get_info");
+    emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
 }
 
@@ -417,44 +417,44 @@ void iDom_Client::on_spinBox_fromLED_valueChanged()
 void iDom_Client::on_stopButton_released()
 {
     emit sendTCP("MPD","MPD stop");
-    emit sendTCP("MPD_title","MPD get_info");
+    emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
 }
 
 void iDom_Client::on_pushButtonPREV_released()
 {
     emit sendTCP("MPD","MPD prev");
-    emit sendTCP("MPD_title","MPD get_info");
+    emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
 }
 
 void iDom_Client::on_pushButtonNext_released()
 {
     emit sendTCP("MPD","MPD next");
-    emit sendTCP("MPD_title","MPD get_info");
+    emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
 }
 
 void iDom_Client::on_pushButton_pause_released()
 {
     emit sendTCP("MPD","MPD pause");
-    emit sendTCP("MPD_title","MPD get_info");
+    emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
 }
 
 void iDom_Client::on_pushButton_volumeUP_released()
 {
-    emit sendTCP("MPD","MPD volume_up");
+    emit sendTCP("MPD","MPD volume up");
     ui->volumeBar->setValue(ui->volumeBar->value()+1);
-    emit sendTCP("MPD_volume","MPD get_volume");
+    emit sendTCP("MPD_volume","MPD get volume");
     droid.vibrate(100);
 }
 
 void iDom_Client::on_pushButton_volumeDOWN_released()
 {
-    emit sendTCP("MPD","MPD volume_down");
+    emit sendTCP("MPD","MPD volume down");
     ui->volumeBar->setValue(ui->volumeBar->value()-1);
-    emit sendTCP("MPD_volume","MPD get_volume");
+    emit sendTCP("MPD_volume","MPD get volume");
     droid.vibrate(100);
 }
 
@@ -466,9 +466,9 @@ void iDom_Client::on_exitButton_pressed()
 
 void iDom_Client::on_pushButtonupdateinfo_released()
 {
-    emit sendTCP("MPD_title","MPD get_info");
+    emit sendTCP("MPD_title","MPD get info");
     QThread::sleep(1);
-    emit sendTCP("MPD_volume","MPD get_volume");
+    emit sendTCP("MPD_volume","MPD get volume");
 
 }
 
