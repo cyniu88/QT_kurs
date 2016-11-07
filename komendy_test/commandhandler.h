@@ -6,8 +6,7 @@
 #include <vector>
 #include <map>
 #include <memory>
-#include <commandtest.h>
-#include <commandexit.h>
+#include "command.h"
 
 
 class commandHandler
@@ -18,7 +17,7 @@ class commandHandler
 public:
     commandHandler();
 
-    std::string run(std::vector <std::string> &v);
+    std::string run(std::vector <std::string> &v, thread_data *my_data);
 };
 
 #endif // COMMANDHANDLE_H
