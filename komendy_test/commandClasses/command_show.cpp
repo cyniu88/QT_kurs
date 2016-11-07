@@ -21,3 +21,15 @@ std::string command_show::execute(std::vector<std::string> &v, thread_data *my_d
     return str_buf;
 }
 
+std::string command_show::help()
+{
+    std::string help = "show <parameter>- for show something";
+                    help.append("\n");
+                    help.append("parameter:");
+                    help.append("\n");
+                    help.append("log - show all server log");
+                    help.append("\n");
+
+        return help;
+}
+

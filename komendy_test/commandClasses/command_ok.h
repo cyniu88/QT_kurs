@@ -10,6 +10,7 @@ class command_ok : public command
 public:
     command_ok(std::string);
     std::string execute(std::vector <std::string> &v,thread_data * my_data);
+    std::string help();
 };
 
 #endif // COMMAND_OK_H

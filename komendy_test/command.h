@@ -15,7 +15,15 @@ class Thread_array_struc;
 class KEY;
 class  MPD_info;
 class pilot_led;
-class CRON;
+struct thread_data;
+class CRON{
+public:
+    CRON(thread_data*){
+
+    };
+    void send_temperature_thingSpeak(std::string){
+    };
+};
 
 struct thread_data{
     int s_client_sock;
@@ -47,6 +55,7 @@ public:
     command(std::string commandName);
     ~command();
     virtual std::string execute(std::vector<std::string> &v,thread_data * my_data) =0 ;
+    virtual std::string help()=0;
     virtual std::string getCommandName() ;
 };
 

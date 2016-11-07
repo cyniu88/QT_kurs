@@ -11,3 +11,8 @@ std::string command_help::execute(std::vector<std::string> &v, thread_data *my_d
 
     return v[0]+" "+v[1];
 }
+
+std::string command_help::help()
+{
+    return "help - show help for all command \nhelp <command> - show help for command\n";
+}

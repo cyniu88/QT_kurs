@@ -16,3 +16,8 @@ std::string command_clock::execute(std::vector<std::string> &v, thread_data *my_
     return "can not set clock";
 
 }
+
+std::string command_clock::help()
+{
+    return "clock <number/string> - put number/string (max 4 digits) to 7segment LCD\n";
+}

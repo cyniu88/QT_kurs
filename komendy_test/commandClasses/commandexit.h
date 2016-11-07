@@ -10,7 +10,7 @@ class commandEXIT : public command
 public:
     commandEXIT(std::string);
     std::string execute(std::vector <std::string> &v,thread_data *my_data);
-
+    std::string help();
 };
 
 #endif // COMMANDEXIT_H

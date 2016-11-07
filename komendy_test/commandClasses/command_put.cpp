@@ -19,3 +19,14 @@ std::string command_put::execute(std::vector<std::string> &v, thread_data *my_da
     }
     return str_buf;
 }
+
+std::string command_put::help()
+{
+    std::string help = "put <parameter> - ";
+                    help.append("\n");
+                    help.append("parameter:");
+                    help.append("\n");
+                    help.append("temperature - put actual temperature from inside and outside and smog on thingspeak\n");
+                    help.append("\n");
+        return help;
+}

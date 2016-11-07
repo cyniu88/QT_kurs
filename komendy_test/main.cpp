@@ -6,7 +6,7 @@
 thread_data *t;
 int main()
 {
-    std::vector <std::string> mojVector = {"TEST"};
+    std::vector <std::string> mojVector = {"TEST","55"};
     std::cout << "Hello World! " << mojVector[0] <<  std::endl;
 
     std::cin >> mojVector[0];

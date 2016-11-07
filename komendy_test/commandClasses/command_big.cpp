@@ -17,3 +17,8 @@ std::string command_big::execute(std::vector<std::string> &v, thread_data *my_da
     }
     return str_buf;
 }
+
+std::string command_big::help()
+{
+    return "big <number> - send big (number)  data \n";
+}

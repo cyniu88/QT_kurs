@@ -11,3 +11,8 @@ std::string command_cmd::execute(std::vector<std::string> &v, thread_data *my_da
 
     return v[0]+" "+v[1];
 }
+
+std::string command_cmd::help()
+{
+    return "cmd - read char prom cmd fifo file for unblock video player\n";
+}

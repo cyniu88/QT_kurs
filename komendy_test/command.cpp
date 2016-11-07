@@ -11,6 +11,8 @@ command::~command()
     std::cout << "destruktor command"<<std::endl;
 }
 
+
+
 std::string command::getCommandName()
 {
     return commandName;

@@ -11,6 +11,7 @@ class command_show : public command
 public:
     command_show(std::string);
     std::string execute(std::vector <std::string> &v,thread_data * my_data);
+    std::string help();
 };
 
 #endif // COMMAND_SHOW_H

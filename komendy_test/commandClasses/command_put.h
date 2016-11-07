@@ -11,6 +11,7 @@ class command_put : public command
 public:
     command_put(std::string);
     std::string execute(std::vector <std::string> &v,thread_data * my_data);
+    std::string help();
 };
 
 #endif // COMMAND_PUT_H
