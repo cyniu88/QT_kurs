@@ -257,7 +257,7 @@ background-color: rgba(0, 0, 0, 0);</string>
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <property name="iconSize">
        <size>
@@ -307,6 +307,9 @@ background-color: rgba(0, 0, 0, 0);</string>
                     <pointsize>14</pointsize>
                    </font>
                   </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">color: rgb(0, 255, 0);</string>
                   </property>
@@ -314,7 +317,10 @@ background-color: rgba(0, 0, 0, 0);</string>
                    <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="smallDecimalPoint">
-                   <bool>false</bool>
+                   <bool>true</bool>
+                  </property>
+                  <property name="digitCount">
+                   <number>5</number>
                   </property>
                   <property name="segmentStyle">
                    <enum>QLCDNumber::Filled</enum>
@@ -405,6 +411,9 @@ background-color: rgba(0, 0, 0, 0);</string>
                   </property>
                   <property name="frameShape">
                    <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="digitCount">
+                   <number>5</number>
                   </property>
                  </widget>
                 </item>
@@ -1028,11 +1037,6 @@ QComboBox::down-arrow {
             <item>
              <property name="text">
               <string>show thread all</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>cmd</string>
              </property>
             </item>
             <item>
@@ -2036,7 +2040,7 @@ background-color: rgb(207, 47, 47);</string>
    </layout>
   </widget>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
+ <layoutdefault spacing="4" margin="2"/>
  <resources>
   <include location="ikony.qrc"/>
  </resources>

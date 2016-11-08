@@ -45,7 +45,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     // dodajemy scrolla area  ajki widget  i czym scrolujemy
     QScroller::grabGesture(ui->wynik,QScroller::TouchGesture);
 
-
     ui->wynik->setAttribute(Qt::WA_AcceptTouchEvents);
 
     ////  //////////////////////////    Ladowanie grafiki  ////////////////////////
@@ -55,8 +54,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     {
         qDebug("udalo sie  ");
     }
-
-
 
     pix = pix.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
@@ -105,20 +102,15 @@ void iDom_Client::on_EXITButton_released()
 
 void iDom_Client::scrollTitle()
 {
-    //toDo
-
     QString temp = ui->titleTXT->text();
     temp.push_back(temp[0]);
     temp.remove(0,1);
     ui->titleTXT->setText(temp);
 }
 
-
-
 void iDom_Client::odb_answer(QString s){
     ui->wynik->setText(s);
     ui->wynik->moveCursor(QTextCursor::End);
-
     ui->lcdNumberActual ->display(s.size());
     ui->progressBar->setValue(100);
     droid.vibrate(100);
@@ -132,7 +124,6 @@ void iDom_Client::readProgress(int c)
 void iDom_Client::odb_answer_LED(QString s)
 {
     ui->lineEditLED->setText(s);
-
 }
 
 void iDom_Client::odb_answer_MPD(QString s)
@@ -143,7 +134,6 @@ void iDom_Client::odb_answer_MPD(QString s)
 void iDom_Client::odb_mpd_title(QString s)
 {
     ui->titleTXT->setText(s+"     ");
-
 }
 
 void iDom_Client::odbMpdVolume(QString s)
@@ -151,8 +141,6 @@ void iDom_Client::odbMpdVolume(QString s)
     ui->volumeTXT->setText("volume: " +s+"%");
     ui->volumeBar->setValue(s.toInt());
 }
-
-
 
 void iDom_Client::errorRead(QString tit, QString msg)
 {
@@ -163,16 +151,12 @@ void iDom_Client::errorRead(QString tit, QString msg)
 #ifdef Q_OS_WIN
     trayIcon.showMessage(tit,msg);
 #endif
-
-
 }
 
 void iDom_Client::updateMPDinfo()
 {
     emit sendTCP("MPD_title","MPD get info");
-
     emit sendTCP("MPD_volume","MPD get volume");
-
     qDebug("timer mpd info ");
 }
 
@@ -192,15 +176,10 @@ void iDom_Client::odb_temperature(QString s)
 
 }
 
-
-
-
-
 void iDom_Client::on_pushButton_released()
 {
     config->command = ui->comboBox->currentText().toStdString();
     emit sendTCP("console",config->command);
-
 }
 
 void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
@@ -316,41 +295,31 @@ void iDom_Client::on_pushButton_24_released()
 
 void iDom_Client::on_LED_OFF_Button_37_released()
 {
-
     emit sendTCP("LED","RS232 send LED_STOP:2;");
 }
 
 void iDom_Client::on_redButton_22_released()
 {
-
     sendSignalColor(255,0,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-
 }
 
 void iDom_Client::on_pushButton_2_released()
 {
-    // config->command="RS232 send LED:[1-60-0-0-255];";
     sendSignalColor(0,0,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-
 }
 
 void iDom_Client::on_pushButton_3_released()
 {
-    //config->command="RS232 send LED:[1-60-0-255-0];";
-    //emit sendTCP("button",config->command);
     sendSignalColor(0,255,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
 void iDom_Client::on_pushButton_4_released()
 {
-    //    config->command="RS232 send LED:[1-60-254-254-51];";
-    //    emit sendTCP("button",config->command);
     sendSignalColor(255,255,51,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
 void iDom_Client::on_pushButton_5_released()
 {
-    //config->command="RS232 send LED:[1-60-254-0-128];";
     sendSignalColor(255,0,128,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
@@ -511,7 +480,12 @@ void iDom_Client::on_setNumberMPD_clicked()
      QString text = QInputDialog::getText(this, tr("select radio stations"),
                                           tr("select radio stations"), QLineEdit::Normal,
                                           QDir::home().dirName(), &ok);
-
         ui->setNumberMPD->setText(text);
+}
 
+
+void iDom_Client::on_comboBox_currentIndexChanged(const QString &arg1)
+{
+    config->command = ui->comboBox->currentText().toStdString();
+    emit sendTCP("console",config->command);
 }
