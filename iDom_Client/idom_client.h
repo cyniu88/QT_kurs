@@ -47,8 +47,6 @@ private:
     void sendSignalColor(int r,int g, int b, int from=0, int to=60);
     android_interface droid;
 
-
-
 #ifdef Q_OS_WIN
     QSystemTrayIcon  trayIcon;
     QAxWidget  axWidgetTemperature;
@@ -105,8 +103,6 @@ private slots:
 
     void on_stopButton_released();
 
-
-
     void on_pushButtonPREV_released();
 
     void on_pushButtonNext_released();
@@ -147,12 +143,9 @@ private slots:
 
     void on_pushButton_26_released();
 
-
     void on_tabWidget_currentChanged();
 
     void on_sendEXTRA_clicked();
-
-    void on_fontComboBox_currentTextChanged();
 
     void on_setNumberMPD_clicked();
 
@@ -172,15 +165,10 @@ public slots:
       void updateTemepretureInfo ();
       void odb_temperature (QString s);
 
-
-
-
 signals:
 
     void sendTCP(std::string addres, std::string s);
     void sendExtra();
-
-
 
 };
 

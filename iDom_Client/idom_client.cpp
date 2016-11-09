@@ -469,10 +469,6 @@ void iDom_Client::on_sendEXTRA_clicked()
     emit sendExtra();
 }
 
-void iDom_Client::on_fontComboBox_currentTextChanged( )
-{
-    ui->wynik->setFont(ui->fontComboBox->currentFont());
-}
 
 void iDom_Client::on_setNumberMPD_clicked()
 {
