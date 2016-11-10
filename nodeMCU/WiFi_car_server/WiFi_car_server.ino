@@ -76,7 +76,7 @@ void wait_for_client() {
 
 void working() {
   digitalWrite(LED, 1);
-  counter = 5;
+  counter = 2;
   while (1) {
     Serial.println("wait");
     while (!client.available()) {
@@ -84,7 +84,7 @@ void working() {
       if (counter == 0)
       {
         mainMotor.hard_stop();
-        counter = 5;
+        counter = 2;
       }
     }
 

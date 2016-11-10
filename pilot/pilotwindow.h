@@ -10,6 +10,8 @@
 #include <QDebug>
 #include <QString>
 #include <QTimer>
+#include <QGamepad>
+#include <QGamepadManager>
 
 #include "joypad.h"
 #include "mybutton.h"
@@ -17,6 +19,7 @@
 #include "mytouchslider.h"
 #include "variable.h"
 #include "workerip.h"
+
 
 namespace Ui {
 class pilotWindow;
@@ -67,6 +70,8 @@ public slots:
     void getStateD(bool state);
     void showMessage();
     void showServerREsponse(QString s);
+    void getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, double value);
+
 
 protected:
     bool touchEvent(QTouchEvent *ev);
@@ -74,6 +79,8 @@ protected:
 public:
     explicit pilotWindow(my_config *c,  QWidget *parent = 0);
     ~pilotWindow();
+
+
 
 private slots:
     void on_reset_clicked();
@@ -95,6 +102,12 @@ private slots:
     void on_checkBoxWheel_stateChanged();
 
     void display_FPS();
+
+
+
+    void on_actionON_triggered();
+
+    void on_actionOFF_triggered();
 
 private:
     my_config *conf;

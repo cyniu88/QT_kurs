@@ -61,8 +61,8 @@ bool WorkerIP::connectAndAuthentication()
     if (socket->waitForConnected(1000)){
         qDebug("Connected!");
         QMessageBox msgBox;
-        msgBox.setText("Connected to: "+ QString::fromStdString(config->addressIP));
-        msgBox.exec();
+       // msgBox.setText("Connected to: "+ QString::fromStdString(config->addressIP));
+       // msgBox.exec();
         return true;
         }
     else{

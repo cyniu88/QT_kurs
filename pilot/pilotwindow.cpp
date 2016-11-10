@@ -3,12 +3,6 @@
 
 
 
-
-
-
-
-
-
 void pilotWindow::getPosGaz(int x, int y)
 {
     ui->gazLCD_x->display(x);
@@ -81,9 +75,9 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     {
         w= QApplication::desktop()->width()*i;
     }
-    joyPadDummy   = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+    joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
     joyPadDirection = new JoyPad( w , w/4,Qt::red,Qt::yellow);
-    joyPadPower   = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+    joyPadPower     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
 
 
 
@@ -139,6 +133,29 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     //this->setAttribute(Qt::WA_NativeWindow);
     qDebug()<< " wielkosc: " << ui->graphicsView_gaz->sceneRect().height()<<" & "
             << ui->graphicsView_gaz->size();
+
+
+    connect(QGamepadManager::instance(), &QGamepadManager::connectedGamepadsChanged, this,
+        []() { qDebug() << "connected gamepads changed:"; });
+    connect(QGamepadManager::instance(), &QGamepadManager::gamepadConnected, this,
+        [](int deviceId) { qDebug() << "gamepad connected:" << deviceId; });
+    connect(QGamepadManager::instance(), &QGamepadManager::gamepadDisconnected, this,
+        [](int deviceId) { qDebug() << "gamepad disconnected:" << deviceId; });
+    connect(QGamepadManager::instance(), &QGamepadManager::gamepadButtonPressEvent, this,
+        [](int deviceId, QGamepadManager::GamepadButton button, double value) {  qDebug() << "button press event:" << deviceId << button << value; });
+    connect(QGamepadManager::instance(), &QGamepadManager::gamepadButtonReleaseEvent, this,
+        [](int deviceId, QGamepadManager::GamepadButton button) { qDebug() << "button release event:" << deviceId << button; });
+
+
+    connect(QGamepadManager::instance(), SIGNAL(gamepadAxisEvent(int,QGamepadManager::GamepadAxis,double)), this, SLOT(getAxisEvent(int,QGamepadManager::GamepadAxis,double)) );
+
+
+    connect(QGamepadManager::instance(), &QGamepadManager::buttonConfigured, this,
+        [](int deviceId, QGamepadManager::GamepadButton button) { qDebug() << "button configured:" << deviceId << button; });
+    connect(QGamepadManager::instance(), &QGamepadManager::axisConfigured, this,
+        [](int deviceId, QGamepadManager::GamepadAxis axis) { qDebug() << "axis configured:" << deviceId << axis; });
+    connect(QGamepadManager::instance(), &QGamepadManager::configurationCanceled, this,
+            [](int deviceId) { qDebug() << "configuration canceled:" << deviceId; });
 }
 
 pilotWindow::~pilotWindow()
@@ -159,6 +176,29 @@ pilotWindow::~pilotWindow()
     delete sliderB;
     /*
 */   //delete ui;
+}
+
+void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, double value)
+{
+    int _value = value*100;
+    if (axis == 0){
+        message.leftX = _value;
+        ui->gazLCD_x->display(_value);
+    }
+    if (axis == 1){
+        message.leftY = _value;
+        ui->gazLCD_y->display(_value);
+    }
+    if (axis == 2){
+        message.rightX = _value;
+        ui->skretLCD_x->display(_value);
+    }
+    if (axis == 3){
+        message.rightY = _value;
+        ui->skretLCD_y->display(_value);
+    }
+
+
 }
 
 void pilotWindow::on_reset_clicked()
@@ -223,4 +263,14 @@ void pilotWindow::display_FPS()
 {
     ui->FPS_LCD->display(fpsCounter);
     fpsCounter = 0;
+}
+
+void pilotWindow::on_actionON_triggered()
+{
+    message.stateA = 1;
+}
+
+void pilotWindow::on_actionOFF_triggered()
+{
+    message.stateA = 0;
 }

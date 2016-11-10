@@ -2,14 +2,14 @@
 #define VARIABLE_H
 #include "functions.h"
 struct msg_s {
-    int leftX;
-    int leftY;
-    int rightX;
-    int rightY;
-    int stateA;
-    int stateB;
-    int stateC;
-    int stateD;
+    int leftX = 0;
+    int leftY = 0;
+    int rightX = 0;
+    int rightY = 0;
+    int stateA = 0;
+    int stateB = 0;
+    int stateC = 0;
+    int stateD = 0;
     QString getString(){
         std::string leftX_s = to_Std_string_4(leftX)   ;
         std::string leftY_s = to_Std_string_4(leftY)   ;
