@@ -139,7 +139,7 @@ else{
   lightFront.maximalEnd();
 }
 
-    String s = " 15-16"+req.substring(20, 21)+" "+req.substring(22, 23) ;
+    String s = req ;
 
     // Send the response to the client
     client.print(s);

@@ -71,6 +71,8 @@ public slots:
     void showMessage();
     void showServerREsponse(QString s);
     void getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, double value);
+    void getButtonEventPress (int deviceId, QGamepadManager::GamepadButton button, double value);
+    void getButtonEventRelease (int deviceId, QGamepadManager::GamepadButton button);
 
 
 protected:
