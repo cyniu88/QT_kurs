@@ -80,6 +80,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 #endif
 #ifdef Q_OS_ANDROID
     QtWebView::initialize();
+    ui->InsideDEG->setText("\u2103");
+    ui->OutsideDEG->setText("\u2103");
 #endif
 
 }
@@ -138,7 +140,7 @@ void iDom_Client::odb_mpd_title(QString s)
 
 void iDom_Client::odbMpdVolume(QString s)
 {
-    ui->volumeTXT->setText("volume: " +s+"%");
+    ui->volumeTXT->setText(temperatureString+ "| volume: " +s+"%");
     ui->volumeBar->setValue(s.toInt());
 }
 
@@ -170,7 +172,7 @@ void iDom_Client::odb_temperature(QString s)
     QString in = s.split(":")[0];
     QString out =s.split(":")[1];
     out = out.split("\r")[0];
-    qDebug() << out;
+    temperatureString = "Temperature Inside: " + in +"\u2103"+ " Outside: "+ out+ "\u2103"+ " ";
     ui->InsideLCD->display( in   );
     ui->OutsideLCD->display( out);
 
@@ -480,7 +482,7 @@ void iDom_Client::on_setNumberMPD_clicked()
 }
 
 
-void iDom_Client::on_comboBox_currentIndexChanged(const QString &arg1)
+void iDom_Client::on_comboBox_currentIndexChanged()
 {
     config->command = ui->comboBox->currentText().toStdString();
     emit sendTCP("console",config->command);
