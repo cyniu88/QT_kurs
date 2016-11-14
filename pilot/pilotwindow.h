@@ -115,6 +115,7 @@ private slots:
 
     void on_push_minusGear_clicked();
 
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;

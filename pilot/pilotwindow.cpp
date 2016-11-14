@@ -321,3 +321,4 @@ void pilotWindow::on_push_minusGear_clicked()
     myGearBox.gearDOWN();
     ui->gear->display(myGearBox.getGear());
 }
+
