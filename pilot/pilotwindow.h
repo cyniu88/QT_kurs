@@ -15,7 +15,6 @@
 
 #include "joypad.h"
 #include "mybutton.h"
-#include "touchbutton.h"
 #include "mytouchslider.h"
 #include "variable.h"
 #include "workerip.h"
@@ -40,10 +39,6 @@ public:
     JoyPad *joyPadDummy;
     JoyPad *joyPadDirection;
 
-    touchButton *A;
-    touchButton *B;
-    touchButton *C;
-    touchButton *D;
 
     bool autoReturnPower   = true;
     bool autoReturnDirection = true;
@@ -64,10 +59,6 @@ signals:
 public slots:
     void getPosGaz(int x, int y);
     void getPosSkret(int x, int y);
-    void getStateA(bool state);
-    void getStateB(bool state);
-    void getStateC(bool state);
-    void getStateD(bool state);
     void showMessage();
     void showServerREsponse(QString s);
     void getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, double value);
@@ -115,6 +106,14 @@ private slots:
 
     void on_push_minusGear_clicked();
 
+
+    void on_buttonLowBeam_clicked();
+
+    void on_buttonHighBeam_clicked();
+
+    void on_buttonHorn_clicked();
+
+    void on_buttonDummy_clicked();
 
 private:
     my_config *conf;

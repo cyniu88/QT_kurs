@@ -16,7 +16,6 @@ SOURCES += main.cpp\
         pilotwindow.cpp \
     joypad.cpp \
     mybutton.cpp \
-    touchbutton.cpp \
     functions.cpp \
     mytouchslider.cpp \
     workerip.cpp \
@@ -25,7 +24,6 @@ SOURCES += main.cpp\
 HEADERS  += pilotwindow.h \
     joypad.h \
     mybutton.h \
-    touchbutton.h \
     functions.h \
     mytouchslider.h \
     workerip.h \

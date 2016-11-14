@@ -253,7 +253,7 @@ font-size:  40px;</string>
      </widget>
     </item>
     <item row="0" column="9">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pushButtonClose">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
         <horstretch>0</horstretch>
@@ -335,7 +335,7 @@ font-size:  40px;</string>
      </widget>
     </item>
     <item row="3" column="4">
-     <widget class="QPushButton" name="reset">
+     <widget class="myButton" name="reset">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -373,80 +373,7 @@ font-size:  40px;</string>
     </item>
     <item row="5" column="5" colspan="7">
      <layout class="QGridLayout" name="gridLayout_5">
-      <item row="0" column="2">
-       <widget class="QGraphicsView" name="graphicsView_C">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="verticalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="horizontalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QGraphicsView" name="graphicsView_A">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="verticalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="horizontalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="sizeAdjustPolicy">
-         <enum>QAbstractScrollArea::AdjustIgnored</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QGraphicsView" name="graphicsView_B">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="verticalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="horizontalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QGraphicsView" name="graphicsView_D">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="verticalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="horizontalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="4">
+      <item row="3" column="0" colspan="2">
        <widget class="QLineEdit" name="infoTxt">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -464,6 +391,38 @@ font-size:  40px;</string>
         </property>
         <property name="readOnly">
          <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="myButton" name="buttonLowBeam">
+          <property name="text">
+           <string>Low Beam</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="myButton" name="buttonHighBeam">
+          <property name="text">
+           <string>High Beam</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="1">
+       <widget class="myButton" name="buttonDummy">
+        <property name="text">
+         <string>dummy</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="myButton" name="buttonHorn">
+        <property name="text">
+         <string>Horn</string>
         </property>
        </widget>
       </item>
@@ -603,7 +562,7 @@ font-size:  40px;</string>
  </resources>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>pushButtonClose</sender>
    <signal>clicked()</signal>
    <receiver>pilotWindow</receiver>
    <slot>close()</slot>

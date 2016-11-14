@@ -19,24 +19,6 @@ void pilotWindow::getPosSkret(int x, int y)
     message.rightY=y;
 }
 
-void pilotWindow::getStateA(bool state)
-{
-
-    message.lowBeam=state;
-}
-void pilotWindow::getStateB(bool state)
-{
-    message.highBeam=state;
-}
-void pilotWindow::getStateC(bool state)
-{
-    message.stateC=state;
-}
-void pilotWindow::getStateD(bool state)
-{
-    message.stateD=state;
-}
-
 void pilotWindow::showMessage()
 {
     ui->infoTxt->setText(  message.getString()   );
@@ -96,26 +78,6 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
-    A = new touchButton("A", Qt::red);
-    B = new touchButton("B", Qt::red);
-    C = new touchButton("C", Qt::red);
-    D = new touchButton("D", Qt::red);
-
-    QObject::connect( A,SIGNAL(sendState(bool)),this,SLOT(getStateA(bool)));
-    QObject::connect( B,SIGNAL(sendState(bool)),this,SLOT(getStateB(bool)));
-    QObject::connect( C,SIGNAL(sendState(bool)),this,SLOT(getStateC(bool)));
-    QObject::connect( D,SIGNAL(sendState(bool)),this,SLOT(getStateD(bool)));
-
-    sceneA.addItem(A);
-    sceneB.addItem(B);
-    sceneC.addItem(C);
-    sceneD.addItem(D);
-
-    ui->graphicsView_A->setScene(&sceneA);
-    ui->graphicsView_B->setScene(&sceneB);
-    ui->graphicsView_C->setScene(&sceneC);
-    ui->graphicsView_D->setScene(&sceneD);
-
 
     sliderA = new myTouchslider(0,0,20,w*1.1);
     sliderB = new myTouchslider(0,0,w*1.1,10);
@@ -159,9 +121,9 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     connect(QGamepadManager::instance(), &QGamepadManager::configurationCanceled, this,
             [](int deviceId) { qDebug() << "configuration canceled:" << deviceId; });
 
-ui->push_minusGear->grabGesture(Qt::TapAndHoldGesture);
-ui->push_plusGear->grabGesture(Qt::TapAndHoldGesture);
-
+//ui->push_minusGear->grabGesture(Qt::TapAndHoldGesture);
+//ui->push_plusGear->grabGesture(Qt::TapAndHoldGesture);
+//ui->push_plusGear->setAttribute(Qt::WA_AcceptTouchEvents);
 }
 
 pilotWindow::~pilotWindow()
@@ -172,10 +134,6 @@ pilotWindow::~pilotWindow()
     delete joyPadPower;
     delete joyPadDirection;
     delete test;
-    delete A;
-    delete B;
-    delete C;
-    delete D;
     delete t1;
     delete tFPS;
     delete sliderA;
@@ -322,3 +280,35 @@ void pilotWindow::on_push_minusGear_clicked()
     ui->gear->display(myGearBox.getGear());
 }
 
+
+void pilotWindow::on_buttonLowBeam_clicked()
+{
+    message.lowBeam = !message.lowBeam;
+    if (message.lowBeam == true){
+        ui->buttonLowBeam->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+    }
+    else{
+         ui->buttonLowBeam->setStyleSheet("");
+    }
+}
+
+void pilotWindow::on_buttonHighBeam_clicked()
+{
+    message.highBeam = !message.highBeam;
+    if (message.highBeam == true){
+        ui->buttonHighBeam->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+    }
+    else{
+         ui->buttonHighBeam->setStyleSheet("");
+    }
+}
+
+void pilotWindow::on_buttonHorn_clicked()
+{
+    message.stateC = !message.stateC;
+}
+
+void pilotWindow::on_buttonDummy_clicked()
+{
+    message.stateD = !message.stateD;
+}
