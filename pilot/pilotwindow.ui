@@ -305,19 +305,6 @@ font-size:  40px;</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="4">
-     <widget class="QGraphicsView" name="graphicsView_barV">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAsNeeded</enum>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="10">
      <widget class="QLCDNumber" name="skretLCD_x">
       <property name="sizePolicy">
@@ -489,9 +476,6 @@ font-size:  40px;</string>
        </widget>
       </item>
      </layout>
-    </item>
-    <item row="5" column="0" colspan="4">
-     <widget class="QGraphicsView" name="graphicsView_barH"/>
     </item>
    </layout>
   </widget>

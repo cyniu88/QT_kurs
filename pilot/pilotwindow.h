@@ -15,7 +15,6 @@
 
 #include "joypad.h"
 #include "mybutton.h"
-#include "mytouchslider.h"
 #include "variable.h"
 #include "workerip.h"
 #include "gear_BOX/gear_box.h"
@@ -49,9 +48,6 @@ public:
 
     QGraphicsScene sceneSliderA;
     QGraphicsScene sceneSliderB;
-
-    myTouchslider *sliderA;
-    myTouchslider *sliderB;
 
 signals:
     void resetPosNOW();

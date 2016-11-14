@@ -79,15 +79,6 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    sliderA = new myTouchslider(0,0,20,w*1.1);
-    sliderB = new myTouchslider(0,0,w*1.1,10);
-
-    sceneSliderA.addItem(sliderA);
-    sceneSliderB.addItem(sliderB);
-
-    ui->graphicsView_barV->setScene(&sceneSliderA);
-    ui->graphicsView_barH->setScene(&sceneSliderB);
-
     ui->gear->display(myGearBox.getGear());
 
     QApplication::desktop()->height();
@@ -136,10 +127,6 @@ pilotWindow::~pilotWindow()
     delete test;
     delete t1;
     delete tFPS;
-    delete sliderA;
-    delete sliderB;
-    /*
-*/   //delete ui;
 }
 
 void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, double value)
@@ -170,11 +157,11 @@ void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, 
 void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButton button, double value)
 {
     if (button == 4){
-        message.lowBeam = !message.lowBeam;
+        on_buttonLowBeam_clicked();
     }
 
     else if (button == 6 ) {
-        message.highBeam = 1;
+        on_buttonHighBeam_clicked();
     }
 
 }
@@ -182,7 +169,7 @@ void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButt
 void pilotWindow::getButtonEventRelease(int deviceId, QGamepadManager::GamepadButton button)
 {
     if (button == 6 ) {
-        message.highBeam = 0;
+        on_buttonHighBeam_clicked();
     }
     else if (button == 5){
         on_push_plusGear_clicked();
@@ -306,9 +293,21 @@ void pilotWindow::on_buttonHighBeam_clicked()
 void pilotWindow::on_buttonHorn_clicked()
 {
     message.stateC = !message.stateC;
+    if (message.stateC == true){
+        ui->buttonHorn->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+    }
+    else{
+         ui->buttonHorn->setStyleSheet("");
+    }
 }
 
 void pilotWindow::on_buttonDummy_clicked()
 {
     message.stateD = !message.stateD;
+    if (message.stateD == true){
+        ui->buttonDummy->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+    }
+    else{
+         ui->buttonDummy->setStyleSheet("");
+    }
 }
