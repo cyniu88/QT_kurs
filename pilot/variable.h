@@ -11,6 +11,7 @@ struct msg_s {
     bool highBeam = 0;
     bool stateC = 0;
     bool stateD = 0;
+    int horiSlider = 0;
     QString getString(){
         std::string leftX_s = to_Std_string_4(leftX)   ;
         std::string leftY_s = to_Std_string_4(leftY)   ;
@@ -24,7 +25,8 @@ struct msg_s {
                 ":"+QString::number(lowBeam)+
                 ":"+QString::number(highBeam)+
                 ":"+QString::number(stateC)+
-                ":"+QString::number(stateD)+"#";
+                ":"+QString::number(stateD)+
+                ":"+QString::number(horiSlider)+"#";
 
     };
 

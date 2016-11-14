@@ -111,17 +111,13 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
             [](int deviceId, QGamepadManager::GamepadAxis axis) { qDebug() << "axis configured:" << deviceId << axis; });
     connect(QGamepadManager::instance(), &QGamepadManager::configurationCanceled, this,
             [](int deviceId) { qDebug() << "configuration canceled:" << deviceId; });
-
-//ui->push_minusGear->grabGesture(Qt::TapAndHoldGesture);
-//ui->push_plusGear->grabGesture(Qt::TapAndHoldGesture);
-//ui->push_plusGear->setAttribute(Qt::WA_AcceptTouchEvents);
 }
 
 pilotWindow::~pilotWindow()
 {
     t1->stop();
     tFPS->stop();
-    // delete przy;
+
     delete joyPadPower;
     delete joyPadDirection;
     delete test;
@@ -308,6 +304,11 @@ void pilotWindow::on_buttonDummy_clicked()
         ui->buttonDummy->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
     }
     else{
-         ui->buttonDummy->setStyleSheet("");
+         ui->buttonHorn->setStyleSheet("");
     }
+}
+
+void pilotWindow::on_horizontalSlider_sliderMoved(int position)
+{
+    message.horiSlider = ui->horizontalSlider->value();
 }

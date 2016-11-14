@@ -477,6 +477,46 @@ font-size:  40px;</string>
       </item>
      </layout>
     </item>
+    <item row="5" column="0" colspan="4">
+     <widget class="myTouchSlider" name="horizontalSlider">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSlider::groove:horizontal {
+border: 6px solid #AAA;
+height: 4px;
+background: #9AD9EB;
+margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+ 
+	background-color: rgb(85, 255, 0);
+border: 1px solid gray;
+width: 48px;
+margin: -26px 0;
+border-radius:   23px;
+}
+</string>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="invertedAppearance">
+       <bool>false</bool>
+      </property>
+      <property name="invertedControls">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -539,6 +579,11 @@ font-size:  40px;</string>
    <class>myButton</class>
    <extends>QPushButton</extends>
    <header location="global">mybutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>myTouchSlider</class>
+   <extends>QSlider</extends>
+   <header location="global">mytouchslider.h</header>
   </customwidget>
  </customwidgets>
  <resources>

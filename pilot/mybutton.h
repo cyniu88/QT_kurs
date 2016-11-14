@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QEvent>
 #include <QTouchEvent>
+
 class myButton :    public QPushButton
 {
    // Q_OBJECT

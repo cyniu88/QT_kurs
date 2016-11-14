@@ -111,6 +111,8 @@ private slots:
 
     void on_buttonDummy_clicked();
 
+    void on_horizontalSlider_sliderMoved(int position);
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;
