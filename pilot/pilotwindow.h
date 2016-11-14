@@ -71,6 +71,8 @@ public slots:
     void showMessage();
     void showServerREsponse(QString s);
     void getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, double value);
+    void getButtonEventPress (int deviceId, QGamepadManager::GamepadButton button, double value);
+    void getButtonEventRelease (int deviceId, QGamepadManager::GamepadButton button);
 
 
 protected:
@@ -109,12 +111,17 @@ private slots:
 
     void on_actionOFF_triggered();
 
+    void on_push_plusGear_clicked();
+
+    void on_push_minusGear_clicked();
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;
     WorkerIP   worker ;
     WorkerIP   *workerPTR ;
     int fpsCounter = 0;
+    int gear = 1;
 
 };
 
