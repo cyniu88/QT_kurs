@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+//#include <QObject>
+#ifdef Q_OS_ANDROID
+#include <QtWebView/QtWebView>
+#endif
 
 namespace Ui {
 class MainWindow;

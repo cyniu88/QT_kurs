@@ -67,6 +67,9 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     std::string s =  std::to_string(height) +" and " + std::to_string(width)  ;
 
     ui->wynik->setText( QString::fromStdString( s));
+#ifdef Q_OS_ANDROID
+    QtWebView::initialize();
+#endif
 #ifdef Q_OS_WIN
 
     axWidgetTemperature.setControl("{8856f961-340a-11d0-a96b-00c04fd705a2}");
@@ -78,10 +81,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
         axWidgetTemperature.dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
     }
 #endif
-#ifdef Q_OS_ANDROID
-    QtWebView::initialize();
-#endif
-
 }
 
 iDom_Client::~iDom_Client()
@@ -480,7 +479,7 @@ void iDom_Client::on_setNumberMPD_clicked()
 }
 
 
-void iDom_Client::on_comboBox_currentIndexChanged(const QString &arg1)
+void iDom_Client::on_comboBox_currentIndexChanged()
 {
     config->command = ui->comboBox->currentText().toStdString();
     emit sendTCP("console",config->command);
