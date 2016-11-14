@@ -10,10 +10,8 @@ class myButton :    public QPushButton
    // Q_OBJECT
 public:
     explicit myButton(QObject *parent = 0);
-bool  Event(QEvent *event);
-signals:
+bool event(QEvent *e);
 
-public slots:
 };
 
 #endif // MYBUTTON_H

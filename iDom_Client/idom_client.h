@@ -19,7 +19,7 @@
 #endif
 #ifdef Q_OS_ANDROID
 #include <QtWebView/QtWebView>
-#include <QtWebViewVersion>
+#include <QtWebViewDepends>
 #endif
 
 #include "mainwindow.h"

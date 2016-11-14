@@ -158,6 +158,10 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
             [](int deviceId, QGamepadManager::GamepadAxis axis) { qDebug() << "axis configured:" << deviceId << axis; });
     connect(QGamepadManager::instance(), &QGamepadManager::configurationCanceled, this,
             [](int deviceId) { qDebug() << "configuration canceled:" << deviceId; });
+
+ui->push_minusGear->grabGesture(Qt::TapAndHoldGesture);
+ui->push_plusGear->grabGesture(Qt::TapAndHoldGesture);
+
 }
 
 pilotWindow::~pilotWindow()

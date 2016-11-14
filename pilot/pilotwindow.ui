@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1380</width>
-    <height>719</height>
+    <width>1305</width>
+    <height>476</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -112,6 +112,9 @@ QComboBox::down-arrow {
     font-family:  &quot;Franklin Gothic Medium&quot;;
     font-size:  40px;</string>
         </property>
+        <property name="digitCount">
+         <number>2</number>
+        </property>
        </widget>
       </item>
       <item row="0" column="0">
@@ -175,23 +178,32 @@ QComboBox::down-arrow {
     <item row="0" column="2">
      <widget class="QLCDNumber" name="gazLCD_x">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(0, 255, 0);</string>
+       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+      </property>
+      <property name="digitCount">
+       <number>4</number>
       </property>
      </widget>
     </item>
     <item row="0" column="3">
      <widget class="QLCDNumber" name="gazLCD_y">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+      </property>
+      <property name="digitCount">
+       <number>4</number>
       </property>
      </widget>
     </item>
@@ -222,18 +234,21 @@ QComboBox::down-arrow {
     <item row="0" column="0" colspan="2">
      <widget class="QLineEdit" name="responsTxt">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
+border: true;
+border-color: rgb(0, 255, 0,255);
+color: rgb(0, 255, 0);
+font-family:  &quot;Franklin Gothic Medium&quot;;
+font-size:  40px;</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -306,13 +321,16 @@ QComboBox::down-arrow {
     <item row="0" column="10">
      <widget class="QLCDNumber" name="skretLCD_x">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(0, 255, 0);</string>
+       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+      </property>
+      <property name="digitCount">
+       <number>4</number>
       </property>
      </widget>
     </item>
@@ -337,16 +355,19 @@ QComboBox::down-arrow {
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
-     <widget class="QGraphicsView" name="graphicsView_barH"/>
-    </item>
     <item row="0" column="11">
      <widget class="QLCDNumber" name="skretLCD_y">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+      </property>
+      <property name="digitCount">
+       <number>4</number>
       </property>
      </widget>
     </item>
@@ -451,14 +472,34 @@ QComboBox::down-arrow {
     <item row="2" column="5">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QPushButton" name="push_plusGear">
+       <widget class="myButton" name="push_plusGear">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+        </property>
         <property name="text">
-         <string>+</string>
+         <string>Up</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLCDNumber" name="gear">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="digitCount">
          <number>1</number>
         </property>
@@ -468,13 +509,30 @@ QComboBox::down-arrow {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="push_minusGear">
+       <widget class="myButton" name="push_minusGear">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+        </property>
         <property name="text">
-         <string>-</string>
+         <string>Down</string>
         </property>
        </widget>
       </item>
      </layout>
+    </item>
+    <item row="5" column="0" colspan="4">
+     <widget class="QGraphicsView" name="graphicsView_barH"/>
     </item>
    </layout>
   </widget>
@@ -483,13 +541,13 @@ QComboBox::down-arrow {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1380</width>
+     <width>1305</width>
      <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuPo_czenie">
     <property name="title">
-     <string>połączenie</string>
+     <string>MENU</string>
     </property>
     <widget class="QMenu" name="menuLED">
      <property name="title">
@@ -532,7 +590,14 @@ QComboBox::down-arrow {
    </property>
   </action>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
+ <layoutdefault spacing="3" margin="4"/>
+ <customwidgets>
+  <customwidget>
+   <class>myButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">mybutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="zasoby.qrc"/>
  </resources>
