@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     touchbutton.cpp \
     functions.cpp \
     mytouchslider.cpp \
-    workerip.cpp
+    workerip.cpp \
+    gear_BOX/gear_box.cpp
 
 HEADERS  += pilotwindow.h \
     joypad.h \
@@ -28,7 +29,8 @@ HEADERS  += pilotwindow.h \
     functions.h \
     mytouchslider.h \
     workerip.h \
-    variable.h
+    variable.h \
+    gear_BOX/gear_box.h
 
 FORMS    += pilotwindow.ui
 CONFIG += mobility   c++14

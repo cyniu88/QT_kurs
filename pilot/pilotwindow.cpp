@@ -8,7 +8,7 @@ void pilotWindow::getPosGaz(int x, int y)
     ui->gazLCD_x->display(x);
     ui->gazLCD_y->display(y);
     message.leftX=x;
-    message.leftY=(y/5)*gear;
+    message.leftY=(y/myGearBox.howManyGear())*myGearBox.getGear();
 }
 
 void pilotWindow::getPosSkret(int x, int y)
@@ -22,11 +22,11 @@ void pilotWindow::getPosSkret(int x, int y)
 void pilotWindow::getStateA(bool state)
 {
 
-    message.stateA=state;
+    message.lowBeam=state;
 }
 void pilotWindow::getStateB(bool state)
 {
-    message.stateB=state;
+    message.highBeam=state;
 }
 void pilotWindow::getStateC(bool state)
 {
@@ -51,7 +51,9 @@ void pilotWindow::showServerREsponse(QString s)
 pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::pilotWindow),
-    worker(c)
+    worker(c),
+    myGearBox(5)
+
 {
 
 
@@ -124,7 +126,7 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     ui->graphicsView_barV->setScene(&sceneSliderA);
     ui->graphicsView_barH->setScene(&sceneSliderB);
 
-    ui->gear->display(gear);
+    ui->gear->display(myGearBox.getGear());
 
     QApplication::desktop()->height();
     ui->infoTxt->setText(QString::number(w      ));
@@ -136,11 +138,11 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 
 
     connect(QGamepadManager::instance(), &QGamepadManager::connectedGamepadsChanged, this,
-        []() { qDebug() << "connected gamepads changed:"; });
+            []() { qDebug() << "connected gamepads changed:"; });
     connect(QGamepadManager::instance(), &QGamepadManager::gamepadConnected, this,
-        [](int deviceId) { qDebug() << "gamepad connected:" << deviceId; });
+            [](int deviceId) { qDebug() << "gamepad connected:" << deviceId; });
     connect(QGamepadManager::instance(), &QGamepadManager::gamepadDisconnected, this,
-        [](int deviceId) { qDebug() << "gamepad disconnected:" << deviceId; });
+            [](int deviceId) { qDebug() << "gamepad disconnected:" << deviceId; });
 
 
     connect(QGamepadManager::instance(), SIGNAL(gamepadButtonPressEvent(int,QGamepadManager::GamepadButton,double)), this, SLOT(getButtonEventPress(int,QGamepadManager::GamepadButton,double))     );
@@ -151,9 +153,9 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 
 
     connect(QGamepadManager::instance(), &QGamepadManager::buttonConfigured, this,
-        [](int deviceId, QGamepadManager::GamepadButton button) { qDebug() << "button configured:" << deviceId << button; });
+            [](int deviceId, QGamepadManager::GamepadButton button) { qDebug() << "button configured:" << deviceId << button; });
     connect(QGamepadManager::instance(), &QGamepadManager::axisConfigured, this,
-        [](int deviceId, QGamepadManager::GamepadAxis axis) { qDebug() << "axis configured:" << deviceId << axis; });
+            [](int deviceId, QGamepadManager::GamepadAxis axis) { qDebug() << "axis configured:" << deviceId << axis; });
     connect(QGamepadManager::instance(), &QGamepadManager::configurationCanceled, this,
             [](int deviceId) { qDebug() << "configuration canceled:" << deviceId; });
 }
@@ -180,12 +182,14 @@ pilotWindow::~pilotWindow()
 
 void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, double value)
 {
-    int _value = value*20*gear;
+    int _value = value*100;
     if (axis == 0){
+        _value = value*20*myGearBox.getGear();
         message.leftX = _value;
         ui->gazLCD_x->display(_value);
     }
     if (axis == 1){
+        _value = value*20*myGearBox.getGear();
         message.leftY = _value;
         ui->gazLCD_y->display(_value);
     }
@@ -203,22 +207,27 @@ void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, 
 
 void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButton button, double value)
 {
-   if (button == 4){
-       message.stateA = 1;
-   }
-   else if (button == 6){
-       message.stateA = 0;
-   }
-   else if (button == 7 ) {
-       message.stateB = 1;
-   }
+    if (button == 4){
+        message.lowBeam = !message.lowBeam;
+    }
+
+    else if (button == 6 ) {
+        message.highBeam = 1;
+    }
+
 }
 
 void pilotWindow::getButtonEventRelease(int deviceId, QGamepadManager::GamepadButton button)
 {
-    if (button == 7 ) {
-           message.stateB = 0;
-       }
+    if (button == 6 ) {
+        message.highBeam = 0;
+    }
+    else if (button == 5){
+        on_push_plusGear_clicked();
+    }
+    else if (button == 7){
+        on_push_minusGear_clicked();
+    }
 }
 
 
@@ -289,26 +298,22 @@ void pilotWindow::display_FPS()
 
 void pilotWindow::on_actionON_triggered()
 {
-    message.stateA = 1;
+    message.lowBeam = 1;
 }
 
 void pilotWindow::on_actionOFF_triggered()
 {
-    message.stateA = 0;
+    message.lowBeam = 0;
 }
 
 void pilotWindow::on_push_plusGear_clicked()
 {
-    if (gear < 5){
-        gear++;
-        ui->gear->display(gear);
-    }
+    myGearBox.gearUP();
+    ui->gear->display(myGearBox.getGear());
 }
 
 void pilotWindow::on_push_minusGear_clicked()
 {
-    if (gear > 1){
-        gear--;
-        ui->gear->display(gear);
-    }
+    myGearBox.gearDOWN();
+    ui->gear->display(myGearBox.getGear());
 }

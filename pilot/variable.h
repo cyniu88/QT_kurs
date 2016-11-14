@@ -1,15 +1,16 @@
 #ifndef VARIABLE_H
 #define VARIABLE_H
 #include "functions.h"
+
 struct msg_s {
     int leftX = 0;
     int leftY = 0;
-    int rightX = 0;
-    int rightY = 0;
-    int stateA = 0;
-    int stateB = 0;
-    int stateC = 0;
-    int stateD = 0;
+    int rightX   = 0;
+    int rightY   = 0;
+    bool lowBeam  = 0;
+    bool highBeam = 0;
+    bool stateC = 0;
+    bool stateD = 0;
     QString getString(){
         std::string leftX_s = to_Std_string_4(leftX)   ;
         std::string leftY_s = to_Std_string_4(leftY)   ;
@@ -20,13 +21,12 @@ struct msg_s {
                 ":"+QString::fromStdString(leftY_s)+
                 ":"+QString::fromStdString(rightX_s)+
                 ":"+QString::fromStdString(rightY_s)+
-                ":"+QString::number(stateA)+
-                ":"+QString::number(stateB)+
+                ":"+QString::number(lowBeam)+
+                ":"+QString::number(highBeam)+
                 ":"+QString::number(stateC)+
                 ":"+QString::number(stateD)+"#";
-        //return QString::number(leftX)+":"+QString::number(leftY, )+":"+QString::number(rightX)+":"+QString::number(rightY)+":"+ QString::number(stateA)+":"+QString::number(stateB)+":"+QString::number(stateC)+":"+QString::number(stateD)+"#";
 
-   };
+    };
 
 
 };

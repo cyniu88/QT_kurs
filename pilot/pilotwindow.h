@@ -19,7 +19,7 @@
 #include "mytouchslider.h"
 #include "variable.h"
 #include "workerip.h"
-
+#include "gear_BOX/gear_box.h"
 
 namespace Ui {
 class pilotWindow;
@@ -121,7 +121,7 @@ private:
     WorkerIP   worker ;
     WorkerIP   *workerPTR ;
     int fpsCounter = 0;
-    int gear = 1;
+    Gear_Box myGearBox;
 
 };
 
