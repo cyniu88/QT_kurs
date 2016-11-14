@@ -1,33 +1,13 @@
 #include "mybutton.h"
-
+#include <QDebug>
 myButton::myButton(QObject *parent)
 {
-grabGesture(Qt::TapAndHoldGesture);
+
 }
 
-bool myButton::Event(QEvent *event)
+bool myButton::event(QEvent *e)
 {
-    switch (event->type()) {
-    case QEvent::TouchBegin:{
-        qDebug("start!!! ") ;
-        // emit startTouch();
-        break;
-    }
-    case QEvent::TouchUpdate:{
-        qDebug("UPDATE!!! ") ;
-
-        break;
-    }
-    case QEvent::TouchEnd:
-    {
-
-
-        break;
-    }
-
-    default:
-        return QPushButton::event(event);
-    }
-
+  qDebug() << " EEWENET !! " << e->type();
     return true;
 }
+
