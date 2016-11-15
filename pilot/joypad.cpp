@@ -26,7 +26,7 @@ bool JoyPad::sceneEvent(QEvent *event)
 {
     switch (event->type()) {
     case QEvent::TouchBegin:{
-        qDebug("start!!! ") ;
+
         QTouchEvent *touchEvent = static_cast<QTouchEvent *>(event);
         const QTouchEvent::TouchPoint &touchPoint1 = touchEvent->touchPoints().first();
         if (resetPos == true){
@@ -37,7 +37,7 @@ bool JoyPad::sceneEvent(QEvent *event)
         break;
     }
     case QEvent::TouchUpdate:{
-        qDebug("UPDATE!!! ") ;
+
         QTouchEvent *touchEvent = static_cast<QTouchEvent *>(event);
         const QTouchEvent::TouchPoint &touchPoint1 = touchEvent->touchPoints().first();
 

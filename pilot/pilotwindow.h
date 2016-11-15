@@ -39,7 +39,6 @@ public:
     JoyPad *joyPadDummy;
     JoyPad *joyPadDirection;
 
-
     bool autoReturnPower   = true;
     bool autoReturnDirection = true;
     double *test;
@@ -62,15 +61,12 @@ public slots:
     void getButtonEventPress (int deviceId, QGamepadManager::GamepadButton button, double value);
     void getButtonEventRelease (int deviceId, QGamepadManager::GamepadButton button);
 
-
 protected:
     bool touchEvent(QTouchEvent *ev);
 
 public:
     explicit pilotWindow(my_config *c,  QWidget *parent = 0);
     ~pilotWindow();
-
-
 
 private slots:
     void on_reset_clicked();
@@ -93,8 +89,6 @@ private slots:
 
     void display_FPS();
 
-
-
     void on_actionON_triggered();
 
     void on_actionOFF_triggered();
@@ -102,7 +96,6 @@ private slots:
     void on_push_plusGear_clicked();
 
     void on_push_minusGear_clicked();
-
 
     void on_buttonLowBeam_clicked();
 
@@ -112,15 +105,17 @@ private slots:
 
     void on_buttonDummy_clicked();
 
-    void on_horizontalSlider_sliderMoved(int position);
-
     void getMSG(QString tit, QString msg);
+
+    void on_horizontalSlider_sliderReleased();
+
+    void on_horizontalSlider_valueChanged(int value);
 
 private:
     my_config *conf;
     Ui::pilotWindow *ui;
-    WorkerIP   worker ;
-    WorkerIP   *workerPTR ;
+    WorkerIP worker ;
+    WorkerIP *workerPTR ;
     int fpsCounter = 0;
     Gear_Box myGearBox;
 

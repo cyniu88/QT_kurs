@@ -28,3 +28,17 @@ void Gear_Box::gearDOWN()
         gear--;
     }
 }
+
+void Gear_Box::setAutomaticWork(bool v)
+{
+    automaticWorkFlag = v;
+}
+
+void Gear_Box::automaticGearBoxHandle(int power)
+{
+    if (automaticWorkFlag == true){
+        if (power > 98){
+            gearUP();
+        }
+    }
+}

@@ -47,12 +47,12 @@ bool WorkerIP::connectAndAuthentication()
     socket->connectToHost(config->addressIP.c_str(),config->port);
     if (socket->waitForConnected(1000)){
         qDebug("Connected!");
-        emit sendMSG("Connected to:", QString::fromStdString(config->addressIP));
+        emit sendMSG("Connected to:", QString::fromStdString("8)\nConnected to: "+config->addressIP));
 
         return true;
         }
     else{
-       emit sendMSG("Connot connect to:", QString::fromStdString(config->addressIP));
+       emit sendMSG("Connot connect to:", QString::fromStdString("=(\nConnot connect to :"+config->addressIP));
     }
     return false;
 }

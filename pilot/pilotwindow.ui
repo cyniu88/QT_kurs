@@ -84,7 +84,7 @@ QComboBox::down-arrow {
       </item>
       <item>
        <property name="text">
-        <string>192.168.43.246</string>
+        <string>192.168.43.208</string>
        </property>
       </item>
       <item>
@@ -488,7 +488,7 @@ font-size:  40px;</string>
       <property name="styleSheet">
        <string notr="true">QSlider::groove:horizontal {
 border: 6px solid #AAA;
-height: 4px;
+height: 10px;
 background: #9AD9EB;
 margin: 2px 0;
 }
@@ -497,8 +497,8 @@ QSlider::handle:horizontal {
  
 	background-color: rgb(85, 255, 0);
 border: 1px solid gray;
-width: 48px;
-margin: -26px 0;
+width: 80px;
+margin: -56px 0;
 border-radius:   23px;
 }
 </string>

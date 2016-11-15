@@ -23,6 +23,8 @@ void pilotWindow::showMessage()
 {
     ui->infoTxt->setText(  message.getString()   );
     conf->messageS = message;
+    myGearBox.automaticGearBoxHandle(message.leftY);
+    ui->gear->display(myGearBox.getGear());
 }
 
 void pilotWindow::showServerREsponse(QString s)
@@ -112,6 +114,7 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
             [](int deviceId, QGamepadManager::GamepadAxis axis) { qDebug() << "axis configured:" << deviceId << axis; });
     connect(QGamepadManager::instance(), &QGamepadManager::configurationCanceled, this,
             [](int deviceId) { qDebug() << "configuration canceled:" << deviceId; });
+
 }
 
 pilotWindow::~pilotWindow()
@@ -244,12 +247,16 @@ void pilotWindow::display_FPS()
 
 void pilotWindow::on_actionON_triggered()
 {
-    message.lowBeam = 1;
+    if (message.lowBeam == false){
+        on_buttonLowBeam_clicked();
+    }
 }
 
 void pilotWindow::on_actionOFF_triggered()
 {
-    message.lowBeam = 0;
+    if (message.lowBeam == true){
+        on_buttonLowBeam_clicked();
+    }
 }
 
 void pilotWindow::on_push_plusGear_clicked()
@@ -309,12 +316,18 @@ void pilotWindow::on_buttonDummy_clicked()
     }
 }
 
-void pilotWindow::on_horizontalSlider_sliderMoved(int position)
-{
-    message.horiSlider = ui->horizontalSlider->value();
-}
-
 void pilotWindow::getMSG(QString tit, QString msg)
 {
     QMessageBox::information(this, tit,msg);
+}
+
+void pilotWindow::on_horizontalSlider_sliderReleased()
+{
+    ui->horizontalSlider->setValue(0);
+
+}
+
+void pilotWindow::on_horizontalSlider_valueChanged(int value)
+{
+    message.horiSlider = value;// ui->horizontalSlider->value();
 }
