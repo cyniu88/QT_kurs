@@ -135,23 +135,25 @@ pilotWindow::~pilotWindow()
 void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, double value)
 {
     int _value = value*100;
+
     if (axis == 0){
-        _value = value*20*myGearBox.getGear();
+       // _value = value*20*myGearBox.getGear();
         message.leftX = _value;
-        ui->gazLCD_x->display(_value);
+        ui->gazLCD_x->display((int)(value*100));
     }
     if (axis == 1){
         _value = value*20*myGearBox.getGear();
+        //qDebug() << "vale: " << _value <<" " << 20*_value*myGearBox.getGear();
         message.leftY = _value;
-        ui->gazLCD_y->display(_value);
+        ui->gazLCD_y->display((int)(value*100));
     }
     if (axis == 2){
         message.rightX = _value;
-        ui->skretLCD_x->display(_value);
+        ui->skretLCD_x->display((int)(value*100));
     }
     if (axis == 3){
         message.rightY = _value;
-        ui->skretLCD_y->display(_value);
+        ui->skretLCD_y->display((int)(value*100));
     }
 
 
@@ -166,7 +168,10 @@ void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButt
     else if (button == 6 ) {
         on_buttonHighBeam_clicked();
     }
-
+    else if (button == 10) {
+        on_buttonAutomatGearbox_clicked();
+    }
+  qDebug() << "Przycisk: " <<button;
 }
 
 void pilotWindow::getButtonEventRelease(int deviceId, QGamepadManager::GamepadButton button)
@@ -249,6 +254,7 @@ void pilotWindow::display_FPS()
     //automat skrzyni biegow przy okazji uruchaminy co sekunde
     myGearBox.automaticGearBoxHandle(ui->gazLCD_y->value());
     ui->gear->display(myGearBox.getGear());
+    message.leftY = ui->gazLCD_y->value()*0.20*myGearBox.getGear();
 }
 
 void pilotWindow::on_actionON_triggered()
@@ -269,12 +275,14 @@ void pilotWindow::on_push_plusGear_clicked()
 {
     myGearBox.gearUP();
     ui->gear->display(myGearBox.getGear());
+    message.leftY = (ui->gazLCD_y->value())*0.2*myGearBox.getGear();
 }
 
 void pilotWindow::on_push_minusGear_clicked()
 {
     myGearBox.gearDOWN();
     ui->gear->display(myGearBox.getGear());
+    message.leftY = (ui->gazLCD_y->value())*0.2*myGearBox.getGear();
 }
 
 
