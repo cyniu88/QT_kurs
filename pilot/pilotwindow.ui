@@ -418,6 +418,13 @@ font-size:  40px;</string>
     <item row="2" column="5">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
+       <widget class="myButton" name="buttonAutomatGearbox">
+        <property name="text">
+         <string>Automat</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="myButton" name="push_plusGear">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">

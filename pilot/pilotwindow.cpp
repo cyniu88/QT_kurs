@@ -23,8 +23,7 @@ void pilotWindow::showMessage()
 {
     ui->infoTxt->setText(  message.getString()   );
     conf->messageS = message;
-    myGearBox.automaticGearBoxHandle(message.leftY);
-    ui->gear->display(myGearBox.getGear());
+
 }
 
 void pilotWindow::showServerREsponse(QString s)
@@ -115,6 +114,10 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     connect(QGamepadManager::instance(), &QGamepadManager::configurationCanceled, this,
             [](int deviceId) { qDebug() << "configuration canceled:" << deviceId; });
 
+    // kolorwanie przycisku skrzyni automatycznej
+    if (myGearBox.automaticWorkFlag == true){
+        ui->buttonAutomatGearbox->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+    }
 }
 
 pilotWindow::~pilotWindow()
@@ -243,6 +246,9 @@ void pilotWindow::display_FPS()
 {
     ui->FPS_LCD->display(fpsCounter);
     fpsCounter = 0;
+    //automat skrzyni biegow przy okazji uruchaminy co sekunde
+    myGearBox.automaticGearBoxHandle(ui->gazLCD_y->value());
+    ui->gear->display(myGearBox.getGear());
 }
 
 void pilotWindow::on_actionON_triggered()
@@ -330,4 +336,15 @@ void pilotWindow::on_horizontalSlider_sliderReleased()
 void pilotWindow::on_horizontalSlider_valueChanged(int value)
 {
     message.horiSlider = value;// ui->horizontalSlider->value();
+}
+
+void pilotWindow::on_buttonAutomatGearbox_clicked()
+{
+    myGearBox.automaticWorkFlag = !myGearBox.automaticWorkFlag;
+    if (myGearBox.automaticWorkFlag == true){
+        ui->buttonAutomatGearbox->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+    }
+    else{
+         ui->buttonAutomatGearbox->setStyleSheet("");
+    }
 }
