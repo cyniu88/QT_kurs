@@ -78,7 +78,7 @@ void working() {
   digitalWrite(LED, 1);
   counter = 2;
   while (1) {
-    Serial.println("wait");
+   // Serial.println("wait");
     while (!client.available()) {
       --counter;
       if (counter == 0)
@@ -92,7 +92,7 @@ void working() {
     String req = client.readStringUntil('#');
 
     client.flush();
-    Serial.println("odebralem: " + req);
+    //Serial.println("odebralem: " + req);
     if (req == "DISCONNECT") {
       Serial.println("disconnect");
       break;
@@ -103,20 +103,20 @@ void working() {
     }
 
     kat_s = req.substring(10, 14);
-    Serial.print("kat str: ");
-    Serial.println(kat_s);
+    //Serial.print("kat str: ");
+    //Serial.println(kat_s);
     kat = kat_s.toInt();
     kat = map(kat, -100, 100, servoLeft, servoRight);
-    Serial.print("kat int: ");
+    //Serial.print("kat int: ");
 
-    Serial.println(kat);
+    //Serial.println(kat);
     servomotor.write(kat);
     speed_s = req.substring(5, 9);
-    Serial.print("speed str: ");
-    Serial.println(speed_s);
+    //Serial.print("speed str: ");
+   // Serial.println(speed_s);
     speed_ = speed_s.toInt();
-    Serial.print("speed_int: ");
-    Serial.println(speed_);
+    //Serial.print("speed_int: ");
+    //Serial.println(speed_);
     
     mainDriver.runMotor(speed_);
 
@@ -144,7 +144,7 @@ else{
     // Send the response to the client
     client.print(s);
     delay(1);
-    Serial.println("done :)");
+   // Serial.println("done :)");
 
     // The client will actually be disconnected
     // when the function returns and 'client' object is detroyed

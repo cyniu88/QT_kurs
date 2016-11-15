@@ -38,6 +38,7 @@ private:
 
  signals:
     void sendResponse(QString s);
+    void sendMSG(QString tit, QString msg);
 
 };
 

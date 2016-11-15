@@ -50,6 +50,7 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 
     QObject::connect(t1,SIGNAL(timeout()),this,SLOT(showMessage()));
     QObject::connect( workerPTR,SIGNAL(sendResponse(QString)),this,SLOT(showServerREsponse(QString)));
+    QObject::connect(workerPTR,SIGNAL(sendMSG(QString,QString)),this,SLOT(getMSG(QString,QString)) );
 
     t1->start(100);
     tFPS->start(1000);
@@ -304,11 +305,16 @@ void pilotWindow::on_buttonDummy_clicked()
         ui->buttonDummy->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
     }
     else{
-         ui->buttonHorn->setStyleSheet("");
+         ui->buttonDummy->setStyleSheet("");
     }
 }
 
 void pilotWindow::on_horizontalSlider_sliderMoved(int position)
 {
     message.horiSlider = ui->horizontalSlider->value();
+}
+
+void pilotWindow::getMSG(QString tit, QString msg)
+{
+    QMessageBox::information(this, tit,msg);
 }

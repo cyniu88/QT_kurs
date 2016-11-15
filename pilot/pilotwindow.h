@@ -12,6 +12,7 @@
 #include <QTimer>
 #include <QGamepad>
 #include <QGamepadManager>
+#include <QMessageBox>
 
 #include "joypad.h"
 #include "mybutton.h"
@@ -112,6 +113,8 @@ private slots:
     void on_buttonDummy_clicked();
 
     void on_horizontalSlider_sliderMoved(int position);
+
+    void getMSG(QString tit, QString msg);
 
 private:
     my_config *conf;

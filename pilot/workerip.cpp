@@ -11,28 +11,19 @@ WorkerIP::WorkerIP(my_config *config) : config(config)
 
 void WorkerIP::run()
 {
-
     config->goWhile = connectAndAuthentication();
-
-
-
     bool goNow = true;
     //    ////////////////////////////////////////////////////
     //    ///////////// po autentykacji //////////////////////
     //    ////////////////////////////////////////////////////
     while (goNow){
-
-
         if ( config->goWhile ==  false)
         {
             socket->write("DISCONNECT");
-            QMessageBox msgBox;
-            msgBox.setText("Disconnect");
-            msgBox.exec();
+            emit sendMSG("Disconnected:", QString::fromStdString(config->addressIP));
             waitSend(waitTime, counterWaitTime);
             break;
         }
-
 
         socket->write(config->messageS.getString().toStdString().c_str());
 
@@ -42,15 +33,11 @@ void WorkerIP::run()
         buffor = socket->readAll();
         qDebug() << buffor;
         emit sendResponse(buffor);
-
-
     }
-
     // close the connection
     disconnectFromServer();
     //    qDebug("koniec koncow workera @@@@@@@@@@@@");
     config->goWhile=true;
-
 }
 
 bool WorkerIP::connectAndAuthentication()
@@ -60,22 +47,18 @@ bool WorkerIP::connectAndAuthentication()
     socket->connectToHost(config->addressIP.c_str(),config->port);
     if (socket->waitForConnected(1000)){
         qDebug("Connected!");
-        QMessageBox msgBox;
-       // msgBox.setText("Connected to: "+ QString::fromStdString(config->addressIP));
-       // msgBox.exec();
+        emit sendMSG("Connected to:", QString::fromStdString(config->addressIP));
+
         return true;
         }
     else{
-        QMessageBox msgBox;
-        msgBox.setText("Cannot connect :(");
-        msgBox.exec();
+       emit sendMSG("Connot connect to:", QString::fromStdString(config->addressIP));
     }
     return false;
 }
 
 bool WorkerIP::disconnectFromServer()
 {
-
     QThread::sleep(1);
     socket->disconnect();
     socket->close();
@@ -91,7 +74,6 @@ void WorkerIP::waitSend(int waitTime, int counter)
         {
             return;
         }
-
     }
 
 }
@@ -106,11 +88,5 @@ void WorkerIP::waitRecv(int waitTime, int counter)
         {
             return;
         }
-
     }
-
 }
-
-
-
-
