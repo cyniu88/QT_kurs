@@ -356,3 +356,17 @@ void pilotWindow::on_buttonAutomatGearbox_clicked()
          ui->buttonAutomatGearbox->setStyleSheet("");
     }
 }
+
+void pilotWindow::on_actionON_2_triggered()
+{
+    if (message.highBeam == false){
+        on_buttonHighBeam_clicked();
+    }
+}
+
+void pilotWindow::on_actionOFF_2_triggered()
+{
+    if (message.highBeam == true){
+        on_buttonHighBeam_clicked();
+    }
+}

@@ -113,6 +113,10 @@ private slots:
 
     void on_buttonAutomatGearbox_clicked();
 
+    void on_actionON_2_triggered();
+
+    void on_actionOFF_2_triggered();
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;

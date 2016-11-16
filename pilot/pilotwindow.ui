@@ -541,15 +541,24 @@ border-radius:   23px;
     </property>
     <widget class="QMenu" name="menuLED">
      <property name="title">
-      <string>LED</string>
+      <string>LOW beam</string>
      </property>
      <addaction name="actionON"/>
      <addaction name="actionOFF"/>
     </widget>
+    <widget class="QMenu" name="menuHIGH_beam">
+     <property name="title">
+      <string>HIGH beam</string>
+     </property>
+     <addaction name="actionON_2"/>
+     <addaction name="actionOFF_2"/>
+    </widget>
     <addaction name="actionConnect"/>
     <addaction name="actionDisconnect"/>
     <addaction name="separator"/>
+    <addaction name="menuHIGH_beam"/>
     <addaction name="menuLED"/>
+    <addaction name="separator"/>
     <addaction name="actionEXIT"/>
    </widget>
    <addaction name="menuPo_czenie"/>
@@ -575,6 +584,16 @@ border-radius:   23px;
    </property>
   </action>
   <action name="actionOFF">
+   <property name="text">
+    <string>OFF</string>
+   </property>
+  </action>
+  <action name="actionON_2">
+   <property name="text">
+    <string>ON</string>
+   </property>
+  </action>
+  <action name="actionOFF_2">
    <property name="text">
     <string>OFF</string>
    </property>
