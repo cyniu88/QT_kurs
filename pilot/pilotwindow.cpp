@@ -161,28 +161,29 @@ void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, 
 
 void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButton button, double value)
 {
-    if (button == 4){
+    if (button == 4|| button == 192 ){
         on_buttonLowBeam_clicked();
     }
 
-    else if (button == 6 ) {
+    else if (button == 6 || button == 194 ) {
         on_buttonHighBeam_clicked();
     }
-    else if (button == 10) {
+    else if (button == 10 || button == 198) {
         on_buttonAutomatGearbox_clicked();
     }
-  qDebug() << "Przycisk: " <<button;
+    //qDebug() << "Przycisk: " <<button;
+    //getMSG("button",QString::number(button));
 }
 
 void pilotWindow::getButtonEventRelease(int deviceId, QGamepadManager::GamepadButton button)
 {
-    if (button == 6 ) {
+    if (button == 6 || button == 194 ) {
         on_buttonHighBeam_clicked();
     }
-    else if (button == 5){
+    else if (button == 5 || button == 193){
         on_push_plusGear_clicked();
     }
-    else if (button == 7){
+    else if (button == 7 || button == 195){
         on_push_minusGear_clicked();
     }
 }
