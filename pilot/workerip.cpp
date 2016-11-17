@@ -69,7 +69,11 @@ bool WorkerIP::disconnectFromServer()
 void WorkerIP::waitSend(int waitTime, int counter)
 {
     for (int i = 0; i< counter;++i){
-        //qDebug() << "czekam na zapis "<< QString::number(i);
+        if (socket->state() != QTcpSocket::ConnectedState)
+        {
+            connectAndAuthentication();
+            return;
+        }
         if (socket->waitForBytesWritten(waitTime)==true)
         {
             return;
@@ -82,7 +86,6 @@ void WorkerIP::waitRecv(int waitTime, int counter)
 {   bool temp;
     for (int i = 0; i< counter;++i){
         temp = socket->waitForReadyRead(waitTime);
-        // qDebug() << "czekam na odczyt "<< QString::number(i) <<" bool:"<<temp;
 
         if (temp ==true)
         {

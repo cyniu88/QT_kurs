@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1305</width>
-    <height>599</height>
+    <width>1209</width>
+    <height>461</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -43,321 +43,6 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="4" colspan="3">
-     <widget class="QComboBox" name="adresIP">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
-QComboBox {
- 
-background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;
-}
-QComboBox::drop-down {
-     width:19px;
-   
-    margin-right:50px;
-   
-}
-QComboBox::down-arrow {
-   
-	image: url(:/ikony/files/down_arrow.png);
-}
-	</string>
-      </property>
-      <property name="editable">
-       <bool>true</bool>
-      </property>
-      <item>
-       <property name="text">
-        <string>192.168.1.204</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>192.168.43.208</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>cyniu88.no-ip.pl</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="5" column="4">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="1">
-       <widget class="QLCDNumber" name="FPS_LCD">
-        <property name="font">
-         <font>
-          <family>Franklin Gothic Medium</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
-        </property>
-        <property name="digitCount">
-         <number>2</number>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
-        </property>
-        <property name="text">
-         <string>FPS:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="3" column="0" colspan="3">
-     <widget class="QCheckBox" name="checkBoxPower">
-      <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>powrot gazu na neutralna pozycje</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="tristate">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="6" colspan="6">
-     <widget class="QCheckBox" name="checkBoxWheel">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>powrot kierownicy na neutralna pozycje</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="tristate">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QLCDNumber" name="gazLCD_x">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
-      </property>
-      <property name="digitCount">
-       <number>4</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="3">
-     <widget class="QLCDNumber" name="gazLCD_y">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
-      </property>
-      <property name="digitCount">
-       <number>4</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="7" colspan="2">
-     <widget class="QSpinBox" name="port">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
-      </property>
-      <property name="maximum">
-       <number>99999</number>
-      </property>
-      <property name="value">
-       <number>8833</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLineEdit" name="responsTxt">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 255, 0, 50);
-border: true;
-border-color: rgb(0, 255, 0,255);
-color: rgb(0, 255, 0);
-font-family:  &quot;Franklin Gothic Medium&quot;;
-font-size:  40px;</string>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="9">
-     <widget class="QPushButton" name="pushButtonClose">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
-      </property>
-      <property name="text">
-       <string>CLOSE</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="4">
-     <widget class="QGraphicsView" name="graphicsView_gaz">
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::AdjustToContents</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="6" colspan="6">
-     <widget class="QGraphicsView" name="graphicsView_skret">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::AdjustToContents</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="10">
-     <widget class="QLCDNumber" name="skretLCD_x">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
-      </property>
-      <property name="digitCount">
-       <number>4</number>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="4">
-     <widget class="myButton" name="reset">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
-      </property>
-      <property name="text">
-       <string>RESET</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="11">
-     <widget class="QLCDNumber" name="skretLCD_y">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
-      </property>
-      <property name="digitCount">
-       <number>4</number>
-      </property>
-     </widget>
-    </item>
     <item row="5" column="5" colspan="7">
      <layout class="QGridLayout" name="gridLayout_5">
       <item row="3" column="0" colspan="2">
@@ -414,6 +99,263 @@ font-size:  40px;</string>
        </widget>
       </item>
      </layout>
+    </item>
+    <item row="0" column="7" colspan="2">
+     <widget class="QSpinBox" name="port">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+      </property>
+      <property name="maximum">
+       <number>99999</number>
+      </property>
+      <property name="value">
+       <number>8833</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLCDNumber" name="gazLCD_y">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+      </property>
+      <property name="digitCount">
+       <number>4</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4" colspan="3">
+     <widget class="QComboBox" name="adresIP">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QComboBox {
+ 
+background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;
+}
+QComboBox::drop-down {
+     width:19px;
+   
+    margin-right:50px;
+   
+}
+QComboBox::down-arrow {
+   
+	image: url(:/ikony/files/down_arrow.png);
+}
+	</string>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string>192.168.1.204</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>192.168.43.208</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>cyniu88.no-ip.pl</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="0" column="10">
+     <widget class="QLCDNumber" name="skretLCD_x">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+      </property>
+      <property name="digitCount">
+       <number>4</number>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="4">
+     <widget class="QGraphicsView" name="graphicsView_gaz">
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="6" colspan="6">
+     <widget class="QGraphicsView" name="graphicsView_skret">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="4">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="1">
+       <widget class="QLCDNumber" name="FPS_LCD">
+        <property name="font">
+         <font>
+          <family>Franklin Gothic Medium</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+        </property>
+        <property name="digitCount">
+         <number>2</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+        </property>
+        <property name="text">
+         <string>FPS:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="6" colspan="6">
+     <widget class="QCheckBox" name="checkBoxWheel">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>powrot kierownicy na neutralna pozycje</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="tristate">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="myButton" name="reset">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+      </property>
+      <property name="text">
+       <string>RESET</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLCDNumber" name="gazLCD_x">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+      </property>
+      <property name="digitCount">
+       <number>4</number>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="3">
+     <widget class="QCheckBox" name="checkBoxPower">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>powrot gazu na neutralna pozycje</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="tristate">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
     <item row="2" column="5">
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -484,6 +426,64 @@ font-size:  40px;</string>
       </item>
      </layout>
     </item>
+    <item row="0" column="9">
+     <widget class="QPushButton" name="pushButtonClose">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+      </property>
+      <property name="text">
+       <string>CLOSE</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="11">
+     <widget class="QLCDNumber" name="skretLCD_y">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+      </property>
+      <property name="digitCount">
+       <number>4</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLineEdit" name="responsTxt">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 255, 0, 50);
+border: true;
+border-color: rgb(0, 255, 0,255);
+color: rgb(0, 255, 0);
+font-family:  &quot;Franklin Gothic Medium&quot;;
+font-size:  40px;</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
     <item row="5" column="0" colspan="4">
      <widget class="myTouchSlider" name="horizontalSlider">
       <property name="sizePolicy">
@@ -531,7 +531,7 @@ border-radius:   23px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1305</width>
+     <width>1209</width>
      <height>26</height>
     </rect>
    </property>

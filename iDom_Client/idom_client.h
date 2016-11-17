@@ -47,6 +47,7 @@ private:
     void sendSignalColor(int r,int g, int b, int from=0, int to=60);
     android_interface droid;
     QString temperatureString;
+    QStringList mpdItems;
 
 #ifdef Q_OS_WIN
     QSystemTrayIcon  trayIcon;
@@ -151,6 +152,8 @@ private slots:
     void on_setNumberMPD_clicked();
 
     void on_comboBox_currentIndexChanged();
+
+    void on_setNumberMPD_pressed();
 
 public slots:
       void setLcdActual(int c);
