@@ -475,14 +475,31 @@ void iDom_Client::on_sendEXTRA_clicked()
     emit sendExtra();
 }
 
+void iDom_Client::on_setNumberMPD_pressed()
+{
+    emit sendTCP("MPD","MPD list");
+    ui->lineEdit_MPD_ACK->setText("");
+}
 
 void iDom_Client::on_setNumberMPD_clicked()
 {
+
     bool ok;
-     QString text = QInputDialog::getText(this, tr("select radio stations"),
-                                          tr("select radio stations"), QLineEdit::Normal,
-                                          QDir::home().dirName(), &ok);
-        ui->setNumberMPD->setText(text);
+    mpdItems =  ui->lineEdit_MPD_ACK->text().split("\n");
+    ui->lineEdit_MPD_ACK->setText("");
+
+    QString id = QInputDialog::getItem(this, tr("select radio stations"),
+                                       tr("select radio stations"),mpdItems,7,false, &ok);
+    if (ok && !id.isEmpty()){
+
+
+        int songID = 0;
+        songID = 1+ mpdItems.indexOf(id);
+        ui->setNumberMPD->setText(QString::number( songID ));
+        ui->lineEdit_MPD_ACK->setText("play "+id);
+        emit sendTCP("MPD","MPD start "+std::to_string(songID));
+    }
+    droid.vibrate(100);
 }
 
 
@@ -491,3 +508,5 @@ void iDom_Client::on_comboBox_currentIndexChanged()
     config->command = ui->comboBox->currentText().toStdString();
     emit sendTCP("console",config->command);
 }
+
+
