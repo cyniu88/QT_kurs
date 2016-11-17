@@ -33,20 +33,16 @@ bool JoyPad::sceneEvent(QEvent *event)
             posX = touchPoint1.scenePos().x();
             posY = touchPoint1.scenePos().y();
         }
-        // delete touchEvent;
         break;
     }
+
     case QEvent::TouchUpdate:{
 
         QTouchEvent *touchEvent = static_cast<QTouchEvent *>(event);
         const QTouchEvent::TouchPoint &touchPoint1 = touchEvent->touchPoints().first();
 
-
-
         int i = map_f( touchPoint1.scenePos().x()-posX,-1*circleX/2,circleX/2,-100,100);
         int j = map_f( touchPoint1.scenePos().y()-posY,-1*circleX/2,circleX/2,-100,100);
-
-
 
         double X = touchPoint1.scenePos().x()-posX;
         double Y = touchPoint1.scenePos().y()-posY;
@@ -73,11 +69,9 @@ bool JoyPad::sceneEvent(QEvent *event)
         }
         break;
     }
-
     default:
         return QGraphicsItem::sceneEvent(event);
     }
-
     return true;
 }
 
