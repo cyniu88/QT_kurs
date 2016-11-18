@@ -375,3 +375,8 @@ void pilotWindow::on_actionOFF_2_triggered()
         on_buttonHighBeam_clicked();
     }
 }
+
+void pilotWindow::on_lcdMsgCounter_overflow()
+{
+    msgCounter =0 ;
+}

@@ -117,6 +117,8 @@ private slots:
 
     void on_actionOFF_2_triggered();
 
+    void on_lcdMsgCounter_overflow();
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;
