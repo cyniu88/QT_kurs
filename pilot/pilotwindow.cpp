@@ -30,6 +30,8 @@ void pilotWindow::showServerREsponse(QString s)
 {
     ui->responsTxt->setText(s);
     ++fpsCounter;
+    ++msgCounter;
+    ui->lcdMsgCounter->display(msgCounter);
 }
 pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     QMainWindow(parent),
@@ -224,6 +226,8 @@ void pilotWindow::on_port_editingFinished()
 void pilotWindow::on_actionConnect_triggered()
 {
     worker.start();
+    msgCounter=0;
+
 }
 
 void pilotWindow::on_actionDisconnect_triggered()

@@ -123,6 +123,7 @@ private:
     WorkerIP worker ;
     WorkerIP *workerPTR ;
     int fpsCounter = 0;
+    int msgCounter = 0;
     Gear_Box myGearBox;
 
 };

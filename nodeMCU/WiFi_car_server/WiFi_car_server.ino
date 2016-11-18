@@ -76,16 +76,15 @@ void wait_for_client() {
 
 void working() {
   digitalWrite(LED, 1);
-  counter = 2;
+  counter = 0;
   while (1) {
    // Serial.println("wait");
     while (!client.available()) {
-      --counter;
-      if (counter == 0)
-      {
-        mainMotor.hard_stop();
-        counter = 2;
-      }
+      ++counter;
+      Serial.println("czekam");
+      Serial.println(counter,DEC);
+      mainMotor.hard_stop();
+       
     }
 
     // Read the first line of the request
