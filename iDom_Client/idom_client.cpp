@@ -520,3 +520,8 @@ void iDom_Client::on_turnOnSleepModeButton_clicked()
         emit sendTCP("console","sleep set "+std::to_string(i));
     }
 }
+
+void iDom_Client::on_stopServerButton_clicked()
+{
+    emit sendTCP("console","stop server");
+}

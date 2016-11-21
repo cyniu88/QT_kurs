@@ -157,6 +157,8 @@ private slots:
 
     void on_turnOnSleepModeButton_clicked();
 
+    void on_stopServerButton_clicked();
+
 public slots:
       void setLcdActual(int c);
       void setLcdAll(int c);
