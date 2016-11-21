@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1080</width>
-    <height>911</height>
+    <width>825</width>
+    <height>708</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -248,16 +248,20 @@ background-color: rgba(0, 0, 0, 0);</string>
        </size>
       </property>
       <property name="autoFillBackground">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgb(0, 255, 0);
+gridline-color: rgb(255, 0, 0);
+alternate-background-color: rgba(0, 0, 0, 0);
+border-color: rgb(255, 255, 255,255);</string>
       </property>
       <property name="tabPosition">
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>4</number>
       </property>
       <property name="iconSize">
        <size>
@@ -265,16 +269,24 @@ background-color: rgba(0, 0, 0, 0);</string>
         <height>50</height>
        </size>
       </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>true</bool>
+      </property>
       <widget class="QWidget" name="tab_4">
        <property name="autoFillBackground">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
-       <attribute name="icon">
-        <iconset resource="ikony.qrc">
-         <normaloff>:/new/prefix1/files/INFO_TXT.png</normaloff>:/new/prefix1/files/INFO_TXT.png</iconset>
-       </attribute>
        <attribute name="title">
-        <string/>
+        <string>TEMP.</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_9">
         <item row="0" column="0">
@@ -289,8 +301,8 @@ background-color: rgba(0, 0, 0, 0);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1026</width>
-               <height>722</height>
+               <width>777</width>
+               <height>557</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -462,17 +474,13 @@ background-color: rgba(0, 0, 0, 0);</string>
       </widget>
       <widget class="QWidget" name="tab_3">
        <property name="autoFillBackground">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="styleSheet">
         <string notr="true"/>
        </property>
-       <attribute name="icon">
-        <iconset resource="ikony.qrc">
-         <normaloff>:/new/prefix1/files/MUSIC_TXT.png</normaloff>:/new/prefix1/files/MUSIC_TXT.png</iconset>
-       </attribute>
        <attribute name="title">
-        <string/>
+        <string>MUSIC</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_6">
         <item row="4" column="2">
@@ -785,14 +793,10 @@ border-color: rgb(255, 255, 255);
       </widget>
       <widget class="QWidget" name="tab">
        <property name="autoFillBackground">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
-       <attribute name="icon">
-        <iconset resource="ikony.qrc">
-         <normaloff>:/new/prefix1/files/CONSOLE_TXT.png</normaloff>:/new/prefix1/files/CONSOLE_TXT.png</iconset>
-       </attribute>
        <attribute name="title">
-        <string/>
+        <string>CONSOLE</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
@@ -815,6 +819,9 @@ border-color: rgb(255, 255, 255);
           </item>
           <item row="3" column="2">
            <widget class="QPushButton" name="sendEXTRA">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 0, 255, 55);</string>
+            </property>
             <property name="text">
              <string>sendEXTRA</string>
             </property>
@@ -838,7 +845,9 @@ border: none ;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">text-align: center;
+             <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(0, 255, 0, 25);
+text-align: center;
 QProgressBar::chunk {
     background-color: #CD96CD;
     width: 10px;
@@ -1058,14 +1067,10 @@ border: none ;</string>
       </widget>
       <widget class="QWidget" name="tab_2">
        <property name="autoFillBackground">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
-       <attribute name="icon">
-        <iconset resource="ikony.qrc">
-         <normaloff>:/new/prefix1/files/LED_TXT.png</normaloff>:/new/prefix1/files/LED_TXT.png</iconset>
-       </attribute>
        <attribute name="title">
-        <string/>
+        <string>LED</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_5">
         <item row="7" column="0">
@@ -1077,7 +1082,8 @@ border: none ;</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);
+           <string notr="true">color: rgb(0, 0, 0);
+ background-color: rgb(255, 255, 255);
  border-style: outset;
     border-width: 4px;
 border-color: rgb(0, 0, 0);
@@ -1125,7 +1131,8 @@ background-color: rgb(0, 128, 0);</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 0, 128); 
+           <string notr="true">color: rgb(0, 0, 0);
+ background-color: rgb(255, 0, 128); 
   
  
  border-style: outset;
@@ -1150,7 +1157,8 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(254, 254, 51);
+           <string notr="true">color: rgb(0, 0, 0);
+ background-color: rgb(254, 254, 51);
  
  
  
@@ -1202,7 +1210,8 @@ background-color: rgb(178, 34, 34);</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"> border-style: outset;
+           <string notr="true">color: rgb(0, 0, 0);
+  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -1226,7 +1235,8 @@ background-color: rgb(255, 192, 0);</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"> border-style: outset;
+           <string notr="true">color: rgb(0, 0, 0);
+  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -1290,7 +1300,8 @@ border-color: rgb(255, 255, 255);
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 0, 0);
+           <string notr="true">color: rgb(0, 0, 0);
+ background-color: rgb(255, 0, 0);
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
@@ -1383,7 +1394,7 @@ background-color: rgb(75, 0, 130);</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"> border-style: outset;
+           <string notr="true">  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -1415,7 +1426,8 @@ border-color: rgb(255, 255, 255);
     font: bold 24px;
  
     padding: 6px;
-background-color: rgb(98, 0, 44);</string>
+background-color: rgb(98, 0, 44);
+</string>
           </property>
           <property name="text">
            <string>buraczkowy</string>
@@ -1439,7 +1451,9 @@ border-color: rgb(255, 255, 255);
     font: bold 24px;
  
     padding: 6px;
-background-color: rgb(112, 32, 31);</string>
+background-color: rgb(112, 32, 31);
+
+</string>
           </property>
           <property name="text">
            <string>brunatny</string>
@@ -1462,8 +1476,14 @@ background-color: rgb(112, 32, 31);</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>15</pointsize>
+            <pointsize>21</pointsize>
            </font>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::PlusMinus</enum>
           </property>
           <property name="minimum">
            <number>1</number>
@@ -1517,7 +1537,8 @@ border-color: rgb(255, 255, 255);
     font: bold 24px;
  
     padding: 6px;
-background-color: rgb(159, 159, 223);</string>
+background-color: rgb(159, 159, 223);
+color: rgb(0, 0, 0);</string>
           </property>
           <property name="text">
            <string>niebieskofioletowy</string>
@@ -1533,7 +1554,8 @@ background-color: rgb(159, 159, 223);</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"> border-style: outset;
+           <string notr="true">color: rgb(0, 0, 0);
+  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -1612,7 +1634,8 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"> border-style: outset;
+           <string notr="true">color: rgb(0, 0, 0);
+  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -1636,7 +1659,8 @@ background-color: rgb(255, 165, 0);</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"> border-style: outset;
+           <string notr="true">color: rgb(0, 0, 0);
+ border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -1660,7 +1684,8 @@ background-color: rgb(255, 255, 153);</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"> border-style: outset;
+           <string notr="true">color: rgb(0, 0, 0);
+  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -1719,6 +1744,12 @@ background-color: rgb(204, 93, 43);</string>
            <font>
             <pointsize>21</pointsize>
            </font>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::PlusMinus</enum>
           </property>
           <property name="maximum">
            <number>59</number>
@@ -1831,7 +1862,8 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"> border-style: outset;
+           <string notr="true">color: rgb(0, 0, 0);
+ border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -1914,8 +1946,7 @@ border-radius:   23px;
           <property name="styleSheet">
            <string notr="true">background-color: rgb(0, 255, 0);
  
- 
- 
+ color: rgb(0, 0, 0);
  
  border-style: outset;
     border-width: 4px;
@@ -1968,7 +1999,8 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 128, 0);
+           <string notr="true">color: rgb(0, 0, 0);
+ background-color: rgb(255, 128, 0);
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
@@ -1992,7 +2024,8 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"> border-style: outset;
+           <string notr="true">color: rgb(0, 0, 0);
+ border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -2009,15 +2042,75 @@ background-color: rgb(207, 47, 47);</string>
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="tab_5">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <attribute name="title">
+        <string>TOOLS</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QPushButton" name="turnOnSleepModeButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">
+color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    border-color: beige;
+    font: bold 20px;
+ 
+ 
+ 
+ </string>
+              </property>
+              <property name="text">
+               <string>TURN ON SLEEP MODE</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QGridLayout" name="gridLayout_12"/>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
  <layoutdefault spacing="4" margin="2"/>
- <resources>
-  <include location="ikony.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>exitButton</sender>

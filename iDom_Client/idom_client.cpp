@@ -511,4 +511,12 @@ void iDom_Client::on_comboBox_currentIndexChanged()
     emit sendTCP("console",config->command);
 }
 
-
+void iDom_Client::on_turnOnSleepModeButton_clicked()
+{
+    bool ok;
+    int i;
+    i = QInputDialog::getInt(this,tr("set sleep mode"),tr("minutes"),1,1,1000,1,&ok);
+    if (ok){
+        emit sendTCP("console","sleep set "+std::to_string(i));
+    }
+}

@@ -155,6 +155,8 @@ private slots:
 
     void on_setNumberMPD_pressed();
 
+    void on_turnOnSleepModeButton_clicked();
+
 public slots:
       void setLcdActual(int c);
       void setLcdAll(int c);
