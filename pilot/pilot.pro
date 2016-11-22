@@ -24,8 +24,12 @@ SOURCES += main.cpp\
     workerip.cpp \
     gear_BOX/gear_box.cpp \
     mytouchslider.cpp \
-    androidhelper_cyniu.cpp \
     android_interface/android_interface.cpp
+android {
+            message("* Using settings for Android.")
+            SOURCES  +=  androidhelper_cyniu.cpp
+        }
+
 
 HEADERS  += pilotwindow.h \
     joypad.h \
@@ -35,8 +39,12 @@ HEADERS  += pilotwindow.h \
     variable.h \
     gear_BOX/gear_box.h \
     mytouchslider.h \
-    androidhelper_cyniu.h \
     android_interface/android_interface.h
+android {
+            message("* Using settings for Android.")
+            HEADERS  +=  androidhelper_cyniu.h
+        }
+
 
 FORMS    += pilotwindow.ui
 CONFIG += mobility   c++14

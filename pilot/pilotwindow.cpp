@@ -195,7 +195,7 @@ void pilotWindow::getButtonEventRelease(int deviceId, QGamepadManager::GamepadBu
 void pilotWindow::on_reset_clicked()
 {
     emit resetPosNOW();
-
+    droid.vibrate(100);
 }
 
 
@@ -281,6 +281,7 @@ void pilotWindow::on_push_plusGear_clicked()
     myGearBox.gearUP();
     ui->gear->display(myGearBox.getGear());
     message.leftY = (ui->gazLCD_y->value())*0.2*myGearBox.getGear();
+    droid.vibrate(100);
 }
 
 void pilotWindow::on_push_minusGear_clicked()
@@ -288,6 +289,7 @@ void pilotWindow::on_push_minusGear_clicked()
     myGearBox.gearDOWN();
     ui->gear->display(myGearBox.getGear());
     message.leftY = (ui->gazLCD_y->value())*0.2*myGearBox.getGear();
+    droid.vibrate(100);
 }
 
 
@@ -364,6 +366,7 @@ void pilotWindow::on_buttonAutomatGearbox_clicked()
     else{
          ui->buttonAutomatGearbox->setStyleSheet("");
     }
+    droid.vibrate(100);
 }
 
 void pilotWindow::on_actionON_2_triggered()
