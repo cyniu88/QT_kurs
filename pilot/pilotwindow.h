@@ -19,6 +19,7 @@
 #include "variable.h"
 #include "workerip.h"
 #include "gear_BOX/gear_box.h"
+#include "android_interface/android_interface.h"
 
 namespace Ui {
 class pilotWindow;
@@ -127,6 +128,7 @@ private:
     int fpsCounter = 0;
     int msgCounter = 0;
     Gear_Box myGearBox;
+    android_interface droid;
 
 };
 

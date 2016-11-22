@@ -41,6 +41,10 @@ bool myTouchSlider::event(QEvent *e)
         return true;
         break;
     }
+    default:
+    {
+        break;
+    }
    }
 
     return QSlider::event(e);

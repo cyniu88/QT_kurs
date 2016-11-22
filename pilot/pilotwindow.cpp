@@ -293,6 +293,7 @@ void pilotWindow::on_push_minusGear_clicked()
 
 void pilotWindow::on_buttonLowBeam_clicked()
 {
+    droid.vibrate(100);
     message.lowBeam = !message.lowBeam;
     if (message.lowBeam == true){
         ui->buttonLowBeam->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
@@ -304,6 +305,7 @@ void pilotWindow::on_buttonLowBeam_clicked()
 
 void pilotWindow::on_buttonHighBeam_clicked()
 {
+    droid.vibrate(100);
     message.highBeam = !message.highBeam;
     if (message.highBeam == true){
         ui->buttonHighBeam->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
@@ -315,6 +317,7 @@ void pilotWindow::on_buttonHighBeam_clicked()
 
 void pilotWindow::on_buttonHorn_clicked()
 {
+    droid.vibrate(100);
     message.stateC = !message.stateC;
     if (message.stateC == true){
         ui->buttonHorn->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
@@ -326,6 +329,7 @@ void pilotWindow::on_buttonHorn_clicked()
 
 void pilotWindow::on_buttonDummy_clicked()
 {
+    droid.vibrate(100);
     message.stateD = !message.stateD;
     if (message.stateD == true){
         ui->buttonDummy->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
