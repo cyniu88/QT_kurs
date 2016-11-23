@@ -1,24 +1,18 @@
 #include "driver.h"
 
-Driver::Driver(Engine * e){
+Driver::Driver(Engine * e) {
   this -> engine = e;
 }
 
-void Driver::runMotor(int speed_){
-
-   if (speed_ < 0) {
-      speed_ = speed_ * -1;
-       
-      engine->go_forward(  map(speed_, 0, 100, 0, 1020));
-      //req = "forward";
-
-    } else if (speed_ == 0) {
-      engine->hard_stop();
-      //req = "stop";
-    }
-
-    else {
-      engine->go_back( map(speed_, 0, 100, 0, 1020)); 
-    }
+void Driver::runMotor(int speed_) {
+  if (speed_ < 0) {
+    engine->go_forward(  map(speed_, -100, 0,PWMRANGE  , 0));
+  }
+  else if (speed_ == 0) {
+    engine->hard_stop();
+  }
+  else {
+    engine->go_back( map(speed_, 0, 100, 0, PWMRANGE));
+  }
 }
 

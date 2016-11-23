@@ -21,7 +21,7 @@ const int  servoRight = 86;
 Engine mainMotor;
 Driver mainDriver(&mainMotor);
 Light lightFront(FRONT_LED);
-Light lightBack  (BACK_LED);
+Light lightBack (BACK_LED);
 StopLight mainStopLight(&lightBack, STOP_LED_TIMER);
 // Create an instance of the server
 // specify the port to listen on as an argument
@@ -31,7 +31,9 @@ Servo servomotor;
 
 void setup() {
   Serial.begin(74880);
-  delay(10);
+  while (!Serial){
+    
+  }
   servomotor.attach(SERVO_PIN);
   servomotor.write(60);
   mainMotor.init(PWMa, IN1, IN2);
@@ -138,8 +140,8 @@ else{
   lightFront.maximalEnd();
 }
 
-    String s = req ;
-
+    String s = req + " volt " + ESP.getVcc() ;
+    //Serial.println(s);
     // Send the response to the client
     client.print(s);
     delay(1);

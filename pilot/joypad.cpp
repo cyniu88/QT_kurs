@@ -85,3 +85,8 @@ void JoyPad::resetPosNOW()
     centralItem->setPos(0,0);
     emit sendPos(  0,0  );
 }
+
+void JoyPad::setPosNOW(int x, int y)
+{
+    centralItem->setPos(x,y);
+}

@@ -42,7 +42,6 @@ public:
 
     bool autoReturnPower   = true;
     bool autoReturnDirection = true;
-    double *test;
     myButton *przy;
 
     QString msg;
@@ -52,6 +51,8 @@ public:
 
 signals:
     void resetPosNOW();
+    void setPosNOW_Left(int x , int y);
+    void setPosNOW_Right(int x , int y);
 
 public slots:
     void getPosGaz(int x, int y);
@@ -102,9 +103,9 @@ private slots:
 
     void on_buttonHighBeam_clicked();
 
-    void on_buttonHorn_clicked();
+    void on_buttonTrailerMechanism_clicked();
 
-    void on_buttonDummy_clicked();
+    void on_buttonReverseLight_clicked();
 
     void getMSG(QString tit, QString msg);
 

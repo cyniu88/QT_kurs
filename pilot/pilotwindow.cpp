@@ -58,6 +58,9 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     t1->start(100);
     tFPS->start(1000);
     double i = 0.50;
+#ifdef Q_OS_WIN
+    i = 0.15;
+#endif
     int w  =  QApplication::desktop()->height()*i;
     if (w > QApplication::desktop()->width()*i)
     {
@@ -70,9 +73,12 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 
 
     QObject::connect(joyPadDirection, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\
-    QObject::connect(joyPadPower  , SIGNAL(sendPos(int,int) ),this,SLOT(  getPosGaz(int,int) )  );
-    QObject::connect(this,SIGNAL(resetPosNOW()),joyPadDirection,SLOT(resetPosNOW()));
+    QObject::connect(joyPadPower    , SIGNAL(sendPos(int,int) ),this,SLOT(getPosGaz  (int,int) )  );
+    QObject::connect(this , SIGNAL(resetPosNOW()),joyPadDirection,SLOT(resetPosNOW()));
     QObject::connect(this,SIGNAL(resetPosNOW()),joyPadPower,SLOT(resetPosNOW()));
+
+    QObject::connect(this, SIGNAL(setPosNOW_Right(int,int)), joyPadDirection,SLOT(setPosNOW(int,int)));
+    QObject::connect(this, SIGNAL(setPosNOW_Left (int,int)), joyPadPower    ,SLOT(setPosNOW(int,int)));
 
     sceneDirection.addItem(joyPadDirection);
     scenePower.addItem(joyPadPower);
@@ -88,7 +94,7 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     QApplication::desktop()->height();
     ui->infoTxt->setText(QString::number(w      ));
 
-    test = new double[100000];
+
     //this->setAttribute(Qt::WA_NativeWindow);
     qDebug()<< " wielkosc: " << ui->graphicsView_gaz->sceneRect().height()<<" & "
             << ui->graphicsView_gaz->size();
@@ -129,7 +135,6 @@ pilotWindow::~pilotWindow()
 
     delete joyPadPower;
     delete joyPadDirection;
-    delete test;
     delete t1;
     delete tFPS;
 }
@@ -139,7 +144,7 @@ void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, 
     int _value = value*100;
 
     if (axis == 0){
-       // _value = value*20*myGearBox.getGear();
+        // _value = value*20*myGearBox.getGear();
         message.leftX = _value;
         ui->gazLCD_x->display((int)(value*100));
     }
@@ -158,7 +163,8 @@ void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, 
         ui->skretLCD_y->display((int)(value*100));
     }
 
-
+    emit setPosNOW_Left(message.leftX,message.leftY);
+    emit setPosNOW_Right(message.rightX, message.rightY);
 }
 
 void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButton button, double value)
@@ -198,13 +204,6 @@ void pilotWindow::on_reset_clicked()
     droid.vibrate(100);
 }
 
-
-
-
-
-
-
-
 void pilotWindow::on_checkBoxPower_toggled(bool checked)
 {
     autoReturnPower =checked;
@@ -216,7 +215,6 @@ void pilotWindow::on_checkBoxWheel_toggled(bool checked)
     autoReturnDirection = checked;
     joyPadDirection->setResetPos(autoReturnDirection);
 }
-
 
 void pilotWindow::on_port_editingFinished()
 {
@@ -255,11 +253,12 @@ void pilotWindow::on_checkBoxWheel_stateChanged()
 void pilotWindow::display_FPS()
 {
     ui->FPS_LCD->display(fpsCounter);
-    fpsCounter = 0;
+
     //automat skrzyni biegow przy okazji uruchaminy co sekunde
     myGearBox.automaticGearBoxHandle(ui->gazLCD_y->value());
     ui->gear->display(myGearBox.getGear());
     message.leftY = ui->gazLCD_y->value()*0.20*myGearBox.getGear();
+    fpsCounter = 0;
 }
 
 void pilotWindow::on_actionON_triggered()
@@ -301,7 +300,7 @@ void pilotWindow::on_buttonLowBeam_clicked()
         ui->buttonLowBeam->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
     }
     else{
-         ui->buttonLowBeam->setStyleSheet("");
+        ui->buttonLowBeam->setStyleSheet("");
     }
 }
 
@@ -313,31 +312,32 @@ void pilotWindow::on_buttonHighBeam_clicked()
         ui->buttonHighBeam->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
     }
     else{
-         ui->buttonHighBeam->setStyleSheet("");
+        ui->buttonHighBeam->setStyleSheet("");
     }
 }
 
-void pilotWindow::on_buttonHorn_clicked()
+void pilotWindow::on_buttonTrailerMechanism_clicked()
 {
     droid.vibrate(100);
     message.stateC = !message.stateC;
     if (message.stateC == true){
-        ui->buttonHorn->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+        ui->buttonTrailerMechanism->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
     }
     else{
-         ui->buttonHorn->setStyleSheet("");
+        ui->buttonTrailerMechanism->setStyleSheet("");
     }
 }
 
-void pilotWindow::on_buttonDummy_clicked()
+void pilotWindow::on_buttonReverseLight_clicked()
 {
     droid.vibrate(100);
     message.stateD = !message.stateD;
     if (message.stateD == true){
-        ui->buttonDummy->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+        ui->buttonReverseLight->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+        message.leftY=1;
     }
     else{
-         ui->buttonDummy->setStyleSheet("");
+        ui->buttonReverseLight->setStyleSheet("");
     }
 }
 
@@ -364,7 +364,7 @@ void pilotWindow::on_buttonAutomatGearbox_clicked()
         ui->buttonAutomatGearbox->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
     }
     else{
-         ui->buttonAutomatGearbox->setStyleSheet("");
+        ui->buttonAutomatGearbox->setStyleSheet("");
     }
     droid.vibrate(100);
 }

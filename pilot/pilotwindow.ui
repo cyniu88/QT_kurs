@@ -85,16 +85,16 @@
        </layout>
       </item>
       <item row="2" column="1">
-       <widget class="myButton" name="buttonDummy">
+       <widget class="myButton" name="buttonReverseLight">
         <property name="text">
-         <string>dummy</string>
+         <string>Reverse Light</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="myButton" name="buttonHorn">
+       <widget class="myButton" name="buttonTrailerMechanism">
         <property name="text">
-         <string>Horn</string>
+         <string>Trailer Mechanism </string>
         </property>
        </widget>
       </item>
