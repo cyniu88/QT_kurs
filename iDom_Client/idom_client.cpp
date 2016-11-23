@@ -87,7 +87,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->InsideDEG->setText("\u2103");
     ui->OutsideDEG->setText("\u2103");
 #endif
-
 }
 
 iDom_Client::~iDom_Client()
