@@ -17,6 +17,9 @@ public:
     virtual ~JoyPad();
     QGraphicsEllipseItem *centralItem;
     bool sceneEvent(QEvent *event);
+    void mousePressEvent(QGraphicsSceneMouseEvent *e);
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *e);
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *e);
     void setResetPos(bool flag);
 signals:
     void sendPos(int x , int y);

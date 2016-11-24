@@ -75,6 +75,49 @@ bool JoyPad::sceneEvent(QEvent *event)
     return true;
 }
 
+void JoyPad::mousePressEvent(QGraphicsSceneMouseEvent *e)
+{
+    qDebug() << "start " << e;
+    if (resetPos == true){
+        posX = QCursor::pos().rx();
+        posY = QCursor::pos().ry();
+    }
+}
+
+void JoyPad::mouseMoveEvent(QGraphicsSceneMouseEvent *e)
+{
+    qDebug() << "ruszam myszka  " << QCursor::pos() ;
+
+    int i = map_f( QCursor::pos().rx()-posX,-1*circleX/2,circleX/2,-100,100);
+    int j = map_f( QCursor::pos().ry()-posY,-1*circleX/2,circleX/2,-100,100);
+
+    double X = QCursor::pos().rx()-posX;
+    double Y = QCursor::pos().ry()-posY;
+    if (i < 100 && i > -100){
+        JoyX = X;
+    }
+
+    if (j < 100 && j > -100){
+        JoyY = Y;
+    }
+    if (i > 100) i= 100;
+    if ( i <-100) i = -100;
+    if (j > 100) j= 100;
+    if ( j <-100) j = -100;
+    emit sendPos( i,j);
+    centralItem->setPos(JoyX,JoyY );
+
+}
+
+void JoyPad::mouseReleaseEvent(QGraphicsSceneMouseEvent *e)
+{
+    if (resetPos== true){
+        centralItem->setPos(0,0 );
+        emit sendPos(  0,0  );
+    }
+    qDebug() << " koncze" << e;
+}
+
 void JoyPad::setResetPos(bool flag)
 {
     resetPos= flag;

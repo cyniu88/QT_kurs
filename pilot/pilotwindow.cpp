@@ -40,8 +40,6 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     myGearBox(5)
 
 {
-
-
     ui->setupUi(this);
     workerPTR = &worker;
     conf = c;
@@ -50,7 +48,6 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     t1 = new QTimer();
     tFPS = new QTimer();
     QObject::connect(tFPS,SIGNAL(timeout()),this,SLOT(display_FPS()));
-
     QObject::connect(t1,SIGNAL(timeout()),this,SLOT(showMessage()));
     QObject::connect( workerPTR,SIGNAL(sendResponse(QString)),this,SLOT(showServerREsponse(QString)));
     QObject::connect(workerPTR,SIGNAL(sendMSG(QString,QString)),this,SLOT(getMSG(QString,QString)) );
@@ -70,8 +67,6 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     joyPadDirection = new JoyPad( w , w/4,Qt::red,Qt::yellow);
     joyPadPower     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
 
-
-
     QObject::connect(joyPadDirection, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\
     QObject::connect(joyPadPower    , SIGNAL(sendPos(int,int) ),this,SLOT(getPosGaz  (int,int) )  );
     QObject::connect(this , SIGNAL(resetPosNOW()),joyPadDirection,SLOT(resetPosNOW()));
@@ -88,11 +83,10 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-    ui->gear->display(myGearBox.getGear());
+    ui->gear->display( myGearBox.getGear() );
 
     QApplication::desktop()->height();
-    ui->infoTxt->setText(QString::number(w      ));
+    ui->infoTxt->setText( QString::number(w) );
 
 
     //this->setAttribute(Qt::WA_NativeWindow);
