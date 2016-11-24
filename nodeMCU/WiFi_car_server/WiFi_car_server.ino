@@ -140,7 +140,7 @@ else{
   lightFront.maximalEnd();
 }
 
-    String s = req + " volt " + ESP.getVcc() ;
+    String s = req + " volt " + analogRead(A0) ;
     //Serial.println(s);
     // Send the response to the client
     client.print(s);

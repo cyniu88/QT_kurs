@@ -17,6 +17,7 @@ struct msg_s {
         std::string leftY_s = to_Std_string_4(leftY)   ;
         std::string rightX_s = to_Std_string_4(rightX)   ;
         std::string rightY_s = to_Std_string_4(rightY)   ;
+        std::string horiSlider_s = to_Std_string_4(horiSlider);
 
         return QString::fromStdString(leftX_s)+
                 ":"+QString::fromStdString(leftY_s)+
@@ -26,7 +27,7 @@ struct msg_s {
                 ":"+QString::number(highBeam)+
                 ":"+QString::number(stateC)+
                 ":"+QString::number(stateD)+
-                ":"+QString::number(horiSlider)+"#";
+                ":"+QString::fromStdString(horiSlider_s)+"#";
 
     };
 
