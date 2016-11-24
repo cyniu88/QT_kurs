@@ -264,7 +264,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>2</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1028,11 +1028,6 @@ QComboBox::down-arrow {
             <item>
              <property name="text">
               <string>show thread all</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>stop server</string>
              </property>
             </item>
            </widget>

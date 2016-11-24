@@ -86,6 +86,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QtWebView::initialize();
     ui->InsideDEG->setText("\u2103");
     ui->OutsideDEG->setText("\u2103");
+
+    ui->widgetWWW->layout()->addItem(
 #endif
 }
 
