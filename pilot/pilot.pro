@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     workerip.cpp \
     gear_BOX/gear_box.cpp \
     mytouchslider.cpp \
-    android_interface/android_interface.cpp
+    android_interface/android_interface.cpp \
+    force_back/force_back.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  +=  androidhelper_cyniu.cpp
@@ -39,7 +40,8 @@ HEADERS  += pilotwindow.h \
     variable.h \
     gear_BOX/gear_box.h \
     mytouchslider.h \
-    android_interface/android_interface.h
+    android_interface/android_interface.h \
+    force_back/force_back.h
 android {
             message("* Using settings for Android.")
             HEADERS  +=  androidhelper_cyniu.h

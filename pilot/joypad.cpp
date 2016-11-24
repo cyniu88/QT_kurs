@@ -15,6 +15,7 @@ JoyPad::JoyPad(int circleX, int circleY , Qt::GlobalColor maxColor, Qt::GlobalCo
     centralItem->setBrush(minColor);
 
 
+
 }
 
 JoyPad::~JoyPad()
@@ -74,7 +75,7 @@ bool JoyPad::sceneEvent(QEvent *event)
     }
     return true;
 }
-
+#ifdef Q_OS_WIN
 void JoyPad::mousePressEvent(QGraphicsSceneMouseEvent *e)
 {
     qDebug() << "start " << e;
@@ -117,7 +118,7 @@ void JoyPad::mouseReleaseEvent(QGraphicsSceneMouseEvent *e)
     }
     qDebug() << " koncze" << e;
 }
-
+#endif
 void JoyPad::setResetPos(bool flag)
 {
     resetPos= flag;

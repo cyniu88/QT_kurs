@@ -17,9 +17,11 @@ public:
     virtual ~JoyPad();
     QGraphicsEllipseItem *centralItem;
     bool sceneEvent(QEvent *event);
+#ifdef Q_OS_WIN
     void mousePressEvent(QGraphicsSceneMouseEvent *e);
     void mouseMoveEvent(QGraphicsSceneMouseEvent *e);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *e);
+#endif
     void setResetPos(bool flag);
 signals:
     void sendPos(int x , int y);
@@ -28,7 +30,6 @@ private:
     int posY;
     int circleX;
     int circleY;
-
     bool resetPos = true;
 public:
     double JoyX;

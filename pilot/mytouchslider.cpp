@@ -10,13 +10,15 @@ myTouchSlider::myTouchSlider(QObject *parent)
 
 bool myTouchSlider::event(QEvent *e)
 {
-    qDebug() << "EVENT =)" << e->type();
+
     switch (e->type()){
     case QEvent::TouchBegin:
     {
         qDebug() << "start dotykania";
-        //valueChanged(99);
+        QTouchEvent *touchEvent = static_cast<QTouchEvent *>(e);
+        const QTouchEvent::TouchPoint &touchPoint1 = touchEvent->touchPoints().first();
         e->accept();
+        xPosBegin = touchPoint1.scenePos().x();
         return true;
         break;
     }
@@ -25,19 +27,17 @@ bool myTouchSlider::event(QEvent *e)
         QTouchEvent *touchEvent = static_cast<QTouchEvent *>(e);
         const QTouchEvent::TouchPoint &touchPoint1 = touchEvent->touchPoints().first();
 
-        qDebug() << "update !! dotykania" << touchPoint1.scenePos().x();
+        qDebug() << "update !! dotykania" << touchPoint1.scenePos().x() <<" "<< touchPoint1.scenePos().y() << " "<< width();
+       // valueChanged(touchPoint1.scenePos().x());
 
+        setValue( map_f(touchPoint1.scenePos().x() - xPosBegin,xPosBegin,width(),0,100)       );
         return true;
-    }
-    case QEvent::Gesture:
-    {
-        qDebug() << "gest@@@ " ;
-        break;
     }
 
     case QEvent::TouchEnd:
     {
         qDebug() << " KONIEC dotykania";
+        setValue(0);
         return true;
         break;
     }
