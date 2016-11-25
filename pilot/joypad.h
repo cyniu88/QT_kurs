@@ -37,7 +37,6 @@ public:
 public slots:
     void resetPosNOW();
     void setPosNOW(int x , int y);
-
 };
 
 #endif // JOYPAD_H

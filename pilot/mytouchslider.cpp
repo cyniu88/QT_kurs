@@ -5,7 +5,7 @@
 myTouchSlider::myTouchSlider(QObject *parent)
 {
     this->setAttribute(Qt::WA_AcceptTouchEvents);
-    //this->grabGesture(Qt::TapAndHoldGesture);
+    qDebug() <<" maximum value" << maximum() << " minimum " << minimum();
 }
 
 bool myTouchSlider::event(QEvent *e)
@@ -30,7 +30,7 @@ bool myTouchSlider::event(QEvent *e)
         qDebug() << "update !! dotykania" << touchPoint1.scenePos().x() <<" "<< touchPoint1.scenePos().y() << " "<< width();
        // valueChanged(touchPoint1.scenePos().x());
 
-        setValue( map_f(touchPoint1.scenePos().x() - xPosBegin,xPosBegin,width(),0,100)       );
+        setValue( map_f(touchPoint1.scenePos().x() - xPosBegin,xPosBegin,width(),minimum(),maximum())       );
         return true;
     }
 
@@ -38,6 +38,7 @@ bool myTouchSlider::event(QEvent *e)
     {
         qDebug() << " KONIEC dotykania";
         setValue(0);
+
         return true;
         break;
     }

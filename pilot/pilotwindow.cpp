@@ -342,7 +342,7 @@ void pilotWindow::getMSG(QString tit, QString msg)
 
 void pilotWindow::on_horizontalSlider_sliderReleased()
 {
-    ui->horizontalSlider->setValue(0);
+    ui->horizontalSlider->setValue(ui->horizontalSlider->minimum());
 
 }
 

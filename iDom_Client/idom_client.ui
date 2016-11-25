@@ -264,7 +264,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1079,7 +1079,7 @@ border: none ;</string>
         <item row="7" column="0">
          <widget class="QPushButton" name="pushButton_23">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1104,7 +1104,7 @@ border-color: rgb(0, 0, 0);
         <item row="7" column="2">
          <widget class="QPushButton" name="pushButton_7">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1128,7 +1128,7 @@ background-color: rgb(0, 128, 0);</string>
         <item row="6" column="4">
          <widget class="QPushButton" name="pushButton_5">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1154,7 +1154,7 @@ border-color: rgb(255, 255, 255);
         <item row="6" column="3">
          <widget class="QPushButton" name="pushButton_4">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1183,7 +1183,7 @@ border-color: rgb(255, 255, 255);
         <item row="9" column="1">
          <widget class="QPushButton" name="pushButton_18">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1207,7 +1207,7 @@ background-color: rgb(178, 34, 34);</string>
         <item row="8" column="4">
          <widget class="QPushButton" name="pushButton_13">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1232,7 +1232,7 @@ background-color: rgb(255, 192, 0);</string>
         <item row="7" column="3">
          <widget class="QPushButton" name="pushButton_8">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1258,7 +1258,7 @@ background-color: rgb(0, 255, 255);</string>
         <item row="6" column="1">
          <widget class="QPushButton" name="pushButton_2">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1291,7 +1291,7 @@ border-color: rgb(255, 255, 255);
         <item row="6" column="0">
          <widget class="QPushButton" name="redButton_22">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1322,7 +1322,7 @@ border-color: rgb(255, 255, 255);
         <item row="4" column="0" colspan="2">
          <widget class="QSlider" name="from_horizontalSlider">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1367,7 +1367,7 @@ border-radius:   23px;
         <item row="8" column="3">
          <widget class="QPushButton" name="pushButton_12">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1391,7 +1391,7 @@ background-color: rgb(75, 0, 130);</string>
         <item row="9" column="3">
          <widget class="QPushButton" name="pushButton_20">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1415,7 +1415,7 @@ background-color: rgb(8, 37, 103);</string>
         <item row="10" column="0">
          <widget class="QPushButton" name="pushButton_26">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1440,7 +1440,7 @@ background-color: rgb(98, 0, 44);
         <item row="10" column="1">
          <widget class="QPushButton" name="pushButton_14">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1466,7 +1466,7 @@ background-color: rgb(112, 32, 31);
         <item row="3" column="4">
          <widget class="QSpinBox" name="spinBox_toLED">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1502,7 +1502,7 @@ background-color: rgb(112, 32, 31);
         <item row="8" column="0">
          <widget class="QPushButton" name="pushButton_24">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1526,7 +1526,7 @@ background-color: rgb(0, 127, 255);</string>
         <item row="10" column="2">
          <widget class="QPushButton" name="pushButton_15">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1551,7 +1551,7 @@ color: rgb(0, 0, 0);</string>
         <item row="9" column="0">
          <widget class="QPushButton" name="pushButton_25">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1576,7 +1576,7 @@ background-color: rgb(147, 246, 0);</string>
         <item row="9" column="2">
          <widget class="QPushButton" name="pushButton_19">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1600,7 +1600,7 @@ background-color: rgb(128, 0, 128);</string>
         <item row="3" column="2">
          <widget class="QPushButton" name="RESET_pushButton">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1631,7 +1631,7 @@ border-color: rgb(255, 255, 255);
         <item row="8" column="1">
          <widget class="QPushButton" name="pushButton_10">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1656,7 +1656,7 @@ background-color: rgb(255, 165, 0);</string>
         <item row="9" column="4">
          <widget class="QPushButton" name="pushButton_21">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1681,7 +1681,7 @@ background-color: rgb(255, 255, 153);</string>
         <item row="7" column="4">
          <widget class="QPushButton" name="pushButton_9">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1707,7 +1707,7 @@ background-color: rgb(204, 93, 43);</string>
         <item row="3" column="3">
          <widget class="QLCDNumber" name="lcdNumber_toLED">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1732,7 +1732,7 @@ background-color: rgb(204, 93, 43);</string>
         <item row="3" column="1">
          <widget class="QSpinBox" name="spinBox_fromLED">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1772,7 +1772,7 @@ background-color: rgb(204, 93, 43);</string>
         <item row="8" column="2">
          <widget class="QPushButton" name="pushButton_11">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1859,7 +1859,7 @@ border-color: rgb(255, 255, 255);
         <item row="10" column="3">
          <widget class="QPushButton" name="pushButton_16">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1884,7 +1884,7 @@ background-color: rgb(128, 128, 0);</string>
         <item row="4" column="3" colspan="2">
          <widget class="QSlider" name="to_horizontalSlider_2">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1935,7 +1935,7 @@ border-radius:   23px;
         <item row="6" column="2">
          <widget class="QPushButton" name="pushButton_3">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1968,7 +1968,7 @@ border-color: rgb(255, 255, 255);
         <item row="3" column="0">
          <widget class="QLCDNumber" name="lcdNumber_fromLED">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1996,7 +1996,7 @@ border-color: rgb(255, 255, 255);
         <item row="7" column="1">
          <widget class="QPushButton" name="pushButton_6">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -2021,7 +2021,7 @@ border-color: rgb(255, 255, 255);
         <item row="10" column="4">
          <widget class="QPushButton" name="pushButton_17">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
