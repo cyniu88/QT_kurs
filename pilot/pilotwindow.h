@@ -20,6 +20,7 @@
 #include "workerip.h"
 #include "gear_BOX/gear_box.h"
 #include "android_interface/android_interface.h"
+#include "config_files/config_files.h"
 
 namespace Ui {
 class pilotWindow;
@@ -77,15 +78,11 @@ private slots:
 
     void on_checkBoxWheel_toggled(bool checked);
 
-    void on_port_editingFinished();
-
     void on_actionConnect_triggered();
 
     void on_actionDisconnect_triggered();
 
     void on_actionEXIT_triggered();
-
-    void on_adresIP_currentTextChanged( );
 
     void on_checkBoxWheel_stateChanged();
 
@@ -121,6 +118,12 @@ private slots:
 
     void on_lcdMsgCounter_overflow();
 
+    void on_actionPORT_triggered();
+
+    void on_actionADDRESS_triggered();
+
+    void on_actionAdd_address_triggered();
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;
@@ -130,6 +133,8 @@ private:
     int msgCounter = 0;
     Gear_Box myGearBox;
     android_interface droid;
+    config_Files mainConfig;
+    QWidget inputDialogStyleSheet;
 
 };
 

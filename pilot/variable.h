@@ -1,6 +1,7 @@
 #ifndef VARIABLE_H
 #define VARIABLE_H
 #include "functions.h"
+#include <QStringList>
 
 struct msg_s {
     int leftX = 0;
@@ -36,6 +37,7 @@ struct msg_s {
 
 struct my_config{
     std::string addressIP;
+    QStringList addressIpList;
     int port;
     bool goWhile = false;
     msg_s messageS;

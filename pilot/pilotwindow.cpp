@@ -1,7 +1,7 @@
 #include "pilotwindow.h"
 #include "ui_pilotwindow.h"
 
-
+#include <QInputDialog>
 
 void pilotWindow::getPosGaz(int x, int y)
 {
@@ -43,8 +43,9 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     ui->setupUi(this);
     workerPTR = &worker;
     conf = c;
-    c->addressIP=ui->adresIP->currentText().toStdString();
-    c->port =  ui->port->text().toInt();
+    c->addressIpList = mainConfig.readFromFile("config","ip.cfg","192.168.1.204\n192.168.43.27\ncyniu88.no-ip.pl").split("\n");
+    c->port = mainConfig.readFromFile("config","port.cfg", "8833").toInt()  ;
+
     t1 = new QTimer();
     tFPS = new QTimer();
     QObject::connect(tFPS,SIGNAL(timeout()),this,SLOT(display_FPS()));
@@ -120,6 +121,8 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     if (myGearBox.automaticWorkFlag == true){
         ui->buttonAutomatGearbox->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
     }
+
+    inputDialogStyleSheet.setStyleSheet("background-color: rgba(0, 255, 0, 50); color: rgba(255, 255, 255); font: bold 14px; font-size: 20pt;  ");
 }
 
 pilotWindow::~pilotWindow()
@@ -210,11 +213,6 @@ void pilotWindow::on_checkBoxWheel_toggled(bool checked)
     joyPadDirection->setResetPos(autoReturnDirection);
 }
 
-void pilotWindow::on_port_editingFinished()
-{
-    conf->port =  ui->port->text().toInt();
-}
-
 void pilotWindow::on_actionConnect_triggered()
 {
     worker.start();
@@ -232,11 +230,6 @@ void pilotWindow::on_actionEXIT_triggered()
     conf->goWhile=false;
     QThread::sleep(1);
     qApp->exit();
-}
-
-void pilotWindow::on_adresIP_currentTextChanged()
-{
-    conf->addressIP = ui->adresIP->currentText().toStdString();
 }
 
 void pilotWindow::on_checkBoxWheel_stateChanged()
@@ -380,4 +373,51 @@ void pilotWindow::on_actionOFF_2_triggered()
 void pilotWindow::on_lcdMsgCounter_overflow()
 {
     msgCounter =0 ;
+}
+
+void pilotWindow::on_actionPORT_triggered()
+{
+    bool ok;
+    QInputDialog myInputDialog;
+
+
+    int i = myInputDialog.getInt(&inputDialogStyleSheet,"SET","SET PORT",conf->port,8000,9000,1,&ok);
+    if(ok){
+        conf->port = i;
+        mainConfig.writeToFile("config","port.cfg",QString::number(i));
+    }
+}
+
+void pilotWindow::on_actionADDRESS_triggered()
+{
+    bool ok;
+    conf->addressIpList =  mainConfig.readFromFile("config","ip.cfg").split("\n");
+
+    QInputDialog myInputDialog;
+
+    QString id = myInputDialog.getItem(&inputDialogStyleSheet, tr("address"),
+                                       tr("set IP address"),conf->addressIpList,1,false, &ok);
+
+    if (ok && !id.isEmpty()){
+
+        conf->addressIP = id.toStdString();
+
+    }
+}
+
+void pilotWindow::on_actionAdd_address_triggered()
+{
+    bool ok;
+    QInputDialog myInputDialog;
+
+    QString t = myInputDialog.getText(&inputDialogStyleSheet,"add IP","add IP",QLineEdit::Normal,"",&ok);
+
+    if(ok){
+        conf->addressIpList.push_back(t);
+        t.clear();
+        for (auto i : conf->addressIpList){
+            t += i+"\n";
+        }
+        mainConfig.writeToFile("config","ip.cfg",t);
+    }
 }
