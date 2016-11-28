@@ -122,7 +122,8 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
         ui->buttonAutomatGearbox->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
     }
 
-    inputDialogStyleSheet.setStyleSheet("background-color: rgba(0, 255, 0, 50); color: rgba(255, 255, 255); font: bold 14px; font-size: 20pt;  ");
+    inputDialogStyleSheet.setStyleSheet("background-color: rgba(0, 255, 0, 50); color: rgba(0, 255, 0); font: bold 14px; font-size: 20pt;  ");
+    inputDialogStyleSheet.move(QApplication::desktop()->screen()->rect().center()- inputDialogStyleSheet.rect().center() );
 }
 
 pilotWindow::~pilotWindow()
