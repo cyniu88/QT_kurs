@@ -478,6 +478,7 @@ font-size:  40px;</string>
      <addaction name="actionADDRESS"/>
      <addaction name="separator"/>
      <addaction name="actionAdd_address"/>
+     <addaction name="actionShow_IP_arp"/>
     </widget>
     <addaction name="actionConnect"/>
     <addaction name="actionDisconnect"/>
@@ -540,6 +541,11 @@ font-size:  40px;</string>
   <action name="actionAdd_address">
    <property name="text">
     <string>add address</string>
+   </property>
+  </action>
+  <action name="actionShow_IP_arp">
+   <property name="text">
+    <string>show IP (arp)</string>
    </property>
   </action>
  </widget>

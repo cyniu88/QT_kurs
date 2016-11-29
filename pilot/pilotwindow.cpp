@@ -2,7 +2,7 @@
 #include "ui_pilotwindow.h"
 
 #include <QInputDialog>
-
+#include <QProcess>
 void pilotWindow::getPosGaz(int x, int y)
 {
     ui->gazLCD_x->display(x);
@@ -90,11 +90,6 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     ui->infoTxt->setText( QString::number(w) );
 
 
-    //this->setAttribute(Qt::WA_NativeWindow);
-    qDebug()<< " wielkosc: " << ui->graphicsView_gaz->sceneRect().height()<<" & "
-            << ui->graphicsView_gaz->size();
-
-
     connect(QGamepadManager::instance(), &QGamepadManager::connectedGamepadsChanged, this,
             []() { qDebug() << "connected gamepads changed:"; });
     connect(QGamepadManager::instance(), &QGamepadManager::gamepadConnected, this,
@@ -122,7 +117,7 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
         ui->buttonAutomatGearbox->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
     }
 
-    inputDialogStyleSheet.setStyleSheet("background-color: rgba(0, 255, 0, 50); color: rgba(0, 255, 0); font: bold 14px; font-size: 20pt;  ");
+    inputDialogStyleSheet.setStyleSheet("background-color: rgba(0, 255, 0, 50); color: rgba(255, 255, 255); font: bold 14px; font-size: 20pt; ");
     inputDialogStyleSheet.move(QApplication::desktop()->screen()->rect().center()- inputDialogStyleSheet.rect().center() );
 }
 
@@ -409,16 +404,33 @@ void pilotWindow::on_actionADDRESS_triggered()
 void pilotWindow::on_actionAdd_address_triggered()
 {
     bool ok;
+    QString t;
     QInputDialog myInputDialog;
 
-    QString t = myInputDialog.getText(&inputDialogStyleSheet,"add IP","add IP",QLineEdit::Normal,"",&ok);
+    for (auto i : conf->addressIpList){
+        t += i+"\n";
+    }
+    t = myInputDialog.getMultiLineText(&inputDialogStyleSheet,"add IP","add IP",t,&ok);
 
     if(ok){
-        conf->addressIpList.push_back(t);
-        t.clear();
-        for (auto i : conf->addressIpList){
-            t += i+"\n";
-        }
+        conf->addressIpList.clear();
+        conf->addressIpList = t.split("\n");
+
         mainConfig.writeToFile("config","ip.cfg",t);
     }
+}
+
+
+
+void pilotWindow::on_actionShow_IP_arp_triggered()
+{
+    QProcess  nowy;
+#ifdef Q_OS_ANDROID
+    nowy.start("cat /proc/net/arp");
+#endif
+#ifdef Q_OS_WIN
+    nowy.start("arp -a");
+#endif
+    nowy.waitForFinished();
+    getMSG("found IP", nowy.readAllStandardOutput());
 }

@@ -124,6 +124,8 @@ private slots:
 
     void on_actionAdd_address_triggered();
 
+    void on_actionShow_IP_arp_triggered();
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;
