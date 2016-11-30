@@ -9,15 +9,15 @@ int main(int argc, char *argv[])
 
     std::cout << "Hello World!" << std::endl;
 
-    mainEvent.run("connections")->addEvent("16:55, 14-12-2013","dupa");
-    mainEvent.run("connections")->addEvent("16:59, 14-12-2013");
+    mainEvent.run("connections")->addEvent("dupa");
+    mainEvent.run("connections")->addEvent();
 
     mainEvent.run("co")->addEvent("16:59, 14-12-2013");
 
     mainEvent.run("unknown")->addEvent("kkskskks");
     int k = 100;
     for ( auto i =0; i< k; ++i){
-        mainEvent.run("connections")->addEvent("iter: "+ std::to_string(i),"awaria");
+        mainEvent.run("connections")->addEvent("iter: "+ std::to_string(i)+" awaria");
     }
     std::cout << "\n--------------------------------------------------------" << std::endl;
     std::cout << "mozliwe:\n"<< mainEvent.getListPossibleEvents() << std::endl;

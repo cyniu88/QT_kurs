@@ -1,4 +1,8 @@
 #include "event_counters.h"
+#include <iostream>
+#include <iomanip>
+#include <ctime>
+#include <sstream>
 
 event_counters::event_counters(std::string name) : eventName(name)
 {
@@ -11,10 +15,15 @@ int event_counters::howManyEvent()
     return eventList.size();
 }
 
-void event_counters::addEvent(  std::string date, std::string note)
+void event_counters::addEvent(    std::string note)
 {
+    auto t = std::time(nullptr);
+    auto tm = *std::localtime(&t);
     eventStruct d;
-    d.date = date;
+    std::ostringstream oss;
+    oss << std::put_time(&tm, "%d-%m-%Y %H-%M-%S");
+
+    d.date = oss.str();
     d.note = note;
     std::lock_guard < std::mutex > lock ( eventMutex);
     eventList.push_back(d);
