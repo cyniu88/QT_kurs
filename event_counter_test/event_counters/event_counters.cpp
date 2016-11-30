@@ -17,10 +17,11 @@ int event_counters::howManyEvent()
 
 void event_counters::addEvent(    std::string note)
 {
-    auto t = std::time(nullptr);
-    auto tm = *std::localtime(&t);
     eventStruct d;
     std::ostringstream oss;
+
+    auto t = std::time(nullptr);
+    auto tm = *std::localtime(&t);
     oss << std::put_time(&tm, "%d-%m-%Y %H-%M-%S");
 
     d.date = oss.str();
