@@ -14,13 +14,14 @@
 #include <QGamepadManager>
 #include <QMessageBox>
 
+
 #include "joypad.h"
 #include "mybutton.h"
 #include "variable.h"
 #include "workerip.h"
 #include "gear_BOX/gear_box.h"
 #include "android_interface/android_interface.h"
-#include "config_files/config_files.h"
+#include "../libs/config_files/config_files.h"
 
 namespace Ui {
 class pilotWindow;

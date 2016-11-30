@@ -26,7 +26,7 @@ SOURCES += main.cpp\
     mytouchslider.cpp \
     android_interface/android_interface.cpp \
     force_back/force_back.cpp \
-    config_files/config_files.cpp
+    ../libs/config_files/config_files.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  +=  androidhelper_cyniu.cpp
@@ -43,7 +43,7 @@ HEADERS  += pilotwindow.h \
     mytouchslider.h \
     android_interface/android_interface.h \
     force_back/force_back.h \
-    config_files/config_files.h
+    ../libs/config_files/config_files.h
 android {
             message("* Using settings for Android.")
             HEADERS  +=  androidhelper_cyniu.h

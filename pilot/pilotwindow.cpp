@@ -3,6 +3,9 @@
 
 #include <QInputDialog>
 #include <QProcess>
+
+#include "functions.h"
+
 void pilotWindow::getPosGaz(int x, int y)
 {
     ui->gazLCD_x->display(x);
@@ -43,8 +46,8 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     ui->setupUi(this);
     workerPTR = &worker;
     conf = c;
-    c->addressIpList = mainConfig.readFromFile("config","ip.cfg","192.168.1.204\n192.168.43.27\ncyniu88.no-ip.pl").split("\n");
-    c->port = mainConfig.readFromFile("config","port.cfg", "8833").toInt()  ;
+    c->addressIpList = QString(mainConfig.readFromFile("config","ip.cfg","192.168.1.204\n192.168.43.27\ncyniu88.no-ip.pl").c_str()).split("\n");
+    c->port = QString(mainConfig.readFromFile("config","port.cfg", "8833").c_str()).toInt()  ;
 
     t1 = new QTimer();
     tFPS = new QTimer();
@@ -380,14 +383,15 @@ void pilotWindow::on_actionPORT_triggered()
     int i = myInputDialog.getInt(&inputDialogStyleSheet,"SET","SET PORT",conf->port,8000,9000,1,&ok);
     if(ok){
         conf->port = i;
-        mainConfig.writeToFile("config","port.cfg",QString::number(i));
+        mainConfig.writeToFile("config","port.cfg", to_stringAndroid(i) );
+
     }
 }
 
 void pilotWindow::on_actionADDRESS_triggered()
 {
     bool ok;
-    conf->addressIpList =  mainConfig.readFromFile("config","ip.cfg").split("\n");
+    conf->addressIpList = QString::fromStdString(mainConfig.readFromFile("config","ip.cfg")).split("\n");
 
     QInputDialog myInputDialog;
 
@@ -404,17 +408,17 @@ void pilotWindow::on_actionADDRESS_triggered()
 void pilotWindow::on_actionAdd_address_triggered()
 {
     bool ok;
-    QString t;
+    std::string t;
     QInputDialog myInputDialog;
 
     for (auto i : conf->addressIpList){
-        t += i+"\n";
+        t +=   i.toStdString() +"\n";
     }
-    t = myInputDialog.getMultiLineText(&inputDialogStyleSheet,"add IP","add IP",t,&ok);
+    t = myInputDialog.getMultiLineText(&inputDialogStyleSheet,"add IP","add IP", QString::fromStdString(t) ,&ok).toStdString();
 
     if(ok){
         conf->addressIpList.clear();
-        conf->addressIpList = t.split("\n");
+        conf->addressIpList = QString::fromStdString(t).split("\n");
 
         mainConfig.writeToFile("config","ip.cfg",t);
     }
