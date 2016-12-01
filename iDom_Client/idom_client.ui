@@ -98,7 +98,7 @@ background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.78
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 25px;
+    border-radius: 22px;
     border-color: beige;
     font: bold 20px;
  
@@ -1076,699 +1076,6 @@ border: none ;</string>
         <string>LED</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_5">
-        <item row="7" column="0">
-         <widget class="QPushButton" name="pushButton_23">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- background-color: rgb(255, 255, 255);
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(0, 0, 0);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>biały</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="2">
-         <widget class="QPushButton" name="pushButton_7">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(0, 128, 0);</string>
-          </property>
-          <property name="text">
-           <string>ciemny zielony</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="4">
-         <widget class="QPushButton" name="pushButton_5">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- background-color: rgb(255, 0, 128); 
-  
- 
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px; 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>magenta</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="3">
-         <widget class="QPushButton" name="pushButton_4">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- background-color: rgb(254, 254, 51);
- 
- 
- 
- 
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>żółty</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="1">
-         <widget class="QPushButton" name="pushButton_18">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(178, 34, 34);</string>
-          </property>
-          <property name="text">
-           <string>minia</string>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="4">
-         <widget class="QPushButton" name="pushButton_13">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
-  border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(255, 192, 0);</string>
-          </property>
-          <property name="text">
-           <string>marchewkowy</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="3">
-         <widget class="QPushButton" name="pushButton_8">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
-  border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-
-background-color: rgb(0, 255, 255);</string>
-          </property>
-          <property name="text">
-           <string>cyjan</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="1">
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 0, 255);
- 
- 
- 
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>niebieski</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="0">
-         <widget class="QPushButton" name="redButton_22">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- background-color: rgb(255, 0, 0);
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>czerwony</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0" colspan="2">
-         <widget class="QSlider" name="from_horizontalSlider">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QSlider::groove:horizontal {
-border: 6px solid #AAA;
-height: 4px;
-background: #9AD9EB;
-margin: 2px 0;
-}
-
-QSlider::handle:horizontal {
- 
-	background-color: rgb(85, 255, 0);
-border: 1px solid gray;
-width: 48px;
-margin: -26px 0;
-border-radius:   23px;
-}</string>
-          </property>
-          <property name="maximum">
-           <number>59</number>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="tickPosition">
-           <enum>QSlider::TicksBothSides</enum>
-          </property>
-          <property name="tickInterval">
-           <number>5</number>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="3">
-         <widget class="QPushButton" name="pushButton_12">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(75, 0, 130);</string>
-          </property>
-          <property name="text">
-           <string>indygo</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="3">
-         <widget class="QPushButton" name="pushButton_20">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">  border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(8, 37, 103);</string>
-          </property>
-          <property name="text">
-           <string>szafirowy</string>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="0">
-         <widget class="QPushButton" name="pushButton_26">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(98, 0, 44);
-</string>
-          </property>
-          <property name="text">
-           <string>buraczkowy</string>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="1">
-         <widget class="QPushButton" name="pushButton_14">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(112, 32, 31);
-
-</string>
-          </property>
-          <property name="text">
-           <string>brunatny</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="4">
-         <widget class="QSpinBox" name="spinBox_toLED">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>21</pointsize>
-           </font>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="buttonSymbols">
-           <enum>QAbstractSpinBox::PlusMinus</enum>
-          </property>
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>60</number>
-          </property>
-          <property name="value">
-           <number>60</number>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="0">
-         <widget class="QPushButton" name="pushButton_24">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(0, 127, 255);</string>
-          </property>
-          <property name="text">
-           <string>lazurowy</string>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="2">
-         <widget class="QPushButton" name="pushButton_15">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(159, 159, 223);
-color: rgb(0, 0, 0);</string>
-          </property>
-          <property name="text">
-           <string>niebieskofioletowy</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="0">
-         <widget class="QPushButton" name="pushButton_25">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
-  border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(147, 246, 0);</string>
-          </property>
-          <property name="text">
-           <string>limonkowy</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="2">
-         <widget class="QPushButton" name="pushButton_19">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(128, 0, 128);</string>
-          </property>
-          <property name="text">
-           <string>purpurowy</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="2">
-         <widget class="QPushButton" name="RESET_pushButton">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-color: rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 19px;
-    padding: 6px;
- </string>
-          </property>
-          <property name="text">
-           <string>ALL LED</string>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="1">
-         <widget class="QPushButton" name="pushButton_10">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
-  border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(255, 165, 0);</string>
-          </property>
-          <property name="text">
-           <string>pomarańczowy</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="4">
-         <widget class="QPushButton" name="pushButton_21">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
-background-color: rgb(255, 255, 153);</string>
-          </property>
-          <property name="text">
-           <string>słomkowy</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="4">
-         <widget class="QPushButton" name="pushButton_9">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
-  border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border-color: beige;
-    font: bold 24px;
- 
-    padding: 6px;
- 
-background-color: rgb(204, 93, 43);</string>
-          </property>
-          <property name="text">
-           <string>herbaciany</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="3">
-         <widget class="QLCDNumber" name="lcdNumber_toLED">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 255, 0);</string>
-          </property>
-          <property name="digitCount">
-           <number>2</number>
-          </property>
-          <property name="intValue" stdset="0">
-           <number>60</number>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QSpinBox" name="spinBox_fromLED">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>21</pointsize>
-           </font>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="buttonSymbols">
-           <enum>QAbstractSpinBox::PlusMinus</enum>
-          </property>
-          <property name="maximum">
-           <number>59</number>
-          </property>
-          <property name="displayIntegerBase">
-           <number>10</number>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0" colspan="5">
-         <widget class="Line" name="line">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
         <item row="8" column="2">
          <widget class="QPushButton" name="pushButton_11">
           <property name="sizePolicy">
@@ -2065,6 +1372,699 @@ border-color: rgb(255, 255, 255);
           </property>
           <property name="text">
            <string>SET COLOR</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="2">
+         <widget class="QPushButton" name="pushButton_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(0, 128, 0);</string>
+          </property>
+          <property name="text">
+           <string>ciemny zielony</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="4">
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);
+ background-color: rgb(255, 0, 128); 
+  
+ 
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px; 
+    padding: 6px;</string>
+          </property>
+          <property name="text">
+           <string>magenta</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="3">
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);
+ background-color: rgb(254, 254, 51);
+ 
+ 
+ 
+ 
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;</string>
+          </property>
+          <property name="text">
+           <string>żółty</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QPushButton" name="pushButton_18">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(178, 34, 34);</string>
+          </property>
+          <property name="text">
+           <string>minia</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="4">
+         <widget class="QPushButton" name="pushButton_13">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);
+  border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(255, 192, 0);</string>
+          </property>
+          <property name="text">
+           <string>marchewkowy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="2">
+         <widget class="QPushButton" name="pushButton_15">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(159, 159, 223);
+color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="text">
+           <string>niebieskofioletowy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QPushButton" name="pushButton_25">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);
+  border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(147, 246, 0);</string>
+          </property>
+          <property name="text">
+           <string>limonkowy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="2">
+         <widget class="QPushButton" name="pushButton_19">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(128, 0, 128);</string>
+          </property>
+          <property name="text">
+           <string>purpurowy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="RESET_pushButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> border-style: outset;
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 19px;
+    padding: 6px;
+ </string>
+          </property>
+          <property name="text">
+           <string>ALL LED</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QPushButton" name="pushButton_10">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);
+  border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(255, 165, 0);</string>
+          </property>
+          <property name="text">
+           <string>pomarańczowy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="4">
+         <widget class="QPushButton" name="pushButton_21">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(255, 255, 153);</string>
+          </property>
+          <property name="text">
+           <string>słomkowy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="4">
+         <widget class="QPushButton" name="pushButton_9">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);
+  border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+ 
+background-color: rgb(204, 93, 43);</string>
+          </property>
+          <property name="text">
+           <string>herbaciany</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="QLCDNumber" name="lcdNumber_toLED">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 255, 0);</string>
+          </property>
+          <property name="digitCount">
+           <number>2</number>
+          </property>
+          <property name="intValue" stdset="0">
+           <number>60</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QSpinBox" name="spinBox_fromLED">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>21</pointsize>
+           </font>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::PlusMinus</enum>
+          </property>
+          <property name="maximum">
+           <number>59</number>
+          </property>
+          <property name="displayIntegerBase">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="5">
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="3">
+         <widget class="QPushButton" name="pushButton_20">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">  border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(8, 37, 103);</string>
+          </property>
+          <property name="text">
+           <string>szafirowy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QPushButton" name="pushButton_26">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(98, 0, 44);
+</string>
+          </property>
+          <property name="text">
+           <string>buraczkowy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QPushButton" name="pushButton_14">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(112, 32, 31);
+
+</string>
+          </property>
+          <property name="text">
+           <string>brunatny</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="4">
+         <widget class="QSpinBox" name="spinBox_toLED">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>21</pointsize>
+           </font>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::PlusMinus</enum>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>60</number>
+          </property>
+          <property name="value">
+           <number>60</number>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QPushButton" name="pushButton_24">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(0, 127, 255);</string>
+          </property>
+          <property name="text">
+           <string>lazurowy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="3">
+         <widget class="QPushButton" name="pushButton_8">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);
+  border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+
+background-color: rgb(0, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>cyjan</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 0, 255);
+ 
+ 
+ 
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;</string>
+          </property>
+          <property name="text">
+           <string>niebieski</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QPushButton" name="redButton_22">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);
+ background-color: rgb(255, 0, 0);
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;</string>
+          </property>
+          <property name="text">
+           <string>czerwony</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="2">
+         <widget class="QSlider" name="from_horizontalSlider">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSlider::groove:horizontal {
+border: 6px solid #AAA;
+height: 4px;
+background: #9AD9EB;
+margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+ 
+	background-color: rgb(85, 255, 0);
+border: 1px solid gray;
+width: 48px;
+margin: -26px 0;
+border-radius:   23px;
+}</string>
+          </property>
+          <property name="maximum">
+           <number>59</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBothSides</enum>
+          </property>
+          <property name="tickInterval">
+           <number>5</number>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="3">
+         <widget class="QPushButton" name="pushButton_12">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"> border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;
+background-color: rgb(75, 0, 130);</string>
+          </property>
+          <property name="text">
+           <string>indygo</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QPushButton" name="pushButton_23">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);
+ background-color: rgb(255, 255, 255);
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 24px;
+ 
+    padding: 6px;</string>
+          </property>
+          <property name="text">
+           <string>biały</string>
           </property>
          </widget>
         </item>
