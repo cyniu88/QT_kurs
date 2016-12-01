@@ -492,7 +492,7 @@ void iDom_Client::on_setNumberMPD_clicked()
     QInputDialog myInputDialog;
 
     QString id = myInputDialog.getItem(this, tr("select radio stations"),
-                                      tr("select radio stations"),mpdItems,7,false, &ok);
+                                       tr("select radio stations"),mpdItems,7,false, &ok);
 
     if (ok && !id.isEmpty()){
 
@@ -528,12 +528,12 @@ void iDom_Client::on_stopServerButton_clicked()
 
 
     QMessageBox::StandardButton reply;
-      reply = QMessageBox::question(this, "", "stop server?",
-                                    QMessageBox::Yes|QMessageBox::No);
-      if (reply == QMessageBox::Yes) {
+    reply = QMessageBox::question(this, "", "stop server?",
+                                  QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
         qDebug() << "Yes was clicked";
-         emit sendTCP("console","stop server");
-      }
+        emit sendTCP("console","stop server");
+    }
 }
 
 void iDom_Client::on_pushButton_extra_clicked()
@@ -541,12 +541,13 @@ void iDom_Client::on_pushButton_extra_clicked()
     QColorDialog color;
 
     if( color.exec()){
-    int r,g,b;
-
-    color.currentColor().getRgb(&r,&g,&b);
-    qDebug() << "r: "<< r << " g: "<<g << " b: "<<b;
-    sendSignalColor(r,g,b,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-    ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb("+QString::number(r)+","+QString::number(g)+"," +QString::number(b)+");  border-width: 4px;   border-color: rgb(255, 255, 255); border-radius: 10px; border-color: beige; font: bold 19px; padding: 6px;"  );
-
+        int r,g,b;
+        color.currentColor().getRgb(&r,&g,&b);
+        qDebug() << "r: "<< r << " g: "<<g << " b: "<<b;
+        sendSignalColor(r,g,b,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
+        ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb("+QString::number(r)+","+QString::number(g)+"," +QString::number(b)+");  border-width: 4px;   border-color: rgb(255, 255, 255); border-radius: 10px; border-color: beige; font: bold 19px; padding: 6px;"  );
+    }
+    else{
+       ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255); border-radius: 10px; border-color: beige; font: bold 19px; padding: 6px;"  );
     }
 }
