@@ -159,6 +159,8 @@ private slots:
 
     void on_stopServerButton_clicked();
 
+    void on_pushButton_extra_clicked();
+
 public slots:
       void setLcdActual(int c);
       void setLcdAll(int c);
