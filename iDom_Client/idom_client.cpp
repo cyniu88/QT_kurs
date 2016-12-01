@@ -304,6 +304,7 @@ void iDom_Client::on_pushButton_24_released()
 void iDom_Client::on_LED_OFF_Button_37_released()
 {
     emit sendTCP("LED","RS232 send LED_STOP:2;");
+    ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255); border-radius: 10px; border-color: beige; font: bold 19px; padding: 6px;"  );
 }
 
 void iDom_Client::on_redButton_22_released()
@@ -539,15 +540,28 @@ void iDom_Client::on_stopServerButton_clicked()
 void iDom_Client::on_pushButton_extra_clicked()
 {
     QColorDialog color;
-
-    if( color.exec()){
+    color.setOptions(QColorDialog::ShowAlphaChannel);
+    QFont f;
+    int size = QApplication::desktop()->screenGeometry().width() ;
+    if (size>1000){
+        size = 25;
+        qDebug() << "duze";
+    }
+    else {
+        size = 8;
+        qDebug() << "male!";
+    }
+    f.setPixelSize(size);
+    color.setFont(f);
+    if( color.exec())
+    {
         int r,g,b;
         color.currentColor().getRgb(&r,&g,&b);
-        qDebug() << "r: "<< r << " g: "<<g << " b: "<<b;
+
         sendSignalColor(r,g,b,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
         ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb("+QString::number(r)+","+QString::number(g)+"," +QString::number(b)+");  border-width: 4px;   border-color: rgb(255, 255, 255); border-radius: 10px; border-color: beige; font: bold 19px; padding: 6px;"  );
     }
     else{
-       ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255); border-radius: 10px; border-color: beige; font: bold 19px; padding: 6px;"  );
+        ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255); border-radius: 10px; border-color: beige; font: bold 19px; padding: 6px;"  );
     }
 }
