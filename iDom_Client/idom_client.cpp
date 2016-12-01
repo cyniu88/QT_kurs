@@ -525,17 +525,28 @@ void iDom_Client::on_turnOnSleepModeButton_clicked()
 
 void iDom_Client::on_stopServerButton_clicked()
 {
-    emit sendTCP("console","stop server");
+
+
+    QMessageBox::StandardButton reply;
+      reply = QMessageBox::question(this, "", "stop server?",
+                                    QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes) {
+        qDebug() << "Yes was clicked";
+         emit sendTCP("console","stop server");
+      }
 }
 
 void iDom_Client::on_pushButton_extra_clicked()
 {
     QColorDialog color;
-    color.exec();
+
+    if( color.exec()){
     int r,g,b;
 
     color.currentColor().getRgb(&r,&g,&b);
     qDebug() << "r: "<< r << " g: "<<g << " b: "<<b;
     sendSignalColor(r,g,b,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
     ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb("+QString::number(r)+","+QString::number(g)+"," +QString::number(b)+");  border-width: 4px;   border-color: rgb(255, 255, 255); border-radius: 10px; border-color: beige; font: bold 19px; padding: 6px;"  );
+
+    }
 }
