@@ -184,6 +184,11 @@ void iDom_Client::odb_temperature(QString s)
 
 }
 
+void iDom_Client::odb_tools(QString s)
+{
+   QMessageBox::information(this,"from tools",s);
+}
+
 void iDom_Client::on_pushButton_released()
 {
     config->command = ui->comboBox->currentText().toStdString();
@@ -520,7 +525,7 @@ void iDom_Client::on_turnOnSleepModeButton_clicked()
     int i;
     i = QInputDialog::getInt(this,tr("set sleep mode"),tr("minutes"),1,1,1000,1,&ok);
     if (ok){
-        emit sendTCP("console","sleep set "+std::to_string(i));
+        emit sendTCP("tools","sleep set "+std::to_string(i));
     }
 }
 
@@ -533,7 +538,7 @@ void iDom_Client::on_stopServerButton_clicked()
                                   QMessageBox::Yes|QMessageBox::No);
     if (reply == QMessageBox::Yes) {
         qDebug() << "Yes was clicked";
-        emit sendTCP("console","stop server");
+        emit sendTCP("tools","stop server");
     }
 }
 
@@ -564,4 +569,9 @@ void iDom_Client::on_pushButton_extra_clicked()
     else{
         ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255); border-radius: 10px; border-color: beige; font: bold 19px; padding: 6px;"  );
     }
+}
+
+void iDom_Client::on_pushButton_put_temperature_clicked()
+{
+    emit emit sendTCP("tools","put temperature");
 }

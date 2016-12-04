@@ -161,6 +161,8 @@ private slots:
 
     void on_pushButton_extra_clicked();
 
+    void on_pushButton_put_temperature_clicked();
+
 public slots:
       void setLcdActual(int c);
       void setLcdAll(int c);
@@ -174,6 +176,7 @@ public slots:
       void updateMPDinfo();
       void updateTemepretureInfo ();
       void odb_temperature (QString s);
+      void odb_tools (QString s);
 
 signals:
 

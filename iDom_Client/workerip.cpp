@@ -91,6 +91,11 @@ void WorkerIP::run()
                 {
                     emit temperature (QString::fromStdString(s_buffor));
                 }
+                else if (addresOUT.address == "tools")
+                {
+                    emit tools (QString::fromStdString(s_buffor));
+                }
+
 
                 break;
             }
