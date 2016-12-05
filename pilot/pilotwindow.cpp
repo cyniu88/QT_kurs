@@ -68,8 +68,11 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
         w= QApplication::desktop()->width()*i;
     }
     joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+   joyPadDummy2     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
     joyPadDirection = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+
     joyPadPower     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+
 
     QObject::connect(joyPadDirection, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\
     QObject::connect(joyPadPower    , SIGNAL(sendPos(int,int) ),this,SLOT(getPosGaz  (int,int) )  );
