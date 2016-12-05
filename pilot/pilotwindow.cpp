@@ -67,8 +67,8 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     {
         w= QApplication::desktop()->width()*i;
     }
-    joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
-   joyPadDummy2     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+   // joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+   // joyPadDummy2     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
     joyPadDirection = new JoyPad( w , w/4,Qt::red,Qt::yellow);
 
     joyPadPower     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
@@ -410,6 +410,7 @@ void pilotWindow::on_actionADDRESS_triggered()
 
 void pilotWindow::on_actionAdd_address_triggered()
 {
+
     bool ok;
     std::string t;
     QInputDialog myInputDialog;
@@ -417,8 +418,20 @@ void pilotWindow::on_actionAdd_address_triggered()
     for (auto i : conf->addressIpList){
         t +=   i.toStdString() +"\n";
     }
-    t = myInputDialog.getMultiLineText(&inputDialogStyleSheet,"add IP","add IP", QString::fromStdString(t) ,&ok).toStdString();
-
+    //t = myInputDialog.getMultiLineText(&inputDialogStyleSheet,"add IP","add IP", QString::fromStdString(t) ,&ok).toStdString();
+    QInputDialog::InputMode zz = QInputDialog::TextInput;
+           myInputDialog.setInputMode (zz   );
+           myInputDialog.setOption(QInputDialog::UsePlainTextEditForTextInput);
+           myInputDialog.setStyleSheet("background-color: rgba(0, 255, 0, 50); color: rgba(255, 255, 255); font: bold 14px; font-size: 20pt; ");
+           myInputDialog.setLabelText("add IP");
+           myInputDialog.setTextValue(QString::fromStdString(t));
+           int prc =200;
+#ifdef Q_OS_WIN
+           prc = 800;
+#endif
+           myInputDialog.resize(QApplication::desktop()->screenGeometry().width()-prc-100,QApplication::desktop()->screenGeometry().height()-prc);
+           ok = myInputDialog.exec();
+           t = myInputDialog.textValue().toStdString();
     if(ok){
         conf->addressIpList.clear();
         conf->addressIpList = QString::fromStdString(t).split("\n");
