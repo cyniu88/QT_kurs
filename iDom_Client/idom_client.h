@@ -147,13 +147,9 @@ private slots:
 
     void on_tabWidget_currentChanged();
 
-    void on_sendEXTRA_clicked();
-
     void on_setNumberMPD_clicked();
 
     void on_comboBox_currentIndexChanged();
-
-    void on_setNumberMPD_pressed();
 
     void on_turnOnSleepModeButton_clicked();
 
@@ -177,11 +173,11 @@ public slots:
       void updateTemepretureInfo ();
       void odb_temperature (QString s);
       void odb_tools (QString s);
+      void listMPD(QString s);
 
 signals:
-
     void sendTCP(std::string addres, std::string s);
-    void sendExtra();
+
 
 };
 

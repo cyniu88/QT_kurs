@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(temperature(QString)),w,SLOT(odb_temperature(QString)) );
     QObject::connect(worker,SIGNAL(tools(QString)),w,SLOT(odb_tools(QString))  );
 
-    QObject::connect(  w,SIGNAL(sendExtra()),worker , SLOT(sendExtra()));
+    QObject::connect(worker,SIGNAL(listMPD(QString)),w,SLOT(listMPD(QString))  );
     worker->start();
     w->updateMPDinfo();
     w->show();

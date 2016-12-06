@@ -49,9 +49,10 @@ signals:
     void mpd_volumeInfo(QString s);
     void temperature (QString s);
     void tools (QString s);
+    void listMPD(QString s);
 public slots:
     void fromTCP(std::string addres, std::string qmsg);
-    void sendExtra();
+
 
 };
 

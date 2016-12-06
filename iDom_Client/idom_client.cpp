@@ -171,6 +171,7 @@ void iDom_Client::updateMPDinfo()
 void iDom_Client::updateTemepretureInfo()
 {
     emit sendTCP("temperature","RS232 get temperature");
+    emit sendTCP("listMPD", "MPD list");
 }
 
 void iDom_Client::odb_temperature(QString s)
@@ -186,7 +187,11 @@ void iDom_Client::odb_temperature(QString s)
 
 void iDom_Client::odb_tools(QString s)
 {
-   QMessageBox::information(this,"from tools",s);
+    QMessageBox::information(this,"from tools",s);
+}
+
+void iDom_Client::listMPD(QString s){
+    mpdItems = s.split("\n");
 }
 
 void iDom_Client::on_pushButton_released()
@@ -478,23 +483,14 @@ void iDom_Client::on_tabWidget_currentChanged( )
     }
 }
 
-void iDom_Client::on_sendEXTRA_clicked()
-{
-    emit sendExtra();
-}
 
-void iDom_Client::on_setNumberMPD_pressed()
-{
-    emit sendTCP("MPD","MPD list");
-    ui->lineEdit_MPD_ACK->setText("");
-}
+
 
 void iDom_Client::on_setNumberMPD_clicked()
 {
 
     bool ok;
-    mpdItems =  ui->lineEdit_MPD_ACK->text().split("\n");
-    ui->lineEdit_MPD_ACK->setText("");
+
     QInputDialog myInputDialog;
 
     QString id = myInputDialog.getItem(this, tr("select radio stations"),

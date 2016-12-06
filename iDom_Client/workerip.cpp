@@ -96,6 +96,10 @@ void WorkerIP::run()
                     emit tools (QString::fromStdString(s_buffor));
                 }
 
+                else if (addresOUT.address == "listMPD")
+                {
+                    emit listMPD(QString::fromStdString(s_buffor));
+                }
 
                 break;
             }
@@ -205,7 +209,3 @@ void WorkerIP::fromTCP(std::string addres , std::string qmsg)
 
 }
 
-void WorkerIP::sendExtra()
-{
-    socket->write("OK");
-}
