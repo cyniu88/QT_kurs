@@ -59,7 +59,7 @@ private:
 #endif
 
 private slots:
-    void on_EXITButton_released();
+    void on_exitButton_released();
 
     void scrollTitle();
 
@@ -158,6 +158,8 @@ private slots:
     void on_pushButton_extra_clicked();
 
     void on_pushButton_put_temperature_clicked();
+
+    void on_pushButton_goodBye_clicked();
 
 public slots:
       void setLcdActual(int c);

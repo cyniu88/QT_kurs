@@ -103,7 +103,7 @@ iDom_Client::~iDom_Client()
 
 }
 
-void iDom_Client::on_EXITButton_released()
+void iDom_Client::on_exitButton_released()
 {
     ui->centralWidget->close();
 }
@@ -448,7 +448,6 @@ void iDom_Client::on_pushButton_volumeDOWN_released()
 
 void iDom_Client::on_exitButton_pressed()
 {
-
     emit sendTCP("console","exit");
 }
 
@@ -457,10 +456,7 @@ void iDom_Client::on_pushButtonupdateinfo_released()
     emit sendTCP("MPD_title","MPD get info");
     QThread::sleep(1);
     emit sendTCP("MPD_volume","MPD get volume");
-
 }
-
-
 
 void iDom_Client::setLcdActual(int c)
 {
@@ -471,7 +467,6 @@ void iDom_Client::setLcdAll(int c)
 {
     ui->lcdNumberAll->display(c);
 }
-
 
 void iDom_Client::on_tabWidget_currentChanged( )
 {
@@ -527,8 +522,6 @@ void iDom_Client::on_turnOnSleepModeButton_clicked()
 
 void iDom_Client::on_stopServerButton_clicked()
 {
-
-
     QMessageBox::StandardButton reply;
     reply = QMessageBox::question(this, "", "stop server?",
                                   QMessageBox::Yes|QMessageBox::No);
@@ -569,5 +562,19 @@ void iDom_Client::on_pushButton_extra_clicked()
 
 void iDom_Client::on_pushButton_put_temperature_clicked()
 {
-    emit emit sendTCP("tools","put temperature");
+    emit sendTCP("tools","put temperature");
+}
+
+void iDom_Client::on_pushButton_goodBye_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "", "stop music and LED?",
+                                  QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
+        emit sendTCP("MPD","MPD stop");
+        emit sendTCP("LED","RS232 send LED_STOP:2;");
+        on_exitButton_pressed();
+        QThread::sleep(2);
+        qApp->exit();
+    }
 }
