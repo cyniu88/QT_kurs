@@ -355,27 +355,6 @@ border-radius:   23px;
     <item row="0" column="0" colspan="9">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QLineEdit" name="responsTxt">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);
-border: true;
-border-color: rgb(0, 255, 0,255);
-color: rgb(0, 255, 0);
-font-family:  &quot;Franklin Gothic Medium&quot;;
-font-size:  40px;</string>
-        </property>
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QLCDNumber" name="gazLCD_x">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
@@ -404,6 +383,27 @@ font-size:  40px;</string>
         </property>
         <property name="digitCount">
          <number>4</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="responsTxt">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 255, 0, 50);
+border: true;
+border-color: rgb(0, 255, 0,255);
+color: rgb(0, 255, 0);
+font-family:  &quot;Franklin Gothic Medium&quot;;
+font-size:  40px;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -449,7 +449,7 @@ font-size:  40px;</string>
      <x>0</x>
      <y>0</y>
      <width>1209</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuPo_czenie">

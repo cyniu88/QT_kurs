@@ -10,7 +10,7 @@ WorkerIP::WorkerIP(iDom_CONFIG *config) : config(config)
 
 void WorkerIP::run()
 {
-   // int counter = 100;
+    // int counter = 100;
     config->goWhile = connectAndAuthentication();
 
     unsigned int len_send = 0;
@@ -20,18 +20,14 @@ void WorkerIP::run()
     ///////////// po autentykacji //////////////////////
     ////////////////////////////////////////////////////
     while (goNow){
-
-
         if ( config->goWhile ==  false)
         {
-
             break;
         }
         if (config->workerQueue.Size()<1  ){
             QThread::usleep(10);
             continue;
         }
-
 
         addresOUT = config->workerQueue.Take();
 
@@ -49,7 +45,6 @@ void WorkerIP::run()
         socket->write("OK");
         waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
 
-
         buffor.clear();
         s_buffor.erase();
 
@@ -60,13 +55,10 @@ void WorkerIP::run()
             emit sendAll(len_send);
             buffor = socket->readAll();
             s_buffor += buffor.toStdString();
-            if (s_buffor.length()>=len_send){
-
-
+            if (s_buffor.length()>=len_send)
+            {
                 emit sendActual(s_buffor.length());
                 emit sendAll(len_send);
-                qDebug("mam wsztstko!");
-
 
                 if (addresOUT.address == "console"){
                     emit answer( QString::fromStdString(s_buffor));
@@ -100,20 +92,14 @@ void WorkerIP::run()
                 {
                     emit listMPD(QString::fromStdString(s_buffor));
                 }
-
                 break;
             }
-
-
         }
-
-
     }
     // close the connection
-       disconnectFromServer();
+    disconnectFromServer();
     qDebug("koniec koncow workera @@@@@@@@@@@@");
     config->goWhile=true;
-
 }
 
 bool WorkerIP::connectAndAuthentication()
@@ -123,8 +109,6 @@ bool WorkerIP::connectAndAuthentication()
     for (int i =1 ; i<4 ;++i)
     {
         socket->connectToHost(config->serverIP.c_str(),config->serverPort);
-
-
         if(socket->waitForConnected())
         {
             socket->write(  RSHash().c_str());
@@ -139,9 +123,8 @@ bool WorkerIP::connectAndAuthentication()
 
             if (s_buffor[0]=='O' && s_buffor[1]=='K'){
                 qDebug ()<< "Autentykacja ok";
-
                 emit errorInfo ("INFO","GOTOWE DO UZYWANIA"  );
-               return true;
+                return true;
             }
             else{
                 qDebug() << "Autentykacja faild";
@@ -149,17 +132,15 @@ bool WorkerIP::connectAndAuthentication()
                 socket->disconnect();
                 QThread::sleep(1);
             }
-
         }
         else
         {
             qDebug() << "Not connected!";
             emit errorInfo ("INFO","Not connected!");
         }
-
         QThread::sleep(1);
     }//end for authentication
-  delete socket;
+    delete socket;
     return false;
 }
 
@@ -177,26 +158,21 @@ void WorkerIP::waitSend(int waitTime, int counter)
         //qDebug() << "czekam na zapis "<< QString::number(i);
         if (socket->waitForBytesWritten(waitTime)==true)
         {
-           return;
+            return;
         }
-
     }
-
 }
 
 void WorkerIP::waitRecv(int waitTime, int counter)
-{   bool temp;
+{
+    bool temp;
     for (int i = 0; i< counter;++i){
         temp = socket->waitForReadyRead(waitTime);
-       // qDebug() << "czekam na odczyt "<< QString::number(i) <<" bool:"<<temp;
-
         if (temp ==true)
         {
             return;
         }
-
     }
-
 }
 
 void WorkerIP::fromTCP(std::string addres , std::string qmsg)
@@ -204,8 +180,6 @@ void WorkerIP::fromTCP(std::string addres , std::string qmsg)
     to_send = true;
     addresIN.address = addres;
     addresIN.what = qmsg ;
-
     config->workerQueue.Put(addresIN);
-
 }
 

@@ -269,11 +269,11 @@ border-color: rgb(255, 255, 255,255);</string>
       <property name="iconSize">
        <size>
         <width>50</width>
-        <height>80</height>
+        <height>120</height>
        </size>
       </property>
       <property name="elideMode">
-       <enum>Qt::ElideMiddle</enum>
+       <enum>Qt::ElideNone</enum>
       </property>
       <property name="documentMode">
        <bool>true</bool>

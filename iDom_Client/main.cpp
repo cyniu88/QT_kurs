@@ -2,8 +2,6 @@
 #include <QApplication>
 #include <QObject>
 
-
-
 #include "workerip.h"
 #include "idom_client.h"
 #include "variable.h"
@@ -11,17 +9,13 @@
 std::string s_buffor;
 int main(int argc, char *argv[])
 {
-
     QTimer *infoMPDtimer = new QTimer ();
     QTimer *infoTemperatureTimer = new QTimer();
     QTimer *scroller = new QTimer ();
 
     iDom_CONFIG config;
 
-
-    //config.IPMutex.lock();
     WorkerIP * worker = new WorkerIP(&config);
-
 
     QApplication a(argc, argv);
     a.setWindowIcon( QIcon(":/new/prefix1/iDom_client.ico"));
@@ -43,8 +37,8 @@ int main(int argc, char *argv[])
     QObject::connect(scroller, SIGNAL(timeout()),w,SLOT(scrollTitle()));
     QObject::connect(worker,SIGNAL(temperature(QString)),w,SLOT(odb_temperature(QString)) );
     QObject::connect(worker,SIGNAL(tools(QString)),w,SLOT(odb_tools(QString))  );
-
     QObject::connect(worker,SIGNAL(listMPD(QString)),w,SLOT(listMPD(QString))  );
+
     worker->start();
     w->updateMPDinfo();
     w->show();
@@ -53,27 +47,25 @@ int main(int argc, char *argv[])
     scroller->start(500);
     w->updateTemepretureInfo();
 
-     a.exec();
-     config.goWhile=false;
-     int i = 0;
-     while (config.goWhile==false)
-     {
+    a.exec();
+    config.goWhile=false;
+    int i = 0;
+    while (config.goWhile==false)
+    {
         qDebug() << "czekam: "+QString::number(++i) ;
-
-         if (i>80000)
-
-         {
-             break;
-         }
-     }
-     delete worker;
-     infoMPDtimer->stop();
-     infoTemperatureTimer->stop();
-     scroller->stop();
-     delete infoMPDtimer;
-     delete infoTemperatureTimer;
-     delete scroller;
-     delete w;
+        if (i>80000)
+        {
+            break;
+        }
+    }
+    delete worker;
+    infoMPDtimer->stop();
+    infoTemperatureTimer->stop();
+    scroller->stop();
+    delete infoMPDtimer;
+    delete infoTemperatureTimer;
+    delete scroller;
+    delete w;
 
     return 0;
 }

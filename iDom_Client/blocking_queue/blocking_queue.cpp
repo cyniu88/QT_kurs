@@ -8,7 +8,6 @@ void BlockingQueue<T>::Put(const T& task){
         qDebug("za duzo w kolejce!!!!!");
         return;
     }
-
 	full_.wait(lock, [this]{return (queue_.size() < capacity_);} );
     //assert(queue_.size() < capacity_);
 	queue_.push(task);

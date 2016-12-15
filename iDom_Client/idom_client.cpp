@@ -212,13 +212,11 @@ void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
 void iDom_Client::on_pushButton_12_released()
 {
     sendSignalColor(70, 0, 130,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-
 }
 
 void iDom_Client::on_pushButton_13_released()
 {
     sendSignalColor(255, 192, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-
 }
 
 void iDom_Client::on_pushButton_25_released()
@@ -342,15 +340,12 @@ void iDom_Client::on_pushButton_5_released()
     sendSignalColor(255,0,128,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-
 void iDom_Client::on_playButton_released()
 {
     emit sendTCP("MPD","MPD start");
     emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
 }
-
-
 
 void iDom_Client::on_RESET_pushButton_released()
 {
@@ -360,7 +355,6 @@ void iDom_Client::on_RESET_pushButton_released()
     ui->to_horizontalSlider_2->setValue(60);
     ui->lcdNumber_fromLED->display(0);
     ui->lcdNumber_toLED->display(60);
-
 }
 
 void iDom_Client::on_to_horizontalSlider_2_valueChanged( )
@@ -395,12 +389,9 @@ void iDom_Client::on_spinBox_toLED_valueChanged()
 
 void iDom_Client::on_spinBox_fromLED_valueChanged()
 {
-
     ui->from_horizontalSlider->setValue(ui->spinBox_fromLED->value());
     ui->lcdNumber_fromLED->display(ui->from_horizontalSlider->value());
 }
-
-
 
 void iDom_Client::on_stopButton_released()
 {
