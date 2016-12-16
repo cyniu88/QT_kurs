@@ -44,9 +44,9 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     }
 #endif
     // dodajemy scrolla area  ajki widget  i czym scrolujemy
-    QScroller::grabGesture(ui->wynik,QScroller::TouchGesture);
+    QScroller::grabGesture(ui->txtAnswer,QScroller::TouchGesture);
 
-    ui->wynik->setAttribute(Qt::WA_AcceptTouchEvents);
+    ui->txtAnswer->setAttribute(Qt::WA_AcceptTouchEvents);
 
     ////  //////////////////////////    Ladowanie grafiki  ////////////////////////
     QPixmap pix;
@@ -67,7 +67,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     std::string s =  std::to_string(height) +" and " + std::to_string(width)  ;
 
-    ui->wynik->setText( QString::fromStdString( s));
+    ui->txtAnswer->setText( QString::fromStdString( s));
 #ifdef Q_OS_ANDROID
     QtWebView::initialize();
 #endif
@@ -88,7 +88,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->InsideDEG->setText("\u2103");
     ui->OutsideDEG->setText("\u2103");
 
-    //ui->widgetWWW->layout()->addItem(
+  //  termo.load(  );
+    // ui->widgetWWW->layout()->addWidget(&termo);
 #endif
 }
 
@@ -117,8 +118,8 @@ void iDom_Client::scrollTitle()
 }
 
 void iDom_Client::odb_answer(QString s){
-    ui->wynik->setText(s);
-    ui->wynik->moveCursor(QTextCursor::End);
+    ui->txtAnswer->setText(s);
+    ui->txtAnswer->moveCursor(QTextCursor::End);
     ui->lcdNumberActual ->display(s.size());
     ui->progressBar->setValue(100);
     droid.vibrate(100);

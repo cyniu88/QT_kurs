@@ -13,6 +13,7 @@
 #include <QSystemTrayIcon>
 #include <QInputDialog>
 #include <QDir>
+#include <QtSvg/QSvgWidget>
 
 #ifdef Q_OS_WIN
 #include <QAxWidget>
@@ -52,7 +53,7 @@ private:
 #ifdef Q_OS_WIN
     QSystemTrayIcon  trayIcon;
     QAxWidget  axWidgetTemperature;
-    QAxWidget *  axWidgetTemperaturePTR = &axWidgetTemperature;
+    QAxWidget *axWidgetTemperaturePTR = &axWidgetTemperature;
 #endif
 #ifdef Q_OS_ANDROID
 
