@@ -15,9 +15,9 @@ public:
     explicit eye(QWidget *parent = 0);
     ~eye();
 
-    QSvgWidget k ;
 
-    QByteArray obraz;
+private slots:
+    void on_doubleSpinBox_valueChanged(double arg1);
 
 private:
     Ui::eye *ui;

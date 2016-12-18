@@ -13,9 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        eye.cpp
+        eye.cpp \
+    thermometerSVG/thermometer.cpp
 
-HEADERS  += eye.h
+HEADERS  += eye.h \
+    thermometerSVG/thermometer.h
 
 FORMS    += eye.ui
 
