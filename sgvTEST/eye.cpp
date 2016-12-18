@@ -8,7 +8,7 @@ eye::eye(QWidget *parent) :
     ui->setupUi(this);
     QString path = "C:/cyniu/PROGRAMOWANIE/QT/QT_kurs/iDom_Client/files/svg/test.svg";
 
-    QString stringSVG =  "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>"
+    QString stringSVG1 =  "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>"
                          "<!-- Created with Inkscape (http://www.inkscape.org/) -->"
                          ""
                          "<svg"
@@ -1220,8 +1220,13 @@ eye::eye(QWidget *parent) :
                          "         sodipodi:nodetypes=\"cccsccc\" />"
                          "      <path"
                          "         id=\"path3869\""
-                         "         d=\"m 638.09375,439.70599 0,388.8125 c 0,7.76835 6.2629,14.03125 14.03125,14.03125 7.76835,0 14.03125,-6.2629 14.03125,-14.03125 l 0,-388.8125 -28.0625,0 z\""
-                         "         style=\"opacity:0.78723408;fill:#056aae;fill-opacity:1;fill-rule:nonzero;stroke:none\" />"
+                         "         d=\"m 638.09375,439.70599 0,388.8125 c 0,7.76835 6.2629,14.03125 14.03125,14.03125 7.76835,0 14.03125,-6.2629 14.03125,-14.03125 l 0,";
+    /*tu wysokosc*/
+   QString stringSVG2 = " -208.8125";
+    QString stringSVG3  = "-28.0625,0 z\""
+    /* kijek kolor */    "         style=\"opacity:0.78723408;fill:";
+    QString kolor = "#ffff00";
+    QString stringSVG4 =";fill-opacity:1;fill-rule:nonzero;stroke:none\" />"
                          "      <path"
                          "         style=\"opacity:0.37588651;fill:url(#linearGradient4732);fill-opacity:1;fill-rule:nonzero;stroke:none\""
                          "         d=\"m 638.09375,439.70599 0,388.8125 c 0,7.76835 6.2629,14.03125 14.03125,14.03125 7.76835,0 14.03125,-6.2629 14.03125,-14.03125 l 0,-388.8125 -28.0625,0 z\""
@@ -1234,7 +1239,8 @@ eye::eye(QWidget *parent) :
                          "         sodipodi:cy=\"832.88135\""
                          "         sodipodi:cx=\"1064.7457\""
                          "         id=\"path3046\""
-                         "         style=\"fill:#056aae;fill-opacity:1;fill-rule:nonzero;stroke:none\""
+       /* kulka kolor */ "         style=\"fill:";
+    QString stringSVG5 = ";fill-opacity:1;fill-rule:nonzero;stroke:none\""
                          "         sodipodi:type=\"arc\" />"
                          "      <path"
                          "         sodipodi:type=\"arc\""
@@ -1272,7 +1278,7 @@ eye::eye(QWidget *parent) :
                          "  </g>"
                          "</svg>" ;
 
-
+  QString stringSVG = stringSVG1 + stringSVG2 + stringSVG3 + kolor +stringSVG4 + kolor + stringSVG5;
     obraz = stringSVG.toUtf8();
     qDebug() << "obraz ma: " <<obraz.size() <<  stringSVG;
     k.load(obraz);
