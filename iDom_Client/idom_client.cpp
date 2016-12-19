@@ -88,9 +88,17 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->InsideDEG->setText("\u2103");
     ui->OutsideDEG->setText("\u2103");
 
-  //  termo.load(  );
+    //  termo.load(  );
     // ui->widgetWWW->layout()->addWidget(&termo);
 #endif
+    //load termomether widget
+
+    termoIN.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
+    termoOUT.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
+    termoIN.setBackgroundColor(Qt::yellow);
+    termoOUT.setBackgroundColor(Qt::green);
+    ui->gridLayout_termometerIN->addWidget(&termoIN);
+    ui->gridLayout_termometerOUT->addWidget(&termoOUT);
 }
 
 iDom_Client::~iDom_Client()
@@ -183,7 +191,10 @@ void iDom_Client::odb_temperature(QString s)
     temperatureString = "Temperature Inside: " + in +"\u2103"+ " Outside: "+ out+ "\u2103"+ " ";
     ui->InsideLCD->display( in   );
     ui->OutsideLCD->display( out);
-
+    ui->InsideLCD_2->display( in   );
+    ui->OutsideLCD_2->display( out);
+    termoIN.setTemperature(in.toDouble());
+    termoOUT.setTemperature(out.toDouble());
 }
 
 void iDom_Client::odb_tools(QString s)

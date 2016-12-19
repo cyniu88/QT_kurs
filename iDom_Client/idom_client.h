@@ -28,6 +28,8 @@
 #include "android_interface/android_interface.h"
 #include "workerip.h"
 #include "variable.h"
+#include "../../../QT/QT_kurs/sgvTEST/thermometerSVG/thermometer.h"
+
 
 namespace Ui {
 class iDom_Client;
@@ -50,6 +52,8 @@ private:
     QString temperatureString;
     QStringList mpdItems;
 
+    Thermometer termoIN;
+    Thermometer termoOUT;
 #ifdef Q_OS_WIN
     QSystemTrayIcon  trayIcon;
     QAxWidget  axWidgetTemperature;

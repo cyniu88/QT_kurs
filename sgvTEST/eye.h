@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QSvgWidget>
+
+#include <thermometerSVG/thermometer.h>
 namespace Ui {
 class eye;
 }
@@ -14,7 +16,7 @@ class eye : public QMainWindow
 public:
     explicit eye(QWidget *parent = 0);
     ~eye();
-
+ Thermometer ter;
 
 private slots:
     void on_doubleSpinBox_valueChanged(double arg1);
