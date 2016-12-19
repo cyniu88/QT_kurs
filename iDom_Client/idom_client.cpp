@@ -97,8 +97,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     termoOUT.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
     termoIN.setBackgroundColor(Qt::yellow);
     termoOUT.setBackgroundColor(Qt::green);
-    ui->gridLayout_termometerIN->addWidget(&termoIN);
-    ui->gridLayout_termometerOUT->addWidget(&termoOUT);
+    ui->werIN->addWidget(&termoIN);
+    ui->werOUT->addWidget(&termoOUT);
 }
 
 iDom_Client::~iDom_Client()

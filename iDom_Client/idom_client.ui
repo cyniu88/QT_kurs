@@ -2253,6 +2253,9 @@ background-color: rgba(0, 0, 0, 0);</string>
             </property>
            </widget>
           </item>
+          <item row="2" column="0">
+           <layout class="QVBoxLayout" name="werIN"/>
+          </item>
          </layout>
         </item>
         <item row="1" column="1">
@@ -2344,6 +2347,9 @@ background-color: rgba(0, 0, 0, 0);</string>
              <enum>Qt::RichText</enum>
             </property>
            </widget>
+          </item>
+          <item row="2" column="0">
+           <layout class="QVBoxLayout" name="werOUT"/>
           </item>
          </layout>
         </item>
