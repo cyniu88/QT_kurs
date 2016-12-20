@@ -95,7 +95,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     termoIN.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
     termoOUT.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
-    termoIN.setBackgroundColor(Qt::yellow);
+    termoIN.setBackgroundColor(Qt::green);
     termoOUT.setBackgroundColor(Qt::green);
     ui->werIN->addWidget(&termoIN);
     ui->werOUT->addWidget(&termoOUT);
