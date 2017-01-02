@@ -264,7 +264,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>5</number>
       </property>
       <property name="iconSize">
        <size>
@@ -2376,6 +2376,29 @@ border-color: rgb(255, 255, 255);
           </widget>
          </item>
         </layout>
+       </widget>
+       <widget class="QPushButton" name="pushButton_22">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>130</y>
+          <width>121</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 22px;
+    border-color: beige;</string>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
        </widget>
       </widget>
      </widget>

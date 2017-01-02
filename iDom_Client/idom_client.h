@@ -15,6 +15,7 @@
 #include <QDir>
 #include <QtSvg/QSvgWidget>
 
+
 #ifdef Q_OS_WIN
 #include <QAxWidget>
 #endif
@@ -29,7 +30,6 @@
 #include "workerip.h"
 #include "variable.h"
 #include "../../../QT/QT_kurs/sgvTEST/thermometerSVG/thermometer.h"
-
 
 namespace Ui {
 class iDom_Client;
@@ -165,6 +165,8 @@ private slots:
     void on_pushButton_put_temperature_clicked();
 
     void on_pushButton_goodBye_clicked();
+
+    void on_pushButton_22_clicked();
 
 public slots:
       void setLcdActual(int c);

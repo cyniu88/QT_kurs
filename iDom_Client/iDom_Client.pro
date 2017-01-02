@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT += core gui network sensors svg
+QT += core gui network sensors svg texttospeech
 windows {
             message("* Using settings for Windows.")
             QT +=  axcontainer

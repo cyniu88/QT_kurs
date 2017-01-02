@@ -4,7 +4,8 @@
 #include <QDebug>
 #include <QDesktopWidget>
 #include <QColorDialog>
-
+#include <QTextToSpeechPlugin>
+#include <QTextToSpeech>
 #ifdef Q_OS_ANDROID
 
 #endif
@@ -580,4 +581,15 @@ void iDom_Client::on_pushButton_goodBye_clicked()
         QThread::sleep(2);
         qApp->exit();
     }
+}
+
+void iDom_Client::on_pushButton_22_clicked()
+{
+
+    qDebug() << QTextToSpeech::availableEngines();
+   QTextToSpeech k;
+
+   k.say("hello world");
+
+
 }
