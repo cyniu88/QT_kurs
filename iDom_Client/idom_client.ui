@@ -264,7 +264,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>2</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1018,6 +1018,16 @@ QComboBox::down-arrow {
             <item>
              <property name="text">
               <string>show thread all</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>iDom sun</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>event temperature</string>
              </property>
             </item>
            </widget>
@@ -2160,7 +2170,7 @@ border-color: rgb(255, 255, 255);
           </item>
          </layout>
         </item>
-        <item row="1" column="0">
+        <item row="2" column="0">
          <layout class="QGridLayout" name="gridLayout_12">
           <item row="0" column="0">
            <widget class="QPushButton" name="stopServerButton">
@@ -2191,6 +2201,22 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
          </layout>
+        </item>
+        <item row="1" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </widget>
