@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui.rate, &QSlider::valueChanged, this, &MainWindow::setRate);
     connect(ui.volume, &QSlider::valueChanged, this, &MainWindow::setVolume);
     connect(ui.engine, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::engineSelected);
+
 }
 
 void MainWindow::speak()
