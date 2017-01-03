@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT += core gui network sensors svg texttospeech
+QT += core gui network sensors svg texttospeech quickwidgets
 windows {
             message("* Using settings for Windows.")
             QT +=  axcontainer
@@ -73,4 +73,5 @@ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 win32:RC_ICONS += iDom_client.ico
 
 DISTFILES += \
-    android/src/org/qtproject/example/Chronometer/AndroidHelper.java
+    android/src/org/qtproject/example/Chronometer/AndroidHelper.java \
+    myqmlfile.qml

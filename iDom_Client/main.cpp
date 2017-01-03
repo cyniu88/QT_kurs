@@ -1,6 +1,9 @@
 #include <QTimer>
 #include <QApplication>
 #include <QObject>
+#ifdef Q_OS_ANDROID
+#include <QtWebView>
+#endif
 
 #include "workerip.h"
 #include "idom_client.h"
@@ -19,6 +22,10 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
     a.setWindowIcon( QIcon(":/new/prefix1/iDom_client.ico"));
+
+#ifdef Q_OS_ANDROID
+    QtWebView::initialize();
+#endif
 
     iDom_Client * w = new iDom_Client(&config);
 

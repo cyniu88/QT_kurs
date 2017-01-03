@@ -130,3 +130,8 @@ void MainWindow::localeChanged(const QLocale &locale)
     }
     connect(ui.voice, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::voiceSelected);
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    qDebug()<<"silniki " << QTextToSpeech::availableEngines();
+}
