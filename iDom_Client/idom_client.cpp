@@ -1,11 +1,9 @@
-
 #include <QPixmap>
 #include <QStackedWidget>
 #include <QDebug>
 #include <QDesktopWidget>
 #include <QColorDialog>
-#include <QTextToSpeechPlugin>
-#include <QTextToSpeech>
+
 #ifdef Q_OS_ANDROID
 
 #endif
@@ -54,7 +52,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     if (pix.load( ":/new/prefix1/files/background.png"   ))
     {
-        qDebug("udalo sie  ");
+
     }
 
     pix = pix.scaled(this->size(), Qt::IgnoreAspectRatio);
@@ -70,13 +68,18 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     ui->txtAnswer->setText( QString::fromStdString( s));
 #ifdef Q_OS_ANDROID
-    QtWebView::initialize();
+     viewTemp =  new QQuickWidget;
+    ui->widgetWWW->layout()->addWidget(viewTemp);
+    viewTemp->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
+    viewTemp->show();
+
 #endif
 #ifdef Q_OS_WIN
 
     axWidgetTemperature.setControl("{8856f961-340a-11d0-a96b-00c04fd705a2}");
 
     ui->widgetWWW->layout()->addWidget( axWidgetTemperaturePTR);
+    //ui->quickWidget->setLayout(ui->widgetWWW->layout());
 
     if (ui->tabWidget->currentIndex() == 0 )
     {
@@ -100,17 +103,22 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     termoOUT.setBackgroundColor(Qt::green);
     ui->werIN->addWidget(&termoIN);
     ui->werOUT->addWidget(&termoOUT);
+
+    ivona = new QTextToSpeech(this);
 }
 
 iDom_Client::~iDom_Client()
 {
 #ifdef Q_OS_WIN
     axWidgetTemperature.deleteLater();
-    //delete axWidgetTemperature;
-#endif
-    // delete okno;
-    delete ui;
 
+#endif
+
+#ifdef Q_OS_ANDROID
+    delete viewTemp;
+#endif
+    delete ivona;
+    delete ui;
 }
 
 void iDom_Client::on_exitButton_released()
@@ -583,13 +591,14 @@ void iDom_Client::on_pushButton_goodBye_clicked()
     }
 }
 
-void iDom_Client::on_pushButton_22_clicked()
+void iDom_Client::on_pushButton_ttsInfo_clicked()
 {
-
-    qDebug() << QTextToSpeech::availableEngines();
-   QTextToSpeech *  m_speech = new QTextToSpeech(this);
-m_speech->setVolume(1);
-   m_speech->say("hello world");
-
-
+    QString txt = "Witaj! Jak się masz?";
+    txt+= "temperatura na zewnątrz: ";
+    txt+= QString::number(ui->OutsideLCD->value());
+    txt+= "stopnia celsjusza. Temperatura wewnątrz: ";
+    txt+= QString::number(ui->InsideLCD->value());
+    txt+="stopnia celsjusza.";
+    ivona->say(txt);
 }
+

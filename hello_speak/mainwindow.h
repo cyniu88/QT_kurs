@@ -29,6 +29,9 @@ public slots:
 
     void localeChanged(const QLocale &locale);
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow ui;
     QTextToSpeech *m_speech;

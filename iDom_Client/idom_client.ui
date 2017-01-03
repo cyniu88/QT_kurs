@@ -264,7 +264,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -2081,6 +2081,79 @@ border-color: rgb(0, 0, 0);
         <string>kokoko</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_11">
+        <item row="3" column="0">
+         <layout class="QGridLayout" name="gridLayout_12">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="stopServerButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    border-color: beige;
+    font: bold 20px;
+ 
+ 
+ 
+ </string>
+            </property>
+            <property name="text">
+             <string>STOP SERVER</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="pushButton_ttsInfo">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+color: rgb(170, 255, 0);
+background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
+ border-style: outset;
+    border-width: 4px;
+border-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    border-color: beige;
+    font: bold 20px;
+ </string>
+          </property>
+          <property name="text">
+           <string>READ INFO</string>
+          </property>
+         </widget>
+        </item>
         <item row="0" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
@@ -2169,54 +2242,6 @@ border-color: rgb(255, 255, 255);
            </layout>
           </item>
          </layout>
-        </item>
-        <item row="2" column="0">
-         <layout class="QGridLayout" name="gridLayout_12">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="stopServerButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">
-color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 25px;
-    border-color: beige;
-    font: bold 20px;
- 
- 
- 
- </string>
-            </property>
-            <property name="text">
-             <string>STOP SERVER</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="1" column="0">
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
         </item>
        </layout>
       </widget>
@@ -2376,29 +2401,6 @@ border-color: rgb(255, 255, 255);
           </widget>
          </item>
         </layout>
-       </widget>
-       <widget class="QPushButton" name="pushButton_22">
-        <property name="geometry">
-         <rect>
-          <x>360</x>
-          <y>130</y>
-          <width>121</width>
-          <height>71</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">
-color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 22px;
-    border-color: beige;</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
        </widget>
       </widget>
      </widget>

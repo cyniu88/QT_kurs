@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <sstream>
 #include <memory>
-
+#include <QQuickWidget>
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QScroller>
@@ -14,14 +14,10 @@
 #include <QInputDialog>
 #include <QDir>
 #include <QtSvg/QSvgWidget>
-
+#include <QTextToSpeech>
 
 #ifdef Q_OS_WIN
 #include <QAxWidget>
-#endif
-#ifdef Q_OS_ANDROID
-#include <QtWebView/QtWebView>
-#include <QtWebViewDepends>
 #endif
 
 #include "mainwindow.h"
@@ -59,10 +55,11 @@ private:
     QAxWidget  axWidgetTemperature;
     QAxWidget *axWidgetTemperaturePTR = &axWidgetTemperature;
 #endif
+
 #ifdef Q_OS_ANDROID
-
+    QQuickWidget *viewTemp;
 #endif
-
+ QTextToSpeech *ivona;
 private slots:
     void on_exitButton_released();
 
@@ -166,7 +163,7 @@ private slots:
 
     void on_pushButton_goodBye_clicked();
 
-    void on_pushButton_22_clicked();
+    void on_pushButton_ttsInfo_clicked();
 
 public slots:
       void setLcdActual(int c);

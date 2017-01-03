@@ -32,16 +32,17 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\iDom_Client.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\Qt5DBus.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\Qt5Gamepad.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_7_0_MinGW_32bit-Release\release\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_8_0_MinGW_32bit-Release\release\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_8_0_MinGW_32bit-Release\release\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_8_0_MinGW_32bit-Release\release\Qt5Svg.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_8_0_MinGW_32bit-Release\release\Qt5TextToSpeech.dll"; DestDir: "{app}"; Flags: ignoreversion
+
+Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_8_0_MinGW_32bit-Release\release\iDom_Client.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_8_0_MinGW_32bit-Release\release\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_8_0_MinGW_32bit-Release\release\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_8_0_MinGW_32bit-Release\release\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_8_0_MinGW_32bit-Release\release\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_8_0_MinGW_32bit-Release\release\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

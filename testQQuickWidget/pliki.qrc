@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/p">
+        <file>www.qml</file>
+    </qresource>
+</RCC>
