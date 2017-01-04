@@ -19,9 +19,7 @@
 #ifdef Q_OS_WIN
 #include <QAxWidget>
 #endif
-
-#include "mainwindow.h"
-
+#include "wwwshowwindow.h"
 #include "android_interface/android_interface.h"
 #include "workerip.h"
 #include "variable.h"
@@ -41,8 +39,8 @@ public:
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
-
-    MainWindow *okno;
+    /////////// okno dla www
+    wwwShowWindow *wwwWindow = NULL;
     void sendSignalColor(int r,int g, int b, int from=0, int to=60);
     android_interface droid;
     QString temperatureString;
@@ -52,8 +50,8 @@ private:
     Thermometer termoOUT;
 #ifdef Q_OS_WIN
     QSystemTrayIcon  trayIcon;
-    QAxWidget  axWidgetTemperature;
-    QAxWidget *axWidgetTemperaturePTR = &axWidgetTemperature;
+   // QAxWidget  axWidgetTemperature;
+   //  QAxWidget *axWidgetTemperaturePTR = NULL;
 #endif
 
 #ifdef Q_OS_ANDROID
@@ -169,6 +167,10 @@ private slots:
     void on_tabRightButton_clicked();
 
     void on_tabLeftButton_clicked();
+
+    void on_horizontalSlider_tabNavigate_valueChanged(int value);
+
+    void on_pushButton_showTemperatureCharts_clicked();
 
 public slots:
       void setLcdActual(int c);

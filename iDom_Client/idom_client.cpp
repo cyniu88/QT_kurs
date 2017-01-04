@@ -69,7 +69,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->txtAnswer->setText( QString::fromStdString( s));
 #ifdef Q_OS_ANDROID
 
-   // viewTemp =  new QQuickWidget;
+    // viewTemp =  new QQuickWidget;
 
 
     //viewTemp->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
@@ -81,26 +81,24 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 #endif
 #ifdef Q_OS_WIN
 
-    axWidgetTemperature.setControl("{8856f961-340a-11d0-a96b-00c04fd705a2}");
+//    axWidgetTemperature.setControl("{8856f961-340a-11d0-a96b-00c04fd705a2}");
 
-    ui->widgetWWW->layout()->addWidget( axWidgetTemperaturePTR);
-    //ui->quickWidget->setLayout(ui->widgetWWW->layout());
+//    ui->widgetWWW->layout()->addWidget( axWidgetTemperaturePTR);
+//    //ui->quickWidget->setLayout(ui->widgetWWW->layout());
 
-    if (ui->tabWidget->currentIndex() == 0 )
-    {
-        axWidgetTemperature.dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
-    }
+//    if (ui->tabWidget->currentIndex() == 0 )
+//    {
+//        axWidgetTemperature.dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+//    }
 #endif
 
 #ifdef Q_OS_ANDROID
-   // QtWebView::initialize();
+    // QtWebView::initialize();
     ui->InsideDEG->setText("\u2103");
     ui->OutsideDEG->setText("\u2103");
 
     //  termo.load(  );
     // ui->widgetWWW->layout()->addWidget(&termo);
-    ui->tabWidget->tabBar()->hide();
-
 #endif
     //load termomether widget
 
@@ -116,19 +114,25 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->lineEdit_tabName->setText(   ui->tabWidget->tabText(ui->tabWidget->currentIndex())  );
     ui->horizontalSlider_tabNavigate->setMaximum(ui->tabWidget->tabBar()->count()-1 );
     ui->horizontalSlider_tabNavigate->setValue(ui->tabWidget->currentIndex());
+    ui->tabWidget->tabBar()->hide();
+
+
     ivona = new QTextToSpeech(this);
 }
 
 iDom_Client::~iDom_Client()
 {
 #ifdef Q_OS_WIN
-    axWidgetTemperature.deleteLater();
-
+//    if (axWidgetTemperaturePTR != NULL){
+//        axWidgetTemperaturePTR->deleteLater();
+//    }
+//    delete axWidgetTemperaturePTR;
 #endif
 
 #ifdef Q_OS_ANDROID
-  // delete viewTemp;
+    // delete viewTemp;
 #endif
+    delete wwwWindow;
     delete ivona;
     delete ui;
 }
@@ -499,7 +503,7 @@ void iDom_Client::on_tabWidget_currentChanged( )
     if (ui->tabWidget->currentIndex() == 0 )
     {
 #ifdef Q_OS_WIN
-        axWidgetTemperature .dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+      //  axWidgetTemperature .dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
 #endif
 #ifdef Q_OS_ANDROID
 
@@ -507,7 +511,7 @@ void iDom_Client::on_tabWidget_currentChanged( )
     }
     else {
 #ifdef Q_OS_ANDROID
-      //  delete viewTemp;
+        //  delete viewTemp;
 #endif
     }
 }
@@ -630,10 +634,25 @@ void iDom_Client::on_pushButton_ttsInfo_clicked()
 
 void iDom_Client::on_tabRightButton_clicked()
 {
-    ui->tabWidget->setCurrentIndex( ui->tabWidget->currentIndex()+1 );
+    ui->horizontalSlider_tabNavigate->setValue(ui->horizontalSlider_tabNavigate->value()+1);
 }
 
 void iDom_Client::on_tabLeftButton_clicked()
 {
-     ui->tabWidget->setCurrentIndex( ui->tabWidget->currentIndex()-1 );
+    ui->horizontalSlider_tabNavigate->setValue(ui->horizontalSlider_tabNavigate->value()-1);
+}
+
+void iDom_Client::on_horizontalSlider_tabNavigate_valueChanged(int value)
+{
+    ui->tabWidget->setCurrentIndex(value);
+}
+
+void iDom_Client::on_pushButton_showTemperatureCharts_clicked()
+{
+    if (wwwWindow!= NULL){
+        qDebug() << "kasuje bo nie jest null";
+        delete wwwWindow;
+    }
+    wwwWindow = new wwwShowWindow();
+    wwwWindow->show();
 }
