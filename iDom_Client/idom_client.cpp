@@ -68,6 +68,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     ui->txtAnswer->setText( QString::fromStdString( s));
 #ifdef Q_OS_ANDROID
+
    // viewTemp =  new QQuickWidget;
 
 
@@ -75,6 +76,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     //ui->widgetAndroidWWW->layout()->addWidget(viewTemp);
     //viewTemp->showMinimized();
     //ui->quickWidget->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
+
 
 #endif
 #ifdef Q_OS_WIN
@@ -613,13 +615,16 @@ void iDom_Client::on_pushButton_goodBye_clicked()
 
 void iDom_Client::on_pushButton_ttsInfo_clicked()
 {
+
     QString txt = "Witaj! Jak się masz?,";
+
     txt+= "temperatura na zewnątrz: ";
     txt+= QString::number(ui->OutsideLCD->value());
     txt+= "stopni Temperatura wewnątrz: ";
     txt+= QString::number(ui->InsideLCD->value());
     txt+="stopni celsjusza.";
     ivona->say(txt);
+
 }
 
 
