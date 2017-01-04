@@ -94,7 +94,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>2</number>
       </property>
       <property name="iconSize">
        <size>
@@ -138,7 +138,7 @@ border-color: rgb(255, 255, 255,255);</string>
                <x>0</x>
                <y>0</y>
                <width>815</width>
-               <height>693</height>
+               <height>689</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -342,19 +342,17 @@ background-color: rgba(0, 0, 0, 0);</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: bold 34px;
+           <string notr="true"> QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 20px;
+ font: bold 20px;
  image: url(:/new/prefix1/files/player/sound decrease.png);
+}
+QPushButton:pressed {
+border:none;
+}
 
-color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-     border-radius: 60px;
-    border-color: beige;
-    font: bold 34px;
-  Text-align:right;
-    padding: 6px;</string>
+</string>
           </property>
           <property name="text">
            <string/>
@@ -370,17 +368,15 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/new/prefix1/files/player/sound increase.png);
-color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-      border-radius: 60px;
-    border-color: beige;
-    font: bold 34px;
-  Text-align:right;
-    padding: 6px;</string>
+           <string notr="true"> QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 20px;
+ font: bold 20px;
+image: url(:/new/prefix1/files/player/sound increase.png);
+}
+QPushButton:pressed {
+border:none;
+}</string>
           </property>
           <property name="text">
            <string/>
@@ -396,17 +392,13 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-     border-radius: 60px;
-    border-color: beige;
-    font: bold 34px;
- Text-align:center;
-
-    padding: 6px;</string>
+           <string notr="true"> QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 20px;
+ font: bold 34px;}
+QPushButton:pressed {
+border:none;
+}</string>
           </property>
           <property name="text">
            <string>SONG</string>
@@ -422,18 +414,16 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(170, 255, 0);
+           <string notr="true">
+ QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 20px;
+ font: bold 20px;
 image: url(:/new/prefix1/files/player/pause.png);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-     border-radius: 60px;
-    border-color: beige;
-    font: bold 34px;
- Text-align:right;
-
-    padding: 6px;</string>
+}
+QPushButton:pressed {
+border:none;
+}</string>
           </property>
           <property name="text">
            <string/>
@@ -455,18 +445,15 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(170, 255, 0);
+           <string notr="true"> QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 20px;
+ font: bold 20px;
 image: url(:/new/prefix1/files/player/rewind.png);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-  border-radius: 60px;
-    border-color: beige;
-    font: bold 34px;
- Text-align:right;
-
-    padding: 6px;</string>
+}
+QPushButton:pressed {
+border:none;
+}</string>
           </property>
           <property name="text">
            <string/>
@@ -482,18 +469,17 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(170, 255, 0);
+           <string notr="true"> QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 20px;
+ font: bold 20px;
 image: url(:/new/prefix1/files/player/forward.png);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-  border-radius: 60px;
-    border-color: beige;
-    font: bold 34px;
- Text-align:right;
+}
+QPushButton:pressed {
+border:none;
+}
 
-    padding: 6px;</string>
+</string>
           </property>
           <property name="text">
            <string/>
@@ -536,18 +522,16 @@ background-color: rgba(170, 0, 0, 10);</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(170, 255, 0);
-Text-align:right;
+           <string notr="true"> 
+ QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 20px;
+ font: bold 20px;
 image: url(:/new/prefix1/files/player/play.png);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-      border-radius: 60px;
-    border-color: beige;
-    font: bold 34px;
- 
-    padding: 6px;
+}
+QPushButton:pressed {
+border:none;
+}
 
  </string>
           </property>
@@ -580,18 +564,15 @@ border-color: rgb(255, 255, 255);
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;stop play music&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(170, 255, 0);
-image: url(:/new/prefix1/files/player/stop.png); 
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 60px;
-    border-color: beige;
-    font: bold 34px;
- Text-align:right;
-
-    padding: 6px;</string>
+           <string notr="true"> QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 20px;
+ font: bold 20px;
+image: url(:/new/prefix1/files/player/stop.png);
+}
+QPushButton:pressed {
+border:none;
+}</string>
           </property>
           <property name="text">
            <string/>
@@ -718,16 +699,19 @@ QProgressBar::chunk {
              <enum>Qt::LeftToRight</enum>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-     border-radius: 30px;
-    border-color: beige;
+             <string notr="true">
+QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147,0, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+ 
+color: rgb(0, 255, 0);
     font: bold 34px;
   Text-align:center;
-    padding: 3px;</string>
+}
+QPushButton:pressed {
+border:none;
+}
+ </string>
             </property>
             <property name="text">
              <string>SEND</string>
@@ -1928,15 +1912,15 @@ border-color: rgb(0, 0, 0);
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">
-color: rgb(170, 255, 0);
-background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 25px;
-    border-color: beige;
-    font: bold 20px;
+             <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+ font: bold 20px;
+}
+QPushButton:pressed {
+border:none;
+}
+   
  
  
  
@@ -1974,16 +1958,14 @@ border-color: rgb(255, 255, 255);
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">
-color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 25px;
-    border-color: beige;
-    font: bold 20px;
- </string>
+           <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+ font: bold 20px;
+}
+QPushButton:pressed {
+border:none;
+}</string>
           </property>
           <property name="text">
            <string>READ INFO</string>
@@ -2003,16 +1985,14 @@ border-color: rgb(255, 255, 255);
                </sizepolicy>
               </property>
               <property name="styleSheet">
-               <string notr="true">
-color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 25px;
-    border-color: beige;
-    font: bold 20px;
- 
+               <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+ font: bold 20px;
+}
+QPushButton:pressed {
+border:none;
+}
  
  
  </string>
@@ -2031,17 +2011,14 @@ border-color: rgb(255, 255, 255);
                </sizepolicy>
               </property>
               <property name="styleSheet">
-               <string notr="true">
-color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 25px;
-    border-color: beige;
-    font: bold 20px;
- 
- 
+               <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+ font: bold 20px;
+}
+QPushButton:pressed {
+border:none;
+}
  
  </string>
               </property>
@@ -2059,16 +2036,14 @@ border-color: rgb(255, 255, 255);
                </sizepolicy>
               </property>
               <property name="styleSheet">
-               <string notr="true">
-color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 25px;
-    border-color: beige;
-    font: bold 20px;
- </string>
+               <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+ font: bold 20px;
+}
+QPushButton:pressed {
+border:none;
+}</string>
               </property>
               <property name="text">
                <string>GOODBYE</string>
@@ -2380,16 +2355,15 @@ background-color: rgba(0, 0, 0, 0);</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">
-color: rgb(170, 255, 0);
-background-color: qlineargradient(spread:reflect, x1:0.782146, y1:0.886, x2:0.780899, y2:0.079, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));
- border-style: outset;
-    border-width: 4px;
-border-color: rgb(255, 255, 255);
-    border-radius: 22px;
-    border-color: beige;
-    font: bold 20px;
- 
+           <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+ font: bold 20px;
+	color: rgb(0, 255, 0);
+}
+QPushButton:pressed {
+border:none;
+}
  </string>
           </property>
           <property name="text">
@@ -2422,9 +2396,14 @@ border-color: rgb(255, 255, 255);
          </sizepolicy>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
- 
-border-radius: 15px;</string>
+         <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+}
+QPushButton:pressed {
+
+border:none;
+}</string>
         </property>
         <property name="text">
          <string/>
@@ -2481,9 +2460,13 @@ color: rgb(0, 255, 0);</string>
          </sizepolicy>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
- 
-border-radius: 15px;</string>
+         <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+}
+QPushButton:pressed {
+border:none;
+}</string>
         </property>
         <property name="text">
          <string/>
@@ -2506,16 +2489,16 @@ border-radius: 15px;</string>
      <widget class="QSlider" name="horizontalSlider_tabNavigate">
       <property name="styleSheet">
        <string notr="true">QSlider::groove:horizontal {
-    border: 1px solid #999999;
+    
     height: 8px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #007FFF, stop:1 #EEEEEE);
     margin: 2px 0;
 }
 
 QSlider::handle:horizontal {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
-    border: 1px solid #5c5c5c;
-    width: 18px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #00FF00, stop:1 #EEEEEE);
+   
+    width: 100px;
     margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
     border-radius: 3px;
 }</string>
