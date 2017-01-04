@@ -57,7 +57,7 @@ private:
 #endif
 
 #ifdef Q_OS_ANDROID
-    QQuickWidget *viewTemp;
+   // QQuickWidget *viewTemp = NULL;
 #endif
  QTextToSpeech *ivona;
 private slots:
@@ -164,6 +164,11 @@ private slots:
     void on_pushButton_goodBye_clicked();
 
     void on_pushButton_ttsInfo_clicked();
+
+
+    void on_tabRightButton_clicked();
+
+    void on_tabLeftButton_clicked();
 
 public slots:
       void setLcdActual(int c);

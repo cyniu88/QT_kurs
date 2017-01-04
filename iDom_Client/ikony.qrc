@@ -19,6 +19,8 @@
         <file>files/down_arrow.png</file>
         <file>files/font/DK_Trashtype.ttf</file>
         <file>files/svg/test.svg</file>
+        <file>files/Green_Arrow_Left.svg</file>
+        <file>files/Green_Arrow_Right.svg</file>
     </qresource>
     <qresource prefix="/www">
         <file>myqmlfileforwww.qml</file>

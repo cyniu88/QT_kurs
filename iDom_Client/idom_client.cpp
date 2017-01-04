@@ -68,10 +68,13 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     ui->txtAnswer->setText( QString::fromStdString( s));
 #ifdef Q_OS_ANDROID
-     viewTemp =  new QQuickWidget;
-    ui->widgetWWW->layout()->addWidget(viewTemp);
-    viewTemp->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
-    viewTemp->show();
+   // viewTemp =  new QQuickWidget;
+
+
+    //viewTemp->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
+    //ui->widgetAndroidWWW->layout()->addWidget(viewTemp);
+    //viewTemp->showMinimized();
+    //ui->quickWidget->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
 
 #endif
 #ifdef Q_OS_WIN
@@ -88,12 +91,14 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 #endif
 
 #ifdef Q_OS_ANDROID
-    QtWebView::initialize();
+   // QtWebView::initialize();
     ui->InsideDEG->setText("\u2103");
     ui->OutsideDEG->setText("\u2103");
 
     //  termo.load(  );
     // ui->widgetWWW->layout()->addWidget(&termo);
+    ui->tabWidget->tabBar()->hide();
+
 #endif
     //load termomether widget
 
@@ -104,6 +109,11 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->werIN->addWidget(&termoIN);
     ui->werOUT->addWidget(&termoOUT);
 
+    /// nawigate bar
+    ///
+    ui->lineEdit_tabName->setText(   ui->tabWidget->tabText(ui->tabWidget->currentIndex())  );
+    ui->horizontalSlider_tabNavigate->setMaximum(ui->tabWidget->tabBar()->count()-1 );
+    ui->horizontalSlider_tabNavigate->setValue(ui->tabWidget->currentIndex());
     ivona = new QTextToSpeech(this);
 }
 
@@ -115,7 +125,7 @@ iDom_Client::~iDom_Client()
 #endif
 
 #ifdef Q_OS_ANDROID
-    delete viewTemp;
+  // delete viewTemp;
 #endif
     delete ivona;
     delete ui;
@@ -482,10 +492,20 @@ void iDom_Client::setLcdAll(int c)
 
 void iDom_Client::on_tabWidget_currentChanged( )
 {
+    ui->lineEdit_tabName->setText(   ui->tabWidget->tabText(ui->tabWidget->currentIndex())  );
+    ui->horizontalSlider_tabNavigate->setValue(ui->tabWidget->currentIndex());
     if (ui->tabWidget->currentIndex() == 0 )
     {
 #ifdef Q_OS_WIN
         axWidgetTemperature .dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+#endif
+#ifdef Q_OS_ANDROID
+
+#endif
+    }
+    else {
+#ifdef Q_OS_ANDROID
+      //  delete viewTemp;
 #endif
     }
 }
@@ -593,12 +613,22 @@ void iDom_Client::on_pushButton_goodBye_clicked()
 
 void iDom_Client::on_pushButton_ttsInfo_clicked()
 {
-    QString txt = "Witaj! Jak się masz?";
+    QString txt = "Witaj! Jak się masz?,";
     txt+= "temperatura na zewnątrz: ";
     txt+= QString::number(ui->OutsideLCD->value());
-    txt+= "stopnia celsjusza. Temperatura wewnątrz: ";
+    txt+= "stopni Temperatura wewnątrz: ";
     txt+= QString::number(ui->InsideLCD->value());
-    txt+="stopnia celsjusza.";
+    txt+="stopni celsjusza.";
     ivona->say(txt);
 }
 
+
+void iDom_Client::on_tabRightButton_clicked()
+{
+    ui->tabWidget->setCurrentIndex( ui->tabWidget->currentIndex()+1 );
+}
+
+void iDom_Client::on_tabLeftButton_clicked()
+{
+     ui->tabWidget->setCurrentIndex( ui->tabWidget->currentIndex()-1 );
+}
