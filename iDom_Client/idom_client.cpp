@@ -3,7 +3,7 @@
 #include <QDebug>
 #include <QDesktopWidget>
 #include <QColorDialog>
-
+#include <QDateTime>
 #ifdef Q_OS_ANDROID
 
 #endif
@@ -620,13 +620,13 @@ void iDom_Client::on_pushButton_goodBye_clicked()
 void iDom_Client::on_pushButton_ttsInfo_clicked()
 {
 
-    QString txt = "Witaj! Jak się masz?,";
-
-    txt+= "temperatura na zewnątrz: ";
+    QString txt = "Godzina:";
+    txt+= QDateTime::currentDateTime().toString("hh:mm");
+    txt+= ". Temperatura na zewnątrz: ";
     txt+= QString::number(ui->OutsideLCD->value());
-    txt+= "stopni Temperatura wewnątrz: ";
+    txt+= "stopni. Temperatura wewnątrz: ";
     txt+= QString::number(ui->InsideLCD->value());
-    txt+="stopni celsjusza.";
+    txt+="stopni.";
     ivona->say(txt);
 
 }

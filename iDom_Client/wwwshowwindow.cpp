@@ -1,6 +1,6 @@
 #include "wwwshowwindow.h"
 #include "ui_wwwshowwindow.h"
-
+#include <QDebug>
 wwwShowWindow::wwwShowWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::wwwShowWindow)
@@ -21,6 +21,7 @@ wwwShowWindow::wwwShowWindow(QWidget *parent) :
 
 wwwShowWindow::~wwwShowWindow()
 {
+    qDebug() << "\n\n\n destruktor!!!!!!!";
     delete ui;
 }
 
