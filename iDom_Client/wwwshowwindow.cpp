@@ -17,17 +17,30 @@ wwwShowWindow::wwwShowWindow(QWidget *parent) :
     axWidgetTemperature.dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
 
 #endif
+#ifdef Q_OS_ANDROID
+    viewTemp =  new QQuickWidget;
+    viewTemp->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
+    ui->widgetWWW_temp->layout()->addWidget(viewTemp);
+    viewTemp->showMaximized();
+
+#endif
 }
 
 wwwShowWindow::~wwwShowWindow()
 {
     qDebug() << "\n\n\n destruktor!!!!!!!";
+#ifdef Q_OS_ANDROID
+    delete viewTemp;
+#endif
     delete ui;
 }
 
 void wwwShowWindow::on_pushButton_clicked()
 {
 #ifdef Q_OS_WIN
-        axWidgetTemperature .dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+    axWidgetTemperature .dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+#endif
+#ifdef Q_OS_ANDROID
+    delete viewTemp;
 #endif
 }
