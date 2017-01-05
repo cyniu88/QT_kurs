@@ -92,6 +92,9 @@ void WorkerIP::run()
                 {
                     emit listMPD(QString::fromStdString(s_buffor));
                 }
+                else if (addresOUT.address =="TTS"){
+                    emit signalFromTTS(QString::fromStdString(s_buffor));
+                }
                 break;
             }
         }

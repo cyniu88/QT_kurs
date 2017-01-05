@@ -231,6 +231,12 @@ void iDom_Client::listMPD(QString s){
     mpdItems = s.split("\n");
 }
 
+void iDom_Client::textToSpeachSLOTS(QString s)
+{
+    qDebug() << "from TTS: "<< s;
+    ivona->say(s);
+}
+
 void iDom_Client::on_pushButton_released()
 {
     config->command = ui->comboBox->currentText().toStdString();
@@ -620,14 +626,15 @@ void iDom_Client::on_pushButton_goodBye_clicked()
 void iDom_Client::on_pushButton_ttsInfo_clicked()
 {
 
-    QString txt = "Godzina:";
-    txt+= QDateTime::currentDateTime().toString("hh:mm");
-    txt+= ". Temperatura na zewnątrz: ";
-    txt+= QString::number(ui->OutsideLCD->value());
-    txt+= "stopni. Temperatura wewnątrz: ";
-    txt+= QString::number(ui->InsideLCD->value());
-    txt+="stopni.";
-    ivona->say(txt);
+//    QString txt = "Godzina:";
+//    txt+= QDateTime::currentDateTime().toString("hh:mm");
+//    txt+= ". Temperatura na zewnątrz: ";
+//    txt+= QString::number(ui->OutsideLCD->value());
+//    txt+= "stopni. Temperatura wewnątrz: ";
+//    txt+= QString::number(ui->InsideLCD->value());
+//    txt+="stopni.";
+//    ivona->say(txt);
+    emit sendTCP("TTS","iDom text");
 
 }
 

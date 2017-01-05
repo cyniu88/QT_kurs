@@ -187,6 +187,7 @@ public slots:
       void odb_temperature (QString s);
       void odb_tools (QString s);
       void listMPD(QString s);
+      void textToSpeachSLOTS(QString s);
 
 signals:
     void sendTCP(std::string addres, std::string s);

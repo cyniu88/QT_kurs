@@ -50,6 +50,7 @@ signals:
     void temperature (QString s);
     void tools (QString s);
     void listMPD(QString s);
+    void signalFromTTS(QString s);
 public slots:
     void fromTCP(std::string addres, std::string qmsg);
 
