@@ -272,7 +272,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                    <enum>QFrame::NoFrame</enum>
                   </property>
                   <property name="digitCount">
-                   <number>5</number>
+                   <number>6</number>
                   </property>
                  </widget>
                 </item>
@@ -297,7 +297,7 @@ background-color: rgba(0, 0, 0, 0);</string>
                    <bool>false</bool>
                   </property>
                   <property name="digitCount">
-                   <number>5</number>
+                   <number>6</number>
                   </property>
                   <property name="segmentStyle">
                    <enum>QLCDNumber::Filled</enum>
@@ -2149,7 +2149,7 @@ border:none;
                <bool>false</bool>
               </property>
               <property name="digitCount">
-               <number>5</number>
+               <number>6</number>
               </property>
               <property name="segmentStyle">
                <enum>QLCDNumber::Filled</enum>
@@ -2207,7 +2207,7 @@ border:none;
                <enum>QFrame::NoFrame</enum>
               </property>
               <property name="digitCount">
-               <number>5</number>
+               <number>6</number>
               </property>
              </widget>
             </item>
