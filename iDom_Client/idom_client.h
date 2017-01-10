@@ -24,6 +24,7 @@
 #include "workerip.h"
 #include "variable.h"
 #include "../../../QT/QT_kurs/sgvTEST/thermometerSVG/thermometer.h"
+#include "filedownloader.h"
 
 namespace Ui {
 class iDom_Client;
@@ -48,6 +49,9 @@ private:
 
     Thermometer termoIN;
     Thermometer termoOUT;
+
+    FileDownloader *m_pImgCtrl;
+    bool cameraWork = false;
 #ifdef Q_OS_WIN
     QSystemTrayIcon  trayIcon;
    // QAxWidget  axWidgetTemperature;
@@ -171,6 +175,14 @@ private slots:
     void on_horizontalSlider_tabNavigate_valueChanged(int value);
 
     void on_pushButton_showTemperatureCharts_clicked();
+
+    void on_pushButton_22_clicked();
+
+    void loadImage(QByteArray d);
+
+    void on_camera_button_reload_clicked();
+
+    void on_tabWidget_currentChanged(int index);
 
 public slots:
       void setLcdActual(int c);

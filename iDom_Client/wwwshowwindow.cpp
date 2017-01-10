@@ -18,10 +18,11 @@ wwwShowWindow::wwwShowWindow(QWidget *parent) :
 
 #endif
 #ifdef Q_OS_ANDROID
-    viewTemp =  new QQuickWidget;
-    viewTemp->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
-    ui->widgetWWW_temp->layout()->addWidget(viewTemp);
-    viewTemp->showMaximized();
+    //    viewTemp =  new QQuickWidget;
+    //    viewTemp->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
+    //    ui->widgetWWW_temp->layout()->addWidget(viewTemp);
+    //    viewTemp->show();
+    //viewTemp->hide();
 
 #endif
 }
@@ -41,6 +42,22 @@ void wwwShowWindow::on_pushButton_clicked()
     axWidgetTemperature .dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
 #endif
 #ifdef Q_OS_ANDROID
+    if (viewTemp != NULL) {
+        delete viewTemp;
+    }
+    viewTemp =  new QQuickWidget;
+    viewTemp->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
+    ui->widgetWWW_temp->layout()->addWidget(viewTemp);
+    viewTemp->showMaximized();
+    // delete viewTemp;
+#endif
+}
+
+void wwwShowWindow::on_pushButton_2_clicked()
+{
+#ifdef Q_OS_ANDROID
+    viewTemp->hide();
     delete viewTemp;
+    viewTemp = NULL;
 #endif
 }

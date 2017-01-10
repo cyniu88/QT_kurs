@@ -18,8 +18,19 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="1">
+    <item row="2" column="0" colspan="3">
+     <widget class="QWidget" name="widgetWWW_temp" native="true">
+      <layout class="QGridLayout" name="gridLayout_2"/>
+     </widget>
+    </item>
+    <item row="0" column="2">
      <widget class="QPushButton" name="pushButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
@@ -36,22 +47,28 @@ border:none;
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+    <item row="0" column="0" colspan="2">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 8px;
+font: bold 20px ;
+}
+QPushButton:pressed {
+border:none;
+}
+</string>
       </property>
-     </spacer>
-    </item>
-    <item row="1" column="0" colspan="2">
-     <widget class="QWidget" name="widgetWWW_temp" native="true">
-      <layout class="QGridLayout" name="gridLayout_2"/>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
      </widget>
     </item>
    </layout>

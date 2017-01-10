@@ -27,7 +27,8 @@ SOURCES += main.cpp\
             blocking_queue/blocking_queue.cpp \
             android_interface/android_interface.cpp \
     ../sgvTEST/thermometerSVG/thermometer.cpp \
-    wwwshowwindow.cpp
+    wwwshowwindow.cpp \
+    filedownloader.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  +=  androidhelper_cyniu.cpp
@@ -40,7 +41,8 @@ HEADERS  += idom_client.h \
             blocking_queue/blocking_queue.h \
             android_interface/android_interface.h \
     ../sgvTEST/thermometerSVG/thermometer.h \
-    wwwshowwindow.h
+    wwwshowwindow.h \
+    filedownloader.h
 android {
             message("* Using settings for Android.")
             HEADERS +=  androidhelper_cyniu.h

@@ -94,8 +94,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
 #ifdef Q_OS_ANDROID
     // QtWebView::initialize();
-    ui->InsideDEG->setText("\u2103");
-    ui->OutsideDEG->setText("\u2103");
 
     //  termo.load(  );
     // ui->widgetWWW->layout()->addWidget(&termo);
@@ -116,7 +114,9 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->horizontalSlider_tabNavigate->setValue(ui->tabWidget->currentIndex());
     ui->tabWidget->tabBar()->hide();
 
-
+    ///////////////////////////// camera part
+    m_pImgCtrl = new FileDownloader( QUrl("http://cyniu88.no-ip.pl:1183/snapshot.cgi?rate=0&amp;user=admin&amp;pwd=tajnehaslo"));
+    QObject::connect( m_pImgCtrl, SIGNAL(downloaded(QByteArray)), this, SLOT(loadImage(QByteArray))   );
     ivona = new QTextToSpeech(this);
 }
 
@@ -132,6 +132,7 @@ iDom_Client::~iDom_Client()
 #ifdef Q_OS_ANDROID
     // delete viewTemp;
 #endif
+    delete m_pImgCtrl;
     delete wwwWindow;
     delete ivona;
     delete ui;
@@ -214,8 +215,6 @@ void iDom_Client::odb_temperature(QString s)
     QString out =s.split(":")[1];
     out = out.split("\r")[0];
     temperatureString = "Temperature Inside: " + in +"\u2103"+ " Outside: "+ out+ "\u2103"+ " ";
-    ui->InsideLCD->display( in   );
-    ui->OutsideLCD->display( out);
     ui->InsideLCD_2->display( in   );
     ui->OutsideLCD_2->display( out);
     termoIN.setTemperature(in.toDouble());
@@ -625,19 +624,8 @@ void iDom_Client::on_pushButton_goodBye_clicked()
 
 void iDom_Client::on_pushButton_ttsInfo_clicked()
 {
-
-//    QString txt = "Godzina:";
-//    txt+= QDateTime::currentDateTime().toString("hh:mm");
-//    txt+= ". Temperatura na zewnątrz: ";
-//    txt+= QString::number(ui->OutsideLCD->value());
-//    txt+= "stopni. Temperatura wewnątrz: ";
-//    txt+= QString::number(ui->InsideLCD->value());
-//    txt+="stopni.";
-//    ivona->say(txt);
     emit sendTCP("TTS","iDom text");
-
 }
-
 
 void iDom_Client::on_tabRightButton_clicked()
 {
@@ -661,5 +649,36 @@ void iDom_Client::on_pushButton_showTemperatureCharts_clicked()
         delete wwwWindow;
     }
     wwwWindow = new wwwShowWindow();
-    wwwWindow->show();
+
+   wwwWindow->show();
+}
+
+void iDom_Client::on_pushButton_22_clicked()
+{
+    wwwWindow->close();
+}
+
+void iDom_Client::loadImage(QByteArray d)
+{
+    QPixmap pima;
+    pima.loadFromData(d);
+    ui->camera_label->setPixmap(pima);
+    ui->snap_counter->display(ui->snap_counter->value()+1);
+    if (cameraWork == true)
+    {
+         m_pImgCtrl->getSnap();
+    }
+}
+
+void iDom_Client::on_camera_button_reload_clicked()
+{
+    cameraWork = !cameraWork;
+    m_pImgCtrl->getSnap();
+}
+
+void iDom_Client::on_tabWidget_currentChanged(int index)
+{
+    if (index != 0){
+        cameraWork = false;
+    }
 }
