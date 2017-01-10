@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/12/trunk/android/src/org/qtproject/qt5/android/bindings
+END
+QtActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/12/trunk/android/src/org/qtproject/qt5/android/bindings/QtActivity.java
+END
+NativeCalls.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2/trunk/android/src/org/qtproject/qt5/android/bindings/NativeCalls.java
+END
+QtApplication.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2/trunk/android/src/org/qtproject/qt5/android/bindings/QtApplication.java
+END

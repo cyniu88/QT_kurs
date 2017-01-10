@@ -22,7 +22,7 @@ public:
     double getProximity();
     QString getAccelerometer();
     int fibo(int n);
-    void makeToast(int text);
+    void makeToast(QString text);
     int updateAndroidNotification(QString msg);
     int test(int number);
     int fibonacci(int n);

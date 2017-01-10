@@ -24,7 +24,7 @@ private static NotificationManager m_notificationManager;
 private static Notification.Builder m_builder;
 
 
-private static AndroidHelper m_instance_n;
+public static AndroidHelper m_instance_n;
 
 public static AndroidHelper m_instance;
 
@@ -68,18 +68,15 @@ public static int fibonacci(int n)
        return fibonacci(n-1) + fibonacci(n-2);
     }
 
-public static int notify(String s)
+public static void makeToast(final String s)
     {
-        if (m_notificationManager == null) {
-            m_notificationManager = (NotificationManager) m_instance_n.getSystemService(Context.NOTIFICATION_SERVICE);
-            m_builder = new Notification.Builder(m_instance_n);
-           // m_builder.setSmallIcon(R.drawable.icon);
-            m_builder.setContentTitle("A message from Qt!");
-        }
-
-        m_builder.setContentText(s);
-        m_notificationManager.notify(1, m_builder.build());
-        return 1;
+        m_instance_n.runOnUiThread(new Runnable() {
+                 public void run() {
+                     Toast.makeText(m_instance_n.getApplicationContext(),
+                                    s,
+                                    Toast.LENGTH_SHORT).show();
+                 }
+              });
     }
 
 

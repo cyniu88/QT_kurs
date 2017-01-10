@@ -47,9 +47,9 @@ int AndroidHelper_cyniu::fibo(int n)
     QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "fibonacci", "(I)V", n);
 }
 
-void AndroidHelper_cyniu::makeToast(int text)
+void AndroidHelper_cyniu::makeToast(QString text)
 {
-    QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "makeToast", "(I)V", text);
+    QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "makeToast",  "(Ljava/lang/String;)V",QAndroidJniObject::fromString(text).object<jstring>());
 }
 int AndroidHelper_cyniu::updateAndroidNotification(QString msg)
 {

@@ -34,3 +34,10 @@ QString android_interface::getAccelerometer()
 #endif
     return value;
 }
+
+void android_interface::makeToast(QString s)
+{
+#ifdef Q_OS_ANDROID
+    droid.makeToast(s);
+#endif
+}

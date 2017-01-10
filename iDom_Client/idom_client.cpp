@@ -54,7 +54,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     {
 
     }
-
     pix = pix.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Background, pix);
@@ -63,42 +62,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QRect rec = QApplication::desktop()->screenGeometry();
     int  height = rec.height();
     int  width  = rec.width();
-
     std::string s =  std::to_string(height) +" and " + std::to_string(width)  ;
-
     ui->txtAnswer->setText( QString::fromStdString( s));
-#ifdef Q_OS_ANDROID
-
-    // viewTemp =  new QQuickWidget;
-
-
-    //viewTemp->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
-    //ui->widgetAndroidWWW->layout()->addWidget(viewTemp);
-    //viewTemp->showMinimized();
-    //ui->quickWidget->setSource(QUrl::fromLocalFile(":/www/myqmlfileforwww.qml"));
-
-
-#endif
-#ifdef Q_OS_WIN
-
-//    axWidgetTemperature.setControl("{8856f961-340a-11d0-a96b-00c04fd705a2}");
-
-//    ui->widgetWWW->layout()->addWidget( axWidgetTemperaturePTR);
-//    //ui->quickWidget->setLayout(ui->widgetWWW->layout());
-
-//    if (ui->tabWidget->currentIndex() == 0 )
-//    {
-//        axWidgetTemperature.dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
-//    }
-#endif
-
-#ifdef Q_OS_ANDROID
-    // QtWebView::initialize();
-
-    //  termo.load(  );
-    // ui->widgetWWW->layout()->addWidget(&termo);
-#endif
-    //load termomether widget
 
     termoIN.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
     termoOUT.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
@@ -122,16 +87,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
 iDom_Client::~iDom_Client()
 {
-#ifdef Q_OS_WIN
-//    if (axWidgetTemperaturePTR != NULL){
-//        axWidgetTemperaturePTR->deleteLater();
-//    }
-//    delete axWidgetTemperaturePTR;
-#endif
 
-#ifdef Q_OS_ANDROID
-    // delete viewTemp;
-#endif
     delete m_pImgCtrl;
     delete wwwWindow;
     delete ivona;
@@ -188,9 +144,10 @@ void iDom_Client::odbMpdVolume(QString s)
 void iDom_Client::errorRead(QString tit, QString msg)
 {
     droid.vibrate(300);
-#ifdef Q_OS_ANDROID
-    QMessageBox::information(this,tit,  msg);
-#endif
+//#ifdef Q_OS_ANDROID
+//   // QMessageBox::information(this,tit,  msg);
+//#endif
+    droid.makeToast(msg);
 #ifdef Q_OS_WIN
     trayIcon.showMessage(tit,msg);
 #endif
@@ -675,9 +632,11 @@ void iDom_Client::on_camera_button_reload_clicked()
     cameraWork = !cameraWork;
     if (cameraWork){
         ui->camera_button_reload->setText("Stop");
+        droid.makeToast("Video Stop");
     }
     else{
         ui->camera_button_reload->setText("Start");
+        droid.makeToast("Video Start");
     }
     m_pImgCtrl->getSnap();
 }
