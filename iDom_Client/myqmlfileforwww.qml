@@ -19,13 +19,14 @@ import QtGraphicalEffects 1.0
 import QtMultimedia 5.4
 Rectangle {
     id: content
-    width: 800
-    height: 600
-    color: "red"
+    width: 1000
+    height: 800
+
     WebView {
         id: webView
         anchors.fill: parent
-        url: "http://cyniu88.no-ip.pl"
+        url: "http://cyniu88.no-ip.pl/wykres.html"
 
     }
+
  }

@@ -94,7 +94,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <property name="iconSize">
        <size>
@@ -147,7 +147,7 @@ border-color: rgb(255, 255, 255,255);</string>
                 <item>
                  <widget class="QLCDNumber" name="snap_counter">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -157,7 +157,7 @@ border-color: rgb(255, 255, 255,255);</string>
                 <item>
                  <widget class="QLineEdit" name="lineEdit">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -176,10 +176,16 @@ border-color: rgb(255, 255, 255,255);</string>
                 <item>
                  <widget class="QPushButton" name="camera_button_reload">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>100</height>
+                   </size>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
@@ -194,7 +200,7 @@ border:none;
  </string>
                   </property>
                   <property name="text">
-                   <string>Reload</string>
+                   <string>Start</string>
                   </property>
                  </widget>
                 </item>
@@ -217,7 +223,7 @@ border:none;
                    <item row="0" column="0">
                     <widget class="QLabel" name="camera_label">
                      <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Ignored">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -226,7 +232,7 @@ border:none;
                       <string/>
                      </property>
                      <property name="scaledContents">
-                      <bool>true</bool>
+                      <bool>false</bool>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>

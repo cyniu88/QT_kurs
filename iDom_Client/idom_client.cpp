@@ -673,6 +673,12 @@ void iDom_Client::loadImage(QByteArray d)
 void iDom_Client::on_camera_button_reload_clicked()
 {
     cameraWork = !cameraWork;
+    if (cameraWork){
+        ui->camera_button_reload->setText("Stop");
+    }
+    else{
+        ui->camera_button_reload->setText("Start");
+    }
     m_pImgCtrl->getSnap();
 }
 
