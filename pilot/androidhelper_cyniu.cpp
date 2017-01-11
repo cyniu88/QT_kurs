@@ -1,5 +1,6 @@
 #include "androidhelper_cyniu.h"
-
+#include <QtAndroid>
+#include <QAndroidJniEnvironment>
 AndroidHelper_cyniu::AndroidHelper_cyniu()
 {
     proximitySensor = new QProximitySensor();
@@ -42,35 +43,42 @@ QString AndroidHelper_cyniu::getAccelerometer()
      return QString::number(x)+" "+QString::number(y)+" "+QString::number(z);
 }
 
-int AndroidHelper_cyniu::fibo(int n)
+void AndroidHelper_cyniu::makeToast(QString text)
 {
-    QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "fibonacci", "(I)V", n);
-}
-
-void AndroidHelper_cyniu::makeToast(int text)
-{
-    QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "makeToast", "(I)V", text);
+    QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "makeToast",  "(Ljava/lang/String;)V",QAndroidJniObject::fromString(text).object<jstring>());
 }
 int AndroidHelper_cyniu::updateAndroidNotification(QString msg)
 {
-    QAndroidJniObject javaNotification = QAndroidJniObject::fromString(msg);
-    return QAndroidJniObject::callStaticMethod<jint>("org/qtproject/example/Chronometer/AndroidHelper",
-                                                     "notify",
-                                                     "(Ljava/lang/String;)I",
-                                                     javaNotification.object<jstring>());
+//    QAndroidJniObject javaNotification = QAndroidJniObject::fromString(msg);
+//    return QAndroidJniObject::callStaticMethod<jint>("org/qtproject/example/Chronometer/AndroidHelper",
+//                                                     "notify",
+//                                                     "(Ljava/lang/String;)I",
+//                                                     javaNotification.object<jstring>());
+    QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "notify",  "(Ljava/lang/String;)V",QAndroidJniObject::fromString(msg).object<jstring>());
+    return 0;
 }
 
-int AndroidHelper_cyniu::fibonacci(int n)
+void AndroidHelper_cyniu::keep_screen_on(bool on)
 {
-    return QAndroidJniObject::callStaticMethod<jint>
-            ("org/qtproject/example/Chronometer/AndroidHelper" // java class name
-             , "fibonacci" // method name
-             , "(I)I" // signature
-             , n);
+    QtAndroid::runOnAndroidThread([on]{
+        QAndroidJniObject activity = QtAndroid::androidActivity();
+        if (activity.isValid()) {
+          QAndroidJniObject window =
+              activity.callObjectMethod("getWindow", "()Landroid/view/Window;");
+
+          if (window.isValid()) {
+            const int FLAG_KEEP_SCREEN_ON = 128;
+            if (on) {
+              window.callMethod<void>("addFlags", "(I)V", FLAG_KEEP_SCREEN_ON);
+            } else {
+              window.callMethod<void>("clearFlags", "(I)V", FLAG_KEEP_SCREEN_ON);
+            }
+          }
+        }
+        QAndroidJniEnvironment env;
+        if (env->ExceptionCheck()) {
+          env->ExceptionClear();
+        }
+      });
 }
 
-int AndroidHelper_cyniu::test(int number)
-{
-    int i = QAndroidJniObject::callStaticMethod<jint>("org/qtproject/example/Chronometer/AndroidHelper", "test", "(I)I", number);
-    return i;
-}

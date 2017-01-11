@@ -125,13 +125,14 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 
     inputDialogStyleSheet.setStyleSheet("background-color: rgba(0, 255, 0, 50); color: rgba(255, 255, 255); font: bold 14px; font-size: 20pt; ");
     inputDialogStyleSheet.move(QApplication::desktop()->screen()->rect().center()- inputDialogStyleSheet.rect().center() );
+    droid.keepScreenOn(true);
 }
 
 pilotWindow::~pilotWindow()
 {
     t1->stop();
     tFPS->stop();
-
+    droid.keepScreenOn(false);
     delete joyPadPower;
     delete joyPadDirection;
     delete t1;
@@ -332,7 +333,10 @@ void pilotWindow::on_buttonReverseLight_clicked()
 
 void pilotWindow::getMSG(QString tit, QString msg)
 {
+#ifdef Q_OS_WIN
     QMessageBox::information(this, tit,msg);
+#endif
+    droid.makeToast(msg);
 }
 
 void pilotWindow::on_horizontalSlider_sliderReleased()
