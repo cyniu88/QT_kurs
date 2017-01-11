@@ -24,6 +24,7 @@ public:
     int fibo(int n);
     void makeToast(QString text);
     int updateAndroidNotification(QString msg);
+    void keep_screen_on(bool on);
 };
 
 #endif // ANDROIDHELPER_CYNIU_H

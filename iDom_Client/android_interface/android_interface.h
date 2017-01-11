@@ -15,6 +15,7 @@ public:
     QString getAccelerometer();
     void makeToast(QString s);
     void updateAndroidNotification (QString s);
+    void keepScreenOn(bool on);
 private:
 #ifdef Q_OS_ANDROID
     AndroidHelper_cyniu droid;

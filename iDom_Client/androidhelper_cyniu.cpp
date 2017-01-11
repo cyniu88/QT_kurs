@@ -1,5 +1,6 @@
 #include "androidhelper_cyniu.h"
-
+#include <QtAndroid>
+#include <QAndroidJniEnvironment>
 AndroidHelper_cyniu::AndroidHelper_cyniu()
 {
     proximitySensor = new QProximitySensor();
@@ -55,5 +56,29 @@ int AndroidHelper_cyniu::updateAndroidNotification(QString msg)
 //                                                     javaNotification.object<jstring>());
     QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "notify",  "(Ljava/lang/String;)V",QAndroidJniObject::fromString(msg).object<jstring>());
     return 0;
+}
+
+void AndroidHelper_cyniu::keep_screen_on(bool on)
+{
+    QtAndroid::runOnAndroidThread([on]{
+        QAndroidJniObject activity = QtAndroid::androidActivity();
+        if (activity.isValid()) {
+          QAndroidJniObject window =
+              activity.callObjectMethod("getWindow", "()Landroid/view/Window;");
+
+          if (window.isValid()) {
+            const int FLAG_KEEP_SCREEN_ON = 128;
+            if (on) {
+              window.callMethod<void>("addFlags", "(I)V", FLAG_KEEP_SCREEN_ON);
+            } else {
+              window.callMethod<void>("clearFlags", "(I)V", FLAG_KEEP_SCREEN_ON);
+            }
+          }
+        }
+        QAndroidJniEnvironment env;
+        if (env->ExceptionCheck()) {
+          env->ExceptionClear();
+        }
+      });
 }
 

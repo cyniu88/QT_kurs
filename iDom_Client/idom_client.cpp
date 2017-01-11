@@ -4,6 +4,7 @@
 #include <QDesktopWidget>
 #include <QColorDialog>
 #include <QDateTime>
+
 #ifdef Q_OS_ANDROID
 
 #endif
@@ -639,6 +640,7 @@ void iDom_Client::on_camera_button_reload_clicked()
         droid.makeToast("Video Stop");
     }
     m_pImgCtrl->getSnap();
+    droid.keepScreenOn(cameraWork);
 }
 
 void iDom_Client::on_tabWidget_currentChanged(int index)

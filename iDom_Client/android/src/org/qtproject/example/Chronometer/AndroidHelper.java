@@ -10,9 +10,9 @@ import android.content.Context;
 import android.os.Vibrator;
 import android.app.Activity;
 import android.os.Bundle;
-
-
 import android.widget.Toast;
+
+import android.os.BatteryManager;
 
 
 public class AndroidHelper extends org.qtproject.qt5.android.bindings.QtActivity
@@ -20,9 +20,10 @@ public class AndroidHelper extends org.qtproject.qt5.android.bindings.QtActivity
 
 public static Vibrator m_vibrator;
 
-private static NotificationManager m_notificationManager;
-private static Notification.Builder m_builder;
+public static NotificationManager m_notificationManager;
+public static Notification.Builder m_builder;
 
+public static BatteryManager battery;
 
 public static AndroidHelper m_instance_n;
 
@@ -48,7 +49,6 @@ m_vibrator.vibrate(x);
 
 }
 
-
 public static void makeToast(final String s)
     {
         m_instance_n.runOnUiThread(new Runnable() {
@@ -65,10 +65,9 @@ public static void notify(final String s)
         if (m_notificationManager == null) {
             m_notificationManager = (NotificationManager)m_instance_n.getSystemService(Context.NOTIFICATION_SERVICE);
             m_builder = new Notification.Builder(m_instance_n);
-            makeToast("wrong");
+
             m_builder.setContentTitle("A message from Qt!");
         }
-        makeToast("OK");
         m_builder.setContentText(s);
         m_notificationManager.notify(1, m_builder.build());
 

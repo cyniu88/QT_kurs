@@ -48,3 +48,10 @@ void android_interface::updateAndroidNotification(QString s)
     droid.updateAndroidNotification(s);
 #endif
 }
+
+void android_interface::keepScreenOn(bool on)
+{
+#ifdef Q_OS_ANDROID
+    droid.keep_screen_on(on);
+#endif
+}
