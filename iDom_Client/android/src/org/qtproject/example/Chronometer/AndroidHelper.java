@@ -30,7 +30,6 @@ public static AndroidHelper m_instance;
 
 public AndroidHelper()
 {
-m_instance = this;
 m_instance_n = this;
 }
 
@@ -38,9 +37,9 @@ public static void vibrate(int x)
 {
 if (m_vibrator == null)
 {
-if (m_instance != null)
+if (m_instance_n != null)
 {
-m_vibrator = (Vibrator) m_instance.getSystemService(Context.VIBRATOR_SERVICE);
+m_vibrator = (Vibrator) m_instance_n.getSystemService(Context.VIBRATOR_SERVICE);
 m_vibrator.vibrate(x);
 }
 
@@ -49,24 +48,6 @@ m_vibrator.vibrate(x);
 
 }
 
-
-
-
-
-
-public static int test(int n)
-{
-    //Toast.makeText(Context.TOAST_SERVICE,   "Button is clicked", Toast.LENGTH_LONG).show();
-    return n*n;
-}
-public static int fibonacci(int n)
-   {
-
-
-        if (n < 2)
-             return n;
-       return fibonacci(n-1) + fibonacci(n-2);
-    }
 
 public static void makeToast(final String s)
     {
@@ -79,7 +60,21 @@ public static void makeToast(final String s)
               });
     }
 
+public static void notify(final String s)
+    {
+        if (m_notificationManager == null) {
+            m_notificationManager = (NotificationManager)m_instance_n.getSystemService(Context.NOTIFICATION_SERVICE);
+            m_builder = new Notification.Builder(m_instance_n);
+            makeToast("wrong");
+            m_builder.setContentTitle("A message from Qt!");
+        }
+        makeToast("OK");
+        m_builder.setContentText(s);
+        m_notificationManager.notify(1, m_builder.build());
 
+
+
+    }
 //////end class
 
 }

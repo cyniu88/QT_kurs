@@ -612,7 +612,7 @@ void iDom_Client::on_pushButton_showTemperatureCharts_clicked()
 
 void iDom_Client::on_pushButton_22_clicked()
 {
-    wwwWindow->close();
+    droid.updateAndroidNotification("test");
 }
 
 void iDom_Client::loadImage(QByteArray d)
@@ -632,11 +632,11 @@ void iDom_Client::on_camera_button_reload_clicked()
     cameraWork = !cameraWork;
     if (cameraWork){
         ui->camera_button_reload->setText("Stop");
-        droid.makeToast("Video Stop");
+        droid.makeToast("Video Start");
     }
     else{
         ui->camera_button_reload->setText("Start");
-        droid.makeToast("Video Start");
+        droid.makeToast("Video Stop");
     }
     m_pImgCtrl->getSnap();
 }

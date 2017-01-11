@@ -24,8 +24,6 @@ public:
     int fibo(int n);
     void makeToast(QString text);
     int updateAndroidNotification(QString msg);
-    int test(int number);
-    int fibonacci(int n);
 };
 
 #endif // ANDROIDHELPER_CYNIU_H

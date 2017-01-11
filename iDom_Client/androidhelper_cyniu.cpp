@@ -42,35 +42,18 @@ QString AndroidHelper_cyniu::getAccelerometer()
      return QString::number(x)+" "+QString::number(y)+" "+QString::number(z);
 }
 
-int AndroidHelper_cyniu::fibo(int n)
-{
-    QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "fibonacci", "(I)V", n);
-}
-
 void AndroidHelper_cyniu::makeToast(QString text)
 {
     QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "makeToast",  "(Ljava/lang/String;)V",QAndroidJniObject::fromString(text).object<jstring>());
 }
 int AndroidHelper_cyniu::updateAndroidNotification(QString msg)
 {
-    QAndroidJniObject javaNotification = QAndroidJniObject::fromString(msg);
-    return QAndroidJniObject::callStaticMethod<jint>("org/qtproject/example/Chronometer/AndroidHelper",
-                                                     "notify",
-                                                     "(Ljava/lang/String;)I",
-                                                     javaNotification.object<jstring>());
+//    QAndroidJniObject javaNotification = QAndroidJniObject::fromString(msg);
+//    return QAndroidJniObject::callStaticMethod<jint>("org/qtproject/example/Chronometer/AndroidHelper",
+//                                                     "notify",
+//                                                     "(Ljava/lang/String;)I",
+//                                                     javaNotification.object<jstring>());
+    QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "notify",  "(Ljava/lang/String;)V",QAndroidJniObject::fromString(msg).object<jstring>());
+    return 0;
 }
 
-int AndroidHelper_cyniu::fibonacci(int n)
-{
-    return QAndroidJniObject::callStaticMethod<jint>
-            ("org/qtproject/example/Chronometer/AndroidHelper" // java class name
-             , "fibonacci" // method name
-             , "(I)I" // signature
-             , n);
-}
-
-int AndroidHelper_cyniu::test(int number)
-{
-    int i = QAndroidJniObject::callStaticMethod<jint>("org/qtproject/example/Chronometer/AndroidHelper", "test", "(I)I", number);
-    return i;
-}

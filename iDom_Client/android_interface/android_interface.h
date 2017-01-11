@@ -14,6 +14,7 @@ public:
     double getProximity();
     QString getAccelerometer();
     void makeToast(QString s);
+    void updateAndroidNotification (QString s);
 private:
 #ifdef Q_OS_ANDROID
     AndroidHelper_cyniu droid;

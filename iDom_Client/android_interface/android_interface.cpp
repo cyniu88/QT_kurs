@@ -41,3 +41,10 @@ void android_interface::makeToast(QString s)
     droid.makeToast(s);
 #endif
 }
+
+void android_interface::updateAndroidNotification(QString s)
+{
+#ifdef Q_OS_ANDROID
+    droid.updateAndroidNotification(s);
+#endif
+}
