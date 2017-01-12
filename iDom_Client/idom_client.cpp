@@ -124,6 +124,7 @@ void iDom_Client::readProgress(int c)
 void iDom_Client::odb_answer_LED(QString s)
 {
     ui->lineEditLED->setText(s);
+    droid.makeToast(s);
 }
 
 void iDom_Client::odb_answer_MPD(QString s)
