@@ -588,12 +588,22 @@ void iDom_Client::on_pushButton_ttsInfo_clicked()
 
 void iDom_Client::on_tabRightButton_clicked()
 {
-    ui->horizontalSlider_tabNavigate->setValue(ui->horizontalSlider_tabNavigate->value()+1);
+    int i = ui->horizontalSlider_tabNavigate->value();  //get current value
+    ++i;
+    if (i > ui->tabWidget->tabBar()->count()-1){
+        i=0;
+    }
+    ui->horizontalSlider_tabNavigate->setValue(i);
 }
 
 void iDom_Client::on_tabLeftButton_clicked()
 {
-    ui->horizontalSlider_tabNavigate->setValue(ui->horizontalSlider_tabNavigate->value()-1);
+    int i = ui->horizontalSlider_tabNavigate->value();  //get current value
+    --i;
+    if (i < 0){
+        i=ui->tabWidget->tabBar()->count()-1;
+    }
+    ui->horizontalSlider_tabNavigate->setValue(i);
 }
 
 void iDom_Client::on_horizontalSlider_tabNavigate_valueChanged(int value)

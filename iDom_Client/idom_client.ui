@@ -94,7 +94,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>4</number>
       </property>
       <property name="iconSize">
        <size>
@@ -191,7 +191,7 @@ border-color: rgb(255, 255, 255,255);</string>
                    <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
 border-radius: 15px;
- font: bold 20px;
+ font: bold 40px;
 	color: rgb(0, 255, 0);
 }
 QPushButton:pressed {
