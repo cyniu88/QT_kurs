@@ -62,6 +62,7 @@ private:
    // QQuickWidget *viewTemp = NULL;
 #endif
  QTextToSpeech *ivona;
+ QPixmap pima;
 private slots:
     void on_exitButton_released();
 

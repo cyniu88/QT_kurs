@@ -629,9 +629,10 @@ void iDom_Client::on_pushButton_22_clicked()
 
 void iDom_Client::loadImage(QByteArray d)
 {
-    QPixmap pima;
     pima.loadFromData(d);
-    ui->camera_label->setPixmap(pima);
+
+
+    ui->cameraLabel->setPixmap(  pima.scaled(ui->cameraLabel->width(),ui->cameraLabel->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation) );
     ui->snap_counter->display(ui->snap_counter->value()+1);
     if (cameraWork == true)
     {
