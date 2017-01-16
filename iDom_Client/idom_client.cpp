@@ -204,10 +204,8 @@ void iDom_Client::on_pushButton_released()
 void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
 {
     emit sendTCP("LED",
-                 "RS232 send LED:["+std::to_string(from)+"-"+std::to_string(to)+"-"+std::to_string(r)+"-"+std::to_string(g)+"-"+std::to_string(b)+"];"
+                 "iDom LED "+std::to_string(from)+" "+std::to_string(to)+" "+std::to_string(r)+" "+std::to_string(g)+" "+std::to_string(b)
                  );
-    std::string s_buffor = "RS232 send LED:["+std::to_string(from)+"-"+std::to_string(to)+"-"+std::to_string(r)+"-"+std::to_string(g)+"-"+std::to_string(b)+"];";
-    qDebug() << QString::fromStdString(s_buffor);
 }
 
 void iDom_Client::on_pushButton_12_released()
@@ -312,7 +310,7 @@ void iDom_Client::on_pushButton_24_released()
 
 void iDom_Client::on_LED_OFF_Button_37_released()
 {
-    emit sendTCP("LED","RS232 send LED_STOP:2;");
+    emit sendTCP("LED","iDom LED OFF");
     ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255); border-radius: 10px; border-color: beige; font: bold 19px; padding: 6px;"  );
 }
 
@@ -574,7 +572,7 @@ void iDom_Client::on_pushButton_goodBye_clicked()
                                   QMessageBox::Yes|QMessageBox::No);
     if (reply == QMessageBox::Yes) {
         emit sendTCP("MPD","MPD stop");
-        emit sendTCP("LED","RS232 send LED_STOP:2;");
+        emit sendTCP("LED","iDom LED OFF");
         on_exitButton_pressed();
         QThread::sleep(2);
         qApp->exit();
