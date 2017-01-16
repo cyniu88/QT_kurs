@@ -15,6 +15,7 @@ class FileDownloader : public QObject
   virtual ~FileDownloader();
   QByteArray downloadedData() const;
   void getSnap();
+  void setAddress(QString address);
  signals:
   void downloaded( QByteArray d);
 

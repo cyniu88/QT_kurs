@@ -50,8 +50,11 @@ private:
     Thermometer termoIN;
     Thermometer termoOUT;
 
-    FileDownloader *m_pImgCtrl;
+    FileDownloader *m_pImgCtrl = NULL;
     bool cameraWork = false;
+    QPixmap pima;
+    QString cameraAddressHTTP = "http://cyniu88.no-ip.pl:1183/snapshot.cgi?rate=0&amp;user=admin&amp;pwd=tajnehaslo";
+
 #ifdef Q_OS_WIN
     QSystemTrayIcon  trayIcon;
    // QAxWidget  axWidgetTemperature;
@@ -62,7 +65,7 @@ private:
    // QQuickWidget *viewTemp = NULL;
 #endif
  QTextToSpeech *ivona;
- QPixmap pima;
+
 private slots:
     void on_exitButton_released();
 
@@ -184,6 +187,8 @@ private slots:
     void on_camera_button_reload_clicked();
 
     void on_tabWidget_currentChanged(int index);
+
+    void on_reloadCameraAddressButton_clicked();
 
 public slots:
       void setLcdActual(int c);

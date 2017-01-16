@@ -25,5 +25,10 @@ QByteArray FileDownloader::downloadedData() const {
 
 void FileDownloader::getSnap()
 {
-  m_WebCtrl.get(request);
+    m_WebCtrl.get(request);
+}
+
+void FileDownloader::setAddress(QString address)
+{
+    request.setUrl(QUrl(address));
 }

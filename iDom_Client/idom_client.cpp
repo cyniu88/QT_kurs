@@ -81,7 +81,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->tabWidget->tabBar()->hide();
 
     ///////////////////////////// camera part
-    m_pImgCtrl = new FileDownloader( QUrl("http://cyniu88.no-ip.pl:1183/snapshot.cgi?rate=0&amp;user=admin&amp;pwd=tajnehaslo"));
+    m_pImgCtrl = new FileDownloader( QUrl(cameraAddressHTTP));
     QObject::connect( m_pImgCtrl, SIGNAL(downloaded(QByteArray)), this, SLOT(loadImage(QByteArray))   );
     ivona = new QTextToSpeech(this);
 }
@@ -146,9 +146,9 @@ void iDom_Client::odbMpdVolume(QString s)
 void iDom_Client::errorRead(QString tit, QString msg)
 {
     droid.vibrate(300);
-//#ifdef Q_OS_ANDROID
-//   // QMessageBox::information(this,tit,  msg);
-//#endif
+    //#ifdef Q_OS_ANDROID
+    //   // QMessageBox::information(this,tit,  msg);
+    //#endif
     droid.makeToast(msg);
 #ifdef Q_OS_WIN
     trayIcon.showMessage(tit,msg);
@@ -465,7 +465,7 @@ void iDom_Client::on_tabWidget_currentChanged( )
     if (ui->tabWidget->currentIndex() == 0 )
     {
 #ifdef Q_OS_WIN
-      //  axWidgetTemperature .dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+        //  axWidgetTemperature .dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
 #endif
 #ifdef Q_OS_ANDROID
 
@@ -617,7 +617,7 @@ void iDom_Client::on_pushButton_showTemperatureCharts_clicked()
     }
     wwwWindow = new wwwShowWindow();
 
-   wwwWindow->show();
+    wwwWindow->show();
 }
 
 void iDom_Client::on_pushButton_22_clicked()
@@ -634,7 +634,7 @@ void iDom_Client::loadImage(QByteArray d)
     ui->snap_counter->display(ui->snap_counter->value()+1);
     if (cameraWork == true)
     {
-         m_pImgCtrl->getSnap();
+        m_pImgCtrl->getSnap();
     }
 }
 
@@ -651,6 +651,7 @@ void iDom_Client::on_camera_button_reload_clicked()
     }
     m_pImgCtrl->getSnap();
     droid.keepScreenOn(cameraWork);
+    droid.vibrate(100);
 }
 
 void iDom_Client::on_tabWidget_currentChanged(int index)
@@ -658,4 +659,21 @@ void iDom_Client::on_tabWidget_currentChanged(int index)
     if (index != 0){
         cameraWork = false;
     }
+}
+
+void iDom_Client::on_reloadCameraAddressButton_clicked()
+{
+
+    bool ok;
+    QInputDialog myInputDialog;
+    QString id = myInputDialog.getText(this, tr("set new camera address"),tr("address:"),QLineEdit::Normal, cameraAddressHTTP , &ok);
+
+    if (ok && !id.isEmpty()){
+        m_pImgCtrl->setAddress(id);
+    }
+//    if (m_pImgCtrl != NULL){
+//        delete  m_pImgCtrl;
+//    }
+//    m_pImgCtrl = new FileDownloader( QUrl(cameraAddressHTTP));
+    droid.vibrate(100);
 }
