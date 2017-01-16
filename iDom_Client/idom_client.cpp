@@ -146,9 +146,6 @@ void iDom_Client::odbMpdVolume(QString s)
 void iDom_Client::errorRead(QString tit, QString msg)
 {
     droid.vibrate(300);
-    //#ifdef Q_OS_ANDROID
-    //   // QMessageBox::information(this,tit,  msg);
-    //#endif
     droid.makeToast(msg);
 #ifdef Q_OS_WIN
     trayIcon.showMessage(tit,msg);
