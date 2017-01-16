@@ -94,7 +94,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <property name="iconSize">
        <size>
@@ -137,8 +137,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>815</width>
-               <height>689</height>
+               <width>807</width>
+               <height>663</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -987,10 +987,10 @@ background-color: rgb(128, 128, 0);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">QSlider::groove:horizontal {
-border: 6px solid #AAA;
-height: 4px;
-background: #9AD9EB;
-margin: 2px 0;
+    
+    height: 10px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #007FFF, stop:1 #EEEEEE);
+    margin: 2px 0;
 }
 
 QSlider::handle:horizontal {
@@ -1773,10 +1773,10 @@ border-color: rgb(255, 255, 255);
           </property>
           <property name="styleSheet">
            <string notr="true">QSlider::groove:horizontal {
-border: 6px solid #AAA;
-height: 4px;
-background: #9AD9EB;
-margin: 2px 0;
+    
+    height: 10px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #007FFF, stop:1 #EEEEEE);
+    margin: 2px 0;
 }
 
 QSlider::handle:horizontal {

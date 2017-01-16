@@ -489,8 +489,6 @@ void iDom_Client::on_setNumberMPD_clicked()
                                        tr("select radio stations"),mpdItems,7,false, &ok);
 
     if (ok && !id.isEmpty()){
-
-
         int songID = 0;
         songID = 1+ mpdItems.indexOf(id);
         ui->setNumberMPD->setText(QString::number( songID ));
@@ -499,7 +497,6 @@ void iDom_Client::on_setNumberMPD_clicked()
     }
     droid.vibrate(100);
 }
-
 
 void iDom_Client::on_comboBox_currentIndexChanged()
 {
@@ -645,6 +642,7 @@ void iDom_Client::on_camera_button_reload_clicked()
     else{
         ui->camera_button_reload->setText("Start");
         droid.makeToast("Video Stop");
+        ui->snap_counter->display(0);
     }
     m_pImgCtrl->getSnap();
     droid.keepScreenOn(cameraWork);
@@ -655,12 +653,12 @@ void iDom_Client::on_tabWidget_currentChanged(int index)
 {
     if (index != 0){
         cameraWork = false;
+        ui->snap_counter->display(0);
     }
 }
 
 void iDom_Client::on_reloadCameraAddressButton_clicked()
 {
-
     bool ok;
     QInputDialog myInputDialog;
     QString id = myInputDialog.getText(this, tr("set new camera address"),tr("address:"),QLineEdit::Normal, cameraAddressHTTP , &ok);
@@ -668,9 +666,5 @@ void iDom_Client::on_reloadCameraAddressButton_clicked()
     if (ok && !id.isEmpty()){
         m_pImgCtrl->setAddress(id);
     }
-//    if (m_pImgCtrl != NULL){
-//        delete  m_pImgCtrl;
-//    }
-//    m_pImgCtrl = new FileDownloader( QUrl(cameraAddressHTTP));
     droid.vibrate(100);
 }
