@@ -147,7 +147,7 @@ border-color: rgb(255, 255, 255,255);</string>
                 <item>
                  <widget class="QLCDNumber" name="snap_counter">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>

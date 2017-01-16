@@ -26,9 +26,9 @@ SOURCES += main.cpp\
             functions.cpp \
             blocking_queue/blocking_queue.cpp \
             android_interface/android_interface.cpp \
-    ../sgvTEST/thermometerSVG/thermometer.cpp \
-    wwwshowwindow.cpp \
-    filedownloader.cpp
+            wwwshowwindow.cpp \
+            filedownloader.cpp \
+    ../libs/sgvTEST/thermometerSVG/thermometer.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  +=  androidhelper_cyniu.cpp
@@ -40,9 +40,9 @@ HEADERS  += idom_client.h \
             functions.h \
             blocking_queue/blocking_queue.h \
             android_interface/android_interface.h \
-    ../sgvTEST/thermometerSVG/thermometer.h \
-    wwwshowwindow.h \
-    filedownloader.h
+            wwwshowwindow.h \
+            filedownloader.h \
+    ../libs/sgvTEST/thermometerSVG/thermometer.h
 android {
             message("* Using settings for Android.")
             HEADERS +=  androidhelper_cyniu.h
@@ -50,7 +50,7 @@ android {
 
 
 FORMS    += idom_client.ui \
-    wwwshowwindow.ui
+            wwwshowwindow.ui
 
 CONFIG += mobility   c++14
 QMAKE_CXXFLAGS += -std=c++1y -Wall  -pedantic
