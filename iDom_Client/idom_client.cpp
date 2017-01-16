@@ -164,7 +164,7 @@ void iDom_Client::updateMPDinfo()
 
 void iDom_Client::updateTemepretureInfo()
 {
-    emit sendTCP("temperature","RS232 get temperature");
+    emit sendTCP("temperature","iDom temperature");
     emit sendTCP("listMPD", "MPD list");
 }
 
