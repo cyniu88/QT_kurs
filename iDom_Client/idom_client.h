@@ -103,9 +103,9 @@ private slots:
 
     void on_from_horizontalSlider_valueChanged(int value);
 
-    void on_spinBox_toLED_valueChanged();
+    void on_spinBox_toLED_valueChanged(int value);
 
-    void on_spinBox_fromLED_valueChanged( );
+    void on_spinBox_fromLED_valueChanged(int value);
 
     void on_pushButton_10_released();
 
@@ -155,7 +155,7 @@ private slots:
 
     void on_setNumberMPD_clicked();
 
-    void on_comboBox_currentIndexChanged();
+    void on_comboBox_currentIndexChanged(QString txt);
 
     void on_turnOnSleepModeButton_clicked();
 
