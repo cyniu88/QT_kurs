@@ -23,7 +23,6 @@
 #include "android_interface/android_interface.h"
 #include "workerip.h"
 #include "variable.h"
-//#include "../../libs/sgvTEST/thermometerSVG/thermometer.h"
 #include "../libs/sgvTEST/thermometerSVG/thermometer.h"
 #include "filedownloader.h"
 

@@ -17,9 +17,7 @@ int main(int argc, char *argv[])
     QTimer *scroller = new QTimer ();
 
     iDom_CONFIG config;
-
     WorkerIP * worker = new WorkerIP(&config);
-
     QApplication a(argc, argv);
     a.setWindowIcon( QIcon(":/new/prefix1/iDom_client.ico"));
 
@@ -66,13 +64,13 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    delete worker;
     infoMPDtimer->stop();
     infoTemperatureTimer->stop();
     scroller->stop();
     delete infoMPDtimer;
     delete infoTemperatureTimer;
     delete scroller;
+    delete worker;
     delete w;
 
     return 0;
