@@ -668,3 +668,10 @@ void iDom_Client::on_reloadCameraAddressButton_clicked()
     }
     droid.vibrate(100);
 }
+
+void iDom_Client::on_oneShotCameraButton_clicked()
+{
+   m_pImgCtrl->getSnap();
+   ui->snap_counter->display(ui->snap_counter->value()+1);
+   droid.vibrate(100);
+}
