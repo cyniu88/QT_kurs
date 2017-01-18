@@ -154,14 +154,18 @@ bool WorkerIP::disconnectFromServer()
     delete socket;
     return true;
 }
-
+//TODO
 void WorkerIP::waitSend(int waitTime, int counter)
 {
     for (int i = 0; i< counter;++i){
-        //qDebug() << "czekam na zapis "<< QString::number(i);
-        if (socket->waitForBytesWritten(waitTime)==true)
-        {
-            return;
+        try{
+            if (socket->waitForBytesWritten(waitTime)==true)
+            {
+                return;
+            }
+        }
+        catch (...){
+            qDebug() << "MAM ZLAPALEM WYJATEK!!";
         }
     }
 }

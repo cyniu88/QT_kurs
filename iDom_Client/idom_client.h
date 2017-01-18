@@ -126,8 +126,6 @@ private slots:
 
     void on_exitButton_pressed();
 
-    void on_pushButtonupdateinfo_released();
-
     void on_redButton_22_released();
 
     void on_pushButton_12_released();

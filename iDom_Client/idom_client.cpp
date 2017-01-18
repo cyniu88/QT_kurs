@@ -365,7 +365,7 @@ void iDom_Client::on_to_horizontalSlider_2_valueChanged( )
     ui->lcdNumber_toLED->display(ui->to_horizontalSlider_2->value());
 }
 
-void iDom_Client::on_from_horizontalSlider_valueChanged(int value)
+void iDom_Client::on_from_horizontalSlider_valueChanged(int value )
 {
     int temp_value = ui->from_horizontalSlider->value();
     if (temp_value >= ui->to_horizontalSlider_2->value())
@@ -436,13 +436,6 @@ void iDom_Client::on_pushButton_volumeDOWN_released()
 void iDom_Client::on_exitButton_pressed()
 {
     emit sendTCP("console","exit");
-}
-
-void iDom_Client::on_pushButtonupdateinfo_released()
-{
-    emit sendTCP("MPD_title","MPD get info");
-    QThread::sleep(1);
-    emit sendTCP("MPD_volume","MPD get volume");
 }
 
 void iDom_Client::setLcdActual(int c)
@@ -672,6 +665,5 @@ void iDom_Client::on_reloadCameraAddressButton_clicked()
 void iDom_Client::on_oneShotCameraButton_clicked()
 {
    m_pImgCtrl->getSnap();
-   ui->snap_counter->display(ui->snap_counter->value()+1);
    droid.vibrate(100);
 }
