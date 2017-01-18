@@ -143,7 +143,7 @@ bool WorkerIP::connectAndAuthentication()
         }
         QThread::sleep(1);
     }//end for authentication
-    delete socket;
+    //delete socket;
     return false;
 }
 
