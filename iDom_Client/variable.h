@@ -15,7 +15,7 @@ struct iDom_CONFIG {
     //std::string background_img_w = "background.png";
     std::string background_img_a = "/storage/emulated/0/f/background.png";
     std::string serverIP = "cyniu88.no-ip.pl";
-    int serverPort = 8833;
+    quint16 serverPort = 8833;
     bool goWhile = false;
     std::string command = "OK";
     bool isWindows = true;

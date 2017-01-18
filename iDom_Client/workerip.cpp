@@ -24,7 +24,7 @@ void WorkerIP::run()
         {
             break;
         }
-        if (config->workerQueue.Size()<1  ){
+        if ( static_cast<int> (config->workerQueue.Size()) < 1){
             QThread::usleep(10);
             continue;
         }
@@ -87,7 +87,6 @@ void WorkerIP::run()
                 {
                     emit tools (QString::fromStdString(s_buffor));
                 }
-
                 else if (addresOUT.address == "listMPD")
                 {
                     emit listMPD(QString::fromStdString(s_buffor));
