@@ -38,7 +38,7 @@ private:
     void waitRecv(int waitTime, int counter);
 
 signals:
-    void sendActual(unsigned int c);
+    void sendActual(int c);
     void sendAll(int c);
     void progress(int c);
     void answer(QString s);
