@@ -14,7 +14,7 @@ void WorkerIP::run()
     timer.start();
     qDebug ()<< "Autentykacja Start";
     config->goWhile = connectAndAuthentication();
-    socket->setParent(this);
+    //socket->setParent(this);
     qDebug() << "trwala" << timer.elapsed();
     unsigned int len_send = 0;
 
