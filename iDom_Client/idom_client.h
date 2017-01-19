@@ -33,7 +33,6 @@ class iDom_Client;
 class iDom_Client : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit iDom_Client(iDom_CONFIG *config, QWidget *parent = 0);
     ~iDom_Client();
