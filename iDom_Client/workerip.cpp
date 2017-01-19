@@ -2,7 +2,7 @@
 #include <QDebug>
 #include <QTcpSocket>
 #include <QString>
-
+#include <QElapsedTimer>
 WorkerIP::WorkerIP(iDom_CONFIG *config) : config(config)
 {
 
@@ -10,9 +10,12 @@ WorkerIP::WorkerIP(iDom_CONFIG *config) : config(config)
 
 void WorkerIP::run()
 {
-    // int counter = 100;
+    QElapsedTimer timer;
+    timer.start();
+    qDebug ()<< "Autentykacja Start";
     config->goWhile = connectAndAuthentication();
-
+    socket->setParent(this);
+    qDebug() << "trwala" << timer.elapsed();
     unsigned int len_send = 0;
 
     bool goNow = true;
@@ -106,7 +109,7 @@ void WorkerIP::run()
 
 bool WorkerIP::connectAndAuthentication()
 {
-    socket = new QTcpSocket(this );
+    socket = new QTcpSocket( );
 
     for (int i =1 ; i<4 ;++i)
     {
@@ -126,6 +129,7 @@ bool WorkerIP::connectAndAuthentication()
             if (s_buffor[0]=='O' && s_buffor[1]=='K'){
                 qDebug ()<< "Autentykacja ok";
                 emit errorInfo ("INFO","GOTOWE DO UZYWANIA"  );
+                config->goWhile =true;
                 return true;
             }
             else{
@@ -153,14 +157,18 @@ bool WorkerIP::disconnectFromServer()
     delete socket;
     return true;
 }
-
+//TODO
 void WorkerIP::waitSend(int waitTime, int counter)
 {
     for (int i = 0; i< counter;++i){
-        //qDebug() << "czekam na zapis "<< QString::number(i);
-        if (socket->waitForBytesWritten(waitTime)==true)
-        {
-            return;
+        try{
+            if (socket->waitForBytesWritten(waitTime)==true)
+            {
+                return;
+            }
+        }
+        catch (...){
+            qDebug() << "MAM ZLAPALEM WYJATEK!!";
         }
     }
 }

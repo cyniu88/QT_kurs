@@ -1,6 +1,7 @@
 #include <QTimer>
 #include <QApplication>
 #include <QObject>
+#include <QDebug>
 #ifdef Q_OS_ANDROID
 #include <QtWebView>
 #endif
@@ -67,6 +68,7 @@ int main(int argc, char *argv[])
     infoMPDtimer->stop();
     infoTemperatureTimer->stop();
     scroller->stop();
+    worker->terminate();
     delete infoMPDtimer;
     delete infoTemperatureTimer;
     delete scroller;
