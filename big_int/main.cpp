@@ -37,9 +37,21 @@
 
 // ===============
 #include "bigInt.h"
+#include <time.h>
 // ===============
 
 // --------------------
+
+std::string current_time(){
+    time_t now = time(NULL);
+    struct tm tstruct;
+    char buf[40];
+    tstruct = *localtime(&now);
+    //format: HH:mm:ss
+    strftime(buf, sizeof(buf), "%X", &tstruct);
+    return buf;
+}
+
 static void simpleDemoBigInt (std::ostream& o_stream)
 {
 
@@ -301,6 +313,7 @@ int main (int argc, char** argv)
         if (czy_pierwsza(++n1) == true){
             std::cout << "Liczba pierwsza: "<< n1.toStrDec() << " wynik "<< ++i<< std::endl;
         }
+        std::cout << "nastepna "<<++i << " time: "<< current_time()<<std::endl;
     }
     return 0;
 }
