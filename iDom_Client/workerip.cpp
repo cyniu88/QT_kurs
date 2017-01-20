@@ -157,20 +157,15 @@ bool WorkerIP::disconnectFromServer()
     delete socket;
     return true;
 }
-//TODO
+
 void WorkerIP::waitSend(int waitTime, int counter)
 {
     for (int i = 0; i< counter;++i){
-        try{
             if (socket->waitForBytesWritten(waitTime)==true)
             {
                 return;
             }
         }
-        catch (...){
-            qDebug() << "MAM ZLAPALEM WYJATEK!!";
-        }
-    }
 }
 
 void WorkerIP::waitRecv(int waitTime, int counter)
