@@ -206,67 +206,102 @@ static void showIllegalCommandLineBigInt (std::ostream& o_stream, int argc, char
     o_stream << oss.str() << std::endl;
 }
 
+bool czy_pierwsza(BigInt::Rossi n)
+{
+    BigInt::Rossi i(2);
+    BigInt::Rossi zero(0);
+
+//    std::cout << "i : "<< i.toStrDec()<<std::endl;
+//    std::cout << "zero : "<< zero.toStrDec()<<std::endl;
+//    std::cout << "n : "<< n.toStrDec()<<std::endl;
+    if(n<i)
+        return false; //gdy liczba jest mniejsza niż 2 to nie jest pierwszą
+
+    for(  BigInt::Rossi i(2)  ;i*i<=n; i++){
+
+        if(n%i==zero){
+
+            return false; //gdy znajdziemy dzielnik, to dana liczba nie jest pierwsza
+        }
+    }
+    return true;
+}
 
 // ===================
 int main (int argc, char** argv)
 {
-//    BigInt::Run::showTime (std::cout, "START");
-//    BigInt::Run::showCommandLine (std::cout, argc, argv);
+    //    BigInt::Run::showTime (std::cout, "START");
+    //    BigInt::Run::showCommandLine (std::cout, argc, argv);
 
-//    std::string flag;
+    //    std::string flag;
 
-//    if (argc == 1)
-//    {
-//        flag = BigInt::s_strHelp;
-//    }
-//    else
-//    {
-//        flag = argv[1];
-//    }
-
-
-//    if ((argc <= 2) && (flag == BigInt::s_strHelp))
-//    {
-//        BigInt::Run::showHelp(std::cout, argv[0]);
-//        BigInt::Run::showTime (std::cout, "FINISH showHelp()");
-//        return 0;
-//    }
-
-//    if ((argc == 2) && (flag == BigInt::s_strDemo))
-//    {
-//        simpleDemoBigInt(std::cout);
-//        demoBigInt(std::cout, argv[0]);
-//        BigInt::Run::showTime (std::cout, "FINISH demoBigInt()");
-//        return 0;
-//    }
-
-//    if (
-//            ((argc == 2) && (flag == BigInt::s_strTest))
-//            ||
-//            (argc == 4)
-//        )
-//    {
-//        const int result = BigInt::Run::mainBigInt(argc, argv);
-//        BigInt::Run::showTime (std::cout, "FINISH testBigInt()");
-//        return result;
-//    }
-
-//    if ((argc == 2) && (flag == BigInt::s_strTime))
-//    {
-//        BigInt::Run::mainBigInt(argc, argv);
-//        BigInt::Run::showTime (std::cout, "FINISH performanceTestBigInt()");
-//        return static_cast<int>(BigInt::Test::s_returnValue);
-//    }
+    //    if (argc == 1)
+    //    {
+    //        flag = BigInt::s_strHelp;
+    //    }
+    //    else
+    //    {
+    //        flag = argv[1];
+    //    }
 
 
+    //    if ((argc <= 2) && (flag == BigInt::s_strHelp))
+    //    {
+    //        BigInt::Run::showHelp(std::cout, argv[0]);
+    //        BigInt::Run::showTime (std::cout, "FINISH showHelp()");
+    //        return 0;
+    //    }
 
-//    showIllegalCommandLineBigInt (std::cout, argc, argv);
-//    BigInt::Run::showTime (std::cout, "FINISH showIllegalCommandLineBigInt()");
+    //    if ((argc == 2) && (flag == BigInt::s_strDemo))
+    //    {
+    //        simpleDemoBigInt(std::cout);
+    //        demoBigInt(std::cout, argv[0]);
+    //        BigInt::Run::showTime (std::cout, "FINISH demoBigInt()");
+    //        return 0;
+    //    }
 
-    BigInt::Rossi n1 ("314159265358979323846264338327950288419716939937510", BigInt::DEC_DIGIT);
-    BigInt::Rossi n2 ("314159265358979323846264338327950288419716939937510", BigInt::DEC_DIGIT);
-   BigInt::Rossi n3 =  n1*n2;
-       std::cout << "duza liczba =suma : "<< n3.toStrDec()<<std::endl;
+    //    if (
+    //            ((argc == 2) && (flag == BigInt::s_strTest))
+    //            ||
+    //            (argc == 4)
+    //        )
+    //    {
+    //        const int result = BigInt::Run::mainBigInt(argc, argv);
+    //        BigInt::Run::showTime (std::cout, "FINISH testBigInt()");
+    //        return result;
+    //    }
+
+    //    if ((argc == 2) && (flag == BigInt::s_strTime))
+    //    {
+    //        BigInt::Run::mainBigInt(argc, argv);
+    //        BigInt::Run::showTime (std::cout, "FINISH performanceTestBigInt()");
+    //        return static_cast<int>(BigInt::Test::s_returnValue);
+    //    }
+
+
+
+    //    showIllegalCommandLineBigInt (std::cout, argc, argv);
+    //    BigInt::Run::showTime (std::cout, "FINISH showIllegalCommandLineBigInt()");
+
+    BigInt::Rossi n1 ("123456789123456789", BigInt::DEC_DIGIT);
+    BigInt::Rossi n2 ("1234567891234567891", BigInt::DEC_DIGIT);
+    BigInt::Rossi n3 =  n1*n2+n2+1;
+    std::cout << "duza liczba =suma : "<< n3.toStrDec()<<std::endl;
+
+    int i = 0;
+    int k = 100000;
+
+
+    while ( true)
+    {
+        if (n1 > n2){
+            std::cout <<" koniec albo zle dane" <<std::endl;
+            break;
+        }
+        if (czy_pierwsza(++n1) == true){
+            std::cout << "Liczba pierwsza: "<< n1.toStrDec() << " wynik "<< ++i<< std::endl;
+        }
+    }
     return 0;
 }
 
