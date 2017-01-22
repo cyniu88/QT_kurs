@@ -124,7 +124,7 @@ void iDom_Client::readProgress(int c)
 void iDom_Client::odb_answer_LED(QString s)
 {
     ui->lineEditLED->setText(s);
-    droid.makeToast(s);
+    makeInfo("LED",s);
 }
 
 void iDom_Client::odb_answer_MPD(QString s)
@@ -143,7 +143,7 @@ void iDom_Client::odbMpdVolume(QString s)
     ui->volumeBar->setValue(s.toInt());
 }
 
-void iDom_Client::errorRead(QString tit, QString msg)
+void iDom_Client::makeInfo(QString tit, QString msg)
 {
     droid.vibrate(300);
     droid.makeToast(msg);
@@ -630,11 +630,11 @@ void iDom_Client::on_camera_button_reload_clicked()
     cameraWork = !cameraWork;
     if (cameraWork){
         ui->camera_button_reload->setText("Stop");
-        droid.makeToast("Video Start");
+        makeInfo("CAMERA","Video Start");
     }
     else{
         ui->camera_button_reload->setText("Start");
-        droid.makeToast("Video Stop");
+        makeInfo("CAMERA","Video Stop");
         ui->snap_counter->display(0);
     }
     m_pImgCtrl->getSnap();
@@ -665,5 +665,5 @@ void iDom_Client::on_reloadCameraAddressButton_clicked()
 void iDom_Client::on_oneShotCameraButton_clicked()
 {
    m_pImgCtrl->getSnap();
-   droid.vibrate(100);
+   makeInfo("Camera","shot taken");
 }

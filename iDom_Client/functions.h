@@ -8,4 +8,5 @@ template <typename T>
 std::string to_string(T value);
 
 std::string  RSHash();
+
 #endif // FUNCTIONS_H

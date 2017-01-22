@@ -198,7 +198,7 @@ public slots:
       void odb_answer_MPD(QString s);
       void odb_mpd_title (QString s);
       void odbMpdVolume(QString s);
-      void errorRead(QString tit, QString msg);
+      void makeInfo(QString tit, QString msg);
       void updateMPDinfo();
       void updateTemepretureInfo ();
       void odb_temperature (QString s);

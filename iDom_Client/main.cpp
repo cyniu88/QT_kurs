@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(answerMPD(QString)),w,SLOT(odb_answer_MPD(QString))  );
     QObject::connect(worker,SIGNAL(mpd_title_info(QString)),w,SLOT(odb_mpd_title(QString)) );
     QObject::connect(worker,SIGNAL(mpd_volumeInfo(QString)),w,SLOT(odbMpdVolume(QString))  );
-    QObject::connect(worker,SIGNAL(errorInfo(QString,QString)),w,SLOT(errorRead(QString,QString))  );
+    QObject::connect(worker,SIGNAL(errorInfo(QString,QString)),w,SLOT(makeInfo(QString,QString))  );
     QObject::connect(infoMPDtimer,SIGNAL(timeout()),w,SLOT(updateMPDinfo()) );
     QObject::connect(infoTemperatureTimer,SIGNAL(timeout()),w,SLOT(updateTemepretureInfo()) );
     QObject::connect(scroller, SIGNAL(timeout()),w,SLOT(scrollTitle()));
