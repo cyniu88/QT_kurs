@@ -303,7 +303,7 @@ int main (int argc, char** argv)
     int i = 0;
     int k = 100000;
 
-
+  std::cout <<" start " <<std::endl;
     while ( true)
     {
         if (n1 > n2){
@@ -311,9 +311,9 @@ int main (int argc, char** argv)
             break;
         }
         if (czy_pierwsza(++n1) == true){
-            std::cout << "Liczba pierwsza: "<< n1.toStrDec() << " wynik "<< ++i<< std::endl;
+            std::cout << "Liczba pierwsza: "<< n1.toStrDec() << " wynik "<< ++i << " time: "<< current_time()<<std::endl;
         }
-        std::cout << "nastepna "<<++i << " time: "<< current_time()<<std::endl;
+
     }
     return 0;
 }
