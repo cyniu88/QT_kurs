@@ -161,11 +161,11 @@ bool WorkerIP::disconnectFromServer()
 void WorkerIP::waitSend(int waitTime, int counter)
 {
     for (int i = 0; i< counter;++i){
-            if (socket->waitForBytesWritten(waitTime)==true)
-            {
-                return;
-            }
+        if (socket->waitForBytesWritten(waitTime)==true)
+        {
+            return;
         }
+    }
 }
 
 void WorkerIP::waitRecv(int waitTime, int counter)
@@ -184,7 +184,12 @@ void WorkerIP::fromTCP(std::string addres , std::string qmsg)
 {
     to_send = true;
     addresIN.address = addres;
-    addresIN.what = qmsg ;
+    if (qmsg.empty()){
+        addresIN.what = "hello";
+    }
+    else{
+        addresIN.what = qmsg ;
+    }
     config->workerQueue.Put(addresIN);
 }
 
