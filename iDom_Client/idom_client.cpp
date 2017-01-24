@@ -473,11 +473,8 @@ void iDom_Client::on_tabWidget_currentChanged( )
 
 void iDom_Client::on_setNumberMPD_clicked()
 {
-
     bool ok;
-
     QInputDialog myInputDialog;
-
     QString id = myInputDialog.getItem(this, tr("select radio stations"),
                                        tr("select radio stations"),mpdItems,7,false, &ok);
 
@@ -603,7 +600,6 @@ void iDom_Client::on_pushButton_showTemperatureCharts_clicked()
         delete wwwWindow;
     }
     wwwWindow = new wwwShowWindow();
-
     wwwWindow->show();
 }
 

@@ -33,9 +33,7 @@ void WorkerIP::run()
         }
 
         addresOUT = config->workerQueue.Take();
-
         emit progress(0);
-
         qDebug() << "wyslano: "<<socket->write( addresOUT.what.c_str());
         waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
         waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
