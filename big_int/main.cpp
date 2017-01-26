@@ -223,12 +223,23 @@ bool czy_pierwsza(BigInt::Rossi n)
     BigInt::Rossi i(2);
     BigInt::Rossi zero(0);
 
-//    std::cout << "i : "<< i.toStrDec()<<std::endl;
-//    std::cout << "zero : "<< zero.toStrDec()<<std::endl;
-//    std::cout << "n : "<< n.toStrDec()<<std::endl;
-    if(n<i)
-        return false; //gdy liczba jest mniejsza niż 2 to nie jest pierwszą
+    std::string liczba = n.toStrDec();
 
+    liczba = liczba.at(liczba.size()-1);
+    int ostatnia = std::stoi(   liczba    );
+
+    if ( ostatnia  == 1 || ostatnia == 3 || ostatnia == 7 || ostatnia == 9){
+
+    }
+    else {
+
+        return false;
+    }
+
+    if(n<i )
+        return false; //gdy liczba jest mniejsza niż 2 to nie jest pierwszą i jesli nie ma na koncu 1 3 7 9
+    //std::cout << "liczba "<< liczba << "  ostatnia cyfra: "<< liczba.at(liczba.size()-1)<<std::endl;
+    //std::cout << "LICZE" <<std::endl;
     for(  BigInt::Rossi i(2)  ;i*i<=n; i++){
 
         if(n%i==zero){
@@ -301,9 +312,8 @@ int main (int argc, char** argv)
     std::cout << "duza liczba =suma : "<< n3.toStrDec()<<std::endl;
 
     int i = 0;
-    int k = 100000;
 
-  std::cout <<" start " <<std::endl;
+    std::cout <<" start " <<std::endl;
     while ( true)
     {
         if (n1 > n2){
