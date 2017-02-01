@@ -190,4 +190,3 @@ void WorkerIP::fromTCP(std::string addres , std::string qmsg)
     }
     config->workerQueue.Put(addresIN);
 }
-
