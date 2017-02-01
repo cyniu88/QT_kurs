@@ -17,7 +17,7 @@ void WorkerIP::run()
     //socket->setParent(this);
     qDebug() << "trwala" << timer.elapsed();
     unsigned int len_send = 0;
-
+    config->isConnectedToServer = true;
     bool goNow = true;
     ////////////////////////////////////////////////////
     ///////////// po autentykacji //////////////////////
@@ -100,6 +100,7 @@ void WorkerIP::run()
         }
     }
     // close the connection
+    config->isConnectedToServer = false;
     disconnectFromServer();
     qDebug("koniec koncow workera @@@@@@@@@@@@");
     config->goWhile=true;
@@ -133,6 +134,7 @@ bool WorkerIP::connectAndAuthentication()
             else{
                 qDebug() << "Autentykacja faild";
                 emit errorInfo ("INFO","Authentication failed " +QString::number(i)+" times!" );
+                config->isConnectedToServer = false;
                 socket->disconnect();
                 QThread::sleep(1);
             }
@@ -141,6 +143,7 @@ bool WorkerIP::connectAndAuthentication()
         {
             qDebug() << "Not connected!";
             emit errorInfo ("INFO","Not connected!");
+            config->isConnectedToServer = false;
         }
         QThread::sleep(1);
     }//end for authentication
