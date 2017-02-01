@@ -1888,7 +1888,7 @@ border-color: rgb(0, 0, 0);
         <string>kokoko</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_11">
-        <item row="3" column="0">
+        <item row="4" column="0">
          <layout class="QGridLayout" name="gridLayout_12">
           <item row="0" column="0">
            <widget class="QPushButton" name="stopServerButton">
@@ -1919,22 +1919,6 @@ border:none;
            </widget>
           </item>
          </layout>
-        </item>
-        <item row="2" column="0">
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
         </item>
         <item row="1" column="0">
          <widget class="QPushButton" name="pushButton_ttsInfo">
@@ -2041,6 +2025,49 @@ border:none;
           </item>
          </layout>
         </item>
+        <item row="2" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QPushButton" name="connectdicsonnectButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+ font: bold 20px;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tab_6">
@@ -2084,7 +2111,7 @@ border:none;
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
+        <item row="1" column="1">
          <spacer name="horizontalSpacer_2">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -2241,13 +2268,6 @@ border:none;
            </widget>
           </item>
          </layout>
-        </item>
-        <item row="1" column="1">
-         <widget class="QPushButton" name="pushButton_22">
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
         </item>
        </layout>
       </widget>

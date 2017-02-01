@@ -80,6 +80,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->horizontalSlider_tabNavigate->setValue(ui->tabWidget->currentIndex());
     ui->tabWidget->tabBar()->hide();
 
+    ui->connectdicsonnectButton->setText("Disconnect from iDom");
     ///////////////////////////// camera part
     m_pImgCtrl = new FileDownloader( QUrl(cameraAddressHTTP));
     QObject::connect( m_pImgCtrl, SIGNAL(downloaded(QByteArray)), this, SLOT(loadImage(QByteArray))   );
@@ -512,6 +513,7 @@ void iDom_Client::on_stopServerButton_clicked()
     if (reply == QMessageBox::Yes) {
         qDebug() << "Yes was clicked";
         emit sendTCP("tools","stop server");
+        config->goWhile = false;
     }
 }
 
@@ -662,4 +664,16 @@ void iDom_Client::on_oneShotCameraButton_clicked()
 {
    m_pImgCtrl->getSnap();
    makeInfo("Camera","shot taken");
+}
+
+void iDom_Client::on_connectdicsonnectButton_clicked()
+{
+    if (config->isConnectedToServer == true){
+        config->goWhile =false;
+        ui->connectdicsonnectButton->setText("Connect to iDom");
+    }
+    else{
+        config->worketPTR->start();
+        ui->connectdicsonnectButton->setText("Disconnect from iDom");
+    }
 }

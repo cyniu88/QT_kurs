@@ -5,6 +5,8 @@
 #include <QMutex>
 
 #include"blocking_queue/blocking_queue.h"
+
+class WorkerIP;
 struct ADRESS_WHAT{
     std::string address;
     std::string what;
@@ -21,6 +23,8 @@ struct iDom_CONFIG {
     bool isWindows = true;
     QMutex IPMutex;
     BlockingQueue<ADRESS_WHAT> workerQueue;
+    WorkerIP* worketPTR  ;
+    bool isConnectedToServer = false;
 };
 
 

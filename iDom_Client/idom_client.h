@@ -189,6 +189,8 @@ private slots:
 
     void on_oneShotCameraButton_clicked();
 
+    void on_connectdicsonnectButton_clicked();
+
 public slots:
       void setLcdActual(int c);
       void setLcdAll(int c);
@@ -208,8 +210,6 @@ public slots:
 
 signals:
     void sendTCP(std::string addres, std::string s);
-
-
 };
 
 #endif // IDOM_CLIENT_H
