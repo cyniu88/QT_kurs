@@ -1009,6 +1009,9 @@ background-color: rgb(128, 128, 0);</string>
             <height>0</height>
            </size>
           </property>
+          <property name="cursor">
+           <cursorShape>SizeHorCursor</cursorShape>
+          </property>
           <property name="styleSheet">
            <string notr="true">QSlider::groove:horizontal {
     
@@ -1795,6 +1798,9 @@ border-color: rgb(255, 255, 255);
             <height>0</height>
            </size>
           </property>
+          <property name="cursor">
+           <cursorShape>SizeHorCursor</cursorShape>
+          </property>
           <property name="styleSheet">
            <string notr="true">QSlider::groove:horizontal {
     
@@ -1898,11 +1904,17 @@ border-color: rgb(0, 0, 0);
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
 border-radius: 15px;
- font: bold 20px;
 }
 QPushButton:pressed {
 border:none;
@@ -1928,11 +1940,18 @@ border:none;
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
 border-radius: 15px;
- font: bold 20px;
 }
 QPushButton:pressed {
 border:none;
@@ -1955,11 +1974,19 @@ border:none;
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
 border-radius: 15px;
- font: bold 20px;
+ font: bold  ;
 }
 QPushButton:pressed {
 border:none;
@@ -1969,7 +1996,8 @@ border:none;
  </string>
               </property>
               <property name="text">
-               <string>TURN ON SLEEP MODE</string>
+               <string>TURN ON
+SLEEP MODE</string>
               </property>
              </widget>
             </item>
@@ -1981,11 +2009,18 @@ border:none;
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
 border-radius: 15px;
- font: bold 20px;
+
 }
 QPushButton:pressed {
 border:none;
@@ -1994,7 +2029,8 @@ border:none;
  </string>
               </property>
               <property name="text">
-               <string>PUT TEMPERATURE</string>
+               <string>PUT
+TEMPERATURE</string>
               </property>
              </widget>
             </item>
@@ -2006,11 +2042,20 @@ border:none;
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>ArrowCursor</cursorShape>
+              </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
 border-radius: 15px;
- font: bold 20px;
 }
 QPushButton:pressed {
 border:none;
@@ -2051,11 +2096,17 @@ border:none;
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
 border-radius: 15px;
- font: bold 20px;
 }
 QPushButton:pressed {
 border:none;
@@ -2107,7 +2158,9 @@ border:none;
 }</string>
           </property>
           <property name="text">
-           <string>Show Temperature &amp; Smog Charts</string>
+           <string>Show Temperature
+and
+Smog Charts</string>
           </property>
          </widget>
         </item>
@@ -2415,7 +2468,8 @@ background-color: rgba(0, 0, 0, 0);</string>
            <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
 border-radius: 15px;
- font: bold 20px;
+ font: bold ;
+font-size: 20px;
 	color: rgb(0, 255, 0);
 }
 QPushButton:pressed {
@@ -2544,6 +2598,12 @@ border:none;
     </item>
     <item row="2" column="0">
      <widget class="QSlider" name="horizontalSlider_tabNavigate">
+      <property name="cursor">
+       <cursorShape>SizeHorCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
       <property name="styleSheet">
        <string notr="true">QSlider::groove:horizontal {
     
