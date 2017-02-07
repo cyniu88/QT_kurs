@@ -513,7 +513,8 @@ void iDom_Client::on_stopServerButton_clicked()
     if (reply == QMessageBox::Yes) {
         qDebug() << "Yes was clicked";
         emit sendTCP("tools","stop server");
-        config->goWhile = false;
+        QThread::sleep(1);
+        on_connectdicsonnectButton_clicked();
     }
 }
 
@@ -662,8 +663,8 @@ void iDom_Client::on_reloadCameraAddressButton_clicked()
 
 void iDom_Client::on_oneShotCameraButton_clicked()
 {
-   m_pImgCtrl->getSnap();
-   makeInfo("Camera","shot taken");
+    m_pImgCtrl->getSnap();
+    makeInfo("Camera","shot taken");
 }
 
 void iDom_Client::on_connectdicsonnectButton_clicked()
