@@ -45,6 +45,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 #endif
     // dodajemy scrolla area  ajki widget  i czym scrolujemy
     QScroller::grabGesture(ui->txtAnswer,QScroller::TouchGesture);
+    QScroller::grabGesture(ui->scrollArea,QScroller::TouchGesture);
 
     ui->txtAnswer->setAttribute(Qt::WA_AcceptTouchEvents);
 
@@ -604,11 +605,6 @@ void iDom_Client::on_pushButton_showTemperatureCharts_clicked()
     }
     wwwWindow = new wwwShowWindow();
     wwwWindow->show();
-}
-
-void iDom_Client::on_pushButton_22_clicked()
-{
-    droid.updateAndroidNotification("test");
 }
 
 void iDom_Client::loadImage(QByteArray d)

@@ -177,8 +177,6 @@ private slots:
 
     void on_pushButton_showTemperatureCharts_clicked();
 
-    void on_pushButton_22_clicked();
-
     void loadImage(QByteArray d);
 
     void on_camera_button_reload_clicked();

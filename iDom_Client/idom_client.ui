@@ -94,7 +94,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -733,8 +733,11 @@ border: none ;</string>
             <property name="tabChangesFocus">
              <bool>true</bool>
             </property>
+            <property name="lineWrapMode">
+             <enum>QTextEdit::NoWrap</enum>
+            </property>
             <property name="lineWrapColumnOrWidth">
-             <number>0</number>
+             <number>1</number>
             </property>
             <property name="readOnly">
              <bool>true</bool>

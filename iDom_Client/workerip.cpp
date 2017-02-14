@@ -5,7 +5,7 @@
 #include <QElapsedTimer>
 WorkerIP::WorkerIP(iDom_CONFIG *config) : config(config)
 {
-
+    QObject::connect(socket,SIGNAL(destroyed()),this,SLOT(tcpSocketDisconnected()));
 }
 
 void WorkerIP::run()
@@ -192,4 +192,9 @@ void WorkerIP::fromTCP(std::string addres , std::string qmsg)
         addresIN.what = qmsg ;
     }
     config->workerQueue.Put(addresIN);
+}
+
+void WorkerIP::tcpSocketDisconnected()
+{
+    qDebug("rozlaczony");
 }
