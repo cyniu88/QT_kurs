@@ -51,6 +51,7 @@ signals:
     void tools (QString s);
     void listMPD(QString s);
     void signalFromTTS(QString s);
+    void serverDisconnected(bool state = false);
 
 public slots:
     void fromTCP(std::string addres, std::string qmsg);

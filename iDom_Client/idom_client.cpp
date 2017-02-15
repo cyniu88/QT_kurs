@@ -194,6 +194,16 @@ void iDom_Client::textToSpeachSLOTS(QString s)
     ivona->say(s);
 }
 
+void iDom_Client::connectDisconnectButtonState(bool state)
+{
+    if (state == false){
+        ui->connectdicsonnectButton->setText("Connect to iDom");
+    }
+    else{
+        ui->connectdicsonnectButton->setText("Disconnect from iDom");
+    }
+}
+
 void iDom_Client::on_pushButton_released()
 {
     config->command = ui->comboBox->currentText().toStdString();

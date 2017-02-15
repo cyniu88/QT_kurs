@@ -205,6 +205,7 @@ public slots:
       void odb_tools (QString s);
       void listMPD(QString s);
       void textToSpeachSLOTS(QString s);
+      void connectDisconnectButtonState(bool state);
 
 signals:
     void sendTCP(std::string addres, std::string s);

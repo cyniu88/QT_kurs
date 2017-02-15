@@ -5,7 +5,6 @@
 #include <QElapsedTimer>
 WorkerIP::WorkerIP(iDom_CONFIG *config) : config(config)
 {
-    QObject::connect(socket,SIGNAL(destroyed()),this,SLOT(tcpSocketDisconnected()));
 }
 
 void WorkerIP::run()
@@ -34,8 +33,16 @@ void WorkerIP::run()
 
         addresOUT = config->workerQueue.Take();
         emit progress(0);
+        if ( socket->state() ==  QAbstractSocket::UnconnectedState)
+        {
+            config->isConnectedToServer =  false;
+            emit serverDisconnected();
+            break;
+        }
         qDebug() << "wyslano: "<<socket->write( addresOUT.what.c_str());
+
         waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
+
         waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
 
         buffor = socket->readAll();
@@ -43,7 +50,14 @@ void WorkerIP::run()
         len_send = atoi (s_buffor.c_str());
         emit sendAll(len_send);
 
+        if ( socket->state() ==  QAbstractSocket::UnconnectedState)
+        {
+            emit serverDisconnected();
+            config->isConnectedToServer =  false;
+            break;
+        }
         socket->write("OK");
+
         waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
 
         buffor.clear();
@@ -109,6 +123,7 @@ void WorkerIP::run()
 bool WorkerIP::connectAndAuthentication()
 {
     socket = new QTcpSocket( );
+    QObject::connect(socket,SIGNAL(disconnected()),this,SLOT(tcpSocketDisconnected()));
 
     for (int i =1 ; i<4 ;++i)
     {
@@ -129,25 +144,25 @@ bool WorkerIP::connectAndAuthentication()
                 qDebug ()<< "Autentykacja ok";
                 emit errorInfo ("INFO","GOTOWE DO UZYWANIA"  );
                 config->goWhile =true;
+                emit serverDisconnected(true);
                 return true;
             }
             else{
-                qDebug() << "Autentykacja faild";
                 emit errorInfo ("INFO","Authentication failed " +QString::number(i)+" times!" );
                 config->isConnectedToServer = false;
+                emit serverDisconnected();
                 socket->disconnect();
                 QThread::sleep(1);
             }
         }
         else
         {
-            qDebug() << "Not connected!";
             emit errorInfo ("INFO","Not connected!");
             config->isConnectedToServer = false;
+            emit serverDisconnected();
         }
         QThread::sleep(1);
     }//end for authentication
-    //delete socket;
     return false;
 }
 
@@ -161,8 +176,15 @@ bool WorkerIP::disconnectFromServer()
 
 void WorkerIP::waitSend(int waitTime, int counter)
 {
+    bool temp;
     for (int i = 0; i< counter;++i){
-        if (socket->waitForBytesWritten(waitTime)==true)
+        if (config->isConnectedToServer == true)
+        {
+            temp = socket->waitForBytesWritten(waitTime);
+            return;
+        }
+
+        if (temp == true)
         {
             return;
         }
@@ -197,4 +219,5 @@ void WorkerIP::fromTCP(std::string addres , std::string qmsg)
 void WorkerIP::tcpSocketDisconnected()
 {
     qDebug("rozlaczony");
+    config->isConnectedToServer = false;
 }
