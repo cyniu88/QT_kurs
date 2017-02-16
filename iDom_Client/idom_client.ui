@@ -31,6 +31,10 @@
   <property name="windowTitle">
    <string>iDom_Client</string>
   </property>
+  <property name="windowIcon">
+   <iconset theme="icon.ico">
+    <normaloff>.</normaloff>.</iconset>
+  </property>
   <property name="windowOpacity">
    <double>3.000000000000000</double>
   </property>
@@ -50,7 +54,7 @@
    <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks|QMainWindow::VerticalTabs</set>
   </property>
   <property name="kk" stdset="0">
-   <bool>false</bool>
+   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="minimumSize">
@@ -137,8 +141,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>807</width>
-               <height>663</height>
+               <width>815</width>
+               <height>689</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -328,6 +332,9 @@ border:none;
             <bold>true</bold>
            </font>
           </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;volume down&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="styleSheet">
            <string notr="true"> QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
@@ -354,6 +361,9 @@ border:none;
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;volume up&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="styleSheet">
            <string notr="true"> QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
@@ -378,6 +388,9 @@ border:none;
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;pick out song&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="styleSheet">
            <string notr="true"> QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
@@ -399,6 +412,9 @@ border:none;
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;pause music&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">
@@ -431,6 +447,9 @@ border:none;
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://pl.bab.la/slownik/angielski-polski/previous&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;previous song&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="styleSheet">
            <string notr="true"> QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
@@ -454,6 +473,9 @@ border:none;
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;next song&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="styleSheet">
            <string notr="true"> QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
@@ -484,6 +506,9 @@ border:none;
            <string notr="true">color: rgb(0, 255, 0);
 background-color: rgba(170, 0, 0, 10);</string>
           </property>
+          <property name="frame">
+           <bool>false</bool>
+          </property>
          </widget>
         </item>
         <item row="1" column="2">
@@ -507,6 +532,9 @@ background-color: rgba(170, 0, 0, 10);</string>
             <italic>false</italic>
             <bold>true</bold>
            </font>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;start play music&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="styleSheet">
            <string notr="true"> 
@@ -2509,6 +2537,12 @@ border:none;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="toolTip">
+         <string>BACK</string>
+        </property>
+        <property name="whatsThis">
+         <string>kokoko?</string>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
@@ -2544,10 +2578,16 @@ border:none;
         </property>
         <property name="font">
          <font>
-          <pointsize>11</pointsize>
+          <pointsize>18</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>BlankCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string/>
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgba(0, 0, 0, 0);
@@ -2563,6 +2603,9 @@ color: rgb(0, 255, 0);</string>
         <property name="readOnly">
          <bool>true</bool>
         </property>
+        <property name="cursorMoveStyle">
+         <enum>Qt::VisualMoveStyle</enum>
+        </property>
        </widget>
       </item>
       <item>
@@ -2572,6 +2615,9 @@ color: rgb(0, 255, 0);</string>
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>NEXT</string>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
