@@ -3,14 +3,15 @@
 #include <iostream>
 #include <string>
 #include <QMutex>
-
-#include"blocking_queue/blocking_queue.h"
+#include "blocking_queue/blocking_queue.h"
 
 class WorkerIP;
+
 struct ADRESS_WHAT{
     std::string address;
     std::string what;
 };
+
 struct iDom_CONFIG {
    // std::string logo_windows = "f/logo.png";
     std::string logo_android = "/storage/emulated/0/f/logo.png";
@@ -26,7 +27,5 @@ struct iDom_CONFIG {
     WorkerIP* worketPTR  ;
     bool isConnectedToServer = false;
 };
-
-
 
 #endif // VARIABLE_H

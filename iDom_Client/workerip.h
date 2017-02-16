@@ -4,11 +4,10 @@
 #include <QMessageBox>
 #include <QTcpSocket>
 #include <QThread>
+#include <QObject>
 #include "functions.h"
 #include "variable.h"
 #include "blocking_queue/blocking_queue.h"
-#include <QObject>
-
 
 extern std::string s_buffor;
 class WorkerIP : public QThread
@@ -18,8 +17,8 @@ public:
     WorkerIP(iDom_CONFIG * config);
     ~WorkerIP()= default;
     void run();
-public:
     iDom_CONFIG *config;
+
 private:
     int counter =0;
     int counter2 =0;
@@ -31,7 +30,6 @@ private:
     int counterWaitTime = 20;
     QTcpSocket *socket;
     QByteArray buffor;
-
     bool connectAndAuthentication();
     bool disconnectFromServer();
     void waitSend(int waitTime, int counter);

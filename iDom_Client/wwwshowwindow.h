@@ -15,7 +15,6 @@ class wwwShowWindow;
 class wwwShowWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit wwwShowWindow(QWidget *parent = 0);
     ~wwwShowWindow();
@@ -26,9 +25,9 @@ public:
 #ifdef Q_OS_ANDROID
     QQuickWidget *viewTemp = NULL;
 #endif
+
 private slots:
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
 
 private:

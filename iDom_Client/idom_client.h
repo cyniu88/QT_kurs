@@ -19,6 +19,7 @@
 #ifdef Q_OS_WIN
 #include <QAxWidget>
 #endif
+
 #include "wwwshowwindow.h"
 #include "android_interface/android_interface.h"
 #include "workerip.h"
@@ -36,6 +37,7 @@ class iDom_Client : public QMainWindow
 public:
     explicit iDom_Client(iDom_CONFIG *config, QWidget *parent = 0);
     ~iDom_Client();
+
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
@@ -167,7 +169,6 @@ private slots:
     void on_pushButton_goodBye_clicked();
 
     void on_pushButton_ttsInfo_clicked();
-
 
     void on_tabRightButton_clicked();
 

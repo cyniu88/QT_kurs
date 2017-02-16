@@ -7,10 +7,12 @@ FileDownloader::FileDownloader(QUrl imageUrl, QObject *parent) :
   &m_WebCtrl, SIGNAL (finished(QNetworkReply*)),
   this, SLOT (fileDownloaded(QNetworkReply*))
   );
-
 }
 
-FileDownloader::~FileDownloader() { }
+FileDownloader::~FileDownloader()
+{
+
+}
 
 void FileDownloader::fileDownloaded(QNetworkReply* pReply) {
  m_DownloadedData = pReply->readAll();

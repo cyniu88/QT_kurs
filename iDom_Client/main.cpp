@@ -11,6 +11,7 @@
 #include "variable.h"
 
 std::string s_buffor;
+
 int main(int argc, char *argv[])
 {
     QTimer *infoMPDtimer = new QTimer ();
@@ -28,7 +29,6 @@ int main(int argc, char *argv[])
 #endif
 
     iDom_Client * w = new iDom_Client(&config);
-
 
     QObject::connect(w,SIGNAL(sendTCP(std::string,std::string)), worker,SLOT(fromTCP(std::string,std::string)));
 

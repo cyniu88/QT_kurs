@@ -14,17 +14,16 @@
 #include "workerip.h"
 #include "functions.h"
 
-
 namespace std {
+    template <typename T>
+    std::string to_string(T value)
+    {
+        std::ostringstream os ;
+        os << value ;
+        return os.str() ;
+    }
+}
 
-template <typename T>
-std::string to_string(T value)
-{
-    std::ostringstream os ;
-    os << value ;
-    return os.str() ;
-}
-}
 iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::iDom_Client),
@@ -90,7 +89,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
 iDom_Client::~iDom_Client()
 {
-
     delete m_pImgCtrl;
     delete wwwWindow;
     delete ivona;
@@ -110,7 +108,8 @@ void iDom_Client::scrollTitle()
     ui->titleTXT->setText(temp);
 }
 
-void iDom_Client::odb_answer(QString s){
+void iDom_Client::odb_answer(QString s)
+{
     ui->txtAnswer->setText(s);
     ui->txtAnswer->moveCursor(QTextCursor::End);
     ui->lcdNumberActual ->display(s.size());
@@ -480,9 +479,6 @@ void iDom_Client::on_tabWidget_currentChanged( )
     }
 }
 
-
-
-
 void iDom_Client::on_setNumberMPD_clicked()
 {
     bool ok;
@@ -620,8 +616,6 @@ void iDom_Client::on_pushButton_showTemperatureCharts_clicked()
 void iDom_Client::loadImage(QByteArray d)
 {
     pima.loadFromData(d);
-
-
     ui->cameraLabel->setPixmap(  pima.scaled(ui->cameraLabel->width(),ui->cameraLabel->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation) );
     ui->snap_counter->display(ui->snap_counter->value()+1);
     if (cameraWork == true)

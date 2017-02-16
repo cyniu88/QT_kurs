@@ -9,23 +9,24 @@
 
 class FileDownloader : public QObject
 {
- Q_OBJECT
- public:
-  explicit FileDownloader(QUrl imageUrl, QObject *parent = 0);
-  virtual ~FileDownloader();
-  QByteArray downloadedData() const;
-  void getSnap();
-  void setAddress(QString address);
- signals:
-  void downloaded( QByteArray d);
+    Q_OBJECT
+public:
+    explicit FileDownloader(QUrl imageUrl, QObject *parent = 0);
+    virtual ~FileDownloader();
+    QByteArray downloadedData() const;
+    void getSnap();
+    void setAddress(QString address);
 
- private slots:
-  void fileDownloaded(QNetworkReply* pReply);
+signals:
+    void downloaded( QByteArray d);
 
- private:
-  QNetworkAccessManager m_WebCtrl;
-  QByteArray m_DownloadedData;
-  QNetworkRequest request;
+private slots:
+    void fileDownloaded(QNetworkReply* pReply);
+
+private:
+    QNetworkAccessManager m_WebCtrl;
+    QByteArray m_DownloadedData;
+    QNetworkRequest request;
 };
 
 #endif // FILEDOWNLOADER_H

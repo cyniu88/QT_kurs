@@ -41,13 +41,12 @@ void WorkerIP::run()
         }
         qDebug() << "wyslano: "<<socket->write( addresOUT.what.c_str());
 
-        waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
-
+        waitSend(waitTime, counterWaitTime); //socket->waitForBytesWritten(waitTime);
         waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
 
         buffor = socket->readAll();
         s_buffor = buffor.toStdString();
-        len_send = atoi (s_buffor.c_str());
+        len_send = atoi(s_buffor.c_str());
         emit sendAll(len_send);
 
         if ( socket->state() ==  QAbstractSocket::UnconnectedState)
@@ -183,7 +182,6 @@ void WorkerIP::waitSend(int waitTime, int counter)
             temp = socket->waitForBytesWritten(waitTime);
             return;
         }
-
         if (temp == true)
         {
             return;
