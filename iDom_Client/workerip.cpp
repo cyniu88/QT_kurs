@@ -175,12 +175,11 @@ bool WorkerIP::disconnectFromServer()
 
 void WorkerIP::waitSend(int waitTime, int counter)
 {
-    bool temp;
+    bool temp = true;
     for (int i = 0; i< counter;++i){
         if (config->isConnectedToServer == true)
         {
             temp = socket->waitForBytesWritten(waitTime);
-            return;
         }
         if (temp == true)
         {
