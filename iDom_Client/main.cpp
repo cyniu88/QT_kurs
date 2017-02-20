@@ -22,7 +22,6 @@ int main(int argc, char *argv[])
     WorkerIP * worker = new WorkerIP(&config);
     config.worketPTR  = worker;
     QApplication a(argc, argv);
-    a.setWindowIcon( QIcon(":/new/prefix1/iDom_client.ico"));
 
 #ifdef Q_OS_ANDROID
     QtWebView::initialize();
