@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(listMPD(QString)),           w,SLOT(listMPD(QString))  );
     QObject::connect(worker,SIGNAL(signalFromTTS(QString)),     w,SLOT(textToSpeachSLOTS(QString)) );
     QObject::connect(worker,SIGNAL(serverDisconnected(bool)),   w,SLOT(connectDisconnectButtonState(bool)));
+
     QObject::connect(infoMPDtimer,SIGNAL(timeout()),            w,SLOT(updateMPDinfo()) );
     QObject::connect(infoTemperatureTimer,SIGNAL(timeout()),    w,SLOT(updateTemepretureInfo()) );
     QObject::connect(scroller, SIGNAL(timeout()),               w,SLOT(scrollTitle()));
