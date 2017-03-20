@@ -15,6 +15,7 @@
 #include <QDir>
 #include <QtSvg/QSvgWidget>
 #include <QTextToSpeech>
+#include <QTime>
 
 #ifdef Q_OS_WIN
 #include <QAxWidget>
@@ -58,15 +59,18 @@ private:
 
 #ifdef Q_OS_WIN
     QSystemTrayIcon  trayIcon;
-   // QAxWidget  axWidgetTemperature;
-   //  QAxWidget *axWidgetTemperaturePTR = NULL;
+    // QAxWidget  axWidgetTemperature;
+    //  QAxWidget *axWidgetTemperaturePTR = NULL;
 #endif
 
 #ifdef Q_OS_ANDROID
-   // QQuickWidget *viewTemp = NULL;
+    // QQuickWidget *viewTemp = NULL;
 #endif
- QTextToSpeech *ivona;
+    QTextToSpeech *ivona;
 
+    ////////////  volume counters
+    QTime pressTime ;
+    void setVolumeDial();
 private slots:
     void on_exitButton_released();
 
@@ -190,23 +194,29 @@ private slots:
 
     void on_connectdicsonnectButton_clicked();
 
+    void on_TEST_DIALOG_clicked();
+
+    void on_pushButton_volumeUP_pressed();
+
+    void on_pushButton_volumeDOWN_pressed();
+
 public slots:
-      void setLcdActual(int c);
-      void setLcdAll(int c);
-      void odb_answer(QString s);
-      void readProgress(int c);
-      void odb_answer_LED(QString s);
-      void odb_answer_MPD(QString s);
-      void odb_mpd_title (QString s);
-      void odbMpdVolume(QString s);
-      void makeInfo(QString tit, QString msg);
-      void updateMPDinfo();
-      void updateTemepretureInfo ();
-      void odb_temperature (QString s);
-      void odb_tools (QString s);
-      void listMPD(QString s);
-      void textToSpeachSLOTS(QString s);
-      void connectDisconnectButtonState(bool state);
+    void setLcdActual(int c);
+    void setLcdAll(int c);
+    void odb_answer(QString s);
+    void readProgress(int c);
+    void odb_answer_LED(QString s);
+    void odb_answer_MPD(QString s);
+    void odb_mpd_title (QString s);
+    void odbMpdVolume(QString s);
+    void makeInfo(QString tit, QString msg);
+    void updateMPDinfo();
+    void updateTemepretureInfo ();
+    void odb_temperature (QString s);
+    void odb_tools (QString s);
+    void listMPD(QString s);
+    void textToSpeachSLOTS(QString s);
+    void connectDisconnectButtonState(bool state);
 
 signals:
     void sendTCP(std::string addres, std::string s);

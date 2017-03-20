@@ -1,6 +1,7 @@
 #include <QPixmap>
 #include <QStackedWidget>
 #include <QDebug>
+#include <QDial>
 #include <QDesktopWidget>
 #include <QColorDialog>
 #include <QDateTime>
@@ -15,13 +16,13 @@
 #include "functions.h"
 
 namespace std {
-    template <typename T>
-    std::string to_string(T value)
-    {
-        std::ostringstream os ;
-        os << value ;
-        return os.str() ;
-    }
+template <typename T>
+std::string to_string(T value)
+{
+    std::ostringstream os ;
+    os << value ;
+    return os.str() ;
+}
 }
 
 iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
@@ -214,6 +215,15 @@ void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
     emit sendTCP("LED",
                  "iDom LED "+std::to_string(from)+" "+std::to_string(to)+" "+std::to_string(r)+" "+std::to_string(g)+" "+std::to_string(b)
                  );
+}
+
+void iDom_Client::setVolumeDial()
+{
+    QDial vol;
+    QDialog k;
+    //k.
+    k.setWindowIconText("radio");
+    k.exec();
 }
 
 void iDom_Client::on_pushButton_12_released()
@@ -430,18 +440,28 @@ void iDom_Client::on_pushButton_pause_released()
 
 void iDom_Client::on_pushButton_volumeUP_released()
 {
-    emit sendTCP("MPD","MPD volume up");
-    ui->volumeBar->setValue(ui->volumeBar->value()+1);
-    emit sendTCP("MPD_volume","MPD get volume");
-    droid.vibrate(100);
+    if ( pressTime.elapsed() < 220){
+        emit sendTCP("MPD","MPD volume up");
+        ui->volumeBar->setValue(ui->volumeBar->value()+1);
+        emit sendTCP("MPD_volume","MPD get volume");
+        droid.vibrate(100);
+    }
+    else{
+        setVolumeDial();
+    }
 }
 
 void iDom_Client::on_pushButton_volumeDOWN_released()
 {
-    emit sendTCP("MPD","MPD volume down");
-    ui->volumeBar->setValue(ui->volumeBar->value()-1);
-    emit sendTCP("MPD_volume","MPD get volume");
-    droid.vibrate(100);
+    if ( pressTime.elapsed() < 220){
+        emit sendTCP("MPD","MPD volume down");
+        ui->volumeBar->setValue(ui->volumeBar->value()-1);
+        emit sendTCP("MPD_volume","MPD get volume");
+        droid.vibrate(100);
+    }
+    else{
+        setVolumeDial();
+    }
 }
 
 void iDom_Client::on_exitButton_pressed()
@@ -677,4 +697,21 @@ void iDom_Client::on_connectdicsonnectButton_clicked()
         config->worketPTR->start();
         ui->connectdicsonnectButton->setText("Disconnect from iDom");
     }
+}
+
+void iDom_Client::on_TEST_DIALOG_clicked()
+{
+    QDialog k;
+    k.setWindowIconText("radio");
+    k.exec();
+}
+
+void iDom_Client::on_pushButton_volumeUP_pressed()
+{
+    pressTime.start();
+}
+
+void iDom_Client::on_pushButton_volumeDOWN_pressed()
+{
+    pressTime.start();
 }
