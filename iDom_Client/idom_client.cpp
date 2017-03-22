@@ -86,6 +86,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     m_pImgCtrl = new FileDownloader( QUrl(cameraAddressHTTP));
     QObject::connect( m_pImgCtrl, SIGNAL(downloaded(QByteArray)), this, SLOT(loadImage(QByteArray))   );
     ivona = new QTextToSpeech(this);
+
+    QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ) ,this,SLOT ( setVolumeValueSlot(int ) ));
 }
 
 iDom_Client::~iDom_Client()
@@ -219,11 +221,14 @@ void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
 
 void iDom_Client::setVolumeDial()
 {
-    QDial vol;
-    QDialog k;
-    //k.
-    k.setWindowIconText("radio");
-    k.exec();
+    vol.setVolume(ui->volumeBar->value());
+#ifdef Q_OS_ANDROID
+    vol.showMaximized();
+#endif
+
+#ifdef Q_OS_WIN
+    vol.exec();
+#endif
 }
 
 void iDom_Client::on_pushButton_12_released()
@@ -699,13 +704,6 @@ void iDom_Client::on_connectdicsonnectButton_clicked()
     }
 }
 
-void iDom_Client::on_TEST_DIALOG_clicked()
-{
-    QDialog k;
-    k.setWindowIconText("radio");
-    k.exec();
-}
-
 void iDom_Client::on_pushButton_volumeUP_pressed()
 {
     pressTime.start();
@@ -714,4 +712,12 @@ void iDom_Client::on_pushButton_volumeUP_pressed()
 void iDom_Client::on_pushButton_volumeDOWN_pressed()
 {
     pressTime.start();
+}
+
+void iDom_Client::setVolumeValueSlot(int i)
+{
+    qDebug("setVolumeValueSlot()!!!");
+    droid.vibrate(100);
+    emit sendTCP("MPD","MPD volume "+ std::to_string(i));
+    emit sendTCP("MPD_volume","MPD get volume");
 }

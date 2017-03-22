@@ -28,7 +28,8 @@ SOURCES += main.cpp\
             android_interface/android_interface.cpp \
             wwwshowwindow.cpp \
             filedownloader.cpp \
-    ../libs/sgvTEST/thermometerSVG/thermometer.cpp
+    ../libs/sgvTEST/thermometerSVG/thermometer.cpp \
+    volumedialog.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  +=  androidhelper_cyniu.cpp
@@ -42,7 +43,8 @@ HEADERS  += idom_client.h \
             android_interface/android_interface.h \
             wwwshowwindow.h \
             filedownloader.h \
-    ../libs/sgvTEST/thermometerSVG/thermometer.h
+    ../libs/sgvTEST/thermometerSVG/thermometer.h \
+    volumedialog.h
 android {
             message("* Using settings for Android.")
             HEADERS +=  androidhelper_cyniu.h
@@ -50,7 +52,8 @@ android {
 
 
 FORMS    += idom_client.ui \
-            wwwshowwindow.ui
+            wwwshowwindow.ui \
+    volumedialog.ui
 
 CONFIG += mobility   c++14
 QMAKE_CXXFLAGS += -std=c++1y -Wall  -pedantic

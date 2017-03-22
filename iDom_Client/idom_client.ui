@@ -141,8 +141,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>807</width>
-               <height>663</height>
+               <width>815</width>
+               <height>689</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -597,10 +597,7 @@ border:none;
         <item row="7" column="1" colspan="2">
          <widget class="QProgressBar" name="volumeBar">
           <property name="styleSheet">
-           <string notr="true">
-QProgressBar::chunk {
-	
- 
+           <string notr="true">QProgressBar::chunk { 
     background-color: green;
     width: 10px;
     margin: 0.5px;
@@ -2207,7 +2204,7 @@ Smog Charts</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
+        <item row="1" column="1">
          <spacer name="horizontalSpacer_2">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -2364,13 +2361,6 @@ Smog Charts</string>
            </widget>
           </item>
          </layout>
-        </item>
-        <item row="1" column="1">
-         <widget class="QPushButton" name="TEST_DIALOG">
-          <property name="text">
-           <string>TEST DIALOG</string>
-          </property>
-         </widget>
         </item>
        </layout>
       </widget>

@@ -27,6 +27,7 @@
 #include "variable.h"
 #include "../libs/sgvTEST/thermometerSVG/thermometer.h"
 #include "filedownloader.h"
+#include "volumedialog.h"
 
 namespace Ui {
 class iDom_Client;
@@ -44,6 +45,7 @@ private:
     iDom_CONFIG *config;
     /////////// okno dla www
     wwwShowWindow *wwwWindow = NULL;
+    VolumeDialog vol;
     void sendSignalColor(int r,int g, int b, int from=0, int to=60);
     android_interface droid;
     QString temperatureString;
@@ -194,8 +196,6 @@ private slots:
 
     void on_connectdicsonnectButton_clicked();
 
-    void on_TEST_DIALOG_clicked();
-
     void on_pushButton_volumeUP_pressed();
 
     void on_pushButton_volumeDOWN_pressed();
@@ -217,6 +217,7 @@ public slots:
     void listMPD(QString s);
     void textToSpeachSLOTS(QString s);
     void connectDisconnectButtonState(bool state);
+    void setVolumeValueSlot(int i);
 
 signals:
     void sendTCP(std::string addres, std::string s);
