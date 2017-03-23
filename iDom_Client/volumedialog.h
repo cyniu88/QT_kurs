@@ -26,7 +26,6 @@ private slots:
 
 private:
     Ui::VolumeDialog *ui;
-
 signals:
     void setVolumeSingnal(int i);
 };
