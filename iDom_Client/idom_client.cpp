@@ -222,6 +222,7 @@ void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
 void iDom_Client::setVolumeDial()
 {
     vol.setVolume(ui->volumeBar->value());
+
 #ifdef Q_OS_ANDROID
     vol.showMaximized();
 #endif

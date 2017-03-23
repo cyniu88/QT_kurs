@@ -16,6 +16,8 @@ VolumeDialog::VolumeDialog(QWidget *parent) :
     QPalette palette;
     palette.setBrush(QPalette::Background, pix);
     this->setPalette(palette);
+
+
 }
 
 VolumeDialog::~VolumeDialog()

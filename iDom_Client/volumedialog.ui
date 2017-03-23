@@ -32,9 +32,14 @@
    </item>
    <item>
     <widget class="QDial" name="dial">
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
      <property name="styleSheet">
-      <string notr="true"> background-color: green;
-</string>
+      <string notr="true"/>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhNone</set>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
