@@ -6,18 +6,6 @@ VolumeDialog::VolumeDialog(QWidget *parent) :
     ui(new Ui::VolumeDialog)
 {
     ui->setupUi(this);
-    QPixmap pix;
-
-    if (pix.load( ":/new/prefix1/files/background.png"   ))
-    {
-
-    }
-    pix = pix.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(QPalette::Background, pix);
-    this->setPalette(palette);
-
-
 }
 
 VolumeDialog::~VolumeDialog()

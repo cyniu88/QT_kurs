@@ -11,7 +11,19 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>set volume</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/new/prefix1/files/background.png);</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -19,8 +31,16 @@
      <property name="enabled">
       <bool>false</bool>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);
+border: none ;
+color: rgb(0, 255, 0);</string>
+     </property>
      <property name="text">
       <string>VOLUME</string>
+     </property>
+     <property name="frame">
+      <bool>false</bool>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -33,7 +53,7 @@
    <item>
     <widget class="QDial" name="dial">
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true"/>
@@ -54,7 +74,7 @@
       <bool>false</bool>
      </property>
      <property name="notchTarget">
-      <double>1.000000000000000</double>
+      <double>20.000000000000000</double>
      </property>
      <property name="notchesVisible">
       <bool>true</bool>
