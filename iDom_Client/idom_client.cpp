@@ -648,6 +648,10 @@ void iDom_Client::loadImage(QByteArray d)
     {
         m_pImgCtrl->getSnap();
     }
+    else
+    {
+        droid.vibrate(100);
+    }
 }
 
 void iDom_Client::on_camera_button_reload_clicked()
@@ -664,7 +668,6 @@ void iDom_Client::on_camera_button_reload_clicked()
     }
     m_pImgCtrl->getSnap();
     droid.keepScreenOn(cameraWork);
-    droid.vibrate(100);
 }
 
 void iDom_Client::on_tabWidget_currentChanged(int index)
@@ -691,6 +694,7 @@ void iDom_Client::on_oneShotCameraButton_clicked()
 {
     m_pImgCtrl->getSnap();
     makeInfo("Camera","shot taken");
+    droid.vibrate(100);
 }
 
 void iDom_Client::on_connectdicsonnectButton_clicked()
