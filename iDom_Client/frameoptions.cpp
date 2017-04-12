@@ -34,5 +34,10 @@ void FrameOptions::on_textEditCommandList_textChanged()
 
 void FrameOptions::on_okbutton_clicked()
 {
-        emit s_sendCommandList(getCommandList());
+    on_applyButton_clicked();
+}
+
+void FrameOptions::on_applyButton_clicked()
+{
+    emit s_sendCommandList(getCommandList());
 }

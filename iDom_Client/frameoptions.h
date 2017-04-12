@@ -26,6 +26,7 @@ signals:
 private slots:
     void on_textEditCommandList_textChanged();
     void on_okbutton_clicked();
+    void on_applyButton_clicked();
 };
 
 #endif // FRAMEOPTIONS_H
