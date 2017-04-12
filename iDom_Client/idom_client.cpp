@@ -726,3 +726,8 @@ void iDom_Client::setVolumeValueSlot(int i)
     emit sendTCP("MPD","MPD volume "+ std::to_string(i));
     emit sendTCP("MPD_volume","MPD get volume");
 }
+
+void iDom_Client::on_optionsButton_clicked()
+{
+   optionsWindow.show();
+}

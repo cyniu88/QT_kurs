@@ -28,6 +28,7 @@
 #include "../libs/sgvTEST/thermometerSVG/thermometer.h"
 #include "filedownloader.h"
 #include "volumedialog.h"
+#include "frameoptions.h"
 
 namespace Ui {
 class iDom_Client;
@@ -46,6 +47,7 @@ private:
     /////////// okno dla www
     wwwShowWindow *wwwWindow = NULL;
     VolumeDialog vol;
+    FrameOptions optionsWindow;
     void sendSignalColor(int r,int g, int b, int from=0, int to=60);
     android_interface droid;
     QString temperatureString;
@@ -199,6 +201,8 @@ private slots:
     void on_pushButton_volumeUP_pressed();
 
     void on_pushButton_volumeDOWN_pressed();
+
+    void on_optionsButton_clicked();
 
 public slots:
     void setLcdActual(int c);
