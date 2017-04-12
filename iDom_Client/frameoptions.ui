@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>673</width>
     <height>300</height>
    </rect>
   </property>
@@ -22,29 +22,40 @@
   <property name="frameShadow">
    <enum>QFrame::Raised</enum>
   </property>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QTextEdit" name="textEditCommandList">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>113</width>
-     <height>20</height>
+     <x>30</x>
+     <y>20</y>
+     <width>531</width>
+     <height>121</height>
     </rect>
-   </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(0, 255, 0);</string>
    </property>
-   <property name="text">
-    <string>Add command</string>
+  </widget>
+  <widget class="QPushButton" name="okbutton">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>190</y>
+     <width>111</width>
+     <height>61</height>
+    </rect>
    </property>
-   <property name="frame">
-    <bool>false</bool>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+}
+QPushButton:pressed {
+border:none;
+}
+   </string>
+   </property>
+   <property name="text">
+    <string>OK</string>
    </property>
   </widget>
  </widget>

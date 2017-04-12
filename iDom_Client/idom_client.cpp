@@ -88,6 +88,9 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ivona = new QTextToSpeech(this);
 
     QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ) ,this,SLOT ( setVolumeValueSlot(int ) ));
+
+    setCommandListInOptions();
+    QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
 }
 
 iDom_Client::~iDom_Client()
@@ -96,6 +99,17 @@ iDom_Client::~iDom_Client()
     delete wwwWindow;
     delete ivona;
     delete ui;
+}
+
+void iDom_Client::setCommandListInOptions()
+{
+    QString commandString;
+    for( auto i = 0; i < ui->comboBox->count(); i++ )
+    {
+        commandString += ui->comboBox->itemText( i );
+        commandString += "*";
+    }
+    optionsWindow.setCommandList(commandString.split("*"));
 }
 
 void iDom_Client::on_exitButton_released()
@@ -230,6 +244,12 @@ void iDom_Client::setVolumeDial()
 #ifdef Q_OS_WIN
     vol.exec();
 #endif
+}
+
+void iDom_Client::slot_getCommandList(QStringList list)
+{
+    ui->comboBox->clear();
+    ui->comboBox->addItems(list);
 }
 
 void iDom_Client::on_pushButton_12_released()
@@ -729,5 +749,5 @@ void iDom_Client::setVolumeValueSlot(int i)
 
 void iDom_Client::on_optionsButton_clicked()
 {
-   optionsWindow.show();
+    optionsWindow.show();
 }

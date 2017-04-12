@@ -48,6 +48,7 @@ private:
     wwwShowWindow *wwwWindow = NULL;
     VolumeDialog vol;
     FrameOptions optionsWindow;
+    void setCommandListInOptions();
     void sendSignalColor(int r,int g, int b, int from=0, int to=60);
     android_interface droid;
     QString temperatureString;
@@ -76,6 +77,8 @@ private:
     QTime pressTime ;
     void setVolumeDial();
 private slots:
+    void slot_getCommandList(QStringList list);
+
     void on_exitButton_released();
 
     void scrollTitle();
