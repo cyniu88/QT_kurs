@@ -26,6 +26,7 @@
 #include "workerip.h"
 #include "variable.h"
 #include "../libs/sgvTEST/thermometerSVG/thermometer.h"
+#include "../libs/config_files/config_files.h"
 #include "filedownloader.h"
 #include "volumedialog.h"
 #include "frameoptions.h"
@@ -61,6 +62,8 @@ private:
     bool cameraWork = false;
     QPixmap pima;
     QString cameraAddressHTTP = "http://cyniu88.no-ip.pl:1183/snapshot.cgi?rate=0&amp;user=admin&amp;pwd=tajnehaslo";
+
+    config_Files myConfigHandler;
 
 #ifdef Q_OS_WIN
     QSystemTrayIcon  trayIcon;

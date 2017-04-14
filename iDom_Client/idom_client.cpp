@@ -91,6 +91,16 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     setCommandListInOptions();
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
+
+    //////////////////////////////// config
+
+    QString commandString;
+    for( auto i = 0; i < ui->comboBox->count(); i++ )
+    {
+        commandString += ui->comboBox->itemText( i );
+        commandString += "\n";
+    }
+    myConfigHandler.readFromFile("\config","..\config\command.cfg",commandString.toStdString());
 }
 
 iDom_Client::~iDom_Client()

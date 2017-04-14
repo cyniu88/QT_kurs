@@ -30,7 +30,8 @@ SOURCES += main.cpp\
             filedownloader.cpp \
     ../libs/sgvTEST/thermometerSVG/thermometer.cpp \
     volumedialog.cpp \
-    frameoptions.cpp
+    frameoptions.cpp \
+    ../libs/config_files/config_files.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  +=  androidhelper_cyniu.cpp
@@ -46,7 +47,8 @@ HEADERS  += idom_client.h \
             filedownloader.h \
     ../libs/sgvTEST/thermometerSVG/thermometer.h \
     volumedialog.h \
-    frameoptions.h
+    frameoptions.h \
+    ../libs/config_files/config_files.h
 android {
             message("* Using settings for Android.")
             HEADERS +=  androidhelper_cyniu.h
