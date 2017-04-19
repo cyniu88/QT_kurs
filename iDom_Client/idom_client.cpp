@@ -88,8 +88,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ivona = new QTextToSpeech(this);
 
     QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ) ,this,SLOT ( setVolumeValueSlot(int ) ));
-
-    setCommandListInOptions();
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
 
     //////////////////////////////// config
@@ -100,7 +98,11 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
         commandString += ui->comboBox->itemText( i );
         commandString += "\n";
     }
-    myConfigHandler.readFromFile("\config","..\config\command.cfg",commandString.toStdString());
+    std::string tempCommand;
+    tempCommand = myConfigHandler.readFromFile("config","command.cfg",commandString.toStdString());
+    ui->comboBox->clear();
+    ui->comboBox->addItems(QString::fromStdString(tempCommand).split("\n"));
+    setCommandListInOptions();
 }
 
 iDom_Client::~iDom_Client()

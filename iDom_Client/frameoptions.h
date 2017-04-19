@@ -2,6 +2,7 @@
 #define FRAMEOPTIONS_H
 
 #include <QFrame>
+#include "../libs/config_files/config_files.h"
 
 namespace Ui {
 class FrameOptions;
@@ -20,9 +21,10 @@ public:
 
 private:
     Ui::FrameOptions *ui;
+    config_Files configFile;
 
 signals:
-    s_sendCommandList(QStringList list);
+    void s_sendCommandList(QStringList list);
 private slots:
     void on_textEditCommandList_textChanged();
     void on_okbutton_clicked();
