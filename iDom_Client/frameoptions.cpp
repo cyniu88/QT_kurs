@@ -26,7 +26,7 @@ QStringList FrameOptions::getCommandList()
 }
 
 void FrameOptions::on_textEditCommandList_textChanged()
-{  //TODO
+{
     commandList.clear();
     commandList = ui->textEditCommandList->toPlainText().split("\n");
     commandList.removeLast();

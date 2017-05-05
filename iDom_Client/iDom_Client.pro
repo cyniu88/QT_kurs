@@ -84,4 +84,7 @@ win32:RC_ICONS += iDom_client.ico
 
 DISTFILES += \
     android/src/org/qtproject/example/Chronometer/AndroidHelper.java \
-    myqmlfile.qml
+    myqmlfile.qml \
+    android/AndroidManifest.xml \
+    android/res/values/libs.xml \
+    android/build.gradle
