@@ -87,6 +87,12 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QObject::connect( m_pImgCtrl, SIGNAL(downloaded(QByteArray)), this, SLOT(loadImage(QByteArray))   );
     ivona = new QTextToSpeech(this);
 
+
+        QVector <QVoice> voi = ivona->availableVoices();
+        ivona->setVoice( voi[1]);
+        qDebug()<<voi[0].name()<< voi.size();
+        QVector<QLocale> locales = ivona->availableLocales();
+        ivona->setLocale(locales[1]);
     QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ) ,this,SLOT ( setVolumeValueSlot(int ) ));
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
 
@@ -107,6 +113,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
 iDom_Client::~iDom_Client()
 {
+    ivona->say("dowidzenia");
     delete m_pImgCtrl;
     delete wwwWindow;
     delete ivona;
