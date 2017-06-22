@@ -176,7 +176,7 @@ void iDom_Client::odb_mpd_title(QString s)
 
 void iDom_Client::odbMpdVolume(QString s)
 {
-    ui->volumeTXT->setText(temperatureString+ "| volume: " +s+"%");
+    ui->volumeTXT->setText("| volume: " +s+"%");
     ui->volumeBar->setValue(s.toInt());
 }
 
@@ -208,6 +208,7 @@ void iDom_Client::odb_temperature(QString s)
     QString out =s.split(":")[1];
     out = out.split("\r")[0];
     temperatureString = "Temperature Inside: " + in +"\u2103"+ " Outside: "+ out+ "\u2103"+ " ";
+    ui->temperatureTXT->setText(temperatureString);
     ui->InsideLCD_2->display( in   );
     ui->OutsideLCD_2->display( out);
     termoIN.setTemperature(in.toDouble());

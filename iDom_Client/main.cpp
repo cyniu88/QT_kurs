@@ -52,11 +52,12 @@ int main(int argc, char *argv[])
 
     worker->start();
     w->updateMPDinfo();
+    w->updateTemepretureInfo();
     w->show();
     infoTemperatureTimer->start(60000);
     infoMPDtimer->start(10000);
     scroller->start(500);
-    w->updateTemepretureInfo();
+
 
     a.exec();
     config.goWhile=false;
