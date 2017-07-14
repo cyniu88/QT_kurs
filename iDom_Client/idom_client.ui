@@ -2726,6 +2726,12 @@ border:none;
     </item>
     <item row="2" column="0">
      <widget class="QSlider" name="horizontalSlider_tabNavigate">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="cursor">
        <cursorShape>SizeHorCursor</cursorShape>
       </property>
@@ -2733,20 +2739,7 @@ border:none;
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">QSlider::groove:horizontal {
-    
-    height: 10px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #007FFF, stop:1 #EEEEEE);
-    margin: 2px 0;
-}
-
-QSlider::handle:horizontal {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #00FF00, stop:1 #EEEEEE);
-   height: 5px;
-    width: 100px;
-    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
-    border-radius: 3px;
-}</string>
+       <string notr="true"/>
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
