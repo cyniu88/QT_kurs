@@ -641,148 +641,7 @@ border:none;
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
-          <item row="1" column="0" colspan="4">
-           <widget class="QComboBox" name="comboBox">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>75</height>
-             </size>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">
-QComboBox {
- 
-background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  25px;
-}
-QComboBox::drop-down {
-     width:19px;
-   
-    margin-right:50px;
-   
-}
-QComboBox::down-arrow {
-   image: url(:/new/prefix1/files/down_arrow.png);
-}
-	</string>
-            </property>
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <item>
-             <property name="text">
-              <string/>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>RS232 send temperature_error:00;</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>MPD list</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>show log</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>uptime</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>show log no INFO</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>sleep</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>show thread all</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>iDom text</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>event temperature</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>event RS232</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="5" column="3">
-           <widget class="QLCDNumber" name="lcdNumberActual">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(0, 255, 0);
-border: none ;</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="digitCount">
-             <number>9</number>
-            </property>
-            <property name="segmentStyle">
-             <enum>QLCDNumber::Outline</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="5" column="5">
+          <item row="4" column="5">
            <widget class="QLCDNumber" name="lcdNumberAll">
             <property name="styleSheet">
              <string notr="true">color: rgb(255, 255, 0);
@@ -910,8 +769,14 @@ p, li { white-space: pre-wrap; }
             </property>
            </widget>
           </item>
-          <item row="5" column="1">
+          <item row="4" column="1">
            <widget class="QLineEdit" name="pingName">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(0, 255, 0);
 border: none ;</string>
@@ -924,8 +789,14 @@ border: none ;</string>
             </property>
            </widget>
           </item>
-          <item row="5" column="2">
+          <item row="4" column="2">
            <widget class="QLineEdit" name="ping">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(0, 255, 0);
 border: none ;</string>
@@ -933,6 +804,134 @@ border: none ;</string>
             <property name="text">
              <string>-</string>
             </property>
+           </widget>
+          </item>
+          <item row="4" column="3" colspan="2">
+           <widget class="QLCDNumber" name="lcdNumberActual">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 255, 0);
+border: none ;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="digitCount">
+             <number>9</number>
+            </property>
+            <property name="segmentStyle">
+             <enum>QLCDNumber::Outline</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="5">
+           <widget class="QComboBox" name="comboBox">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>75</height>
+             </size>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+QComboBox {
+ 
+background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  25px;
+}
+QComboBox::drop-down {
+     width:19px;
+   
+    margin-right:50px;
+   
+}
+QComboBox::down-arrow {
+   image: url(:/new/prefix1/files/down_arrow.png);
+}
+	</string>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string/>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>RS232 send temperature_error:00;</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>MPD list</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>show log</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>uptime</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>show log no INFO</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>sleep</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>show thread all</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>iDom text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>event temperature</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>event RS232</string>
+             </property>
+            </item>
            </widget>
           </item>
          </layout>
