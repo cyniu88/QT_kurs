@@ -109,6 +109,8 @@ void WorkerIP::run()
                 else if (addresOUT.address =="TTS"){
                     emit signalFromTTS(QString::fromStdString(s_buffor));
                 }
+                pingTimeMilis = pingStart.msecsTo( QDateTime::currentDateTime());
+                emit pingTime(QString::number(pingTimeMilis)+" msec");
                 break;
             }
         }
@@ -203,6 +205,7 @@ void WorkerIP::waitRecv(int waitTime, int counter)
 
 void WorkerIP::fromTCP(std::string addres , std::string qmsg)
 {
+    pingStart = QDateTime::currentDateTime();
     to_send = true;
     addresIN.address = addres;
     if (qmsg.empty()){

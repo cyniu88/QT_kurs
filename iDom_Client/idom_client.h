@@ -228,7 +228,7 @@ public slots:
     void textToSpeachSLOTS(QString s);
     void connectDisconnectButtonState(bool state);
     void setVolumeValueSlot(int i);
-
+    void getPing(QString s);
 signals:
     void sendTCP(std::string addres, std::string s);
 };
