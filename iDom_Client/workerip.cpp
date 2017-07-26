@@ -16,6 +16,8 @@ void WorkerIP::run()
     config->goWhile = connectAndAuthentication();
     //socket->setParent(this);
     qDebug() << "trwala" << timer.elapsed();
+
+    setUserLevel("ROOT");
     unsigned int len_send = 0;
     config->isConnectedToServer = true;
     bool goNow = true;
@@ -127,7 +129,7 @@ bool WorkerIP::connectAndAuthentication()
     socket = new QTcpSocket( );
     QObject::connect(socket,SIGNAL(disconnected()),this,SLOT(tcpSocketDisconnected()));
 
-    for (int i =1 ; i<4 ;++i)
+    for (int i =0 ; i<4 ;++i)
     {
         socket->connectToHost(config->serverIP.c_str(),config->serverPort);
         if(socket->waitForConnected())
@@ -201,6 +203,21 @@ void WorkerIP::waitRecv(int waitTime, int counter)
             return;
         }
     }
+}
+
+void WorkerIP::setUserLevel(QString levelName)
+{
+    socket->write( levelName.toLatin1().data());
+    waitSend(waitTime, counterWaitTime); //socket->waitForBytesWritten(waitTime);
+    waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
+
+    QString buffor = socket->readAll();
+    socket->write( "OK");
+    waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
+    waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
+    buffor = socket->readAll();
+    qDebug() << "user level "<<buffor;
+
 }
 
 void WorkerIP::fromTCP(std::string addres , std::string qmsg)

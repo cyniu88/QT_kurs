@@ -11,7 +11,7 @@ std::string to_string(T value)
     return os.str() ;
 }
 }
-std::string RSHash( )
+std::string RSHash(std::string data, unsigned int b, unsigned int a )
 {
     time_t act_time;
     struct tm * act_date;
@@ -21,8 +21,7 @@ std::string RSHash( )
     char buffer[10];
     strftime(buffer,10,"%M%H%w",act_date);
     std::string str(buffer);
-    unsigned int b    = 378551;
-    unsigned int a    = 63689;//63689;
+    str+=data;
     unsigned int hash = 0;
 
     for(std::size_t i = 0; i < str.length(); i++)
