@@ -112,7 +112,8 @@ void WorkerIP::run()
                     emit signalFromTTS(QString::fromStdString(s_buffor));
                 }
                 pingTimeMilis = pingStart.msecsTo( QDateTime::currentDateTime());
-                emit pingTime(QString::number(pingTimeMilis)+" msec");
+
+                emit pingTime(QString::number((double)pingTimeMilis/1000)+" sec");
                 break;
             }
         }
