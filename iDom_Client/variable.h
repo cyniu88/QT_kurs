@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <QMutex>
+#include <QString>
 #include "blocking_queue/blocking_queue.h"
 
 class WorkerIP;
@@ -27,5 +28,13 @@ struct iDom_CONFIG {
     WorkerIP* worketPTR  ;
     bool isConnectedToServer = false;
 };
-
+struct iDom_SYSTEM_INFO{
+    QString currentCpuArchitecture = "NULL" ;
+    QString kernelType = "NULL";
+    QString machineHostName = "NULL";
+    QString productVersion = "NULL";
+    QString getSystemInfo() {
+        return "| CPU Architecture: "+currentCpuArchitecture  + " | OS "+ productVersion+" | kernelType "+ kernelType+ " | HostName "+ machineHostName;
+    }
+};
 #endif // VARIABLE_H

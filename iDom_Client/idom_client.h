@@ -65,6 +65,8 @@ private:
 
     config_Files myConfigHandler;
 
+    iDom_SYSTEM_INFO systemInfo;
+
 #ifdef Q_OS_WIN
     QSystemTrayIcon  trayIcon;
     // QAxWidget  axWidgetTemperature;
@@ -209,6 +211,7 @@ private slots:
     void on_pushButton_volumeDOWN_pressed();
 
     void on_optionsButton_clicked();
+
 
 public slots:
     void setLcdActual(int c);

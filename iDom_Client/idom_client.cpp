@@ -5,6 +5,7 @@
 #include <QDesktopWidget>
 #include <QColorDialog>
 #include <QDateTime>
+#include <QSysInfo>
 
 #ifdef Q_OS_ANDROID
 
@@ -109,6 +110,16 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->comboBox->clear();
     ui->comboBox->addItems(QString::fromStdString(tempCommand).split("\n"));
     setCommandListInOptions();
+
+
+    qDebug()<<"SYSTEM INFO CPU " << QSysInfo::currentCpuArchitecture() ;
+    qDebug()<<"kernel " << QSysInfo::kernelType();
+    qDebug()<< "hostname " << QSysInfo::machineHostName();
+    qDebug()<< "productVersion "<<QSysInfo::productVersion();
+    systemInfo.currentCpuArchitecture =  QSysInfo::currentCpuArchitecture();
+    systemInfo.kernelType = QSysInfo::kernelType();
+    systemInfo.machineHostName = QSysInfo::machineHostName();
+    systemInfo.productVersion = QSysInfo::productVersion();
 }
 
 iDom_Client::~iDom_Client()
@@ -237,6 +248,7 @@ void iDom_Client::connectDisconnectButtonState(bool state)
     }
     else{
         ui->connectdicsonnectButton->setText("Disconnect from iDom");
+         emit sendTCP("console","log INFO - client: "+systemInfo.getSystemInfo().toStdString() );
     }
 }
 
