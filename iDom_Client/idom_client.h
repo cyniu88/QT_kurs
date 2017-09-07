@@ -82,6 +82,8 @@ private:
     QTime pressTime ;
     void setVolumeDial();
 private slots:
+    void slot_fontSize(QString s);
+
     void slot_getCommandList(QStringList list);
 
     void on_exitButton_released();

@@ -42,3 +42,8 @@ void FrameOptions::on_applyButton_clicked()
     emit s_sendCommandList(getCommandList());
     configFile.writeToFile("config","command.cfg",ui->textEditCommandList->toPlainText().toStdString());
 }
+
+void FrameOptions::on_fontSize_currentIndexChanged()
+{
+    emit s_fontSize(ui->fontSize->currentText());
+}

@@ -96,7 +96,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 //        ivona->setLocale(locales[1]);
     QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ) ,this,SLOT ( setVolumeValueSlot(int ) ));
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
-
+    QObject::connect(&optionsWindow, SIGNAL(s_fontSize(QString))             ,this,SLOT(slot_fontSize(QString))             );
     //////////////////////////////// config
 
     QString commandString;
@@ -276,6 +276,12 @@ void iDom_Client::setVolumeDial()
 #ifdef Q_OS_WIN
     vol.exec();
 #endif
+}
+
+void iDom_Client::slot_fontSize(QString s)
+{
+    qDebug()<< "font size: "<<s;
+    ui->txtAnswer->setFont(QFont ("Arial",s.toInt()));
 }
 
 void iDom_Client::slot_getCommandList(QStringList list)

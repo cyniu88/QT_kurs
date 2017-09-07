@@ -25,10 +25,12 @@ private:
 
 signals:
     void s_sendCommandList(QStringList list);
+    void s_fontSize(QString s);
 private slots:
     void on_textEditCommandList_textChanged();
     void on_okbutton_clicked();
     void on_applyButton_clicked();
+    void on_fontSize_currentIndexChanged();
 };
 
 #endif // FRAMEOPTIONS_H
