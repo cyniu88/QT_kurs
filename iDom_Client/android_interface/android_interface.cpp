@@ -55,3 +55,10 @@ void android_interface::keepScreenOn(bool on)
     droid.keep_screen_on(on);
 #endif
 }
+
+void android_interface::sendSMS(QString nr, QString msg)
+{
+#ifdef Q_OS_ANDROID
+    droid.sendSMS(nr,msg);
+#endif
+}

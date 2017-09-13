@@ -215,6 +215,8 @@ private slots:
     void on_optionsButton_clicked();
 
 
+    void on_pushButton_22_clicked();
+
 public slots:
     void setLcdActual(int c);
     void setLcdAll(int c);

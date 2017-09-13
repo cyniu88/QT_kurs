@@ -794,3 +794,8 @@ void iDom_Client::on_optionsButton_clicked()
 {
     optionsWindow.show();
 }
+
+void iDom_Client::on_pushButton_22_clicked()
+{
+   droid.sendSMS("506496722","test sms ");
+}

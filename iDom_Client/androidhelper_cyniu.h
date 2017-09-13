@@ -24,6 +24,7 @@ public:
     void makeToast(QString text);
     int updateAndroidNotification(QString msg);
     void keep_screen_on(bool on);
+    void sendSMS(QString nr,QString msg);
 };
 
 #endif // ANDROIDHELPER_CYNIU_H
