@@ -81,40 +81,37 @@ void AndroidHelper_cyniu::keep_screen_on(bool on)
 void AndroidHelper_cyniu::sendSMS(QString nr, QString msg)
 {
     // get the Qt android activity
-        QAndroidJniObject activity = QAndroidJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative",
-                                                                                "activity",
-                                                                                "()Landroid/app/Activity;");
-        if (activity.isValid()){
+    QAndroidJniObject activity = QAndroidJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative",
+                                                                           "activity",
+                                                                           "()Landroid/app/Activity;");
+    if (activity.isValid()){
 
-            //get the default SmsManager
-            QAndroidJniObject mySmsManager = QAndroidJniObject::callStaticObjectMethod("android/telephony/SmsManager",
-                                                                                       "getDefault",
-                                                                                       "()Landroid/telephony/SmsManager;");
-            if (!mySmsManager.isValid()) {
-                qDebug() << "Something wrong with SMS manager...";
-            } else {
-
-                // get phone number & text from UI and convert to Java String
-                QAndroidJniObject myPhoneNumber = QAndroidJniObject::fromString(nr);
-                QAndroidJniObject myTextMessage = QAndroidJniObject::fromString(msg);
-                QAndroidJniObject scAddress = NULL;
-                //QAndroidJniObject sentIntent = NULL;
-                //QAndroidJniObject deliveryIntent = NULL;
-
-                // call the java function:
-                // public void SmsManager.sendTextMessage(String destinationAddress,
-                //                                        String scAddress, String text,
-                //                                        PendingIntent sentIntent, PendingIntent deliveryIntent)
-                // see: http://developer.android.com/reference/android/telephony/SmsManager.html
-
-                mySmsManager.callMethod<void>("sendTextMessage",
-                                              "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
-                                              myPhoneNumber.object<jstring>(),
-                                              scAddress.object<jstring>(),
-                                              myTextMessage.object<jstring>(), NULL, NULL );
-            }
-
+        //get the default SmsManager
+        QAndroidJniObject mySmsManager = QAndroidJniObject::callStaticObjectMethod("android/telephony/SmsManager",
+                                                                                   "getDefault",
+                                                                                   "()Landroid/telephony/SmsManager;");
+        if (!mySmsManager.isValid()) {
+            qDebug() << "Something wrong with SMS manager...";
         } else {
-            qDebug() << "Something wrong with Qt activity...";
+
+            // get phone number & text from UI and convert to Java String
+            QAndroidJniObject myPhoneNumber = QAndroidJniObject::fromString(nr);
+            QAndroidJniObject myTextMessage = QAndroidJniObject::fromString(msg);
+            QAndroidJniObject scAddress = NULL;
+            //QAndroidJniObject sentIntent = NULL;
+            //QAndroidJniObject deliveryIntent = NULL;
+
+            // call the java function:
+            // public void SmsManager.sendTextMessage(String destinationAddress,
+            //                                        String scAddress, String text,
+            //                                        PendingIntent sentIntent, PendingIntent deliveryIntent)
+            // see: http://developer.android.com/reference/android/telephony/SmsManager.html
+
+            mySmsManager.callMethod<void>("sendTextMessage",
+                                          "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
+                                          myPhoneNumber.object<jstring>(),
+                                          scAddress.object<jstring>(),
+                                          myTextMessage.object<jstring>(), NULL, NULL );
         }
+    }
 }

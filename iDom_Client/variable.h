@@ -35,7 +35,7 @@ struct iDom_SYSTEM_INFO{
     QString machineHostName = "NULL";
     QString productVersion = "NULL";
     QString getSystemInfo() {
-        return "| CPU Architecture: "+currentCpuArchitecture  + " | OS "+ productVersion+" | kernelType "+ kernelType+ " | HostName "+ machineHostName;
+        return  " | HostName "+ machineHostName+"| CPU Architecture: "+currentCpuArchitecture  + " | OS "+ productVersion+" | kernelType "+ kernelType;
     }
 };
 #endif // VARIABLE_H
