@@ -31,6 +31,7 @@ private slots:
     void on_okbutton_clicked();
     void on_applyButton_clicked();
     void on_fontSize_currentIndexChanged();
+    void on_pushButton_clicked();
 };
 
 #endif // FRAMEOPTIONS_H

@@ -47,3 +47,8 @@ void FrameOptions::on_fontSize_currentIndexChanged()
 {
     emit s_fontSize(ui->fontSize->currentText());
 }
+
+void FrameOptions::on_pushButton_clicked()
+{
+
+}

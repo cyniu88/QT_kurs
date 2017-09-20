@@ -659,7 +659,7 @@ void iDom_Client::on_pushButton_goodBye_clicked()
 
 void iDom_Client::on_pushButton_ttsInfo_clicked()
 {
-    emit sendTCP("TTS","iDom text");
+    emit
 }
 
 void iDom_Client::on_tabRightButton_clicked()
@@ -795,7 +795,19 @@ void iDom_Client::on_optionsButton_clicked()
     optionsWindow.show();
 }
 
-void iDom_Client::on_pushButton_22_clicked()
+void iDom_Client::on_smsButton_clicked()
 {
    droid.sendSMS("506496722","test sms ");
+}
+
+void iDom_Client::on_On230vButton_clicked()
+{
+    emit sendTCP("console","iDom 230V ON");
+    droid.vibrate(200);
+}
+
+void iDom_Client::on_Off230vButton_clicked()
+{
+    emit sendTCP("console","iDom 230V OFF");
+    droid.vibrate(200);
 }

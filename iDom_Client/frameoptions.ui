@@ -33,6 +33,35 @@
    <item row="1" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+	color: rgb(170, 255, 0);
+}
+QPushButton:pressed {
+border:none;
+}
+   </string>
+       </property>
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="applyButton">
        <property name="font">
         <font>
@@ -165,12 +194,28 @@ border:none;
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>560</x>
-     <y>225</y>
+     <x>450</x>
+     <y>351</y>
     </hint>
     <hint type="destinationlabel">
      <x>626</x>
      <y>169</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FrameOptions</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>123</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>158</x>
+     <y>355</y>
     </hint>
    </hints>
   </connection>
