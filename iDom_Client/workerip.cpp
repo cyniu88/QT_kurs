@@ -133,7 +133,7 @@ bool WorkerIP::connectAndAuthentication()
     for (int i =0 ; i<3 ;++i)
     {
         config->m_RSHash = RSHash(); //generowanie klucza
-
+        qDebug() << "RSHASH: " << config->m_RSHash.c_str();
         socket->connectToHost(config->serverIP.c_str(),config->serverPort);
         if(socket->waitForConnected())
         {
@@ -227,6 +227,7 @@ void WorkerIP::setUserLevel(QString levelName)
 qint64 WorkerIP::sendMsgTCP(std::string msg)
 {
     crypt(msg,config->m_RSHash);
+    qDebug() << "wyslano " << msg.c_str();
     return socket->write(msg.c_str());
 }
 
@@ -234,6 +235,7 @@ std::string WorkerIP::readMsgTCP()
 {
     std::string buf = socket->readAll().toStdString();
     crypt(buf,config->m_RSHash);
+    qDebug() << "odebrano " << buf.c_str();
     return buf;
 }
 
