@@ -23,13 +23,6 @@
    <enum>QFrame::Raised</enum>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QTextEdit" name="textEditCommandList">
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0, 255, 0);</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
@@ -109,7 +102,14 @@ border:none;
      </item>
     </layout>
    </item>
-   <item row="2" column="0">
+   <item row="0" column="0">
+    <widget class="QTextEdit" name="textEditCommandList">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 255, 0);</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
     <widget class="QComboBox" name="fontSize">
      <property name="styleSheet">
       <string notr="true">
@@ -203,6 +203,22 @@ QComboBox::down-arrow {
        <string>20</string>
       </property>
      </item>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QCheckBox" name="encryptCheckBox">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string>Encrypt MSG?</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
   </layout>

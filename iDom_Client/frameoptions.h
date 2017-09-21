@@ -3,7 +3,7 @@
 
 #include <QFrame>
 #include "../libs/config_files/config_files.h"
-
+#include "variable.h"
 namespace Ui {
 class FrameOptions;
 }
@@ -15,14 +15,14 @@ class FrameOptions : public QFrame
 public:
     explicit FrameOptions(QWidget *parent = 0);
     ~FrameOptions();
-
+    void setConfigFile(iDom_CONFIG *config);
     void setCommandList(QStringList commandList);
     QStringList getCommandList();
 
 private:
     Ui::FrameOptions *ui;
     config_Files configFile;
-
+    iDom_CONFIG *config;
 signals:
     void s_sendCommandList(QStringList list);
     void s_fontSize(QString s);
@@ -32,6 +32,7 @@ private slots:
     void on_applyButton_clicked();
     void on_fontSize_currentIndexChanged();
     void on_pushButton_clicked();
+    void on_encryptCheckBox_stateChanged(int arg1);
 };
 
 #endif // FRAMEOPTIONS_H

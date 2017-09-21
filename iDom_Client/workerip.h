@@ -10,7 +10,7 @@
 #include "variable.h"
 #include "blocking_queue/blocking_queue.h"
 
-extern std::string buffor;
+
 class WorkerIP : public QThread
 {
   Q_OBJECT
@@ -21,6 +21,7 @@ public:
     iDom_CONFIG *config;
 
 private:
+    std::string buffor;
     int counter = 0;
     int counter2 = 0;
     int progresCounter = 0;

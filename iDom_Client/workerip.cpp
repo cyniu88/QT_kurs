@@ -226,15 +226,18 @@ void WorkerIP::setUserLevel(QString levelName)
 
 qint64 WorkerIP::sendMsgTCP(std::string msg)
 {
-    crypt(msg,config->m_RSHash);
+    crypt(msg,config->m_RSHash,config->encrypted);
     qDebug() << "wyslano " << msg.c_str();
-    return socket->write(msg.c_str());
+    qint64 counter = socket->write(msg.c_str());
+    crypt(msg,config->m_RSHash,config->encrypted);
+    qDebug() << "dekodowanie " << msg.c_str();
+    return counter;
 }
 
 std::string WorkerIP::readMsgTCP()
 {
     std::string buf = socket->readAll().toStdString();
-    crypt(buf,config->m_RSHash);
+    crypt(buf,config->m_RSHash,config->encrypted);
     qDebug() << "odebrano " << buf.c_str();
     return buf;
 }

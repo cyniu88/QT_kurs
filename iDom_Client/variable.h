@@ -29,6 +29,7 @@ struct iDom_CONFIG {
     WorkerIP* worketPTR  ;
     bool isConnectedToServer = false;
     std::string m_RSHash = "";
+    bool encrypted = true;
 };
 struct iDom_SYSTEM_INFO{
     QString currentCpuArchitecture = "NULL" ;

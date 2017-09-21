@@ -10,7 +10,7 @@
 #include "idom_client.h"
 #include "variable.h"
 
-std::string buffor;
+//std::string buffor;
 
 int main(int argc, char *argv[])
 {
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     worker->start();
     w->updateMPDinfo();
     w->updateTemepretureInfo();
-    w->readSettingsSize();
+    w->readSettings();
     w->show();
     infoTemperatureTimer->start(60000);
     infoMPDtimer->start(10000);

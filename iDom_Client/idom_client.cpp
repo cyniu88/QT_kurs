@@ -142,12 +142,13 @@ void iDom_Client::resizeEvent(QResizeEvent *event)
    QMainWindow::resizeEvent(event);
 }
 
-void iDom_Client::readSettingsSize()
+void iDom_Client::readSettings()
 {
     QSettings settings("cyniu", "iDom");
    // qDebug()<<"geometria " << settings.value("geometry").toByteArray();
     restoreGeometry(settings.value("geometry").toByteArray());
     restoreState(settings.value("windowState").toByteArray());
+    config->encrypted=settings.value("encrypted").toBool();
 }
 
 void iDom_Client::setCommandListInOptions()
@@ -811,6 +812,7 @@ void iDom_Client::getPing(QString s)
 
 void iDom_Client::on_optionsButton_clicked()
 {
+    optionsWindow.setConfigFile(config);
     optionsWindow.show();
 }
 
