@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     worker->start();
     w->updateMPDinfo();
     w->updateTemepretureInfo();
-    w->readSettings();
+    w->readSettingsSize();
     w->show();
     infoTemperatureTimer->start(60000);
     infoMPDtimer->start(10000);

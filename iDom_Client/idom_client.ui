@@ -142,7 +142,7 @@ border-color: rgb(255, 255, 255,255);</string>
                <x>0</x>
                <y>0</y>
                <width>815</width>
-               <height>689</height>
+               <height>722</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -870,7 +870,7 @@ QComboBox::drop-down {
    
 }
 QComboBox::down-arrow {
-   image: url(:/new/prefix1/files/down_arrow.png);
+  image: url(:/new/prefix1/files/down_arrow.png);
 }
 	</string>
             </property>
@@ -2732,9 +2732,11 @@ border:none;
          <string>kokoko?</string>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
+         <string notr="true">
+QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
 border-radius: 15px;
+ image: url(:/new/prefix1/files/Green_Arrow_Left.svg);
 }
 QPushButton:pressed {
 
@@ -2743,10 +2745,6 @@ border:none;
         </property>
         <property name="text">
          <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="ikony.qrc">
-          <normaloff>:/new/prefix1/files/Green_Arrow_Left.svg</normaloff>:/new/prefix1/files/Green_Arrow_Left.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -2811,6 +2809,7 @@ color: rgb(0, 255, 0);</string>
          <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
  border: 2px solid #8f8f91;
 border-radius: 15px;
+ image: url(:/new/prefix1/files/Green_Arrow_Right.svg);
 }
 QPushButton:pressed {
 border:none;
@@ -2818,10 +2817,6 @@ border:none;
         </property>
         <property name="text">
          <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="ikony.qrc">
-          <normaloff>:/new/prefix1/files/Green_Arrow_Right.svg</normaloff>:/new/prefix1/files/Green_Arrow_Right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -2836,7 +2831,7 @@ border:none;
     <item row="2" column="0">
      <widget class="QSlider" name="horizontalSlider_tabNavigate">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -2859,7 +2854,7 @@ QSlider::handle:horizontal {
     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #00FF00, stop:1 #EEEEEE);
    height: 5px;
     width: 100px;
-    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove* /
     border-radius: 3px;
 }</string>
       </property>
@@ -2872,9 +2867,7 @@ QSlider::handle:horizontal {
   </widget>
  </widget>
  <layoutdefault spacing="4" margin="2"/>
- <resources>
-  <include location="ikony.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>exitButton</sender>

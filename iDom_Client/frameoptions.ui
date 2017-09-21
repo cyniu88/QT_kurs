@@ -111,6 +111,28 @@ border:none;
    </item>
    <item row="2" column="0">
     <widget class="QComboBox" name="fontSize">
+     <property name="styleSheet">
+      <string notr="true">
+QComboBox {
+ 
+background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  25px;
+}
+QComboBox::drop-down {
+     width:19px;
+   
+    margin-right:50px;
+   
+}
+QComboBox::down-arrow {
+  image: url(:/new/prefix1/files/down_arrow.png);
+}
+	</string>
+     </property>
      <item>
       <property name="text">
        <string>1</string>

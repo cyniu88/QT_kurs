@@ -26,6 +26,10 @@ void crypt (string & toEncrypt, string key)
 
 int main ( )
 {
+
+
+\
+
   string key = "password";
   string msg = "sprzedam opla";
   crypt (msg, key);

@@ -112,11 +112,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->comboBox->addItems(QString::fromStdString(tempCommand).split("\n"));
     setCommandListInOptions();
 
-
-    qDebug()<<"SYSTEM INFO CPU " << QSysInfo::currentCpuArchitecture() ;
-    qDebug()<<"kernel " << QSysInfo::kernelType();
-    qDebug()<< "hostname " << QSysInfo::machineHostName();
-    qDebug()<< "productVersion "<<QSysInfo::productVersion();
     systemInfo.currentCpuArchitecture =  QSysInfo::currentCpuArchitecture();
     systemInfo.kernelType = QSysInfo::kernelType();
     systemInfo.machineHostName = QSysInfo::machineHostName();
@@ -140,7 +135,14 @@ void iDom_Client::closeEvent(QCloseEvent *event)
     QMainWindow::closeEvent(event);
 }
 
-void iDom_Client::readSettings()
+void iDom_Client::resizeEvent(QResizeEvent *event)
+{
+   qDebug() << "TestA Resize";
+
+   QMainWindow::resizeEvent(event);
+}
+
+void iDom_Client::readSettingsSize()
 {
     QSettings settings("cyniu", "iDom");
    // qDebug()<<"geometria " << settings.value("geometry").toByteArray();
