@@ -819,6 +819,14 @@ void iDom_Client::on_optionsButton_clicked()
 void iDom_Client::on_smsButton_clicked()
 {
     droid.sendSMS("506496722","test sms ");
+    std::string m = "jeden";
+    m.push_back((char)0);
+    m.append("dwa");
+    qDebug() << "testowy string " <<  m.size();
+    foreach (auto t, m) {
+        qDebug()<< (int)t;
+    }
+    emit sendTCP("console",m);
 }
 
 void iDom_Client::on_On230vButton_clicked()

@@ -48,7 +48,8 @@ void WorkerIP::run()
         waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
 
         buffor = readMsgTCP();
-
+        crypt(buffor,config->m_RSHash,true );
+qDebug() <<"bufor ma "<< buffor.c_str();
         len_send = atoi(buffor.c_str());
         emit sendAll(len_send);
 
@@ -70,10 +71,11 @@ void WorkerIP::run()
             emit sendActual(buffor.length());
             emit progress(    (100*buffor.length())/len_send  );
             emit sendAll(len_send);
-            buffor += readMsgTCP();
+            buffor.append( readMsgTCP());
             //buffor += buffor.toStdString();
             if (buffor.length()>=len_send)
             {
+                crypt(buffor,config->m_RSHash,true );
                 emit sendActual(buffor.length());
                 emit sendAll(len_send);
 
@@ -145,6 +147,7 @@ bool WorkerIP::connectAndAuthentication()
             waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
             waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
             buffor = readMsgTCP();
+            crypt(buffor,config->m_RSHash,true );
            // buffor = buffor.toStdString();
 
             if (buffor[0]=='O' && buffor[1]=='K'){
@@ -220,6 +223,7 @@ void WorkerIP::setUserLevel(QString levelName)
     waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
     waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
     buffor = readMsgTCP();
+    crypt(buffor,config->m_RSHash,true );
     qDebug() << "user level "<< buffor.c_str();
 
 }
@@ -229,6 +233,9 @@ qint64 WorkerIP::sendMsgTCP(std::string msg)
     crypt(msg,config->m_RSHash,config->encrypted);
     qDebug() << "wyslano " << msg.c_str();
     qint64 counter = socket->write(msg.c_str());
+    foreach (auto t, msg) {
+        qDebug()<< (int)t << " "<< t;
+    }
     crypt(msg,config->m_RSHash,config->encrypted);
     qDebug() << "dekodowanie " << msg.c_str();
     return counter;
@@ -237,8 +244,8 @@ qint64 WorkerIP::sendMsgTCP(std::string msg)
 std::string WorkerIP::readMsgTCP()
 {
     std::string buf = socket->readAll().toStdString();
-    crypt(buf,config->m_RSHash,config->encrypted);
-    qDebug() << "odebrano " << buf.c_str();
+    //crypt(buf,config->m_RSHash,true ); //config->encrypted);
+    qDebug() << "odebrano w readMsgTCP()" << buf.c_str();
     return buf;
 }
 
