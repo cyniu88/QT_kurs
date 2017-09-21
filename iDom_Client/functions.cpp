@@ -31,3 +31,23 @@ std::string RSHash(std::string data, unsigned int b, unsigned int a )
     }
     return std::to_string((hash & 0x7FFFFFFF));
 }
+
+void crypt (std::string & toEncrypt, std::string key)
+{
+  unsigned int keySize = key.size();
+
+  for (unsigned int i = 0; i < toEncrypt.size (); i++)
+    {
+      toEncrypt[i] ^= key[keySize];
+      std::cout << key[keySize];
+
+      if (keySize==0){
+          keySize = key.size();
+      }
+      else{
+      --keySize;
+      }
+    }
+
+    std::cout << '!' << key.size();
+}

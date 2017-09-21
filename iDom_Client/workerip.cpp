@@ -130,8 +130,9 @@ bool WorkerIP::connectAndAuthentication()
     socket = new QTcpSocket( );
     QObject::connect(socket,SIGNAL(disconnected()),this,SLOT(tcpSocketDisconnected()));
 
-    for (int i =0 ; i<4 ;++i)
+    for (int i =0 ; i<3 ;++i)
     {
+
         socket->connectToHost(config->serverIP.c_str(),config->serverPort);
         if(socket->waitForConnected())
         {
@@ -156,8 +157,9 @@ bool WorkerIP::connectAndAuthentication()
                 emit errorInfo ("INFO","Authentication failed " +QString::number(i)+" times!" );
                 config->isConnectedToServer = false;
                 emit serverDisconnected();
-                socket->disconnect();
-                QThread::sleep(1);
+                socket->disconnectFromHost();
+                QThread::sleep(3);
+                s_buffor = "";
             }
         }
         else
