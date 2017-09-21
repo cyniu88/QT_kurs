@@ -6,6 +6,7 @@
 #include <QColorDialog>
 #include <QDateTime>
 #include <QSysInfo>
+#include <QSettings>
 
 #ifdef Q_OS_ANDROID
 
@@ -89,11 +90,11 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ivona = new QTextToSpeech(this);
 
 
-//        QVector <QVoice> voi = ivona->availableVoices();
-//        ivona->setVoice( voi[1]);
-//        qDebug()<<voi[0].name()<< voi.size();
-//        QVector<QLocale> locales = ivona->availableLocales();
-//        ivona->setLocale(locales[1]);
+    //        QVector <QVoice> voi = ivona->availableVoices();
+    //        ivona->setVoice( voi[1]);
+    //        qDebug()<<voi[0].name()<< voi.size();
+    //        QVector<QLocale> locales = ivona->availableLocales();
+    //        ivona->setLocale(locales[1]);
     QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ) ,this,SLOT ( setVolumeValueSlot(int ) ));
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
     QObject::connect(&optionsWindow, SIGNAL(s_fontSize(QString))             ,this,SLOT(slot_fontSize(QString))             );
@@ -129,6 +130,22 @@ iDom_Client::~iDom_Client()
     delete wwwWindow;
     delete ivona;
     delete ui;
+}
+
+void iDom_Client::closeEvent(QCloseEvent *event)
+{
+    QSettings settings("cyniu", "iDom");
+    settings.setValue("geometry", saveGeometry());
+    settings.setValue("windowState", saveState());
+    QMainWindow::closeEvent(event);
+}
+
+void iDom_Client::readSettings()
+{
+    QSettings settings("cyniu", "iDom");
+   // qDebug()<<"geometria " << settings.value("geometry").toByteArray();
+    restoreGeometry(settings.value("geometry").toByteArray());
+    restoreState(settings.value("windowState").toByteArray());
 }
 
 void iDom_Client::setCommandListInOptions()
@@ -248,7 +265,7 @@ void iDom_Client::connectDisconnectButtonState(bool state)
     }
     else{
         ui->connectdicsonnectButton->setText("Disconnect from iDom");
-         emit sendTCP("console","log INFO - client: "+systemInfo.getSystemInfo().toStdString() );
+        emit sendTCP("console","log INFO - client: "+systemInfo.getSystemInfo().toStdString() );
     }
 }
 
@@ -797,7 +814,7 @@ void iDom_Client::on_optionsButton_clicked()
 
 void iDom_Client::on_smsButton_clicked()
 {
-   droid.sendSMS("506496722","test sms ");
+    droid.sendSMS("506496722","test sms ");
 }
 
 void iDom_Client::on_On230vButton_clicked()

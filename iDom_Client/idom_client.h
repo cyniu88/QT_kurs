@@ -41,6 +41,10 @@ class iDom_Client : public QMainWindow
 public:
     explicit iDom_Client(iDom_CONFIG *config, QWidget *parent = 0);
     ~iDom_Client();
+    void readSettings();
+
+protected:
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::iDom_Client *ui;
