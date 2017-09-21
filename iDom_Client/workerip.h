@@ -38,6 +38,8 @@ private:
     void waitSend(int waitTime, int counter);
     void waitRecv(int waitTime, int counter);
     void setUserLevel(QString levelName);
+    qint64 sendMsgTCP(std::string msg);
+    QByteArray readMsgTCP();
 
 signals:
     void sendActual(int c);

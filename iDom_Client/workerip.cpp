@@ -42,12 +42,12 @@ void WorkerIP::run()
             emit serverDisconnected();
             break;
         }
-        qDebug() << "wyslano: "<<socket->write( addresOUT.what.c_str());
+        qDebug() << "wyslano: "<< sendMsgTCP( addresOUT.what );
 
         waitSend(waitTime, counterWaitTime); //socket->waitForBytesWritten(waitTime);
         waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
 
-        buffor = socket->readAll();
+        buffor = readMsgTCP();
         s_buffor = buffor.toStdString();
         len_send = atoi(s_buffor.c_str());
         emit sendAll(len_send);
@@ -58,7 +58,7 @@ void WorkerIP::run()
             config->isConnectedToServer =  false;
             break;
         }
-        socket->write("OK");
+        sendMsgTCP("OK");
 
         waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
 
@@ -70,7 +70,7 @@ void WorkerIP::run()
             emit sendActual(s_buffor.length());
             emit progress(    (100*s_buffor.length())/len_send  );
             emit sendAll(len_send);
-            buffor = socket->readAll();
+            buffor = readMsgTCP();
             s_buffor += buffor.toStdString();
             if (s_buffor.length()>=len_send)
             {
@@ -132,18 +132,19 @@ bool WorkerIP::connectAndAuthentication()
 
     for (int i =0 ; i<3 ;++i)
     {
+        config->m_RSHash = RSHash(); //generowanie klucza
 
         socket->connectToHost(config->serverIP.c_str(),config->serverPort);
         if(socket->waitForConnected())
         {
-            socket->write(  RSHash().c_str());
+            sendMsgTCP( config->m_RSHash );
             waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
             waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
-            buffor = socket->readAll();
-            socket->write( "OK");
+            buffor = readMsgTCP();
+            sendMsgTCP( "OK");
             waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
             waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
-            buffor = socket->readAll();
+            buffor = readMsgTCP();
             s_buffor = buffor.toStdString();
 
             if (s_buffor[0]=='O' && s_buffor[1]=='K'){
@@ -210,17 +211,27 @@ void WorkerIP::waitRecv(int waitTime, int counter)
 
 void WorkerIP::setUserLevel(QString levelName)
 {
-    socket->write( levelName.toLatin1().data());
+    sendMsgTCP( levelName.toLatin1().data());
     waitSend(waitTime, counterWaitTime); //socket->waitForBytesWritten(waitTime);
     waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
 
-    QString buffor = socket->readAll();
-    socket->write( "OK");
+    QString buffor =readMsgTCP();
+    sendMsgTCP( "OK");
     waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
     waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
-    buffor = socket->readAll();
+    buffor = readMsgTCP();
     qDebug() << "user level "<<buffor;
 
+}
+
+qint64 WorkerIP::sendMsgTCP(std::string msg)
+{
+    return socket->write(msg.c_str());
+}
+
+QByteArray WorkerIP::readMsgTCP()
+{
+    return socket->readAll();
 }
 
 void WorkerIP::fromTCP(std::string addres , std::string qmsg)

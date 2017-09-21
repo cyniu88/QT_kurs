@@ -28,6 +28,7 @@ struct iDom_CONFIG {
     BlockingQueue<ADRESS_WHAT> workerQueue;
     WorkerIP* worketPTR  ;
     bool isConnectedToServer = false;
+    std::string m_RSHash = "";
 };
 struct iDom_SYSTEM_INFO{
     QString currentCpuArchitecture = "NULL" ;
