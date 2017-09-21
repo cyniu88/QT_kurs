@@ -10,7 +10,7 @@
 #include "variable.h"
 #include "blocking_queue/blocking_queue.h"
 
-extern std::string s_buffor;
+extern std::string buffor;
 class WorkerIP : public QThread
 {
   Q_OBJECT
@@ -32,14 +32,14 @@ private:
     QDateTime pingStart;
     qint64 pingTimeMilis;
     QTcpSocket *socket;
-    QByteArray buffor;
+   // std::string buffor;
     bool connectAndAuthentication();
     bool disconnectFromServer();
     void waitSend(int waitTime, int counter);
     void waitRecv(int waitTime, int counter);
     void setUserLevel(QString levelName);
     qint64 sendMsgTCP(std::string msg);
-    QByteArray readMsgTCP();
+    std::string readMsgTCP();
 
 signals:
     void sendActual(int c);

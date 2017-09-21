@@ -10,7 +10,7 @@
 #include "idom_client.h"
 #include "variable.h"
 
-std::string s_buffor;
+std::string buffor;
 
 int main(int argc, char *argv[])
 {

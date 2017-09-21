@@ -39,7 +39,7 @@ void crypt (std::string & toEncrypt, std::string key)
   for (unsigned int i = 0; i < toEncrypt.size (); i++)
     {
       toEncrypt[i] ^= key[keySize];
-      std::cout << key[keySize];
+      //std::cout << key[keySize];
 
       if (keySize==0){
           keySize = key.size();
@@ -49,5 +49,5 @@ void crypt (std::string & toEncrypt, std::string key)
       }
     }
 
-    std::cout << '!' << key.size();
+   // std::cout << '!' << key.size();
 }
