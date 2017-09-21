@@ -8,8 +8,8 @@ DESTDIR = ./
 QT += core gui widgets
 
 # Input
-SOURCES += AeroButton.cpp
-HEADERS += AeroButton.h
+SOURCES +=
+HEADERS +=
 
 SOURCES += main.cpp
 
