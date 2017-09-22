@@ -18,7 +18,7 @@ void WorkerIP::run()
     qDebug() << "trwala" << timer.elapsed();
 
     setUserLevel("ROOT");
-    unsigned int len_send = 0;
+
     config->isConnectedToServer = true;
     bool goNow = true;
     ////////////////////////////////////////////////////
@@ -44,87 +44,55 @@ void WorkerIP::run()
         }
         qDebug() << "wyslano: "<< sendMsgTCP( addresOUT.what );
 
-        waitSend(waitTime, counterWaitTime); //socket->waitForBytesWritten(waitTime);
-        waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
 
         buffor = readMsgTCP();
-        crypt(buffor,config->m_RSHash,config->encrypted );
 
-        len_send = static_cast<unsigned int>(atoi(buffor.c_str()));
-        emit sendAll(  static_cast<int>(len_send)  );
-
-        if ( socket->state() ==  QAbstractSocket::UnconnectedState)
+        if (addresOUT.address == "console"){
+            emit answer( QString::fromStdString(buffor));
+        }
+        else if(addresOUT.address == "LED")
         {
-            emit serverDisconnected();
-            config->isConnectedToServer =  false;
-            break;
+            emit answerLED(QString::fromStdString(buffor));
         }
-        sendMsgTCP("OK");
-
-        waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
-
-        buffor.clear();
-        buffor.erase();
-
-        while (true){
-            waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
-            emit sendActual(static_cast<int>(buffor.length()));
-            emit progress(  static_cast<int>(  (100*buffor.length())/len_send ) );
-            emit sendAll(static_cast<int>(len_send) );
-            buffor.append( readMsgTCP());
-            //buffor += buffor.toStdString();
-            if (buffor.length()>=len_send)
-            {
-                crypt(buffor,config->m_RSHash,config->encrypted );
-                emit sendActual(static_cast<int>(buffor.length()));
-                emit sendAll(static_cast<int>(len_send));
-
-                if (addresOUT.address == "console"){
-                    emit answer( QString::fromStdString(buffor));
-                }
-                else if(addresOUT.address == "LED")
-                {
-                    emit answerLED(QString::fromStdString(buffor));
-                }
-                else if (addresOUT.address == "MPD")
-                {
-                    emit answerMPD(QString::fromStdString(buffor));
-                }
-                else if (addresOUT.address == "MPD_volume")
-                {
-                    emit mpd_volumeInfo   (QString::fromStdString(buffor));
-                }
-                else if (addresOUT.address == "MPD_title")
-                {
-                    emit mpd_title_info (QString::fromStdString(buffor));
-                }
-                else if (addresOUT.address == "temperature")
-                {
-                    emit temperature (QString::fromStdString(buffor));
-                }
-                else if (addresOUT.address == "tools")
-                {
-                    emit tools (QString::fromStdString(buffor));
-                }
-                else if (addresOUT.address == "listMPD")
-                {
-                    emit listMPD(QString::fromStdString(buffor));
-                }
-                else if (addresOUT.address =="TTS"){
-                    emit signalFromTTS(QString::fromStdString(buffor));
-                }
-                pingTimeMilis = pingStart.msecsTo( QDateTime::currentDateTime());
-
-                emit pingTime(QString::number(static_cast<double>(pingTimeMilis/1000) )+" sec");
-                break;
-            }
+        else if (addresOUT.address == "MPD")
+        {
+            emit answerMPD(QString::fromStdString(buffor));
         }
+        else if (addresOUT.address == "MPD_volume")
+        {
+            emit mpd_volumeInfo   (QString::fromStdString(buffor));
+        }
+        else if (addresOUT.address == "MPD_title")
+        {
+            emit mpd_title_info (QString::fromStdString(buffor));
+        }
+        else if (addresOUT.address == "temperature")
+        {
+            emit temperature (QString::fromStdString(buffor));
+        }
+        else if (addresOUT.address == "tools")
+        {
+            emit tools (QString::fromStdString(buffor));
+        }
+        else if (addresOUT.address == "listMPD")
+        {
+            emit listMPD(QString::fromStdString(buffor));
+        }
+        else if (addresOUT.address =="TTS"){
+            emit signalFromTTS(QString::fromStdString(buffor));
+        }
+        pingTimeMilis = pingStart.msecsTo( QDateTime::currentDateTime());
+
+        emit pingTime(QString::number((double)(pingTimeMilis/1000) )+" sec");
+     //   qDebug() << "PING " << (double)(pingTimeMilis/1000);
     }
-    // close the connection
-    config->isConnectedToServer = false;
-    disconnectFromServer();
-    qDebug("koniec koncow workera @@@@@@@@@@@@");
-    config->goWhile=true;
+
+//  }
+// close the connection
+config->isConnectedToServer = false;
+disconnectFromServer();
+qDebug("koniec koncow workera @@@@@@@@@@@@");
+config->goWhile=true;
 }
 
 bool WorkerIP::connectAndAuthentication()
@@ -140,15 +108,8 @@ bool WorkerIP::connectAndAuthentication()
         if(socket->waitForConnected())
         {
             sendMsgTCP( config->m_RSHash );
-            waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
-            waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
+
             buffor = readMsgTCP();
-            sendMsgTCP( "OK");
-            waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
-            waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
-            buffor = readMsgTCP();
-            crypt(buffor,config->m_RSHash,config->encrypted );
-           // buffor = buffor.toStdString();
 
             if (buffor[0]=='O' && buffor[1]=='K'){
                 qDebug ()<< "Autentykacja ok";
@@ -215,17 +176,8 @@ void WorkerIP::waitRecv(int waitTime, int counter)
 void WorkerIP::setUserLevel(QString levelName)
 {
     sendMsgTCP( levelName.toLatin1().data());
-    waitSend(waitTime, counterWaitTime); //socket->waitForBytesWritten(waitTime);
-    waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
-
-    std::string buffor = readMsgTCP();
-    sendMsgTCP( "OK");
-    waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
-    waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
-    buffor = readMsgTCP();
-    crypt(buffor,config->m_RSHash,config->encrypted );
+    std::string buffor   = readMsgTCP();
     qDebug() << "user level "<< buffor.c_str();
-
 }
 
 qint64 WorkerIP::sendMsgTCP(std::string msg)
@@ -234,19 +186,48 @@ qint64 WorkerIP::sendMsgTCP(std::string msg)
     //qDebug() << "wyslano " << msg.c_str();
     //QByteArray m = QString(msg.c_str()).toLocal8Bit();
     qint64 counter =  socket->write(QByteArray(msg.c_str(), static_cast<int>(msg.length())   )  ) ;
-//    foreach (auto t, msg) {
-//        qDebug()<< (int)t << " "<< t;
-//    }
+    waitSend(waitTime, counterWaitTime); //socket->waitForBytesWritten(waitTime);
     crypt(msg,config->m_RSHash,config->encrypted);
-//    qDebug() << "dekodowanie " << msg.c_str();
+    //    qDebug() << "dekodowanie " << msg.c_str();
     return counter;
 }
 
 std::string WorkerIP::readMsgTCP()
 {
+    if ( socket->state() ==  QAbstractSocket::UnconnectedState)
+    {
+        emit serverDisconnected();
+        config->isConnectedToServer =  false;
+        qDebug() << "OOOOOOOOOOOOO Cos nie dziala!";
+        return "";
+    }
+
+    waitRecv(waitTime, counterWaitTime);
+
     std::string buf = socket->readAll().toStdString();
-    //crypt(buf,config->m_RSHash,true ); //config->encrypted);
-   // qDebug() << "odebrano w readMsgTCP()" << buf.c_str();
+    crypt(buf,config->m_RSHash,config->encrypted );
+    sendMsgTCP( "OK");
+    waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
+   // qDebug() << "odebralismy "<< buf.c_str();
+    unsigned int size  = atoi(buf.c_str());
+    buf.erase();
+  //  qDebug() << "int do odebrania  "<< size;
+    while(true){
+        waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
+
+        buf.append(socket->readAll().toStdString());
+        emit sendActual(static_cast<int>(buf.length()));
+        emit progress(  static_cast<int>(  (100*buf.length())/size ) );
+        emit sendAll(static_cast<int>(size) );
+        if(buf.length()>= size){
+            break;
+        }
+
+    }
+    emit sendActual(static_cast<int>(buffor.length()));
+    emit sendAll(static_cast<int>(size));
+
+    crypt(buf,config->m_RSHash,config->encrypted );
     return buf;
 }
 

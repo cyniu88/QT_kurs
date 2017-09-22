@@ -31,7 +31,7 @@ private:
     int waitTime = 1000;
     int counterWaitTime = 20;
     QDateTime pingStart;
-    qint64 pingTimeMilis;
+    double pingTimeMilis;
     QTcpSocket *socket;
    // std::string buffor;
     bool connectAndAuthentication();

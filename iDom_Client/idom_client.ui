@@ -141,8 +141,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>807</width>
-               <height>689</height>
+               <width>815</width>
+               <height>722</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -641,171 +641,6 @@ border:none;
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
-          <item row="4" column="5">
-           <widget class="QLCDNumber" name="lcdNumberAll">
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 0);
- 
-border: none ;</string>
-            </property>
-            <property name="digitCount">
-             <number>9</number>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0" colspan="6">
-           <widget class="QProgressBar" name="progressBar">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 0);
-background-color: rgba(0, 255, 0, 25);
-text-align: center;
-QProgressBar::chunk {
-    background-color: #CD96CD;
-    width: 10px;
-    margin: 0.5px;
-
-}</string>
-            </property>
-            <property name="value">
-             <number>0</number>
-            </property>
-            <property name="invertedAppearance">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="5" rowspan="2">
-           <widget class="QPushButton" name="pushButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>75</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="whatsThis">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wyslij  komende na serwer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">
-QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147,0, 255), stop:1 rgba(30, 30, 30, 155));
- border: 2px solid #8f8f91;
-border-radius: 15px;
- 
-color: rgb(0, 255, 0);
-    font: bold 34px;
-  Text-align:center;
-}
-QPushButton:pressed {
-border:none;
-}
- </string>
-            </property>
-            <property name="text">
-             <string>SEND</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0" colspan="6">
-           <widget class="QTextEdit" name="txtAnswer">
-            <property name="font">
-             <font>
-              <family>Consolas</family>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: transparent;
-color: rgb(0, 255, 0);
-border: none ;</string>
-            </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAsNeeded</enum>
-            </property>
-            <property name="horizontalScrollBarPolicy">
-             <enum>Qt::ScrollBarAsNeeded</enum>
-            </property>
-            <property name="sizeAdjustPolicy">
-             <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
-            </property>
-            <property name="autoFormatting">
-             <set>QTextEdit::AutoNone</set>
-            </property>
-            <property name="tabChangesFocus">
-             <bool>true</bool>
-            </property>
-            <property name="lineWrapMode">
-             <enum>QTextEdit::NoWrap</enum>
-            </property>
-            <property name="lineWrapColumnOrWidth">
-             <number>1</number>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-            <property name="html">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt;&quot;&gt;tu beda wyniki&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-            <property name="textInteractionFlags">
-             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QLineEdit" name="pingName">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(0, 255, 0);
-border: none ;</string>
-            </property>
-            <property name="text">
-             <string>PING:</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="2">
-           <widget class="QLineEdit" name="ping">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(0, 255, 0);
-border: none ;</string>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-          </item>
           <item row="4" column="3" colspan="2">
            <widget class="QLCDNumber" name="lcdNumberActual">
             <property name="minimumSize">
@@ -932,6 +767,171 @@ QComboBox::down-arrow {
               <string>event RS232</string>
              </property>
             </item>
+           </widget>
+          </item>
+          <item row="0" column="5" rowspan="2">
+           <widget class="QPushButton" name="pushButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>75</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wyslij  komende na serwer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147,0, 255), stop:1 rgba(30, 30, 30, 155));
+ border: 2px solid #8f8f91;
+border-radius: 15px;
+ 
+color: rgb(0, 255, 0);
+    font: bold 34px;
+  Text-align:center;
+}
+QPushButton:pressed {
+border:none;
+}
+ </string>
+            </property>
+            <property name="text">
+             <string>SEND</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLineEdit" name="ping">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 255, 0);
+border: none ;</string>
+            </property>
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="6">
+           <widget class="QTextEdit" name="txtAnswer">
+            <property name="font">
+             <font>
+              <family>Consolas</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: rgb(0, 255, 0);
+border: none ;</string>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+            </property>
+            <property name="autoFormatting">
+             <set>QTextEdit::AutoNone</set>
+            </property>
+            <property name="tabChangesFocus">
+             <bool>true</bool>
+            </property>
+            <property name="lineWrapMode">
+             <enum>QTextEdit::NoWrap</enum>
+            </property>
+            <property name="lineWrapColumnOrWidth">
+             <number>1</number>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt;&quot;&gt;tu beda wyniki&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="pingName">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 255, 0);
+border: none ;</string>
+            </property>
+            <property name="text">
+             <string>PING:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="5">
+           <widget class="QLCDNumber" name="lcdNumberAll">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 0);
+ 
+border: none ;</string>
+            </property>
+            <property name="digitCount">
+             <number>9</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="6">
+           <widget class="QProgressBar" name="progressBar">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(0, 255, 0, 25);
+text-align: center;
+QProgressBar::chunk {
+    background-color: #CD96CD;
+    width: 10px;
+    margin: 0.5px;
+
+}</string>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+            <property name="invertedAppearance">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
          </layout>
