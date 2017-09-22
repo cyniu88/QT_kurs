@@ -49,7 +49,7 @@ void WorkerIP::run()
 
         buffor = readMsgTCP();
         crypt(buffor,config->m_RSHash,config->encrypted );
-qDebug() <<"bufor ma "<< buffor.c_str();
+//qDebug() <<"bufor ma "<< buffor.c_str();
         len_send = atoi(buffor.c_str());
         emit sendAll(len_send);
 
@@ -231,7 +231,7 @@ void WorkerIP::setUserLevel(QString levelName)
 qint64 WorkerIP::sendMsgTCP(std::string msg)
 {
     crypt(msg,config->m_RSHash,config->encrypted);
-    qDebug() << "wyslano " << msg.c_str();
+    //qDebug() << "wyslano " << msg.c_str();
     //QByteArray m = QString(msg.c_str()).toLocal8Bit();
     qint64 counter = socket->write(    QByteArray(msg.c_str(), msg.length())    );
 //    foreach (auto t, msg) {
