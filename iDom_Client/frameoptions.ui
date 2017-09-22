@@ -211,7 +211,7 @@ QComboBox::down-arrow {
       <string notr="true">color: rgb(0, 255, 0);</string>
      </property>
      <property name="text">
-      <string>Encrypt MSG?</string>
+      <string>Encrypt MSG</string>
      </property>
      <property name="checkable">
       <bool>true</bool>
