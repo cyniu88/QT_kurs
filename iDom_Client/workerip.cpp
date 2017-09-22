@@ -49,9 +49,9 @@ void WorkerIP::run()
 
         buffor = readMsgTCP();
         crypt(buffor,config->m_RSHash,config->encrypted );
-//qDebug() <<"bufor ma "<< buffor.c_str();
-        len_send = atoi(buffor.c_str());
-        emit sendAll(len_send);
+
+        len_send = static_cast<unsigned int>(atoi(buffor.c_str()));
+        emit sendAll(  static_cast<int>(len_send)  );
 
         if ( socket->state() ==  QAbstractSocket::UnconnectedState)
         {
@@ -68,16 +68,16 @@ void WorkerIP::run()
 
         while (true){
             waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
-            emit sendActual(buffor.length());
-            emit progress(    (100*buffor.length())/len_send  );
-            emit sendAll(len_send);
+            emit sendActual(static_cast<int>(buffor.length()));
+            emit progress(  static_cast<int>(  (100*buffor.length())/len_send ) );
+            emit sendAll(static_cast<int>(len_send) );
             buffor.append( readMsgTCP());
             //buffor += buffor.toStdString();
             if (buffor.length()>=len_send)
             {
                 crypt(buffor,config->m_RSHash,config->encrypted );
-                emit sendActual(buffor.length());
-                emit sendAll(len_send);
+                emit sendActual(static_cast<int>(buffor.length()));
+                emit sendAll(static_cast<int>(len_send));
 
                 if (addresOUT.address == "console"){
                     emit answer( QString::fromStdString(buffor));
@@ -115,7 +115,7 @@ void WorkerIP::run()
                 }
                 pingTimeMilis = pingStart.msecsTo( QDateTime::currentDateTime());
 
-                emit pingTime(QString::number((double)pingTimeMilis/1000)+" sec");
+                emit pingTime(QString::number(static_cast<double>(pingTimeMilis/1000) )+" sec");
                 break;
             }
         }
@@ -233,7 +233,7 @@ qint64 WorkerIP::sendMsgTCP(std::string msg)
     crypt(msg,config->m_RSHash,config->encrypted);
     //qDebug() << "wyslano " << msg.c_str();
     //QByteArray m = QString(msg.c_str()).toLocal8Bit();
-    qint64 counter = socket->write(    QByteArray(msg.c_str(), msg.length())    );
+    qint64 counter =  socket->write(QByteArray(msg.c_str(), static_cast<int>(msg.length())   )  ) ;
 //    foreach (auto t, msg) {
 //        qDebug()<< (int)t << " "<< t;
 //    }
