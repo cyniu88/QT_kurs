@@ -90,11 +90,16 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ivona = new QTextToSpeech(this);
 
 
-    //        QVector <QVoice> voi = ivona->availableVoices();
-    //        ivona->setVoice( voi[1]);
-    //        qDebug()<<voi[0].name()<< voi.size();
-    //        QVector<QLocale> locales = ivona->availableLocales();
-    //        ivona->setLocale(locales[1]);
+    QVector <QVoice> voi = ivona->availableVoices();
+    if (!voi.isEmpty() ){
+        qDebug() << "vector ivona !!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@2 ma " << voi.size();
+        ivona->setVoice( voi[1]);
+        qDebug()<<voi[0].name()<< voi.size();
+        QVector<QLocale> locales = ivona->availableLocales();
+        ivona->setLocale(locales[1]);
+    }
+    else
+        qDebug()<< "JEEEST PUSTY !!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ) ,this,SLOT ( setVolumeValueSlot(int ) ));
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
     QObject::connect(&optionsWindow, SIGNAL(s_fontSize(QString))             ,this,SLOT(slot_fontSize(QString))             );
@@ -137,15 +142,15 @@ void iDom_Client::closeEvent(QCloseEvent *event)
 
 void iDom_Client::resizeEvent(QResizeEvent *event)
 {
-   qDebug() << "TestA Resize";
+    qDebug() << "TestA Resize";
 
-   QMainWindow::resizeEvent(event);
+    QMainWindow::resizeEvent(event);
 }
 
 void iDom_Client::readSettings()
 {
     QSettings settings("cyniu", "iDom");
-   // qDebug()<<"geometria " << settings.value("geometry").toByteArray();
+    // qDebug()<<"geometria " << settings.value("geometry").toByteArray();
     restoreGeometry(settings.value("geometry").toByteArray());
     restoreState(settings.value("windowState").toByteArray());
     config->encrypted=settings.value("encrypted").toBool();
@@ -679,7 +684,7 @@ void iDom_Client::on_pushButton_goodBye_clicked()
 
 void iDom_Client::on_pushButton_ttsInfo_clicked()
 {
-    emit
+    emit sendTCP("TTS","iDom text");
 }
 
 void iDom_Client::on_tabRightButton_clicked()
