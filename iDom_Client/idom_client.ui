@@ -976,7 +976,7 @@ QProgressBar::chunk {
            <string notr="true"> border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1040,7 +1040,7 @@ background-color: rgb(0, 0, 0);
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 34px;
  
@@ -1064,7 +1064,7 @@ border-color: rgb(255, 255, 255);
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1152,7 +1152,7 @@ border-radius:   23px;
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+  /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1205,7 +1205,7 @@ border-color: rgb(255, 255, 255);
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1229,7 +1229,7 @@ border-color: rgb(255, 255, 255);
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1255,7 +1255,7 @@ color: rgb(255, 255, 255);
 background-color: rgb(0, 0, 0);
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+  /* border-radius: 10px;*/
     border-color: beige;
     font: bold 19px;
     padding: 6px;
@@ -1278,7 +1278,7 @@ border-color: rgb(255, 255, 255);
            <string notr="true"> border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1306,7 +1306,7 @@ background-color: rgb(0, 128, 0);</string>
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+  /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px; 
     padding: 6px;</string>
@@ -1334,7 +1334,7 @@ border-color: rgb(255, 255, 255);
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+  /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1357,7 +1357,7 @@ border-color: rgb(255, 255, 255);
            <string notr="true"> border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1382,7 +1382,7 @@ background-color: rgb(178, 34, 34);</string>
   border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1406,7 +1406,7 @@ background-color: rgb(255, 192, 0);</string>
            <string notr="true"> border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1432,7 +1432,7 @@ color: rgb(0, 0, 0);</string>
   border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1456,7 +1456,7 @@ background-color: rgb(147, 246, 0);</string>
            <string notr="true"> border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1488,7 +1488,7 @@ color: rgb(255, 255, 255);
 background-color: rgb(0, 0, 0);
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+  /* border-radius: 10px;*/
     border-color: beige;
     font: bold 19px;
     padding: 6px;
@@ -1512,7 +1512,7 @@ border-color: rgb(255, 255, 255);
   border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1537,7 +1537,7 @@ background-color: rgb(255, 165, 0);</string>
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1562,7 +1562,7 @@ background-color: rgb(255, 255, 153);</string>
   border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1655,7 +1655,7 @@ background-color: rgb(204, 93, 43);</string>
            <string notr="true">  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1679,7 +1679,7 @@ background-color: rgb(8, 37, 103);</string>
            <string notr="true"> border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1704,7 +1704,7 @@ background-color: rgb(98, 0, 44);
            <string notr="true"> border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1769,7 +1769,7 @@ background-color: rgb(112, 32, 31);
            <string notr="true"> border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1794,7 +1794,7 @@ background-color: rgb(0, 127, 255);</string>
   border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1829,7 +1829,7 @@ background-color: rgb(0, 255, 255);</string>
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+     /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1860,7 +1860,7 @@ border-color: rgb(255, 255, 255);
  border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+  /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1931,7 +1931,7 @@ border-radius:   23px;
            <string notr="true"> border-style: outset;
     border-width: 4px;
 border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -1957,7 +1957,7 @@ background-color: rgb(75, 0, 130);</string>
  border-style: outset;
     border-width: 4px;
 border-color: rgb(0, 0, 0);
-    border-radius: 10px;
+   /* border-radius: 10px;*/
     border-color: beige;
     font: bold 24px;
  
@@ -2332,6 +2332,31 @@ border:none;
         <string>TEMPERATURE</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_13">
+        <item row="2" column="1">
+         <widget class="QPushButton" name="smsButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,125);
+ border: 5px solid #8f8f91;
+border-radius: 0px;
+color:white;
+font: bold 20px ;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>send sms</string>
+          </property>
+         </widget>
+        </item>
         <item row="0" column="0">
          <layout class="QGridLayout" name="gridLayout_TEMPERATURE">
           <item row="1" column="1">
@@ -2529,31 +2554,6 @@ Smog Charts</string>
            </size>
           </property>
          </spacer>
-        </item>
-        <item row="2" column="1">
-         <widget class="QPushButton" name="smsButton">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
-border-radius: 0px;
-color:white;
-font: bold 20px ;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-          </property>
-          <property name="text">
-           <string>send sms</string>
-          </property>
-         </widget>
         </item>
        </layout>
       </widget>
