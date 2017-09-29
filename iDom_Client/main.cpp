@@ -2,6 +2,8 @@
 #include <QApplication>
 #include <QObject>
 #include <QDebug>
+#include <QSettings>
+
 #ifdef Q_OS_ANDROID
 #include <QtWebView>
 #endif
@@ -19,6 +21,9 @@ int main(int argc, char *argv[])
     QTimer *scroller = new QTimer ();
 
     iDom_CONFIG config;
+    QSettings settings("cyniu", "iDom");
+    QString ip = settings.value("serverAddres").toString();
+    config.serverIP = ip.toStdString();
     WorkerIP * worker = new WorkerIP(&config);
     config.worketPTR  = worker;
     QApplication a(argc, argv);

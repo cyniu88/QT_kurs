@@ -84,9 +84,12 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->tabWidget->tabBar()->hide();
 
     ui->connectdicsonnectButton->setText("Disconnect from iDom");
-    ///////////////////////////// camera part
+
+    ///////////////////////////// camera part ///////////////////////////////////////
     m_pImgCtrl = new FileDownloader( QUrl(cameraAddressHTTP));
     QObject::connect( m_pImgCtrl, SIGNAL(downloaded(QByteArray)), this, SLOT(loadImage(QByteArray))   );
+
+    //////////////////////////////  tts part ////////////////////////////////////////
     ivona = new QTextToSpeech(this);
 
 
@@ -103,7 +106,9 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ) ,this,SLOT ( setVolumeValueSlot(int ) ));
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
     QObject::connect(&optionsWindow, SIGNAL(s_fontSize(QString))             ,this,SLOT(slot_fontSize(QString))             );
-    //////////////////////////////// config
+
+
+    //////////////////////////////// config part ////////////////////////////////////
 
     QString commandString;
     for( auto i = 0; i < ui->comboBox->count(); i++ )

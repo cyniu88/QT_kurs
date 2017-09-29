@@ -20,6 +20,7 @@ void FrameOptions::setConfigFile(iDom_CONFIG *config)
     this->config=config;
     QSettings settings("cyniu", "iDom");
 
+    ui->serverAddres->setText( settings.value("serverAddres").toString());
     ui->encryptCheckBox->setChecked(settings.value("encrypted").toBool());
 
 }
@@ -75,4 +76,13 @@ void FrameOptions::on_encryptCheckBox_stateChanged(int arg1)
     }
     QSettings settings("cyniu", "iDom");
     settings.setValue("encrypted", config->encrypted);
+}
+
+
+void FrameOptions::on_serverAddres_editingFinished()
+{
+    qDebug("edytujemy adres serwera !!!!!!!!!!!!!!!");
+    QSettings settings("cyniu", "iDom");
+    settings.setValue("serverAddres", ui->serverAddres->text());
+    config->serverIP = ui->serverAddres->text().toStdString();
 }

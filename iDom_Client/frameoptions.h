@@ -33,6 +33,8 @@ private slots:
     void on_fontSize_currentIndexChanged();
     void on_pushButton_clicked();
     void on_encryptCheckBox_stateChanged(int arg1);
+
+    void on_serverAddres_editingFinished();
 };
 
 #endif // FRAMEOPTIONS_H

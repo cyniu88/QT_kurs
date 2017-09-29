@@ -109,7 +109,7 @@ border:none;
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="4" column="0">
     <widget class="QComboBox" name="fontSize">
      <property name="styleSheet">
       <string notr="true">
@@ -205,7 +205,7 @@ QComboBox::down-arrow {
      </item>
     </widget>
    </item>
-   <item row="2" column="0">
+   <item row="3" column="0">
     <widget class="QCheckBox" name="encryptCheckBox">
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 255, 0);</string>
@@ -218,6 +218,16 @@ QComboBox::down-arrow {
      </property>
      <property name="checked">
       <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLineEdit" name="serverAddres">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(170, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string>www.wp.pl</string>
      </property>
     </widget>
    </item>

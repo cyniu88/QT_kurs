@@ -18,8 +18,8 @@ struct iDom_CONFIG {
     std::string logo_android = "/storage/emulated/0/f/logo.png";
     //std::string background_img_w = "background.png";
     std::string background_img_a = "/storage/emulated/0/f/background.png";
-    std::string serverIP = "cyniu88.no-ip.pl";
-   // std::string serverIP="192.168.1.144";
+    std::string serverIP = "";
+
     quint16 serverPort = 8833;
     bool goWhile = false;
     std::string command = "OK";
