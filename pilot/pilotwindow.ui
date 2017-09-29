@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1209</width>
-    <height>461</height>
+    <width>1033</width>
+    <height>616</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -42,100 +42,324 @@
    <string notr="true">background-color: rgba(107, 107, 107, 231);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>595</height>
+    </size>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="4" column="4">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="2">
-       <widget class="QLCDNumber" name="FPS_LCD">
-        <property name="font">
-         <font>
-          <family>Franklin Gothic Medium</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Tab 1</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="12">
+         <widget class="QLCDNumber" name="skretLCD_y">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+          </property>
+          <property name="digitCount">
+           <number>4</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLCDNumber" name="gazLCD_x">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+          </property>
+          <property name="digitCount">
+           <number>4</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="11">
+         <widget class="QLCDNumber" name="skretLCD_x">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+          </property>
+          <property name="digitCount">
+           <number>4</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="9">
+         <widget class="QGraphicsView" name="graphicsView_gaz">
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="10" colspan="3">
+         <widget class="QCheckBox" name="checkBoxWheel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>powrot kierownicy na neutralna pozycje</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="10" colspan="3">
+         <widget class="QGraphicsView" name="graphicsView_skret">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="9">
+         <widget class="myButton" name="reset">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(0, 255, 0, 50);
  border: true;
 	border-color: rgb(0, 255, 0);
 	color: rgb(0, 255, 0);
     font-family:  &quot;Franklin Gothic Medium&quot;;
     font-size:  40px;</string>
-        </property>
-        <property name="digitCount">
-         <number>3</number>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);
+          </property>
+          <property name="text">
+           <string>RESET</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="9">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="myButton" name="buttonAutomatGearbox">
+            <property name="text">
+             <string>Automat</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="myButton" name="push_plusGear">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 255, 0, 50);
  border: true;
 	border-color: rgb(0, 255, 0);
 	color: rgb(0, 255, 0);
     font-family:  &quot;Franklin Gothic Medium&quot;;
     font-size:  40px;</string>
-        </property>
-        <property name="text">
-         <string>FPS:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="3">
-       <widget class="QLCDNumber" name="lcdMsgCounter"/>
-      </item>
-     </layout>
-    </item>
-    <item row="3" column="4">
-     <widget class="myButton" name="reset">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 255, 0, 50);
+            </property>
+            <property name="text">
+             <string>Up</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="gear">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="myButton" name="push_minusGear">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 255, 0, 50);
  border: true;
 	border-color: rgb(0, 255, 0);
 	color: rgb(0, 255, 0);
     font-family:  &quot;Franklin Gothic Medium&quot;;
     font-size:  40px;</string>
-      </property>
-      <property name="text">
-       <string>RESET</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0" colspan="3">
-     <widget class="QCheckBox" name="checkBoxPower">
-      <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>powrot gazu na neutralna pozycje</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="tristate">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0" colspan="4">
-     <widget class="myTouchSlider" name="horizontalSlider">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QSlider::groove:horizontal {
+            </property>
+            <property name="text">
+             <string>Down</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="9">
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+            </property>
+            <property name="text">
+             <string>FPS:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLCDNumber" name="FPS_LCD">
+            <property name="font">
+             <font>
+              <family>Franklin Gothic Medium</family>
+              <pointsize>-1</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+            </property>
+            <property name="digitCount">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="QLCDNumber" name="lcdMsgCounter"/>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLCDNumber" name="gazLCD_y">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
+          </property>
+          <property name="digitCount">
+           <number>4</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" colspan="9">
+         <widget class="QLineEdit" name="responsTxt">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(0, 255, 0, 50);
+border: true;
+border-color: rgb(0, 255, 0,255);
+color: rgb(0, 255, 0);
+font-family:  &quot;Franklin Gothic Medium&quot;;
+font-size:  40px;</string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="9">
+         <widget class="QCheckBox" name="checkBoxPower">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>powrot gazu na neutralna pozycje</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="9">
+         <widget class="myTouchSlider" name="horizontalSlider">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSlider::groove:horizontal {
 border: 6px solid #AAA;
 height: 10px;
 background: #9AD9EB;
@@ -151,295 +375,92 @@ margin: -56px 0;
 border-radius:   23px;
 }
 </string>
-      </property>
-      <property name="minimum">
-       <number>0</number>
-      </property>
-      <property name="maximum">
-       <number>100</number>
-      </property>
-      <property name="value">
-       <number>0</number>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="invertedAppearance">
-       <bool>false</bool>
-      </property>
-      <property name="invertedControls">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="4">
-     <widget class="QGraphicsView" name="graphicsView_gaz">
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::AdjustToContents</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="5">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="myButton" name="buttonAutomatGearbox">
-        <property name="text">
-         <string>Automat</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="myButton" name="push_plusGear">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
-        </property>
-        <property name="text">
-         <string>Up</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLCDNumber" name="gear">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="digitCount">
-         <number>1</number>
-        </property>
-        <property name="intValue" stdset="0">
-         <number>1</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="myButton" name="push_minusGear">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
-        </property>
-        <property name="text">
-         <string>Down</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="3" column="6" colspan="3">
-     <widget class="QCheckBox" name="checkBoxWheel">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>powrot kierownicy na neutralna pozycje</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-      <property name="tristate">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="5" colspan="4">
-     <layout class="QGridLayout" name="gridLayout_5">
-      <item row="3" column="0" colspan="2">
-       <widget class="QLineEdit" name="infoTxt">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
-        </property>
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2">
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="myButton" name="buttonLowBeam">
-          <property name="text">
-           <string>Low Beam</string>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance">
+           <bool>false</bool>
+          </property>
+          <property name="invertedControls">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="myButton" name="buttonHighBeam">
-          <property name="text">
-           <string>High Beam</string>
-          </property>
-         </widget>
+        <item row="3" column="10">
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="1" column="0" colspan="2">
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="myButton" name="buttonLowBeam">
+              <property name="text">
+               <string>Low Beam</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="myButton" name="buttonHighBeam">
+              <property name="text">
+               <string>High Beam</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QLineEdit" name="infoTxt">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="myButton" name="buttonTrailerMechanism">
+            <property name="text">
+             <string>Trailer Mechanism </string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="myButton" name="buttonReverseLight">
+            <property name="text">
+             <string>Reverse Light</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
-      </item>
-      <item row="2" column="1">
-       <widget class="myButton" name="buttonReverseLight">
-        <property name="text">
-         <string>Reverse Light</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="myButton" name="buttonTrailerMechanism">
-        <property name="text">
-         <string>Trailer Mechanism </string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="2" column="6" colspan="3">
-     <widget class="QGraphicsView" name="graphicsView_skret">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::AdjustToContents</enum>
-      </property>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
      </widget>
-    </item>
-    <item row="0" column="0" colspan="9">
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLCDNumber" name="gazLCD_x">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
-        </property>
-        <property name="digitCount">
-         <number>4</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLCDNumber" name="gazLCD_y">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
-        </property>
-        <property name="digitCount">
-         <number>4</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="responsTxt">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);
-border: true;
-border-color: rgb(0, 255, 0,255);
-color: rgb(0, 255, 0);
-font-family:  &quot;Franklin Gothic Medium&quot;;
-font-size:  40px;</string>
-        </property>
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLCDNumber" name="skretLCD_x">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
-        </property>
-        <property name="digitCount">
-         <number>4</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLCDNumber" name="skretLCD_y">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 255, 0, 50);</string>
-        </property>
-        <property name="digitCount">
-         <number>4</number>
-        </property>
-       </widget>
-      </item>
-     </layout>
     </item>
    </layout>
   </widget>
@@ -448,7 +469,7 @@ font-size:  40px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1209</width>
+     <width>1033</width>
      <height>21</height>
     </rect>
    </property>
