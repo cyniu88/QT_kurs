@@ -66,7 +66,7 @@ private:
     FileDownloader *m_pImgCtrl = NULL;
     bool cameraWork = false;
     QPixmap pima;
-    QString cameraAddressHTTP = "http://cyniu88.no-ip.pl:1183/snapshot.cgi?rate=0&amp;user=admin&amp;pwd=tajnehaslo";
+    QString cameraAddressHTTP = "";
 
     config_Files myConfigHandler;
 

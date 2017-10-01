@@ -86,6 +86,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->connectdicsonnectButton->setText("Disconnect from iDom");
 
     ///////////////////////////// camera part ///////////////////////////////////////
+    QSettings settings("cyniu", "iDom");
+    cameraAddressHTTP = settings.value("cameraAddres").toString();
     m_pImgCtrl = new FileDownloader( QUrl(cameraAddressHTTP));
     QObject::connect( m_pImgCtrl, SIGNAL(downloaded(QByteArray)), this, SLOT(loadImage(QByteArray))   );
 
@@ -155,7 +157,6 @@ void iDom_Client::resizeEvent(QResizeEvent *event)
 void iDom_Client::readSettings()
 {
     QSettings settings("cyniu", "iDom");
-    // qDebug()<<"geometria " << settings.value("geometry").toByteArray();
     restoreGeometry(settings.value("geometry").toByteArray());
     restoreState(settings.value("windowState").toByteArray());
     config->encrypted=settings.value("encrypted").toBool();
@@ -774,6 +775,9 @@ void iDom_Client::on_reloadCameraAddressButton_clicked()
 
     if (ok && !id.isEmpty()){
         m_pImgCtrl->setAddress(id);
+        cameraAddressHTTP = id;
+        QSettings settings("cyniu", "iDom");
+        settings.setValue("cameraAddres", cameraAddressHTTP);
     }
     droid.vibrate(100);
 }

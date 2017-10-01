@@ -95,7 +95,6 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     QApplication::desktop()->height();
     ui->infoTxt->setText( QString::number(w) );
 
-
     connect(QGamepadManager::instance(), &QGamepadManager::connectedGamepadsChanged, this,
             []() { qDebug() << "connected gamepads changed:"; });
     connect(QGamepadManager::instance(), &QGamepadManager::gamepadConnected, this,
@@ -133,6 +132,7 @@ pilotWindow::~pilotWindow()
     t1->stop();
     tFPS->stop();
     droid.keepScreenOn(false);
+
     delete joyPadPower;
     delete joyPadDirection;
     delete t1;
