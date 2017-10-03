@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1033</width>
-    <height>616</height>
+    <width>1030</width>
+    <height>641</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -42,6 +42,15 @@
    <string notr="true">background-color: rgba(107, 107, 107, 231);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>0</width>
@@ -49,8 +58,14 @@
     </size>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
+    <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -59,8 +74,8 @@
         <string>Tab 1</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="12">
-         <widget class="QLCDNumber" name="skretLCD_y">
+        <item row="0" column="11">
+         <widget class="QLCDNumber" name="skretLCD_x">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
             <horstretch>0</horstretch>
@@ -91,8 +106,8 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="11">
-         <widget class="QLCDNumber" name="skretLCD_x">
+        <item row="0" column="12">
+         <widget class="QLCDNumber" name="skretLCD_y">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
             <horstretch>0</horstretch>
@@ -107,23 +122,10 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="0" colspan="9">
-         <widget class="QGraphicsView" name="graphicsView_gaz">
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-          <property name="horizontalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-          <property name="sizeAdjustPolicy">
-           <enum>QAbstractScrollArea::AdjustToContents</enum>
-          </property>
-         </widget>
-        </item>
         <item row="2" column="10" colspan="3">
          <widget class="QCheckBox" name="checkBoxWheel">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -139,25 +141,6 @@
           </property>
           <property name="tristate">
            <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="10" colspan="3">
-         <widget class="QGraphicsView" name="graphicsView_skret">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-          <property name="horizontalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-          <property name="sizeAdjustPolicy">
-           <enum>QAbstractScrollArea::AdjustToContents</enum>
           </property>
          </widget>
         </item>
@@ -353,7 +336,7 @@ font-size:  40px;</string>
         <item row="3" column="0" colspan="9">
          <widget class="myTouchSlider" name="horizontalSlider">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -402,6 +385,12 @@ border-radius:   23px;
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
              <widget class="myButton" name="buttonLowBeam">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="text">
                <string>Low Beam</string>
               </property>
@@ -409,6 +398,12 @@ border-radius:   23px;
             </item>
             <item>
              <widget class="myButton" name="buttonHighBeam">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="text">
                <string>High Beam</string>
               </property>
@@ -419,7 +414,7 @@ border-radius:   23px;
           <item row="3" column="0" colspan="2">
            <widget class="QLineEdit" name="infoTxt">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -439,6 +434,12 @@ border-radius:   23px;
           </item>
           <item row="2" column="0">
            <widget class="myButton" name="buttonTrailerMechanism">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Trailer Mechanism </string>
             </property>
@@ -446,12 +447,50 @@ border-radius:   23px;
           </item>
           <item row="2" column="1">
            <widget class="myButton" name="buttonReverseLight">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="text">
              <string>Reverse Light</string>
             </property>
            </widget>
           </item>
          </layout>
+        </item>
+        <item row="1" column="10" colspan="3">
+         <widget class="QGraphicsView" name="graphicsView_skret">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="9">
+         <widget class="QGraphicsView" name="graphicsView_gaz">
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -469,8 +508,8 @@ border-radius:   23px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1033</width>
-     <height>21</height>
+     <width>1030</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuPo_czenie">
