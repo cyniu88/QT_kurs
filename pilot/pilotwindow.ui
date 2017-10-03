@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1030</width>
-    <height>641</height>
+    <width>517</width>
+    <height>279</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -54,10 +54,25 @@
    <property name="minimumSize">
     <size>
      <width>0</width>
-     <height>595</height>
+     <height>0</height>
     </size>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="sizePolicy">
@@ -69,11 +84,161 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="GamePad">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
-        <string>Tab 1</string>
+        <string>gamePad</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="1" column="9">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="myButton" name="buttonAutomatGearbox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Automat</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="myButton" name="push_plusGear">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+            </property>
+            <property name="text">
+             <string>Up</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="gear">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>2</pointsize>
+             </font>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+            <property name="intValue" stdset="0">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="myButton" name="push_minusGear">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  40px;</string>
+            </property>
+            <property name="text">
+             <string>Down</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0" colspan="9">
+         <widget class="myTouchSlider" name="horizontalSlider">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QSlider::groove:horizontal {
+border: 6px solid #AAA;
+height: 10px;
+background: #9AD9EB;
+margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+ 
+	background-color: rgb(85, 255, 0);
+border: 1px solid gray;
+width: 80px;
+margin: -56px 0;
+border-radius:   23px;
+}
+</string>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance">
+           <bool>false</bool>
+          </property>
+          <property name="invertedControls">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
         <item row="0" column="11">
          <widget class="QLCDNumber" name="skretLCD_x">
           <property name="sizePolicy">
@@ -125,7 +290,7 @@
         <item row="2" column="10" colspan="3">
          <widget class="QCheckBox" name="checkBoxWheel">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -165,79 +330,19 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="9">
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <item>
-           <widget class="myButton" name="buttonAutomatGearbox">
-            <property name="text">
-             <string>Automat</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="myButton" name="push_plusGear">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
-            </property>
-            <property name="text">
-             <string>Up</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLCDNumber" name="gear">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="digitCount">
-             <number>1</number>
-            </property>
-            <property name="intValue" stdset="0">
-             <number>1</number>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="myButton" name="push_minusGear">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
-            </property>
-            <property name="text">
-             <string>Down</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
         <item row="3" column="9">
          <layout class="QGridLayout" name="gridLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">background-color: rgba(0, 255, 0, 50);
  border: true;
@@ -256,6 +361,12 @@
           </item>
           <item row="0" column="2">
            <widget class="QLCDNumber" name="FPS_LCD">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="font">
              <font>
               <family>Franklin Gothic Medium</family>
@@ -276,7 +387,14 @@
            </widget>
           </item>
           <item row="1" column="0" colspan="3">
-           <widget class="QLCDNumber" name="lcdMsgCounter"/>
+           <widget class="QLCDNumber" name="lcdMsgCounter">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -319,6 +437,12 @@ font-size:  40px;</string>
         </item>
         <item row="2" column="0" colspan="9">
          <widget class="QCheckBox" name="checkBoxPower">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
            <string notr="true">color: rgb(255, 255, 255);</string>
           </property>
@@ -333,137 +457,10 @@ font-size:  40px;</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="0" colspan="9">
-         <widget class="myTouchSlider" name="horizontalSlider">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QSlider::groove:horizontal {
-border: 6px solid #AAA;
-height: 10px;
-background: #9AD9EB;
-margin: 2px 0;
-}
-
-QSlider::handle:horizontal {
- 
-	background-color: rgb(85, 255, 0);
-border: 1px solid gray;
-width: 80px;
-margin: -56px 0;
-border-radius:   23px;
-}
-</string>
-          </property>
-          <property name="minimum">
-           <number>0</number>
-          </property>
-          <property name="maximum">
-           <number>100</number>
-          </property>
-          <property name="value">
-           <number>0</number>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="invertedAppearance">
-           <bool>false</bool>
-          </property>
-          <property name="invertedControls">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="10">
-         <layout class="QGridLayout" name="gridLayout_5">
-          <item row="1" column="0" colspan="2">
-           <layout class="QHBoxLayout" name="horizontalLayout">
-            <item>
-             <widget class="myButton" name="buttonLowBeam">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>Low Beam</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="myButton" name="buttonHighBeam">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>High Beam</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="3" column="0" colspan="2">
-           <widget class="QLineEdit" name="infoTxt">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="myButton" name="buttonTrailerMechanism">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Trailer Mechanism </string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="myButton" name="buttonReverseLight">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Reverse Light</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
         <item row="1" column="10" colspan="3">
          <widget class="QGraphicsView" name="graphicsView_skret">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -481,6 +478,12 @@ border-radius:   23px;
         </item>
         <item row="1" column="0" colspan="9">
          <widget class="QGraphicsView" name="graphicsView_gaz">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="verticalScrollBarPolicy">
            <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
@@ -492,11 +495,130 @@ border-radius:   23px;
           </property>
          </widget>
         </item>
+        <item row="3" column="10">
+         <layout class="QGridLayout" name="gridLayout_5">
+          <property name="spacing">
+           <number>1</number>
+          </property>
+          <item row="1" column="0" colspan="2">
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="spacing">
+             <number>1</number>
+            </property>
+            <item>
+             <widget class="myButton" name="buttonLowBeam">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  20px;</string>
+              </property>
+              <property name="text">
+               <string>Low Beam</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="myButton" name="buttonHighBeam">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  20px;</string>
+              </property>
+              <property name="text">
+               <string>High Beam</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <widget class="myButton" name="buttonTrailerMechanism">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  20px;</string>
+            </property>
+            <property name="text">
+             <string>Trailer Mechanism </string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="myButton" name="buttonReverseLight">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  20px;</string>
+            </property>
+            <property name="text">
+             <string>Reverse Light</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QLineEdit" name="infoTxt">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 255, 0);
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  20px;</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="camera">
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>camera</string>
        </attribute>
       </widget>
      </widget>
@@ -508,8 +630,8 @@ border-radius:   23px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1030</width>
-     <height>26</height>
+     <width>517</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuPo_czenie">
