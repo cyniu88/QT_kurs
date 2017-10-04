@@ -461,3 +461,13 @@ void pilotWindow::on_actionShow_IP_arp_triggered()
     nowy.waitForFinished();
     getMSG("found IP", nowy.readAllStandardOutput());
 }
+
+void pilotWindow::on_actioncamera_triggered()
+{
+    ui->tabWidget->setCurrentIndex(1);
+}
+
+void pilotWindow::on_actionpad_triggered()
+{
+    ui->tabWidget->setCurrentIndex(0);
+}

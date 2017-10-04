@@ -127,6 +127,10 @@ private slots:
 
     void on_actionShow_IP_arp_triggered();
 
+    void on_actioncamera_triggered();
+
+    void on_actionpad_triggered();
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;
