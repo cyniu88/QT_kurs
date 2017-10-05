@@ -25,16 +25,16 @@ SOURCES += main.cpp\
             workerip.cpp \
             functions.cpp \
             blocking_queue/blocking_queue.cpp \
-            android_interface/android_interface.cpp \
+            ../libs/android_functions/android_interface/android_interface.cpp \
             wwwshowwindow.cpp \
             filedownloader.cpp \
-    ../libs/sgvTEST/thermometerSVG/thermometer.cpp \
-    volumedialog.cpp \
-    frameoptions.cpp \
-    ../libs/config_files/config_files.cpp
+            ../libs/sgvTEST/thermometerSVG/thermometer.cpp \
+            volumedialog.cpp \
+            frameoptions.cpp \
+            ../libs/config_files/config_files.cpp
 android {
             message("* Using settings for Android.")
-            SOURCES  +=  androidhelper_cyniu.cpp
+            SOURCES  +=  ../libs/android_functions/androidhelper_cyniu.cpp
         }
 
 HEADERS  += idom_client.h \
@@ -42,16 +42,16 @@ HEADERS  += idom_client.h \
             workerip.h \
             functions.h \
             blocking_queue/blocking_queue.h \
-            android_interface/android_interface.h \
+            ../libs/android_functions/android_interface/android_interface.h \
             wwwshowwindow.h \
             filedownloader.h \
-    ../libs/sgvTEST/thermometerSVG/thermometer.h \
-    volumedialog.h \
-    frameoptions.h \
-    ../libs/config_files/config_files.h
+            ../libs/sgvTEST/thermometerSVG/thermometer.h \
+            volumedialog.h \
+            frameoptions.h \
+            ../libs/config_files/config_files.h
 android {
             message("* Using settings for Android.")
-            HEADERS +=  androidhelper_cyniu.h
+            HEADERS +=  ../libs/android_functions/androidhelper_cyniu.h
         }
 
 

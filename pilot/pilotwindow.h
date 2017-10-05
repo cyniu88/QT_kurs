@@ -20,7 +20,7 @@
 #include "variable.h"
 #include "workerip.h"
 #include "gear_BOX/gear_box.h"
-#include "android_interface/android_interface.h"
+#include "../libs/android_functions/android_interface/android_interface.h"
 #include "../libs/config_files/config_files.h"
 
 namespace Ui {
