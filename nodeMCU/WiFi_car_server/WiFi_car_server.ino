@@ -152,7 +152,7 @@ else{
   }
 }  // end working
 void loop() {
-  wait_for_client();
+  ();
   // Wait until the client sends some data
   working();
   mainMotor.hard_stop();
