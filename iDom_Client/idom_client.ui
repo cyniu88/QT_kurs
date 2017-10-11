@@ -178,6 +178,32 @@ border-color: rgb(255, 255, 255,255);</string>
                  </widget>
                 </item>
                 <item>
+                 <widget class="QPushButton" name="ledCameraButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,125);
+ border: 5px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+	 
+}
+QPushButton:pressed {
+border:none;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>LED CAMERA</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <widget class="QPushButton" name="oneShotCameraButton">
                   <property name="minimumSize">
                    <size>

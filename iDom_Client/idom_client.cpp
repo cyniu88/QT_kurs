@@ -97,14 +97,15 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     QVector <QVoice> voi = ivona->availableVoices();
     if (!voi.isEmpty() ){
-        qDebug() << "vector ivona !!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@2 ma " << voi.size();
-        ivona->setVoice( voi[1]);
-        qDebug()<<voi[0].name()<< voi.size();
-        QVector<QLocale> locales = ivona->availableLocales();
-        ivona->setLocale(locales[1]);
+        // qDebug() << "vector ivona !!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@2 ma " << voi.size();
+        // ivona->setVoice( voi[1]);
+        // qDebug()<<voi[0].name()<< voi.size();
+        // QVector<QLocale> locales = ivona->availableLocales();
+        // ivona->setLocale(locales[1]);
     }
-    else
+    else{
         qDebug()<< "JEEEST PUSTY !!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+    }
     QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ) ,this,SLOT ( setVolumeValueSlot(int ) ));
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
     QObject::connect(&optionsWindow, SIGNAL(s_fontSize(QString))             ,this,SLOT(slot_fontSize(QString))             );
@@ -853,4 +854,26 @@ void iDom_Client::on_Off230vButton_clicked()
 {
     emit sendTCP("console","iDom 230V OFF");
     droid.vibrate(200);
+}
+
+void iDom_Client::on_ledCameraButton_clicked()
+{
+    QUrl url;
+    QString cameraHTTP(cameraAddressHTTP);
+    QString cameraHTTP2 = cameraHTTP;
+    cameraHTTP.remove(cameraHTTP.lastIndexOf('/'),cameraHTTP.length());
+    cameraHTTP2.remove(0,48);
+
+    if (ledCamera == false)
+    {// LED ON
+        cameraHTTP+="/set_misc.cgi?led_mode=1"+cameraHTTP2;
+        ledCamera = true;
+    }
+    else{// LED OFF
+        cameraHTTP+="/set_misc.cgi?led_mode=2"+cameraHTTP2;
+        ledCamera = false;
+    }
+    url.setUrl(cameraHTTP);
+    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+    manager->get(QNetworkRequest(url));
 }

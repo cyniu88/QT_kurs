@@ -71,6 +71,7 @@ private:
     config_Files myConfigHandler;
 
     iDom_SYSTEM_INFO systemInfo;
+    bool ledCamera = false;
 
 #ifdef Q_OS_WIN
     QSystemTrayIcon  trayIcon;
@@ -219,12 +220,13 @@ private slots:
 
     void on_optionsButton_clicked();
 
-
     void on_smsButton_clicked();
 
     void on_On230vButton_clicked();
 
     void on_Off230vButton_clicked();
+
+    void on_ledCameraButton_clicked();
 
 public slots:
     void setLcdActual(int c);
