@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <QtDebug>
 
-#include "../fann/src/include/floatfann.h"
 
 namespace Ui {
 class MainWindow;
