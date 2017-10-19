@@ -50,6 +50,7 @@ protected:
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
+
     /////////// okno dla www
     wwwShowWindow *wwwWindow = NULL;
     VolumeDialog vol;

@@ -858,22 +858,6 @@ void iDom_Client::on_Off230vButton_clicked()
 
 void iDom_Client::on_ledCameraButton_clicked()
 {
-    QUrl url;
-    QString cameraHTTP(cameraAddressHTTP);
-    QString cameraHTTP2 = cameraHTTP;
-    cameraHTTP.remove(cameraHTTP.lastIndexOf('/'),cameraHTTP.length());
-    cameraHTTP2.remove(0,48);
-
-    if (ledCamera == false)
-    {// LED ON
-        cameraHTTP+="/set_misc.cgi?led_mode=1"+cameraHTTP2;
-        ledCamera = true;
-    }
-    else{// LED OFF
-        cameraHTTP+="/set_misc.cgi?led_mode=2"+cameraHTTP2;
-        ledCamera = false;
-    }
-    url.setUrl(cameraHTTP);
-    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-    manager->get(QNetworkRequest(url));
+    emit sendTCP("console","iDom camera LED ON");
+    droid.vibrate(200);
 }

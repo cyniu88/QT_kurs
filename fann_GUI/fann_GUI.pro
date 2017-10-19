@@ -10,7 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = fann_GUI
 TEMPLATE = app
-#LIBS += -L$$PWD/../libs/FANN-2.2.0-Source/bin/ -lfannfloat
+LIBS += -L$$PWD/../libs/FANN-2.2.0-Source/bin/ -lfannfloat
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
