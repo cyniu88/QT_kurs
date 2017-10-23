@@ -31,7 +31,8 @@ SOURCES += main.cpp\
             ../libs/sgvTEST/thermometerSVG/thermometer.cpp \
             volumedialog.cpp \
             frameoptions.cpp \
-            ../libs/config_files/config_files.cpp
+            ../libs/config_files/config_files.cpp \
+    mybutton/mybutton.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  +=  ../libs/android_functions/androidhelper_cyniu.cpp
@@ -48,7 +49,8 @@ HEADERS  += idom_client.h \
             ../libs/sgvTEST/thermometerSVG/thermometer.h \
             volumedialog.h \
             frameoptions.h \
-            ../libs/config_files/config_files.h
+            ../libs/config_files/config_files.h \
+    mybutton/mybutton.h
 android {
             message("* Using settings for Android.")
             HEADERS +=  ../libs/android_functions/androidhelper_cyniu.h

@@ -16,6 +16,8 @@
         <file>files/svg/test.svg</file>
         <file>files/Green_Arrow_Left.svg</file>
         <file>files/Green_Arrow_Right.svg</file>
+        <file>files/svg/light-bulb-OFF.svg</file>
+        <file>files/svg/light-bulb-ON.svg</file>
     </qresource>
     <qresource prefix="/www">
         <file>myqmlfileforwww.qml</file>

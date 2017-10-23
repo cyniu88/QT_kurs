@@ -139,10 +139,10 @@ border-color: rgb(255, 255, 255,255);</string>
             <widget class="QWidget" name="scrollAreaWidgetContents">
              <property name="geometry">
               <rect>
-               <x>0</x>
+               <x>-36</x>
                <y>0</y>
-               <width>815</width>
-               <height>722</height>
+               <width>851</width>
+               <height>705</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -178,12 +178,15 @@ border-color: rgb(255, 255, 255,255);</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="ledCameraButton">
+                 <widget class="myButton" name="ledCameraButton">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
                     <height>100</height>
                    </size>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
@@ -201,10 +204,29 @@ border:none;
                   <property name="text">
                    <string>LED CAMERA</string>
                   </property>
+                  <property name="icon">
+                   <iconset resource="ikony.qrc">
+                    <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>160</width>
+                    <height>60</height>
+                   </size>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                  <property name="default">
+                   <bool>false</bool>
+                  </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="oneShotCameraButton">
+                 <widget class="myButton" name="oneShotCameraButton">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -230,7 +252,7 @@ border:none;
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="reloadCameraAddressButton">
+                 <widget class="myButton" name="reloadCameraAddressButton">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -263,7 +285,7 @@ border:none;
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="camera_button_reload">
+                 <widget class="myButton" name="camera_button_reload">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -2938,7 +2960,16 @@ QSlider::handle:horizontal {
   </widget>
  </widget>
  <layoutdefault spacing="4" margin="2"/>
- <resources/>
+ <customwidgets>
+  <customwidget>
+   <class>myButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">mybutton/mybutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="ikony.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>exitButton</sender>
