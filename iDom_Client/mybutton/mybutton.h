@@ -5,7 +5,8 @@
 #include <QPushButton>
 #include <QEvent>
 #include <QTouchEvent>
-enum class STATE{
+
+enum class BUTTON_STATE{
     OFF = 0,
     ON = 1,
     UNKNOWN = 2
@@ -14,12 +15,17 @@ enum class STATE{
 class myButton :    public QPushButton
 {
     // Q_OBJECT
-    STATE m_state = STATE::OFF;
+    BUTTON_STATE m_state = BUTTON_STATE::OFF;
+
 public:
-    explicit myButton(QObject *parent = 0);
+    QIcon onIcon;
+    QIcon offIcon;
+
+    explicit myButton(QIcon on, QIcon off, QObject *parent = 0);
+    //explicit myButton( QObject *parent = 0);
     bool event(QEvent *e);
-    void setState(STATE s);
-    STATE getState();
+    void setState(BUTTON_STATE s);
+    BUTTON_STATE getState();
     void switchState();
 };
 

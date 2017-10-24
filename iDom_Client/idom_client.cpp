@@ -861,17 +861,15 @@ void iDom_Client::on_ledCameraButton_clicked()
 
     ui->ledCameraButton->switchState();
 
-    if (ui->ledCameraButton->getState() == STATE::ON)
+    if (ui->ledCameraButton->getState() == BUTTON_STATE::ON)
     {
         emit sendTCP("console","iDom camera LED ON");
-        ui->ledCameraButton->setIcon(QIcon(":/new/prefix1/files/svg/light-bulb-ON.svg"));
-        qDebug() << "led ON";
+        ui->ledCameraButton->setIcon(ui->ledCameraButton->onIcon);
     }
-    if (ui->ledCameraButton->getState() == STATE::OFF)
+    if (ui->ledCameraButton->getState() == BUTTON_STATE::OFF)
     {
         emit sendTCP("console","iDom camera LED OFF");
-        ui->ledCameraButton->setIcon(QIcon(":/new/prefix1/files/svg/light-bulb-OFF.svg"));
-        qDebug() << "led OFF";
+        ui->ledCameraButton->setIcon(ui->ledCameraButton->offIcon);
     }
     droid.vibrate(200);
 }

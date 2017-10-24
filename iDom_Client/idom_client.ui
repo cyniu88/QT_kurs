@@ -98,7 +98,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -139,10 +139,10 @@ border-color: rgb(255, 255, 255,255);</string>
             <widget class="QWidget" name="scrollAreaWidgetContents">
              <property name="geometry">
               <rect>
-               <x>-36</x>
+               <x>0</x>
                <y>0</y>
-               <width>851</width>
-               <height>705</height>
+               <width>815</width>
+               <height>722</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -185,6 +185,9 @@ border-color: rgb(255, 255, 255,255);</string>
                     <height>100</height>
                    </size>
                   </property>
+                  <property name="contextMenuPolicy">
+                   <enum>Qt::NoContextMenu</enum>
+                  </property>
                   <property name="layoutDirection">
                    <enum>Qt::LeftToRight</enum>
                   </property>
@@ -201,6 +204,9 @@ QPushButton:pressed {
 border:none;
 }</string>
                   </property>
+                  <property name="inputMethodHints">
+                   <set>Qt::ImhNone</set>
+                  </property>
                   <property name="text">
                    <string>LED CAMERA</string>
                   </property>
@@ -210,8 +216,8 @@ border:none;
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>160</width>
-                    <height>60</height>
+                    <width>100</width>
+                    <height>100</height>
                    </size>
                   </property>
                   <property name="checkable">
@@ -220,7 +226,13 @@ border:none;
                   <property name="checked">
                    <bool>true</bool>
                   </property>
+                  <property name="autoDefault">
+                   <bool>true</bool>
+                  </property>
                   <property name="default">
+                   <bool>false</bool>
+                  </property>
+                  <property name="flat">
                    <bool>false</bool>
                   </property>
                  </widget>

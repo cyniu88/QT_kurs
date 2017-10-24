@@ -1,50 +1,53 @@
 #include "mybutton.h"
 #include <QDebug>
-myButton::myButton(QObject *parent)
+
+myButton::myButton(QIcon on, QIcon off, QObject *parent)
 {
-   this->setAttribute(Qt::WA_AcceptTouchEvents);
+    this->setAttribute(Qt::WA_AcceptTouchEvents);
+    this->offIcon = off;
+    this->onIcon = on;
 }
 
 bool myButton::event(QEvent *e)
 {
 
-  switch (e->type()) {
-  case QEvent::TouchBegin :
-      emit pressed();
-      //qDebug() << "begin event !!! " << e->type();
-      return true;
-      break;
-  case QEvent::TouchEnd:
-      emit released();
-      emit clicked();
-      //qDebug() << "END event !!! " << e->type();
-      return true;
-      break;
-  default:
-       // qDebug() << "rest event !!! " << e->type();
-      break;
-  }
+    switch (e->type()) {
+    case QEvent::TouchBegin :
+        emit pressed();
+        //qDebug() << "begin event !!! " << e->type();
+        return true;
+        break;
+    case QEvent::TouchEnd:
+        emit released();
+        emit clicked();
+        //qDebug() << "END event !!! " << e->type();
+        return true;
+        break;
+    default:
+        // qDebug() << "rest event !!! " << e->type();
+        break;
+    }
 
- return  QPushButton::event(e);
+    return  QPushButton::event(e);
 
 }
 
-void myButton::setState(STATE s)
+void myButton::setState(BUTTON_STATE s)
 {
     m_state = s;
 }
 
-STATE myButton::getState()
+BUTTON_STATE myButton::getState()
 {
     return m_state;
 }
 
 void myButton::switchState()
 {
-    if (m_state == STATE::ON){
-        m_state = STATE::OFF;
+    if (m_state == BUTTON_STATE::ON){
+        m_state = BUTTON_STATE::OFF;
     }
-    else if (m_state == STATE::OFF){
-        m_state = STATE::ON;
+    else if (m_state == BUTTON_STATE::OFF){
+        m_state = BUTTON_STATE::ON;
     }
 }
