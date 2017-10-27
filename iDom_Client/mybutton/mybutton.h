@@ -21,7 +21,7 @@ public:
     QIcon onIcon;
     QIcon offIcon;
 
-    explicit myButton(QIcon on, QIcon off, QObject *parent = 0);
+    explicit myButton(QObject *parent = 0);
     //explicit myButton( QObject *parent = 0);
     bool event(QEvent *e);
     void setState(BUTTON_STATE s);

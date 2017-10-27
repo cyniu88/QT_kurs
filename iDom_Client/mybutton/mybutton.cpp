@@ -1,11 +1,9 @@
 #include "mybutton.h"
 #include <QDebug>
 
-myButton::myButton(QIcon on, QIcon off, QObject *parent)
+myButton::myButton(QObject *parent)
 {
     this->setAttribute(Qt::WA_AcceptTouchEvents);
-    this->offIcon = off;
-    this->onIcon = on;
 }
 
 bool myButton::event(QEvent *e)
@@ -16,13 +14,11 @@ bool myButton::event(QEvent *e)
         emit pressed();
         //qDebug() << "begin event !!! " << e->type();
         return true;
-        break;
     case QEvent::TouchEnd:
         emit released();
         emit clicked();
         //qDebug() << "END event !!! " << e->type();
         return true;
-        break;
     default:
         // qDebug() << "rest event !!! " << e->type();
         break;

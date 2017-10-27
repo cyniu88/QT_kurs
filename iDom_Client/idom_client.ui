@@ -141,8 +141,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>815</width>
-               <height>722</height>
+               <width>807</width>
+               <height>689</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -186,7 +186,7 @@ border-color: rgb(255, 255, 255,255);</string>
                    </size>
                   </property>
                   <property name="contextMenuPolicy">
-                   <enum>Qt::NoContextMenu</enum>
+                   <enum>Qt::PreventContextMenu</enum>
                   </property>
                   <property name="layoutDirection">
                    <enum>Qt::LeftToRight</enum>
@@ -198,21 +198,21 @@ background-color: rgb(158, 158, 158,125);
 border-radius: 0px;
 color:white;
  font: bold 20px;
-	 
+	
+image: url(:/new/prefix1/files/svg/light-bulb-OFF.svg);
 }
 QPushButton:pressed {
 border:none;
+}
+QPushButton:checked{
+image: url(:/new/prefix1/files/svg/light-bulb-ON.svg);
 }</string>
                   </property>
                   <property name="inputMethodHints">
                    <set>Qt::ImhNone</set>
                   </property>
                   <property name="text">
-                   <string>LED CAMERA</string>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="ikony.qrc">
-                    <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+                   <string>LED</string>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -224,10 +224,10 @@ border:none;
                    <bool>true</bool>
                   </property>
                   <property name="checked">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="autoDefault">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="default">
                    <bool>false</bool>
@@ -2617,6 +2617,27 @@ Smog Charts</string>
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="HOME">
+       <attribute name="title">
+        <string>HOME</string>
+       </attribute>
+       <widget class="QPushButton" name="button_230v_printer">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>330</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>230V_button</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
     <item row="0" column="0">
@@ -2979,9 +3000,7 @@ QSlider::handle:horizontal {
    <header location="global">mybutton/mybutton.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="ikony.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>exitButton</sender>

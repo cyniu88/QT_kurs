@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QFile>
 
-#include "C:/cyniu/PROGRAMOWANIE/libs/fann_lib/src/include/fann.h"
+//#include "C:/cyniu/PROGRAMOWANIE/libs/fann_lib/src/include/fann.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -81,5 +81,11 @@ void MainWindow::on_OKpushButton_clicked()
     }
 
 
+static int counter = 0;
+qDebug() << ++counter;
+}
 
+void MainWindow::on_pushButton_clicked()
+{
+    ui->OKpushButton->setChecked(!(ui->OKpushButton->isChecked()));
 }
