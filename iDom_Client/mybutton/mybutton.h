@@ -16,17 +16,12 @@ class myButton :    public QPushButton
 {
     // Q_OBJECT
     BUTTON_STATE m_state = BUTTON_STATE::OFF;
-
+    bool  m_checked = false;
 public:
-    QIcon onIcon;
-    QIcon offIcon;
 
     explicit myButton(QObject *parent = 0);
-    //explicit myButton( QObject *parent = 0);
     bool event(QEvent *e);
-    void setState(BUTTON_STATE s);
-    BUTTON_STATE getState();
-    void switchState();
+
 };
 
 #endif // MYBUTTON_H

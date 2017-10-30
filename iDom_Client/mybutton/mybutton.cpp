@@ -15,8 +15,10 @@ bool myButton::event(QEvent *e)
         //qDebug() << "begin event !!! " << e->type();
         return true;
     case QEvent::TouchEnd:
+        QPushButton::nextCheckState();
         emit released();
         emit clicked();
+
         //qDebug() << "END event !!! " << e->type();
         return true;
     default:
@@ -28,22 +30,3 @@ bool myButton::event(QEvent *e)
 
 }
 
-void myButton::setState(BUTTON_STATE s)
-{
-    m_state = s;
-}
-
-BUTTON_STATE myButton::getState()
-{
-    return m_state;
-}
-
-void myButton::switchState()
-{
-    if (m_state == BUTTON_STATE::ON){
-        m_state = BUTTON_STATE::OFF;
-    }
-    else if (m_state == BUTTON_STATE::OFF){
-        m_state = BUTTON_STATE::ON;
-    }
-}

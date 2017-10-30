@@ -859,20 +859,15 @@ void iDom_Client::on_Off230vButton_clicked()
 
 void iDom_Client::on_ledCameraButton_clicked()
 {
-
-    ui->ledCameraButton->switchState();
-
-   // if (ui->ledCameraButton->getState() == BUTTON_STATE::ON)
     if (ui->ledCameraButton->isChecked() == true)
     {
         emit sendTCP("console","iDom camera LED ON");
-        ui->ledCameraButton->setIcon(ui->ledCameraButton->onIcon);
+        droid.makeToast("zapala leda kamery");
     }
-   // if (ui->ledCameraButton->getState() == BUTTON_STATE::OFF)
     if (ui->ledCameraButton->isChecked() == false)
     {
         emit sendTCP("console","iDom camera LED OFF");
-        ui->ledCameraButton->setIcon(ui->ledCameraButton->offIcon);
+        droid.makeToast("gasze leda kamery");
     }
     droid.vibrate(200);
 }
