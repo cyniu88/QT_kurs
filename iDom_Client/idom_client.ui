@@ -147,8 +147,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>815</width>
-               <height>722</height>
+               <width>807</width>
+               <height>689</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -2656,13 +2656,19 @@ Smog Charts</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>926</width>
-             <height>707</height>
+             <width>809</width>
+             <height>691</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_7">
             <item>
              <widget class="QPushButton" name="pushButton_22">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {
 background-color: rgb(158, 158, 158,125);
@@ -2678,7 +2684,17 @@ border:none;
  </string>
               </property>
               <property name="text">
-               <string>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</string>
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="ikony.qrc">
+                <normaloff>:/new/prefix1/files/svg/socket.svg</normaloff>:/new/prefix1/files/svg/socket.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
               </property>
              </widget>
             </item>
@@ -3087,7 +3103,9 @@ QSlider::handle:horizontal {
    <header location="global">mybutton/mybutton.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="ikony.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>exitButton</sender>
