@@ -95,7 +95,7 @@ private slots:
 
     void on_exitButton_released();
 
-    void scrollTitle();
+    void taskHandler();
 
     void on_pushButton_released();
 
@@ -248,6 +248,7 @@ public slots:
     void connectDisconnectButtonState(bool state);
     void setVolumeValueSlot(int i);
     void getPing(QString s);
+    void odb_answer_state(QString s);
 signals:
     void sendTCP(std::string addres, std::string s);
 };

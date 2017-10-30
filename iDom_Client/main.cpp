@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 {
     QTimer *infoMPDtimer = new QTimer ();
     QTimer *infoTemperatureTimer = new QTimer();
-    QTimer *scroller = new QTimer ();
+    QTimer *taskHandlerTimer = new QTimer ();
 
     iDom_CONFIG config;
     QSettings settings("cyniu", "iDom");
@@ -49,12 +49,13 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(tools(QString)),             w,SLOT(odb_tools(QString))  );
     QObject::connect(worker,SIGNAL(listMPD(QString)),           w,SLOT(listMPD(QString))  );
     QObject::connect(worker,SIGNAL(signalFromTTS(QString)),     w,SLOT(textToSpeachSLOTS(QString)) );
-    QObject::connect(worker,SIGNAL(serverDisconnected(bool)),   w,SLOT(connectDisconnectButtonState(bool)));
-    QObject::connect(worker,SIGNAL(pingTime(QString)),              w,SLOT(getPing(QString)));
+    QObject::connect(worker,SIGNAL(serverDisconnected(bool)),   w,SLOT(connectDisconnectButtonState(bool))  );
+    QObject::connect(worker,SIGNAL(pingTime(QString)),          w,SLOT(getPing(QString))    );
+    QObject::connect(worker,SIGNAL(answerState(QString)),       w,SLOT(odb_answer_state(QString))   );
 
     QObject::connect(infoMPDtimer,SIGNAL(timeout()),            w,SLOT(updateMPDinfo()) );
     QObject::connect(infoTemperatureTimer,SIGNAL(timeout()),    w,SLOT(updateTemepretureInfo()) );
-    QObject::connect(scroller, SIGNAL(timeout()),               w,SLOT(scrollTitle()));
+    QObject::connect(taskHandlerTimer, SIGNAL(timeout()),       w,SLOT(taskHandler()));
 
     worker->start();
     w->updateMPDinfo();
@@ -63,8 +64,7 @@ int main(int argc, char *argv[])
     w->show();
     infoTemperatureTimer->start(60000);
     infoMPDtimer->start(10000);
-    scroller->start(500);
-
+    taskHandlerTimer->start(900);
 
     a.exec();
     config.goWhile=false;
@@ -79,11 +79,11 @@ int main(int argc, char *argv[])
     }
     infoMPDtimer->stop();
     infoTemperatureTimer->stop();
-    scroller->stop();
+    taskHandlerTimer->stop();
     worker->terminate();
     delete infoMPDtimer;
     delete infoTemperatureTimer;
-    delete scroller;
+    delete taskHandlerTimer;
     delete worker;
     delete w;
 

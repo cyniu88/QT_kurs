@@ -78,6 +78,10 @@ void WorkerIP::run()
         {
             emit listMPD(QString::fromStdString(buffor));
         }
+        else if (addresOUT.address == "state")
+        {
+            emit answerState(QString::fromStdString(buffor));
+        }
         else if (addresOUT.address =="TTS"){
             emit signalFromTTS(QString::fromStdString(buffor));
         }

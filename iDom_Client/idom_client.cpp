@@ -180,12 +180,25 @@ void iDom_Client::on_exitButton_released()
     ui->centralWidget->close();
 }
 
-void iDom_Client::scrollTitle()
+void iDom_Client::taskHandler()
 {
+    ////////////////////////////// scroll  song title //////////////////////////
     QString temp = ui->titleTXT->text();
     temp.push_back(temp[0]);
     temp.remove(0,1);
     ui->titleTXT->setText(temp);
+    ///////////////////////////// check state ///////////////////////////////////
+
+    switch(ui->tabWidget->currentIndex())
+    {
+    case 0:
+        emit sendTCP("state", "state all");
+        break;
+
+    default:
+        break;
+    }
+
 }
 
 void iDom_Client::odb_answer(QString s)
@@ -237,7 +250,6 @@ void iDom_Client::updateMPDinfo()
 {
     emit sendTCP("MPD_title","MPD get info");
     emit sendTCP("MPD_volume","MPD get volume");
-    qDebug("timer mpd info ");
 }
 
 void iDom_Client::updateTemepretureInfo()
@@ -824,6 +836,21 @@ void iDom_Client::setVolumeValueSlot(int i)
 void iDom_Client::getPing(QString s)
 {
     ui->ping->setText(s);
+}
+
+void iDom_Client::odb_answer_state(QString s)
+{
+    QStringList sl = s.split(" ");
+
+    for (auto s : sl){
+        if (s == "cameraLED=OFF"){
+            ui->ledCameraButton->setChecked(false);
+        }
+        if (s == "cameraLED=ON"){
+            ui->ledCameraButton->setChecked(true);
+        }
+    }
+
 }
 
 void iDom_Client::on_optionsButton_clicked()

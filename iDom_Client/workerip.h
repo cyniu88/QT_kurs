@@ -58,6 +58,7 @@ signals:
     void signalFromTTS(QString s);
     void serverDisconnected(bool state = false);
     void pingTime(QString s);
+    void answerState(QString s);
 
 public slots:
     void fromTCP(std::string addres, std::string qmsg);
