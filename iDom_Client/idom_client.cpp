@@ -843,10 +843,10 @@ void iDom_Client::odb_answer_state(QString s)
     QStringList sl = s.split(" ");
 
     for (auto s : sl){
-        if (s == "cameraLED=OFF"){
+        if (s == "cameraLED=OFF" && ui->ledCameraButton->isChecked() == true){
             ui->ledCameraButton->setChecked(false);
         }
-        if (s == "cameraLED=ON"){
+        if (s == "cameraLED=ON" && ui->ledCameraButton->isChecked() == false){
             ui->ledCameraButton->setChecked(true);
         }
     }
