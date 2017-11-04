@@ -2684,26 +2684,28 @@ background-color: rgb(158, 158, 158,125);
  border: 5px solid #8f8f91;
 border-radius: 0px;
 color:white;
- font: bold ;
-font-size: 20px;
+ font: bold 20px;
+	
+image: url(:/new/prefix1/files/svg/socketOFF.svg);
 }
 QPushButton:pressed {
 border:none;
 }
- </string>
+QPushButton:checked{
+image: url(:/new/prefix1/files/svg/socketON.svg);
+}</string>
               </property>
               <property name="text">
                <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="ikony.qrc">
-                <normaloff>:/new/prefix1/files/svg/socketON.svg</normaloff>:/new/prefix1/files/svg/socketON.svg</iconset>
               </property>
               <property name="iconSize">
                <size>
                 <width>300</width>
                 <height>300</height>
                </size>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
