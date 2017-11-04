@@ -20,6 +20,7 @@
         <file>files/svg/light-bulb-ON.svg</file>
         <file>files/svg/socket.svg</file>
         <file>files/svg/socketON.svg</file>
+        <file>files/svg/exit.svg</file>
     </qresource>
     <qresource prefix="/www">
         <file>myqmlfileforwww.qml</file>

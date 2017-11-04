@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>iDom_Client</class>
  <widget class="QMainWindow" name="iDom_Client">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -29,10 +32,13 @@
    </size>
   </property>
   <property name="mouseTracking">
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <property name="focusPolicy">
    <enum>Qt::StrongFocus</enum>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::CustomContextMenu</enum>
   </property>
   <property name="windowTitle">
    <string>iDom_Client</string>
@@ -54,13 +60,16 @@
    <string notr="true"/>
   </property>
   <property name="toolButtonStyle">
-   <enum>Qt::ToolButtonTextUnderIcon</enum>
+   <enum>Qt::ToolButtonTextBesideIcon</enum>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
   </property>
   <property name="dockOptions">
    <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks|QMainWindow::VerticalTabs</set>
   </property>
   <property name="kk" stdset="0">
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="minimumSize">
@@ -147,8 +156,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>815</width>
-               <height>722</height>
+               <width>807</width>
+               <height>689</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -2656,8 +2665,8 @@ Smog Charts</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>817</width>
-             <height>724</height>
+             <width>809</width>
+             <height>691</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -3094,6 +3103,31 @@ QSlider::handle:horizontal {
     </item>
    </layout>
   </widget>
+  <action name="actionCloseApp">
+   <property name="icon">
+    <iconset resource="ikony.qrc">
+     <normaloff>:/new/prefix1/files/svg/exit.svg</normaloff>:/new/prefix1/files/svg/exit.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="toolTip">
+    <string>exit</string>
+   </property>
+  </action>
+  <action name="actionDisconnect">
+   <property name="icon">
+    <iconset>
+     <normalon>:/new/prefix1/iDom_client.ico</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Disconnect</string>
+   </property>
+   <property name="toolTip">
+    <string>Disconnect from server</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="4" margin="2"/>
  <customwidgets>
@@ -3114,12 +3148,44 @@ QSlider::handle:horizontal {
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>835</x>
-     <y>66</y>
+     <x>832</x>
+     <y>80</y>
     </hint>
     <hint type="destinationlabel">
      <x>585</x>
      <y>32</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCloseApp</sender>
+   <signal>triggered()</signal>
+   <receiver>exitButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>773</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDisconnect</sender>
+   <signal>triggered()</signal>
+   <receiver>connectdicsonnectButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>427</x>
+     <y>601</y>
     </hint>
    </hints>
   </connection>
