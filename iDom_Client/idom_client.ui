@@ -104,7 +104,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>3</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1037,7 +1037,7 @@ QProgressBar::chunk {
        </attribute>
        <layout class="QGridLayout" name="gridLayout_5">
         <item row="8" column="2">
-         <widget class="QPushButton" name="pushButton_11">
+         <widget class="myButton" name="pushButton_11">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1050,7 +1050,6 @@ QProgressBar::chunk {
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
  
     padding: 6px;
 background-color: rgb(128, 0, 0);</string>
@@ -1091,7 +1090,7 @@ background-color: rgba(0, 0, 0, 0);</string>
          </widget>
         </item>
         <item row="11" column="0" colspan="5">
-         <widget class="QPushButton" name="LED_OFF_Button_37">
+         <widget class="myButton" name="LED_OFF_Button_37">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1100,7 +1099,7 @@ background-color: rgba(0, 0, 0, 0);</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>-1</pointsize>
+            <pointsize>20</pointsize>
             <weight>75</weight>
             <italic>false</italic>
             <bold>true</bold>
@@ -1114,7 +1113,7 @@ background-color: rgb(0, 0, 0);
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 34px;
+
  
     padding: 6px;</string>
           </property>
@@ -1124,7 +1123,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="10" column="3">
-         <widget class="QPushButton" name="pushButton_16">
+         <widget class="myButton" name="pushButton_16">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1138,7 +1137,7 @@ border-color: rgb(255, 255, 255);
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(128, 128, 0);</string>
@@ -1203,7 +1202,7 @@ border-radius:   23px;
          </widget>
         </item>
         <item row="6" column="2">
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="myButton" name="pushButton_3">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1226,7 +1225,7 @@ border-radius:   23px;
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;</string>
           </property>
@@ -1264,7 +1263,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="7" column="1">
-         <widget class="QPushButton" name="pushButton_6">
+         <widget class="myButton" name="pushButton_6">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1279,7 +1278,7 @@ border-color: rgb(255, 255, 255);
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;</string>
           </property>
@@ -1289,7 +1288,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="10" column="4">
-         <widget class="QPushButton" name="pushButton_17">
+         <widget class="myButton" name="pushButton_17">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1303,7 +1302,7 @@ border-color: rgb(255, 255, 255);
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(207, 47, 47);</string>
@@ -1314,7 +1313,7 @@ background-color: rgb(207, 47, 47);</string>
          </widget>
         </item>
         <item row="4" column="2">
-         <widget class="QPushButton" name="pushButton_extra">
+         <widget class="myButton" name="pushButton_extra">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1329,7 +1328,7 @@ background-color: rgb(0, 0, 0);
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 19px;
+
     padding: 6px;
  </string>
           </property>
@@ -1339,7 +1338,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="7" column="2">
-         <widget class="QPushButton" name="pushButton_7">
+         <widget class="myButton" name="pushButton_7">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1352,7 +1351,6 @@ border-color: rgb(255, 255, 255);
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
  
     padding: 6px;
 background-color: rgb(0, 128, 0);</string>
@@ -1363,7 +1361,7 @@ background-color: rgb(0, 128, 0);</string>
          </widget>
         </item>
         <item row="6" column="4">
-         <widget class="QPushButton" name="pushButton_5">
+         <widget class="myButton" name="pushButton_5">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1380,7 +1378,7 @@ background-color: rgb(0, 128, 0);</string>
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px; 
+
     padding: 6px;</string>
           </property>
           <property name="text">
@@ -1389,7 +1387,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="6" column="3">
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="myButton" name="pushButton_4">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1408,7 +1406,7 @@ border-color: rgb(255, 255, 255);
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;</string>
           </property>
@@ -1418,7 +1416,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="9" column="1">
-         <widget class="QPushButton" name="pushButton_18">
+         <widget class="myButton" name="pushButton_18">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1431,7 +1429,7 @@ border-color: rgb(255, 255, 255);
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(178, 34, 34);</string>
@@ -1442,7 +1440,7 @@ background-color: rgb(178, 34, 34);</string>
          </widget>
         </item>
         <item row="8" column="4">
-         <widget class="QPushButton" name="pushButton_13">
+         <widget class="myButton" name="pushButton_13">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1456,7 +1454,7 @@ background-color: rgb(178, 34, 34);</string>
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(255, 192, 0);</string>
@@ -1467,12 +1465,17 @@ background-color: rgb(255, 192, 0);</string>
          </widget>
         </item>
         <item row="10" column="2">
-         <widget class="QPushButton" name="pushButton_15">
+         <widget class="myButton" name="pushButton_15">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+           </font>
           </property>
           <property name="styleSheet">
            <string notr="true"> border-style: outset;
@@ -1480,7 +1483,7 @@ background-color: rgb(255, 192, 0);</string>
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(159, 159, 223);
@@ -1492,7 +1495,7 @@ color: rgb(0, 0, 0);</string>
          </widget>
         </item>
         <item row="9" column="0">
-         <widget class="QPushButton" name="pushButton_25">
+         <widget class="myButton" name="pushButton_25">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1506,7 +1509,7 @@ color: rgb(0, 0, 0);</string>
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(147, 246, 0);</string>
@@ -1517,7 +1520,7 @@ background-color: rgb(147, 246, 0);</string>
          </widget>
         </item>
         <item row="9" column="2">
-         <widget class="QPushButton" name="pushButton_19">
+         <widget class="myButton" name="pushButton_19">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1530,7 +1533,7 @@ background-color: rgb(147, 246, 0);</string>
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(128, 0, 128);</string>
@@ -1541,7 +1544,7 @@ background-color: rgb(128, 0, 128);</string>
          </widget>
         </item>
         <item row="3" column="2">
-         <widget class="QPushButton" name="RESET_pushButton">
+         <widget class="myButton" name="RESET_pushButton">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1562,7 +1565,7 @@ background-color: rgb(0, 0, 0);
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 19px;
+
     padding: 6px;
  </string>
           </property>
@@ -1572,7 +1575,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="8" column="1">
-         <widget class="QPushButton" name="pushButton_10">
+         <widget class="myButton" name="pushButton_10">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1586,7 +1589,7 @@ border-color: rgb(255, 255, 255);
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(255, 165, 0);</string>
@@ -1597,12 +1600,22 @@ background-color: rgb(255, 165, 0);</string>
          </widget>
         </item>
         <item row="9" column="4">
-         <widget class="QPushButton" name="pushButton_21">
+         <widget class="myButton" name="pushButton_21">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
           </property>
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
@@ -1611,7 +1624,7 @@ background-color: rgb(255, 165, 0);</string>
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(255, 255, 153);</string>
@@ -1622,7 +1635,7 @@ background-color: rgb(255, 255, 153);</string>
          </widget>
         </item>
         <item row="7" column="4">
-         <widget class="QPushButton" name="pushButton_9">
+         <widget class="myButton" name="pushButton_9">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1636,7 +1649,7 @@ background-color: rgb(255, 255, 153);</string>
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
  
@@ -1716,7 +1729,7 @@ background-color: rgb(204, 93, 43);</string>
          </widget>
         </item>
         <item row="9" column="3">
-         <widget class="QPushButton" name="pushButton_20">
+         <widget class="myButton" name="pushButton_20">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1729,7 +1742,7 @@ background-color: rgb(204, 93, 43);</string>
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(8, 37, 103);</string>
@@ -1740,7 +1753,7 @@ background-color: rgb(8, 37, 103);</string>
          </widget>
         </item>
         <item row="10" column="0">
-         <widget class="QPushButton" name="pushButton_26">
+         <widget class="myButton" name="pushButton_26">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1753,7 +1766,7 @@ background-color: rgb(8, 37, 103);</string>
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(98, 0, 44);
@@ -1765,7 +1778,7 @@ background-color: rgb(98, 0, 44);
          </widget>
         </item>
         <item row="10" column="1">
-         <widget class="QPushButton" name="pushButton_14">
+         <widget class="myButton" name="pushButton_14">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1778,7 +1791,7 @@ background-color: rgb(98, 0, 44);
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(112, 32, 31);
@@ -1830,7 +1843,7 @@ background-color: rgb(112, 32, 31);
          </widget>
         </item>
         <item row="8" column="0">
-         <widget class="QPushButton" name="pushButton_24">
+         <widget class="myButton" name="pushButton_24">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1843,7 +1856,7 @@ background-color: rgb(112, 32, 31);
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(0, 127, 255);</string>
@@ -1854,7 +1867,7 @@ background-color: rgb(0, 127, 255);</string>
          </widget>
         </item>
         <item row="7" column="3">
-         <widget class="QPushButton" name="pushButton_8">
+         <widget class="myButton" name="pushButton_8">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1868,7 +1881,7 @@ background-color: rgb(0, 127, 255);</string>
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 
@@ -1880,7 +1893,7 @@ background-color: rgb(0, 255, 255);</string>
          </widget>
         </item>
         <item row="6" column="1">
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="myButton" name="pushButton_2">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1903,7 +1916,7 @@ background-color: rgb(0, 255, 255);</string>
 border-color: rgb(255, 255, 255);
      /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;</string>
           </property>
@@ -1913,7 +1926,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="6" column="0">
-         <widget class="QPushButton" name="redButton_22">
+         <widget class="myButton" name="redButton_22">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1926,6 +1939,14 @@ border-color: rgb(255, 255, 255);
             <height>0</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
  background-color: rgb(255, 0, 0);
@@ -1934,8 +1955,7 @@ border-color: rgb(255, 255, 255);
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
- 
+
     padding: 6px;</string>
           </property>
           <property name="text">
@@ -1992,7 +2012,7 @@ border-radius:   23px;
          </widget>
         </item>
         <item row="8" column="3">
-         <widget class="QPushButton" name="pushButton_12">
+         <widget class="myButton" name="pushButton_12">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -2005,7 +2025,7 @@ border-radius:   23px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;
 background-color: rgb(75, 0, 130);</string>
@@ -2016,7 +2036,7 @@ background-color: rgb(75, 0, 130);</string>
          </widget>
         </item>
         <item row="7" column="0">
-         <widget class="QPushButton" name="pushButton_23">
+         <widget class="myButton" name="pushButton_23">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -2031,7 +2051,7 @@ background-color: rgb(75, 0, 130);</string>
 border-color: rgb(0, 0, 0);
    /* border-radius: 10px;*/
     border-color: beige;
-    font: bold 24px;
+
  
     padding: 6px;</string>
           </property>

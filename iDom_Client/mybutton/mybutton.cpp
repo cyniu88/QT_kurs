@@ -18,9 +18,16 @@ bool myButton::event(QEvent *e)
         QPushButton::nextCheckState();
         emit released();
         emit clicked();
-
-        //qDebug() << "END event !!! " << e->type();
         return true;
+
+    case QEvent::Resize:
+    {
+        double m = 1.5 / static_cast< double> (text().length());
+        QFont f;
+        f.setPixelSize(size().width()* m);
+        setFont(f);
+}
+        break;
     default:
         // qDebug() << "rest event !!! " << e->type();
         break;

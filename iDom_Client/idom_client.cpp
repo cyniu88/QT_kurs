@@ -151,8 +151,6 @@ void iDom_Client::closeEvent(QCloseEvent *event)
 
 void iDom_Client::resizeEvent(QResizeEvent *event)
 {
-    qDebug() << "TestA Resize";
-
     QMainWindow::resizeEvent(event);
 }
 
@@ -438,7 +436,7 @@ void iDom_Client::on_pushButton_24_released()
 void iDom_Client::on_LED_OFF_Button_37_released()
 {
     emit sendTCP("LED","iDom LED OFF");
-    ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige; font: bold 19px; padding: 6px;"  );
+    ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
 }
 
 void iDom_Client::on_redButton_22_released()
@@ -676,10 +674,10 @@ void iDom_Client::on_pushButton_extra_clicked()
         color.currentColor().getRgb(&r,&g,&b);
 
         sendSignalColor(r,g,b,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-        ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb("+QString::number(r)+","+QString::number(g)+"," +QString::number(b)+");  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige; font: bold 19px; padding: 6px;"  );
+        ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb("+QString::number(r)+","+QString::number(g)+"," +QString::number(b)+");  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
     }
     else{
-        ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige; font: bold 19px; padding: 6px;"  );
+        ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
     }
 }
 
