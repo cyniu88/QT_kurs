@@ -37,18 +37,24 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 #ifdef Q_OS_WIN
     if(QSystemTrayIcon::isSystemTrayAvailable() == false)
     {
-        QMessageBox::critical(this,":(","Ninja Mode is not available on this computer. Try again later :P");
+        QMessageBox::critical(this,":(","Ninja Mode is not available on this computer. "
+                                        " again later :P");
     }
     else
     {
         trayIcon.setIcon(QIcon(":/new/prefix1/iDom_client.ico"));
+
+        trayIconMenu.addAction(ui->actionDisconnect);
+        trayIconMenu.addAction(ui->actionCloseApp);
+
+        trayIcon.setContextMenu(&trayIconMenu);
         trayIcon.show();
     }
 #endif
     // dodajemy scrolla area  ajki widget  i czym scrolujemy
-    QScroller::grabGesture(ui->txtAnswer,QScroller::TouchGesture);
-    QScroller::grabGesture(ui->scrollArea,QScroller::TouchGesture);
-    QScroller::grabGesture(ui->scrollArea_HOME,QScroller::TouchGesture);
+    QScroller::grabGesture(ui->txtAnswer,       QScroller::TouchGesture);
+    QScroller::grabGesture(ui->scrollArea,      QScroller::TouchGesture);
+    QScroller::grabGesture(ui->scrollArea_HOME, QScroller::TouchGesture);
 
     ui->txtAnswer->setAttribute(Qt::WA_AcceptTouchEvents);
 
@@ -895,3 +901,4 @@ void iDom_Client::on_ledCameraButton_clicked()
     }
     droid.vibrate(200);
 }
+

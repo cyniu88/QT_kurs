@@ -16,6 +16,7 @@
 #include <QtSvg/QSvgWidget>
 #include <QTextToSpeech>
 #include <QTime>
+#include <QMenu>
 
 #ifdef Q_OS_WIN
 #include <QAxWidget>
@@ -50,6 +51,8 @@ protected:
 private:
     Ui::iDom_Client *ui;
     iDom_CONFIG *config;
+
+    QMenu trayIconMenu;
 
     /////////// okno dla www
     wwwShowWindow *wwwWindow = NULL;
