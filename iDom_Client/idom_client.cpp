@@ -37,8 +37,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 #ifdef Q_OS_WIN
     if(QSystemTrayIcon::isSystemTrayAvailable() == false)
     {
-        QMessageBox::critical(this,":(","Ninja Mode is not available on this computer. "
-                                        " again later :P");
+        QMessageBox::critical(this,":(","Ninja Mode is not available on this computer. Try again later :P");
     }
     else
     {

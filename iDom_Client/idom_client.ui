@@ -2,9 +2,6 @@
 <ui version="4.0">
  <class>iDom_Client</class>
  <widget class="QMainWindow" name="iDom_Client">
-  <property name="windowModality">
-   <enum>Qt::ApplicationModal</enum>
-  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -32,13 +29,10 @@
    </size>
   </property>
   <property name="mouseTracking">
-   <bool>false</bool>
+   <bool>true</bool>
   </property>
   <property name="focusPolicy">
    <enum>Qt::StrongFocus</enum>
-  </property>
-  <property name="contextMenuPolicy">
-   <enum>Qt::CustomContextMenu</enum>
   </property>
   <property name="windowTitle">
    <string>iDom_Client</string>
@@ -69,7 +63,7 @@
    <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks|QMainWindow::VerticalTabs</set>
   </property>
   <property name="kk" stdset="0">
-   <bool>false</bool>
+   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="minimumSize">
