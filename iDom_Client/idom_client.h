@@ -96,15 +96,15 @@ private slots:
 
     void slot_getCommandList(QStringList list);
 
-    void on_exitButton_released();
+    void on_b_exit_released();
 
     void taskHandler();
 
-    void on_pushButton_released();
+    void on_b_sendConsole_released();
 
-    void on_playButton_released();
+    void on_b_play_released();
 
-    void on_LED_OFF_Button_37_released();
+    void on_b_LED_OFF_released();
 
     void on_pushButton_2_released();
 
@@ -114,7 +114,7 @@ private slots:
 
     void on_pushButton_5_released();
 
-    void on_RESET_pushButton_released();
+    void on_b_all_led_released();
 
     void on_pushButton_23_released();
 
@@ -140,19 +140,19 @@ private slots:
 
     void on_pushButton_11_released();
 
-    void on_stopButton_released();
+    void on_b_stop_released();
 
-    void on_pushButtonPREV_released();
+    void on_b_PREV_released();
 
-    void on_pushButtonNext_released();
+    void on_b_Next_released();
 
-    void on_pushButton_pause_released();
+    void on_b_pause_released();
 
-    void on_pushButton_volumeUP_released();
+    void on_b_volumeUP_released();
 
-    void on_pushButton_volumeDOWN_released();
+    void on_b_volumeDOWN_released();
 
-    void on_exitButton_pressed();
+    void on_b_exit_pressed();
 
     void on_redButton_22_released();
 
@@ -182,57 +182,53 @@ private slots:
 
     void on_tabWidget_currentChanged();
 
-    void on_setNumberMPD_clicked();
+    void on_b_setNumberMPD_clicked();
 
     void on_comboBox_currentIndexChanged(QString txt);
 
-    void on_turnOnSleepModeButton_clicked();
+    void on_b_turnOnSleepMode_clicked();
 
-    void on_stopServerButton_clicked();
+    void on_b_stopServer_clicked();
 
-    void on_pushButton_extra_clicked();
+    void on_b_extra_color_clicked();
 
-    void on_pushButton_put_temperature_clicked();
+    void on_b_put_temperature_clicked();
 
-    void on_pushButton_goodBye_clicked();
+    void on_b_goodBye_clicked();
 
-    void on_pushButton_ttsInfo_clicked();
+    void on_b_ttsInfo_clicked();
 
-    void on_tabRightButton_clicked();
+    void on_b_tabRight_clicked();
 
-    void on_tabLeftButton_clicked();
+    void on_b_tabLeft_clicked();
 
     void on_horizontalSlider_tabNavigate_valueChanged(int value);
 
-    void on_pushButton_showTemperatureCharts_clicked();
+    void on_b_showTemperatureCharts_clicked();
 
     void loadImage(QByteArray d);
 
-    void on_camera_button_reload_clicked();
+    void on_b_camera_reload_clicked();
 
     void on_tabWidget_currentChanged(int index);
 
-    void on_reloadCameraAddressButton_clicked();
+    void on_b_reloadCameraAddress_clicked();
 
-    void on_oneShotCameraButton_clicked();
+    void on_b_oneShotCamera_clicked();
 
-    void on_connectdicsonnectButton_clicked();
+    void on_b_connect_dicsonnect_clicked();
 
-    void on_pushButton_volumeUP_pressed();
+    void on_b_volumeUP_pressed();
 
-    void on_pushButton_volumeDOWN_pressed();
+    void on_b_volumeDOWN_pressed();
 
-    void on_optionsButton_clicked();
+    void on_b_options_clicked();
 
-    void on_smsButton_clicked();
+    void on_b_sms_clicked();
 
-    void on_On230vButton_clicked();
+    void on_b_ledCamera_clicked();
 
-    void on_Off230vButton_clicked();
-
-    void on_ledCameraButton_clicked();
-
-    void on_printer_button_clicked();
+    void on_b_printer_clicked();
 
 public slots:
     void setLcdActual(int c);

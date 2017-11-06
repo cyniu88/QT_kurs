@@ -89,7 +89,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->horizontalSlider_tabNavigate->setValue(ui->tabWidget->currentIndex());
     ui->tabWidget->tabBar()->hide();
 
-    ui->connectdicsonnectButton->setText("Disconnect from iDom");
+    ui->b_connect_dicsonnect->setText("Disconnect from iDom");
 
     ///////////////////////////// camera part ///////////////////////////////////////
     QSettings settings("cyniu", "iDom");
@@ -178,7 +178,7 @@ void iDom_Client::setCommandListInOptions()
     optionsWindow.setCommandList(commandString.split("*"));
 }
 
-void iDom_Client::on_exitButton_released()
+void iDom_Client::on_b_exit_released()
 {
     ui->centralWidget->close();
 }
@@ -293,15 +293,15 @@ void iDom_Client::textToSpeachSLOTS(QString s)
 void iDom_Client::connectDisconnectButtonState(bool state)
 {
     if (state == false){
-        ui->connectdicsonnectButton->setText("Connect to iDom");
+        ui->b_connect_dicsonnect->setText("Connect to iDom");
     }
     else{
-        ui->connectdicsonnectButton->setText("Disconnect from iDom");
+        ui->b_connect_dicsonnect->setText("Disconnect from iDom");
         emit sendTCP("console","log INFO - client: "+systemInfo.getSystemInfo().toStdString() );
     }
 }
 
-void iDom_Client::on_pushButton_released()
+void iDom_Client::on_b_sendConsole_released()
 {
     config->command = ui->comboBox->currentText().toStdString();
     emit sendTCP("console",config->command);
@@ -439,10 +439,10 @@ void iDom_Client::on_pushButton_24_released()
     sendSignalColor(0, 127, 255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_LED_OFF_Button_37_released()
+void iDom_Client::on_b_LED_OFF_released()
 {
     emit sendTCP("LED","iDom LED OFF");
-    ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
+    ui->b_extra_color->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
 }
 
 void iDom_Client::on_redButton_22_released()
@@ -470,14 +470,14 @@ void iDom_Client::on_pushButton_5_released()
     sendSignalColor(255,0,128,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_playButton_released()
+void iDom_Client::on_b_play_released()
 {
     emit sendTCP("MPD","MPD start");
     emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
 }
 
-void iDom_Client::on_RESET_pushButton_released()
+void iDom_Client::on_b_all_led_released()
 {
     ui->spinBox_fromLED->setValue(0);
     ui->spinBox_toLED->setValue(60);
@@ -523,35 +523,35 @@ void iDom_Client::on_spinBox_fromLED_valueChanged(int value)
     ui->lcdNumber_fromLED->display(value);
 }
 
-void iDom_Client::on_stopButton_released()
+void iDom_Client::on_b_stop_released()
 {
     emit sendTCP("MPD","MPD stop");
     emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
 }
 
-void iDom_Client::on_pushButtonPREV_released()
+void iDom_Client::on_b_PREV_released()
 {
     emit sendTCP("MPD","MPD prev");
     emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
 }
 
-void iDom_Client::on_pushButtonNext_released()
+void iDom_Client::on_b_Next_released()
 {
     emit sendTCP("MPD","MPD next");
     emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
 }
 
-void iDom_Client::on_pushButton_pause_released()
+void iDom_Client::on_b_pause_released()
 {
     emit sendTCP("MPD","MPD pause");
     emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
 }
 
-void iDom_Client::on_pushButton_volumeUP_released()
+void iDom_Client::on_b_volumeUP_released()
 {
     if ( pressTime.elapsed() < 220){
         emit sendTCP("MPD","MPD volume up");
@@ -564,7 +564,7 @@ void iDom_Client::on_pushButton_volumeUP_released()
     }
 }
 
-void iDom_Client::on_pushButton_volumeDOWN_released()
+void iDom_Client::on_b_volumeDOWN_released()
 {
     if ( pressTime.elapsed() < 220){
         emit sendTCP("MPD","MPD volume down");
@@ -577,7 +577,7 @@ void iDom_Client::on_pushButton_volumeDOWN_released()
     }
 }
 
-void iDom_Client::on_exitButton_pressed()
+void iDom_Client::on_b_exit_pressed()
 {
     emit sendTCP("console","exit");
 }
@@ -612,7 +612,7 @@ void iDom_Client::on_tabWidget_currentChanged( )
     }
 }
 
-void iDom_Client::on_setNumberMPD_clicked()
+void iDom_Client::on_b_setNumberMPD_clicked()
 {
     bool ok;
     QInputDialog myInputDialog;
@@ -622,7 +622,7 @@ void iDom_Client::on_setNumberMPD_clicked()
     if (ok && !id.isEmpty()){
         int songID = 0;
         songID = 1+ mpdItems.indexOf(id);
-        ui->setNumberMPD->setText(QString::number( songID ));
+        ui->b_setNumberMPD->setText(QString::number( songID ));
         ui->lineEdit_MPD_ACK->setText("play "+id);
         emit sendTCP("MPD","MPD start "+std::to_string(songID));
     }
@@ -635,7 +635,7 @@ void iDom_Client::on_comboBox_currentIndexChanged(QString txt)
     emit sendTCP("console",config->command);
 }
 
-void iDom_Client::on_turnOnSleepModeButton_clicked()
+void iDom_Client::on_b_turnOnSleepMode_clicked()
 {
     bool ok;
     int i;
@@ -645,7 +645,7 @@ void iDom_Client::on_turnOnSleepModeButton_clicked()
     }
 }
 
-void iDom_Client::on_stopServerButton_clicked()
+void iDom_Client::on_b_stopServer_clicked()
 {
     QMessageBox::StandardButton reply;
     reply = QMessageBox::question(this, "", "stop server?",
@@ -654,11 +654,11 @@ void iDom_Client::on_stopServerButton_clicked()
         qDebug() << "Yes was clicked";
         emit sendTCP("tools","stop server");
         QThread::sleep(1);
-        on_connectdicsonnectButton_clicked();
+        on_b_connect_dicsonnect_clicked();
     }
 }
 
-void iDom_Client::on_pushButton_extra_clicked()
+void iDom_Client::on_b_extra_color_clicked()
 {
     QColorDialog color;
     color.setOptions(QColorDialog::ShowAlphaChannel);
@@ -680,19 +680,19 @@ void iDom_Client::on_pushButton_extra_clicked()
         color.currentColor().getRgb(&r,&g,&b);
 
         sendSignalColor(r,g,b,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-        ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb("+QString::number(r)+","+QString::number(g)+"," +QString::number(b)+");  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
+        ui->b_extra_color->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb("+QString::number(r)+","+QString::number(g)+"," +QString::number(b)+");  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
     }
     else{
-        ui->pushButton_extra->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
+        ui->b_extra_color->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
     }
 }
 
-void iDom_Client::on_pushButton_put_temperature_clicked()
+void iDom_Client::on_b_put_temperature_clicked()
 {
     emit sendTCP("tools","put temperature");
 }
 
-void iDom_Client::on_pushButton_goodBye_clicked()
+void iDom_Client::on_b_goodBye_clicked()
 {
     QMessageBox::StandardButton reply;
     reply = QMessageBox::question(this, "", "stop music and LED?",
@@ -700,18 +700,18 @@ void iDom_Client::on_pushButton_goodBye_clicked()
     if (reply == QMessageBox::Yes) {
         emit sendTCP("MPD","MPD stop");
         emit sendTCP("LED","iDom LED OFF");
-        on_exitButton_pressed();
+        on_b_exit_pressed();
         QThread::sleep(2);
         qApp->exit();
     }
 }
 
-void iDom_Client::on_pushButton_ttsInfo_clicked()
+void iDom_Client::on_b_ttsInfo_clicked()
 {
     emit sendTCP("TTS","iDom text");
 }
 
-void iDom_Client::on_tabRightButton_clicked()
+void iDom_Client::on_b_tabRight_clicked()
 {
     int i = ui->horizontalSlider_tabNavigate->value();  //get current value
     ++i;
@@ -721,7 +721,7 @@ void iDom_Client::on_tabRightButton_clicked()
     ui->horizontalSlider_tabNavigate->setValue(i);
 }
 
-void iDom_Client::on_tabLeftButton_clicked()
+void iDom_Client::on_b_tabLeft_clicked()
 {
     int i = ui->horizontalSlider_tabNavigate->value();  //get current value
     --i;
@@ -736,7 +736,7 @@ void iDom_Client::on_horizontalSlider_tabNavigate_valueChanged(int value)
     ui->tabWidget->setCurrentIndex(value);
 }
 
-void iDom_Client::on_pushButton_showTemperatureCharts_clicked()
+void iDom_Client::on_b_showTemperatureCharts_clicked()
 {
     if (wwwWindow!= NULL){
         qDebug() << "kasuje bo nie jest null";
@@ -761,15 +761,15 @@ void iDom_Client::loadImage(QByteArray d)
     }
 }
 
-void iDom_Client::on_camera_button_reload_clicked()
+void iDom_Client::on_b_camera_reload_clicked()
 {
     cameraWork = !cameraWork;
     if (cameraWork){
-        ui->camera_button_reload->setText("Stop");
+        ui->b_camera_reload->setText("Stop");
         makeInfo("CAMERA","Video Start");
     }
     else{
-        ui->camera_button_reload->setText("Start");
+        ui->b_camera_reload->setText("Start");
         makeInfo("CAMERA","Video Stop");
         ui->snap_counter->display(0);
     }
@@ -785,7 +785,7 @@ void iDom_Client::on_tabWidget_currentChanged(int index)
     }
 }
 
-void iDom_Client::on_reloadCameraAddressButton_clicked()
+void iDom_Client::on_b_reloadCameraAddress_clicked()
 {
     bool ok;
     QInputDialog myInputDialog;
@@ -800,31 +800,31 @@ void iDom_Client::on_reloadCameraAddressButton_clicked()
     droid.vibrate(100);
 }
 
-void iDom_Client::on_oneShotCameraButton_clicked()
+void iDom_Client::on_b_oneShotCamera_clicked()
 {
     m_pImgCtrl->getSnap();
     makeInfo("Camera","shot taken");
     droid.vibrate(100);
 }
 
-void iDom_Client::on_connectdicsonnectButton_clicked()
+void iDom_Client::on_b_connect_dicsonnect_clicked()
 {
     if (config->isConnectedToServer == true){
         config->goWhile =false;
-        ui->connectdicsonnectButton->setText("Connect to iDom");
+        ui->b_connect_dicsonnect->setText("Connect to iDom");
     }
     else{
         config->worketPTR->start();
-        ui->connectdicsonnectButton->setText("Disconnect from iDom");
+        ui->b_connect_dicsonnect->setText("Disconnect from iDom");
     }
 }
 
-void iDom_Client::on_pushButton_volumeUP_pressed()
+void iDom_Client::on_b_volumeUP_pressed()
 {
     pressTime.start();
 }
 
-void iDom_Client::on_pushButton_volumeDOWN_pressed()
+void iDom_Client::on_b_volumeDOWN_pressed()
 {
     pressTime.start();
 }
@@ -847,28 +847,28 @@ void iDom_Client::odb_answer_state(QString s)
     QStringList sl = s.split(" ");
 
     for (auto s : sl){
-        if (s == "cameraLED=OFF" && ui->ledCameraButton->isChecked() == true){
-            ui->ledCameraButton->setChecked(false);
+        if (s == "cameraLED=OFF" && ui->b_ledCamera->isChecked() == true){
+            ui->b_ledCamera->setChecked(false);
         }
-        if (s == "cameraLED=ON" && ui->ledCameraButton->isChecked() == false){
-            ui->ledCameraButton->setChecked(true);
+        if (s == "cameraLED=ON" && ui->b_ledCamera->isChecked() == false){
+            ui->b_ledCamera->setChecked(true);
         }
-        if (s == "printer=OFF" && ui->printer_button->isChecked() == true){
-            ui->printer_button->setChecked(false);
+        if (s == "printer=OFF" && ui->b_printer->isChecked() == true){
+            ui->b_printer->setChecked(false);
         }
-        if (s == "printer=ON" && ui->printer_button->isChecked() == false){
-            ui->printer_button->setChecked(true);
+        if (s == "printer=ON" && ui->b_printer->isChecked() == false){
+            ui->b_printer->setChecked(true);
         }
     }
 }
 
-void iDom_Client::on_optionsButton_clicked()
+void iDom_Client::on_b_options_clicked()
 {
     optionsWindow.setConfigFile(config);
     optionsWindow.show();
 }
 
-void iDom_Client::on_smsButton_clicked()
+void iDom_Client::on_b_sms_clicked()
 {
     droid.sendSMS("506496722","test sms ");
     std::string m = "jeden";
@@ -881,26 +881,14 @@ void iDom_Client::on_smsButton_clicked()
     emit sendTCP("console",m);
 }
 
-void iDom_Client::on_On230vButton_clicked()
+void iDom_Client::on_b_ledCamera_clicked()
 {
-    emit sendTCP("console","iDom 230V ON");
-    droid.vibrate(200);
-}
-
-void iDom_Client::on_Off230vButton_clicked()
-{
-    emit sendTCP("console","iDom 230V OFF");
-    droid.vibrate(200);
-}
-
-void iDom_Client::on_ledCameraButton_clicked()
-{
-    if (ui->ledCameraButton->isChecked() == true)
+    if (ui->b_ledCamera->isChecked() == true)
     {
         emit sendTCP("console","iDom camera LED ON");
         droid.makeToast("zapala leda kamery");
     }
-    if (ui->ledCameraButton->isChecked() == false)
+    if (ui->b_ledCamera->isChecked() == false)
     {
         emit sendTCP("console","iDom camera LED OFF");
         droid.makeToast("gasze leda kamery");
@@ -909,14 +897,14 @@ void iDom_Client::on_ledCameraButton_clicked()
 }
 
 
-void iDom_Client::on_printer_button_clicked()
+void iDom_Client::on_b_printer_clicked()
 {
-    if (ui->printer_button->isChecked() == true)
+    if (ui->b_printer->isChecked() == true)
     {
         emit sendTCP("console","iDom 230V ON");
         droid.makeToast("drukarka uruchomiona");
     }
-    if (ui->printer_button->isChecked() == false)
+    if (ui->b_printer->isChecked() == false)
     {
         emit sendTCP("console","iDom 230V OFF");
         droid.makeToast("drukarka wylaczona");
