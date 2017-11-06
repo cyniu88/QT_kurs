@@ -22,10 +22,10 @@ bool myButton::event(QEvent *e)
 
     case QEvent::Resize:
     {
-        double m = 1.5 / static_cast< double> (text().length());
-        QFont f;
-        f.setPixelSize(size().width()* m);
-        setFont(f);
+//        double m = 1.5 / static_cast< double> (text().length());
+//        QFont f;
+//        f.setPixelSize(size().width()* m);
+//        setFont(f);
 }
         break;
     default:

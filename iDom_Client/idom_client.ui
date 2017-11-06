@@ -113,7 +113,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>5</number>
       </property>
       <property name="iconSize">
        <size>
@@ -156,8 +156,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>807</width>
-               <height>689</height>
+               <width>815</width>
+               <height>722</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -176,7 +176,7 @@ border-color: rgb(255, 255, 255,255);</string>
                 <item>
                  <widget class="QLineEdit" name="lineEdit">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -193,7 +193,7 @@ border-color: rgb(255, 255, 255,255);</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="myButton" name="ledCameraButton">
+                 <widget class="QToolButton" name="ledCameraButton">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -213,27 +213,28 @@ border-color: rgb(255, 255, 255,255);</string>
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">QPushButton {
+                   <string notr="true">QToolButton {
 background-color: rgb(158, 158, 158,125);
  border: 5px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
-	
-image: url(:/new/prefix1/files/svg/light-bulb-OFF.svg);
 }
-QPushButton:pressed {
+QToolButton:pressed {
 border:none;
 }
-QPushButton:checked{
-image: url(:/new/prefix1/files/svg/light-bulb-ON.svg);
-}</string>
+</string>
                   </property>
                   <property name="inputMethodHints">
                    <set>Qt::ImhNone</set>
                   </property>
                   <property name="text">
-                   <string/>
+                   <string>LED</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="ikony.qrc">
+                    <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+                    <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -247,19 +248,19 @@ image: url(:/new/prefix1/files/svg/light-bulb-ON.svg);
                   <property name="checked">
                    <bool>false</bool>
                   </property>
-                  <property name="autoDefault">
-                   <bool>false</bool>
-                  </property>
-                  <property name="default">
-                   <bool>false</bool>
-                  </property>
-                  <property name="flat">
-                   <bool>false</bool>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonTextBesideIcon</enum>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="myButton" name="oneShotCameraButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -287,7 +288,7 @@ border:none;
                 <item>
                  <widget class="myButton" name="reloadCameraAddressButton">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -320,7 +321,7 @@ border:none;
                 <item>
                  <widget class="myButton" name="camera_button_reload">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -2685,13 +2686,26 @@ Smog Charts</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>809</width>
-             <height>691</height>
+             <width>817</width>
+             <height>724</height>
             </rect>
            </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_7">
-            <item>
-             <widget class="QPushButton" name="pushButton_22">
+           <layout class="QGridLayout" name="gridLayout_15">
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QToolButton" name="printer_button">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
@@ -2699,24 +2713,27 @@ Smog Charts</string>
                </sizepolicy>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton {
+               <string notr="true">QToolButton {
 background-color: rgb(158, 158, 158,125);
  border: 5px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
-	
-image: url(:/new/prefix1/files/svg/socketOFF.svg);
+
 }
-QPushButton:pressed {
+QToolButton:pressed {
 border:none;
 }
-QPushButton:checked{
-image: url(:/new/prefix1/files/svg/socketON.svg);
+QToolButton:checked{
 }</string>
               </property>
               <property name="text">
-               <string/>
+               <string>Printer</string>
+              </property>
+              <property name="icon">
+               <iconset resource="ikony.qrc">
+                <normaloff>:/new/prefix1/files/svg/socketOFF.svg</normaloff>
+                <normalon>:/new/prefix1/files/svg/socketON.svg</normalon>:/new/prefix1/files/svg/socketOFF.svg</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -2727,15 +2744,24 @@ image: url(:/new/prefix1/files/svg/socketON.svg);
               <property name="checkable">
                <bool>true</bool>
               </property>
+              <property name="popupMode">
+               <enum>QToolButton::DelayedPopup</enum>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+              <property name="autoRaise">
+               <bool>false</bool>
+              </property>
+              <property name="arrowType">
+               <enum>Qt::NoArrow</enum>
+              </property>
              </widget>
             </item>
-            <item>
+            <item row="1" column="1">
              <spacer name="horizontalSpacer">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -2744,27 +2770,6 @@ image: url(:/new/prefix1/files/svg/socketON.svg);
                </size>
               </property>
              </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_27">
-              <property name="styleSheet">
-               <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold ;
-font-size: 20px;
-}
-QPushButton:pressed {
-border:none;
-}
- </string>
-              </property>
-              <property name="text">
-               <string>kokokokokokokokoko</string>
-              </property>
-             </widget>
             </item>
            </layout>
           </widget>
