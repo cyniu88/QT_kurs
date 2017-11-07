@@ -106,27 +106,27 @@ private slots:
 
     void on_b_LED_OFF_released();
 
-    void on_pushButton_2_released();
+    void on_b_led_2_released();
 
-    void on_pushButton_3_released();
+    void on_b_led_3_released();
 
-    void on_pushButton_4_released();
+    void on_b_led_4_released();
 
-    void on_pushButton_5_released();
+    void on_b_led_5_released();
 
     void on_b_all_led_released();
 
-    void on_pushButton_23_released();
+    void on_b_led_6_released();
 
-    void on_pushButton_6_released();
+    void on_b_led_7_released();
 
-    void on_pushButton_7_released();
+    void on_b_led_8_released();
 
-    void on_pushButton_8_released();
+    void on_b_led_9_released();
 
-    void on_pushButton_9_released();
+    void on_b_led_10_released();
 
-    void on_pushButton_24_released();
+    void on_b_led_11_released();
 
     void on_to_horizontalSlider_2_valueChanged();
 
@@ -136,9 +136,9 @@ private slots:
 
     void on_spinBox_fromLED_valueChanged(int value);
 
-    void on_pushButton_10_released();
+    void on_b_led_12_released();
 
-    void on_pushButton_11_released();
+    void on_b_led_13_released();
 
     void on_b_stop_released();
 
@@ -154,31 +154,31 @@ private slots:
 
     void on_b_exit_pressed();
 
-    void on_redButton_22_released();
+    void on_b_led_1_released();
 
-    void on_pushButton_12_released();
+    void on_b_led_14_released();
 
-    void on_pushButton_13_released();
+    void on_b_led_15_released();
 
-    void on_pushButton_25_released();
+    void on_b_led_16_released();
 
-    void on_pushButton_18_released();
+    void on_b_led_17_released();
 
-    void on_pushButton_19_released();
+    void on_b_led_18_released();
 
-    void on_pushButton_20_released();
+    void on_b_led_19_released();
 
-    void on_pushButton_21_released();
+    void on_b_led_20_released();
 
-    void on_pushButton_17_released();
+    void on_b_led_25_released();
 
-    void on_pushButton_16_released();
+    void on_b_led_24_released();
 
-    void on_pushButton_15_released();
+    void on_b_led_23_released();
 
-    void on_pushButton_14_released();
+    void on_b_led_22_released();
 
-    void on_pushButton_26_released();
+    void on_b_led_21_released();
 
     void on_tabWidget_currentChanged();
 

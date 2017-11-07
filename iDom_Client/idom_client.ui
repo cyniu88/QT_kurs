@@ -104,7 +104,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>6</number>
+       <number>5</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1038,7 +1038,7 @@ QProgressBar::chunk {
        </attribute>
        <layout class="QGridLayout" name="gridLayout_5">
         <item row="8" column="2">
-         <widget class="myButton" name="pushButton_11">
+         <widget class="myButton" name="b_led_13">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1124,7 +1124,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="10" column="3">
-         <widget class="myButton" name="pushButton_16">
+         <widget class="myButton" name="b_led_24">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1203,7 +1203,7 @@ border-radius:   23px;
          </widget>
         </item>
         <item row="6" column="2">
-         <widget class="myButton" name="pushButton_3">
+         <widget class="myButton" name="b_led_3">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1264,7 +1264,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="7" column="1">
-         <widget class="myButton" name="pushButton_6">
+         <widget class="myButton" name="b_led_7">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1289,7 +1289,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="10" column="4">
-         <widget class="myButton" name="pushButton_17">
+         <widget class="myButton" name="b_led_25">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1339,7 +1339,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="7" column="2">
-         <widget class="myButton" name="pushButton_7">
+         <widget class="myButton" name="b_led_8">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1362,7 +1362,7 @@ background-color: rgb(0, 128, 0);</string>
          </widget>
         </item>
         <item row="6" column="4">
-         <widget class="myButton" name="pushButton_5">
+         <widget class="myButton" name="b_led_5">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1388,7 +1388,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="6" column="3">
-         <widget class="myButton" name="pushButton_4">
+         <widget class="myButton" name="b_led_4">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1417,7 +1417,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="9" column="1">
-         <widget class="myButton" name="pushButton_18">
+         <widget class="myButton" name="b_led_17">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1441,7 +1441,7 @@ background-color: rgb(178, 34, 34);</string>
          </widget>
         </item>
         <item row="8" column="4">
-         <widget class="myButton" name="pushButton_13">
+         <widget class="myButton" name="b_led_15">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1466,7 +1466,7 @@ background-color: rgb(255, 192, 0);</string>
          </widget>
         </item>
         <item row="10" column="2">
-         <widget class="myButton" name="pushButton_15">
+         <widget class="myButton" name="b_led_23">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1496,7 +1496,7 @@ color: rgb(0, 0, 0);</string>
          </widget>
         </item>
         <item row="9" column="0">
-         <widget class="myButton" name="pushButton_25">
+         <widget class="myButton" name="b_led_16">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1521,7 +1521,7 @@ background-color: rgb(147, 246, 0);</string>
          </widget>
         </item>
         <item row="9" column="2">
-         <widget class="myButton" name="pushButton_19">
+         <widget class="myButton" name="b_led_18">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1576,7 +1576,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="8" column="1">
-         <widget class="myButton" name="pushButton_10">
+         <widget class="myButton" name="b_led_12">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1601,7 +1601,7 @@ background-color: rgb(255, 165, 0);</string>
          </widget>
         </item>
         <item row="9" column="4">
-         <widget class="myButton" name="pushButton_21">
+         <widget class="myButton" name="b_led_20">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1636,7 +1636,7 @@ background-color: rgb(255, 255, 153);</string>
          </widget>
         </item>
         <item row="7" column="4">
-         <widget class="myButton" name="pushButton_9">
+         <widget class="myButton" name="b_led_10">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1730,7 +1730,7 @@ background-color: rgb(204, 93, 43);</string>
          </widget>
         </item>
         <item row="9" column="3">
-         <widget class="myButton" name="pushButton_20">
+         <widget class="myButton" name="b_led_19">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1754,7 +1754,7 @@ background-color: rgb(8, 37, 103);</string>
          </widget>
         </item>
         <item row="10" column="0">
-         <widget class="myButton" name="pushButton_26">
+         <widget class="myButton" name="b_led_21">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1779,7 +1779,7 @@ background-color: rgb(98, 0, 44);
          </widget>
         </item>
         <item row="10" column="1">
-         <widget class="myButton" name="pushButton_14">
+         <widget class="myButton" name="b_led_22">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1844,7 +1844,7 @@ background-color: rgb(112, 32, 31);
          </widget>
         </item>
         <item row="8" column="0">
-         <widget class="myButton" name="pushButton_24">
+         <widget class="myButton" name="b_led_11">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1868,7 +1868,7 @@ background-color: rgb(0, 127, 255);</string>
          </widget>
         </item>
         <item row="7" column="3">
-         <widget class="myButton" name="pushButton_8">
+         <widget class="myButton" name="b_led_9">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1894,7 +1894,7 @@ background-color: rgb(0, 255, 255);</string>
          </widget>
         </item>
         <item row="6" column="1">
-         <widget class="myButton" name="pushButton_2">
+         <widget class="myButton" name="b_led_2">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1927,7 +1927,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="6" column="0">
-         <widget class="myButton" name="redButton_22">
+         <widget class="myButton" name="b_led_1">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -2013,7 +2013,7 @@ border-radius:   23px;
          </widget>
         </item>
         <item row="8" column="3">
-         <widget class="myButton" name="pushButton_12">
+         <widget class="myButton" name="b_led_14">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -2037,7 +2037,7 @@ background-color: rgb(75, 0, 130);</string>
          </widget>
         </item>
         <item row="7" column="0">
-         <widget class="myButton" name="pushButton_23">
+         <widget class="myButton" name="b_led_6">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>

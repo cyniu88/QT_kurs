@@ -339,102 +339,102 @@ void iDom_Client::slot_getCommandList(QStringList list)
     ui->comboBox->addItems(list);
 }
 
-void iDom_Client::on_pushButton_12_released()
+void iDom_Client::on_b_led_14_released()
 {
     sendSignalColor(70, 0, 130,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_13_released()
+void iDom_Client::on_b_led_15_released()
 {
     sendSignalColor(255, 192, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_25_released()
+void iDom_Client::on_b_led_16_released()
 {
     sendSignalColor(147, 246, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_18_released()
+void iDom_Client::on_b_led_17_released()
 {
     sendSignalColor(178, 34, 34,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_19_released()
+void iDom_Client::on_b_led_18_released()
 {
     sendSignalColor(128, 0, 128,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_20_released()
+void iDom_Client::on_b_led_19_released()
 {
     sendSignalColor(8, 37, 103,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_21_released()
+void iDom_Client::on_b_led_20_released()
 {
     sendSignalColor(255, 255, 153,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_17_released()
+void iDom_Client::on_b_led_25_released()
 {
     sendSignalColor(207, 47, 47,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_16_released()
+void iDom_Client::on_b_led_24_released()
 {
     sendSignalColor(128, 128, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_15_released()
+void iDom_Client::on_b_led_23_released()
 {
     sendSignalColor(159, 159, 223,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_14_released()
+void iDom_Client::on_b_led_22_released()
 {
     sendSignalColor(112, 32, 31,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_26_released()
+void iDom_Client::on_b_led_21_released()
 {
     sendSignalColor(98, 0, 44,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_10_released()
+void iDom_Client::on_b_led_12_released()
 {
     sendSignalColor(255, 165, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_11_released()
+void iDom_Client::on_b_led_13_released()
 {
     sendSignalColor(128, 0, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_23_released()
+void iDom_Client::on_b_led_6_released()
 {
     sendSignalColor(255,255,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_6_released()
+void iDom_Client::on_b_led_7_released()
 {
     sendSignalColor(255,128,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_7_released()
+void iDom_Client::on_b_led_8_released()
 {
     sendSignalColor(0,128,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_8_released()
+void iDom_Client::on_b_led_9_released()
 {
     sendSignalColor(0,255,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_9_released()
+void iDom_Client::on_b_led_10_released()
 {
     sendSignalColor(204, 93, 43,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_24_released()
+void iDom_Client::on_b_led_11_released()
 {
     sendSignalColor(0, 127, 255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
@@ -445,27 +445,27 @@ void iDom_Client::on_b_LED_OFF_released()
     ui->b_extra_color->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
 }
 
-void iDom_Client::on_redButton_22_released()
+void iDom_Client::on_b_led_1_released()
 {
     sendSignalColor(255,0,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_2_released()
+void iDom_Client::on_b_led_2_released()
 {
     sendSignalColor(0,0,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_3_released()
+void iDom_Client::on_b_led_3_released()
 {
     sendSignalColor(0,255,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_4_released()
+void iDom_Client::on_b_led_4_released()
 {
     sendSignalColor(255,255,51,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
 
-void iDom_Client::on_pushButton_5_released()
+void iDom_Client::on_b_led_5_released()
 {
     sendSignalColor(255,0,128,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
 }
