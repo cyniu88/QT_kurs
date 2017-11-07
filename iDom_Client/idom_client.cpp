@@ -853,12 +853,16 @@ void iDom_Client::odb_answer_state(QString s)
         if (s == "cameraLED=ON" && ui->b_ledCamera->isChecked() == false){
             ui->b_ledCamera->setChecked(true);
         }
+        ///////////////////////////////////////////////////////////////////
         if (s == "printer=OFF" && ui->b_printer->isChecked() == true){
             ui->b_printer->setChecked(false);
+            droid.makeToast("drukarka wyłączona");
         }
         if (s == "printer=ON" && ui->b_printer->isChecked() == false){
             ui->b_printer->setChecked(true);
+            droid.makeToast("drukarka uruchomiona");
         }
+        ///////////////////////////////////////////////////////////////////
     }
 }
 
@@ -901,13 +905,11 @@ void iDom_Client::on_b_printer_clicked()
 {
     if (ui->b_printer->isChecked() == true)
     {
-        emit sendTCP("console","iDom 230V ON");
-        droid.makeToast("drukarka uruchomiona");
+        emit sendTCP("console","iDom 230V ON");    
     }
     if (ui->b_printer->isChecked() == false)
     {
         emit sendTCP("console","iDom 230V OFF");
-        droid.makeToast("drukarka wylaczona");
     }
     droid.vibrate(200);
 }
