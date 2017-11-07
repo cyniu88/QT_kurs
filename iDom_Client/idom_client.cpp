@@ -34,6 +34,9 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 {
     ui->setupUi(this);
 
+    taskHandlerTimer = new QTimer ();
+    QObject::connect(taskHandlerTimer, SIGNAL(timeout()),       this,SLOT(taskHandler()));
+    taskHandlerTimer->start(900);
 #ifdef Q_OS_WIN
     if(QSystemTrayIcon::isSystemTrayAvailable() == false)
     {
@@ -139,7 +142,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
 iDom_Client::~iDom_Client()
 {
-    //ivona->say("dowidzenia");
+    taskHandlerTimer->stop();
+    delete taskHandlerTimer;
     delete m_pImgCtrl;
     delete wwwWindow;
     delete ivona;
@@ -887,6 +891,7 @@ void iDom_Client::on_b_sms_clicked()
 
 void iDom_Client::on_b_ledCamera_clicked()
 {
+    taskHandlerTimer->start();
     if (ui->b_ledCamera->isChecked() == true)
     {
         emit sendTCP("console","iDom camera LED ON");
@@ -903,9 +908,10 @@ void iDom_Client::on_b_ledCamera_clicked()
 
 void iDom_Client::on_b_printer_clicked()
 {
+    taskHandlerTimer->start();
     if (ui->b_printer->isChecked() == true)
     {
-        emit sendTCP("console","iDom 230V ON");    
+        emit sendTCP("console","iDom 230V ON");
     }
     if (ui->b_printer->isChecked() == false)
     {

@@ -17,6 +17,7 @@
 #include <QTextToSpeech>
 #include <QTime>
 #include <QMenu>
+#include <QTimer>
 
 #ifdef Q_OS_WIN
 #include <QAxWidget>
@@ -54,6 +55,7 @@ private:
 
     QMenu trayIconMenu;
 
+    QTimer *taskHandlerTimer;
     /////////// okno dla www
     wwwShowWindow *wwwWindow = NULL;
     VolumeDialog vol;
