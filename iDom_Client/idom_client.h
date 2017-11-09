@@ -232,6 +232,8 @@ private slots:
 
     void on_b_printer_clicked();
 
+    void on_b_setAlarm_clicked();
+
 public slots:
     void setLcdActual(int c);
     void setLcdAll(int c);
