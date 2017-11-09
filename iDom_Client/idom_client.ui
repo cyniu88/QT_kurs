@@ -2392,7 +2392,7 @@ border:none;
             </property>
             <property name="icon">
              <iconset resource="ikony.qrc">
-              <normaloff>:/new/prefix1/files/svg/analog-clock.svg</normaloff>:/new/prefix1/files/svg/analog-clock.svg</iconset>
+              <normaloff>:/new/prefix1/files/svg/analog-clock2.svg</normaloff>:/new/prefix1/files/svg/analog-clock2.svg</iconset>
             </property>
             <property name="iconSize">
              <size>

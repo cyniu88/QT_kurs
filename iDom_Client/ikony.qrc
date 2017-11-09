@@ -21,12 +21,10 @@
         <file>files/svg/socketON.svg</file>
         <file>files/svg/exit.svg</file>
         <file>files/svg/socketOFF.svg</file>
-        <file>files/svg/analog-clock.svg</file>
+        <file>files/svg/analog-clock2.svg</file>
     </qresource>
     <qresource prefix="/www">
         <file>myqmlfileforwww.qml</file>
     </qresource>
-    <qresource prefix="/">
-        <file>files/svg/analog-clock.svg</file>
-    </qresource>
+    <qresource prefix="/"/>
 </RCC>
