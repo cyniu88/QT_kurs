@@ -104,7 +104,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -147,8 +147,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>807</width>
-               <height>689</height>
+               <width>815</width>
+               <height>722</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -2381,7 +2381,6 @@ background-color: rgb(158, 158, 158,125);
  border: 5px solid #8f8f91;
 border-radius: 0px;
 color:white;
-text:&quot;SET ALARM&quot;;
 }
 QToolButton:pressed {
 border:none;
@@ -2672,8 +2671,8 @@ Smog Charts</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>809</width>
-             <height>691</height>
+             <width>817</width>
+             <height>724</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">
