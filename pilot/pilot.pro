@@ -58,7 +58,7 @@ MOBILITY =
 
 RESOURCES += \
     zasoby.qrc
-
+OTHER_FILES += games_256.ico
 DISTFILES += \
     android/AndroidManifest.xml \
     android/gradle/wrapper/gradle-wrapper.jar \
@@ -68,6 +68,7 @@ DISTFILES += \
     android/gradle/wrapper/gradle-wrapper.properties \
     android/gradlew.bat \
     android/src/org/qtproject/example/Chronometer/AndroidHelper.java
+win32:RC_ICONS += games_256.ico
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 

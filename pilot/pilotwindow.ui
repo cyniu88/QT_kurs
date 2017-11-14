@@ -32,7 +32,7 @@
    <bool>true</bool>
   </property>
   <property name="windowTitle">
-   <string>pilotWindow</string>
+   <string>pilotRC</string>
   </property>
   <property name="windowIcon">
    <iconset resource="zasoby.qrc">
@@ -655,18 +655,6 @@ border-radius:   23px;
      </layout>
     </item>
    </layout>
-   <zorder>horizontalLayoutWidget</zorder>
-   <zorder>tabWidget</zorder>
-   <zorder>horizontalLayoutWidget_2</zorder>
-   <zorder>checkBoxWheel</zorder>
-   <zorder>checkBoxPower</zorder>
-   <zorder>reset</zorder>
-   <zorder>checkBoxWheel</zorder>
-   <zorder>reset</zorder>
-   <zorder>horizontalSlider</zorder>
-   <zorder>label</zorder>
-   <zorder>FPS_LCD</zorder>
-   <zorder>lcdMsgCounter</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
