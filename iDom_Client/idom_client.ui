@@ -104,7 +104,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <property name="iconSize">
        <size>
@@ -3159,8 +3159,8 @@ QSlider::handle:horizontal {
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>832</x>
-     <y>80</y>
+     <x>835</x>
+     <y>66</y>
     </hint>
     <hint type="destinationlabel">
      <x>585</x>

@@ -32,7 +32,9 @@ SOURCES += main.cpp\
             volumedialog.cpp \
             frameoptions.cpp \
             ../libs/config_files/config_files.cpp \
-    mybutton/mybutton.cpp
+    mybutton/mybutton.cpp \
+    setalarm.cpp \
+    ../libs/useful/usefull.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  +=  ../libs/android_functions/androidhelper_cyniu.cpp
@@ -50,7 +52,9 @@ HEADERS  += idom_client.h \
             volumedialog.h \
             frameoptions.h \
             ../libs/config_files/config_files.h \
-    mybutton/mybutton.h
+    mybutton/mybutton.h \
+    setalarm.h \
+    ../libs/useful/useful.h
 android {
             message("* Using settings for Android.")
             HEADERS +=  ../libs/android_functions/androidhelper_cyniu.h
@@ -60,7 +64,8 @@ android {
 FORMS    += idom_client.ui \
             wwwshowwindow.ui \
     volumedialog.ui \
-    frameoptions.ui
+    frameoptions.ui \
+    setalarm.ui
 
 CONFIG += mobility   c++14
 QMAKE_CXXFLAGS += -std=c++1y -Wall  -pedantic

@@ -32,6 +32,7 @@
 #include "filedownloader.h"
 #include "volumedialog.h"
 #include "frameoptions.h"
+#include "setalarm.h"
 
 namespace Ui {
 class iDom_Client;
@@ -59,6 +60,7 @@ private:
     /////////// okno dla www
     wwwShowWindow *wwwWindow = NULL;
     VolumeDialog vol;
+    setAlarm alarmWindow;
     FrameOptions optionsWindow;
     void setCommandListInOptions();
     void sendSignalColor(int r,int g, int b, int from=0, int to=60);
@@ -254,6 +256,7 @@ public slots:
     void setVolumeValueSlot(int i);
     void getPing(QString s);
     void odb_answer_state(QString s);
+    void alarmHasBeenSet(Clock c);
 signals:
     void sendTCP(std::string addres, std::string s);
 };

@@ -17,15 +17,15 @@
 #include "workerip.h"
 #include "functions.h"
 
-namespace std {
-template <typename T>
-std::string to_string(T value)
-{
-    std::ostringstream os ;
-    os << value ;
-    return os.str() ;
-}
-}
+//namespace std {
+//template <typename T>
+//std::string to_string(T value)
+//{
+//    std::ostringstream os ;
+//    os << value ;
+//    return os.str() ;
+//}
+//}
 
 iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QMainWindow(parent),
@@ -115,7 +115,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     else{
         qDebug()<< "JEEEST PUSTY !!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     }
-    QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ) ,this,SLOT ( setVolumeValueSlot(int ) ));
+    QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ),       this, SLOT(setVolumeValueSlot(int) ));
+    QObject::connect( &alarmWindow, SIGNAL(alarmSetSignal(Clock)),  this, SLOT(alarmHasBeenSet(Clock)  ));
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
     QObject::connect(&optionsWindow, SIGNAL(s_fontSize(QString))             ,this,SLOT(slot_fontSize(QString))             );
 
@@ -880,6 +881,13 @@ void iDom_Client::odb_answer_state(QString s)
     }
 }
 
+void iDom_Client::alarmHasBeenSet(Clock c)
+{
+    ui->b_setAlarm->setText("END ALARM CLOCK");
+    QString msg = "iDom alarm ON "+QString::number(c.h)+":"+ QString::number(c.min);
+    emit sendTCP("console", msg.toStdString());
+}
+
 void iDom_Client::on_b_options_clicked()
 {
     optionsWindow.setConfigFile(config);
@@ -933,46 +941,29 @@ void iDom_Client::on_b_printer_clicked()
 void iDom_Client::on_b_setAlarm_clicked()
 {
     droid.vibrate(200);
+
     if(ui->b_setAlarm->isChecked() == false){
-        ui->b_setAlarm->setText("SET ALARM CLOCK");
-        emit sendTCP("console","iDom alarm OFF");
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::question(this, "", "end alarm?",
+                                      QMessageBox::Yes|QMessageBox::No);
+        if (reply == QMessageBox::Yes) {
+
+            ui->b_setAlarm->setText("SET ALARM CLOCK");
+            emit sendTCP("console","iDom alarm OFF");
+        }
+        else{
+            ui->b_setAlarm->setChecked(true);
+        }
     }
     else{
-        bool ok;
-        int h = QInputDialog::getInt(
-                    this,
-                    tr("Hour"),
-                    tr("Put hour:"),
-                    7,
-                    0,
-                    23,
-                    1,
-                    &ok );
-        if (ok){
-            ui->b_setAlarm->setText("END ALARM CLOCK");
-        }
-        else{
-            ui->b_setAlarm->setChecked(false);
-            return ;
-        }
-        int min = QInputDialog::getInt(
-                    this,
-                    tr("Minute"),
-                    tr("Put minute:"),
-                    0,
-                    0,
-                    59,
-                    1,
-                    &ok );
-        if (ok){
-            ui->b_setAlarm->setText("END ALARM CLOCK");
-            QString msg = "iDom alarm ON "+QString::number(h)+":"+ QString::number(min);
-            emit sendTCP("console", msg.toStdString());
-        }
-        else{
-            ui->b_setAlarm->setChecked(false);
-            return ;
-        }
+#ifdef Q_OS_ANDROID
+        alarmWindow.showMaximized();
+#endif
+
+#ifdef Q_OS_WIN
+        alarmWindow.exec();
+#endif
+    //ui->b_setAlarm->setChecked(true);
     }
 
 }
