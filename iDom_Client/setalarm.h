@@ -27,10 +27,13 @@ private slots:
 
     void on_b_minutesDown_clicked();
 
-    void on_buttonBox_accepted();
+    void on_b_ok_clicked();
 
 private:
     Ui::setAlarm *ui;
+
+    void displayHour(int h);
+    void displayMinutes(int min);
 signals:
 
     void alarmSetSignal(Clock c);

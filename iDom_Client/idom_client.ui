@@ -147,8 +147,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>815</width>
-               <height>722</height>
+               <width>807</width>
+               <height>689</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1038,7 +1038,7 @@ QProgressBar::chunk {
        </attribute>
        <layout class="QGridLayout" name="gridLayout_5">
         <item row="8" column="2">
-         <widget class="myButton" name="b_led_13">
+         <widget class="QPushButton" name="b_led_13">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1058,6 +1058,9 @@ background-color: rgb(128, 0, 0);</string>
           <property name="text">
            <string>rdzawy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="0" column="0" colspan="5">
@@ -1091,9 +1094,9 @@ background-color: rgba(0, 0, 0, 0);</string>
          </widget>
         </item>
         <item row="11" column="0" colspan="5">
-         <widget class="myButton" name="b_LED_OFF">
+         <widget class="QPushButton" name="b_LED_OFF">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -1121,10 +1124,13 @@ border-color: rgb(255, 255, 255);
           <property name="text">
            <string>LED OFF</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="10" column="3">
-         <widget class="myButton" name="b_led_24">
+         <widget class="QPushButton" name="b_led_24">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1146,6 +1152,9 @@ background-color: rgb(128, 128, 0);</string>
           <property name="text">
            <string>oliwkowy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="4" column="3" colspan="2">
@@ -1203,7 +1212,7 @@ border-radius:   23px;
          </widget>
         </item>
         <item row="6" column="2">
-         <widget class="myButton" name="b_led_3">
+         <widget class="QPushButton" name="b_led_3">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1233,6 +1242,9 @@ border-color: rgb(255, 255, 255);
           <property name="text">
            <string>zielony</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="3" column="0">
@@ -1264,7 +1276,7 @@ border-color: rgb(255, 255, 255);
          </widget>
         </item>
         <item row="7" column="1">
-         <widget class="myButton" name="b_led_7">
+         <widget class="QPushButton" name="b_led_7">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1286,10 +1298,13 @@ border-color: rgb(255, 255, 255);
           <property name="text">
            <string>tycjan</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="10" column="4">
-         <widget class="myButton" name="b_led_25">
+         <widget class="QPushButton" name="b_led_25">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1311,10 +1326,13 @@ background-color: rgb(207, 47, 47);</string>
           <property name="text">
            <string>poziomkowy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="4" column="2">
-         <widget class="myButton" name="b_extra_color">
+         <widget class="QPushButton" name="b_extra_color">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1336,10 +1354,13 @@ border-color: rgb(255, 255, 255);
           <property name="text">
            <string>SET COLOR</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="7" column="2">
-         <widget class="myButton" name="b_led_8">
+         <widget class="QPushButton" name="b_led_8">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1359,10 +1380,13 @@ background-color: rgb(0, 128, 0);</string>
           <property name="text">
            <string>ciemny zielony</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="6" column="4">
-         <widget class="myButton" name="b_led_5">
+         <widget class="QPushButton" name="b_led_5">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1385,10 +1409,13 @@ border-color: rgb(255, 255, 255);
           <property name="text">
            <string>magenta</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="6" column="3">
-         <widget class="myButton" name="b_led_4">
+         <widget class="QPushButton" name="b_led_4">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1414,10 +1441,13 @@ border-color: rgb(255, 255, 255);
           <property name="text">
            <string>żółty</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="9" column="1">
-         <widget class="myButton" name="b_led_17">
+         <widget class="QPushButton" name="b_led_17">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1438,10 +1468,13 @@ background-color: rgb(178, 34, 34);</string>
           <property name="text">
            <string>minia</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="8" column="4">
-         <widget class="myButton" name="b_led_15">
+         <widget class="QPushButton" name="b_led_15">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1463,10 +1496,13 @@ background-color: rgb(255, 192, 0);</string>
           <property name="text">
            <string>marchewkowy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="10" column="2">
-         <widget class="myButton" name="b_led_23">
+         <widget class="QPushButton" name="b_led_23">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1493,10 +1529,13 @@ color: rgb(0, 0, 0);</string>
           <property name="text">
            <string>niebieskofioletowy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="9" column="0">
-         <widget class="myButton" name="b_led_16">
+         <widget class="QPushButton" name="b_led_16">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1518,10 +1557,13 @@ background-color: rgb(147, 246, 0);</string>
           <property name="text">
            <string>limonkowy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="9" column="2">
-         <widget class="myButton" name="b_led_18">
+         <widget class="QPushButton" name="b_led_18">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1542,10 +1584,13 @@ background-color: rgb(128, 0, 128);</string>
           <property name="text">
            <string>purpurowy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="3" column="2">
-         <widget class="myButton" name="b_all_led">
+         <widget class="QPushButton" name="b_all_led">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1573,10 +1618,13 @@ border-color: rgb(255, 255, 255);
           <property name="text">
            <string>ALL LED</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="8" column="1">
-         <widget class="myButton" name="b_led_12">
+         <widget class="QPushButton" name="b_led_12">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1598,10 +1646,13 @@ background-color: rgb(255, 165, 0);</string>
           <property name="text">
            <string>pomarańczowy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="9" column="4">
-         <widget class="myButton" name="b_led_20">
+         <widget class="QPushButton" name="b_led_20">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1633,10 +1684,13 @@ background-color: rgb(255, 255, 153);</string>
           <property name="text">
            <string>słomkowy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="7" column="4">
-         <widget class="myButton" name="b_led_10">
+         <widget class="QPushButton" name="b_led_10">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1659,6 +1713,9 @@ background-color: rgb(204, 93, 43);</string>
           <property name="text">
            <string>herbaciany</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="3" column="3">
@@ -1730,7 +1787,7 @@ background-color: rgb(204, 93, 43);</string>
          </widget>
         </item>
         <item row="9" column="3">
-         <widget class="myButton" name="b_led_19">
+         <widget class="QPushButton" name="b_led_19">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1751,10 +1808,13 @@ background-color: rgb(8, 37, 103);</string>
           <property name="text">
            <string>szafirowy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="10" column="0">
-         <widget class="myButton" name="b_led_21">
+         <widget class="QPushButton" name="b_led_21">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1776,10 +1836,13 @@ background-color: rgb(98, 0, 44);
           <property name="text">
            <string>buraczkowy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="10" column="1">
-         <widget class="myButton" name="b_led_22">
+         <widget class="QPushButton" name="b_led_22">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1802,6 +1865,9 @@ background-color: rgb(112, 32, 31);
           <property name="text">
            <string>brunatny</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="3" column="4">
@@ -1844,7 +1910,7 @@ background-color: rgb(112, 32, 31);
          </widget>
         </item>
         <item row="8" column="0">
-         <widget class="myButton" name="b_led_11">
+         <widget class="QPushButton" name="b_led_11">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1865,10 +1931,13 @@ background-color: rgb(0, 127, 255);</string>
           <property name="text">
            <string>lazurowy</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="7" column="3">
-         <widget class="myButton" name="b_led_9">
+         <widget class="QPushButton" name="b_led_9">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1891,10 +1960,13 @@ background-color: rgb(0, 255, 255);</string>
           <property name="text">
            <string>cyjan</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="6" column="1">
-         <widget class="myButton" name="b_led_2">
+         <widget class="QPushButton" name="b_led_2">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1924,10 +1996,13 @@ border-color: rgb(255, 255, 255);
           <property name="text">
            <string>niebieski</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="6" column="0">
-         <widget class="myButton" name="b_led_1">
+         <widget class="QPushButton" name="b_led_1">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -1962,6 +2037,9 @@ border-color: rgb(255, 255, 255);
           <property name="text">
            <string>czerwony</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="4" column="0" colspan="2">
@@ -2013,7 +2091,7 @@ border-radius:   23px;
          </widget>
         </item>
         <item row="8" column="3">
-         <widget class="myButton" name="b_led_14">
+         <widget class="QPushButton" name="b_led_14">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -2034,10 +2112,13 @@ background-color: rgb(75, 0, 130);</string>
           <property name="text">
            <string>indygo</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
         <item row="7" column="0">
-         <widget class="myButton" name="b_led_6">
+         <widget class="QPushButton" name="b_led_6">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -2059,6 +2140,9 @@ border-color: rgb(0, 0, 0);
           <property name="text">
            <string>biały</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">LDD_BUTTON</string>
+          </attribute>
          </widget>
         </item>
        </layout>
@@ -2671,8 +2755,8 @@ Smog Charts</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>817</width>
-             <height>724</height>
+             <width>809</width>
+             <height>691</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">
@@ -3159,8 +3243,8 @@ QSlider::handle:horizontal {
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>835</x>
-     <y>66</y>
+     <x>832</x>
+     <y>80</y>
     </hint>
     <hint type="destinationlabel">
      <x>585</x>
@@ -3201,4 +3285,7 @@ QSlider::handle:horizontal {
    </hints>
   </connection>
  </connections>
+ <buttongroups>
+  <buttongroup name="LDD_BUTTON"/>
+ </buttongroups>
 </ui>

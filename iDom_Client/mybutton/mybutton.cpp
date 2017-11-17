@@ -22,11 +22,15 @@ bool myButton::event(QEvent *e)
 
     case QEvent::Resize:
     {
-//        double m = 1.5 / static_cast< double> (text().length());
-//        QFont f;
-//        f.setPixelSize(size().width()* m);
-//        setFont(f);
-}
+#ifdef Q_OS_ANDROID
+        qDebug() << "begin event !!! " << e->type();
+        double m = 1.5 / static_cast< double> (text().length());
+        QFont f;
+        f.setPixelSize(size().width()* m);
+        setFont(f);
+#endif
+
+    }
         break;
     default:
         // qDebug() << "rest event !!! " << e->type();
