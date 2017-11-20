@@ -17,16 +17,6 @@
 #include "workerip.h"
 #include "functions.h"
 
-//namespace std {
-//template <typename T>
-//std::string to_string(T value)
-//{
-//    std::ostringstream os ;
-//    os << value ;
-//    return os.str() ;
-//}
-//}
-
 iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::iDom_Client),
@@ -599,6 +589,7 @@ void iDom_Client::setLcdAll(int c)
 
 void iDom_Client::on_tabWidget_currentChanged( )
 {
+    emit sendTCP("state", "state all");
     ui->lineEdit_tabName->setText(   ui->tabWidget->tabText(ui->tabWidget->currentIndex())  );
     ui->horizontalSlider_tabNavigate->setValue(ui->tabWidget->currentIndex());
     if (ui->tabWidget->currentIndex() == 0 )
