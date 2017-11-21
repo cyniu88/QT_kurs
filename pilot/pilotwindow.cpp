@@ -60,10 +60,10 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 #ifdef Q_OS_WIN
     i = 0.15;
 #endif
-    int w  =  QApplication::desktop()->height()*i;
+    int w  =  static_cast<int>(QApplication::desktop()->height()*i);
     if (w > QApplication::desktop()->width()*i)
     {
-        w= QApplication::desktop()->width()*i;
+        w = static_cast<int>(QApplication::desktop()->width()*i);
     }
  //  joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
  //   joyPadDummy2     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
@@ -142,26 +142,26 @@ pilotWindow::~pilotWindow()
 
 void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, double value)
 {
-    int _value = value*100;
+    int _value = static_cast<int>(value*100);
 
-    if (axis == 0){
+    if (axis == QGamepadManager::GamepadAxis::AxisLeftX){
         // _value = value*20*myGearBox.getGear();
         message.leftX = _value;
-        ui->gazLCD_x->display((int)(value*100));
+        ui->gazLCD_x->display(_value*100);
     }
-    if (axis == 1){
-        _value = value*20*myGearBox.getGear();
+    if (axis == QGamepadManager::GamepadAxis::AxisLeftY){
+        _value = static_cast<int>(value)*20*myGearBox.getGear();
         //qDebug() << "vale: " << _value <<" " << 20*_value*myGearBox.getGear();
         message.leftY = _value;
-        ui->gazLCD_y->display((int)(value*100));
+        ui->gazLCD_y->display(_value*100);
     }
-    if (axis == 2){
+    if (axis == QGamepadManager::GamepadAxis::AxisRightX){
         message.rightX = _value;
-        ui->skretLCD_x->display((int)(value*100));
+        ui->skretLCD_x->display(_value*100);
     }
-    if (axis == 3){
+    if (axis == QGamepadManager::GamepadAxis::AxisRightY){
         message.rightY = _value;
-        ui->skretLCD_y->display((int)(value*100));
+        ui->skretLCD_y->display(_value*100);
     }
 
     emit setPosNOW_Left(message.leftX,message.leftY);
@@ -170,14 +170,14 @@ void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, 
 
 void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButton button, double value)
 {
-    if (button == 4|| button == 192 ){
+    if (button == QGamepadManager::GamepadButton::ButtonL1 || button == 192 ){
         on_buttonLowBeam_clicked();
     }
 
-    else if (button == 6 || button == 194 ) {
+    else if (button == QGamepadManager::GamepadButton::ButtonL2 || button == 194 ) {
         on_buttonHighBeam_clicked();
     }
-    else if (button == 10 || button == 198) {
+    else if (button == QGamepadManager::GamepadButton::ButtonL3 || button == 198) {
         on_buttonAutomatGearbox_clicked();
     }
     //qDebug() << "Przycisk: " <<button;
@@ -186,13 +186,13 @@ void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButt
 
 void pilotWindow::getButtonEventRelease(int deviceId, QGamepadManager::GamepadButton button)
 {
-    if (button == 6 || button == 194 ) {
+    if (button == QGamepadManager::GamepadButton::ButtonL2 || button == 194 ) {
         on_buttonHighBeam_clicked();
     }
-    else if (button == 5 || button == 193){
+    else if (button == QGamepadManager::GamepadButton::ButtonR1 || button == 193){
         on_push_plusGear_clicked();
     }
-    else if (button == 7 || button == 195){
+    else if (button == QGamepadManager::GamepadButton::ButtonR2 || button == 195){
         on_push_minusGear_clicked();
     }
 }
@@ -246,9 +246,9 @@ void pilotWindow::display_FPS()
     ui->FPS_LCD->display(fpsCounter);
 
     //automat skrzyni biegow przy okazji uruchaminy co sekunde
-    myGearBox.automaticGearBoxHandle(ui->gazLCD_y->value());
+    myGearBox.automaticGearBoxHandle(static_cast<int>(ui->gazLCD_y->value()));
     ui->gear->display(myGearBox.getGear());
-    message.leftY = ui->gazLCD_y->value()*0.20*myGearBox.getGear();
+    message.leftY = static_cast<int>(ui->gazLCD_y->value()*0.20*myGearBox.getGear());
     fpsCounter = 0;
 }
 
@@ -270,7 +270,7 @@ void pilotWindow::on_push_plusGear_clicked()
 {
     myGearBox.gearUP();
     ui->gear->display(myGearBox.getGear());
-    message.leftY = (ui->gazLCD_y->value())*0.2*myGearBox.getGear();
+    message.leftY = static_cast<int>(ui->gazLCD_y->value()*0.2*myGearBox.getGear());
     droid.vibrate(100);
 }
 
@@ -278,10 +278,9 @@ void pilotWindow::on_push_minusGear_clicked()
 {
     myGearBox.gearDOWN();
     ui->gear->display(myGearBox.getGear());
-    message.leftY = (ui->gazLCD_y->value())*0.2*myGearBox.getGear();
+    message.leftY = static_cast<int>(ui->gazLCD_y->value()*0.2*myGearBox.getGear());
     droid.vibrate(100);
 }
-
 
 void pilotWindow::on_buttonLowBeam_clicked()
 {
@@ -343,7 +342,6 @@ void pilotWindow::getMSG(QString tit, QString msg)
 void pilotWindow::on_horizontalSlider_sliderReleased()
 {
     ui->horizontalSlider->setValue(ui->horizontalSlider->minimum());
-
 }
 
 void pilotWindow::on_horizontalSlider_valueChanged(int value)
@@ -387,12 +385,10 @@ void pilotWindow::on_actionPORT_triggered()
     bool ok;
     QInputDialog myInputDialog;
 
-
     int i = myInputDialog.getInt(&inputDialogStyleSheet,"SET","SET PORT",conf->port,8000,9000,1,&ok);
     if(ok){
         conf->port = i;
         mainConfig.writeToFile("config","port.cfg", to_stringAndroid(i) );
-
     }
 }
 
@@ -402,20 +398,18 @@ void pilotWindow::on_actionADDRESS_triggered()
     conf->addressIpList = QString::fromStdString(mainConfig.readFromFile("config","ip.cfg")).split("\n");
 
     QInputDialog myInputDialog;
-
     QString id = myInputDialog.getItem(&inputDialogStyleSheet, tr("address"),
                                        tr("set IP address"),conf->addressIpList,1,false, &ok);
 
     if (ok && !id.isEmpty()){
 
         conf->addressIP = id.toStdString();
-
+        on_actionConnect_triggered();
     }
 }
 
 void pilotWindow::on_actionAdd_address_triggered()
 {
-
     bool ok;
     std::string t;
     QInputDialog myInputDialog;
