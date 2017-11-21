@@ -39,7 +39,7 @@ public:
     QGraphicsScene scenePower, sceneDirection;
     QGraphicsScene sceneA,sceneB,sceneC,sceneD;
     JoyPad *joyPadPower;
-    JoyPad *joyPadDummy ,*joyPadDummy2;
+   // JoyPad *joyPadDummy ,*joyPadDummy2;
     JoyPad *joyPadDirection;
 
     bool autoReturnPower   = true;

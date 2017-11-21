@@ -26,7 +26,6 @@ void pilotWindow::showMessage()
 {
     ui->infoTxt->setText(  message.getString()   );
     conf->messageS = message;
-
 }
 
 void pilotWindow::showServerREsponse(QString s)
@@ -41,7 +40,6 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     ui(new Ui::pilotWindow),
     worker(c),
     myGearBox(5)
-
 {
     ui->setupUi(this);
     workerPTR = &worker;
@@ -67,8 +65,8 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     {
         w= QApplication::desktop()->width()*i;
     }
-   joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
-    joyPadDummy2     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+ //  joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+ //   joyPadDummy2     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
     joyPadDirection = new JoyPad( w , w/4,Qt::red,Qt::yellow);
 
     joyPadPower     = new JoyPad( w , w/4,Qt::red,Qt::yellow);

@@ -13,9 +13,6 @@ JoyPad::JoyPad(int circleX, int circleY , Qt::GlobalColor maxColor, Qt::GlobalCo
     centralItem = new QGraphicsEllipseItem((circleX-circleY)/2, (circleX-circleY)/2, circleY, circleY, this);
     centralItem->setPos(0, 0);
     centralItem->setBrush(minColor);
-
-
-
 }
 
 JoyPad::~JoyPad()
