@@ -1,5 +1,6 @@
 #include <Servo.h>
 #include <ESP8266WiFi.h>
+#include <Wire.h>
 #include "mytype.h"
 #include "functions.h"
 #include "light.h"
@@ -31,22 +32,22 @@ Servo servomotor;
 
 void setup() {
   Serial.begin(74880);
-  while (!Serial){
-    
+  while (!Serial) {
+
   }
   servomotor.attach(SERVO_PIN);
   servomotor.write(60);
   mainMotor.init(PWMa, IN1, IN2);
   lightBack.turnOFF();
   lightFront.turnOFF();
- 
+
   digitalWrite(LED, 0);
- //analogWriteFreq(20);
+  //analogWriteFreq(20);
   // Connect to WiFi network
   setupWiFi();
 
   OTA_update_setup();
-  
+
   Serial.println("");
   Serial.println("WiFi connected");
 
@@ -80,13 +81,13 @@ void working() {
   digitalWrite(LED, 1);
   counter = 0;
   while (1) {
-   // Serial.println("wait");
+    // Serial.println("wait");
     while (!client.available()) {
       ++counter;
-      Serial.println("czekam");
-      Serial.println(counter,DEC);
+      // Serial.println("czekam");
+      // Serial.println(counter,DEC);
       mainMotor.hard_stop();
-       
+
     }
 
     // Read the first line of the request
@@ -103,6 +104,33 @@ void working() {
       ESP.deepSleep(10000000);
     }
 
+    if (req == "I2C")
+    {
+      byte error;
+      Wire.begin(D2, D1);
+
+      Wire.beginTransmission(0x20);
+      Wire.write(0b11111111);
+      error = Wire.endTransmission();
+      
+      client.println(error);
+
+      continue;
+    }
+    if (req == "i2c")
+    {
+      byte error;
+      Wire.begin(D2, D1);
+
+      Wire.beginTransmission(0x20);
+      Wire.write(0b00000000);
+      error = Wire.endTransmission();
+      
+      client.println(error);
+
+      continue;
+    }
+
     kat_s = req.substring(10, 14);
     //Serial.print("kat str: ");
     //Serial.println(kat_s);
@@ -114,45 +142,45 @@ void working() {
     servomotor.write(kat);
     speed_s = req.substring(5, 9);
     //Serial.print("speed str: ");
-   // Serial.println(speed_s);
+    // Serial.println(speed_s);
     speed_ = speed_s.toInt();
     //Serial.print("speed_int: ");
     //Serial.println(speed_);
-    
+
     mainDriver.runMotor(speed_);
 
     mainStopLight.handle(speed_);
-   
 
-if (1 == req.substring(20, 21).toInt()){
-  
-   lightFront.turnON();
-   lightBack.turnON();
-}
-else{
-  lightFront.turnOFF();
-  lightBack.turnOFF();
-}
-if (1 == req.substring(22, 23).toInt()){
-  lightFront.maximal();
-}
-else{
-  lightFront.maximalEnd();
-}
+
+    if (1 == req.substring(20, 21).toInt()) {
+
+      lightFront.turnON();
+      lightBack.turnON();
+    }
+    else {
+      lightFront.turnOFF();
+      lightBack.turnOFF();
+    }
+    if (1 == req.substring(22, 23).toInt()) {
+      lightFront.maximal();
+    }
+    else {
+      lightFront.maximalEnd();
+    }
 
     String s = req + " volt " + analogRead(A0) ;
     //Serial.println(s);
     // Send the response to the client
     client.print(s);
     delay(1);
-   // Serial.println("done :)");
+    // Serial.println("done :)");
 
     // The client will actually be disconnected
     // when the function returns and 'client' object is detroyed
   }
 }  // end working
 void loop() {
-  ();
+  wait_for_client();
   // Wait until the client sends some data
   working();
   mainMotor.hard_stop();
