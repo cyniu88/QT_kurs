@@ -37,7 +37,7 @@ void setup() {
   }
   servomotor.attach(SERVO_PIN);
   servomotor.write(60);
-  mainMotor.init(PWMa, IN1, IN2);
+  mainMotor.init(PWMa, P4, P5);
   lightBack.turnOFF();
   lightFront.turnOFF();
 
@@ -102,33 +102,6 @@ void working() {
 
     if (req == "SLEEP") {
       ESP.deepSleep(10000000);
-    }
-
-    if (req == "I2C")
-    {
-      byte error;
-      Wire.begin(D2, D1);
-
-      Wire.beginTransmission(0x20);
-      Wire.write(0b11111111);
-      error = Wire.endTransmission();
-      
-      client.println(error);
-
-      continue;
-    }
-    if (req == "i2c")
-    {
-      byte error;
-      Wire.begin(D2, D1);
-
-      Wire.beginTransmission(0x20);
-      Wire.write(0b00000000);
-      error = Wire.endTransmission();
-      
-      client.println(error);
-
-      continue;
     }
 
     kat_s = req.substring(10, 14);
