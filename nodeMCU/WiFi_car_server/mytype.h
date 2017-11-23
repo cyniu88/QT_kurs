@@ -15,9 +15,9 @@
 #define LED         D4
 #define FRONT_LED   D5
 #define BACK_LED    D6
-//#define IN1         D8      // GPIO 5
-//#define IN2         D9      // GPIO 4
-#define PWMa        D3      // GPIO 0
+#define IN1         P7      // GPIO 5   2 silnik P4 /P5   1 P7
+#define IN2         P6      // GPIO 4                       P6
+#define PWMa        D8      // GPIO 0    2 silnik  D3      1 D8
 #define SERVO_PIN   D7      // GPIO 13
 
 #define STOP_LED_TIMER  60

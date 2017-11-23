@@ -37,7 +37,7 @@ void setup() {
   }
   servomotor.attach(SERVO_PIN);
   servomotor.write(60);
-  mainMotor.init(PWMa, P4, P5);
+  mainMotor.init(PWMa, IN1, IN2);
   lightBack.turnOFF();
   lightFront.turnOFF();
 
