@@ -116,9 +116,9 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
             [](int deviceId) { qDebug() << "configuration canceled:" << deviceId; });
 
     // kolorwanie przycisku skrzyni automatycznej
-    if (myGearBox.automaticWorkFlag == true){
-        ui->buttonAutomatGearbox->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
-    }
+//    if (myGearBox.automaticWorkFlag == true){
+//        ui->buttonAutomatGearbox->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+//    }
 
     inputDialogStyleSheet.setStyleSheet("background-color: rgba(0, 255, 0, 50); color: rgba(255, 255, 255); font: bold 14px; font-size: 20pt; ");
     inputDialogStyleSheet.move(QApplication::desktop()->screen()->rect().center()- inputDialogStyleSheet.rect().center() );
@@ -177,7 +177,7 @@ void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButt
         on_actionON_2_triggered();
     }
     else if (button == QGamepadManager::GamepadButton::ButtonL3 /*|| button == 198*/) {
-        on_buttonAutomatGearbox_clicked();
+        on_actionAutomat_triggered();
     }
     //qDebug() << "Przycisk: " <<button;
     //getMSG("button",QString::number(button));
@@ -292,10 +292,12 @@ void pilotWindow::on_buttonLowBeam_clicked()
     droid.vibrate(100);
     message.lowBeam = !message.lowBeam;
     if (message.lowBeam == true){
-        ui->buttonLowBeam->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+        ui->buttonLowBeam->setChecked(true);
+        //ui->buttonLowBeam->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
     }
     else{
-        ui->buttonLowBeam->setStyleSheet("");
+        //ui->buttonLowBeam->setStyleSheet("");
+        ui->buttonLowBeam->setChecked(false);
     }
 }
 
@@ -304,10 +306,11 @@ void pilotWindow::on_buttonHighBeam_clicked()
     droid.vibrate(100);
     message.highBeam = !message.highBeam;
     if (message.highBeam == true){
-        ui->buttonHighBeam->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+        ui->buttonHighBeam->setChecked(true);
     }
     else{
-        ui->buttonHighBeam->setStyleSheet("");
+       // ui->buttonHighBeam->setStyleSheet("");
+        ui->buttonHighBeam->setChecked(false);
     }
 }
 
@@ -316,10 +319,12 @@ void pilotWindow::on_buttonTrailerMechanism_clicked()
     droid.vibrate(100);
     message.stateC = !message.stateC;
     if (message.stateC == true){
-        ui->buttonTrailerMechanism->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+        ui->buttonTrailerMechanism->setChecked(true);
+       // ui->buttonTrailerMechanism->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
     }
     else{
-        ui->buttonTrailerMechanism->setStyleSheet("");
+       // ui->buttonTrailerMechanism->setStyleSheet("");
+        ui->buttonTrailerMechanism->setChecked(false);
     }
 }
 
@@ -328,11 +333,13 @@ void pilotWindow::on_buttonReverseLight_clicked()
     droid.vibrate(100);
     message.stateD = !message.stateD;
     if (message.stateD == true){
-        ui->buttonReverseLight->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+        //ui->buttonReverseLight->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+        ui->buttonReverseLight->setChecked(true);
         message.leftY=1;
     }
     else{
-        ui->buttonReverseLight->setStyleSheet("");
+       // ui->buttonReverseLight->setStyleSheet("");
+        ui->buttonReverseLight->setChecked(false);
     }
 }
 
@@ -358,10 +365,10 @@ void pilotWindow::on_buttonAutomatGearbox_clicked()
 {
     myGearBox.automaticWorkFlag = !myGearBox.automaticWorkFlag;
     if (myGearBox.automaticWorkFlag == true){
-        ui->buttonAutomatGearbox->setStyleSheet("background-color: rgba(0, 255, 0, 50);");
+        ui->buttonAutomatGearbox->setChecked(true);
     }
     else{
-        ui->buttonAutomatGearbox->setStyleSheet("");
+        ui->buttonAutomatGearbox->setChecked(false);
     }
     droid.vibrate(100);
 }
@@ -477,4 +484,9 @@ void pilotWindow::on_actionUP_triggered()
 void pilotWindow::on_actionDOWN_triggered()
 {
     on_push_minusGear_clicked();
+}
+
+void pilotWindow::on_actionAutomat_triggered()
+{
+    on_buttonAutomatGearbox_clicked();
 }

@@ -246,15 +246,30 @@ font-size:  40px;</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 00, 0);
-
-</string>
+             <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,125);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:rgb(0,0,0,128);
+}
+QPushButton:pressed {
+border:none;
+}
+QPushButton:checked {
+ color:black;
+ border: 2px solid #8f8f91;
+	border-color: rgb(0, 0, 0);
+border-radius: 0px;
+}</string>
             </property>
             <property name="text">
              <string>Automat</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -603,13 +618,27 @@ border-radius:   23px;
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,125);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:rgb(0,0,0,128);
+}
+QPushButton:pressed {
+border:none;
+}
+QPushButton:checked {
+ color:black;
+ border: 2px solid #8f8f91;
+	border-color: rgb(0, 0, 0);
+border-radius: 0px;
+}</string>
           </property>
           <property name="text">
            <string>Low Beam</string>
           </property>
           <property name="checkable">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -628,13 +657,29 @@ border-radius:   23px;
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,125);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:rgb(0,0,0,128);
+}
+QPushButton:pressed {
+border:none;
+}
+QPushButton:checked {
+ color:black;
+ border: 2px solid #8f8f91;
+	border-color: rgb(0, 0, 0);
+border-radius: 0px;
+}
+
+</string>
           </property>
           <property name="text">
            <string>High Beam</string>
           </property>
           <property name="checkable">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -653,13 +698,27 @@ border-radius:   23px;
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,125);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:rgb(0,0,0,128);
+}
+QPushButton:pressed {
+border:none;
+}
+QPushButton:checked {
+ color:black;
+ border: 2px solid #8f8f91;
+	border-color: rgb(0, 0, 0);
+border-radius: 0px;
+}</string>
           </property>
           <property name="text">
            <string>Reverse Light</string>
           </property>
           <property name="checkable">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -679,13 +738,27 @@ border-radius:   23px;
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,125);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:rgb(0,0,0,128);
+}
+QPushButton:pressed {
+border:none;
+}
+QPushButton:checked {
+ color:black;
+ border: 2px solid #8f8f91;
+	border-color: rgb(0, 0, 0);
+border-radius: 0px;
+}</string>
           </property>
           <property name="text">
            <string>Trailer Mechanism </string>
           </property>
           <property name="checkable">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -841,6 +914,11 @@ border-radius:   23px;
   <action name="actionDOWN">
    <property name="text">
     <string>DOWN</string>
+   </property>
+  </action>
+  <action name="actionAutomat">
+   <property name="text">
+    <string>Automat</string>
    </property>
   </action>
  </widget>
