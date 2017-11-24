@@ -87,7 +87,7 @@ border:none;
         <string> + </string>
        </property>
        <property name="autoRepeat">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -127,7 +127,7 @@ border:none;
         </size>
        </property>
        <property name="autoRepeat">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -237,7 +237,7 @@ border:none;
         </size>
        </property>
        <property name="autoRepeat">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -277,7 +277,7 @@ border:none;
         </size>
        </property>
        <property name="autoRepeat">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
       </widget>
      </item>
