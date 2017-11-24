@@ -169,14 +169,14 @@ void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, 
 
 void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButton button, double value)
 {
-    if (button == QGamepadManager::GamepadButton::ButtonL1 || button == 192 ){
+    if (button == QGamepadManager::GamepadButton::ButtonL1 /*|| button == 192*/ ){
         on_buttonLowBeam_clicked();
     }
 
-    else if (button == QGamepadManager::GamepadButton::ButtonL2 || button == 194 ) {
+    else if (button == QGamepadManager::GamepadButton::ButtonL2 /*|| button == 194*/ ) {
         on_buttonHighBeam_clicked();
     }
-    else if (button == QGamepadManager::GamepadButton::ButtonL3 || button == 198) {
+    else if (button == QGamepadManager::GamepadButton::ButtonL3 /*|| button == 198*/) {
         on_buttonAutomatGearbox_clicked();
     }
     //qDebug() << "Przycisk: " <<button;
@@ -185,13 +185,13 @@ void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButt
 
 void pilotWindow::getButtonEventRelease(int deviceId, QGamepadManager::GamepadButton button)
 {
-    if (button == QGamepadManager::GamepadButton::ButtonL2 || button == 194 ) {
+    if (button == QGamepadManager::GamepadButton::ButtonL2 /*|| button == 194*/ ) {
         on_buttonHighBeam_clicked();
     }
-    else if (button == QGamepadManager::GamepadButton::ButtonR1 || button == 193){
+    else if (button == QGamepadManager::GamepadButton::ButtonR1 /*|| button == 193*/){
         on_push_plusGear_clicked();
     }
-    else if (button == QGamepadManager::GamepadButton::ButtonR2 || button == 195){
+    else if (button == QGamepadManager::GamepadButton::ButtonR2 /*|| button == 195*/){
         on_push_minusGear_clicked();
     }
 }
