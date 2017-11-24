@@ -174,7 +174,7 @@ void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButt
     }
 
     else if (button == QGamepadManager::GamepadButton::ButtonL2 /*|| button == 194*/ ) {
-        on_buttonHighBeam_clicked();
+        on_actionON_2_triggered();
     }
     else if (button == QGamepadManager::GamepadButton::ButtonL3 /*|| button == 198*/) {
         on_buttonAutomatGearbox_clicked();
@@ -186,13 +186,19 @@ void pilotWindow::getButtonEventPress(int deviceId, QGamepadManager::GamepadButt
 void pilotWindow::getButtonEventRelease(int deviceId, QGamepadManager::GamepadButton button)
 {
     if (button == QGamepadManager::GamepadButton::ButtonL2 /*|| button == 194*/ ) {
-        on_buttonHighBeam_clicked();
+        on_actionOFF_2_triggered();
     }
     else if (button == QGamepadManager::GamepadButton::ButtonR1 /*|| button == 193*/){
-        on_push_plusGear_clicked();
+        on_actionUP_triggered();
     }
     else if (button == QGamepadManager::GamepadButton::ButtonR2 /*|| button == 195*/){
-        on_push_minusGear_clicked();
+        on_actionDOWN_triggered();
+    }
+    else if (button == QGamepadManager::GamepadButton::ButtonY ){
+        on_buttonTrailerMechanism_clicked();
+    }
+    else if (button == QGamepadManager::GamepadButton::ButtonX ){
+        on_buttonHighBeam_clicked();
     }
 }
 
@@ -461,4 +467,14 @@ void pilotWindow::on_actioncamera_triggered()
 void pilotWindow::on_actionpad_triggered()
 {
     ui->tabWidget->setCurrentIndex(0);
+}
+
+void pilotWindow::on_actionUP_triggered()
+{
+    on_push_plusGear_clicked();
+}
+
+void pilotWindow::on_actionDOWN_triggered()
+{
+    on_push_minusGear_clicked();
 }

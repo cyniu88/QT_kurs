@@ -237,6 +237,22 @@ font-size:  40px;</string>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="font">
+             <font>
+              <family>Franklin Gothic Medium</family>
+              <pointsize>20</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(0, 255, 0, 50);
+ border: true;
+	border-color: rgb(0, 255, 0);
+	color: rgb(0, 00, 0);
+
+</string>
+            </property>
             <property name="text">
              <string>Automat</string>
             </property>
@@ -250,13 +266,23 @@ font-size:  40px;</string>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
+             <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,125);
+ border: 5px solid #8f8f91;
+border-radius: 0px;
+color:white;
+}
+QPushButton:pressed {
+border:none;
+}</string>
             </property>
             <property name="text">
              <string>Up</string>
@@ -292,13 +318,24 @@ font-size:  40px;</string>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgba(0, 255, 0, 50);
- border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  40px;</string>
+             <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,125);
+ border: 5px solid #8f8f91;
+border-radius: 0px;
+color:white;
+font-size: 40
+}
+QPushButton:pressed {
+border:none;
+}</string>
             </property>
             <property name="text">
              <string>Down</string>
@@ -332,7 +369,7 @@ font-size:  40px;</string>
        <attribute name="title">
         <string>camera</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="myButton" name="pushButton">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -561,6 +598,8 @@ border-radius:   23px;
           <property name="font">
            <font>
             <pointsize>8</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
            </font>
           </property>
           <property name="styleSheet">
@@ -568,6 +607,9 @@ border-radius:   23px;
           </property>
           <property name="text">
            <string>Low Beam</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -581,14 +623,18 @@ border-radius:   23px;
           </property>
           <property name="font">
            <font>
-            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">font-size:  10px;</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>High Beam</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -600,11 +646,20 @@ border-radius:   23px;
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true"/>
           </property>
           <property name="text">
            <string>Reverse Light</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -619,6 +674,8 @@ border-radius:   23px;
           <property name="font">
            <font>
             <pointsize>8</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
            </font>
           </property>
           <property name="styleSheet">
@@ -626,6 +683,9 @@ border-radius:   23px;
           </property>
           <property name="text">
            <string>Trailer Mechanism </string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -773,13 +833,23 @@ border-radius:   23px;
     <string>pad</string>
    </property>
   </action>
+  <action name="actionUP">
+   <property name="text">
+    <string>UP</string>
+   </property>
+  </action>
+  <action name="actionDOWN">
+   <property name="text">
+    <string>DOWN</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="1" margin="2"/>
  <customwidgets>
   <customwidget>
    <class>myButton</class>
    <extends>QPushButton</extends>
-   <header location="global">mybutton.h</header>
+   <header location="global">../iDom_Client/mybutton/mybutton.h</header>
   </customwidget>
   <customwidget>
    <class>myTouchSlider</class>

@@ -16,7 +16,7 @@
 
 
 #include "joypad.h"
-#include "mybutton.h"
+#include "../iDom_Client/mybutton/mybutton.h"
 #include "variable.h"
 #include "workerip.h"
 #include "gear_BOX/gear_box.h"
@@ -130,6 +130,10 @@ private slots:
     void on_actioncamera_triggered();
 
     void on_actionpad_triggered();
+
+    void on_actionUP_triggered();
+
+    void on_actionDOWN_triggered();
 
 private:
     my_config *conf;

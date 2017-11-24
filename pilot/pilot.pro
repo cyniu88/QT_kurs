@@ -19,14 +19,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         pilotwindow.cpp \
     joypad.cpp \
-    mybutton.cpp \
     functions.cpp \
     workerip.cpp \
     gear_BOX/gear_box.cpp \
     mytouchslider.cpp \
     force_back/force_back.cpp \
     ../libs/config_files/config_files.cpp \
-    ../libs/android_functions/android_interface/android_interface.cpp
+    ../libs/android_functions/android_interface/android_interface.cpp \
+    ../iDom_Client/mybutton/mybutton.cpp
 android {
             message("* Using settings for Android.")
             SOURCES  += ../libs/android_functions/androidhelper_cyniu.cpp
@@ -35,7 +35,6 @@ android {
 
 HEADERS  += pilotwindow.h \
     joypad.h \
-    mybutton.h \
     functions.h \
     workerip.h \
     variable.h \
@@ -43,7 +42,8 @@ HEADERS  += pilotwindow.h \
     mytouchslider.h \
     force_back/force_back.h \
     ../libs/android_functions/android_interface/android_interface.h \
-    ../libs/config_files/config_files.h
+    ../libs/config_files/config_files.h \
+    ../iDom_Client/mybutton/mybutton.h
 android {
             message("* Using settings for Android.")
             HEADERS  += ../libs/android_functions/androidhelper_cyniu.h
