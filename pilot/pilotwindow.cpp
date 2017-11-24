@@ -65,8 +65,8 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     {
         w = static_cast<int>(QApplication::desktop()->width()*i);
     }
- //  joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
- //   joyPadDummy2     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+    //  joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+    //   joyPadDummy2     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
     joyPadDirection = new JoyPad( w , w/4,Qt::red,Qt::yellow);
 
     joyPadPower     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
@@ -144,24 +144,23 @@ void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, 
 {
     int _value = static_cast<int>(value*100);
 
-    if (axis == QGamepadManager::GamepadAxis::AxisLeftX){
-        // _value = value*20*myGearBox.getGear();
+    if (axis == 0){
         message.leftX = _value;
-        ui->gazLCD_x->display(_value*100);
+        ui->gazLCD_x->display(static_cast<int>(value*100));
     }
-    if (axis == QGamepadManager::GamepadAxis::AxisLeftY){
-        _value = static_cast<int>(value)*20*myGearBox.getGear();
+    if (axis == 1){
+        _value = static_cast<int>(value*20*myGearBox.getGear());
         //qDebug() << "vale: " << _value <<" " << 20*_value*myGearBox.getGear();
         message.leftY = _value;
-        ui->gazLCD_y->display(_value*100);
+        ui->gazLCD_y->display(static_cast<int>(value*100));
     }
-    if (axis == QGamepadManager::GamepadAxis::AxisRightX){
+    if (axis == 2){
         message.rightX = _value;
-        ui->skretLCD_x->display(_value*100);
+        ui->skretLCD_x->display(static_cast<int>(value*100));
     }
-    if (axis == QGamepadManager::GamepadAxis::AxisRightY){
+    if (axis == 3){
         message.rightY = _value;
-        ui->skretLCD_y->display(_value*100);
+        ui->skretLCD_y->display(static_cast<int>(value*100));
     }
 
     emit setPosNOW_Left(message.leftX,message.leftY);
@@ -419,18 +418,18 @@ void pilotWindow::on_actionAdd_address_triggered()
     }
     //t = myInputDialog.getMultiLineText(&inputDialogStyleSheet,"add IP","add IP", QString::fromStdString(t) ,&ok).toStdString();
     QInputDialog::InputMode zz = QInputDialog::TextInput;
-           myInputDialog.setInputMode (zz   );
-           myInputDialog.setOption(QInputDialog::UsePlainTextEditForTextInput);
-           myInputDialog.setStyleSheet("background-color: rgba(0, 255, 0, 50); color: rgba(255, 255, 255); font: bold 14px; font-size: 20pt; ");
-           myInputDialog.setLabelText("add IP");
-           myInputDialog.setTextValue(QString::fromStdString(t));
-           int prc =200;
+    myInputDialog.setInputMode (zz   );
+    myInputDialog.setOption(QInputDialog::UsePlainTextEditForTextInput);
+    myInputDialog.setStyleSheet("background-color: rgba(0, 255, 0, 50); color: rgba(255, 255, 255); font: bold 14px; font-size: 20pt; ");
+    myInputDialog.setLabelText("add IP");
+    myInputDialog.setTextValue(QString::fromStdString(t));
+    int prc =200;
 #ifdef Q_OS_WIN
-           prc = 800;
+    prc = 800;
 #endif
-           myInputDialog.resize(QApplication::desktop()->screenGeometry().width()-prc-100,QApplication::desktop()->screenGeometry().height()-prc);
-           ok = myInputDialog.exec();
-           t = myInputDialog.textValue().toStdString();
+    myInputDialog.resize(QApplication::desktop()->screenGeometry().width()-prc-100,QApplication::desktop()->screenGeometry().height()-prc);
+    ok = myInputDialog.exec();
+    t = myInputDialog.textValue().toStdString();
     if(ok){
         conf->addressIpList.clear();
         conf->addressIpList = QString::fromStdString(t).split("\n");
