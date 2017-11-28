@@ -58,7 +58,7 @@ color: rgb(0, 255, 0);</string>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="myButton" name="b_hourUp">
+      <widget class="QPushButton" name="b_hourUp">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
@@ -67,7 +67,7 @@ color: rgb(0, 255, 0);</string>
        </property>
        <property name="font">
         <font>
-         <pointsize>18</pointsize>
+         <pointsize>35</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -92,7 +92,7 @@ border:none;
       </widget>
      </item>
      <item>
-      <widget class="myButton" name="b_minutesUp">
+      <widget class="QPushButton" name="b_minutesUp">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
@@ -101,7 +101,7 @@ border:none;
        </property>
        <property name="font">
         <font>
-         <pointsize>18</pointsize>
+         <pointsize>35</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -202,7 +202,7 @@ border:none;
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="myButton" name="b_hourDown">
+      <widget class="QPushButton" name="b_hourDown">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
@@ -211,7 +211,7 @@ border:none;
        </property>
        <property name="font">
         <font>
-         <pointsize>18</pointsize>
+         <pointsize>35</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -242,7 +242,7 @@ border:none;
       </widget>
      </item>
      <item>
-      <widget class="myButton" name="b_minutesDown">
+      <widget class="QPushButton" name="b_minutesDown">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
@@ -251,7 +251,7 @@ border:none;
        </property>
        <property name="font">
         <font>
-         <pointsize>18</pointsize>
+         <pointsize>35</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>

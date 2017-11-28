@@ -1,5 +1,6 @@
 #include "mybutton.h"
 #include <QDebug>
+#include <QWidget>
 
 myButton::myButton(QObject *parent)
 {
@@ -33,11 +34,9 @@ bool myButton::event(QEvent *e)
     }
         break;
     default:
-        // qDebug() << "rest event !!! " << e->type();
+        qDebug() << "rest event !!! " << e->type();
         break;
     }
-
     return  QPushButton::event(e);
-
 }
 
