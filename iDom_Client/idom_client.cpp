@@ -25,7 +25,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->setupUi(this);
 
     taskHandlerTimer = new QTimer ();
-    QObject::connect(taskHandlerTimer, SIGNAL(timeout()),       this,SLOT(taskHandler()));
+    QObject::connect(taskHandlerTimer, SIGNAL(timeout()), this, SLOT(taskHandler()));
     taskHandlerTimer->start(900);
 #ifdef Q_OS_WIN
     if(QSystemTrayIcon::isSystemTrayAvailable() == false)
@@ -289,6 +289,7 @@ void iDom_Client::connectDisconnectButtonState(bool state)
 {
     if (state == false){
         ui->b_connect_dicsonnect->setText("Connect to iDom");
+        ui->titleTXT->setText("DISCONNECTED   ");
     }
     else{
         ui->b_connect_dicsonnect->setText("Disconnect from iDom");
@@ -808,6 +809,7 @@ void iDom_Client::on_b_connect_dicsonnect_clicked()
     if (config->isConnectedToServer == true){
         config->goWhile =false;
         ui->b_connect_dicsonnect->setText("Connect to iDom");
+        ui->titleTXT->setText("DISCONNECTED   ");
     }
     else{
         config->worketPTR->start();
