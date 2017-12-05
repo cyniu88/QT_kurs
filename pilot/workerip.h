@@ -21,8 +21,9 @@ public:
 public:
     my_config *config;
 private:
-    int counter =0;
-    int counter2 =0;
+    int counter = 0;
+    int counter2 = 0;
+    unsigned int connectionCounter = 0;
     int progresCounter =0;
     bool to_send= false;
 

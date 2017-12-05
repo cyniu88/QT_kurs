@@ -44,17 +44,20 @@ bool WorkerIP::connectAndAuthentication()
 {
     socket = new QTcpSocket(this );
     qDebug()<< "mamy " << config->addressIP.c_str() << "  "<< config->port<<" polaczenie ";
-    socket->connectToHost(config->addressIP.c_str(),config->port);
+    socket->connectToHost(config->addressIP.c_str(),static_cast<quint16>(config->port));
     if (socket->waitForConnected(1000)){
         qDebug("Connected!");
-        emit sendMSG("Connected to:", QString::fromStdString("8)\nConnected to: "+config->addressIP));
-
+        emit sendMSG("Connected to:", QString::fromStdString(":)\nConnected to: "+config->addressIP));
+        connectionCounter = 0;
         return true;
-        }
-    else{
-       emit sendMSG("Connot connect to:", QString::fromStdString("=(\nConnot connect to :"+config->addressIP));
     }
-    return false;
+    else{
+        if (connectionCounter < 10){
+            emit sendMSG("Connot connect to:", QString::fromStdString("=(\nConnot connect to :"+config->addressIP));
+        }
+        connectionCounter++;
+        return false;
+    }
 }
 
 bool WorkerIP::disconnectFromServer()
@@ -79,7 +82,6 @@ void WorkerIP::waitSend(int waitTime, int counter)
             return;
         }
     }
-
 }
 
 void WorkerIP::waitRecv(int waitTime, int counter)

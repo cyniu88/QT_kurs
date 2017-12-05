@@ -65,8 +65,8 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
     {
         w = static_cast<int>(QApplication::desktop()->width()*i);
     }
-    //  joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
-    //   joyPadDummy2     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+      //joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+     // joyPadDummy2     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
     joyPadDirection = new JoyPad( w , w/4,Qt::red,Qt::yellow);
 
     joyPadPower     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
@@ -79,13 +79,6 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 
     QObject::connect(this, SIGNAL(setPosNOW_Right(int,int)), joyPadDirection,SLOT(setPosNOW(int,int)));
     QObject::connect(this, SIGNAL(setPosNOW_Left (int,int)), joyPadPower    ,SLOT(setPosNOW(int,int)));
-
-    sceneDirection.addItem(joyPadDirection);
-    scenePower.addItem(joyPadPower);
-
-    ui->graphicsView_gaz ->setScene(&scenePower);
-    ui->graphicsView_skret->setScene(&sceneDirection);
-
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
     ui->gear->display( myGearBox.getGear() );
@@ -126,6 +119,11 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 #ifdef Q_OS_ANDROID
     ui->tabWidget->tabBar()->hide();
 #endif
+    sceneDirection.addItem(joyPadDirection);
+    scenePower.addItem(joyPadPower);
+
+    ui->graphicsView_gaz ->setScene(&scenePower);
+    ui->graphicsView_skret->setScene(&sceneDirection);
 }
 
 pilotWindow::~pilotWindow()

@@ -26,8 +26,8 @@ public:
 signals:
     void sendPos(int x , int y);
 private:
-    int posX;
-    int posY;
+    int posX = 0;
+    int posY = 0;
     int circleX;
     int circleY;
     bool resetPos = true;

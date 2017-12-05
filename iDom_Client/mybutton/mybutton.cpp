@@ -34,7 +34,7 @@ bool myButton::event(QEvent *e)
     }
         break;
     default:
-        qDebug() << "rest event !!! " << e->type();
+        //qDebug() << "rest event !!! " << e->type();
         break;
     }
     return  QPushButton::event(e);
