@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>927</width>
-    <height>583</height>
+    <width>915</width>
+    <height>512</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -276,7 +276,7 @@ border-radius: 0px;
           <item>
            <widget class="myButton" name="push_plusGear">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -300,7 +300,7 @@ border:none;
 }</string>
             </property>
             <property name="text">
-             <string>Up</string>
+             <string>  Up  </string>
             </property>
            </widget>
           </item>
@@ -353,7 +353,7 @@ border:none;
 }</string>
             </property>
             <property name="text">
-             <string>Down</string>
+             <string> Down </string>
             </property>
            </widget>
           </item>
@@ -794,7 +794,7 @@ border-radius: 0px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>927</width>
+     <width>915</width>
      <height>21</height>
     </rect>
    </property>
@@ -835,9 +835,10 @@ border-radius: 0px;
     <addaction name="menuHIGH_beam"/>
     <addaction name="menuLED"/>
     <addaction name="separator"/>
-    <addaction name="actionEXIT"/>
     <addaction name="actioncamera"/>
     <addaction name="actionpad"/>
+    <addaction name="separator"/>
+    <addaction name="actionEXIT"/>
    </widget>
    <addaction name="menuPo_czenie"/>
   </widget>
