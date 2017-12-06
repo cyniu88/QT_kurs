@@ -1,7 +1,7 @@
 #include "joypad.h"
 #include "functions.h"
 JoyPad::JoyPad(int circleX, int circleY , Qt::GlobalColor maxColor, Qt::GlobalColor minColor)
-    : QGraphicsEllipseItem(posX, posY, circleX,circleX)//(posX,posY, circleX,circleX)
+    : QGraphicsEllipseItem(0, 0, circleX,circleX)//(posX,posY, circleX,circleX)
 {
 
     this->circleX = circleX;
@@ -13,10 +13,12 @@ JoyPad::JoyPad(int circleX, int circleY , Qt::GlobalColor maxColor, Qt::GlobalCo
     centralItem = new QGraphicsEllipseItem((circleX-circleY)/2, (circleX-circleY)/2, circleY, circleY, this);
     centralItem->setPos(0, 0);
     centralItem->setBrush(minColor);
+    qDebug() << circleX << circleY << "tak w konstruktorze";
 }
 
 JoyPad::~JoyPad()
 {
+    qDebug()<< "destruktor JoyPad";
     delete centralItem;
 }
 
@@ -51,17 +53,17 @@ bool JoyPad::sceneEvent(QEvent *event)
         if (j < 100 && j > -100){
             JoyY = Y;
         }
-        if (i > 100) i= 100;
-        if ( i <-100) i = -100;
-        if (j > 100) j= 100;
-        if ( j <-100) j = -100;
+        if (i > 100) i = 100;
+        if (i <-100) i = -100;
+        if (j > 100) j = 100;
+        if (j <-100) j = -100;
         emit sendPos( i,j);
         centralItem->setPos(JoyX,JoyY );
         break;
     }
     case QEvent::TouchEnd:
     {
-        if (resetPos== true){
+        if (resetPos == true){
             centralItem->setPos(0,0 );
             emit sendPos(  0,0  );
         }
@@ -84,7 +86,7 @@ void JoyPad::mousePressEvent(QGraphicsSceneMouseEvent *e)
 
 void JoyPad::mouseMoveEvent(QGraphicsSceneMouseEvent *e)
 {
-    qDebug() << "ruszam myszka  " << QCursor::pos() ;
+    //qDebug() << "ruszam myszka" << QCursor::pos() ;
 
     int i = map_f( QCursor::pos().rx()-posX,-1*circleX/2,circleX/2,-100,100);
     int j = map_f( QCursor::pos().ry()-posY,-1*circleX/2,circleX/2,-100,100);
@@ -109,7 +111,7 @@ void JoyPad::mouseMoveEvent(QGraphicsSceneMouseEvent *e)
 
 void JoyPad::mouseReleaseEvent(QGraphicsSceneMouseEvent *e)
 {
-    if (resetPos== true){
+    if (resetPos == true){
         centralItem->setPos(0,0 );
         emit sendPos(  0,0  );
     }
@@ -118,16 +120,16 @@ void JoyPad::mouseReleaseEvent(QGraphicsSceneMouseEvent *e)
 #endif
 void JoyPad::setResetPos(bool flag)
 {
-    resetPos= flag;
+    resetPos = flag;
 }
 
 void JoyPad::resetPosNOW()
 {
-    centralItem->setPos(0,0);
-    emit sendPos(  0,0  );
+    centralItem->setPos(0, 0);
+    emit sendPos(0, 0);
 }
 
 void JoyPad::setPosNOW(int x, int y)
 {
-    centralItem->setPos(x,y);
+    centralItem->setPos(x, y);
 }

@@ -56,35 +56,15 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 
     t1->start(100);
     tFPS->start(1000);
-    double i = 0.50;
-#ifdef Q_OS_WIN
-    i = 0.15;
-#endif
-    int w  =  static_cast<int>(QApplication::desktop()->height()*i);
-    if (w > QApplication::desktop()->width()*i)
-    {
-        w = static_cast<int>(QApplication::desktop()->width()*i);
-    }
-      //joyPadDummy     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
-     // joyPadDummy2     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
-    joyPadDirection = new JoyPad( w , w/4,Qt::red,Qt::yellow);
 
-    joyPadPower     = new JoyPad( w , w/4,Qt::red,Qt::yellow);
+    //TODO
 
-
-    QObject::connect(joyPadDirection, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\
-    QObject::connect(joyPadPower    , SIGNAL(sendPos(int,int) ),this,SLOT(getPosGaz  (int,int) )  );
-    QObject::connect(this , SIGNAL(resetPosNOW()),joyPadDirection,SLOT(resetPosNOW()));
-    QObject::connect(this,SIGNAL(resetPosNOW()),joyPadPower,SLOT(resetPosNOW()));
-
-    QObject::connect(this, SIGNAL(setPosNOW_Right(int,int)), joyPadDirection,SLOT(setPosNOW(int,int)));
-    QObject::connect(this, SIGNAL(setPosNOW_Left (int,int)), joyPadPower    ,SLOT(setPosNOW(int,int)));
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
     ui->gear->display( myGearBox.getGear() );
 
     QApplication::desktop()->height();
-    ui->infoTxt->setText( QString::number(w) );
+   // ui->infoTxt->setText( QString::number(w) );
 
     connect(QGamepadManager::instance(), &QGamepadManager::connectedGamepadsChanged, this,
             []() { qDebug() << "connected gamepads changed:"; });
@@ -119,11 +99,32 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 #ifdef Q_OS_ANDROID
     ui->tabWidget->tabBar()->hide();
 #endif
+    double i = 0.50;
+#ifdef Q_OS_WIN
+    i = 0.15;
+#endif
+    int w  =  static_cast<int>(QApplication::desktop()->height()*i);
+    if (w > QApplication::desktop()->width()*i)
+    {
+        w = static_cast<int>(QApplication::desktop()->width()*i);
+    }
+
+    joyPadDirection = new JoyPad( w, w/4,Qt::red,Qt::green);
+    joyPadPower     = new JoyPad( w, w/4,Qt::red,Qt::green);
+
     sceneDirection.addItem(joyPadDirection);
     scenePower.addItem(joyPadPower);
 
-    ui->graphicsView_gaz ->setScene(&scenePower);
     ui->graphicsView_skret->setScene(&sceneDirection);
+    ui->graphicsView_gaz ->setScene(&scenePower);
+
+    QObject::connect(joyPadDirection, SIGNAL(sendPos(int,int) ),this,SLOT(getPosSkret(int,int) )  );\
+    QObject::connect(joyPadPower    , SIGNAL(sendPos(int,int) ),this,SLOT(getPosGaz  (int,int) )  );
+    QObject::connect(this, SIGNAL(resetPosNOW()),joyPadDirection,SLOT(resetPosNOW()));
+    QObject::connect(this, SIGNAL(resetPosNOW()),joyPadPower    ,SLOT(resetPosNOW()));
+
+    QObject::connect(this, SIGNAL(setPosNOW_Right(int,int)), joyPadDirection,SLOT(setPosNOW(int,int)));
+    QObject::connect(this, SIGNAL(setPosNOW_Left (int,int)), joyPadPower    ,SLOT(setPosNOW(int,int)));
 }
 
 pilotWindow::~pilotWindow()
@@ -204,6 +205,7 @@ void pilotWindow::getButtonEventRelease(int deviceId, QGamepadManager::GamepadBu
 
 void pilotWindow::on_reset_clicked()
 {
+
     emit resetPosNOW();
     droid.vibrate(100);
 }
