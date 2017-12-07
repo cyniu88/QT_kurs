@@ -29,7 +29,7 @@ setAlarm::~setAlarm()
 
 void setAlarm::on_b_hourUp_clicked()
 {
-    int h = ui->lcd_hour->value();
+    int h = static_cast<int>(ui->lcd_hour->value() );
     if (h == 23){
         h = 0;
     }
@@ -41,7 +41,7 @@ void setAlarm::on_b_hourUp_clicked()
 
 void setAlarm::on_b_hourDown_clicked()
 {
-    int h = ui->lcd_hour->value();
+    int h = static_cast<int>(ui->lcd_hour->value() );
     if (h == 0){
         h = 23;
     }
@@ -53,7 +53,7 @@ void setAlarm::on_b_hourDown_clicked()
 
 void setAlarm::on_b_minutesUp_clicked()
 {
-    int m = ui->lcd_minutes->value();
+    int m = static_cast<int>(ui->lcd_minutes->value() );
     if (m == 59){
         m = 0;
     }
@@ -65,7 +65,7 @@ void setAlarm::on_b_minutesUp_clicked()
 
 void setAlarm::on_b_minutesDown_clicked()
 {
-    int m = ui->lcd_minutes->value();
+    int m = static_cast<int>(ui->lcd_minutes->value() );
     if (m == 0){
         m = 59;
     }
@@ -77,8 +77,10 @@ void setAlarm::on_b_minutesDown_clicked()
 
 void setAlarm::on_b_ok_clicked()
 {
-    timeAlarm.set(  static_cast<unsigned int> (ui->lcd_hour->value()),
-                    static_cast<unsigned int> (ui->lcd_minutes->value())   );
+    timeAlarm.set(  static_cast<unsigned int>(ui->lcd_hour->value()),
+                    static_cast<unsigned int>R(ui->lcd_minutes->value())   );
+    Clock timeNow = Clock::getTime();
+
     emit alarmSetSignal(timeAlarm);
 }
 
