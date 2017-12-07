@@ -35,7 +35,7 @@ private:
     void displayHour(int h);
     void displayMinutes(int min);
 signals:
-
+    void messageInfo(QString tit, QString msg);
     void alarmSetSignal(Clock c);
 };
 

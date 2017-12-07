@@ -105,8 +105,12 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     else{
         qDebug()<< "JEEEST PUSTY !!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     }
-    QObject::connect( &vol   ,SIGNAL(setVolumeSingnal(int) ),       this, SLOT(setVolumeValueSlot(int) ));
-    QObject::connect( &alarmWindow, SIGNAL(alarmSetSignal(Clock)),  this, SLOT(alarmHasBeenSet(Clock)  ));
+    QObject::connect(&vol   ,SIGNAL(setVolumeSingnal(int) ),       this, SLOT(setVolumeValueSlot(int) ));
+
+    QObject::connect(&alarmWindow, SIGNAL(alarmSetSignal(Clock)),  this, SLOT(alarmHasBeenSet(Clock)  ));
+    QObject::connect(&alarmWindow, SIGNAL(messageInfo(QString, QString)),
+                     this, SLOT(makeInfo(QString, QString)  ));
+
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
     QObject::connect(&optionsWindow, SIGNAL(s_fontSize(QString))             ,this,SLOT(slot_fontSize(QString))             );
 
@@ -942,6 +946,7 @@ void iDom_Client::on_b_setAlarm_clicked()
         if (reply == QMessageBox::Yes) {
 
             ui->b_setAlarm->setText("SET ALARM CLOCK");
+            makeInfo("ALARM", "alarm został anulowany");
             emit sendTCP("console","iDom alarm OFF");
         }
         else{

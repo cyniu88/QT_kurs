@@ -1,5 +1,6 @@
 #include "setalarm.h"
 #include "ui_setalarm.h"
+#include <QDebug>
 
 setAlarm::setAlarm(QWidget *parent) :
     QDialog(parent),
@@ -78,9 +79,18 @@ void setAlarm::on_b_minutesDown_clicked()
 void setAlarm::on_b_ok_clicked()
 {
     timeAlarm.set(  static_cast<unsigned int>(ui->lcd_hour->value()),
-                    static_cast<unsigned int>R(ui->lcd_minutes->value())   );
-    Clock timeNow = Clock::getTime();
-
+                    static_cast<unsigned int>(ui->lcd_minutes->value())   );
+    Clock timeToAlarm  = Clock::periodOfTime( Clock::getTime(), timeAlarm);
+    qDebug()<<" alarm bedzie za "<<timeToAlarm.h<<" godzin "<< timeToAlarm.min << "minut";
+    QString s = "Alarm jest ustawiony na ";
+    if (timeToAlarm.h > 0){
+        s += QString::number(timeToAlarm.h) + " godz ";
+    }
+    if (timeToAlarm.min > 0){
+        s += QString::number(timeToAlarm.min) + " min ";
+    }
+    s += "od teraz";
+    emit messageInfo("ALARM", s);
     emit alarmSetSignal(timeAlarm);
 }
 
