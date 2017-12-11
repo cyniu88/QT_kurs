@@ -490,3 +490,14 @@ void pilotWindow::on_actionAutomat_triggered()
 {
     on_buttonAutomatGearbox_clicked();
 }
+
+void pilotWindow::on_actionPAUSE_triggered()
+{
+    if (conf->pauseTransmission == true){
+        conf->pauseTransmission = false;
+    }
+    else{
+        conf->pauseTransmission = true;
+        ui->responsTxt->setText("PAUSED");
+    }
+}

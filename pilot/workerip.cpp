@@ -25,6 +25,10 @@ void WorkerIP::run()
             break;
         }
 
+        while (config->pauseTransmission)
+        {
+
+        }
         socket->write(config->messageS.getString().toStdString().c_str());
 
         waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
@@ -77,7 +81,7 @@ void WorkerIP::waitSend(int waitTime, int counter)
             connectAndAuthentication();
             return;
         }
-        if (socket->waitForBytesWritten(waitTime)==true)
+        if (socket->waitForBytesWritten(waitTime) == true)
         {
             return;
         }

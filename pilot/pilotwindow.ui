@@ -825,6 +825,8 @@ border-radius: 0px;
      <addaction name="separator"/>
      <addaction name="actionAdd_address"/>
      <addaction name="actionShow_IP_arp"/>
+     <addaction name="separator"/>
+     <addaction name="actionPAUSE"/>
     </widget>
     <addaction name="actionConnect"/>
     <addaction name="actionDisconnect"/>
@@ -920,6 +922,11 @@ border-radius: 0px;
   <action name="actionAutomat">
    <property name="text">
     <string>Automat</string>
+   </property>
+  </action>
+  <action name="actionPAUSE">
+   <property name="text">
+    <string>PAUSE</string>
    </property>
   </action>
  </widget>

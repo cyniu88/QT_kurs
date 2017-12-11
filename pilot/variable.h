@@ -40,6 +40,7 @@ struct my_config{
     QStringList addressIpList;
     int port;
     bool goWhile = false;
+    bool pauseTransmission = false;
     msg_s messageS;
 };
 

@@ -137,6 +137,8 @@ private slots:
 
     void on_actionAutomat_triggered();
 
+    void on_actionPAUSE_triggered();
+
 private:
     my_config *conf;
     Ui::pilotWindow *ui;
