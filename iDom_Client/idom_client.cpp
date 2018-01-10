@@ -36,6 +36,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     {
         trayIcon.setIcon(QIcon(":/new/prefix1/iDom_client.ico"));
 
+        trayIconMenu.addAction(ui->actionStop_Server);
         trayIconMenu.addAction(ui->actionDisconnect);
         trayIconMenu.addAction(ui->actionCloseApp);
 

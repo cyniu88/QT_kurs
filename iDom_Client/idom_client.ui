@@ -147,8 +147,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>815</width>
-               <height>722</height>
+               <width>807</width>
+               <height>689</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -2755,8 +2755,8 @@ Smog Charts</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>817</width>
-             <height>724</height>
+             <width>809</width>
+             <height>691</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">
@@ -3223,6 +3223,11 @@ QSlider::handle:horizontal {
     <string>Disconnect from server</string>
    </property>
   </action>
+  <action name="actionStop_Server">
+   <property name="text">
+    <string>Stop Server</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="4" margin="2"/>
  <customwidgets>
@@ -3281,6 +3286,22 @@ QSlider::handle:horizontal {
     <hint type="destinationlabel">
      <x>427</x>
      <y>601</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStop_Server</sender>
+   <signal>triggered()</signal>
+   <receiver>b_stopServer</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>427</x>
+     <y>731</y>
     </hint>
    </hints>
   </connection>
