@@ -22,6 +22,7 @@
         <file>files/svg/exit.svg</file>
         <file>files/svg/socketOFF.svg</file>
         <file>files/svg/analog-clock2.svg</file>
+        <file>files/svg/vectorstash-stopsign.svg</file>
     </qresource>
     <qresource prefix="/www">
         <file>myqmlfileforwww.qml</file>

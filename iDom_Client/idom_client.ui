@@ -147,8 +147,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>807</width>
-               <height>689</height>
+               <width>815</width>
+               <height>722</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -2755,8 +2755,8 @@ Smog Charts</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>809</width>
-             <height>691</height>
+             <width>817</width>
+             <height>724</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">
@@ -3224,6 +3224,10 @@ QSlider::handle:horizontal {
    </property>
   </action>
   <action name="actionStop_Server">
+   <property name="icon">
+    <iconset resource="ikony.qrc">
+     <normaloff>:/new/prefix1/files/svg/vectorstash-stopsign.svg</normaloff>:/new/prefix1/files/svg/vectorstash-stopsign.svg</iconset>
+   </property>
    <property name="text">
     <string>Stop Server</string>
    </property>
