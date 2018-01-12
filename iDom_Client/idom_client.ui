@@ -2773,7 +2773,7 @@ Smog Charts</string>
               </property>
              </spacer>
             </item>
-            <item row="1" column="0">
+            <item row="3" column="0">
              <widget class="QToolButton" name="b_printer">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -2826,18 +2826,49 @@ border:none;
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
-             <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+            <item row="3" column="1">
+             <widget class="QToolButton" name="b_listwa">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
               </property>
-              <property name="sizeHint" stdset="0">
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgb(158, 158, 158,125);
+ border: 5px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}
+</string>
+              </property>
+              <property name="text">
+               <string>Listwa zasilania</string>
+              </property>
+              <property name="icon">
+               <iconset resource="ikony.qrc">
+                <normaloff>:/new/prefix1/files/png/surgeProtectorOFF.png</normaloff>
+                <normalon>:/new/prefix1/files/png/surgeProtectorON.png</normalon>:/new/prefix1/files/png/surgeProtectorOFF.png</iconset>
+              </property>
+              <property name="iconSize">
                <size>
-                <width>40</width>
-                <height>20</height>
+                <width>300</width>
+                <height>300</height>
                </size>
               </property>
-             </spacer>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>

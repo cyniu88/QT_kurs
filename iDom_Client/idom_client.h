@@ -236,6 +236,8 @@ private slots:
 
     void on_b_setAlarm_clicked();
 
+    void on_b_listwa_clicked();
+
 public slots:
     void setLcdActual(int c);
     void setLcdAll(int c);

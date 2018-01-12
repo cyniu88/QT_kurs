@@ -23,6 +23,8 @@
         <file>files/svg/socketOFF.svg</file>
         <file>files/svg/analog-clock2.svg</file>
         <file>files/svg/vectorstash-stopsign.svg</file>
+        <file>files/png/surgeProtectorOFF.png</file>
+        <file>files/png/surgeProtectorON.png</file>
     </qresource>
     <qresource prefix="/www">
         <file>myqmlfileforwww.qml</file>

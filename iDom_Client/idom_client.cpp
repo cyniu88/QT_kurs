@@ -865,6 +865,15 @@ void iDom_Client::odb_answer_state(QString s)
             ui->b_printer->setChecked(true);
             droid.makeToast("drukarka uruchomiona");
         }
+        ///////////////////////////////////////////////////////////////
+        if (s == "listwa=OFF" && ui->b_listwa->isChecked() == true){
+            ui->b_listwa->setChecked(false);
+            droid.makeToast("listwa wyłączona");
+        }
+        if (s == "listwa=ON" && ui->b_listwa->isChecked() == false){
+            ui->b_listwa->setChecked(true);
+            droid.makeToast("listwa uruchomiona");
+        }
         ///////////////////////////////////////////////////////////////////
         if (s == "alarm=DEACTIVE" && ui->b_setAlarm->isChecked() == true){
             ui->b_setAlarm->setChecked(false);
@@ -965,4 +974,18 @@ void iDom_Client::on_b_setAlarm_clicked()
     //ui->b_setAlarm->setChecked(true);
     }
 
+}
+
+void iDom_Client::on_b_listwa_clicked()
+{
+    taskHandlerTimer->start();
+    if (ui->b_listwa->isChecked() == true)
+    {
+        emit sendTCP("console","433MHz switch listwa ON");
+    }
+    if (ui->b_listwa->isChecked() == false)
+    {
+        emit sendTCP("console","433MHz switch listwa OFF");
+    }
+    droid.vibrate(200);
 }
