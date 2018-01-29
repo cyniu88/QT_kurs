@@ -1,18 +1,30 @@
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
+#include <iostream>
 
-int main(int argc, char *argv[])
+
+class A{
+    public:
+   virtual ~A() = default;
+};
+
+class B : public A{
+    //int r = 2;
+    public:
+    void print(){
+
+        std::cout <<"jestem w B "<<  std::endl;
+    }
+};
+class C : public A{
+
+};
+
+int main()
 {
-#if defined(Q_OS_WIN)
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-#endif
+    A* a = new A();
 
-    QGuiApplication app(argc, argv);
+    B* b = dynamic_cast<B*>(a);
 
-    QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
-    if (engine.rootObjects().isEmpty())
-        return -1;
-
-    return app.exec();
+    b->print();
+    delete a;
+    return 0;
 }
