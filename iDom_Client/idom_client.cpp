@@ -883,7 +883,15 @@ void iDom_Client::odb_answer_state(QString s)
             ui->b_setAlarm->setChecked(true);
             ui->b_setAlarm->setText("END ALARM CLOCK");
         }
-
+        ///////////////////////////////////////////////////////////////////
+        if (s == "house=UNLOCK" && ui->b_lockUnlock_HOME->isChecked() == true){
+            ui->b_lockUnlock_HOME->setChecked(false);
+            droid.makeToast("dom zablokowany");
+        }
+        if (s == "house=LOCK" && ui->b_lockUnlock_HOME->isChecked() == false){
+            ui->b_lockUnlock_HOME->setChecked(true);
+            droid.makeToast("dom odblokowany");
+        }
         ///////////////////////////////////////////////////////////////////
     }
 }
@@ -986,6 +994,22 @@ void iDom_Client::on_b_listwa_clicked()
     if (ui->b_listwa->isChecked() == false)
     {
         emit sendTCP("console","433MHz switch listwa OFF");
+    }
+    droid.vibrate(200);
+}
+
+void iDom_Client::on_b_lockUnlock_HOME_clicked()
+{
+    taskHandlerTimer->start();
+    if (ui->b_lockUnlock_HOME->isChecked() == false)
+    {
+        emit sendTCP("console","iDom unlock");
+        qDebug("lock");
+    }
+    if (ui->b_lockUnlock_HOME->isChecked() == true)
+    {
+        emit sendTCP("console","iDom lock");
+        qDebug("unlock");
     }
     droid.vibrate(200);
 }

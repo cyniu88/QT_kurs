@@ -238,6 +238,8 @@ private slots:
 
     void on_b_listwa_clicked();
 
+    void on_b_lockUnlock_HOME_clicked();
+
 public slots:
     void setLcdActual(int c);
     void setLcdAll(int c);
