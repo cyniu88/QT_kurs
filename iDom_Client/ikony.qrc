@@ -25,6 +25,8 @@
         <file>files/svg/vectorstash-stopsign.svg</file>
         <file>files/png/surgeProtectorOFF.png</file>
         <file>files/png/surgeProtectorON.png</file>
+        <file>files/png/lock.png</file>
+        <file>files/png/unlock.png</file>
     </qresource>
     <qresource prefix="/www">
         <file>myqmlfileforwww.qml</file>
