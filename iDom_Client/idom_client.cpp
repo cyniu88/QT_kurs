@@ -202,7 +202,6 @@ void iDom_Client::taskHandler()
     default:
         break;
     }
-
 }
 
 void iDom_Client::odb_answer(QString s)
@@ -884,9 +883,14 @@ void iDom_Client::odb_answer_state(QString s)
             ui->b_setAlarm->setText("END ALARM CLOCK");
         }
         ///////////////////////////////////////////////////////////////////
+
         if (s == "house=UNLOCK" && ui->b_lockUnlock_HOME->isChecked() == true){
             ui->b_lockUnlock_HOME->setChecked(false);
             droid.makeToast("dom odblokowany");
+        }
+        if(s == "house=UNDEFINE"){
+            ui->b_lockUnlock_HOME->setChecked(true);
+            droid.makeToast("stan domu niezdefiniowany");
         }
         if (s == "house=LOCK" && ui->b_lockUnlock_HOME->isChecked() == false){
             ui->b_lockUnlock_HOME->setChecked(true);
@@ -979,7 +983,7 @@ void iDom_Client::on_b_setAlarm_clicked()
 #ifdef Q_OS_WIN
         alarmWindow.exec();
 #endif
-    //ui->b_setAlarm->setChecked(true);
+        //ui->b_setAlarm->setChecked(true);
     }
 
 }
