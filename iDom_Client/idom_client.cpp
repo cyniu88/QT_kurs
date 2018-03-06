@@ -842,6 +842,9 @@ void iDom_Client::setVolumeValueSlot(int i)
 void iDom_Client::getPing(QString s)
 {
     ui->ping->setText(s);
+    ui->messagesToSend_number->setText(
+              QString::number(config->workerQueue.Size())
+                );
 }
 
 void iDom_Client::odb_answer_state(QString s)

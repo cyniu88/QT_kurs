@@ -734,7 +734,27 @@ border:none;
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
-          <item row="4" column="3" colspan="2">
+          <item row="4" column="0">
+           <widget class="QLineEdit" name="messagesToSend">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 255, 0);
+border: none ;</string>
+            </property>
+            <property name="text">
+             <string>Messages to send:</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="4" colspan="2">
            <widget class="QLCDNumber" name="lcdNumberActual">
             <property name="minimumSize">
              <size>
@@ -769,7 +789,7 @@ border: none ;</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0" colspan="5">
+          <item row="1" column="0" colspan="6">
            <widget class="QComboBox" name="comboBox">
             <property name="minimumSize">
              <size>
@@ -864,7 +884,7 @@ QComboBox::down-arrow {
             </item>
            </widget>
           </item>
-          <item row="0" column="5" rowspan="2">
+          <item row="0" column="6" rowspan="2">
            <widget class="QPushButton" name="b_sendConsole">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
@@ -903,7 +923,7 @@ border:none;
             </property>
            </widget>
           </item>
-          <item row="4" column="2">
+          <item row="4" column="3">
            <widget class="QLineEdit" name="ping">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -920,7 +940,7 @@ border: none ;</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="0" colspan="6">
+          <item row="2" column="0" colspan="7">
            <widget class="QTextEdit" name="txtAnswer">
             <property name="font">
              <font>
@@ -969,7 +989,7 @@ p, li { white-space: pre-wrap; }
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
+          <item row="4" column="2">
            <widget class="QLineEdit" name="pingName">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -989,7 +1009,7 @@ border: none ;</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="5">
+          <item row="4" column="6">
            <widget class="QLCDNumber" name="lcdNumberAll">
             <property name="styleSheet">
              <string notr="true">color: rgb(255, 255, 0);
@@ -1001,7 +1021,7 @@ border: none ;</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="0" colspan="6">
+          <item row="3" column="0" colspan="7">
            <widget class="QProgressBar" name="progressBar">
             <property name="minimumSize">
              <size>
@@ -1025,6 +1045,23 @@ QProgressBar::chunk {
             </property>
             <property name="invertedAppearance">
              <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="messagesToSend_number">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 255, 0);
+border: none ;</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
