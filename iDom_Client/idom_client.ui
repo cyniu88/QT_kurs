@@ -147,8 +147,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>815</width>
-               <height>722</height>
+               <width>807</width>
+               <height>689</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -742,6 +742,11 @@ border:none;
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>5</pointsize>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(0, 255, 0);
 border: none ;</string>
@@ -756,6 +761,12 @@ border: none ;</string>
           </item>
           <item row="4" column="4" colspan="2">
            <widget class="QLCDNumber" name="lcdNumberActual">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -926,10 +937,15 @@ border:none;
           <item row="4" column="3">
            <widget class="QLineEdit" name="ping">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>5</pointsize>
+             </font>
             </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(0, 255, 0);
@@ -997,6 +1013,11 @@ p, li { white-space: pre-wrap; }
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>5</pointsize>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(0, 255, 0);
 border: none ;</string>
@@ -1011,6 +1032,12 @@ border: none ;</string>
           </item>
           <item row="4" column="6">
            <widget class="QLCDNumber" name="lcdNumberAll">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(255, 255, 0);
  
@@ -1055,6 +1082,11 @@ QProgressBar::chunk {
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>5</pointsize>
+             </font>
             </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(0, 255, 0);
@@ -2795,8 +2827,8 @@ Smog Charts</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>817</width>
-             <height>724</height>
+             <width>809</width>
+             <height>691</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">
