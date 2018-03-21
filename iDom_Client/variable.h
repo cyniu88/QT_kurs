@@ -30,6 +30,7 @@ struct iDom_CONFIG {
     bool isConnectedToServer = false;
     std::string m_RSHash = "";
     bool encrypted = true;
+    bool houseLocked = false;
 };
 struct iDom_SYSTEM_INFO{
     QString currentCpuArchitecture = "NULL" ;

@@ -20,7 +20,8 @@
 iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::iDom_Client),
-    config(config)
+    config(config),
+    alarmWindow(config)
 {
     ui->setupUi(this);
 
@@ -889,6 +890,8 @@ void iDom_Client::odb_answer_state(QString s)
 
         if (s == "house=UNLOCK" && ui->b_lockUnlock_HOME->isChecked() == true){
             ui->b_lockUnlock_HOME->setChecked(false);
+            qDebug() << "UNLOCK HOUSE";
+            config->houseLocked = false;
             droid.makeToast("dom odblokowany");
         }
         if(s == "house=UNDEFINE"){
@@ -897,6 +900,8 @@ void iDom_Client::odb_answer_state(QString s)
         }
         if (s == "house=LOCK" && ui->b_lockUnlock_HOME->isChecked() == false){
             ui->b_lockUnlock_HOME->setChecked(true);
+            qDebug() << "LOCK HOUSE";
+            config->houseLocked = true;
             droid.makeToast("dom zablokowany");
         }
         ///////////////////////////////////////////////////////////////////
@@ -1011,12 +1016,14 @@ void iDom_Client::on_b_lockUnlock_HOME_clicked()
     if (ui->b_lockUnlock_HOME->isChecked() == false)
     {
         emit sendTCP("console","iDom unlock");
-        qDebug("lock");
+        qDebug() << "UNLOCK HOUSE";
+        config->houseLocked = false;
     }
     if (ui->b_lockUnlock_HOME->isChecked() == true)
     {
         emit sendTCP("console","iDom lock");
-        qDebug("unlock");
+        qDebug() << "LOCK HOUSE";
+        config->houseLocked = true;
     }
     droid.vibrate(200);
 }

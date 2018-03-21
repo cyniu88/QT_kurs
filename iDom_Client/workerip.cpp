@@ -42,7 +42,8 @@ void WorkerIP::run()
             emit serverDisconnected();
             break;
         }
-        qDebug() << "wyslano: "<< sendMsgTCP( addresOUT.what );
+        //qDebug() << "wyslano: "<<
+        sendMsgTCP( addresOUT.what );
 
 
         buffor = readMsgTCP();
@@ -88,15 +89,15 @@ void WorkerIP::run()
         pingTimeMilis = pingStart.msecsTo( QDateTime::currentDateTime());
 
         emit pingTime(QString::number((double)(pingTimeMilis/1000) )+" sec");
-     //   qDebug() << "PING " << (double)(pingTimeMilis/1000);
+        //   qDebug() << "PING " << (double)(pingTimeMilis/1000);
     }
 
-//  }
-// close the connection
-config->isConnectedToServer = false;
-disconnectFromServer();
-qDebug("koniec koncow workera @@@@@@@@@@@@");
-config->goWhile=true;
+    //  }
+    // close the connection
+    config->isConnectedToServer = false;
+    disconnectFromServer();
+    qDebug("koniec koncow workera @@@@@@@@@@@@");
+    config->goWhile=true;
 }
 
 bool WorkerIP::connectAndAuthentication()
@@ -212,10 +213,10 @@ std::string WorkerIP::readMsgTCP()
     crypt(buf,config->m_RSHash,config->encrypted );
     sendMsgTCP( "OK");
     waitSend(waitTime, counterWaitTime);            //socket->waitForBytesWritten(waitTime);
-   // qDebug() << "odebralismy "<< buf.c_str();
+    // qDebug() << "odebralismy "<< buf.c_str();
     unsigned int size  = atoi(buf.c_str());
     buf.erase();
-  //  qDebug() << "int do odebrania  "<< size;
+    //  qDebug() << "int do odebrania  "<< size;
     while(true){
         waitRecv(waitTime, counterWaitTime); // socket->waitForReadyRead(waitTime);
 

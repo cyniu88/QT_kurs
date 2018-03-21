@@ -1,8 +1,9 @@
 #include "setalarm.h"
 #include "ui_setalarm.h"
 #include <QDebug>
+#include <QMessageBox>
 
-setAlarm::setAlarm(QWidget *parent) :
+setAlarm::setAlarm(iDom_CONFIG *config, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::setAlarm)
 {
@@ -21,6 +22,7 @@ setAlarm::setAlarm(QWidget *parent) :
 
     displayHour(7);
     displayMinutes(0);
+    m_config = config;
 }
 
 setAlarm::~setAlarm()
@@ -92,6 +94,10 @@ void setAlarm::on_b_ok_clicked()
     s += "od teraz";
     emit messageInfo("ALARM", s);
     emit alarmSetSignal(timeAlarm);
+
+    if(m_config->houseLocked == true){
+        QMessageBox::information(this,"ALERT","house has locked , ALARM NOT WORKING");
+    }
 }
 
 void setAlarm::displayHour(int h)

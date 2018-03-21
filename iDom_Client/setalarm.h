@@ -3,19 +3,19 @@
 
 #include <QDialog>
 #include "../libs/useful/useful.h"
-
+#include "variable.h"
 
 namespace Ui {
 class setAlarm;
 }
 
-class setAlarm : public QDialog
+class  setAlarm: public QDialog
 {
     Q_OBJECT
-
+    iDom_CONFIG *m_config;
     Clock timeAlarm;
 public:
-    explicit setAlarm(QWidget *parent = 0);
+    explicit setAlarm(iDom_CONFIG *config, QWidget *parent = 0);
     ~setAlarm();
 
 private slots:
