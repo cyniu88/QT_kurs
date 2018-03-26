@@ -92,7 +92,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 0);
-color: rgb(0, 255, 0);
+color: rgb(255, 255, 255);
 gridline-color: rgb(255, 0, 0);
 alternate-background-color: rgba(0, 0, 0, 0);
 border-color: rgb(255, 255, 255,255);</string>
@@ -205,8 +205,8 @@ border-color: rgb(255, 255, 255,255);</string>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -260,8 +260,8 @@ border:none;
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -292,8 +292,8 @@ border:none;
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -325,8 +325,8 @@ border:none;
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -415,8 +415,8 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -446,8 +446,8 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -475,8 +475,8 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 34px;}
@@ -502,8 +502,8 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -537,8 +537,8 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -566,8 +566,8 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -627,8 +627,8 @@ background-color: rgba(170, 0, 0, 10);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -671,8 +671,8 @@ border:none;
           <property name="styleSheet">
            <string notr="true">
 QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
 image: url(:/new/prefix1/files/player/stop.png);
@@ -748,8 +748,8 @@ border:none;
             <property name="styleSheet">
              <string notr="true">QComboBox {
  border-radius: 0px;
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 	border-color:grey;
 	color:white;
     font-family:  &quot;Franklin Gothic Medium&quot;;
@@ -851,17 +851,16 @@ QComboBox::down-arrow {
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
-    font: bold 34px;
-  Text-align:center;
+ font: bold ;
+font-size: 20px;
 }
 QPushButton:pressed {
 border:none;
-}
- </string>
+}</string>
             </property>
             <property name="text">
              <string>SEND</string>
@@ -884,7 +883,7 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">background-color: transparent;
-color: rgb(0, 255, 0);
+color: rgb(255, 255, 255);
 border: none ;</string>
             </property>
             <property name="verticalScrollBarPolicy">
@@ -932,11 +931,11 @@ p, li { white-space: pre-wrap; }
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 0);
-background-color: rgba(0, 255, 0, 25);
+             <string notr="true">
+background-color: rgba(255, 255, 255, 25);
 text-align: center;
 QProgressBar::chunk {
-    background-color: #CD96CD;
+    background-color: #FFFFFF;
     width: 10px;
     margin: 0.5px;
 
@@ -966,7 +965,7 @@ QProgressBar::chunk {
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(0, 255, 0);
+               <string notr="true">color: rgb(255, 255, 255);
 border: none ;</string>
               </property>
               <property name="text">
@@ -994,7 +993,7 @@ border: none ;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(0, 255, 0);
+               <string notr="true">color: rgb(255, 255, 255);
 border: none ;</string>
               </property>
               <property name="text">
@@ -1019,7 +1018,7 @@ border: none ;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(0, 255, 0);
+               <string notr="true">color: rgb(255, 255, 255);
 border: none ;</string>
               </property>
               <property name="text">
@@ -1044,7 +1043,7 @@ border: none ;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(0, 255, 0);
+               <string notr="true">color: rgb(255, 255, 255);
 border: none ;</string>
               </property>
               <property name="text">
@@ -1079,7 +1078,7 @@ border: none ;</string>
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 0);
+               <string notr="true">color: rgb(255, 255, 255);
 border: none ;</string>
               </property>
               <property name="frameShape">
@@ -1108,7 +1107,7 @@ border: none ;</string>
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 0);
+               <string notr="true">color: rgb(255, 255, 255);
 border: none ;</string>
               </property>
               <property name="digitCount">
@@ -1140,7 +1139,7 @@ border: none ;</string>
           </property>
           <property name="styleSheet">
            <string notr="true"> border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1206,7 +1205,7 @@ background-color: rgba(0, 0, 0, 0);</string>
            <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(0, 0, 0);
  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1233,7 +1232,7 @@ border-color: rgb(255, 255, 255);
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1324,7 +1323,7 @@ border-radius:   23px;
  color: rgb(0, 0, 0);
  
  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
@@ -1380,7 +1379,7 @@ border-color: rgb(255, 255, 255);
            <string notr="true">color: rgb(0, 0, 0);
  background-color: rgb(255, 128, 0);
  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1407,7 +1406,7 @@ border-color: rgb(255, 255, 255);
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1436,7 +1435,7 @@ background-color: rgb(207, 47, 47);</string>
            <string notr="true"> border-style: outset;
 color: rgb(255, 255, 255);
 background-color: rgb(0, 0, 0);
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
@@ -1462,7 +1461,7 @@ border-color: rgb(255, 255, 255);
           </property>
           <property name="styleSheet">
            <string notr="true"> border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1492,7 +1491,7 @@ background-color: rgb(0, 128, 0);</string>
   
  
  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
@@ -1523,7 +1522,7 @@ border-color: rgb(255, 255, 255);
  
  
  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
@@ -1549,7 +1548,7 @@ border-color: rgb(255, 255, 255);
           </property>
           <property name="styleSheet">
            <string notr="true"> border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1577,7 +1576,7 @@ background-color: rgb(178, 34, 34);</string>
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
   border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1609,7 +1608,7 @@ background-color: rgb(255, 192, 0);</string>
           </property>
           <property name="styleSheet">
            <string notr="true"> border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1638,7 +1637,7 @@ color: rgb(0, 0, 0);</string>
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
   border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1665,7 +1664,7 @@ background-color: rgb(147, 246, 0);</string>
           </property>
           <property name="styleSheet">
            <string notr="true"> border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1700,7 +1699,7 @@ background-color: rgb(128, 0, 128);</string>
            <string notr="true"> border-style: outset;
 color: rgb(255, 255, 255);
 background-color: rgb(0, 0, 0);
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
@@ -1727,7 +1726,7 @@ border-color: rgb(255, 255, 255);
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
   border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1765,7 +1764,7 @@ background-color: rgb(255, 165, 0);</string>
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1793,7 +1792,7 @@ background-color: rgb(255, 255, 153);</string>
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
   border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1889,7 +1888,7 @@ background-color: rgb(204, 93, 43);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1916,7 +1915,7 @@ background-color: rgb(8, 37, 103);</string>
           </property>
           <property name="styleSheet">
            <string notr="true"> border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -1944,7 +1943,7 @@ background-color: rgb(98, 0, 44);
           </property>
           <property name="styleSheet">
            <string notr="true"> border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -2012,7 +2011,7 @@ background-color: rgb(112, 32, 31);
           </property>
           <property name="styleSheet">
            <string notr="true"> border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -2040,7 +2039,7 @@ background-color: rgb(0, 127, 255);</string>
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
   border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -2078,7 +2077,7 @@ background-color: rgb(0, 255, 255);</string>
  
  
  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
      /* border-radius: 10px;*/
     border-color: beige;
@@ -2120,7 +2119,7 @@ border-color: rgb(255, 255, 255);
            <string notr="true">color: rgb(0, 0, 0);
  background-color: rgb(255, 0, 0);
  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
   /* border-radius: 10px;*/
     border-color: beige;
@@ -2193,7 +2192,7 @@ border-radius:   23px;
           </property>
           <property name="styleSheet">
            <string notr="true"> border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(255, 255, 255);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -2222,7 +2221,7 @@ background-color: rgb(75, 0, 130);</string>
            <string notr="true">color: rgb(0, 0, 0);
  background-color: rgb(255, 255, 255);
  border-style: outset;
-    border-width: 4px;
+    border-width: 1px;
 border-color: rgb(0, 0, 0);
    /* border-radius: 10px;*/
     border-color: beige;
@@ -2270,8 +2269,8 @@ border-color: rgb(0, 0, 0);
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
 }
@@ -2313,8 +2312,8 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold  ;
@@ -2349,8 +2348,8 @@ SLEEP MODE</string>
               </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
 
@@ -2387,8 +2386,8 @@ TEMPERATURE</string>
               </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
 }
@@ -2440,8 +2439,8 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
 }
@@ -2476,8 +2475,8 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
 }
@@ -2513,8 +2512,8 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
 }
@@ -2554,8 +2553,8 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
 }
@@ -2606,8 +2605,8 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
 font: bold 20px ;
@@ -2638,6 +2637,9 @@ border:none;
                 <pointsize>14</pointsize>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
               <property name="text">
                <string>Outside</string>
               </property>
@@ -2664,7 +2666,7 @@ border:none;
                <enum>Qt::LeftToRight</enum>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(0, 255, 0);</string>
+               <string notr="true">color: rgb(255, 255, 255);</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::NoFrame</enum>
@@ -2703,6 +2705,9 @@ border:none;
               <property name="layoutDirection">
                <enum>Qt::LeftToRight</enum>
               </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
               <property name="text">
                <string>Inside</string>
               </property>
@@ -2725,7 +2730,7 @@ border:none;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(0, 255, 0);</string>
+               <string notr="true">color: rgb(255, 255, 255);</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::NoFrame</enum>
@@ -2756,6 +2761,9 @@ border:none;
             <property name="layoutDirection">
              <enum>Qt::LeftToRight</enum>
             </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);</string>
+            </property>
             <property name="text">
              <string>TEMPERATURE</string>
             </property>
@@ -2776,8 +2784,8 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
 font: bold 20px ;
@@ -2876,8 +2884,8 @@ Smog Charts</string>
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -2929,8 +2937,8 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -2973,8 +2981,8 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold 20px;
@@ -3081,9 +3089,10 @@ border:none;
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(0, 255, 0);
-border: none ;
-background-color: rgba(0, 0, 0, 0);</string>
+           <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(158, 158, 158,50);
+ border: none;
+border-radius: 0px;</string>
           </property>
           <property name="inputMask">
            <string/>
@@ -3107,9 +3116,10 @@ background-color: rgba(0, 0, 0, 0);</string>
            <enum>Qt::LeftToRight</enum>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(0, 255, 0);
-border: none ;
-background-color: rgba(0, 0, 0, 0);</string>
+           <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(158, 158, 158,50);
+ border: none;
+border-radius: 0px;</string>
           </property>
           <property name="frame">
            <bool>false</bool>
@@ -3137,8 +3147,10 @@ background-color: rgba(0, 0, 0, 0);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgba(0, 0, 0, 0);
-border: none ;
-color: rgb(0, 255, 0);</string>
+background-color: rgb(158, 158, 158,50);
+ border: none;
+border-radius: 0px;
+color: rgb(255, 255,255);</string>
           </property>
           <property name="inputMask">
            <string/>
@@ -3177,8 +3189,8 @@ color: rgb(0, 255, 0);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  font: bold ;
@@ -3227,8 +3239,8 @@ border:none;
         <property name="styleSheet">
          <string notr="true">
 QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border:1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  image: url(:/new/prefix1/files/Green_Arrow_Left.svg);
@@ -3273,7 +3285,7 @@ border:none;
         <property name="styleSheet">
          <string notr="true">background-color: rgba(0, 0, 0, 0);
 border: none ;
-color: rgb(0, 255, 0);</string>
+color: rgb(255, 255,255);</string>
         </property>
         <property name="frame">
          <bool>false</bool>
@@ -3302,8 +3314,8 @@ color: rgb(0, 255, 0);</string>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,125);
- border: 5px solid #8f8f91;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
  image: url(:/new/prefix1/files/Green_Arrow_Right.svg);
@@ -3343,7 +3355,7 @@ border:none;
        <string notr="true">QSlider::groove:horizontal {
     
     height: 10px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #007FFF, stop:1 #EEEEEE);
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FFFFFF, stop:1 #EEEEEE);
     margin: 2px 0;
 }
 

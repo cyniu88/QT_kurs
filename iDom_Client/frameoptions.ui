@@ -39,10 +39,11 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
- border: 2px solid #8f8f91;
-border-radius: 15px;
-	color: rgb(170, 255, 0);
+        <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,5);
+border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
 }
 QPushButton:pressed {
 border:none;
@@ -62,15 +63,15 @@ border:none;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
- border: 2px solid #8f8f91;
-border-radius: 15px;
-	color: rgb(170, 255, 0);
+        <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,50);
+border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
 }
 QPushButton:pressed {
 border:none;
-}
-   </string>
+}</string>
        </property>
        <property name="text">
         <string>Apply</string>
@@ -85,15 +86,15 @@ border:none;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton {background-color: qradialgradient(spread:pad, cx:0.499807, cy:0.489, radius:0.5, fx:0.499, fy:0.488909, stop:0.0795455 rgba(0, 147, 185, 255), stop:1 rgba(30, 30, 30, 155));
- border: 2px solid #8f8f91;
-border-radius: 15px;
-	color: rgb(170, 255, 0);
+        <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,50);
+border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
 }
 QPushButton:pressed {
 border:none;
-}
-   </string>
+}</string>
        </property>
        <property name="text">
         <string>OK</string>
@@ -105,7 +106,7 @@ border:none;
    <item row="0" column="0">
     <widget class="QTextEdit" name="textEditCommandList">
      <property name="styleSheet">
-      <string notr="true">color: rgb(0, 255, 0);</string>
+      <string notr="true">color: rgb(255, 255,255);</string>
      </property>
     </widget>
    </item>
@@ -118,7 +119,12 @@ border:none;
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(170, 255, 0);</string>
+      <string notr="true">
+background-color: rgb(158, 158, 158,50);
+border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+</string>
      </property>
      <property name="text">
       <string>www.wp.pl</string>
@@ -136,7 +142,12 @@ border:none;
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(0, 255, 0);</string>
+        <string notr="true">
+background-color: rgb(158, 158, 158,50);
+border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+</string>
        </property>
        <property name="text">
         <string>Encrypt MSG</string>
@@ -160,11 +171,10 @@ border:none;
        <property name="styleSheet">
         <string notr="true">
 QComboBox {
- 
-background-color: rgba(0, 255, 0, 50);
+background-color: rgb(158, 158, 158,50);
  border: true;
-	border-color: rgb(0, 255, 0);
-	color: rgb(0, 255, 0);
+	border: 1px solid #8f8f91;
+	color: rgb(255, 255, 255);
     font-family:  &quot;Franklin Gothic Medium&quot;;
     font-size:  25px;
 }
