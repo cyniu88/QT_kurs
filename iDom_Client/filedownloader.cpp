@@ -6,12 +6,7 @@ FileDownloader::FileDownloader(QUrl imageUrl, QObject *parent) :
  connect(
   &m_WebCtrl, SIGNAL (finished(QNetworkReply*)),
   this, SLOT (fileDownloaded(QNetworkReply*))
-  );
-}
-
-FileDownloader::~FileDownloader()
-{
-
+             );
 }
 
 void FileDownloader::fileDownloaded(QNetworkReply* pReply) {

@@ -58,7 +58,7 @@ private:
 
     QTimer *taskHandlerTimer;
     /////////// okno dla www
-    wwwShowWindow *wwwWindow = NULL;
+    wwwShowWindow *wwwWindow = nullptr;
     VolumeDialog vol;
     setAlarm alarmWindow;
     FrameOptions optionsWindow;
@@ -71,7 +71,7 @@ private:
     Thermometer termoIN;
     Thermometer termoOUT;
 
-    FileDownloader *m_pImgCtrl = NULL;
+    FileDownloader *m_pImgCtrl = nullptr;
     bool cameraWork = false;
     QPixmap pima;
     QString cameraAddressHTTP = "";

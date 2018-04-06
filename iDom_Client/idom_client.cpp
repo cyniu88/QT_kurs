@@ -1,21 +1,21 @@
-#include <QPixmap>
-#include <QStackedWidget>
-#include <QDebug>
-#include <QDial>
-#include <QDesktopWidget>
 #include <QColorDialog>
 #include <QDateTime>
-#include <QSysInfo>
+#include <QDebug>
+#include <QDesktopWidget>
+#include <QDial>
+#include <QPixmap>
 #include <QSettings>
+#include <QStackedWidget>
+#include <QSysInfo>
 
 #ifdef Q_OS_ANDROID
 
 #endif
 
+#include "functions.h"
 #include "idom_client.h"
 #include "ui_idom_client.h"
 #include "workerip.h"
-#include "functions.h"
 
 iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QMainWindow(parent),
@@ -740,7 +740,7 @@ void iDom_Client::on_horizontalSlider_tabNavigate_valueChanged(int value)
 
 void iDom_Client::on_b_showTemperatureCharts_clicked()
 {
-    if (wwwWindow!= NULL){
+    if (wwwWindow != nullptr ){
         qDebug() << "kasuje bo nie jest null";
         delete wwwWindow;
     }
@@ -925,11 +925,11 @@ void iDom_Client::on_b_sms_clicked()
 {
     droid.sendSMS("506496722","test sms ");
     std::string m = "jeden";
-    m.push_back((char)0);
+    m.push_back(static_cast<char>(0));
     m.append("dwa");
     qDebug() << "testowy string " <<  m.size();
     foreach (auto t, m) {
-        qDebug()<< (int)t;
+        qDebug()<< static_cast<int>(t);
     }
     emit sendTCP("console",m);
 }

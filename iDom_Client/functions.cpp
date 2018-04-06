@@ -1,6 +1,7 @@
 #include "functions.h"
-#include <time.h>
+#include <ctime>
 #include <sstream>
+
 namespace std {
 
 template <typename T>
@@ -10,7 +11,7 @@ std::string to_string(T value)
     os << value ;
     return os.str() ;
 }
-}
+} // namespace std
 std::string RSHash(std::string data, unsigned int b, unsigned int a )
 {
     time_t act_time;

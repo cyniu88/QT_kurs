@@ -1,18 +1,18 @@
 #ifndef FILEDOWNLOADER_H
 #define FILEDOWNLOADER_H
 
-#include <QObject>
 #include <QByteArray>
 #include <QNetworkAccessManager>
-#include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QObject>
 
 class FileDownloader : public QObject
 {
     Q_OBJECT
 public:
-    explicit FileDownloader(QUrl imageUrl, QObject *parent = 0);
-    virtual ~FileDownloader();
+    explicit FileDownloader(QUrl imageUrl, QObject *parent = nullptr);
+    ~FileDownloader() = default;
     QByteArray downloadedData() const;
     void getSnap();
     void setAddress(QString address);
