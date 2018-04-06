@@ -1,30 +1,29 @@
-#include <QTimer>
 #include <QApplication>
-#include <QObject>
 #include <QDebug>
+#include <QObject>
 #include <QSettings>
+#include <QTimer>
 
 #ifdef Q_OS_ANDROID
 #include <QtWebView>
 #endif
 
-#include "workerip.h"
 #include "idom_client.h"
 #include "variable.h"
+#include "workerip.h"
 
 //std::string buffor;
 
 int main(int argc, char *argv[])
 {
-    QTimer *infoMPDtimer = new QTimer ();
-    QTimer *infoTemperatureTimer = new QTimer();
-   // QTimer *taskHandlerTimer = new QTimer ();
+    auto *infoMPDtimer = new QTimer ();
+    auto *infoTemperatureTimer = new QTimer();
 
     iDom_CONFIG config;
     QSettings settings("cyniu", "iDom");
     QString ip = settings.value("serverAddres").toString();
     config.serverIP = ip.toStdString();
-    WorkerIP * worker = new WorkerIP(&config);
+    auto * worker = new WorkerIP(&config);
     config.worketPTR  = worker;
     QApplication a(argc, argv);
 

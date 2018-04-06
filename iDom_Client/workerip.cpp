@@ -1,8 +1,8 @@
 #include "workerip.h"
 #include <QDebug>
-#include <QTcpSocket>
-#include <QString>
 #include <QElapsedTimer>
+#include <QString>
+#include <QTcpSocket>
 
 WorkerIP::WorkerIP(iDom_CONFIG *config) : config(config)
 {
@@ -46,49 +46,49 @@ void WorkerIP::run()
         sendMsgTCP( addresOUT.what );
 
 
-        buffor = readMsgTCP();
+        buffor = QString::fromStdString(readMsgTCP());
 
         if (addresOUT.address == "console"){
-            emit answer( QString::fromStdString(buffor));
+            emit answer(buffor);
         }
         else if(addresOUT.address == "LED")
         {
-            emit answerLED(QString::fromStdString(buffor));
+            emit answerLED(buffor);
         }
         else if (addresOUT.address == "MPD")
         {
-            emit answerMPD(QString::fromStdString(buffor));
+            emit answerMPD(buffor);
         }
         else if (addresOUT.address == "MPD_volume")
         {
-            emit mpd_volumeInfo   (QString::fromStdString(buffor));
+            emit mpd_volumeInfo(buffor);
         }
         else if (addresOUT.address == "MPD_title")
         {
-            emit mpd_title_info (QString::fromStdString(buffor));
+            emit mpd_title_info (buffor);
         }
         else if (addresOUT.address == "temperature")
         {
-            emit temperature (QString::fromStdString(buffor));
+            emit temperature (buffor);
         }
         else if (addresOUT.address == "tools")
         {
-            emit tools (QString::fromStdString(buffor));
+            emit tools (buffor);
         }
         else if (addresOUT.address == "listMPD")
         {
-            emit listMPD(QString::fromStdString(buffor));
+            emit listMPD(buffor);
         }
         else if (addresOUT.address == "state")
         {
-            emit answerState(QString::fromStdString(buffor));
+            emit answerState(buffor);
         }
         else if (addresOUT.address =="TTS"){
-            emit signalFromTTS(QString::fromStdString(buffor));
+            emit signalFromTTS(buffor);
         }
         pingTimeMilis = pingStart.msecsTo( QDateTime::currentDateTime());
 
-        emit pingTime(QString::number((double)(pingTimeMilis/1000) )+" sec");
+        emit pingTime(QString::number(static_cast<double>(pingTimeMilis/1000) )+" sec");
         //   qDebug() << "PING " << (double)(pingTimeMilis/1000);
     }
 
@@ -107,14 +107,15 @@ bool WorkerIP::connectAndAuthentication()
 
     for (int i =0 ; i<3 ;++i)
     {
-        config->m_RSHash = RSHash(); //generowanie klucza
+        std::string t = "";
+        config->m_RSHash = RSHash(t); //generowanie klucza
         qDebug() << "RSHASH: " << config->m_RSHash.c_str();
         socket->connectToHost(config->serverIP.c_str(),config->serverPort);
         if(socket->waitForConnected())
         {
             sendMsgTCP( config->m_RSHash );
 
-            buffor = readMsgTCP();
+            buffor = QString::fromStdString(readMsgTCP());
 
             if (buffor[0]=='O' && buffor[1]=='K'){
                 qDebug ()<< "Autentykacja ok";

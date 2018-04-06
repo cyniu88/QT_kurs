@@ -176,7 +176,8 @@ void iDom_Client::setCommandListInOptions()
         commandString += ui->comboBox->itemText( i );
         commandString += "*";
     }
-    optionsWindow.setCommandList(commandString.split("*"));
+    QStringList sList = commandString.split("*");
+    optionsWindow.setCommandList(sList);
 }
 
 void iDom_Client::on_b_exit_released()

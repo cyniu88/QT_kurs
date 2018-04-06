@@ -2,26 +2,28 @@
 #define WORKERIP_H
 
 #include <QMessageBox>
+#include <QObject>
 #include <QTcpSocket>
 #include <QThread>
-#include <QObject>
 #include <QTime>
+
+#include "blocking_queue/blocking_queue.h"
 #include "functions.h"
 #include "variable.h"
-#include "blocking_queue/blocking_queue.h"
 
 
 class WorkerIP : public QThread
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
     WorkerIP(iDom_CONFIG * config);
     ~WorkerIP()= default;
-    void run();
+
+    void run() final;
     iDom_CONFIG *config;
 
 private:
-    std::string buffor;
+    QString buffor;
     int counter = 0;
     int counter2 = 0;
     int progresCounter = 0;
@@ -33,7 +35,7 @@ private:
     QDateTime pingStart;
     double pingTimeMilis;
     QTcpSocket *socket;
-   // std::string buffor;
+    // std::string buffor;
     bool connectAndAuthentication();
     bool disconnectFromServer();
     void waitSend(int waitTime, int counter);
@@ -63,6 +65,7 @@ signals:
 public slots:
     void fromTCP(std::string addres, std::string qmsg);
     void tcpSocketDisconnected();
+
 };
 
 #endif // WORKERIP_H

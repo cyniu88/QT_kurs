@@ -1,6 +1,7 @@
 #include "functions.h"
 #include <ctime>
 #include <sstream>
+#include <string>
 
 namespace std {
 
@@ -12,7 +13,7 @@ std::string to_string(T value)
     return os.str() ;
 }
 } // namespace std
-std::string RSHash(std::string data, unsigned int b, unsigned int a )
+std::string RSHash(std::string &data, unsigned int b, unsigned int a )
 {
     time_t act_time;
     struct tm * act_date;
@@ -25,9 +26,9 @@ std::string RSHash(std::string data, unsigned int b, unsigned int a )
     str+=data;
     unsigned int hash = 0;
 
-    for(std::size_t i = 0; i < str.length(); i++)
+    for(char i : str)
     {
-        hash = hash * a + str[i];
+        hash = hash * a + static_cast<unsigned int>(i);
         a    = a * b;
     }
     return std::to_string((hash & 0x7FFFFFFF));
@@ -40,10 +41,9 @@ void crypt (std::string & toEncrypt, std::string key,bool encrypted)
     }
     unsigned int keySize = key.size();
 
-    for (unsigned int i = 0; i < toEncrypt.size (); i++)
+    for (char & i : toEncrypt)
     {
-        toEncrypt[i] ^= key[keySize];
-        //std::cout << key[keySize];
+        i ^= key[keySize];
 
         if (keySize==0){
             keySize = key.size();

@@ -1,5 +1,7 @@
 #include <QDebug>
 #include <QSettings>
+#include <QStringList>
+
 #include "frameoptions.h"
 #include "ui_frameoptions.h"
 
@@ -25,7 +27,7 @@ void FrameOptions::setConfigFile(iDom_CONFIG *config)
 
 }
 
-void FrameOptions::setCommandList(QStringList commandList)
+void FrameOptions::setCommandList(QStringList &commandList)
 {
     this->commandList = commandList;
     ui->textEditCommandList->setText(this->commandList.join('\n'));

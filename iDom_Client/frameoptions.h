@@ -16,7 +16,7 @@ public:
     explicit FrameOptions(QWidget *parent = 0);
     ~FrameOptions();
     void setConfigFile(iDom_CONFIG *config);
-    void setCommandList(QStringList commandList);
+    void setCommandList(QStringList &commandList);
     QStringList getCommandList();
 
 private:
