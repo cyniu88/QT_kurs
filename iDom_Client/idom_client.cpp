@@ -444,7 +444,13 @@ void iDom_Client::on_b_led_11_released()
 void iDom_Client::on_b_LED_OFF_released()
 {
     emit sendTCP("LED","iDom LED OFF");
-    ui->b_extra_color->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
+    ui->b_extra_color->setStyleSheet(" border-style: outset;border-width: 1px;\
+                                 border-color: rgb(255, 255, 255);\
+                                    /* border-radius: 10px;*/\
+                                     border-color: beige;\
+                                  \
+                                     padding: 6px;\
+                                 background-color: rgb(0, 0, 0);"  );
 }
 
 void iDom_Client::on_b_led_1_released()

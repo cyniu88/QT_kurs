@@ -148,7 +148,7 @@ border-color: rgb(255, 255, 255,255);</string>
                <x>0</x>
                <y>0</y>
                <width>815</width>
-               <height>722</height>
+               <height>716</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -2857,7 +2857,7 @@ Smog Charts</string>
              <x>0</x>
              <y>0</y>
              <width>817</width>
-             <height>724</height>
+             <height>718</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">

@@ -3,16 +3,6 @@
 #include <sstream>
 #include <string>
 
-namespace std {
-
-template <typename T>
-std::string to_string(T value)
-{
-    std::ostringstream os ;
-    os << value ;
-    return os.str() ;
-}
-} // namespace std
 std::string RSHash(std::string &data, unsigned int b, unsigned int a )
 {
     time_t act_time;
@@ -23,7 +13,7 @@ std::string RSHash(std::string &data, unsigned int b, unsigned int a )
     char buffer[10];
     strftime(buffer,10,"%M%H%w",act_date);
     std::string str(buffer);
-    str+=data;
+    str += data;
     unsigned int hash = 0;
 
     for(char i : str)
@@ -31,7 +21,9 @@ std::string RSHash(std::string &data, unsigned int b, unsigned int a )
         hash = hash * a + static_cast<unsigned int>(i);
         a    = a * b;
     }
-    return std::to_string((hash & 0x7FFFFFFF));
+    std::stringstream key;
+    key << (hash & 0x7FFFFFFF);
+    return key.str();
 }
 
 void crypt (std::string & toEncrypt, std::string key,bool encrypted)
