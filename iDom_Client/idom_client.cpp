@@ -696,10 +696,10 @@ void iDom_Client::on_b_extra_color_clicked()
         color.currentColor().getRgb(&r,&g,&b);
 
         sendSignalColor(r,g,b,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-        ui->b_extra_color->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb("+QString::number(r)+","+QString::number(g)+"," +QString::number(b)+");  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
+        ui->b_extra_color->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb("+QString::number(r)+","+QString::number(g)+"," +QString::number(b)+");  border-width: 1px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
     }
     else{
-        ui->b_extra_color->setStyleSheet(" border-style: outset; color: rgb(255, 255, 255); background-color: rgb(0,0,0);  border-width: 4px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
+        ui->b_extra_color->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb(0,0,0);  border-width: 1px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
     }
 }
 
