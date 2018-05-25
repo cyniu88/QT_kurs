@@ -1,4 +1,5 @@
 #include "workerip.h"
+#include "../libs/useful/useful.h"
 #include <QDebug>
 #include <QElapsedTimer>
 #include <QString>
@@ -58,6 +59,10 @@ void WorkerIP::run()
         else if (addresOUT.address == "MPD")
         {
             emit answerMPD(buffor);
+        }
+        else if (addresOUT.address == "alarm")
+        {
+            emit answerAlarm(buffor);
         }
         else if (addresOUT.address == "MPD_volume")
         {

@@ -248,6 +248,7 @@ public slots:
     void odb_answer_LED(QString s);
     void odb_answer_MPD(QString s);
     void odb_mpd_title (QString s);
+    void odb_answer_alarm(QString s);
     void odbMpdVolume(QString s);
     void makeInfo(QString tit, QString msg);
     void updateMPDinfo();

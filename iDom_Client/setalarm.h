@@ -31,7 +31,7 @@ private slots:
 
 private:
     Ui::setAlarm *ui;
-
+public:
     void displayHour(int h);
     void displayMinutes(int min);
 signals:

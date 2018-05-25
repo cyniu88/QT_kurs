@@ -236,6 +236,13 @@ void iDom_Client::odb_mpd_title(QString s)
     ui->titleTXT->setText(s+"     ");
 }
 
+void iDom_Client::odb_answer_alarm(QString s)
+{
+    Clock c(s.toStdString());
+    alarmWindow.displayHour(c.h);
+    alarmWindow.displayMinutes(c.min);
+}
+
 void iDom_Client::odbMpdVolume(QString s)
 {
     ui->volumeTXT->setText("| volume: " +s+"%");
@@ -975,7 +982,7 @@ void iDom_Client::on_b_printer_clicked()
 void iDom_Client::on_b_setAlarm_clicked()
 {
     droid.vibrate(200);
-
+    emit sendTCP("alarm","iDom alarm GET");
     if(ui->b_setAlarm->isChecked() == false){
         QMessageBox::StandardButton reply;
         reply = QMessageBox::question(this, "", "end alarm?",

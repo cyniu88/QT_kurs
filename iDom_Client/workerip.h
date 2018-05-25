@@ -10,6 +10,7 @@
 #include "blocking_queue/blocking_queue.h"
 #include "functions.h"
 #include "variable.h"
+#include "../libs/useful/useful.h"
 
 
 class WorkerIP : public QThread
@@ -51,6 +52,7 @@ signals:
     void answer(QString s);
     void answerLED(QString s);
     void answerMPD(QString s);
+    void answerAlarm(QString s);
     void errorInfo(QString tit, QString msg);
     void mpd_title_info(QString s);
     void mpd_volumeInfo(QString s);

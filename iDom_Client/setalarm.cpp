@@ -20,8 +20,8 @@ setAlarm::setAlarm(iDom_CONFIG *config, QWidget *parent) :
     palette.setBrush(QPalette::Background, pix);
     this->setPalette(palette);
 
-    displayHour(7);
-    displayMinutes(0);
+    //displayHour(7);
+    //displayMinutes(0);
     m_config = config;
 }
 
