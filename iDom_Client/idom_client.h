@@ -192,7 +192,7 @@ private slots:
 
     void on_b_turnOnSleepMode_clicked();
 
-    void on_b_stopServer_clicked();
+    void on_b_server_clicked();
 
     void on_b_extra_color_clicked();
 

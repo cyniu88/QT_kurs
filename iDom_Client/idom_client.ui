@@ -2253,7 +2253,7 @@ border-color: rgb(0, 0, 0);
         <item row="5" column="0">
          <layout class="QGridLayout" name="gridLayout_12">
           <item row="0" column="0">
-           <widget class="QPushButton" name="b_stopServer">
+           <widget class="QPushButton" name="b_server">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
               <horstretch>0</horstretch>
@@ -2284,7 +2284,7 @@ border:none;
  </string>
             </property>
             <property name="text">
-             <string>STOP SERVER</string>
+             <string>SERVER</string>
             </property>
            </widget>
           </item>
@@ -3472,7 +3472,7 @@ QSlider::handle:horizontal {
   <connection>
    <sender>actionStop_Server</sender>
    <signal>triggered()</signal>
-   <receiver>b_stopServer</receiver>
+   <receiver>b_server</receiver>
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">

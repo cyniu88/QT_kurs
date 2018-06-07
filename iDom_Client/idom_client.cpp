@@ -452,12 +452,12 @@ void iDom_Client::on_b_LED_OFF_released()
 {
     emit sendTCP("LED","iDom LED OFF");
     ui->b_extra_color->setStyleSheet(" border-style: outset;border-width: 1px;\
-                                 border-color: rgb(255, 255, 255);\
-                                    /* border-radius: 10px;*/\
-                                     border-color: beige;\
-                                  \
-                                     padding: 6px;\
-                                 background-color: rgb(0, 0, 0);"  );
+                                     border-color: rgb(255, 255, 255);\
+            /* border-radius: 10px;*/\
+            border-color: beige;\
+    \
+padding: 6px;\
+    background-color: rgb(0, 0, 0);"  );
 }
 
 void iDom_Client::on_b_led_1_released()
@@ -661,13 +661,37 @@ void iDom_Client::on_b_turnOnSleepMode_clicked()
     }
 }
 
-void iDom_Client::on_b_stopServer_clicked()
+void iDom_Client::on_b_server_clicked()
 {
-    QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(this, "", "stop server?",
-                                  QMessageBox::Yes|QMessageBox::No);
-    if (reply == QMessageBox::Yes) {
-        qDebug() << "Yes was clicked";
+    //    QMessageBox::StandardButton reply;
+    //    reply = QMessageBox::question(this, "", "server?",
+    //                                  QMessageBox::Close|QMessageBox::Cancel);
+    //    if (reply == QMessageBox::Close) {
+    //        qDebug() << "Yes was clicked";
+    //        emit sendTCP("tools","stop server");
+    //        QThread::sleep(1);
+    //        on_b_connect_dicsonnect_clicked();
+    //    }
+    QMessageBox msgBox;
+    QPushButton *closeButton = msgBox.addButton(tr("Stop server"), QMessageBox::ActionRole);
+    QPushButton *softReloadButton = msgBox.addButton(tr("soft reload"), QMessageBox::ActionRole);
+    QPushButton *hardReloadButton = msgBox.addButton(tr("hard reload"), QMessageBox::ActionRole);
+    QPushButton *cancelButton = msgBox.addButton(QMessageBox::Cancel);
+
+
+    msgBox.exec();
+
+    if (msgBox.clickedButton() == softReloadButton) {
+        qDebug() << "softReloadButton was clicked";
+        emit sendTCP("tools","program reload soft");
+        QThread::sleep(1);
+        on_b_connect_dicsonnect_clicked();
+    }
+    else if (msgBox.clickedButton() == hardReloadButton) {
+        qDebug() << "hardReloadButton was clicked";
+
+    }
+    else if (msgBox.clickedButton() == closeButton) {
         emit sendTCP("tools","stop server");
         QThread::sleep(1);
         on_b_connect_dicsonnect_clicked();
@@ -858,7 +882,7 @@ void iDom_Client::getPing(QString s)
 {
     ui->ping->setText(s);
     ui->messagesToSend_number->setText(
-              QString::number(config->workerQueue.Size())
+                QString::number(config->workerQueue.Size())
                 );
 }
 

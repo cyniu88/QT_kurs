@@ -20,6 +20,8 @@ TARGET = iDom_Client
 TEMPLATE = app
 #LIBS = -landroid
 
+INCLUDEPATH = $$PWD/../libs/json/single_include/nlohmann
+
 SOURCES += main.cpp\
             idom_client.cpp \
             workerip.cpp \
@@ -68,7 +70,7 @@ FORMS    += idom_client.ui \
     setalarm.ui
 
 CONFIG += mobility   c++14
-QMAKE_CXXFLAGS += -std=c++1y -Wall  -pedantic
+QMAKE_CXXFLAGS += -std=c++1y -Wall  -pedantic -DIDOM
 
 
 OTHER_FILES += \
