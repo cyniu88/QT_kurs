@@ -692,7 +692,7 @@ void iDom_Client::on_b_server_clicked()
 
     }
     else if (msgBox.clickedButton() == closeButton) {
-        emit sendTCP("tools","stop server");
+        emit sendTCP("tools","program stop");
         QThread::sleep(1);
         on_b_connect_dicsonnect_clicked();
     }
