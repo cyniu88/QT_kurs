@@ -12,7 +12,6 @@ windows {
 android {
             message("* Using settings for Android.")
             QT +=  androidextras webview
-
         }
 MOBILITY = androidextras
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
