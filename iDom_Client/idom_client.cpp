@@ -677,8 +677,6 @@ void iDom_Client::on_b_server_clicked()
     QPushButton *softReloadButton = msgBox.addButton(tr("soft reload"), QMessageBox::ActionRole);
     QPushButton *hardReloadButton = msgBox.addButton(tr("hard reload"), QMessageBox::ActionRole);
     QPushButton *cancelButton = msgBox.addButton(QMessageBox::Cancel);
-
-
     msgBox.exec();
 
     if (msgBox.clickedButton() == softReloadButton) {
