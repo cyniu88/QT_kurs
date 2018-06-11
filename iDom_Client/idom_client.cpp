@@ -687,6 +687,9 @@ void iDom_Client::on_b_server_clicked()
     }
     else if (msgBox.clickedButton() == hardReloadButton) {
         qDebug() << "hardReloadButton was clicked";
+        emit sendTCP("tools","program reload hard");
+        QThread::sleep(1);
+        on_b_connect_dicsonnect_clicked();
 
     }
     else if (msgBox.clickedButton() == closeButton) {
