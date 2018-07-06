@@ -31,19 +31,13 @@ void crypt (std::string & toEncrypt, std::string key,bool encrypted)
     if (!encrypted){
         return;
     }
-    unsigned int keySize = key.size();
+    unsigned int keySize = key.size()-1;
 
     for (char & i : toEncrypt)
     {
+
+        if (keySize==0) keySize = key.size()-1;
+        else --keySize;
         i ^= key[keySize];
-
-        if (keySize==0){
-            keySize = key.size();
-        }
-        else{
-            --keySize;
-        }
     }
-
-    // std::cout << '!' << key.size();
 }
