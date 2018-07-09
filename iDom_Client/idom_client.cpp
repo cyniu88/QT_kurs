@@ -908,6 +908,15 @@ void iDom_Client::odb_answer_state(QString s)
             droid.makeToast("drukarka uruchomiona");
         }
         ///////////////////////////////////////////////////////////////
+        if (s == "fan=OFF" && ui->b_fan->isChecked() == true){
+            ui->b_fan->setChecked(false);
+            droid.makeToast("wnetylator wyłączony");
+        }
+        if (s == "fan=ON" && ui->b_fan->isChecked() == false){
+            ui->b_fan->setChecked(true);
+            droid.makeToast("wentylator uruchomiony");
+        }
+        ///////////////////////////////////////////////////////////////
         if (s == "listwa=OFF" && ui->b_listwa->isChecked() == true){
             ui->b_listwa->setChecked(false);
             droid.makeToast("listwa wyłączona");
@@ -1063,6 +1072,22 @@ void iDom_Client::on_b_lockUnlock_HOME_clicked()
         emit sendTCP("console","iDom lock");
         qDebug() << "LOCK HOUSE";
         config->houseLocked = true;
+    }
+    droid.vibrate(200);
+}
+
+void iDom_Client::on_b_fan_clicked()
+{
+    taskHandlerTimer->start();
+    if (ui->b_fan->isChecked() == false)
+    {
+        emit sendTCP("console","433MHz switch fan OFF");
+        qDebug() << "start wentylatora";
+    }
+    if (ui->b_fan->isChecked() == true)
+    {
+        emit sendTCP("console","433MHz switch fan ON");
+        qDebug() << "stop wentylatora";
     }
     droid.vibrate(200);
 }

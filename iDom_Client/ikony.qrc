@@ -27,6 +27,8 @@
         <file>files/png/surgeProtectorON.png</file>
         <file>files/png/lock.png</file>
         <file>files/png/unlock.png</file>
+        <file>files/svg/fanOFF.svg</file>
+        <file>files/svg/fanON.svg</file>
     </qresource>
     <qresource prefix="/www">
         <file>myqmlfileforwww.qml</file>
