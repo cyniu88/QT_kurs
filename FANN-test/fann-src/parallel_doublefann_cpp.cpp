@@ -23,5 +23,5 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "config.h"
 #include "doublefann.h"
 
-#include "parallel_fann_cpp.cpp"
+//#include "parallel_fann_cpp.cpp"
 #endif /* DISABLE_PARALLEL_FANN */

@@ -21,5 +21,5 @@ set(SOURCE_FILES  "main.cpp"
     "fann-src/parallel_floatfann_cpp.cpp"
     )
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -DBT_TEST -DNOSSL")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -DBT_TEST -DK -fopenmp")
 add_executable(${PROJECT_NAME} ${GLOB} ${SOURCE_FILES})
