@@ -155,6 +155,11 @@ void fann_GUI::on_b_startTrain_clicked()
 void fann_GUI::on_trainingData_textChanged()
 {
 
+
+}
+
+void fann_GUI::on_b_save_trainData_clicked()
+{
     QFile file( trainingDataPatch );
     if ( file.open(QIODevice::ReadWrite) )
     {
@@ -162,4 +167,29 @@ void fann_GUI::on_trainingData_textChanged()
         QString s = ui->trainingData->toPlainText();
         stream << s << endl;
     }
+}
+
+void fann_GUI::on_b_OK_clicked()
+{
+    FANN::neural_net siec;
+
+    siec.create_from_file("train_float.net");
+    //siec.print_connections();
+
+    fann_type kk[2] ;
+
+    if(ui->checkBox_A->isChecked() == true)
+        kk[0] = 1.0;
+    else
+        kk[0] = -1.0;
+
+    if(ui->checkBoxB->isChecked() == true)
+        kk[1] = 1.0;
+    else
+        kk[1] = -1.0;
+
+    fann_type *calc_out = siec.run(kk);
+
+std::cout << " wynik to : " << calc_out[0] << std::endl;
+ui->result->setText(QString::number(calc_out[0]));
 }

@@ -17,8 +17,7 @@
    <bool>true</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -28,12 +27,77 @@
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
         <string>main</string>
        </attribute>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>40</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>XOR</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_A">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>110</y>
+          <width>83</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>A</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxB">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>110</y>
+          <width>83</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>B</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="b_OK">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>200</y>
+          <width>80</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>run</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="result">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>240</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -54,14 +118,21 @@
         <string>trening</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="1" column="0">
+        <item row="1" column="1">
          <widget class="QPushButton" name="b_startTrain">
           <property name="text">
            <string>Start</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="0">
+        <item row="1" column="0">
+         <widget class="QPushButton" name="b_save_trainData">
+          <property name="text">
+           <string>Save data</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
          <widget class="QTextBrowser" name="trainingData">
           <property name="styleSheet">
            <string notr="true"/>
@@ -71,7 +142,7 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="0">
+        <item row="2" column="0" colspan="2">
          <widget class="QProgressBar" name="progressBar">
           <property name="value">
            <number>24</number>
@@ -270,7 +341,7 @@
      <x>0</x>
      <y>0</y>
      <width>859</width>
-     <height>20</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

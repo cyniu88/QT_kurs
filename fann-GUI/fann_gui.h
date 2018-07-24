@@ -28,6 +28,10 @@ private slots:
 
     void on_trainingData_textChanged();
 
+    void on_b_save_trainData_clicked();
+
+    void on_b_OK_clicked();
+
 private:
     Ui::fann_GUI *ui;
 
