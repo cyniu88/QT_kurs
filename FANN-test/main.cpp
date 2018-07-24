@@ -124,7 +124,7 @@ int main(int argc, char **argv)
     try
     {
         std::ios::sync_with_stdio(); // Syncronize std::cout and printf output
-        //xor_test();
+        xor_test();
         std::cout << "gramy dalej !!!" << std::endl;
         runNeural();
         std::cout << "KONIEC" <<std::endl;

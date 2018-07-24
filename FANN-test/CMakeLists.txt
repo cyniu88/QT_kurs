@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 project(FANN-test)
-include_directories("D:/PROGRAMOWANIE/QT/QT_kurs/FANN-test/fann-src/include")
+include_directories("fann-src/include")
 #add_subdirectory("D:/PROGRAMOWANIE/QT/QT_kurs/FANN-test/fann-src")
 
 
