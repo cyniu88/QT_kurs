@@ -124,9 +124,10 @@ void trainingThread::train()
         log << std::endl << "Saving network." << std::endl;
 
         // Save the network in floating point and fixed point
-        net.save("train_float.net");
-        unsigned int decimal_point = net.save_to_fixed("train_fixed.net");
-        data.save_train_to_fixed("xor_fixed.data", decimal_point);
+        net.save(netConfigPTR->netFloat);
+        unsigned int decimal_point = net.save_to_fixed(netConfigPTR->netFixed);
+        std::string path = netConfigPTR->trainingDataPatch.substr(0,netConfigPTR->trainingDataPatch.size()-5);
+        data.save_train_to_fixed(path +"_fixed.data", decimal_point);
 
         log << std::endl << "test completed." << std::endl;
         emit updateLog(QString::fromStdString(log.str()));

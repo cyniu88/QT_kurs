@@ -32,10 +32,19 @@ private slots:
 
     void on_b_OK_clicked();
 
+    void on_b_loadTrainingData_clicked();
+
+    void on_b_saveNetfile_clicked();
+
+    void on_b_loadNet_clicked();
+
+    void on_b_logClear_clicked();
+
 private:
     Ui::fann_GUI *ui;
 
     QString trainingDataPatch = "training.data";
+    void loadTrainingDataFromFile();
 
 public slots:
     void updateLog(QString s);

@@ -9,6 +9,7 @@
 #include <QDebug>
 #include <QFile>
 #include <QTextStream>
+#include <QFileDialog>
 
 
 fann_GUI::fann_GUI(QWidget *parent) :
@@ -17,16 +18,7 @@ fann_GUI::fann_GUI(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QFile file(trainingDataPatch);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
 
-    QTextStream in(&file);
-    QString line ;//= in.readLine();
-    while (!in.atEnd()) {
-        line += in.readLine()+ "\n";
-    }
-    ui->trainingData->setText(line);
 
     trainingT = new trainingThread(&netConfig);
 
@@ -47,7 +39,6 @@ fann_GUI::~fann_GUI()
 
 void fann_GUI::on_b_startTrain_clicked()
 {
-    ui->logBox->clear();
     ui->progressBar->setValue(0);
     // TODO  start watku treningowego
 
@@ -59,7 +50,7 @@ void fann_GUI::on_b_startTrain_clicked()
     netConfig.desired_error = static_cast<float>(ui->desired_error->value());
     netConfig.max_iterations = ui->max_iterations->value();
     netConfig.iterations_between_reports = ui->iterations_between_reports->value();
-    netConfig.trainingDataPatch = trainingDataPatch.toStdString();
+   // netConfig.trainingDataPatch = trainingDataPatch.toStdString();
 
     trainingT->start();
 
@@ -73,7 +64,7 @@ void fann_GUI::on_trainingData_textChanged()
 
 void fann_GUI::on_b_save_trainData_clicked()
 {
-    QFile file( trainingDataPatch );
+    QFile file(QString::fromStdString(netConfig.trainingDataPatch) );
     if ( file.open(QIODevice::ReadWrite) )
     {
         QTextStream stream( &file );
@@ -87,10 +78,16 @@ void fann_GUI::on_b_OK_clicked()
 {
     FANN::neural_net siec;
 
-    siec.create_from_file("train_float.net");
+    if(ui->pathNet->text().size() < 3)
+    {
+        QMessageBox::critical(this,tr("INFO"),tr("podaj sciezke do sieci"));
+        return;
+    }
+    siec.create_from_file(ui->pathNet->text().toStdString());
     //siec.print_connections();
 
     fann_type kk[2] ;
+
 
     if(ui->checkBox_A->isChecked() == true)
         kk[0] = 1.0;
@@ -104,9 +101,13 @@ void fann_GUI::on_b_OK_clicked()
 
     fann_type *calc_out = siec.run(kk);
 
-    std::cout << " wynik to : " << calc_out[0] << std::endl;
+    std::stringstream log;
+    log << " wynik to : " << calc_out[0] << std::endl;
+    ui->logBox->append(QString::fromStdString(log.str()));
     ui->result->setText(QString::number(calc_out[0]));
 }
+
+
 
 void fann_GUI::updateLog(QString s)
 {
@@ -122,4 +123,55 @@ void fann_GUI::trainingDone()
 {
     ui->b_startTrain->setEnabled(true);
     QMessageBox::information(this,tr("INFO"),tr("training done!"));
+}
+
+void fann_GUI::on_b_loadTrainingData_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                    "training.data",
+                                                    tr("Data (*.data)"));
+    ui->logBox->append( "file train  " + fileName) ;
+    netConfig.trainingDataPatch = fileName.toStdString();
+    loadTrainingDataFromFile();
+}
+
+void fann_GUI::loadTrainingDataFromFile()
+{
+    QFile file(QString::fromStdString(netConfig.trainingDataPatch));
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+
+    QTextStream in(&file);
+    QString line ;//= in.readLine();
+    while (!in.atEnd()) {
+        line += in.readLine()+ "\n";
+    }
+    ui->trainingData->setText(line);
+}
+
+void fann_GUI::on_b_saveNetfile_clicked()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Open File"),
+                                                    "myNet.net",
+                                                    tr("Data (*.net)"));
+
+    std::string patch = fileName.toStdString();
+    netConfig.netFixed = patch.substr(0,patch.size()-4)+"_fixed.net";
+    netConfig.netFloat = patch.substr(0,patch.size()-4)+"_float.net";
+    ui->logBox->append( "net fixed save to file:  " + QString::fromStdString(netConfig.netFixed)) ;
+    ui->logBox->append( "net fload save to file:  " + QString::fromStdString(netConfig.netFloat)) ;
+}
+
+void fann_GUI::on_b_loadNet_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                    "",
+                                                    tr("Data (*.net)"));
+    ui->logBox->append( "load net  " + fileName) ;
+    ui->pathNet->setText(fileName);
+}
+
+void fann_GUI::on_b_logClear_clicked()
+{
+    ui->logBox->clear();
 }
