@@ -5,6 +5,10 @@
 #include "../FANN-test/fann-src/floatfann.h"
 #include "../FANN-test/fann-src/fann_cpp.h"
 
+#include "types.h"
+#include "trainingthread.h"
+#include "string.h"
+
 namespace Ui {
 class fann_GUI;
 }
@@ -16,12 +20,8 @@ class fann_GUI : public QMainWindow
 public:
     explicit fann_GUI(QWidget *parent = nullptr);
     ~fann_GUI();
-
-    static int print_callback(FANN::neural_net &net, FANN::training_data &train,
-        unsigned int max_epochs, unsigned int epochs_between_reports,
-        float desired_error, unsigned int epochs, void *user_data);
-    void train();
-
+    NET_CONF netConfig;
+    trainingThread* trainingT;
 
 private slots:
     void on_b_startTrain_clicked();
@@ -36,6 +36,11 @@ private:
     Ui::fann_GUI *ui;
 
     QString trainingDataPatch = "training.data";
+
+public slots:
+    void updateLog(QString s);
+    void updateProgressBar(int i);
+    void trainingDone();
 };
 
 #endif // FANN_GUI_H

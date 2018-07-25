@@ -37,7 +37,8 @@ SOURCES += \
     ../FANN-test/fann-src/fann_train_data.c \
     ../FANN-test/fann-src/fixedfann.c \
     ../FANN-test/fann-src/floatfann.c \
-    ../FANN-test/fann-src/parallel_fann.c
+    ../FANN-test/fann-src/parallel_fann.c \
+    trainingthread.cpp
 
 HEADERS += \
         fann_gui.h \
@@ -58,7 +59,9 @@ HEADERS += \
     ../FANN-test/fann-src/fixedfann.h \
     ../FANN-test/fann-src/floatfann.h \
     ../FANN-test/fann-src/parallel_fann.h \
-    ../FANN-test/fann-src/parallel_fann.hpp
+    ../FANN-test/fann-src/parallel_fann.hpp \
+    trainingthread.h \
+    types.h
 
 FORMS += \
         fann_gui.ui
