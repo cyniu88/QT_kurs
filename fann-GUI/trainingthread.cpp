@@ -103,7 +103,7 @@ void trainingThread::train()
             << "Desired Error: " << std::left << desired_error << std::right << std::endl;
         emit updateLog(QString::fromStdString(log.str()));
         log.clear();
-        net.set_callback(print_callback, NULL);
+        net.set_callback(print_callback, nullptr);
         net.train_on_data(data, max_iterations,
                           iterations_between_reports, desired_error);
 
@@ -114,7 +114,7 @@ void trainingThread::train()
             // Run the network on the test data
             fann_type *calc_out = net.run(data.get_input()[i]);
 
-            log << "XOR test (" << std::showpos << data.get_input()[i][0] << ", "
+            log << "test (" << std::showpos << data.get_input()[i][0] << ", "
                 << data.get_input()[i][1] << ") -> " << *calc_out
                 << ", should be " << data.get_output()[i][0] << ", "
                 << "difference = " << std::noshowpos

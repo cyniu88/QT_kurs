@@ -39,24 +39,30 @@ fann_GUI::~fann_GUI()
 
 void fann_GUI::on_b_startTrain_clicked()
 {
-
     if(netConfig.trainingDataPatch == "NULL")
     {
         QMessageBox::critical(this,tr("INFO"),tr("podaj sciezke do danych treningowych!"));
 
         return;
     }
+    if(netConfig.netFloat == "NULL")
+    {
+        QMessageBox::critical(this,tr("INFO"),tr("podaj sciezke do zapisu sieci !"));
+
+        return;
+    }
+
     ui->progressBar->setValue(0);
     // TODO  start watku treningowego
 
     netConfig.learning_rate = static_cast<float>(ui->learning_rate->value());
-    netConfig.num_layers = ui->num_layers->value();
-    netConfig.num_input = ui->numInput->value();
-    netConfig.num_hidden = ui->num_hidden->value();
-    netConfig.num_output = ui->num_output->value();
+    netConfig.num_layers = static_cast<unsigned int>(ui->num_layers->value());
+    netConfig.num_input = static_cast<unsigned int>(ui->numInput->value());
+    netConfig.num_hidden = static_cast<unsigned int>(ui->num_hidden->value());
+    netConfig.num_output = static_cast<unsigned int>(ui->num_output->value());
     netConfig.desired_error = static_cast<float>(ui->desired_error->value());
-    netConfig.max_iterations = ui->max_iterations->value();
-    netConfig.iterations_between_reports = ui->iterations_between_reports->value();
+    netConfig.max_iterations = static_cast<unsigned int>(ui->max_iterations->value());
+    netConfig.iterations_between_reports = static_cast<unsigned int>(ui->iterations_between_reports->value());
    // netConfig.trainingDataPatch = trainingDataPatch.toStdString();
 
     trainingT->start();
@@ -71,6 +77,15 @@ void fann_GUI::on_trainingData_textChanged()
 
 void fann_GUI::on_b_save_trainData_clicked()
 {
+    if(netConfig.trainingDataPatch == "NULL")
+    {
+        QString fileName = QFileDialog::getSaveFileName(this, tr("Open File"),
+                                                        "training.data",
+                                                        tr("Data (*.data)"));
+
+        std::string path = fileName.toStdString();
+        netConfig.trainingDataPatch = path;
+    }
     QFile file(QString::fromStdString(netConfig.trainingDataPatch) );
     if ( file.open(QIODevice::ReadWrite) )
     {
@@ -79,6 +94,7 @@ void fann_GUI::on_b_save_trainData_clicked()
         stream << s << endl;
     }
     ui->b_save_trainData->setEnabled(false);
+    ui->logBox->append("training data has been saved");
 }
 
 void fann_GUI::on_b_OK_clicked()
@@ -93,7 +109,7 @@ void fann_GUI::on_b_OK_clicked()
     siec.create_from_file(ui->pathNet->text().toStdString());
     //siec.print_connections();
 
-    fann_type kk[2] ;
+    fann_type kk[4] ;
 
 
     if(ui->checkBox_A->isChecked() == true)
@@ -105,13 +121,21 @@ void fann_GUI::on_b_OK_clicked()
         kk[1] = 1.0;
     else
         kk[1] = -1.0;
+    if(ui->checkBoxC->isChecked() == true)
+        kk[2] = 1.0;
+    else
+        kk[2] = -1.0;
+    if(ui->checkBoxD->isChecked() == true)
+        kk[3] = 1.0;
+    else
+        kk[3] = -1.0;
 
     fann_type *calc_out = siec.run(kk);
 
     std::stringstream log;
     log << " wynik to : " << calc_out[0] << std::endl;
     ui->logBox->append(QString::fromStdString(log.str()));
-    ui->result->setText(QString::number(calc_out[0]));
+    ui->result->setText(QString::number(static_cast<double>((calc_out[0]))));
 }
 
 
