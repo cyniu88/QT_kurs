@@ -45,6 +45,7 @@ private:
 
     QString trainingDataPatch = "training.data";
     void loadTrainingDataFromFile();
+    void updateParamiterFromFileDataTraining();
 
 public slots:
     void updateLog(QString s);

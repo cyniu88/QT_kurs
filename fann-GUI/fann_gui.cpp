@@ -1,4 +1,4 @@
-#include "fann_gui.h"
+﻿#include "fann_gui.h"
 #include "ui_fann_gui.h"
 
 
@@ -95,6 +95,8 @@ void fann_GUI::on_b_save_trainData_clicked()
     }
     ui->b_save_trainData->setEnabled(false);
     ui->logBox->append("training data has been saved");
+
+    updateParamiterFromFileDataTraining();
 }
 
 void fann_GUI::on_b_OK_clicked()
@@ -178,6 +180,17 @@ void fann_GUI::loadTrainingDataFromFile()
         line += in.readLine()+ "\n";
     }
     ui->trainingData->setText(line);
+    updateParamiterFromFileDataTraining();
+}
+
+void fann_GUI::updateParamiterFromFileDataTraining()
+{
+    QString s = ui->trainingData->toPlainText();
+    int num_in = QString(s.at(2)).toInt();
+    int num_out= QString(s.at(4)).toInt();
+
+    ui->numInput->setValue(num_in);
+    ui->num_output->setValue(num_out);
 }
 
 void fann_GUI::on_b_saveNetfile_clicked()
