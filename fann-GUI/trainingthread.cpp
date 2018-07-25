@@ -114,11 +114,28 @@ void trainingThread::train()
             // Run the network on the test data
             fann_type *calc_out = net.run(data.get_input()[i]);
 
-            log << "test (" << std::showpos << data.get_input()[i][0] << ", "
-                << data.get_input()[i][1] << ") -> " << *calc_out
-                << ", should be " << data.get_output()[i][0] << ", "
-                << "difference = " << std::noshowpos
-                << fann_abs(*calc_out - data.get_output()[i][0]) << std::endl;
+            log << "test (";
+            for (unsigned int j = 0; j < num_input; ++j)
+            {
+                log  << std::showpos << data.get_input()[i][j] << ", ";
+                //qDebug()<< "jestem w log<<";
+            }
+            log <<  ") -> " ;
+            for(unsigned int k = 0 ; k < num_output ; ++k)
+            {
+                log << calc_out[k] <<", ";
+            }
+            log << ", should be ";
+            for(unsigned int k = 0 ; k < num_output ; ++k)
+            {
+                log << data.get_output()[i][k] <<", ";
+            }
+            log << std::endl ;
+            //            log << "test (" << std::showpos << data.get_input()[i][0] << ", "
+            //                << data.get_input()[i][1] << ") -> " << *calc_out
+            //                << ", should be " << data.get_output()[i][0] << ", "
+            //                << "difference = " << std::noshowpos
+            //                << fann_abs(*calc_out - data.get_output()[i][0]) << std::endl;
         }
 
         log << std::endl << "Saving network." << std::endl;
