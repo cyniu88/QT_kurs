@@ -39,6 +39,13 @@ fann_GUI::~fann_GUI()
 
 void fann_GUI::on_b_startTrain_clicked()
 {
+
+    if(netConfig.trainingDataPatch == "NULL")
+    {
+        QMessageBox::critical(this,tr("INFO"),tr("podaj sciezke do danych treningowych!"));
+
+        return;
+    }
     ui->progressBar->setValue(0);
     // TODO  start watku treningowego
 

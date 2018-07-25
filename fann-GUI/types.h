@@ -11,9 +11,9 @@ struct NET_CONF{
      float desired_error ;
      unsigned int max_iterations;
      unsigned int iterations_between_reports;
-     std::string trainingDataPatch;
-     std::string netFixed;
-     std::string netFloat;
+     std::string trainingDataPatch = "NULL";
+     std::string netFixed = "NULL";
+     std::string netFloat = "NULL";
 };
 
 #endif // TYPES_H
