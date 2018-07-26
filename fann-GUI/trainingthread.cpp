@@ -61,15 +61,29 @@ void trainingThread::train()
     log << std::endl << "Creating network." << std::endl;
 
     FANN::neural_net net;
-    unsigned int vectorSize = netConfigPTR->leyersVector.size();
-    unsigned int* leyers = new unsigned int[vectorSize];
-    for (unsigned int i = 0; i < vectorSize; ++i)
+    if (netConfigPTR->leyersVector.size() > 1)
     {
-        leyers[i] = netConfigPTR->leyersVector.at(i);
-    }
-    net.create_standard_array(vectorSize, leyers);
+        unsigned int vectorSize = netConfigPTR->leyersVector.size();
+        unsigned int* leyers = new unsigned int[vectorSize+2];
+        leyers[0] = num_input;
+        leyers[1] = num_output;
+        for (unsigned int i = 0; i < vectorSize; ++i)
+        {
+            leyers[i+2] = netConfigPTR->leyersVector.at(i);
+        }
 
-    delete[] leyers;
+        for ( auto i = 0 ; i< vectorSize+2 ; ++i)
+        {
+            qDebug() << "vector size: "<< vectorSize+2<<" i:"<<i<< " leyers "<< leyers[i];
+        }
+        net.create_standard_array(vectorSize, leyers);
+
+        delete[] leyers;
+    }
+    else
+    {
+        net.create_standard(num_layers, num_input, num_hidden, num_output);
+    }
 
     net.set_learning_rate(learning_rate);
 
@@ -132,7 +146,6 @@ void trainingThread::train()
             for(unsigned int k = 0 ; k < num_output ; ++k)
             {
                 log << *calc_out <<", ";
-                qDebug() << "K: " << k;
             }
             log << ", should be ";
             for(unsigned int k = 0 ; k < num_output ; ++k)

@@ -54,22 +54,30 @@ void fann_GUI::on_b_startTrain_clicked()
         return;
     }
 
-    ui->progressBar->setValue(0);
-    // TODO  start watku treningowego
+    if (false == updateLeyersVectorAndValidate())
+    {
+        QMessageBox::critical(this,tr("INFO"),tr("ilość neuronówukrytych sie nie zgadza!"));
 
-    netConfig.learning_rate = static_cast<float>(ui->learning_rate->value());
-    netConfig.num_layers = static_cast<unsigned int>(ui->num_layers->value());
-    netConfig.num_input = static_cast<unsigned int>(ui->numInput->value());
-    netConfig.num_hidden = static_cast<unsigned int>(ui->num_hidden->value());
-    netConfig.num_output = static_cast<unsigned int>(ui->num_output->value());
-    netConfig.desired_error = static_cast<float>(ui->desired_error->value());
-    netConfig.max_iterations = static_cast<unsigned int>(ui->max_iterations->value());
-    netConfig.iterations_between_reports = static_cast<unsigned int>(ui->iterations_between_reports->value());
-   // netConfig.trainingDataPatch = trainingDataPatch.toStdString();
+        return;
+    }
 
-    trainingT->start();
 
-    ui->b_startTrain->setEnabled(false);
+ui->progressBar->setValue(0);
+// TODO  start watku treningowego
+
+netConfig.learning_rate = static_cast<float>(ui->learning_rate->value());
+netConfig.num_layers = static_cast<unsigned int>(ui->num_layers->value());
+netConfig.num_input = static_cast<unsigned int>(ui->numInput->value());
+netConfig.num_hidden = static_cast<unsigned int>(ui->num_hidden->value());
+netConfig.num_output = static_cast<unsigned int>(ui->num_output->value());
+netConfig.desired_error = static_cast<float>(ui->desired_error->value());
+netConfig.max_iterations = static_cast<unsigned int>(ui->max_iterations->value());
+netConfig.iterations_between_reports = static_cast<unsigned int>(ui->iterations_between_reports->value());
+// netConfig.trainingDataPatch = trainingDataPatch.toStdString();
+
+trainingT->start();
+
+ui->b_startTrain->setEnabled(false);
 }
 
 void fann_GUI::on_trainingData_textChanged()
@@ -209,6 +217,30 @@ void fann_GUI::setTrainingAlgorythm()
         netConfig.trainingAlgo = FANN::TRAIN_QUICKPROP;
 }
 
+bool fann_GUI::updateLeyersVectorAndValidate()
+{
+    netConfig.leyersVector.clear();
+    bool result = false;
+    int hiddenLayersCounter = ui->num_layers->value() - 2;
+    for( int i = 0; i < hiddenLayersCounter; ++i)
+    {
+          netConfig.leyersVector.push_back(lV.at(i)->value());
+    }
+
+    int sumOfhiddenNeurons = 0;
+
+    for( int i = 0 ; i < hiddenLayersCounter; ++i)
+    {
+        sumOfhiddenNeurons += lV.at(i)->value();
+    }
+
+    if (sumOfhiddenNeurons == ui->num_hidden->value()){
+        result = true;
+    }
+      qDebug() << "sumOfhiddenNeurons: " << sumOfhiddenNeurons;
+    return result;
+}
+
 void fann_GUI::on_b_saveNetfile_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this, tr("Open File"),
@@ -252,12 +284,12 @@ void fann_GUI::on_num_layers_valueChanged(int arg1)
     lV.push_back(ui->l6);
     lV.push_back(ui->l7);
 
- for(int i = 0; i< lV.size(); ++i)
- {
-     if(i >= arg1-2)
-         lV.at(i)->hide();
-     else
-         lV.at(i)->show();
- }
+    for(int i = 0; i< lV.size(); ++i)
+    {
+        if(i >= arg1-2)
+            lV.at(i)->hide();
+        else
+            lV.at(i)->show();
+    }
 
 }

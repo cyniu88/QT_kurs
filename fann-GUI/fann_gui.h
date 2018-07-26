@@ -57,6 +57,7 @@ private:
     void loadTrainingDataFromFile();
     void updateParamiterFromFileDataTraining();
     void setTrainingAlgorythm();
+    bool updateLeyersVectorAndValidate();
 
 public slots:
     void updateLog(QString s);
