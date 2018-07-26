@@ -61,7 +61,15 @@ void trainingThread::train()
     log << std::endl << "Creating network." << std::endl;
 
     FANN::neural_net net;
-    net.create_standard(num_layers, num_input, num_hidden, num_output);
+    unsigned int vectorSize = netConfigPTR->leyersVector.size();
+    unsigned int* leyers = new unsigned int[vectorSize];
+    for (unsigned int i = 0; i < vectorSize; ++i)
+    {
+        leyers[i] = netConfigPTR->leyersVector.at(i);
+    }
+    net.create_standard_array(vectorSize, leyers);
+
+    delete[] leyers;
 
     net.set_learning_rate(learning_rate);
 
@@ -123,7 +131,8 @@ void trainingThread::train()
             log <<  ") -> " ;
             for(unsigned int k = 0 ; k < num_output ; ++k)
             {
-                log << calc_out[k] <<", ";
+                log << *calc_out <<", ";
+                qDebug() << "K: " << k;
             }
             log << ", should be ";
             for(unsigned int k = 0 ; k < num_output ; ++k)
@@ -131,11 +140,6 @@ void trainingThread::train()
                 log << data.get_output()[i][k] <<", ";
             }
             log << std::endl ;
-            //            log << "test (" << std::showpos << data.get_input()[i][0] << ", "
-            //                << data.get_input()[i][1] << ") -> " << *calc_out
-            //                << ", should be " << data.get_output()[i][0] << ", "
-            //                << "difference = " << std::noshowpos
-            //                << fann_abs(*calc_out - data.get_output()[i][0]) << std::endl;
         }
 
         log << std::endl << "Saving network." << std::endl;

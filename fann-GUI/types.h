@@ -1,6 +1,7 @@
 #ifndef TYPES_H
 #define TYPES_H
 #include <string>
+#include <vector>
 
 #include "../FANN-test/fann-src/floatfann.h"
 #include "../FANN-test/fann-src/fann_cpp.h"
@@ -18,6 +19,7 @@ struct NET_CONF{
      std::string netFixed = "NULL";
      std::string netFloat = "NULL";
      FANN::training_algorithm_enum trainingAlgo;
+     std::vector <unsigned int> leyersVector;
 };
 
 #endif // TYPES_H
