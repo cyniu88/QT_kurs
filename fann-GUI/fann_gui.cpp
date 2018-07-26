@@ -18,8 +18,6 @@ fann_GUI::fann_GUI(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-
     trainingT = new trainingThread(&netConfig);
 
     QObject::connect(trainingT,SIGNAL(updateProgressBar(int )), this,SLOT(updateProgressBar(int)));
@@ -28,11 +26,14 @@ fann_GUI::fann_GUI(QWidget *parent) :
 
     ui->b_save_trainData->setEnabled(false);
     setTrainingAlgorythm();
+
+    on_num_layers_valueChanged(ui->num_layers->value());
+    ui->l1->setValue(ui->num_hidden->value());
 }
 
 fann_GUI::~fann_GUI()
 {
-    delete  trainingT;
+    delete trainingT;
     delete ui;
 }
 
@@ -238,4 +239,25 @@ void fann_GUI::on_b_logClear_clicked()
 void fann_GUI::on_net_type_currentTextChanged(const QString &arg1)
 {
     setTrainingAlgorythm();
+}
+
+void fann_GUI::on_num_layers_valueChanged(int arg1)
+{
+    lV.clear();
+    lV.push_back(ui->l1);
+    lV.push_back(ui->l2);
+    lV.push_back(ui->l3);
+    lV.push_back(ui->l4);
+    lV.push_back(ui->l5);
+    lV.push_back(ui->l6);
+    lV.push_back(ui->l7);
+
+ for(int i = 0; i< lV.size(); ++i)
+ {
+     if(i >= arg1-2)
+         lV.at(i)->hide();
+     else
+         lV.at(i)->show();
+ }
+
 }

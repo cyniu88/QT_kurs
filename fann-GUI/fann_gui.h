@@ -2,6 +2,10 @@
 #define FANN_GUI_H
 
 #include <QMainWindow>
+#include <QSpinBox>
+
+#include <vector>
+
 #include "../FANN-test/fann-src/floatfann.h"
 #include "../FANN-test/fann-src/fann_cpp.h"
 
@@ -42,10 +46,14 @@ private slots:
 
     void on_net_type_currentTextChanged(const QString &arg1);
 
+    void on_num_layers_valueChanged(int arg1);
+
 private:
     Ui::fann_GUI *ui;
 
     QString trainingDataPatch = "training.data";
+    std::vector < QSpinBox*> lV;
+
     void loadTrainingDataFromFile();
     void updateParamiterFromFileDataTraining();
     void setTrainingAlgorythm();
