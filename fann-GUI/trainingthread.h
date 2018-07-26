@@ -5,8 +5,6 @@
 #include <QMessageBox>
 #include <QObject>
 
-#include "../FANN-test/fann-src/floatfann.h"
-#include "../FANN-test/fann-src/fann_cpp.h"
 
 #include "types.h"
 

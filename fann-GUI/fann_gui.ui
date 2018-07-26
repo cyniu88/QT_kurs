@@ -27,7 +27,7 @@
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -242,7 +242,141 @@
         <string>opcje</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="3" column="3">
+        <item row="1" column="7">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>iterations_between_reports</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QSpinBox" name="num_output">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="maximum">
+           <number>1000000</number>
+          </property>
+          <property name="value">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="8">
+         <widget class="QSpinBox" name="num_hidden">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="maximum">
+           <number>1000000</number>
+          </property>
+          <property name="value">
+           <number>5</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QSpinBox" name="numInput">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+          <property name="maximum">
+           <number>100000</number>
+          </property>
+          <property name="value">
+           <number>2</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>num_layers</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="6">
+         <widget class="QSpinBox" name="num_layers">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="value">
+           <number>3</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>num_output</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="7">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>num_hidden</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="8">
+         <widget class="QSpinBox" name="iterations_between_reports">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="maximum">
+           <number>1000000</number>
+          </property>
+          <property name="value">
+           <number>1000</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>learning_rate</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="QDoubleSpinBox" name="learning_rate">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="value">
+           <double>0.900000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>max_iterations</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="b_loadTrainingData">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>Load training data</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="b_saveNetfile">
+          <property name="text">
+           <string>save net file</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="4">
          <spacer name="verticalSpacer">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -255,7 +389,7 @@
           </property>
          </spacer>
         </item>
-        <item row="1" column="5">
+        <item row="1" column="6">
          <widget class="QDoubleSpinBox" name="desired_error">
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -271,7 +405,7 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="4">
+        <item row="1" column="5">
          <widget class="QLabel" name="label_7">
           <property name="text">
            <string>desired_error</string>
@@ -307,138 +441,28 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="6">
-         <widget class="QLabel" name="label_8">
-          <property name="text">
-           <string>iterations_between_reports</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <widget class="QSpinBox" name="num_output">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="maximum">
-           <number>1000000</number>
-          </property>
-          <property name="value">
-           <number>1</number>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="7">
-         <widget class="QSpinBox" name="num_hidden">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="maximum">
-           <number>1000000</number>
-          </property>
-          <property name="value">
-           <number>5</number>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QSpinBox" name="numInput">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="frame">
-           <bool>true</bool>
-          </property>
-          <property name="maximum">
-           <number>100000</number>
-          </property>
-          <property name="value">
-           <number>2</number>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="4">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>num_layers</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="5">
-         <widget class="QSpinBox" name="num_layers">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="value">
-           <number>3</number>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>num_output</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="6">
-         <widget class="QLabel" name="label_5">
-          <property name="text">
-           <string>num_hidden</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="7">
-         <widget class="QSpinBox" name="iterations_between_reports">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="maximum">
-           <number>1000000</number>
-          </property>
-          <property name="value">
-           <number>1000</number>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>learning_rate</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="3">
-         <widget class="QDoubleSpinBox" name="learning_rate">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="value">
-           <double>0.900000000000000</double>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>max_iterations</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QPushButton" name="b_loadTrainingData">
-          <property name="styleSheet">
-           <string notr="true"/>
-          </property>
-          <property name="text">
-           <string>Load training data</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QPushButton" name="b_saveNetfile">
-          <property name="text">
-           <string>save net file</string>
-          </property>
+        <item row="2" column="7" colspan="2">
+         <widget class="QComboBox" name="net_type">
+          <item>
+           <property name="text">
+            <string>FANN::TRAIN_INCREMENTAL</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>FANN::TRAIN_BATCH</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>FANN::TRAIN_RPROP</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>FANN::TRAIN_QUICKPROP</string>
+           </property>
+          </item>
          </widget>
         </item>
        </layout>

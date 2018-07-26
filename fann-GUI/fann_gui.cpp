@@ -27,6 +27,7 @@ fann_GUI::fann_GUI(QWidget *parent) :
     QObject::connect(trainingT,SIGNAL(trainingDone()),      this,SLOT(trainingDone()));
 
     ui->b_save_trainData->setEnabled(false);
+    setTrainingAlgorythm();
 }
 
 fann_GUI::~fann_GUI()
@@ -193,6 +194,20 @@ void fann_GUI::updateParamiterFromFileDataTraining()
     ui->num_output->setValue(num_out);
 }
 
+void fann_GUI::setTrainingAlgorythm()
+{
+    QString s = ui->net_type->currentText();
+    ui->logBox->append("typ sieci: " + s);
+    if (s == "FANN::TRAIN_INCREMENTAL")
+        netConfig.trainingAlgo = FANN::TRAIN_INCREMENTAL;
+    else if (s == "FANN::TRAIN_BATCH")
+        netConfig.trainingAlgo = FANN::TRAIN_BATCH;
+    else if (s == "FANN::TRAIN_RPROP")
+        netConfig.trainingAlgo = FANN::TRAIN_RPROP;
+    else if (s == "FANN::TRAIN_QUICKPROP")
+        netConfig.trainingAlgo = FANN::TRAIN_QUICKPROP;
+}
+
 void fann_GUI::on_b_saveNetfile_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this, tr("Open File"),
@@ -218,4 +233,9 @@ void fann_GUI::on_b_loadNet_clicked()
 void fann_GUI::on_b_logClear_clicked()
 {
     ui->logBox->clear();
+}
+
+void fann_GUI::on_net_type_currentTextChanged(const QString &arg1)
+{
+    setTrainingAlgorythm();
 }

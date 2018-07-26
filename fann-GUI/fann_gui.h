@@ -40,12 +40,15 @@ private slots:
 
     void on_b_logClear_clicked();
 
+    void on_net_type_currentTextChanged(const QString &arg1);
+
 private:
     Ui::fann_GUI *ui;
 
     QString trainingDataPatch = "training.data";
     void loadTrainingDataFromFile();
     void updateParamiterFromFileDataTraining();
+    void setTrainingAlgorythm();
 
 public slots:
     void updateLog(QString s);

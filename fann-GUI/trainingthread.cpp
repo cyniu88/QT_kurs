@@ -9,7 +9,6 @@
 
 #include "trainingthread.h"
 
-
 static trainingThread* static_this = nullptr;
 
 trainingThread::trainingThread(NET_CONF *ptr)
@@ -73,7 +72,8 @@ void trainingThread::train()
     net.set_activation_function_output(FANN::SIGMOID_SYMMETRIC_STEPWISE);
 
     // Set additional properties such as the training algorithm
-    //net.set_training_algorithm(FANN::TRAIN_INCREMENTAL);
+
+    net.set_training_algorithm(netConfigPTR->trainingAlgo);
 
     // Output network type and parameters
     log << std::endl << "Network Type                         :  ";
