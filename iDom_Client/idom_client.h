@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <sstream>
 #include <memory>
-#include <QQuickWidget>
+//#include <QQuickWidget>
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QScroller>
