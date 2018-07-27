@@ -72,7 +72,7 @@ void trainingThread::train()
             leyers[i+2] = netConfigPTR->leyersVector.at(i);
         }
 
-        for ( auto i = 0 ; i< vectorSize+2 ; ++i)
+        for ( unsigned int i = 0 ; i< vectorSize+2 ; ++i)
         {
             qDebug() << "vector size: "<< vectorSize+2<<" i:"<<i<< " leyers "<< leyers[i];
         }
