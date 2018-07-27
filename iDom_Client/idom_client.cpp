@@ -93,6 +93,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QObject::connect( m_pImgCtrl, SIGNAL(downloaded(QByteArray)), this, SLOT(loadImage(QByteArray))   );
 
     //////////////////////////////  tts part ////////////////////////////////////////
+#ifndef Q_OS_LINUX
     ivona = new QTextToSpeech(this);
 
 
@@ -115,7 +116,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
     QObject::connect(&optionsWindow, SIGNAL(s_fontSize(QString))             ,this,SLOT(slot_fontSize(QString))             );
-
+#endif
 
     //////////////////////////////// config part ////////////////////////////////////
 
@@ -143,7 +144,9 @@ iDom_Client::~iDom_Client()
     delete taskHandlerTimer;
     delete m_pImgCtrl;
     delete wwwWindow;
+#ifndef Q_OS_LINUX
     delete ivona;
+#endif
     delete ui;
 }
 
@@ -295,7 +298,9 @@ void iDom_Client::listMPD(QString s){
 void iDom_Client::textToSpeachSLOTS(QString s)
 {
     qDebug() << "from TTS: "<< s;
+#ifndef Q_OS_LINUX
     ivona->say(s);
+#endif
 }
 
 void iDom_Client::connectDisconnectButtonState(bool state)

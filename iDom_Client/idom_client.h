@@ -14,7 +14,11 @@
 #include <QInputDialog>
 #include <QDir>
 #include <QtSvg/QSvgWidget>
+
+#ifndef Q_OS_LINUX
 #include <QTextToSpeech>
+#endif
+
 #include <QTime>
 #include <QMenu>
 #include <QTimer>
@@ -90,8 +94,9 @@ private:
 #ifdef Q_OS_ANDROID
     // QQuickWidget *viewTemp = NULL;
 #endif
+#ifndef Q_OS_LINUX
     QTextToSpeech *ivona;
-
+#endif
     ////////////  volume counters
     QTime pressTime ;
     void setVolumeDial();
