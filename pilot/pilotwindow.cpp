@@ -137,6 +137,7 @@ pilotWindow::~pilotWindow()
     delete joyPadDirection;
     delete t1;
     delete tFPS;
+    delete ui;
 }
 
 void pilotWindow::getAxisEvent(int deviceId, QGamepadManager::GamepadAxis axis, double value)
