@@ -4,18 +4,18 @@
 #
 #-------------------------------------------------
 
-QT += core gui network sensors  svg #quickwidgets
+QT += core gui network sensors texttospeech svg #quickwidgets
 linux {
             message("* Using settings for Linux.")
             QT +=
 }
 windows {
             message("* Using settings for Windows.")
-            QT +=  axcontainer texttospeech
+            QT +=  axcontainer
 }
 android {
             message("* Using settings for Android.")
-            QT +=  androidextras webview texttospeech
+            QT +=  androidextras webview
         }
 MOBILITY = androidextras
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets

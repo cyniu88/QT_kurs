@@ -28,7 +28,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     taskHandlerTimer = new QTimer ();
     QObject::connect(taskHandlerTimer, SIGNAL(timeout()), this, SLOT(taskHandler()));
     taskHandlerTimer->start(900);
-#ifdef Q_OS_WIN
+#ifndef Q_OS_ANDROID
     if(QSystemTrayIcon::isSystemTrayAvailable() == false)
     {
         QMessageBox::critical(this,":(","Ninja Mode is not available on this computer. Try again later :P");
@@ -93,7 +93,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QObject::connect( m_pImgCtrl, SIGNAL(downloaded(QByteArray)), this, SLOT(loadImage(QByteArray))   );
 
     //////////////////////////////  tts part ////////////////////////////////////////
-#ifndef Q_OS_LINUX
+
     ivona = new QTextToSpeech(this);
 
 
@@ -116,7 +116,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
     QObject::connect(&optionsWindow, SIGNAL(s_fontSize(QString))             ,this,SLOT(slot_fontSize(QString))             );
-#endif
+
 
     //////////////////////////////// config part ////////////////////////////////////
 
@@ -144,9 +144,7 @@ iDom_Client::~iDom_Client()
     delete taskHandlerTimer;
     delete m_pImgCtrl;
     delete wwwWindow;
-#ifndef Q_OS_LINUX
     delete ivona;
-#endif
     delete ui;
 }
 
@@ -298,9 +296,9 @@ void iDom_Client::listMPD(QString s){
 void iDom_Client::textToSpeachSLOTS(QString s)
 {
     qDebug() << "from TTS: "<< s;
-#ifndef Q_OS_LINUX
+
     ivona->say(s);
-#endif
+
 }
 
 void iDom_Client::connectDisconnectButtonState(bool state)
@@ -334,9 +332,7 @@ void iDom_Client::setVolumeDial()
 
 #ifdef Q_OS_ANDROID
     vol.showMaximized();
-#endif
-
-#ifdef Q_OS_WIN
+#else
     vol.exec();
 #endif
 }
@@ -1039,9 +1035,7 @@ void iDom_Client::on_b_setAlarm_clicked()
     else{
 #ifdef Q_OS_ANDROID
         alarmWindow.showMaximized();
-#endif
-
-#ifdef Q_OS_WIN
+#else
         alarmWindow.exec();
 #endif
         //ui->b_setAlarm->setChecked(true);
