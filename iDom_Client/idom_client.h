@@ -14,11 +14,7 @@
 #include <QInputDialog>
 #include <QDir>
 #include <QtSvg/QSvgWidget>
-
-#ifndef Q_OS_LINUX
 #include <QTextToSpeech>
-#endif
-
 #include <QTime>
 #include <QMenu>
 #include <QTimer>
@@ -85,18 +81,14 @@ private:
     iDom_SYSTEM_INFO systemInfo;
     bool ledCamera = false;
 
-#ifdef Q_OS_WIN
-    QSystemTrayIcon  trayIcon;
-    // QAxWidget  axWidgetTemperature;
-    //  QAxWidget *axWidgetTemperaturePTR = NULL;
-#endif
-
 #ifdef Q_OS_ANDROID
     // QQuickWidget *viewTemp = NULL;
+#else
+    QSystemTrayIcon  trayIcon;
 #endif
-#ifndef Q_OS_LINUX
+
     QTextToSpeech *ivona;
-#endif
+
     ////////////  volume counters
     QTime pressTime ;
     void setVolumeDial();
