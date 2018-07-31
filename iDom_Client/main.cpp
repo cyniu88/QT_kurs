@@ -55,7 +55,6 @@ int main(int argc, char *argv[])
 
     QObject::connect(infoMPDtimer,SIGNAL(timeout()),            w,SLOT(updateMPDinfo()) );
     QObject::connect(infoTemperatureTimer,SIGNAL(timeout()),    w,SLOT(updateTemepretureInfo()) );
-    //QObject::connect(taskHandlerTimer, SIGNAL(timeout()),       w,SLOT(taskHandler()));
 
     worker->start();
     w->updateMPDinfo();
@@ -64,7 +63,6 @@ int main(int argc, char *argv[])
     w->show();
     infoTemperatureTimer->start(60000);
     infoMPDtimer->start(10000);
-    //taskHandlerTimer->start(900);
 
     a.exec();
     config.goWhile=false;
@@ -79,11 +77,9 @@ int main(int argc, char *argv[])
     }
     infoMPDtimer->stop();
     infoTemperatureTimer->stop();
-   // taskHandlerTimer->stop();
     worker->terminate();
     delete infoMPDtimer;
     delete infoTemperatureTimer;
-   // delete taskHandlerTimer;
     delete worker;
     delete w;
 

@@ -56,14 +56,9 @@ void FrameOptions::on_applyButton_clicked()
     configFile.writeToFile("config","command.cfg",ui->textEditCommandList->toPlainText().toStdString());
 }
 
-void FrameOptions::on_fontSize_currentIndexChanged()
+void FrameOptions::on_fontSize_currentIndexChanged(QString arg1)
 {
-    emit s_fontSize(ui->fontSize->currentText());
-}
-
-void FrameOptions::on_pushButton_clicked()
-{
-
+    emit s_fontSize(arg1);
 }
 
 void FrameOptions::on_encryptCheckBox_stateChanged(int arg1)
