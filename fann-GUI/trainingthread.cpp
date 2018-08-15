@@ -29,17 +29,22 @@ int trainingThread::print_callback(FANN::neural_net &net, FANN::training_data &t
                                    unsigned int max_epochs, unsigned int epochs_between_reports,
                                    float desired_error, unsigned int epochs, void *user_data)
 {
+    static int i_old = 0;
     std::stringstream log;
     log << "Epochs     " << std::setw(8) << epochs << ". "
         << "Current Error: " << std::left << net.get_MSE() << std::right << std::endl;
 
-    static_this->updateLog(QString::fromStdString(log.str()));
+    //
 
     int i = (epochs * 100 )/ max_epochs;
-    qDebug() << "i ma : " << i << " max_epochs " << max_epochs;
-    //emit updateProgressBar(i);
-    static_this->updateProgressBar(i);
-
+    if (i != i_old )
+    {
+        qDebug() << "i ma : " << i << " max_epochs " << max_epochs;
+        //emit updateProgressBar(i);
+        static_this->updateProgressBar(i);
+        static_this->updateLog(QString::fromStdString(log.str()));
+        i_old = i;
+    }
     return 0;
 
 }
@@ -47,7 +52,7 @@ int trainingThread::print_callback(FANN::neural_net &net, FANN::training_data &t
 void trainingThread::train()
 {
     std::stringstream log;
-    log << std::endl << "XOR test started." << std::endl;
+    log << std::endl << " test started." << std::endl;
 
     const float learning_rate = netConfigPTR->learning_rate ;
     const unsigned int num_layers = netConfigPTR->num_layers;
@@ -66,17 +71,20 @@ void trainingThread::train()
         unsigned int vectorSize = netConfigPTR->leyersVector.size();
         unsigned int* leyers = new unsigned int[vectorSize+2];
         leyers[0] = num_input;
-        leyers[1] = num_output;
         for (unsigned int i = 0; i < vectorSize; ++i)
         {
-            leyers[i+2] = netConfigPTR->leyersVector.at(i);
+            leyers[i+1] = netConfigPTR->leyersVector.at(i);
         }
+
+        leyers[num_layers-1] = num_output;
 
         for ( unsigned int i = 0 ; i< vectorSize+2 ; ++i)
         {
             qDebug() << "vector size: "<< vectorSize+2<<" i:"<<i<< " leyers "<< leyers[i];
         }
-        net.create_standard_array(vectorSize, leyers);
+        net.create_standard_array(vectorSize+2, leyers);
+        //net.create_standard(vectorSize+2, leyers[0], leyers[2],leyers[3], leyers[1]);
+
 
         delete[] leyers;
     }
@@ -123,7 +131,9 @@ void trainingThread::train()
 
         log << "Max Epochs " << std::setw(8) << max_iterations << ". "
             << "Desired Error: " << std::left << desired_error << std::right << std::endl;
-        emit updateLog(QString::fromStdString(log.str()));
+         emit updateLog(QString::fromStdString(log.str()));
+        log << "dupa";
+        log.str("");
         log.clear();
         net.set_callback(print_callback, nullptr);
         net.train_on_data(data, max_iterations,
@@ -145,7 +155,7 @@ void trainingThread::train()
             log <<  ") -> " ;
             for(unsigned int k = 0 ; k < num_output ; ++k)
             {
-                log << *calc_out <<", ";
+                log << calc_out[k] <<", ";
             }
             log << ", should be ";
             for(unsigned int k = 0 ; k < num_output ; ++k)

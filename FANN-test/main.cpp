@@ -1,6 +1,6 @@
 
-#include "floatfann.h"
-#include "fann_cpp.h"
+#include "fann-src/floatfann.h"
+#include "fann-src/fann_cpp.h"
 
 #include <ios>
 #include <iostream>
@@ -21,21 +21,23 @@ int print_callback(FANN::neural_net &net, FANN::training_data &train,
 // Test function that demonstrates usage of the fann C++ wrapper
 void xor_test()
 {
-    std::cout << std::endl << "XOR test started." << std::endl;
+    std::cout << std::endl << "kamien test started." << std::endl;
 
     const float learning_rate = 0.9f;
-    const unsigned int num_layers = 3;
-    const unsigned int num_input = 2;
-    const unsigned int num_hidden = 5;
-    const unsigned int num_output = 1;
-    const float desired_error = 0.001f;
+    const unsigned int num_layers = 4;
+    const unsigned int num_input = 6;
+    const unsigned int num_hidden = 8;
+
+    const unsigned int num_hidden2 = 5;
+    const unsigned int num_output = 3;
+    const float desired_error = 0.0001f;
     const unsigned int max_iterations = 3000000;
     const unsigned int iterations_between_reports = 1000;
 
     std::cout << std::endl << "Creating network." << std::endl;
 
     FANN::neural_net net;
-    net.create_standard(num_layers, num_input, num_hidden, num_output);
+    net.create_standard(num_layers, num_input, num_hidden,num_hidden2, num_output);
 
     net.set_learning_rate(learning_rate);
 
@@ -67,7 +69,7 @@ void xor_test()
     std::cout << std::endl << "Training network." << std::endl;
 
     FANN::training_data data;
-    if (data.read_train_from_file("xor.data"))
+    if (data.read_train_from_file("kamien.data"))
     {
         // Initialize and train the network with the data
         net.init_weights(data);
@@ -85,9 +87,10 @@ void xor_test()
             // Run the network on the test data
             fann_type *calc_out = net.run(data.get_input()[i]);
 
-            std::cout << "XOR test (" << std::showpos << data.get_input()[i][0] << ", "
-                 << data.get_input()[i][1] << ") -> " << *calc_out
-                 << ", should be " << data.get_output()[i][0] << ", "
+            std::cout << "kamien test (" << std::showpos << data.get_input()[i][0] << ", "
+                 << data.get_input()[i][1]<< ", " << data.get_input()[i][2]<< ", " << data.get_input()[i][3]<< ", " << data.get_input()[i][4]<< ", " << data.get_input()[i][5]
+                 << ") -> " << calc_out[0] << ","<< calc_out[1] << ","<< calc_out[2] << ","
+                 << ", should be " << data.get_output()[i][0] << ", " << data.get_output()[i][1] << ", "<< data.get_output()[i][2] << ", "
                  << "difference = " << std::noshowpos
                  << fann_abs(*calc_out - data.get_output()[i][0]) << std::endl;
         }
@@ -95,11 +98,11 @@ void xor_test()
         std::cout << std::endl << "Saving network." << std::endl;
 
         // Save the network in floating point and fixed point
-        net.save("xor_float.net");
-        unsigned int decimal_point = net.save_to_fixed("xor_fixed.net");
-        data.save_train_to_fixed("xor_fixed.data", decimal_point);
+        net.save("kamien_float.net");
+        unsigned int decimal_point = net.save_to_fixed("kamien_fixed.net");
+        data.save_train_to_fixed("kamien_fixed.data", decimal_point);
 
-        std::cout << std::endl << "XOR test completed." << std::endl;
+        std::cout << std::endl << "kamien test completed." << std::endl;
     }
 }
 
@@ -107,14 +110,14 @@ void runNeural()
 {
     FANN::neural_net siec;
 
-    siec.create_from_file("xor_float.net");
+    siec.create_from_file("kamien_float.net");
     //siec.print_connections();
 
-    fann_type kk[2] = {-1.0f,-1.0f};
+    fann_type kk[6] = {-1.0f,-1.0f,1.0f,-1.0f,-1.0f,1.0f};
 
     fann_type *calc_out = siec.run(kk);
 
-    std::cout << " wynik to : " << calc_out[0] << std::endl;
+    std::cout << " wynik to : " << calc_out[0]<< ":"<< calc_out[1]<< ":"<< calc_out[2] << std::endl;
 
 }
 /* Startup function. Syncronizes C and C++ output, calls the test function
