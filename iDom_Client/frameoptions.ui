@@ -13,6 +13,13 @@
   <property name="windowTitle">
    <string>Options</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="ikony.qrc">
+    <normaloff>:/new/prefix1/iDom_client.ico</normaloff>:/new/prefix1/iDom_client.ico</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-image: url(:/new/prefix1/files/background.png);</string>
   </property>
@@ -169,12 +176,12 @@ color:white;
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">
-QComboBox {
+        <string notr="true">QComboBox {
+ border-radius: 0px;
 background-color: rgb(158, 158, 158,50);
- border: true;
-	border: 1px solid #8f8f91;
-	color: rgb(255, 255, 255);
+ border: 1px solid #8f8f91;
+	border-color:grey;
+	color:white;
     font-family:  &quot;Franklin Gothic Medium&quot;;
     font-size:  25px;
 }
@@ -188,6 +195,15 @@ QComboBox::down-arrow {
   image: url(:/new/prefix1/files/down_arrow.png);
 }
 	</string>
+       </property>
+       <property name="currentText">
+        <string>10</string>
+       </property>
+       <property name="currentIndex">
+        <number>8</number>
+       </property>
+       <property name="maxCount">
+        <number>20</number>
        </property>
        <item>
         <property name="text">
@@ -265,7 +281,9 @@ QComboBox::down-arrow {
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="ikony.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>okbutton</sender>

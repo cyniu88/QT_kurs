@@ -73,7 +73,7 @@ FORMS    += idom_client.ui \
     setalarm.ui
 
 CONFIG += mobility   c++14
-QMAKE_CXXFLAGS += -std=c++1y -Wall  -pedantic -DIDOM
+QMAKE_CXXFLAGS += -std=c++1y -Wall  -pedantic -Woverlength-strings -DIDOM
 
 
 OTHER_FILES += \
