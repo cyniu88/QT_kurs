@@ -240,8 +240,8 @@ void iDom_Client::odb_mpd_title(QString s)
 void iDom_Client::odb_answer_alarm(QString s)
 {
     Clock c(s.toStdString());
-    alarmWindow.displayHour(c.h);
-    alarmWindow.displayMinutes(c.min);
+    alarmWindow.displayHour(static_cast<int>(c.h));
+    alarmWindow.displayMinutes(static_cast<int>(c.min));
 }
 
 void iDom_Client::odbMpdVolume(QString s)
@@ -488,6 +488,11 @@ void iDom_Client::on_b_led_5_released()
 
 void iDom_Client::on_b_play_released()
 {
+    if (ui->b_lockUnlock_HOME->isChecked() == true)
+    {
+        QMessageBox::critical(this,tr("INFO"),tr("can not play due to house lock!"));
+        return;
+    }
     emit sendTCP("MPD","MPD start");
     emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
