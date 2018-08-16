@@ -48,6 +48,7 @@ private slots:
 
     void on_num_layers_valueChanged(int arg1);
 
+
 private:
     Ui::fann_GUI *ui;
 

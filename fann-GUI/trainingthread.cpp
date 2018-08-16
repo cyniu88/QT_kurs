@@ -157,7 +157,7 @@ void trainingThread::train()
             {
                 log << calc_out[k] <<", ";
             }
-            log << ", should be ";
+            log << ",\t should be ";
             for(unsigned int k = 0 ; k < num_output ; ++k)
             {
                 log << data.get_output()[i][k] <<", ";
