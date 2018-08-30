@@ -3,6 +3,7 @@
 
 #include <QInputDialog>
 #include <QProcess>
+#include <QTabBar>
 
 #include "functions.h"
 
