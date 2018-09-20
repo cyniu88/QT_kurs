@@ -100,8 +100,10 @@ pilotWindow::pilotWindow(my_config *c, QWidget *parent) :
 #ifdef Q_OS_ANDROID
     ui->tabWidget->tabBar()->hide();
 #endif
-    double i = 0.50;
-#ifdef Q_OS_WIN
+    double i;
+#ifndef Q_OS_WIN
+    i = 0.50;
+#else
     i = 0.15;
 #endif
     int w  =  static_cast<int>(QApplication::desktop()->height()*i);
@@ -438,8 +440,10 @@ void pilotWindow::on_actionAdd_address_triggered()
     myInputDialog.setStyleSheet("background-color: rgba(0, 255, 0, 50); color: rgba(255, 255, 255); font: bold 14px; font-size: 20pt; ");
     myInputDialog.setLabelText("add IP");
     myInputDialog.setTextValue(QString::fromStdString(t));
-    int prc =200;
-#ifdef Q_OS_WIN
+    int prc;
+#ifndef    Q_OS_WIN
+    prc = 200;
+#else
     prc = 800;
 #endif
     myInputDialog.resize(QApplication::desktop()->screenGeometry().width()-prc-100,QApplication::desktop()->screenGeometry().height()-prc);

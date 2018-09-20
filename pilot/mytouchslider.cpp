@@ -20,7 +20,6 @@ bool myTouchSlider::event(QEvent *e)
         e->accept();
         xPosBegin = touchPoint1.scenePos().x();
         return true;
-        break;
     }
     case QEvent::TouchUpdate:
     {

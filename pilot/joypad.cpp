@@ -4,6 +4,8 @@ JoyPad::JoyPad(int circleX, int circleY , Qt::GlobalColor maxColor, Qt::GlobalCo
     : QGraphicsEllipseItem(0, 0, circleX,circleX)//(posX,posY, circleX,circleX)
 {
 
+    this->JoyX = 0;
+    this->JoyY = 0;
     this->circleX = circleX;
     this->circleY = circleY;
 

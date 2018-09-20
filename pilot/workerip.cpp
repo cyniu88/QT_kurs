@@ -12,11 +12,10 @@ WorkerIP::WorkerIP(my_config *config) : config(config)
 void WorkerIP::run()
 {
     config->goWhile = connectAndAuthentication();
-    bool goNow = true;
     //    ////////////////////////////////////////////////////
     //    ///////////// po autentykacji //////////////////////
     //    ////////////////////////////////////////////////////
-    while (goNow){
+    while (true){
         if ( config->goWhile ==  false)
         {
             socket->write("DISCONNECT");
@@ -89,9 +88,9 @@ void WorkerIP::waitSend(int waitTime, int counter)
 }
 
 void WorkerIP::waitRecv(int waitTime, int counter)
-{   bool temp;
+{
     for (int i = 0; i< counter;++i){
-        temp = socket->waitForReadyRead(waitTime);
+        bool temp = socket->waitForReadyRead(waitTime);
 
         if (temp ==true)
         {
