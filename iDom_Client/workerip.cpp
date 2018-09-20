@@ -21,11 +21,10 @@ void WorkerIP::run()
     setUserLevel("ROOT");
 
     config->isConnectedToServer = true;
-    bool goNow = true;
     ////////////////////////////////////////////////////
     ///////////// po autentykacji //////////////////////
     ////////////////////////////////////////////////////
-    while (goNow){
+    while (true){
         if ( config->goWhile ==  false)
         {
             break;
@@ -242,7 +241,7 @@ std::string WorkerIP::readMsgTCP()
     return buf;
 }
 
-void WorkerIP::fromTCP(std::string addres , std::string qmsg)
+void WorkerIP::fromTCP(const std::string &addres , const std::string &qmsg)
 {
     pingStart = QDateTime::currentDateTime();
     to_send = true;

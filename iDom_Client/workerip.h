@@ -34,7 +34,7 @@ private:
     int waitTime = 1000;
     int counterWaitTime = 20;
     QDateTime pingStart;
-    double pingTimeMilis;
+    double pingTimeMilis = 0.0;
     QTcpSocket *socket;
     // std::string buffor;
     bool connectAndAuthentication();
@@ -65,7 +65,7 @@ signals:
     void answerState(QString s);
 
 public slots:
-    void fromTCP(std::string addres, std::string qmsg);
+    void fromTCP(const std::string& addres, const std::string& qmsg);
     void tcpSocketDisconnected();
 
 };
