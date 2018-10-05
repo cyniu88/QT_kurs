@@ -240,8 +240,8 @@ void iDom_Client::odb_mpd_title(QString s)
 void iDom_Client::odb_answer_alarm(QString s)
 {
     Clock c(s.toStdString());
-    alarmWindow.displayHour(static_cast<int>(c.h));
-    alarmWindow.displayMinutes(static_cast<int>(c.min));
+    alarmWindow.displayHour(static_cast<int>(c.m_h));
+    alarmWindow.displayMinutes(static_cast<int>(c.m_min));
 }
 
 void iDom_Client::odbMpdVolume(QString s)
@@ -965,7 +965,7 @@ void iDom_Client::odb_answer_state(QString s)
 void iDom_Client::alarmHasBeenSet(Clock c)
 {
     ui->b_setAlarm->setText("END ALARM CLOCK");
-    QString msg = "iDom alarm ON "+QString::number(c.h)+":"+ QString::number(c.min);
+    QString msg = "iDom alarm ON "+QString::number(c.m_h)+":"+ QString::number(c.m_min);
     emit sendTCP("console", msg.toStdString());
 }
 

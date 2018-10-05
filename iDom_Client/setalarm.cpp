@@ -83,13 +83,13 @@ void setAlarm::on_b_ok_clicked()
     timeAlarm.set(  static_cast<unsigned int>(ui->lcd_hour->value()),
                     static_cast<unsigned int>(ui->lcd_minutes->value())   );
     Clock timeToAlarm  = Clock::periodOfTime( Clock::getTime(), timeAlarm);
-    qDebug()<<" alarm bedzie za "<<timeToAlarm.h<<" godzin "<< timeToAlarm.min << "minut";
+    qDebug()<<" alarm bedzie za "<<timeToAlarm.m_h<<" godzin "<< timeToAlarm.m_min << "minut";
     QString s = "Alarm jest ustawiony na ";
-    if (timeToAlarm.h > 0){
-        s += QString::number(timeToAlarm.h) + " godz ";
+    if (timeToAlarm.m_h > 0){
+        s += QString::number(timeToAlarm.m_h) + " godz ";
     }
-    if (timeToAlarm.min > 0){
-        s += QString::number(timeToAlarm.min) + " min ";
+    if (timeToAlarm.m_min > 0){
+        s += QString::number(timeToAlarm.m_min) + " min ";
     }
     s += "od teraz";
     emit messageInfo("ALARM", s);
