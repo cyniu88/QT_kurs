@@ -8,9 +8,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-  qDebug() << " data zmina  " << GIT_CURRENT_SHA ;
-    QString ss = GIT_CURRENT_SHA;
-    ui->label_commit->setText(ss);
+  qDebug() << " data zmina  " << GIT_CURRENT_SHA12 ;
+    QString ss2 = GIT_CURRENT_SHA12;
+    ui->label_commit->setText(ss2);
 }
 
 MainWindow::~MainWindow()
