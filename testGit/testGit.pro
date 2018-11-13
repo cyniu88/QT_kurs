@@ -24,8 +24,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++11
 
-REVISION = $$system(git rev-parse HEAD)
-DEFINES += GIT_CURRENT_SHA1=\\"\"$$REVISION\\"\"
+#REVISION = $$system(git rev-parse HEAD)
+DEFINES += GIT_CURRENT_SHA=\\"\"$$system(git rev-parse HEAD)\\"\"
 
 SOURCES += \
         main.cpp \

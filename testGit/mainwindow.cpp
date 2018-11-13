@@ -8,8 +8,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-  qDebug() << " danta " << GIT_CURRENT_SHA1 ;
-    QString ss = GIT_CURRENT_SHA1;
+  qDebug() << " data zmina  " << GIT_CURRENT_SHA ;
+    QString ss = GIT_CURRENT_SHA;
     ui->label_commit->setText(ss);
 }
 
