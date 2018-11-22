@@ -11,7 +11,7 @@ linux {
 }
 windows {
             message("* Using settings for Windows.")
-            QT +=  axcontainer
+            QT +=  axcontainer qml
 }
 android {
             message("* Using settings for Android.")

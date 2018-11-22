@@ -23,14 +23,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 REVISION = $$system(git rev-parse HEAD)
+system(set cyniu=$$REVISION)
+
 CONFIG += c++11
 QMAKE_CXXFLAGS += -DGIT_CURRENT_SHA12=\\"\"$$REVISION\\"\"
-
+QMAKE_CXXFLAGS += -DCYNIU=\\"\"$$CYNIU_D\\"\"
 
 #DEFINES = GIT_CURRENT_SHA1=\\"\"kokoloko\\"\"
 #DEFINES = GIT_CURRENT_SHA1=\\"\"$$REVISION\\"\"
 
-message("wersja")
+message("wersja i czas")
 message($$REVISION)
 
 SOURCES += \
