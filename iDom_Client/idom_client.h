@@ -251,6 +251,7 @@ public slots:
     void odbMpdVolume(QString s);
     void makeInfo(QString tit, QString msg);
     void updateMPDinfo();
+    void updateAlarmTime();
     void updateTemepretureInfo ();
     void odb_temperature (QString s);
     void odb_tools (QString s);

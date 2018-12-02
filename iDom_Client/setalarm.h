@@ -17,6 +17,8 @@ class  setAlarm: public QDialog
 public:
     explicit setAlarm(iDom_CONFIG *config, QWidget *parent = 0);
     ~setAlarm();
+    QString getAlarmTimeQString();
+    void setAlarmTimeString(const Clock& alarm);
 
 private slots:
     void on_b_hourUp_clicked();

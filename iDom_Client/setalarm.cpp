@@ -30,6 +30,18 @@ setAlarm::~setAlarm()
     delete ui;
 }
 
+QString setAlarm::getAlarmTimeQString()
+{
+    return QString::fromStdString(timeAlarm.getString());
+}
+
+void setAlarm::setAlarmTimeString(const Clock &alarm)
+{
+    qDebug() << "ustawiam alarm: " << QString::fromStdString( timeAlarm.getString());
+    timeAlarm = alarm;
+    qDebug() << "ustawiam alarm: " << QString::fromStdString( timeAlarm.getString());
+}
+
 void setAlarm::on_b_hourUp_clicked()
 {
     int h = static_cast<int>(ui->lcd_hour->value() );

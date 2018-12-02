@@ -96,7 +96,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     ivona = new QTextToSpeech(this);
 
-
     QVector <QVoice> voi = ivona->availableVoices();
     if (!voi.isEmpty() ){
         // qDebug() << "vector ivona !!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@2 ma " << voi.size();
@@ -198,8 +197,11 @@ void iDom_Client::taskHandler()
     switch(ui->tabWidget->currentIndex())
     {
     case 0:
+    case 4:
     case 6:
+        updateAlarmTime();
         emit sendTCP("state", "state all");
+        qDebug() << "aktualny case:"<<ui->tabWidget->currentIndex();
         break;
 
     default:
@@ -239,7 +241,9 @@ void iDom_Client::odb_mpd_title(QString s)
 
 void iDom_Client::odb_answer_alarm(QString s)
 {
+    qDebug()<<"iDom_Client::odb_answer_alarm(QString s)";
     Clock c(s.toStdString());
+    alarmWindow.setAlarmTimeString(c);
     alarmWindow.displayHour(static_cast<int>(c.m_h));
     alarmWindow.displayMinutes(static_cast<int>(c.m_min));
 }
@@ -265,8 +269,14 @@ void iDom_Client::updateMPDinfo()
     emit sendTCP("MPD_volume","MPD get volume");
 }
 
+void iDom_Client::updateAlarmTime()
+{
+    emit sendTCP("alarm","iDom alarm GET");
+}
+
 void iDom_Client::updateTemepretureInfo()
 {
+    updateAlarmTime();
     emit sendTCP("temperature","iDom temperature");
     emit sendTCP("listMPD", "MPD list");
 }
@@ -938,10 +948,9 @@ void iDom_Client::odb_answer_state(QString s)
         }
         if (s == "alarm=ACTIVE" && ui->b_setAlarm->isChecked() == false){
             ui->b_setAlarm->setChecked(true);
-            ui->b_setAlarm->setText("END ALARM CLOCK");
+            ui->b_setAlarm->setText(alarmWindow.getAlarmTimeQString()+ " END ALARM CLOCK");
         }
         ///////////////////////////////////////////////////////////////////
-
         if (s == "house=UNLOCK" && ui->b_lockUnlock_HOME->isChecked() == true){
             ui->b_lockUnlock_HOME->setChecked(false);
             qDebug() << "UNLOCK HOUSE";
@@ -964,7 +973,7 @@ void iDom_Client::odb_answer_state(QString s)
 
 void iDom_Client::alarmHasBeenSet(Clock c)
 {
-    ui->b_setAlarm->setText("END ALARM CLOCK");
+    ui->b_setAlarm->setText(alarmWindow.getAlarmTimeQString()+ " END ALARM CLOCK");
     QString msg = "iDom alarm ON "+QString::number(c.m_h)+":"+ QString::number(c.m_min);
     emit sendTCP("console", msg.toStdString());
 }
