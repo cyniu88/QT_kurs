@@ -83,5 +83,6 @@ int main(int argc, char *argv[])
     delete worker;
     delete w;
 
+   qDebug() << "KONIEC" ;
     return 0;
 }

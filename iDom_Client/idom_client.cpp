@@ -107,9 +107,9 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     else{
         qDebug()<< "JEEEST PUSTY !!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     }
-    QObject::connect(&vol   ,SIGNAL(setVolumeSingnal(int) ),       this, SLOT(setVolumeValueSlot(int) ));
+    QObject::connect(&vol ,SIGNAL(setVolumeSingnal(int) ), this, SLOT(setVolumeValueSlot(int) ));
 
-    QObject::connect(&alarmWindow, SIGNAL(alarmSetSignal(Clock)),  this, SLOT(alarmHasBeenSet(Clock)  ));
+    QObject::connect(&alarmWindow, SIGNAL(alarmSetSignal(Clock)), this, SLOT(alarmHasBeenSet(Clock) ));
     QObject::connect(&alarmWindow, SIGNAL(messageInfo(QString, QString)),
                      this, SLOT(makeInfo(QString, QString)  ));
 
@@ -131,7 +131,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->comboBox->addItems(QString::fromStdString(tempCommand).split("\n"));
     setCommandListInOptions();
 
-    systemInfo.currentCpuArchitecture =  QSysInfo::currentCpuArchitecture();
+    systemInfo.currentCpuArchitecture = QSysInfo::currentCpuArchitecture();
     systemInfo.kernelType = QSysInfo::kernelType();
     systemInfo.machineHostName = QSysInfo::machineHostName();
     systemInfo.productVersion = QSysInfo::productVersion();
@@ -187,7 +187,7 @@ void iDom_Client::on_b_exit_released()
 
 void iDom_Client::taskHandler()
 {
-    ////////////////////////////// scroll  song title //////////////////////////
+    ////////////////////////////// scroll song title //////////////////////////
     QString temp = ui->titleTXT->text();
     temp.push_back(temp[0]);
     temp.remove(0,1);
@@ -197,7 +197,7 @@ void iDom_Client::taskHandler()
     switch(ui->tabWidget->currentIndex())
     {
     case 0:
-    case 4:
+    //case 4:
     case 6:
         updateAlarmTime();
         emit sendTCP("state", "state all");
