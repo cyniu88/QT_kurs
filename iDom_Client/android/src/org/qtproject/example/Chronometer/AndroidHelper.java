@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import android.os.BatteryManager;
 
+import android.content.Intent;
+import android.content.IntentFilter;
 
 public class AndroidHelper extends org.qtproject.qt5.android.bindings.QtActivity
 {
@@ -74,6 +76,17 @@ public static void notify(final String s)
 
 
     }
+
+
+    public static void sendText(final String text)
+    {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, text);
+        sendIntent.setType("text/plain");
+        context.startActivity(Intent.createChooser(sendIntent, text));
+    }
+}
 //////end class
 
 }

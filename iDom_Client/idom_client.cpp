@@ -1104,3 +1104,10 @@ void iDom_Client::on_b_fan_clicked()
     }
     droid.vibrate(200);
 }
+
+void iDom_Client::on_b_share_clicked()
+{
+    QString str = "dupa jas";
+    QAndroidJniObject::callStaticMethod<void>("org/qtproject/example/Chronometer/AndroidHelper", "sendText",  "(Ljava/lang/String;)V",
+                                              QAndroidJniObject::fromString(str).object<jstring>());
+}
