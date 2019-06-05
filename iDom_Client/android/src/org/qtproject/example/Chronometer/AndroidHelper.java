@@ -3,6 +3,7 @@
 //
 package org.qtproject.example.Chronometer;
 
+import org.qtproject.qt5.android.QtNative;
 import android.app.Notification;
 import android.app.NotificationManager;
 
@@ -77,16 +78,23 @@ public static void notify(final String s)
 
     }
 
-
-    public static void sendText(final String text)
-    {
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, text);
-        sendIntent.setType("text/plain");
-        context.startActivity(Intent.createChooser(sendIntent, text));
+public static boolean share(String text, String url) {
+    if (QtNative.activity() == null)
+        return false;
+    Intent sendIntent = new Intent();
+    sendIntent.setAction(Intent.ACTION_SEND);
+    sendIntent.putExtra(Intent.EXTRA_TEXT, text + " " + url);
+    sendIntent.setType("text/plain");
+    // Verify that the intent will resolve to an activity
+    if (sendIntent.resolveActivity(QtNative.activity().getPackageManager()) != null) {
+        QtNative.activity().startActivity(sendIntent);
+        return true;
     }
+    return false;
 }
+
+
+
 //////end class
 
 }

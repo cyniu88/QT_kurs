@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "iDom Client"
-#define MyAppVersion "1.5"
+#define MyAppVersion "2.5"
 #define MyAppPublisher "cyniu, Inc."
 #define MyAppURL "http://www.example.com/"
 #define MyAppExeName "iDom_Client.exe"       
@@ -32,21 +32,21 @@ Name: "polish"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Qt\5.11.2\mingw53_32\bin\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\bin\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\bin\Qt5Svg.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\bin\Qt5TextToSpeech.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\libgcc_s_seh-1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\Qt5Svg.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\Qt5TextToSpeech.dll"; DestDir: "{app}"; Flags: ignoreversion
 
-Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_11_2_MinGW_32bit-Release\release\iDom_Client.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\bin\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\bin\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\bin\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\bin\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\bin\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\bin\Qt5Qml.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\bin\Qt5QuickWidgets.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\bin\Qt5Quick.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Qt\5.11.2\mingw53_32\plugins\platforms\qwindows.dll"; DestDir: "{app}\platforms"; Flags: ignoreversion
+Source: "C:\cyniu\PROGRAMOWANIE\QT\QT_kurs\build-iDom_Client-Desktop_Qt_5_12_0_MinGW_64_bit-Release\release\iDom_Client.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\Qt5Qml.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\Qt5QuickWidgets.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\bin\Qt5Quick.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Qt\5.12.0\mingw73_64\plugins\platforms\qwindows.dll"; DestDir: "{app}\platforms"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
