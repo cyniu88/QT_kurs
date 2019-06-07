@@ -1107,15 +1107,5 @@ void iDom_Client::on_b_fan_clicked()
 
 void iDom_Client::on_b_share_clicked()
 {
-    QString text = "dupa";
-    QUrl url("www.dupa.pl");
-    QAndroidJniObject jsText = QAndroidJniObject::fromString(text);
-        QAndroidJniObject jsUrl = QAndroidJniObject::fromString(url.toString());
-        jboolean ok = QAndroidJniObject::callStaticMethod<jboolean>("org/ekkescorner/utils/QShareUtils",
-                                                  "share",
-                                                  "(Ljava/lang/String;Ljava/lang/String;)Z",
-                                                  jsText.object<jstring>(), jsUrl.object<jstring>());
-        if(!ok) {
-            qDebug() << "fail share!";
-        }
+    droid.share("kokoko loko ");
 }

@@ -18,6 +18,7 @@ import android.os.BatteryManager;
 import android.content.Intent;
 import android.content.IntentFilter;
 
+
 public class AndroidHelper extends org.qtproject.qt5.android.bindings.QtActivity
 {
 
@@ -31,6 +32,8 @@ public static BatteryManager battery;
 public static AndroidHelper m_instance_n;
 
 public static AndroidHelper m_instance;
+
+public static Intent m_sendIntent;
 
 public AndroidHelper()
 {
@@ -73,27 +76,22 @@ public static void notify(final String s)
         }
         m_builder.setContentText(s);
         m_notificationManager.notify(1, m_builder.build());
-
-
-
     }
 
-public static boolean share(String text, String url) {
+public static void share(String text) {
     if (QtNative.activity() == null)
-        return false;
-    Intent sendIntent = new Intent();
-    sendIntent.setAction(Intent.ACTION_SEND);
-    sendIntent.putExtra(Intent.EXTRA_TEXT, text + " " + url);
-    sendIntent.setType("text/plain");
+     //   return false;
+   // Intent sendIntent = new Intent();
+    m_sendIntent.setAction(Intent.ACTION_SEND);
+    m_sendIntent.putExtra(Intent.EXTRA_TEXT, text );
+    m_sendIntent.setType("text/plain");
     // Verify that the intent will resolve to an activity
-    if (sendIntent.resolveActivity(QtNative.activity().getPackageManager()) != null) {
-        QtNative.activity().startActivity(sendIntent);
-        return true;
+    if (m_sendIntent.resolveActivity(QtNative.activity().getPackageManager()) != null) {
+        QtNative.activity().startActivity(m_sendIntent);
+      //  return true;
     }
-    return false;
+   // return false;
 }
-
-
 
 //////end class
 
