@@ -23,7 +23,7 @@ TARGET = iDom_Client
 TEMPLATE = app
 #LIBS = -landroid
 
-INCLUDEPATH = $$PWD/../libs/json/single_include/nlohmann
+INCLUDEPATH = $$PWD/json2
 
 SOURCES += main.cpp\
             idom_client.cpp \

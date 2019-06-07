@@ -33,7 +33,7 @@ public static AndroidHelper m_instance_n;
 
 public static AndroidHelper m_instance;
 
-public static Intent m_sendIntent;
+
 
 public AndroidHelper()
 {
@@ -76,21 +76,42 @@ public static void notify(final String s)
         }
         m_builder.setContentText(s);
         m_notificationManager.notify(1, m_builder.build());
+
+
+
     }
 
 public static void share(String text) {
-    if (QtNative.activity() == null)
-     //   return false;
-   // Intent sendIntent = new Intent();
-    m_sendIntent.setAction(Intent.ACTION_SEND);
-    m_sendIntent.putExtra(Intent.EXTRA_TEXT, text );
-    m_sendIntent.setType("text/plain");
-    // Verify that the intent will resolve to an activity
-    if (m_sendIntent.resolveActivity(QtNative.activity().getPackageManager()) != null) {
-        QtNative.activity().startActivity(m_sendIntent);
-      //  return true;
-    }
-   // return false;
+//    if (QtNative.activity() == null)
+//       // return false;
+//    Intent sendIntent = new Intent();
+//    sendIntent.setAction(Intent.ACTION_SEND);
+//    sendIntent.putExtra(Intent.EXTRA_TEXT, text);
+//    sendIntent.setType("text/plain");
+//    // Verify that the intent will resolve to an activity
+//    if (sendIntent.resolveActivity(QtNative.activity().getPackageManager()) != null) {
+//        QtNative.activity().startActivity(sendIntent);
+//       // return true;
+//    }
+//   // return false;
+
+
+//m_instance_n.runOnUiThread(new Runnable() {
+//         public void run() {
+//             Toast.makeText(m_instance_n.getApplicationContext(),
+//                            "skoko",
+//                            Toast.LENGTH_SHORT).show();
+//         }
+//      });
+
+
+Intent sendIntent = new Intent();
+sendIntent.setAction(Intent.ACTION_SEND);
+sendIntent.putExtra(Intent.EXTRA_TEXT, text);
+sendIntent.setType("text/plain");
+QtNative.activity().startActivity(sendIntent);
+
+
 }
 
 //////end class

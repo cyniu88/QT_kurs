@@ -147,8 +147,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>807</width>
-               <height>677</height>
+               <width>815</width>
+               <height>716</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -2829,8 +2829,26 @@ Smog Charts</string>
         </item>
         <item row="2" column="0">
          <widget class="QPushButton" name="b_share">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,50);
+border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+font: bold 20px ;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+          </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>send context</string>
           </property>
          </widget>
         </item>
@@ -2863,8 +2881,8 @@ Smog Charts</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>809</width>
-             <height>679</height>
+             <width>817</width>
+             <height>718</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">

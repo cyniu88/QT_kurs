@@ -216,6 +216,8 @@ void iDom_Client::odb_answer(QString s)
     ui->lcdNumberActual ->display(s.size());
     ui->progressBar->setValue(100);
     droid.vibrate(100);
+
+    ui->txtAnswer->moveCursor(QTextCursor::End);
 }
 
 void iDom_Client::readProgress(int c)
@@ -1107,5 +1109,5 @@ void iDom_Client::on_b_fan_clicked()
 
 void iDom_Client::on_b_share_clicked()
 {
-    droid.share("kokoko loko ");
+    droid.share(ui->txtAnswer->toPlainText());
 }
