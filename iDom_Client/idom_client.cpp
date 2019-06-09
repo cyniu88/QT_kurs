@@ -198,7 +198,7 @@ void iDom_Client::taskHandler()
     switch(ui->tabWidget->currentIndex())
     {
     case 0:
-    //case 4:
+        //case 4:
     case 6:
         updateAlarmTime();
         emit sendTCP("state", "state all");
@@ -218,7 +218,7 @@ void iDom_Client::odb_answer(QString s)
     ui->progressBar->setValue(100);
     droid.vibrate(100);
 
-    ui->txtAnswer->moveCursor(QTextCursor::End);
+    ui->txtAnswer->verticalScrollBar()->setValue(ui->txtAnswer->verticalScrollBar()->maximum());
 }
 
 void iDom_Client::readProgress(int c)
@@ -329,7 +329,11 @@ void iDom_Client::connectDisconnectButtonState(bool state)
 void iDom_Client::on_b_sendConsole_released()
 {
     config->command = ui->comboBox->currentText().toStdString();
-    emit sendTCP("console",config->command);
+    if (config->command.size() != 0)
+        emit sendTCP("console",config->command);
+    else {
+        ui->txtAnswer->verticalScrollBar()->setValue(ui->txtAnswer->verticalScrollBar()->maximum());
+    }
 }
 
 void iDom_Client::sendSignalColor(int r,int g, int b, int from, int to)
@@ -1113,7 +1117,3 @@ void iDom_Client::on_b_share_clicked()
     droid.share(ui->txtAnswer->toPlainText());
 }
 
-void iDom_Client::on_pushButton_clicked()
-{
-    ui->txtAnswer->verticalScrollBar()->setValue(ui->txtAnswer->verticalScrollBar()->maximum());
-}

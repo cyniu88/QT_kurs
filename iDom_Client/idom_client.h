@@ -241,8 +241,6 @@ private slots:
 
     void on_b_share_clicked();
 
-    void on_pushButton_clicked();
-
 public slots:
     void setLcdActual(int c);
     void setLcdAll(int c);

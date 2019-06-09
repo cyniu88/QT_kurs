@@ -1022,33 +1022,7 @@ border:none;
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="pushButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold ;
-font-size: 20px;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-            </property>
-            <property name="text">
-             <string>DOWN</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1" colspan="7">
+          <item row="1" column="0" colspan="8">
            <widget class="QComboBox" name="comboBox">
             <property name="minimumSize">
              <size>
