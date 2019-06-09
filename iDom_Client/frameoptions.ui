@@ -18,7 +18,7 @@
     <normaloff>:/new/prefix1/iDom_client.ico</normaloff>:/new/prefix1/iDom_client.ico</iconset>
   </property>
   <property name="autoFillBackground">
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <property name="styleSheet">
    <string notr="true">background-image: url(:/new/prefix1/files/background.png);</string>
@@ -113,7 +113,8 @@ border:none;
    <item row="0" column="0">
     <widget class="QTextEdit" name="textEditCommandList">
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255,255);</string>
+      <string notr="true">color: rgb(255, 255,255);
+background-color: rgb(170, 170, 255);</string>
      </property>
     </widget>
    </item>

@@ -7,6 +7,7 @@
 #include <QSettings>
 #include <QStackedWidget>
 #include <QSysInfo>
+#include <QScrollBar>
 
 #ifdef Q_OS_ANDROID
 
@@ -1110,4 +1111,9 @@ void iDom_Client::on_b_fan_clicked()
 void iDom_Client::on_b_share_clicked()
 {
     droid.share(ui->txtAnswer->toPlainText());
+}
+
+void iDom_Client::on_pushButton_clicked()
+{
+    ui->txtAnswer->verticalScrollBar()->setValue(ui->txtAnswer->verticalScrollBar()->maximum());
 }

@@ -147,8 +147,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>815</width>
-               <height>716</height>
+               <width>807</width>
+               <height>677</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -734,140 +734,34 @@ border:none;
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
-          <item row="1" column="0" colspan="6">
-           <widget class="QComboBox" name="comboBox">
+          <item row="3" column="0" colspan="9">
+           <widget class="QProgressBar" name="progressBar">
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>75</height>
-             </size>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QComboBox {
- border-radius: 0px;
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-	border-color:grey;
-	color:white;
-    font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  25px;
-}
-QComboBox::drop-down {
-     width:19px;
-   
-    margin-right:50px;
-   
-}
-QComboBox::down-arrow {
-  image: url(:/new/prefix1/files/down_arrow.png);
-}
-	</string>
-            </property>
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <property name="maxVisibleItems">
-             <number>100</number>
-            </property>
-            <item>
-             <property name="text">
-              <string/>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>RS232 send temperature_error:00;</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>MPD list</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>show log</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>uptime</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>show log no INFO</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>sleep</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>show thread all</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>iDom text</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>event temperature</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>event RS232</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="0" column="6" rowspan="2">
-           <widget class="QPushButton" name="b_sendConsole">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>75</width>
               <height>50</height>
              </size>
             </property>
-            <property name="whatsThis">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wyslij  komende na serwer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
             <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold ;
-font-size: 20px;
-}
-QPushButton:pressed {
-border:none;
+             <string notr="true">
+background-color: rgba(255, 255, 255, 25);
+text-align: center;
+QProgressBar::chunk {
+    background-color: #FFFFFF;
+    width: 10px;
+    margin: 0.5px;
+
 }</string>
             </property>
-            <property name="text">
-             <string>SEND</string>
+            <property name="value">
+             <number>0</number>
+            </property>
+            <property name="invertedAppearance">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
-          <item row="2" column="0" colspan="7">
+          <item row="2" column="0" colspan="9">
            <widget class="QTextEdit" name="txtAnswer">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -922,34 +816,7 @@ p, li { white-space: pre-wrap; }
             </property>
            </widget>
           </item>
-          <item row="3" column="0" colspan="7">
-           <widget class="QProgressBar" name="progressBar">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">
-background-color: rgba(255, 255, 255, 25);
-text-align: center;
-QProgressBar::chunk {
-    background-color: #FFFFFF;
-    width: 10px;
-    margin: 0.5px;
-
-}</string>
-            </property>
-            <property name="value">
-             <number>0</number>
-            </property>
-            <property name="invertedAppearance">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="0" colspan="7">
+          <item row="7" column="0" colspan="9">
            <layout class="QHBoxLayout" name="horizontalLayout_7">
             <item>
              <widget class="QLineEdit" name="messagesToSend">
@@ -1116,6 +983,165 @@ border: none ;</string>
              </widget>
             </item>
            </layout>
+          </item>
+          <item row="0" column="8" rowspan="2">
+           <widget class="QPushButton" name="b_sendConsole">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>75</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wyslij  komende na serwer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold ;
+font-size: 20px;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>SEND</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="pushButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold ;
+font-size: 20px;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>DOWN</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" colspan="7">
+           <widget class="QComboBox" name="comboBox">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>75</height>
+             </size>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QComboBox {
+ border-radius: 0px;
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+	border-color:grey;
+	color:white;
+    font-family:  &quot;Franklin Gothic Medium&quot;;
+    font-size:  25px;
+}
+QComboBox::drop-down {
+     width:19px;
+   
+    margin-right:50px;
+   
+}
+QComboBox::down-arrow {
+  image: url(:/new/prefix1/files/down_arrow.png);
+}
+	</string>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <property name="maxVisibleItems">
+             <number>100</number>
+            </property>
+            <item>
+             <property name="text">
+              <string/>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>RS232 send temperature_error:00;</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>MPD list</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>show log</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>uptime</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>show log no INFO</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>sleep</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>show thread all</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>iDom text</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>event temperature</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>event RS232</string>
+             </property>
+            </item>
+           </widget>
           </item>
          </layout>
         </item>
@@ -2881,8 +2907,8 @@ border:none;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>817</width>
-             <height>718</height>
+             <width>809</width>
+             <height>679</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">
