@@ -1124,5 +1124,6 @@ void iDom_Client::on_b_fan_clicked()
 void iDom_Client::on_b_share_fan_clicked()
 {
     emit sendTCP("share","iDom link gateway fan");
+    droid.vibrate(200);
 }
 
