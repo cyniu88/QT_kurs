@@ -239,7 +239,7 @@ private slots:
 
     void on_b_fan_clicked();
 
-    void on_b_share_clicked();
+    void on_b_share_fan_clicked();
 
 public slots:
     void setLcdActual(int c);
@@ -251,6 +251,7 @@ public slots:
     void odb_mpd_title (QString s);
     void odb_answer_alarm(QString s);
     void odbMpdVolume(QString s);
+    void odb_share_link(QString s);
     void makeInfo(QString tit, QString msg);
     void updateMPDinfo();
     void updateAlarmTime();

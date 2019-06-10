@@ -147,8 +147,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>807</width>
-               <height>677</height>
+               <width>815</width>
+               <height>716</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -2828,7 +2828,7 @@ Smog Charts</string>
          </widget>
         </item>
         <item row="2" column="0">
-         <widget class="QPushButton" name="b_share">
+         <widget class="QPushButton" name="b_share_fan">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -2848,7 +2848,17 @@ border:none;
 }</string>
           </property>
           <property name="text">
-           <string>send context</string>
+           <string>link fan on</string>
+          </property>
+          <property name="icon">
+           <iconset resource="ikony.qrc">
+            <normaloff>:/new/prefix1/files/svg/fanON.svg</normaloff>:/new/prefix1/files/svg/fanON.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -2881,8 +2891,8 @@ border:none;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>809</width>
-             <height>679</height>
+             <width>817</width>
+             <height>718</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">

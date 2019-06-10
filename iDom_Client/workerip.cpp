@@ -87,6 +87,10 @@ void WorkerIP::run()
         {
             emit answerState(buffor);
         }
+        else if (addresOUT.address == "share")
+        {
+            emit answerShareLink(buffor);
+        }
         else if (addresOUT.address =="TTS"){
             emit signalFromTTS(buffor);
         }

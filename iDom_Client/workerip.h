@@ -64,6 +64,7 @@ signals:
     void pingTime(QString s);
     void answerState(QString s);
     void alarmTime(QString s);
+    void answerShareLink(QString);
 
 public slots:
     void fromTCP(const std::string& addres, const std::string& qmsg);

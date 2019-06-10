@@ -8,6 +8,8 @@
 #include <QStackedWidget>
 #include <QSysInfo>
 #include <QScrollBar>
+#include <QApplication>
+#include <QClipboard>
 
 #ifdef Q_OS_ANDROID
 
@@ -255,6 +257,13 @@ void iDom_Client::odbMpdVolume(QString s)
 {
     ui->volumeTXT->setText("| volume: " +s+"%");
     ui->volumeBar->setValue(s.toInt());
+}
+
+void iDom_Client::odb_share_link(QString s)
+{
+    QClipboard* clip = QApplication::clipboard();
+    clip->setText(s);
+    droid.share(s);
 }
 
 void iDom_Client::makeInfo(QString tit, QString msg)
@@ -1112,8 +1121,8 @@ void iDom_Client::on_b_fan_clicked()
     droid.vibrate(200);
 }
 
-void iDom_Client::on_b_share_clicked()
+void iDom_Client::on_b_share_fan_clicked()
 {
-    droid.share(ui->txtAnswer->toPlainText());
+    emit sendTCP("share","iDom link gateway fan");
 }
 

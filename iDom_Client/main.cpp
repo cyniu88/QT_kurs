@@ -52,6 +52,7 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(serverDisconnected(bool)),   w,SLOT(connectDisconnectButtonState(bool))  );
     QObject::connect(worker,SIGNAL(pingTime(QString)),          w,SLOT(getPing(QString))    );
     QObject::connect(worker,SIGNAL(answerState(QString)),       w,SLOT(odb_answer_state(QString))   );
+    QObject::connect(worker,SIGNAL(answerShareLink(QString)),   w,SLOT(odb_share_link(QString))   );
 
     QObject::connect(infoMPDtimer,SIGNAL(timeout()),            w,SLOT(updateMPDinfo()) );
     QObject::connect(infoTemperatureTimer,SIGNAL(timeout()),    w,SLOT(updateTemepretureInfo()) );
