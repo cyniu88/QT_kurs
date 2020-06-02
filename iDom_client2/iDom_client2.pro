@@ -95,3 +95,5 @@ DISTFILES += \
     android/res/values/libs.xml
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
+

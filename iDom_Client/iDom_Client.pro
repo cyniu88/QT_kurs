@@ -77,27 +77,25 @@ QMAKE_CXXFLAGS += -std=c++1y -Wall  -pedantic -Woverlength-strings -DIDOM
 
 QMAKE_LINK    = $$QMAKE_CXX $$QMAKE_CFLAGS -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a
 
-OTHER_FILES += \
-    iDom_client.ico \
-    android/AndroidManifest.xml \
-    android/gradle/wrapper/gradle-wrapper.jar \
-    android/gradlew \
-    android/res/values/libs.xml \
-    android/build.gradle \
-    android/gradle/wrapper/gradle-wrapper.properties \
-    android/gradlew.bat \
-    android/src/org/qtproject/example/Chronometer/Vibrate.java
+
 
 RESOURCES += \
     ikony.qrc
 
-ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 win32:RC_ICONS += iDom_client.ico
 
-DISTFILES += \
+OTHER_FILES += \
     android/src/org/qtproject/example/Chronometer/AndroidHelper.java \
-    myqmlfile.qml \
-    android/AndroidManifest.xml \
-    android/res/values/libs.xml \
-    android/build.gradle
+    android/AndroidManifest.xml
+
+DISTFILES += \
+    android/build.gradle \
+    android/gradle/wrapper/gradle-wrapper.jar \
+    android/gradle/wrapper/gradle-wrapper.properties \
+    android/gradlew \
+    android/gradlew.bat \
+    android/res/values/libs.xml
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
