@@ -73,11 +73,11 @@ void WorkerIP::run()
         }
         else if (addresOUT.address == "temperature")
         {
-            emit temperature (buffor);
+            emit temperature(buffor);
         }
         else if (addresOUT.address == "tools")
         {
-            emit tools (buffor);
+            emit tools(buffor);
         }
         else if (addresOUT.address == "listMPD")
         {
@@ -93,6 +93,9 @@ void WorkerIP::run()
         }
         else if (addresOUT.address =="TTS"){
             emit signalFromTTS(buffor);
+        }
+        else if (addresOUT.address =="toast"){
+            emit toast_msg(buffor);
         }
         pingTimeMilis = pingStart.msecsTo( QDateTime::currentDateTime());
 

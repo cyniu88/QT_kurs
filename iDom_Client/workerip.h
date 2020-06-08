@@ -50,6 +50,7 @@ signals:
     void sendAll(int c);
     void progress(int c);
     void answer(QString s);
+    void toast_msg(QString s);
     void answerLED(QString s);
     void answerMPD(QString s);
     void answerAlarm(QString s);

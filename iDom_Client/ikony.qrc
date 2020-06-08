@@ -31,9 +31,10 @@
         <file>files/svg/fanON.svg</file>
         <file>files/svg/tap-water.svg</file>
         <file>files/svg/heat-cwu.svg</file>
+        <file>files/svg/Kodi-top-bottom.svg</file>
+        <file>files/svg/wildecyote-body.png</file>
     </qresource>
     <qresource prefix="/www">
         <file>myqmlfileforwww.qml</file>
     </qresource>
-    <qresource prefix="/"/>
 </RCC>

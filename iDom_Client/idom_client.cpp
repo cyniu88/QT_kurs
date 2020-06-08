@@ -10,6 +10,7 @@
 #include <QScrollBar>
 #include <QApplication>
 #include <QClipboard>
+#include <QScreen>
 
 #ifdef Q_OS_ANDROID
 
@@ -64,10 +65,10 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     }
     pix = pix.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
-    palette.setBrush(QPalette::Background, pix);
+    palette.setBrush(QPalette::Window, pix);
     this->setPalette(palette);
 
-    QRect rec = QApplication::desktop()->screenGeometry();
+    QRect rec = QGuiApplication::primaryScreen()->geometry();
     int  height = rec.height();
     int  width  = rec.width();
     std::string s =  std::to_string(height) +" and " + std::to_string(width)  ;
@@ -75,10 +76,16 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     termoIN.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
     termoOUT.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
+    termoFloor.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
+    termoBoiler.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
     termoIN.setBackgroundColor(Qt::green);
     termoOUT.setBackgroundColor(Qt::green);
+    termoFloor.setBackgroundColor(Qt::green);
+    termoBoiler.setBackgroundColor(Qt::green);
     ui->werIN->addWidget(&termoIN);
     ui->werOUT->addWidget(&termoOUT);
+    ui->werFloor->addWidget(&termoFloor);
+    ui->werBoiler->addWidget(&termoBoiler);
 
     /// nawigate bar
     ///
@@ -161,6 +168,7 @@ void iDom_Client::closeEvent(QCloseEvent *event)
 void iDom_Client::resizeEvent(QResizeEvent *event)
 {
     QMainWindow::resizeEvent(event);
+    screenChanged();
 }
 
 void iDom_Client::readSettings()
@@ -221,6 +229,14 @@ void iDom_Client::odb_answer(QString s)
     droid.vibrate(100);
 
     ui->txtAnswer->verticalScrollBar()->setValue(ui->txtAnswer->verticalScrollBar()->maximum());
+}
+
+void iDom_Client::odb_toast_msg(QString s)
+{
+    droid.makeToast(s);
+#ifdef Q_OS_WIN
+    trayIcon.showMessage("info",s);
+#endif
 }
 
 void iDom_Client::readProgress(int c)
@@ -295,15 +311,30 @@ void iDom_Client::updateTemepretureInfo()
 
 void iDom_Client::odb_temperature(QString s)
 {
-    QString in = s.split(":")[0];
-    QString out =s.split(":")[1];
+    auto data = s.split(":");
+    if(data.size() < 4){
+        QString msg("problem z pobraniem temperatury");
+        msg.append(" pobrano parametrow:  ");
+        msg.append(QString::number(data.size()));
+        ui->temperatureTXT->setText(msg);
+        return;
+    }
+    QString in = data.at(0);
+    QString out = data.at(1);
+    QString boiler = data.at(2);
+    QString floor = data.at(3);
+
     out = out.split("\r")[0];
     temperatureString = "Temperature Inside: " + in +"\u2103"+ " Outside: "+ out+ "\u2103"+ " ";
     ui->temperatureTXT->setText(temperatureString);
-    ui->InsideLCD_2->display( in   );
-    ui->OutsideLCD_2->display( out);
+    ui->InsideLCD_2->display(in);
+    ui->OutsideLCD_2->display(out);
+    ui->boilerLCD->display(boiler);
+    ui->floorLCD->display(floor);
     termoIN.setTemperature(in.toDouble());
     termoOUT.setTemperature(out.toDouble());
+    termoFloor.setTemperature(floor.toDouble());
+    termoBoiler.setTemperature(boiler.toDouble());
 }
 
 void iDom_Client::odb_tools(QString s)
@@ -644,19 +675,14 @@ void iDom_Client::on_tabWidget_currentChanged( )
     emit sendTCP("state", "state all");
     ui->lineEdit_tabName->setText(   ui->tabWidget->tabText(ui->tabWidget->currentIndex())  );
     ui->horizontalSlider_tabNavigate->setValue(ui->tabWidget->currentIndex());
-    if (ui->tabWidget->currentIndex() == 0 )
-    {
-#ifdef Q_OS_WIN
-        //  axWidgetTemperature .dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
-#endif
-#ifdef Q_OS_ANDROID
 
-#endif
-    }
-    else {
-#ifdef Q_OS_ANDROID
-        //  delete viewTemp;
-#endif
+
+    switch (ui->tabWidget->currentIndex()){
+    case 6:
+        screenChanged();
+        break;
+    default:
+        break;
     }
 }
 
@@ -736,7 +762,7 @@ void iDom_Client::on_b_extra_color_clicked()
     QColorDialog color;
     color.setOptions(QColorDialog::ShowAlphaChannel);
     QFont f;
-    int size = QApplication::desktop()->screenGeometry().width() ;
+    int size = QGuiApplication::primaryScreen()->geometry().width();
     if (size>1000){
         size = 25;
         qDebug() << "duze";
@@ -923,7 +949,7 @@ void iDom_Client::odb_answer_state(QString s)
 {
     QStringList sl = s.split(" ");
 
-    for (auto s : sl){
+    for (const auto& s : sl){
         if (s == "cameraLED=OFF" && ui->b_ledCamera->isChecked() == true){
             ui->b_ledCamera->setChecked(false);
         }
@@ -1039,7 +1065,7 @@ void iDom_Client::on_b_printer_clicked()
     }
     if (ui->b_printer->isChecked() == false)
     {
-        emit sendTCP("console","light room taras on");
+        emit sendTCP("console","light room taras off");
     }
     droid.vibrate(200);
 }
@@ -1134,9 +1160,7 @@ void iDom_Client::on_b_circlePump_clicked()
     reply = QMessageBox::question(this, "", "uruchomić pompę C.W.U?",
                                   QMessageBox::Yes|QMessageBox::No);
     if (reply == QMessageBox::Yes) {
-       // emit sendTCP("console","buderus circPomp");
-
-        emit sendTCP("console","help");
+        emit sendTCP("toast","buderus circPomp");
     }
 }
 
@@ -1146,9 +1170,7 @@ void iDom_Client::on_b_heatingBoiler_clicked()
     reply = QMessageBox::question(this, "", "zagrzać wodę w kranie?",
                                   QMessageBox::Yes|QMessageBox::No);
     if (reply == QMessageBox::Yes) {
-       // emit sendTCP("console","buderus circPomp");
-
-        emit sendTCP("console","help buderus");
+        emit sendTCP("toast","buderus boiler heating");
     }
 }
 
@@ -1158,8 +1180,17 @@ void iDom_Client::on_b_KODI_clicked()
     reply = QMessageBox::question(this, "", "uruchomić KODI?",
                                   QMessageBox::Yes|QMessageBox::No);
     if (reply == QMessageBox::Yes) {
-       // emit sendTCP("console","buderus circPomp");
-
-        emit sendTCP("console","help iDom");
+        emit sendTCP("toast","iDom KODI");
     }
+}
+
+void iDom_Client::screenChanged()
+{
+    ui->b_printer->setIconSize((ui->b_printer->size()*0.6));
+    ui->b_listwa->setIconSize(ui->b_listwa->size()*0.6);
+    ui->b_lockUnlock_HOME->setIconSize(ui->b_lockUnlock_HOME->size()*0.6);
+    ui->b_fan->setIconSize(ui->b_fan->size()*0.6);
+    ui->b_heatingBoiler->setIconSize(ui->b_heatingBoiler->size()*0.6);
+    ui->b_circlePump->setIconSize(ui->b_circlePump->size()*0.6);
+    ui->b_KODI->setIconSize(ui->b_KODI->size()*06);
 }

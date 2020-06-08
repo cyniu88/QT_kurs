@@ -79,8 +79,7 @@ QMAKE_LINK    = $$QMAKE_CXX $$QMAKE_CFLAGS -Wl,--exclude-libs,libgcc.a -Wl,--exc
 
 
 
-RESOURCES += \
-    ikony.qrc
+RESOURCES +=  ikony.qrc
 
 
 win32:RC_ICONS += iDom_client.ico

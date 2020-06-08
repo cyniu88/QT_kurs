@@ -17,7 +17,7 @@ setAlarm::setAlarm(iDom_CONFIG *config, QWidget *parent) :
     }
     pix = pix.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
-    palette.setBrush(QPalette::Background, pix);
+    palette.setBrush(QPalette::Window, pix);
     this->setPalette(palette);
 
     //displayHour(7);

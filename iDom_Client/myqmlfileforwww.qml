@@ -13,7 +13,6 @@
 //}
 import QtQuick 2.4
 import QtQuick.Controls 1.4
-import QtWebView 1.0
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
 import QtMultimedia 5.4
@@ -25,7 +24,7 @@ Rectangle {
     WebView {
         id: webView
         anchors.fill: parent
-        url: "http://cyniu88.no-ip.pl/wykres.html"
+        url: "http://cyniu88.no-ip.pl/lusina2.html"
 
     }
 

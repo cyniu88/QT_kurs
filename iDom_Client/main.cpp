@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(sendActual(int )),           w,SLOT(setLcdActual(int)));
     QObject::connect(worker,SIGNAL(sendAll(int )),              w,SLOT(setLcdAll(int)));
     QObject::connect(worker,SIGNAL(answer(QString)),            w,SLOT(odb_answer(QString)));
+    QObject::connect(worker,SIGNAL(toast_msg(QString)),         w,SLOT(odb_toast_msg(QString)));
     QObject::connect(worker,SIGNAL(progress(int)),              w,SLOT(readProgress(int)));
     QObject::connect(worker,SIGNAL(answerLED(QString)),         w,SLOT(odb_answer_LED(QString))    );
     QObject::connect(worker,SIGNAL(answerMPD(QString)),         w,SLOT(odb_answer_MPD(QString))  );
@@ -62,6 +63,7 @@ int main(int argc, char *argv[])
     w->updateTemepretureInfo();
     w->readSettings();
     w->show();
+    w->screenChanged();
     infoTemperatureTimer->start(60000);
     infoMPDtimer->start(10000);
 
