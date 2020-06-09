@@ -1029,14 +1029,9 @@ void iDom_Client::on_b_options_clicked()
 void iDom_Client::on_b_sms_clicked()
 {
     droid.sendSMS("506496722","test sms ");
-    std::string m = "jeden";
-    m.push_back(static_cast<char>(0));
-    m.append("dwa");
-    qDebug() << "testowy string " <<  m.size();
-    foreach (auto t, m) {
-        qDebug()<< static_cast<int>(t);
-    }
-    emit sendTCP("console",m);
+    droid.makeToast("wyslano sms:");
+
+    droid.updateAndroidNotification("test testo");
 }
 
 void iDom_Client::on_b_ledCamera_clicked()

@@ -3,6 +3,7 @@
 //
 package org.qtproject.example.Chronometer;
 
+import org.qtproject.qt5.android.QtNative;
 import android.app.Notification;
 import android.app.NotificationManager;
 
@@ -13,6 +14,16 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import android.os.BatteryManager;
+
+import android.content.Intent;
+import android.content.IntentFilter;
+
+import android.app.PendingIntent;
+import android.graphics.Color;
+import android.graphics.BitmapFactory;
+import android.app.NotificationChannel;
+
+import android.R;
 
 
 public class AndroidHelper extends org.qtproject.qt5.android.bindings.QtActivity
@@ -60,20 +71,45 @@ public static void makeToast(final String s)
               });
     }
 
-public static void notify(final String s)
+public static void notify(Context context, String message)
     {
-        if (m_notificationManager == null) {
-            m_notificationManager = (NotificationManager)m_instance_n.getSystemService(Context.NOTIFICATION_SERVICE);
-            m_builder = new Notification.Builder(m_instance_n);
+        try {
+            m_notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-            m_builder.setContentTitle("A message from Qt!");
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                int importance = NotificationManager.IMPORTANCE_DEFAULT;
+                NotificationChannel notificationChannel = new NotificationChannel("Qt", "Qt Notifier", importance);
+                m_notificationManager.createNotificationChannel(notificationChannel);
+                m_builder = new Notification.Builder(context, notificationChannel.getId());
+            } else {
+                m_builder = new Notification.Builder(context);
+            }
+
+                    //.setSmallIcon(R.drawable.icon)
+                    //.setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.icon))
+           m_builder.setContentTitle("A message from Qt!")
+                    .setContentText(message)
+                    .setDefaults(Notification.DEFAULT_SOUND)
+                    .setColor(Color.GREEN)
+                    .setAutoCancel(true);
+
+            m_notificationManager.notify(0, m_builder.build());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        m_builder.setContentText(s);
-        m_notificationManager.notify(1, m_builder.build());
-
-
 
     }
+
+public static void share(String text) {
+
+Intent sendIntent = new Intent();
+sendIntent.setAction(Intent.ACTION_SEND);
+sendIntent.putExtra(Intent.EXTRA_TEXT, text);
+sendIntent.setType("text/plain");
+QtNative.activity().startActivity(sendIntent);
+
+
+}
 //////end class
 
 }
