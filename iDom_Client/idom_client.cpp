@@ -957,13 +957,13 @@ void iDom_Client::odb_answer_state(QString s)
             ui->b_ledCamera->setChecked(true);
         }
         ///////////////////////////////////////////////////////////////////
-        if (s == "printer=OFF" && ui->b_printer->isChecked() == true){
+        if (s == "taras=OFF" && ui->b_printer->isChecked() == true){
             ui->b_printer->setChecked(false);
-            droid.makeToast("drukarka wyłączona");
+            droid.makeToast("gniazdko na tarasie wyłączone");
         }
-        if (s == "printer=ON" && ui->b_printer->isChecked() == false){
+        if (s == "taras=ON" && ui->b_printer->isChecked() == false){
             ui->b_printer->setChecked(true);
-            droid.makeToast("drukarka uruchomiona");
+            droid.makeToast("gniazdko na tarasie włączone");
         }
         ///////////////////////////////////////////////////////////////
         if (s == "fan=OFF" && ui->b_fan->isChecked() == true){
