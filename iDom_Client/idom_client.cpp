@@ -12,6 +12,8 @@
 #include <QClipboard>
 #include <QScreen>
 
+#include "json.hpp"
+
 #ifdef Q_OS_ANDROID
 
 #endif
@@ -239,6 +241,22 @@ void iDom_Client::odb_toast_msg(QString s)
 #endif
 }
 
+void iDom_Client::odb_light_msg(QString s)
+{
+    //TODO
+    nlohmann::json jj = nlohmann::json::parse(s.toStdString());
+
+    for(const auto& data : jj){
+       lightConf[data.at("room").get<std::string>()].push_back(data.at("bulb ID").get<int>());
+    }
+
+    for (auto it = lightConf.begin(); it != lightConf.end(); ++it) {
+
+        qDebug() << QString::fromStdString(it.key()) << " I " << it.value();
+        ui->comboBox_ROOM->addItem(QString::fromStdString(it.key()));
+    }
+}
+
 void iDom_Client::readProgress(int c)
 {
     ui->progressBar->setValue(c);
@@ -307,6 +325,7 @@ void iDom_Client::updateTemepretureInfo()
     updateAlarmTime();
     emit sendTCP("temperature","iDom temperature");
     emit sendTCP("listMPD", "MPD list");
+    emit sendTCP("light", "light info");
 }
 
 void iDom_Client::odb_temperature(QString s)
@@ -1188,4 +1207,63 @@ void iDom_Client::screenChanged()
     ui->b_heatingBoiler->setIconSize(ui->b_heatingBoiler->size()*0.6);
     ui->b_circlePump->setIconSize(ui->b_circlePump->size()*0.6);
     ui->b_KODI->setIconSize(ui->b_KODI->size()*06);
+}
+
+void iDom_Client::on_comboBox_ROOM_currentIndexChanged(int index)
+{
+    ui->comboBox_BULB->clear();
+    ui->comboBox_BULB->addItem("all");
+    for(const auto& v : lightConf[ui->comboBox_ROOM->currentText().toStdString()]){
+        ui->comboBox_BULB->addItem(QString::number(v));
+    }
+}
+
+void iDom_Client::on_b_light_ON_clicked()
+{
+    if(ui->comboBox_ROOM->currentText() == "all"){
+        qDebug() << "zapalam wszystko";
+        emit sendTCP("toast","light all on");
+    }
+    else{
+        if(ui->comboBox_BULB->currentText() == "all"){
+            std::stringstream msg;
+            msg << "light room ";
+            msg << ui->comboBox_ROOM->currentText().toStdString();
+            msg << " on";
+            emit sendTCP("toast", msg.str());
+            qDebug() << "wiadomsoc " << QString::fromStdString(msg.str());
+        }
+        else{
+            std::stringstream msg;
+            msg << "light bulb on ";
+            msg << ui->comboBox_BULB->currentText().toStdString();
+            emit sendTCP("toast", msg.str());
+            qDebug() << "wiadomsoc " << QString::fromStdString(msg.str());
+        }
+    }
+}
+
+void iDom_Client::on_b_light_OFF_clicked()
+{
+    if(ui->comboBox_ROOM->currentText() == "all"){
+        qDebug() << "gasze wszystko";
+        emit sendTCP("toast","light all off");
+    }
+    else{
+        if(ui->comboBox_BULB->currentText() == "all"){
+            std::stringstream msg;
+            msg << "light room ";
+            msg << ui->comboBox_ROOM->currentText().toStdString();
+            msg << " off";
+            emit sendTCP("toast", msg.str());
+            qDebug() << "wiadomsoc " << QString::fromStdString(msg.str());
+        }
+        else{
+            std::stringstream msg;
+            msg << "light bulb off ";
+            msg << ui->comboBox_BULB->currentText().toStdString();
+            emit sendTCP("toast", msg.str());
+            qDebug() << "wiadomsoc " << QString::fromStdString(msg.str());
+        }
+    }
 }

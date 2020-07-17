@@ -83,6 +83,9 @@ private:
     iDom_SYSTEM_INFO systemInfo;
     bool ledCamera = false;
 
+    ///  kontener do trzymana konfiguracji zarowek
+    QMap<std::string, QVector<int>> lightConf;
+
 #ifdef Q_OS_ANDROID
     // QQuickWidget *viewTemp = NULL;
 #else
@@ -172,11 +175,18 @@ private slots:
     void on_b_circlePump_clicked();
     void on_b_heatingBoiler_clicked();
     void on_b_KODI_clicked();
+    void on_comboBox_ROOM_currentIndexChanged(int index);
+
+    void on_b_light_ON_clicked();
+
+    void on_b_light_OFF_clicked();
+
 public slots:
     void setLcdActual(int c);
     void setLcdAll(int c);
     void odb_answer(QString s);
     void odb_toast_msg(QString s);
+    void odb_light_msg(QString s);
     void readProgress(int c);
     void odb_answer_LED(QString s);
     void odb_answer_MPD(QString s);

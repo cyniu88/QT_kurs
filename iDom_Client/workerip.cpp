@@ -97,6 +97,9 @@ void WorkerIP::run()
         else if (addresOUT.address =="toast"){
             emit toast_msg(buffor);
         }
+        else if (addresOUT.address =="light"){
+            emit light_msg(buffor);
+        }
         pingTimeMilis = pingStart.msecsTo( QDateTime::currentDateTime());
 
         emit pingTime(QString::number(static_cast<double>(pingTimeMilis/1000) )+" sec");

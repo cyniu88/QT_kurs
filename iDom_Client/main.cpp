@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(sendAll(int )),              w,SLOT(setLcdAll(int)));
     QObject::connect(worker,SIGNAL(answer(QString)),            w,SLOT(odb_answer(QString)));
     QObject::connect(worker,SIGNAL(toast_msg(QString)),         w,SLOT(odb_toast_msg(QString)));
+    QObject::connect(worker,SIGNAL(light_msg(QString)),         w,SLOT(odb_light_msg(QString)));
     QObject::connect(worker,SIGNAL(progress(int)),              w,SLOT(readProgress(int)));
     QObject::connect(worker,SIGNAL(answerLED(QString)),         w,SLOT(odb_answer_LED(QString))    );
     QObject::connect(worker,SIGNAL(answerMPD(QString)),         w,SLOT(odb_answer_MPD(QString))  );
