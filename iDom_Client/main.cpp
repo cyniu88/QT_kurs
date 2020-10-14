@@ -62,6 +62,7 @@ int main(int argc, char *argv[])
     worker->start();
     w->updateMPDinfo();
     w->updateTemepretureInfo();
+    w->updateState();
     w->readSettings();
     w->show();
     w->screenChanged();
@@ -69,9 +70,10 @@ int main(int argc, char *argv[])
     infoMPDtimer->start(10000);
 
     a.exec();
-    config.goWhile=false;
+
+    config.goWhile = false;
     int i = 0;
-    while (config.goWhile==false)
+    while (config.goWhile == false)
     {
         qDebug() << "czekam: "+QString::number(++i) ;
         if (i>80000)

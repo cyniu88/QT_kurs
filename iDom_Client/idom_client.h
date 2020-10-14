@@ -197,7 +197,8 @@ public slots:
     void makeInfo(QString tit, QString msg);
     void updateMPDinfo();
     void updateAlarmTime();
-    void updateTemepretureInfo ();
+    void updateTemepretureInfo();
+    void updateState();
     void odb_temperature (QString s);
     void odb_tools (QString s);
     void listMPD(QString s);

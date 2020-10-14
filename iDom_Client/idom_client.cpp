@@ -251,7 +251,6 @@ void iDom_Client::odb_light_msg(QString s)
     }
 
     for (auto it = lightConf.begin(); it != lightConf.end(); ++it) {
-
         qDebug() << QString::fromStdString(it.key()) << " I " << it.value();
         ui->comboBox_ROOM->addItem(QString::fromStdString(it.key()));
     }
@@ -275,7 +274,7 @@ void iDom_Client::odb_answer_MPD(QString s)
 
 void iDom_Client::odb_mpd_title(QString s)
 {
-    ui->titleTXT->setText(s+"     ");
+    ui->titleTXT->setText(s + "     ");
 }
 
 void iDom_Client::odb_answer_alarm(QString s)
@@ -326,6 +325,11 @@ void iDom_Client::updateTemepretureInfo()
     emit sendTCP("temperature","iDom temperature");
     emit sendTCP("listMPD", "MPD list");
     emit sendTCP("light", "light info");
+}
+
+void iDom_Client::updateState()
+{
+    emit sendTCP("state", "state all");
 }
 
 void iDom_Client::odb_temperature(QString s)
@@ -1018,7 +1022,7 @@ void iDom_Client::odb_answer_state(QString s)
             config->houseLocked = false;
             droid.makeToast("dom odblokowany");
         }
-        if(s == "house=UNDEFINE"){
+        if (s == "house=UNDEFINE"){
             ui->b_lockUnlock_HOME->setChecked(true);
             droid.makeToast("stan domu niezdefiniowany");
         }
@@ -1027,6 +1031,14 @@ void iDom_Client::odb_answer_state(QString s)
             qDebug() << "LOCK HOUSE";
             config->houseLocked = true;
             droid.makeToast("dom zablokowany");
+        }
+        if (s == "burnGas=ACTIVE"){
+            QPixmap pix(":/new/prefix1/files/svg/heating-service.svg");
+            ui->l_burnGas->setPixmap(pix);
+                    //setStyleSheet("background-image: url(:/new/prefix1/files/svg/heating-service.svg); background-repeat: no-repeat; background-size: cover;");
+        }
+        if (s == "burnGas=DEACTIVE"){
+            ui->l_burnGas->clear();
         }
         ///////////////////////////////////////////////////////////////////
     }

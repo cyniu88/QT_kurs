@@ -73,6 +73,123 @@
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <item row="4" column="0">
+     <layout class="QHBoxLayout" name="navigateLayout_3">
+      <item>
+       <widget class="QPushButton" name="b_tabLeft">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>BACK</string>
+        </property>
+        <property name="whatsThis">
+         <string>kokoko?</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton {
+background-color: rgb(158, 158, 158,50);
+ border:1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ image: url(:/new/prefix1/files/Green_Arrow_Left.svg);
+}
+QPushButton:pressed {
+
+border:none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_tabName">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>18</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>BlankCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 0);
+border: none ;
+color: rgb(255, 255,255);</string>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="cursorMoveStyle">
+         <enum>Qt::VisualMoveStyle</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="b_tabRight">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>NEXT</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ image: url(:/new/prefix1/files/Green_Arrow_Right.svg);
+}
+QPushButton:pressed {
+border:none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="1" column="0">
@@ -275,121 +392,39 @@ border:none;
      </layout>
     </item>
     <item row="3" column="0">
-     <layout class="QHBoxLayout" name="navigateLayout_3">
-      <item>
-       <widget class="QPushButton" name="b_tabLeft">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="toolTip">
-         <string>BACK</string>
-        </property>
-        <property name="whatsThis">
-         <string>kokoko?</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">
-QPushButton {
-background-color: rgb(158, 158, 158,50);
- border:1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- image: url(:/new/prefix1/files/Green_Arrow_Left.svg);
+     <widget class="QSlider" name="horizontalSlider_tabNavigate">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="cursor">
+       <cursorShape>SizeHorCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSlider::groove:horizontal {
+    
+    height: 10px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FFFFFF, stop:1 #EEEEEE);
+    margin: 2px 0;
 }
-QPushButton:pressed {
 
-border:none;
+QSlider::handle:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #00FF00, stop:1 #EEEEEE);
+   height: 5px;
+    width: 100px;
+    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove* /
+    border-radius: 3px;
 }</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_tabName">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>18</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>BlankCursor</cursorShape>
-        </property>
-        <property name="toolTip">
-         <string/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 0, 0, 0);
-border: none ;
-color: rgb(255, 255,255);</string>
-        </property>
-        <property name="frame">
-         <bool>false</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-        <property name="cursorMoveStyle">
-         <enum>Qt::VisualMoveStyle</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="b_tabRight">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="toolTip">
-         <string>NEXT</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- image: url(:/new/prefix1/files/Green_Arrow_Right.svg);
-}
-QPushButton:pressed {
-border:none;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-     </layout>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
     </item>
     <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
@@ -2916,7 +2951,7 @@ border:none;
         <string>TEMPERATURE</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_13">
-        <item row="3" column="1" rowspan="2">
+        <item row="4" column="1" rowspan="2">
          <widget class="QPushButton" name="b_sms">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -2950,6 +2985,32 @@ border:none;
            </size>
           </property>
          </widget>
+        </item>
+        <item row="2" column="1">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="0">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>2</height>
+           </size>
+          </property>
+         </spacer>
         </item>
         <item row="0" column="0" colspan="2">
          <layout class="QGridLayout" name="gridLayout_TEMPERATURE">
@@ -3196,15 +3257,17 @@ border:none;
          </layout>
         </item>
         <item row="4" column="0">
-         <widget class="QPushButton" name="b_showTemperatureCharts">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QPushButton" name="b_share_fan">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
 background-color: rgb(158, 158, 158,50);
 border: 1px solid #8f8f91;
 border-radius: 0px;
@@ -3214,74 +3277,57 @@ font: bold 20px ;
 QPushButton:pressed {
 border:none;
 }</string>
-          </property>
-          <property name="text">
-           <string>Show Temperature
+            </property>
+            <property name="text">
+             <string>link fan on</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/fanON.svg</normaloff>:/new/prefix1/files/svg/fanON.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="b_showTemperatureCharts">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,50);
+border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+font: bold 20px ;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Show Temperature
 and
 Smog Charts</string>
-          </property>
-         </widget>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
-        <item row="3" column="0">
-         <widget class="QPushButton" name="b_share_fan">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
-border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-font: bold 20px ;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-          </property>
+        <item row="5" column="0">
+         <widget class="QLabel" name="l_burnGas">
           <property name="text">
-           <string>link fan on</string>
-          </property>
-          <property name="icon">
-           <iconset resource="ikony.qrc">
-            <normaloff>:/new/prefix1/files/svg/fanON.svg</normaloff>:/new/prefix1/files/svg/fanON.svg</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>64</width>
-            <height>64</height>
-           </size>
+           <string/>
           </property>
          </widget>
-        </item>
-        <item row="2" column="1">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="2" column="0">
-         <spacer name="horizontalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>2</height>
-           </size>
-          </property>
-         </spacer>
         </item>
        </layout>
       </widget>
@@ -3862,41 +3908,6 @@ border:none;
         </item>
        </layout>
       </widget>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QSlider" name="horizontalSlider_tabNavigate">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeHorCursor</cursorShape>
-      </property>
-      <property name="mouseTracking">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QSlider::groove:horizontal {
-    
-    height: 10px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FFFFFF, stop:1 #EEEEEE);
-    margin: 2px 0;
-}
-
-QSlider::handle:horizontal {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #00FF00, stop:1 #EEEEEE);
-   height: 5px;
-    width: 100px;
-    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove* /
-    border-radius: 3px;
-}</string>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
      </widget>
     </item>
    </layout>

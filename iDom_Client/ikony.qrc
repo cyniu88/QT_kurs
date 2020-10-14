@@ -33,8 +33,10 @@
         <file>files/svg/heat-cwu.svg</file>
         <file>files/svg/Kodi-top-bottom.svg</file>
         <file>files/svg/wildecyote-body.png</file>
+        <file>files/svg/heating-service.svg</file>
     </qresource>
     <qresource prefix="/www">
         <file>myqmlfileforwww.qml</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>
