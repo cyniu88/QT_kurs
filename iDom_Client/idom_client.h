@@ -84,7 +84,7 @@ private:
     bool ledCamera = false;
 
     ///  kontener do trzymana konfiguracji zarowek
-    QMap<std::string, QVector<int>> lightConf;
+    QMap<std::string, QVector<QString>> lightConf;
 
 #ifdef Q_OS_ANDROID
     // QQuickWidget *viewTemp = NULL;

@@ -74,7 +74,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     int  height = rec.height();
     int  width  = rec.width();
     std::string s =  std::to_string(height) +" and " + std::to_string(width)  ;
-    ui->txtAnswer->setText( QString::fromStdString( s));
+    ui->txtAnswer->setLineWrapMode(QPlainTextEdit::NoWrap);
+    ui->txtAnswer->setPlainText(QString::fromStdString( s));
 
     termoIN.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
     termoOUT.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
@@ -224,7 +225,7 @@ void iDom_Client::taskHandler()
 
 void iDom_Client::odb_answer(QString s)
 {
-    ui->txtAnswer->setText(s);
+    ui->txtAnswer->setPlainText(s);
     ui->txtAnswer->moveCursor(QTextCursor::End);
     ui->lcdNumberActual ->display(s.size());
     ui->progressBar->setValue(100);
@@ -247,12 +248,16 @@ void iDom_Client::odb_light_msg(QString s)
     nlohmann::json jj = nlohmann::json::parse(s.toStdString());
 
     for(const auto& data : jj){
-       lightConf[data.at("room").get<std::string>()].push_back(data.at("bulb ID").get<int>());
+        auto name = data.at("room").get<std::string>();
+        //auto bulbPair = QString(,);
+        QString bulbString;
+        bulbString = QString::number(data.at("bulb ID").get<int>() ) + " "  + QString::fromStdString(data.at("bubl name").get<std::string>());
+        lightConf[name].push_back(bulbString);
     }
 
     for (auto it = lightConf.begin(); it != lightConf.end(); ++it) {
-        qDebug() << QString::fromStdString(it.key()) << " I " << it.value();
         ui->comboBox_ROOM->addItem(QString::fromStdString(it.key()));
+        qDebug() << QString::fromStdString(it.key()) << " I " << it.value() ;
     }
 }
 
@@ -1035,7 +1040,7 @@ void iDom_Client::odb_answer_state(QString s)
         if (s == "burnGas=ACTIVE"){
             QPixmap pix(":/new/prefix1/files/svg/heating-service.svg");
             ui->l_burnGas->setPixmap(pix);
-                    //setStyleSheet("background-image: url(:/new/prefix1/files/svg/heating-service.svg); background-repeat: no-repeat; background-size: cover;");
+            //setStyleSheet("background-image: url(:/new/prefix1/files/svg/heating-service.svg); background-repeat: no-repeat; background-size: cover;");
         }
         if (s == "burnGas=DEACTIVE"){
             ui->l_burnGas->clear();
@@ -1226,7 +1231,7 @@ void iDom_Client::on_comboBox_ROOM_currentIndexChanged(int index)
     ui->comboBox_BULB->clear();
     ui->comboBox_BULB->addItem("all");
     for(const auto& v : lightConf[ui->comboBox_ROOM->currentText().toStdString()]){
-        ui->comboBox_BULB->addItem(QString::number(v));
+        ui->comboBox_BULB->addItem(v);
     }
 }
 
@@ -1248,7 +1253,7 @@ void iDom_Client::on_b_light_ON_clicked()
         else{
             std::stringstream msg;
             msg << "light bulb on ";
-            msg << ui->comboBox_BULB->currentText().toStdString();
+            msg << ui->comboBox_BULB->currentText().mid(0,3).toInt();
             emit sendTCP("toast", msg.str());
             qDebug() << "wiadomsoc " << QString::fromStdString(msg.str());
         }
@@ -1273,7 +1278,7 @@ void iDom_Client::on_b_light_OFF_clicked()
         else{
             std::stringstream msg;
             msg << "light bulb off ";
-            msg << ui->comboBox_BULB->currentText().toStdString();
+            msg << ui->comboBox_BULB->currentText().mid(0,3).toInt();
             emit sendTCP("toast", msg.str());
             qDebug() << "wiadomsoc " << QString::fromStdString(msg.str());
         }
