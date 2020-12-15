@@ -28,6 +28,11 @@
     <height>1920</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <family>Candara Light</family>
+   </font>
+  </property>
   <property name="mouseTracking">
    <bool>true</bool>
   </property>
@@ -51,7 +56,10 @@
    <bool>true</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">QWidget#centralWidget{
+ background-image: url(:/new/prefix1/files/background.png);
+}
+</string>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -3221,6 +3229,7 @@ border:none;
             </property>
             <property name="font">
              <font>
+              <family>Source Code Pro ExtraLight</family>
               <pointsize>14</pointsize>
              </font>
             </property>

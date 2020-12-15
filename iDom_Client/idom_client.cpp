@@ -59,7 +59,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->txtAnswer->setAttribute(Qt::WA_AcceptTouchEvents);
 
     ////  //////////////////////////    Ladowanie grafiki  ////////////////////////
-    QPixmap pix;
+  /*  QPixmap pix;
 
     if (pix.load( ":/new/prefix1/files/background.png"   ))
     {
@@ -69,7 +69,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QPalette palette;
     palette.setBrush(QPalette::Window, pix);
     this->setPalette(palette);
-
+*/
     QRect rec = QGuiApplication::primaryScreen()->geometry();
     int  height = rec.height();
     int  width  = rec.width();

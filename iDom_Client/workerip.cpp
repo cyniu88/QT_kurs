@@ -237,7 +237,10 @@ std::string WorkerIP::readMsgTCP()
 
         buf.append(socket->readAll().toStdString());
         emit sendActual(static_cast<int>(buf.length()));
-        emit progress(  static_cast<int>(  (100*buf.length())/size ) );
+        int progressInt = 0;
+        if(size != 0)
+           progressInt = static_cast<int>(  (100*buf.length())/size  );
+        emit progress(progressInt);
         emit sendAll(static_cast<int>(size) );
         if(buf.length()>= size){
             break;

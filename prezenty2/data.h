@@ -12,7 +12,7 @@ struct USER_S{
     QString print(){
         QString s;
         s = "id: ";
-        s.append(this->id);
+        s.append(QString::number(this->id));
         s.append( " name: ");
         s.append( this->name);
         s.append( " surname: ");
