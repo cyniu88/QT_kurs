@@ -985,11 +985,11 @@ void iDom_Client::odb_answer_state(QString s)
             ui->b_ledCamera->setChecked(true);
         }
         ///////////////////////////////////////////////////////////////////
-        if (s == "taras=OFF" && ui->b_printer->isChecked() == true){
+        if (s == "taras_gniazdko=OFF" && ui->b_printer->isChecked() == true){
             ui->b_printer->setChecked(false);
             droid.makeToast("gniazdko na tarasie wyłączone");
         }
-        if (s == "taras=ON" && ui->b_printer->isChecked() == false){
+        if (s == "taras_gniazdko=ON" && ui->b_printer->isChecked() == false){
             ui->b_printer->setChecked(true);
             droid.makeToast("gniazdko na tarasie włączone");
         }
@@ -1092,11 +1092,11 @@ void iDom_Client::on_b_printer_clicked()
     taskHandlerTimer->start();
     if (ui->b_printer->isChecked() == true)
     {
-        emit sendTCP("console","light room taras on");
+        emit sendTCP("console","light bulb on 99"); //99 id gniazdka na tarasie
     }
     if (ui->b_printer->isChecked() == false)
     {
-        emit sendTCP("console","light room taras off");
+        emit sendTCP("console","light bulb off 99");
     }
     droid.vibrate(200);
 }
