@@ -59,7 +59,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->txtAnswer->setAttribute(Qt::WA_AcceptTouchEvents);
 
     ////  //////////////////////////    Ladowanie grafiki  ////////////////////////
-  /*  QPixmap pix;
+    /*  QPixmap pix;
 
     if (pix.load( ":/new/prefix1/files/background.png"   ))
     {
@@ -223,8 +223,31 @@ void iDom_Client::taskHandler()
     }
 }
 
-void iDom_Client::odb_answer(QString s)
-{
+void iDom_Client::odb_answer(QString msg)
+{ 
+    //TODO dodaj filtrowanie po kilku wyrazach
+    QString s;
+    auto tempList = msg.split('\n');
+
+    if(config->grepWords.empty()){
+        for(auto  &i : tempList){
+            s.append(i);
+            s.append('\n');
+        }
+    }
+    else
+    {
+        for(auto  &i : tempList){
+            for(auto &word : config->grepWords){
+                if( i.contains(word)){
+                    s.append(i);
+                    s.append('\n');
+                }
+            }
+        }
+        config->grepWords.clear();
+    }
+
     ui->txtAnswer->setPlainText(s);
     ui->txtAnswer->moveCursor(QTextCursor::End);
     ui->lcdNumberActual ->display(s.size());
@@ -251,7 +274,7 @@ void iDom_Client::odb_light_msg(QString s)
         auto name = data.at("room").get<std::string>();
         //auto bulbPair = QString(,);
         QString bulbString;
-        bulbString = QString::number(data.at("bulb ID").get<int>() ) + " "  + QString::fromStdString(data.at("bubl name").get<std::string>());
+        bulbString = QString::number(data.at("bulb ID").get<int>() ) + " "  + QString::fromStdString(data.at("bulb name").get<std::string>());
         lightConf[name].push_back(bulbString);
     }
 
@@ -396,7 +419,34 @@ void iDom_Client::connectDisconnectButtonState(bool state)
 
 void iDom_Client::on_b_sendConsole_released()
 {
-    config->command = ui->comboBox->currentText().toStdString();
+     qDebug() << "command list  IGNAS"  ;
+
+     qDebug() << "command list  IGNAS2 " << QString::fromStdString(config->command)  ;
+     config->command.clear();
+
+    bool mainCommand = true;
+    //  config->command = ui->comboBox->currentText().toStdString();
+
+    QList<QString> commandList = ui->comboBox->currentText().split(" ");
+
+    for(auto &word : commandList){
+
+        qDebug() << "command list  |grep" <<word ;
+        if(word.contains("|grep") ){
+            mainCommand = false;
+            qDebug() << "CYNIU jest |grep" ;
+        }
+        else if(mainCommand == false){
+            config->grepWords.push_back(word);
+            qDebug() << "CYNIU wstawiam do listy |grep" << word ;
+        }
+        else{
+            config->command.append(word.toStdString());
+            config->command.append(" ");
+        }
+    }
+
+    qDebug() << "command list  IGNAS2 " << QString::fromStdString(config->command)  ;
     if (config->command.size() != 0)
         emit sendTCP("console",config->command);
     else {
@@ -734,7 +784,8 @@ void iDom_Client::on_b_setNumberMPD_clicked()
 void iDom_Client::on_comboBox_currentIndexChanged(QString txt)
 {
     config->command = txt.toStdString();
-    emit sendTCP("console",config->command);
+    //emit sendTCP("console",config->command);
+    on_b_sendConsole_released();
 }
 
 void iDom_Client::on_b_turnOnSleepMode_clicked()

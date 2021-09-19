@@ -4,6 +4,7 @@
 #include <string>
 #include <QMutex>
 #include <QString>
+#include <QList>
 #include "blocking_queue/blocking_queue.h"
 
 class WorkerIP;
@@ -23,6 +24,7 @@ struct iDom_CONFIG {
     quint16 serverPort = 8833;
     bool goWhile = false;
     std::string command = "OK";
+    QList<QString> grepWords = {};
     bool isWindows = true;
     QMutex IPMutex;
     BlockingQueue<ADRESS_WHAT> workerQueue;

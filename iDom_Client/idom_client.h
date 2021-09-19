@@ -184,7 +184,7 @@ private slots:
 public slots:
     void setLcdActual(int c);
     void setLcdAll(int c);
-    void odb_answer(QString s);
+    void odb_answer(QString msg);
     void odb_toast_msg(QString s);
     void odb_light_msg(QString s);
     void readProgress(int c);
