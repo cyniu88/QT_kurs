@@ -28,13 +28,13 @@ void MainWindow::on_b_sms_clicked()
                  << "vector2 "<< userVecotrCopy.at(i).name << " "<< userVecotrCopy.at(i).surname<< " "<< userVecotrCopy.at(i).id;
 
         QString tel = userVecotr.at(i).telephone;
-        msg = "Witaj rodzino ";
+        msg = "Witaj ";
         msg.append(userVecotr.at(i).name);
-        msg.append(". Jestem automatem do losowania. Na Swieta 2020 przypadl Wam zaszczyt pieczenia piernikow dla: ");
+        msg.append(". Jestem automatem do losowania. Na Swieta 2021 przypadl Ci zaszczyt przygotowania prezentu dla: ");
       //  msg.append(". Na Swieta 2018 przypadl Ci zaszczyt kupna prezentu pod choinke dla: ");
         msg.append(userVecotrCopy.at(i).name);
-       // msg.append(" ");
-        //msg.append(userVecotrCopy.at(i).surname);
+        msg.append(" ");
+        msg.append(userVecotrCopy.at(i).surname);
       //  msg.append(". Autor automatu: Krzysztof Druciak");
         sendSMS(i, userVecotr.size(), tel, msg);
         sendSMS(i, userVecotr.size(), tel, "Autor automatu: Krzysztof Druciak");
@@ -97,7 +97,8 @@ void MainWindow::on_b_prepareData_clicked()
     }
 
     for (int i = 0; i < userVecotr.size(); ++i){
-        qDebug() << "vector1 "<< userVecotr.at(i).name << " "<< userVecotr.at(i).surname<< " "<< userVecotr.at(i).id
+        qDebug() << "familia " << userVecotr.at(i).family
+                << " vector1 "<< userVecotr.at(i).name << " "<< userVecotr.at(i).surname<< " "<< userVecotr.at(i).id
                  << "vector2 "<< userVecotrCopy.at(i).name << " "<< userVecotrCopy.at(i).surname<< " "<< userVecotrCopy.at(i).id;
     }
 }
