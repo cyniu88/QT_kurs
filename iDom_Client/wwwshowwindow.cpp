@@ -9,7 +9,7 @@ wwwShowWindow::wwwShowWindow(QWidget *parent) :
 #ifdef Q_OS_WIN
     axWidgetTemperature.setControl("{8856f961-340a-11d0-a96b-00c04fd705a2}");
     ui->widgetWWW_temp->layout()->addWidget( axWidgetTemperaturePTR);
-    axWidgetTemperature.dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+    axWidgetTemperature.dynamicCall("Navigate(const QString&)", "http://cyniu88.no-ip.pl/lusina2.html");
 #endif
 #ifdef Q_OS_ANDROID
 
@@ -28,7 +28,7 @@ wwwShowWindow::~wwwShowWindow()
 void wwwShowWindow::on_pushButton_clicked()
 {
 #ifdef Q_OS_WIN
-    axWidgetTemperature .dynamicCall("Navigate(const QString&)","http://cyniu88.no-ip.pl/wykres.html");
+    axWidgetTemperature .dynamicCall("Navigate(const QString&)", "http://cyniu88.no-ip.pl/lusina2.html");
 #endif
 #ifdef Q_OS_ANDROID
     if (viewTemp != NULL) {

@@ -466,7 +466,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -776,7 +776,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -807,7 +807,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -836,7 +836,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -863,7 +863,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -898,7 +898,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -927,7 +927,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -987,7 +987,7 @@ background-color: rgba(170, 0, 0, 10);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -1031,7 +1031,7 @@ border:none;
           <property name="styleSheet">
            <string notr="true">
 QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -2606,7 +2606,7 @@ border-color: rgb(0, 0, 0);
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -2648,7 +2648,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -2683,7 +2683,7 @@ SLEEP MODE</string>
               </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -2720,7 +2720,7 @@ TEMPERATURE</string>
               </property>
               <property name="styleSheet">
                <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -2772,7 +2772,7 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -2807,7 +2807,7 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -2843,7 +2843,7 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -2883,7 +2883,7 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -2976,7 +2976,7 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
 border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3011,7 +3011,7 @@ border:none;
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
 border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3040,7 +3040,7 @@ Smog Charts</string>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
 border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3363,7 +3363,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3405,7 +3405,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3453,7 +3453,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3501,7 +3501,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3554,7 +3554,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3597,7 +3597,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3644,7 +3644,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3753,7 +3753,7 @@ border:none;
           <property name="styleSheet">
            <string notr="true">QComboBox {
  border-radius: 0px;
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 	border-color:grey;
 	color:black;
@@ -3801,7 +3801,7 @@ QComboBox::down-arrow {
           <property name="styleSheet">
            <string notr="true">QComboBox {
  border-radius: 0px;
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 	border-color:grey;
 	color:black;
@@ -3845,7 +3845,7 @@ QComboBox::down-arrow {
           </property>
           <property name="styleSheet">
            <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3871,7 +3871,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
+background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;

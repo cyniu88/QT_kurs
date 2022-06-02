@@ -68,13 +68,12 @@ color: rgb(0, 255, 0);</string>
        <property name="font">
         <font>
          <pointsize>35</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
 border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -102,13 +101,12 @@ border:none;
        <property name="font">
         <font>
          <pointsize>35</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
 border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -222,13 +220,12 @@ border:none;
        <property name="font">
         <font>
          <pointsize>35</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
 border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -262,13 +259,12 @@ border:none;
        <property name="font">
         <font>
          <pointsize>35</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
 border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -335,14 +331,13 @@ border:none;
        <property name="font">
         <font>
          <pointsize>18</pointsize>
-         <weight>75</weight>
          <italic>false</italic>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
 border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -367,14 +362,13 @@ border:none;
        <property name="font">
         <font>
          <pointsize>18</pointsize>
-         <weight>75</weight>
          <italic>false</italic>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
 border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;

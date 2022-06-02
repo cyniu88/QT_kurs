@@ -144,7 +144,6 @@ private slots:
     void on_b_led_21_released();
     void on_tabWidget_currentChanged();
     void on_b_setNumberMPD_clicked();
-    void on_comboBox_currentIndexChanged(QString txt);
     void on_b_turnOnSleepMode_clicked();
     void on_b_server_clicked();
     void on_b_extra_color_clicked();
@@ -180,6 +179,8 @@ private slots:
     void on_b_light_ON_clicked();
 
     void on_b_light_OFF_clicked();
+
+    void on_comboBox_currentTextChanged(const QString &txt);
 
 public slots:
     void setLcdActual(int c);

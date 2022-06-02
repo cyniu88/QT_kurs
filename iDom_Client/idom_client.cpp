@@ -250,7 +250,8 @@ void iDom_Client::odb_answer(QString msg)
 
     ui->txtAnswer->setPlainText(s);
     ui->txtAnswer->moveCursor(QTextCursor::End);
-    ui->lcdNumberActual ->display(s.size());
+    ui->lcdNumberActual ->display(static_cast<int>(s.size()));
+    //ui->lcdNumberActual->display(10);
     ui->progressBar->setValue(100);
     droid.vibrate(100);
 
@@ -776,13 +777,6 @@ void iDom_Client::on_b_setNumberMPD_clicked()
         emit sendTCP("MPD","MPD start "+std::to_string(songID));
     }
     droid.vibrate(100);
-}
-
-void iDom_Client::on_comboBox_currentIndexChanged(QString txt)
-{
-    config->command = txt.toStdString();
-    //emit sendTCP("console",config->command);
-    on_b_sendConsole_released();
 }
 
 void iDom_Client::on_b_turnOnSleepMode_clicked()
@@ -1332,3 +1326,11 @@ void iDom_Client::on_b_light_OFF_clicked()
         }
     }
 }
+
+void iDom_Client::on_comboBox_currentTextChanged(const QString &txt)
+{
+    config->command = txt.toStdString();
+    //emit sendTCP("console",config->command);
+    on_b_sendConsole_released();
+}
+
