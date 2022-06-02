@@ -133,7 +133,6 @@ border:none;
         <property name="font">
          <font>
           <pointsize>18</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -512,7 +511,7 @@ border-color: rgb(255, 255, 255,255);</string>
                <x>0</x>
                <y>0</y>
                <width>807</width>
-               <height>686</height>
+               <height>672</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -769,7 +768,6 @@ border:none;
           <property name="font">
            <font>
             <pointsize>-1</pointsize>
-            <weight>75</weight>
             <italic>false</italic>
             <bold>true</bold>
            </font>
@@ -981,7 +979,6 @@ background-color: rgba(170, 0, 0, 10);</string>
           <property name="font">
            <font>
             <pointsize>-1</pointsize>
-            <weight>75</weight>
             <italic>false</italic>
             <bold>true</bold>
            </font>
@@ -1246,7 +1243,6 @@ border: none ;</string>
               </property>
               <property name="font">
                <font>
-                <weight>75</weight>
                 <bold>true</bold>
                </font>
               </property>
@@ -1508,7 +1504,6 @@ background-color: rgb(128, 0, 0);</string>
           <property name="font">
            <font>
             <pointsize>15</pointsize>
-            <weight>75</weight>
             <bold>true</bold>
            </font>
           </property>
@@ -1544,7 +1539,6 @@ background-color: rgba(0, 0, 0, 0);</string>
           <property name="font">
            <font>
             <pointsize>20</pointsize>
-            <weight>75</weight>
             <italic>false</italic>
             <bold>true</bold>
            </font>
@@ -2102,7 +2096,6 @@ background-color: rgb(255, 165, 0);</string>
           <property name="font">
            <font>
             <pointsize>8</pointsize>
-            <weight>50</weight>
             <italic>false</italic>
             <bold>false</bold>
             <underline>false</underline>
@@ -2458,7 +2451,6 @@ border-color: rgb(255, 255, 255);
           <property name="font">
            <font>
             <pointsize>8</pointsize>
-            <weight>50</weight>
             <italic>false</italic>
             <bold>false</bold>
            </font>
@@ -2611,7 +2603,6 @@ border-color: rgb(0, 0, 0);
             <property name="font">
              <font>
               <pointsize>20</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -2653,7 +2644,6 @@ border:none;
               <property name="font">
                <font>
                 <pointsize>18</pointsize>
-                <weight>75</weight>
                 <italic>false</italic>
                 <bold>true</bold>
                </font>
@@ -2690,7 +2680,6 @@ SLEEP MODE</string>
               <property name="font">
                <font>
                 <pointsize>18</pointsize>
-                <weight>75</weight>
                 <bold>true</bold>
                </font>
               </property>
@@ -2725,7 +2714,6 @@ TEMPERATURE</string>
               <property name="font">
                <font>
                 <pointsize>18</pointsize>
-                <weight>75</weight>
                 <bold>true</bold>
                </font>
               </property>
@@ -2781,7 +2769,6 @@ border:none;
             <property name="font">
              <font>
               <pointsize>20</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -2816,7 +2803,6 @@ border:none;
             <property name="font">
              <font>
               <pointsize>20</pointsize>
-              <weight>75</weight>
               <italic>false</italic>
               <bold>true</bold>
              </font>
@@ -2854,7 +2840,6 @@ border:none;
             <property name="font">
              <font>
               <pointsize>20</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -2889,7 +2874,6 @@ border:none;
             <property name="font">
              <font>
               <pointsize>20</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -2943,6 +2927,111 @@ border:none;
         <string>TEMPERATURE</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_13">
+        <item row="2" column="1">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="l_burnGas">
+          <property name="autoFillBackground">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>2</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QPushButton" name="b_share_fan">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,50);
+border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+font: bold 20px ;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>link fan on</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/fanON.svg</normaloff>:/new/prefix1/files/svg/fanON.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="b_showTemperatureCharts">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+background-color: rgb(158, 158, 158,50);
+border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+font: bold 20px ;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Show Temperature
+and
+Smog Charts</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
         <item row="4" column="1" rowspan="2">
          <widget class="QPushButton" name="b_sms">
           <property name="sizePolicy">
@@ -2977,32 +3066,6 @@ border:none;
            </size>
           </property>
          </widget>
-        </item>
-        <item row="2" column="1">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="2" column="0">
-         <spacer name="horizontalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>2</height>
-           </size>
-          </property>
-         </spacer>
         </item>
         <item row="0" column="0" colspan="2">
          <layout class="QGridLayout" name="gridLayout_TEMPERATURE">
@@ -3249,79 +3312,6 @@ border:none;
           </item>
          </layout>
         </item>
-        <item row="4" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <item>
-           <widget class="QPushButton" name="b_share_fan">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
-border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-font: bold 20px ;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-            </property>
-            <property name="text">
-             <string>link fan on</string>
-            </property>
-            <property name="icon">
-             <iconset resource="ikony.qrc">
-              <normaloff>:/new/prefix1/files/svg/fanON.svg</normaloff>:/new/prefix1/files/svg/fanON.svg</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>64</width>
-              <height>64</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="b_showTemperatureCharts">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
-border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-font: bold 20px ;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-            </property>
-            <property name="text">
-             <string>Show Temperature
-and
-Smog Charts</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="5" column="0">
-         <widget class="QLabel" name="l_burnGas">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tab_6">
@@ -3361,7 +3351,7 @@ Smog Charts</string>
              <x>0</x>
              <y>0</y>
              <width>809</width>
-             <height>688</height>
+             <height>674</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">

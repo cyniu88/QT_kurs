@@ -13,7 +13,7 @@
 #include <QSystemTrayIcon>
 #include <QInputDialog>
 #include <QDir>
-#include <QtSvg/QSvgWidget>
+//#include <QtSvg/QSvgWidget>
 #include <QTextToSpeech>
 #include <QTime>
 #include <QMenu>

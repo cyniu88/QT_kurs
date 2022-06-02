@@ -1,7 +1,7 @@
 #include <QColorDialog>
 #include <QDateTime>
 #include <QDebug>
-#include <QDesktopWidget>
+//#include <QDesktopWidget>
 #include <QDial>
 #include <QPixmap>
 #include <QSettings>
@@ -332,7 +332,7 @@ void iDom_Client::makeInfo(QString tit, QString msg)
     droid.vibrate(300);
     droid.makeToast(msg);
 #ifdef Q_OS_WIN
-    trayIcon.showMessage(tit,msg);
+    trayIcon.showMessage(tit, msg);
 #endif
 }
 
@@ -419,9 +419,7 @@ void iDom_Client::connectDisconnectButtonState(bool state)
 
 void iDom_Client::on_b_sendConsole_released()
 {
-     qDebug() << "command list  IGNAS"  ;
 
-     qDebug() << "command list  IGNAS2 " << QString::fromStdString(config->command)  ;
      config->command.clear();
 
     bool mainCommand = true;
@@ -446,7 +444,6 @@ void iDom_Client::on_b_sendConsole_released()
         }
     }
 
-    qDebug() << "command list  IGNAS2 " << QString::fromStdString(config->command)  ;
     if (config->command.size() != 0)
         emit sendTCP("console",config->command);
     else {
@@ -927,7 +924,7 @@ void iDom_Client::on_b_showTemperatureCharts_clicked()
 void iDom_Client::loadImage(QByteArray d)
 {
     pima.loadFromData(d);
-    ui->cameraLabel->setPixmap(  pima.scaled(ui->cameraLabel->width(),ui->cameraLabel->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation) );
+    ui->cameraLabel->setPixmap(pima.scaled(ui->cameraLabel->width(),ui->cameraLabel->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation) );
     ui->snap_counter->display(ui->snap_counter->value()+1);
     if (cameraWork == true)
     {

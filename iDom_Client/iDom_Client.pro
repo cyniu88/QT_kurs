@@ -4,14 +4,14 @@
 #
 #-------------------------------------------------
 
-QT += core gui network sensors texttospeech svg #
+QT += core gui network sensors texttospeech svg #svgwidgets
 linux {
             message("* Using settings for Linux.")
             QT +=
 }
 windows {
             message("* Using settings for Windows.")
-            QT +=  axcontainer qml
+            QT += axcontainer qml
 }
 android {
             message("* Using settings for Android.")
