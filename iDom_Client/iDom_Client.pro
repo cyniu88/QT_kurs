@@ -4,18 +4,18 @@
 #
 #-------------------------------------------------
 
-QT += core gui network sensors texttospeech svg svgwidgets
+QT += core gui network sensors svg
 linux {
             message("* Using settings for Linux.")
             QT +=
 }
 windows {
             message("* Using settings for Windows.")
-            QT += axcontainer qml
+            QT += axcontainer qml svgwidgets texttospeech
 }
 android {
             message("* Using settings for Android.")
-            QT +=  webview quickwidgets #androidextras
+            QT +=  webview quickwidgets svgwidgets#androidextras
         }
 MOBILITY = androidextras
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -85,18 +85,23 @@ RESOURCES +=  ikony.qrc
 win32:RC_ICONS += iDom_client.ico
 
 OTHER_FILES += \
-    android/src/org/qtproject/example/Chronometer/AndroidHelper.java \
-    android/AndroidManifest.xml
+    android/src/org/qtproject/example/Chronometer/AndroidHelper.java
 
 DISTFILES += \
+    android/AndroidManifest.xml \
     android/build.gradle \
-    android/gradle/wrapper/gradle-wrapper.jar \
-    android/gradle/wrapper/gradle-wrapper.properties \
-    android/gradlew \
-    android/gradlew.bat \
+#    android/gradle/wrapper/gradle-wrapper.jar \
+#    android/gradle/wrapper/gradle-wrapper.properties \
+#    android/gradlew \
+#    android/gradlew.bat \
     android/res/values/libs.xml
 
-ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+#ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 ANDROID_ABIS = armeabi-v7a
+
+contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
+    ANDROID_PACKAGE_SOURCE_DIR = \
+        $$PWD/android
+}
 

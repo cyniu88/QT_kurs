@@ -3,7 +3,8 @@
 //
 package org.qtproject.example.Chronometer;
 
-import org.qtproject.qt5.android.QtNative;
+//import org.qtproject.qt6.android.QtNative;
+import org.qtproject.qt.android.bindings.QtService;
 import android.app.Notification;
 import android.app.NotificationManager;
 
@@ -26,7 +27,7 @@ import android.app.NotificationChannel;
 import android.R;
 
 
-public class AndroidHelper extends org.qtproject.qt5.android.bindings.QtActivity
+public class AndroidHelper extends org.qtproject.qt.android.bindings.QtActivity
 {
 
 public static Vibrator m_vibrator;
@@ -106,7 +107,7 @@ Intent sendIntent = new Intent();
 sendIntent.setAction(Intent.ACTION_SEND);
 sendIntent.putExtra(Intent.EXTRA_TEXT, text);
 sendIntent.setType("text/plain");
-QtNative.activity().startActivity(sendIntent);
+//QtNative.activity().startActivity(sendIntent);
 
 
 }

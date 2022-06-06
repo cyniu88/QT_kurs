@@ -106,7 +106,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QObject::connect( m_pImgCtrl, SIGNAL(downloaded(QByteArray)), this, SLOT(loadImage(QByteArray))   );
 
     //////////////////////////////  tts part ////////////////////////////////////////
-
+#ifndef Q_OS_ANDROID
     ivona = new QTextToSpeech(this);
 
     QVector <QVoice> voi = ivona->availableVoices();
@@ -120,6 +120,8 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     else{
         qDebug()<< "JEEEST PUSTY !!!!!!!!!!!!!!!!!!!!!!!!!!!!";
     }
+#endif
+
     QObject::connect(&vol ,SIGNAL(setVolumeSingnal(int) ), this, SLOT(setVolumeValueSlot(int) ));
 
     QObject::connect(&alarmWindow, SIGNAL(alarmSetSignal(Clock)), this, SLOT(alarmHasBeenSet(Clock) ));
@@ -156,7 +158,9 @@ iDom_Client::~iDom_Client()
     delete taskHandlerTimer;
     delete m_pImgCtrl;
     delete wwwWindow;
+#ifndef Q_OS_ANDROID
     delete ivona;
+#endif
     delete ui;
 }
 
@@ -401,9 +405,9 @@ void iDom_Client::listMPD(QString s){
 void iDom_Client::textToSpeachSLOTS(QString s)
 {
     qDebug() << "from TTS: "<< s;
-
+#ifndef Q_OS_ANDROID
     ivona->say(s);
-
+#endif
 }
 
 void iDom_Client::connectDisconnectButtonState(bool state)
@@ -1327,9 +1331,9 @@ void iDom_Client::on_b_light_OFF_clicked()
     }
 }
 
-void iDom_Client::on_comboBox_currentTextChanged(const QString &txt)
+void iDom_Client::on_comboBox_currentIndexChanged(int index)
 {
-    config->command = txt.toStdString();
+    //config->command = txt.toStdString();
     //emit sendTCP("console",config->command);
     on_b_sendConsole_released();
 }

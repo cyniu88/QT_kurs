@@ -14,7 +14,9 @@
 #include <QInputDialog>
 #include <QDir>
 //#include <QtSvg/QSvgWidget>
+#ifndef Q_OS_ANDROID
 #include <QTextToSpeech>
+#endif
 #include <QTime>
 #include <QMenu>
 #include <QTimer>
@@ -91,9 +93,9 @@ private:
 #else
     QSystemTrayIcon  trayIcon;
 #endif
-
+#ifndef Q_OS_ANDROID
     QTextToSpeech *ivona;
-
+#endif
     ////////////  volume counters
     QElapsedTimer pressTime ;
     void setVolumeDial();
@@ -180,7 +182,7 @@ private slots:
 
     void on_b_light_OFF_clicked();
 
-    void on_comboBox_currentTextChanged(const QString &txt);
+    void on_comboBox_currentIndexChanged(int index);
 
 public slots:
     void setLcdActual(int c);
