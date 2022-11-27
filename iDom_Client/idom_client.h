@@ -20,6 +20,7 @@
 #include <QTime>
 #include <QMenu>
 #include <QTimer>
+#include <QElapsedTimer>
 
 #ifdef Q_OS_WIN
 #include <QAxWidget>
@@ -59,6 +60,7 @@ private:
     QMenu trayIconMenu;
 
     QTimer *taskHandlerTimer;
+    QElapsedTimer timerLockUnlockButton;
     /////////// okno dla www
     wwwShowWindow *wwwWindow = nullptr;
     VolumeDialog vol;
@@ -170,7 +172,6 @@ private slots:
     void on_b_printer_clicked();
     void on_b_setAlarm_clicked();
     void on_b_listwa_clicked();
-    void on_b_lockUnlock_HOME_clicked();
     void on_b_fan_clicked();
     void on_b_share_fan_clicked();
     void on_b_circlePump_clicked();
@@ -183,6 +184,9 @@ private slots:
     void on_b_light_OFF_clicked();
 
     void on_comboBox_currentIndexChanged(int index);
+
+    void on_b_lockUnlock_HOME_pressed();
+    void on_b_lockUnlock_HOME_released();
 
 public slots:
     void setLcdActual(int c);

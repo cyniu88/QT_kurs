@@ -25,6 +25,8 @@ int main(int argc, char *argv[])
     config.serverIP = ip.toStdString();
     auto * worker = new WorkerIP(&config);
     config.worketPTR  = worker;
+
+    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::Unset);
     QApplication a(argc, argv);
 
 #ifdef Q_OS_ANDROID

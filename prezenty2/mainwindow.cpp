@@ -30,7 +30,7 @@ void MainWindow::on_b_sms_clicked()
         QString tel = userVecotr.at(i).telephone;
         msg = "Witaj ";
         msg.append(userVecotr.at(i).name);
-        msg.append(". Jestem automatem do losowania. Na Swieta 2021 przypadl Ci zaszczyt przygotowania prezentu dla: ");
+        msg.append(". Jestem automatem do losowania. Na Swieta 2022 przypadl Ci zaszczyt przygotowania prezentu dla: ");
       //  msg.append(". Na Swieta 2018 przypadl Ci zaszczyt kupna prezentu pod choinke dla: ");
         msg.append(userVecotrCopy.at(i).name);
         msg.append(" ");

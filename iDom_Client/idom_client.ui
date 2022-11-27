@@ -6,23 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>855</width>
-    <height>907</height>
+    <width>707</width>
+    <height>665</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+   <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>500</width>
+    <width>0</width>
     <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
+   <size>
+    <width>1080</width>
+    <height>1920</height>
+   </size>
+  </property>
+  <property name="baseSize">
    <size>
     <width>1080</width>
     <height>1920</height>
@@ -38,6 +44,9 @@
   </property>
   <property name="focusPolicy">
    <enum>Qt::StrongFocus</enum>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
   </property>
   <property name="windowTitle">
    <string>iDom_Client</string>
@@ -73,8 +82,8 @@
   <widget class="QWidget" name="centralWidget">
    <property name="minimumSize">
     <size>
-     <width>480</width>
-     <height>480</height>
+     <width>100</width>
+     <height>100</height>
     </size>
    </property>
    <property name="styleSheet">
@@ -199,64 +208,56 @@ border:none;
     </item>
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="1" column="0">
-       <widget class="QLabel" name="LOGO">
-        <property name="enabled">
-         <bool>true</bool>
+      <item row="1" column="5">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>0</number>
         </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-          <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>234</width>
-          <height>89</height>
-         </size>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">image: url(:/new/prefix1/files/logo.png);</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Sunken</enum>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
+       </layout>
       </item>
-      <item row="0" column="1">
-       <layout class="QVBoxLayout" name="verticalLayout_2"/>
+      <item row="1" column="4">
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0" colspan="2">
+         <widget class="QPushButton" name="b_exit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold ;
+font-size: 20px;
+}
+QPushButton:pressed {
+border:none;
+}
+ </string>
+          </property>
+          <property name="text">
+           <string>     EXIT     </string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item row="1" column="1">
        <layout class="QGridLayout" name="gridLayout_14">
         <item row="0" column="0" colspan="2">
          <widget class="QLineEdit" name="titleTXT">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -348,52 +349,60 @@ border-radius: 0px;</string>
         </item>
        </layout>
       </item>
-      <item row="1" column="4">
-       <layout class="QGridLayout" name="gridLayout_4">
-        <item row="0" column="0" colspan="2">
-         <widget class="QPushButton" name="b_exit">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Maximum" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold ;
-font-size: 20px;
-}
-QPushButton:pressed {
-border:none;
-}
- </string>
-          </property>
-          <property name="text">
-           <string>     EXIT     </string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="5">
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-       </layout>
+      <item row="0" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout_2"/>
       </item>
       <item row="1" column="3">
        <layout class="QVBoxLayout" name="verticalLayout"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="LOGO">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>234</width>
+          <height>89</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/new/prefix1/files/logo.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -501,6 +510,12 @@ border-color: rgb(255, 255, 255,255);</string>
          <layout class="QGridLayout" name="gridLayout_8">
           <item row="0" column="0">
            <widget class="QScrollArea" name="scrollArea">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="widgetResizable">
              <bool>true</bool>
             </property>
@@ -509,46 +524,27 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>807</width>
-               <height>663</height>
+               <width>659</width>
+               <height>421</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
-                <item>
+               <layout class="QGridLayout" name="gridLayout_18">
+                <item row="0" column="0">
                  <widget class="QLCDNumber" name="snap_counter">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
                  </widget>
                 </item>
-                <item>
-                 <widget class="QLineEdit" name="lineEdit">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string>Kobylanka</string>
-                  </property>
-                  <property name="frame">
-                   <bool>false</bool>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
+                <item row="0" column="2">
                  <widget class="QToolButton" name="b_ledCamera">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -557,6 +553,12 @@ border-color: rgb(255, 255, 255,255);</string>
                    <size>
                     <width>0</width>
                     <height>100</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
                    </size>
                   </property>
                   <property name="contextMenuPolicy">
@@ -606,42 +608,10 @@ border:none;
                   </property>
                  </widget>
                 </item>
-                <item>
-                 <widget class="myButton" name="b_oneShotCamera">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>100</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-	 
-}
-QPushButton:pressed {
-border:none;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>Single Shot</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
+                <item row="0" column="4">
                  <widget class="myButton" name="b_reloadCameraAddress">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -671,10 +641,67 @@ border:none;
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="1" column="0">
+                 <widget class="QLineEdit" name="lineEdit">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Kobylanka</string>
+                  </property>
+                  <property name="frame">
+                   <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="myButton" name="b_oneShotCamera">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+	 
+}
+QPushButton:pressed {
+border:none;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Single Shot</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="4">
                  <widget class="myButton" name="b_camera_reload">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -713,7 +740,7 @@ border:none;
                 <item row="1" column="0" colspan="2">
                  <widget class="QWidget" name="widgetCAMERA" native="true">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -1099,7 +1126,7 @@ border:none;
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>50</height>
+              <height>10</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1294,15 +1321,15 @@ border: none ;</string>
           <item row="0" column="8" rowspan="2">
            <widget class="QPushButton" name="b_sendConsole">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Ignored">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
             <property name="minimumSize">
              <size>
-              <width>75</width>
-              <height>50</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
             <property name="whatsThis">
@@ -1331,6 +1358,12 @@ border:none;
           </item>
           <item row="1" column="0" colspan="8">
            <widget class="QComboBox" name="comboBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -2925,20 +2958,7 @@ border:none;
         <string>TEMPERATURE</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_13">
-        <item row="2" column="1">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="5" column="0">
+        <item row="7" column="0">
          <widget class="QLabel" name="l_burnGas">
           <property name="autoFillBackground">
            <bool>false</bool>
@@ -2964,73 +2984,7 @@ border:none;
           </property>
          </spacer>
         </item>
-        <item row="4" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <item>
-           <widget class="QPushButton" name="b_share_fan">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
-border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-font: bold 20px ;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-            </property>
-            <property name="text">
-             <string>link fan on</string>
-            </property>
-            <property name="icon">
-             <iconset resource="ikony.qrc">
-              <normaloff>:/new/prefix1/files/svg/fanON.svg</normaloff>:/new/prefix1/files/svg/fanON.svg</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>64</width>
-              <height>64</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="b_showTemperatureCharts">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
-border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-font: bold 20px ;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-            </property>
-            <property name="text">
-             <string>Show Temperature
-and
-Smog Charts</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="4" column="1" rowspan="2">
+        <item row="4" column="1" rowspan="4">
          <widget class="QPushButton" name="b_sms">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -3059,8 +3013,8 @@ border:none;
           </property>
           <property name="iconSize">
            <size>
-            <width>200</width>
-            <height>200</height>
+            <width>100</width>
+            <height>100</height>
            </size>
           </property>
          </widget>
@@ -3310,6 +3264,109 @@ border:none;
           </item>
          </layout>
         </item>
+        <item row="2" column="1">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QPushButton" name="b_share_fan">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+font: bold 20px ;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>link fan on</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/fanON.svg</normaloff>:/new/prefix1/files/svg/fanON.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>64</width>
+              <height>64</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="b_showTemperatureCharts">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>Reem Kufi</family>
+              <pointsize>-1</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+font: bold 20px ;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Show Temperature
+and
+Smog Charts</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="6" column="0">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Minimum</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tab_6">
@@ -3320,14 +3377,14 @@ border:none;
         <item row="0" column="0">
          <widget class="QScrollArea" name="scrollArea_HOME">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
           <property name="minimumSize">
            <size>
-            <width>500</width>
+            <width>10</width>
             <height>0</height>
            </size>
           </property>
@@ -3348,53 +3405,17 @@ border:none;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>809</width>
-             <height>665</height>
+             <width>661</width>
+             <height>423</height>
             </rect>
            </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <layout class="QGridLayout" name="gridLayout_15">
-            <item row="0" column="0" colspan="2">
-             <widget class="QToolButton" name="b_KODI">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
-              </property>
-              <property name="text">
-               <string>URUCHOM KODI</string>
-              </property>
-              <property name="icon">
-               <iconset resource="ikony.qrc">
-                <normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>100</width>
-                <height>100</height>
-               </size>
-              </property>
-              <property name="toolButtonStyle">
-               <enum>Qt::ToolButtonTextBesideIcon</enum>
-              </property>
-              <property name="autoRaise">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="1">
              <widget class="QToolButton" name="b_heatingBoiler">
               <property name="sizePolicy">
@@ -3514,7 +3535,7 @@ border:none;
 </string>
               </property>
               <property name="text">
-               <string>Gniazdko taras</string>
+               <string>gniazdko taras</string>
               </property>
               <property name="icon">
                <iconset resource="ikony.qrc">
@@ -3541,6 +3562,49 @@ border:none;
               </property>
               <property name="arrowType">
                <enum>Qt::NoArrow</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QToolButton" name="b_lockUnlock_HOME">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="ikony.qrc">
+                <normaloff>:/new/prefix1/files/png/unlock.png</normaloff>
+                <normalon>:/new/prefix1/files/png/lock.png</normalon>:/new/prefix1/files/png/unlock.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="autoRaise">
+               <bool>false</bool>
               </property>
              </widget>
             </item>
@@ -3610,7 +3674,7 @@ border:none;
 </string>
               </property>
               <property name="text">
-               <string>Listwa zasilania</string>
+               <string>listwa zasilania</string>
               </property>
               <property name="icon">
                <iconset resource="ikony.qrc">
@@ -3634,8 +3698,8 @@ border:none;
               </property>
              </widget>
             </item>
-            <item row="2" column="1">
-             <widget class="QToolButton" name="b_lockUnlock_HOME">
+            <item row="0" column="0" colspan="2">
+             <widget class="QToolButton" name="b_KODI">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
                 <horstretch>0</horstretch>
@@ -3656,12 +3720,11 @@ border:none;
 }</string>
               </property>
               <property name="text">
-               <string/>
+               <string>URUCHOM KODI</string>
               </property>
               <property name="icon">
                <iconset resource="ikony.qrc">
-                <normaloff>:/new/prefix1/files/png/unlock.png</normaloff>
-                <normalon>:/new/prefix1/files/png/lock.png</normalon>:/new/prefix1/files/png/unlock.png</iconset>
+                <normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -3669,8 +3732,8 @@ border:none;
                 <height>100</height>
                </size>
               </property>
-              <property name="checkable">
-               <bool>true</bool>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextBesideIcon</enum>
               </property>
               <property name="autoRaise">
                <bool>false</bool>
@@ -3947,8 +4010,8 @@ border:none;
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>832</x>
-     <y>80</y>
+     <x>688</x>
+     <y>86</y>
     </hint>
     <hint type="destinationlabel">
      <x>585</x>
@@ -3967,8 +4030,8 @@ border:none;
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>773</x>
-     <y>51</y>
+     <x>688</x>
+     <y>73</y>
     </hint>
    </hints>
   </connection>
@@ -3983,8 +4046,8 @@ border:none;
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>427</x>
-     <y>601</y>
+     <x>439</x>
+     <y>451</y>
     </hint>
    </hints>
   </connection>
@@ -3999,8 +4062,8 @@ border:none;
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>427</x>
-     <y>731</y>
+     <x>439</x>
+     <y>527</y>
     </hint>
    </hints>
   </connection>

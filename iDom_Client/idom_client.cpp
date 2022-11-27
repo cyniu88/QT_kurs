@@ -425,7 +425,7 @@ void iDom_Client::connectDisconnectButtonState(bool state)
 void iDom_Client::on_b_sendConsole_released()
 {
 
-     config->command.clear();
+    config->command.clear();
 
     bool mainCommand = true;
     //  config->command = ui->comboBox->currentText().toStdString();
@@ -1110,8 +1110,8 @@ void iDom_Client::on_b_options_clicked()
 
 void iDom_Client::on_b_sms_clicked()
 {
-    droid.sendSMS("506496722","test sms ");
-    droid.makeToast("wyslano sms:");
+    //droid.sendSMS("506496722","test sms ");
+    droid.makeToast("wyslano sms");
 
     droid.updateAndroidNotification("test testo");
 }
@@ -1186,24 +1186,6 @@ void iDom_Client::on_b_listwa_clicked()
     if (ui->b_listwa->isChecked() == false)
     {
         emit sendTCP("console","433MHz switch listwa OFF");
-    }
-    droid.vibrate(200);
-}
-
-void iDom_Client::on_b_lockUnlock_HOME_clicked()
-{
-    taskHandlerTimer->start();
-    if (ui->b_lockUnlock_HOME->isChecked() == false)
-    {
-        emit sendTCP("console","iDom unlock");
-        qDebug() << "UNLOCK HOUSE";
-        config->houseLocked = false;
-    }
-    if (ui->b_lockUnlock_HOME->isChecked() == true)
-    {
-        emit sendTCP("console","iDom lock");
-        qDebug() << "LOCK HOUSE";
-        config->houseLocked = true;
     }
     droid.vibrate(200);
 }
@@ -1336,5 +1318,41 @@ void iDom_Client::on_comboBox_currentIndexChanged(int index)
     //config->command = txt.toStdString();
     //emit sendTCP("console",config->command);
     on_b_sendConsole_released();
+}
+
+
+void iDom_Client::on_b_lockUnlock_HOME_pressed()
+{
+    // start timer lock unlock buttton
+    timerLockUnlockButton.start();
+}
+
+
+void iDom_Client::on_b_lockUnlock_HOME_released()
+{
+    // stop timer
+    if(auto time = timerLockUnlockButton.elapsed(); time > 1200){
+        qDebug() << "czass " << time;
+        taskHandlerTimer->start();
+        if (ui->b_lockUnlock_HOME->isChecked() == false)
+        {
+            emit sendTCP("console","iDom unlock");
+            qDebug() << "UNLOCK HOUSE";
+            config->houseLocked = false;
+        }
+        if (ui->b_lockUnlock_HOME->isChecked() == true)
+        {
+            emit sendTCP("console","iDom lock");
+            qDebug() << "LOCK HOUSE";
+            config->houseLocked = true;
+        }
+        droid.vibrate(200);
+    }
+    else{
+
+        QString msg = "aby aktywowac przytrzymaj przycisk dłużej niż " + QString::number(time);
+        droid.makeToast(msg);
+        makeInfo("INFO",msg  );
+    }
 }
 
