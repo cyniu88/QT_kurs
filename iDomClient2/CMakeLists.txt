@@ -22,6 +22,7 @@ set(PROJECT_SOURCES
         ${TS_FILES}
 )
 
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(iDomClient2
         MANUAL_FINALIZATION
@@ -57,6 +58,18 @@ set_target_properties(iDomClient2 PROPERTIES
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
+)
+
+
+set(qml_resource_files
+    "files/logo.png"
+)
+
+qt_add_resources(iDomClient2 "main"
+    PREFIX
+        "/"
+    FILES
+        ${qml_resource_files}
 )
 
 install(TARGETS iDomClient2
