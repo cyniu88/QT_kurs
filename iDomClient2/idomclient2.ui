@@ -13,47 +13,7 @@
   <property name="windowTitle">
    <string>iDomClient2</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>200</y>
-      <width>231</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>cyniu</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>files/png/surgeProtectorON.png</normaloff>files/png/surgeProtectorON.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>120</width>
-      <height>120</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>390</y>
-      <width>271</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>files/logo.png</pixmap>
-    </property>
-   </widget>
-  </widget>
+  <widget class="QWidget" name="centralwidget"/>
   <action name="actionlight">
    <property name="text">
     <string>light</string>

@@ -8,18 +8,43 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_compile_definitions(IDOM)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets AxContainer SvgWidgets LinguistTools)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network TextToSpeech SvgWidgets LinguistTools WebView)
+
 
 set(TS_FILES iDomClient2_pl_PL.ts)
 
+set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/iDom_client.ico")
+
+
+set(INCLUDE_DIRECTORIES "mybutton/")
+include_directories(${INCLUDE_DIRECTORIES})
+
+file(GLOB idomClient2_SRC
+    "*.h"
+    "*.cpp"
+    "*.ui"
+    "json2/*.hpp"
+    "mybutton/*"
+    "blocking_queue/*"
+)
+
 set(PROJECT_SOURCES
         main.cpp
-        idomclient2.cpp
-        idomclient2.h
-        idomclient2.ui
+        idom_client.cpp
+        idom_client.h
+        idom_client.ui
+        ikony.qrc
+        ../libs/android_functions/android_interface/android_interface.cpp
+        ../libs/sgvTEST/thermometerSVG/thermometer.cpp
+        ../libs/config_files/config_files.cpp
+        ../libs/useful/usefull.cpp
+        ../libs/android_functions/androidhelper_cyniu.h
         ${TS_FILES}
+
+        ${idomClient2_SRC}
 )
 
 
@@ -27,6 +52,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(iDomClient2
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        ${app_icon_resource_windows}
     )
 # Define target properties for Android with Qt 6 as:
     set_property(TARGET iDomClient2 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -51,6 +77,10 @@ else()
 endif()
 
 target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::Network)
+target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::SvgWidgets)
+target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::TextToSpeech)
+target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::WebView)
 
 set_target_properties(iDomClient2 PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
@@ -61,16 +91,6 @@ set_target_properties(iDomClient2 PROPERTIES
 )
 
 
-set(qml_resource_files
-    "files/logo.png"
-)
-
-qt_add_resources(iDomClient2 "main"
-    PREFIX
-        "/"
-    FILES
-        ${qml_resource_files}
-)
 
 install(TARGETS iDomClient2
     BUNDLE DESTINATION .
