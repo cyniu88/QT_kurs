@@ -47,7 +47,7 @@ void thread3(BlockingQueue<T>& queue){
 	if(k==queueSize)break;}
 }
 
-int main(int argc, char* argv[]){
+int main2(int argc, char* argv[]){
 
 	BlockingQueue<int> queue;
 	BlockingQueue<int> queue2;

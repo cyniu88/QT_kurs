@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_compile_definitions(IDOM)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets AxContainer SvgWidgets LinguistTools)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network TextToSpeech SvgWidgets LinguistTools WebView)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network TextToSpeech SvgWidgets LinguistTools WebView Sensors Core)
 
 
 set(TS_FILES iDomClient2_pl_PL.ts)
@@ -31,6 +31,11 @@ file(GLOB idomClient2_SRC
     "blocking_queue/*"
 )
 
+if(ANDROID)
+    set(andek ../libs/android_functions/androidhelper_cyniu.cpp)
+else()
+    set(andek)
+endif()
 set(PROJECT_SOURCES
         main.cpp
         idom_client.cpp
@@ -41,7 +46,7 @@ set(PROJECT_SOURCES
         ../libs/sgvTEST/thermometerSVG/thermometer.cpp
         ../libs/config_files/config_files.cpp
         ../libs/useful/usefull.cpp
-        ../libs/android_functions/androidhelper_cyniu.h
+        ${andek}
         ${TS_FILES}
 
         ${idomClient2_SRC}
@@ -81,6 +86,8 @@ target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::Network)
 target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::SvgWidgets)
 target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::TextToSpeech)
 target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::WebView)
+target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::Sensors)
+target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 
 set_target_properties(iDomClient2 PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
