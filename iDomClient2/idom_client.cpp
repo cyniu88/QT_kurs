@@ -16,9 +16,11 @@
 
 #ifdef Q_OS_ANDROID
 
+#include <QtCore/qjniobject.h>
+#include <QtCore/qcoreapplication.h>
 #endif
 
-#include "functions.h"
+//#include "functions.h"
 #include "idom_client.h"
 #include "ui_idom_client.h"
 #include "workerip.h"
@@ -34,6 +36,14 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     taskHandlerTimer = new QTimer ();
     QObject::connect(taskHandlerTimer, SIGNAL(timeout()), this, SLOT(taskHandler()));
     taskHandlerTimer->start(900);
+
+#ifdef Q_OS_ANDROID
+    QJniObject activity = QJniObject::callStaticObjectMethod("org/qtproject/qt/android/QtNative", "activity", "()Landroid/app/Activity;");
+    QJniObject resource = activity.callObjectMethod("getResources","()Landroid/content/res/Resources;");
+    QJniObject metrics = resource.callObjectMethod("getDisplayMetrics","()Landroid/util/DisplayMetrics;");
+    //update_density();
+    qDebug() << "Using density from JNI: " << metrics.getField<float>("density") << " Value from QScreen: " ;
+#endif
 #ifndef Q_OS_ANDROID
     if(QSystemTrayIcon::isSystemTrayAvailable() == false)
     {
@@ -77,24 +87,6 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     ui->txtAnswer->setLineWrapMode(QPlainTextEdit::NoWrap);
     ui->txtAnswer->setPlainText(QString::fromStdString( s));
 
-    termoIN.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
-    termoOUT.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
-    termoFloor.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
-    termoBoiler.setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
-    termoIN.setBackgroundColor(Qt::green);
-    termoOUT.setBackgroundColor(Qt::green);
-    termoFloor.setBackgroundColor(Qt::green);
-    termoBoiler.setBackgroundColor(Qt::green);
-    ui->werIN->addWidget(&termoIN);
-    ui->werOUT->addWidget(&termoOUT);
-    ui->werFloor->addWidget(&termoFloor);
-    ui->werBoiler->addWidget(&termoBoiler);
-
-    /// nawigate bar
-    ///
-    ui->lineEdit_tabName->setText(   ui->tabWidget->tabText(ui->tabWidget->currentIndex())  );
-    ui->horizontalSlider_tabNavigate->setMaximum(ui->tabWidget->tabBar()->count()-1 );
-    ui->horizontalSlider_tabNavigate->setValue(ui->tabWidget->currentIndex());
     ui->tabWidget->tabBar()->hide();
 
     ui->b_connect_dicsonnect->setText("Disconnect from iDom");
@@ -193,11 +185,6 @@ void iDom_Client::setCommandListInOptions()
     optionsWindow.setCommandList(sList);
 }
 
-void iDom_Client::on_b_exit_released()
-{
-    ui->centralWidget->close();
-}
-
 void iDom_Client::taskHandler()
 {
     ////////////////////////////// scroll song title //////////////////////////
@@ -212,6 +199,7 @@ void iDom_Client::taskHandler()
     case 0:
         //case 4:
     case 6:
+       //TODO fix
         updateAlarmTime();
         emit sendTCP("state", "state all");
         qDebug() << "aktualny case:"<<ui->tabWidget->currentIndex();
@@ -286,12 +274,6 @@ void iDom_Client::odb_light_msg(QString s)
 void iDom_Client::readProgress(int c)
 {
     ui->progressBar->setValue(c);
-}
-
-void iDom_Client::odb_answer_LED(QString s)
-{
-    ui->lineEditLED->setText(s);
-    makeInfo("LED",s);
 }
 
 void iDom_Client::odb_answer_MPD(QString s)
@@ -377,14 +359,6 @@ void iDom_Client::odb_temperature(QString s)
     out = out.split("\r")[0];
     temperatureString = "Temperature Inside: " + in +"\u2103"+ " Outside: "+ out+ "\u2103"+ " ";
     ui->temperatureTXT->setText(temperatureString);
-    ui->InsideLCD_2->display(in);
-    ui->OutsideLCD_2->display(out);
-    ui->boilerLCD->display(boiler);
-    ui->floorLCD->display(floor);
-    termoIN.setTemperature(in.toDouble());
-    termoOUT.setTemperature(out.toDouble());
-    termoFloor.setTemperature(floor.toDouble());
-    termoBoiler.setTemperature(boiler.toDouble());
 }
 
 void iDom_Client::odb_tools(QString s)
@@ -419,7 +393,7 @@ void iDom_Client::connectDisconnectButtonState(bool state)
 void iDom_Client::on_b_sendConsole_released()
 {
 
-     config->command.clear();
+    config->command.clear();
 
     bool mainCommand = true;
     //  config->command = ui->comboBox->currentText().toStdString();
@@ -480,143 +454,6 @@ void iDom_Client::slot_getCommandList(QStringList list)
     ui->comboBox->addItems(list);
 }
 
-void iDom_Client::on_b_led_14_released()
-{
-    sendSignalColor(70, 0, 130,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_15_released()
-{
-    sendSignalColor(255, 192, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_16_released()
-{
-    sendSignalColor(147, 246, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_17_released()
-{
-    sendSignalColor(178, 34, 34,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_18_released()
-{
-    sendSignalColor(128, 0, 128,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_19_released()
-{
-    sendSignalColor(8, 37, 103,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_20_released()
-{
-    sendSignalColor(255, 255, 153,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_25_released()
-{
-    sendSignalColor(207, 47, 47,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_24_released()
-{
-    sendSignalColor(128, 128, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_23_released()
-{
-    sendSignalColor(159, 159, 223,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_22_released()
-{
-    sendSignalColor(112, 32, 31,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_21_released()
-{
-    sendSignalColor(98, 0, 44,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_12_released()
-{
-    sendSignalColor(255, 165, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_13_released()
-{
-    sendSignalColor(128, 0, 0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_6_released()
-{
-    sendSignalColor(255,255,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_7_released()
-{
-    sendSignalColor(255,128,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_8_released()
-{
-    sendSignalColor(0,128,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_9_released()
-{
-    sendSignalColor(0,255,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_10_released()
-{
-    sendSignalColor(204, 93, 43,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_11_released()
-{
-    sendSignalColor(0, 127, 255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_LED_OFF_released()
-{
-    emit sendTCP("LED","iDom LED OFF");
-    ui->b_extra_color->setStyleSheet(" border-style: outset;border-width: 1px;\
-                                     border-color: rgb(255, 255, 255);\
-            /* border-radius: 10px;*/\
-            border-color: beige;\
-    \
-padding: 6px;\
-    background-color: rgb(0, 0, 0);"  );
-}
-
-void iDom_Client::on_b_led_1_released()
-{
-    sendSignalColor(255,0,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_2_released()
-{
-    sendSignalColor(0,0,255,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_3_released()
-{
-    sendSignalColor(0,255,0,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_4_released()
-{
-    sendSignalColor(255,255,51,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
-void iDom_Client::on_b_led_5_released()
-{
-    sendSignalColor(255,0,128,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-}
-
 void iDom_Client::on_b_play_released()
 {
     if (ui->b_lockUnlock_HOME->isChecked() == true)
@@ -627,52 +464,6 @@ void iDom_Client::on_b_play_released()
     emit sendTCP("MPD","MPD start");
     emit sendTCP("MPD_title","MPD get info");
     droid.vibrate(100);
-}
-
-void iDom_Client::on_b_all_led_released()
-{
-    ui->spinBox_fromLED->setValue(0);
-    ui->spinBox_toLED->setValue(60);
-    ui->from_horizontalSlider->setValue(0);
-    ui->to_horizontalSlider_2->setValue(60);
-    ui->lcdNumber_fromLED->display(0);
-    ui->lcdNumber_toLED->display(60);
-}
-
-void iDom_Client::on_to_horizontalSlider_2_valueChanged( )
-{   int temp_value = ui->to_horizontalSlider_2->value();
-
-    if (temp_value <= ui->from_horizontalSlider->value())
-    {
-        ui->from_horizontalSlider->setValue(temp_value-1);
-        ui->spinBox_fromLED->setValue(temp_value-1);
-    }
-    ui->spinBox_toLED->setValue(ui->to_horizontalSlider_2->value());
-    ui->lcdNumber_toLED->display(ui->to_horizontalSlider_2->value());
-}
-
-void iDom_Client::on_from_horizontalSlider_valueChanged(int value )
-{
-    int temp_value = ui->from_horizontalSlider->value();
-    if (temp_value >= ui->to_horizontalSlider_2->value())
-    {
-        ui->to_horizontalSlider_2->setValue(temp_value+1);
-        ui->spinBox_toLED->setValue(temp_value+1);
-    }
-    ui->spinBox_fromLED->setValue(value);
-    ui->lcdNumber_fromLED->display(ui->from_horizontalSlider->value());
-}
-
-void iDom_Client::on_spinBox_toLED_valueChanged(int value)
-{
-    ui->to_horizontalSlider_2->setValue(value);
-    ui->lcdNumber_toLED->display(value);
-}
-
-void iDom_Client::on_spinBox_fromLED_valueChanged(int value)
-{
-    ui->from_horizontalSlider->setValue(value);
-    ui->lcdNumber_fromLED->display(value);
 }
 
 void iDom_Client::on_b_stop_released()
@@ -729,11 +520,6 @@ void iDom_Client::on_b_volumeDOWN_released()
     }
 }
 
-void iDom_Client::on_b_exit_pressed()
-{
-    emit sendTCP("console","exit");
-}
-
 void iDom_Client::setLcdActual(int c)
 {
     ui->lcdNumberActual->display(c);
@@ -747,12 +533,12 @@ void iDom_Client::setLcdAll(int c)
 void iDom_Client::on_tabWidget_currentChanged( )
 {
     emit sendTCP("state", "state all");
-    ui->lineEdit_tabName->setText(   ui->tabWidget->tabText(ui->tabWidget->currentIndex())  );
-    ui->horizontalSlider_tabNavigate->setValue(ui->tabWidget->currentIndex());
-
 
     switch (ui->tabWidget->currentIndex()){
-    case 6:
+    case 4:
+        screenChanged();
+        break;
+    case 3:
         screenChanged();
         break;
     default:
@@ -775,13 +561,6 @@ void iDom_Client::on_b_setNumberMPD_clicked()
         emit sendTCP("MPD","MPD start "+std::to_string(songID));
     }
     droid.vibrate(100);
-}
-
-void iDom_Client::on_comboBox_currentIndexChanged(QString txt)
-{
-    config->command = txt.toStdString();
-    //emit sendTCP("console",config->command);
-    on_b_sendConsole_released();
 }
 
 void iDom_Client::on_b_turnOnSleepMode_clicked()
@@ -832,40 +611,6 @@ void iDom_Client::on_b_server_clicked()
     }
 }
 
-void iDom_Client::on_b_extra_color_clicked()
-{
-    QColorDialog color;
-    color.setOptions(QColorDialog::ShowAlphaChannel);
-    QFont f;
-    int size = QGuiApplication::primaryScreen()->geometry().width();
-    if (size>1000){
-        size = 25;
-        qDebug() << "duze";
-    }
-    else {
-        size = 8;
-        qDebug() << "male!";
-    }
-    f.setPixelSize(size);
-    color.setFont(f);
-    if( color.exec())
-    {
-        int r,g,b;
-        color.currentColor().getRgb(&r,&g,&b);
-
-        sendSignalColor(r,g,b,ui->spinBox_fromLED->value(), ui->spinBox_toLED->value());
-        ui->b_extra_color->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb("+QString::number(r)+","+QString::number(g)+"," +QString::number(b)+");  border-width: 1px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
-    }
-    else{
-        ui->b_extra_color->setStyleSheet(" border-style: outset; color: rgb(255, 55, 55); background-color: rgb(0,0,0);  border-width: 1px;   border-color: rgb(255, 255, 255);  border-color: beige;  padding: 6px;"  );
-    }
-}
-
-void iDom_Client::on_b_put_temperature_clicked()
-{
-    emit sendTCP("tools","put temperature");
-}
-
 void iDom_Client::on_b_goodBye_clicked()
 {
     QMessageBox::StandardButton reply;
@@ -873,8 +618,6 @@ void iDom_Client::on_b_goodBye_clicked()
                                   QMessageBox::Yes|QMessageBox::No);
     if (reply == QMessageBox::Yes) {
         emit sendTCP("MPD","MPD stop");
-        emit sendTCP("LED","iDom LED OFF");
-        on_b_exit_pressed();
         QThread::sleep(2);
         qApp->exit();
     }
@@ -885,34 +628,9 @@ void iDom_Client::on_b_ttsInfo_clicked()
     emit sendTCP("TTS","iDom text");
 }
 
-void iDom_Client::on_b_tabRight_clicked()
-{
-    int i = ui->horizontalSlider_tabNavigate->value();  //get current value
-    ++i;
-    if (i > ui->tabWidget->tabBar()->count()-1){
-        i=0;
-    }
-    ui->horizontalSlider_tabNavigate->setValue(i);
-}
-
-void iDom_Client::on_b_tabLeft_clicked()
-{
-    int i = ui->horizontalSlider_tabNavigate->value();  //get current value
-    --i;
-    if (i < 0){
-        i=ui->tabWidget->tabBar()->count()-1;
-    }
-    ui->horizontalSlider_tabNavigate->setValue(i);
-}
-
-void iDom_Client::on_horizontalSlider_tabNavigate_valueChanged(int value)
-{
-    ui->tabWidget->setCurrentIndex(value);
-}
-
 void iDom_Client::on_b_showTemperatureCharts_clicked()
 {
-//TODO remove
+    //TODO remove
 }
 
 void iDom_Client::loadImage(QByteArray d)
@@ -1109,7 +827,7 @@ void iDom_Client::on_b_sms_clicked()
     droid.sendSMS("506496722","test sms ");
     droid.makeToast("wyslano sms:");
 
-    droid.updateAndroidNotification("test testo");
+   // droid.updateAndroidNotification("test testo");
 }
 
 void iDom_Client::on_b_ledCamera_clicked()
@@ -1265,7 +983,13 @@ void iDom_Client::screenChanged()
     ui->b_fan->setIconSize(ui->b_fan->size()*0.6);
     ui->b_heatingBoiler->setIconSize(ui->b_heatingBoiler->size()*0.6);
     ui->b_circlePump->setIconSize(ui->b_circlePump->size()*0.6);
-    ui->b_KODI->setIconSize(ui->b_KODI->size()*06);
+    ui->b_KODI->setIconSize(ui->b_KODI->size()*0.6);
+    ui->b_sms->setIconSize(ui->b_sms->size()*0.6);
+    ui->b_share_fan->setIconSize(ui->b_share_fan->size()*0.6);
+    ui->b_setAlarm->setIconSize(ui->b_setAlarm->size()*0.6);
+//    QFont font = ui->b_setAlarm->font();
+//    font.setPointSize(font.pointSize()-1);
+//    ui->b_setAlarm->setFont(font);
 }
 
 void iDom_Client::on_comboBox_ROOM_currentIndexChanged(int index)
@@ -1326,3 +1050,48 @@ void iDom_Client::on_b_light_OFF_clicked()
         }
     }
 }
+
+void iDom_Client::on_b_exit_clicked()
+{
+    QMessageBox msgBox;
+    QPushButton *cameraButton = msgBox.addButton(tr("camera"), QMessageBox::ActionRole);
+    QPushButton *musicButton = msgBox.addButton(tr("music"), QMessageBox::ActionRole);
+    QPushButton *lightButton = msgBox.addButton(tr("light"), QMessageBox::ActionRole);
+    QPushButton *homeButton = msgBox.addButton(tr("home"), QMessageBox::ActionRole);
+    QPushButton *consoleButton = msgBox.addButton(tr("console"), QMessageBox::ActionRole);
+    QPushButton *toolsButton = msgBox.addButton(tr("tools"), QMessageBox::ActionRole);
+    QPushButton *exitButton = msgBox.addButton(tr("EXIT"), QMessageBox::ActionRole);
+    msgBox.exec();
+
+    if (msgBox.clickedButton() == cameraButton) {
+        ui->tabWidget->setCurrentIndex(0);
+    }
+    else if (msgBox.clickedButton() == musicButton) {
+        ui->tabWidget->setCurrentIndex(1);
+    }
+    else if (msgBox.clickedButton() == lightButton) {
+        ui->tabWidget->setCurrentIndex(5);
+    }
+    else if (msgBox.clickedButton() == homeButton) {
+        ui->tabWidget->setCurrentIndex(4);
+    }
+    else if (msgBox.clickedButton() == consoleButton) {
+        ui->tabWidget->setCurrentIndex(2);
+    }
+    else if (msgBox.clickedButton() == toolsButton) {
+        ui->tabWidget->setCurrentIndex(3);
+    }
+    else if (msgBox.clickedButton() == exitButton) {
+        emit sendTCP("console","exit");
+        ui->centralWidget->close();
+        qApp->exit();
+    }
+}
+
+void iDom_Client::on_comboBox_currentTextChanged(const QString &arg1)
+{
+    //config->command = txt.toStdString();
+    //emit sendTCP("console",config->command);
+    on_b_sendConsole_released();
+}
+

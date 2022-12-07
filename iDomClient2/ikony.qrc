@@ -33,6 +33,7 @@
         <file>files/svg/Kodi-top-bottom.svg</file>
         <file>files/svg/wildecyote-body.png</file>
         <file>files/svg/heating-service.svg</file>
+        <file>icon.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

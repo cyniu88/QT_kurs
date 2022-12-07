@@ -11,13 +11,13 @@
 #include "idom_client.h"
 #include "variable.h"
 #include "workerip.h"
-#include "setalarm.h"
+//#include "setalarm.h"
 
 //std::string buffor;
 
 int main(int argc, char *argv[])
 {
-puts("dupa");
+    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::Round);
     auto *infoMPDtimer = new QTimer ();
     auto *infoTemperatureTimer = new QTimer();
 
@@ -43,7 +43,6 @@ puts("dupa");
     QObject::connect(worker,SIGNAL(toast_msg(QString)),         w,SLOT(odb_toast_msg(QString)));
     QObject::connect(worker,SIGNAL(light_msg(QString)),         w,SLOT(odb_light_msg(QString)));
     QObject::connect(worker,SIGNAL(progress(int)),              w,SLOT(readProgress(int)));
-    QObject::connect(worker,SIGNAL(answerLED(QString)),         w,SLOT(odb_answer_LED(QString))    );
     QObject::connect(worker,SIGNAL(answerMPD(QString)),         w,SLOT(odb_answer_MPD(QString))  );
     QObject::connect(worker,SIGNAL(answerAlarm(QString)),       w,SLOT(odb_answer_alarm(QString)) );
     QObject::connect(worker,SIGNAL(mpd_title_info(QString)),    w,SLOT(odb_mpd_title(QString)) );
@@ -89,7 +88,7 @@ puts("dupa");
     delete infoMPDtimer;
     delete infoTemperatureTimer;
     delete worker;
-    //delete w;
+    delete w;
 
    qDebug() << "KONIEC" ;
     return 0;

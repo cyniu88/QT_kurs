@@ -16,11 +16,9 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network TextToSpe
 
 set(TS_FILES iDomClient2_pl_PL.ts)
 
-set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/iDom_client.ico")
-
+set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/resources/iDomClient2.rc")
 
 set(INCLUDE_DIRECTORIES "mybutton/")
-include_directories(${INCLUDE_DIRECTORIES})
 
 file(GLOB idomClient2_SRC
     "*.h"
@@ -88,6 +86,8 @@ target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::TextToSpeech)
 target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::WebView)
 target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::Sensors)
 target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::Core)
+
+target_include_directories(iDomClient2 PRIVATE "${INCLUDE_DIRECTORIES}")
 
 set_target_properties(iDomClient2 PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

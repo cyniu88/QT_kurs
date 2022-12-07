@@ -3,7 +3,7 @@
 //
 package org.qtproject.example.Chronometer;
 
-//import org.qtproject.qt5.android.QtNative;
+import org.qtproject.qt.android.QtNative;
 import org.qtproject.qt.android.bindings.QtService;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -13,7 +13,8 @@ import android.os.Vibrator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
-
+import android.util.Log;
+import android.net.Uri;
 import android.os.BatteryManager;
 
 import android.content.Intent;
@@ -72,6 +73,7 @@ public static void makeToast(final String s)
               });
     }
 
+
 public static void notify(Context context, String message)
     {
         try {
@@ -107,7 +109,7 @@ Intent sendIntent = new Intent();
 sendIntent.setAction(Intent.ACTION_SEND);
 sendIntent.putExtra(Intent.EXTRA_TEXT, text);
 sendIntent.setType("text/plain");
-//QtNative.activity().startActivity(sendIntent);
+QtNative.activity().startActivity(sendIntent);
 
 
 }

@@ -2,24 +2,27 @@
 <ui version="4.0">
  <class>iDom_Client</class>
  <widget class="QMainWindow" name="iDom_Client">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>581</width>
-    <height>907</height>
+    <width>480</width>
+    <height>493</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>500</width>
-    <height>0</height>
+    <width>10</width>
+    <height>10</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -73,180 +76,56 @@
   <widget class="QWidget" name="centralWidget">
    <property name="minimumSize">
     <size>
-     <width>480</width>
-     <height>480</height>
+     <width>200</width>
+     <height>200</height>
     </size>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="4" column="0">
-     <layout class="QHBoxLayout" name="navigateLayout_3">
-      <item>
-       <widget class="QPushButton" name="b_tabLeft">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="toolTip">
-         <string>BACK</string>
-        </property>
-        <property name="whatsThis">
-         <string>kokoko?</string>
-        </property>
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="bottomMargin">
+       <number>11</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QToolButton" name="b_exit">
         <property name="styleSheet">
-         <string notr="true">
-QPushButton {
-background-color: rgb(158, 158, 158,50);
- border:1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- image: url(:/new/prefix1/files/Green_Arrow_Left.svg);
-}
-QPushButton:pressed {
-
-border:none;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_tabName">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>18</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>BlankCursor</cursorShape>
-        </property>
-        <property name="toolTip">
-         <string/>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 0, 0, 0);
-border: none ;
-color: rgb(255, 255,255);</string>
-        </property>
-        <property name="frame">
-         <bool>false</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-        <property name="cursorMoveStyle">
-         <enum>Qt::VisualMoveStyle</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="b_tabRight">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="toolTip">
-         <string>NEXT</string>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+         <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
- image: url(:/new/prefix1/files/Green_Arrow_Right.svg);
+ font: bold 20px;
+
 }
-QPushButton:pressed {
+QToolButton:pressed {
 border:none;
 }</string>
         </property>
         <property name="text">
-         <string/>
+         <string>MENU</string>
+        </property>
+        <property name="icon">
+         <iconset resource="ikony.qrc">
+          <normaloff>:/new/prefix1/iDom_client.ico</normaloff>:/new/prefix1/iDom_client.ico</iconset>
         </property>
         <property name="iconSize">
          <size>
-          <width>60</width>
-          <height>60</height>
+          <width>50</width>
+          <height>50</height>
          </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
         </property>
        </widget>
       </item>
-     </layout>
-    </item>
-    <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="1" column="6">
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-       </layout>
-      </item>
-      <item row="1" column="2">
+      <item row="0" column="1">
        <layout class="QGridLayout" name="gridLayout_14">
-        <item row="0" column="0" colspan="2">
-         <widget class="QLineEdit" name="titleTXT">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgba(0, 0, 0, 0);
-background-color: rgb(158, 158, 158,50);
- border: none;
-border-radius: 0px;
-color: rgb(255, 255,255);</string>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-          <property name="cursorMoveStyle">
-           <enum>Qt::VisualMoveStyle</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="volumeTXT">
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="temperatureTXT">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -258,14 +137,15 @@ color: rgb(255, 255,255);</string>
             <pointsize>12</pointsize>
            </font>
           </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(158, 158, 158,50);
- border: none;
-border-radius: 0px;</string>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
           </property>
-          <property name="inputMask">
-           <string/>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color: rgb(85, 170, 0);</string>
+          </property>
+          <property name="frame">
+           <bool>false</bool>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -273,23 +153,30 @@ border-radius: 0px;</string>
           <property name="readOnly">
            <bool>true</bool>
           </property>
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QLineEdit" name="temperatureTXT">
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="volumeTXT">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <pointsize>12</pointsize>
            </font>
           </property>
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(158, 158, 158,50);
- border: none;
-border-radius: 0px;</string>
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color: rgb(85, 170, 0);</string>
+          </property>
+          <property name="inputMask">
+           <string/>
           </property>
           <property name="frame">
            <bool>false</bool>
@@ -302,135 +189,46 @@ border-radius: 0px;</string>
           </property>
          </widget>
         </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QLineEdit" name="titleTXT">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color: rgb(85, 170, 0);</string>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="frame">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="cursorMoveStyle">
+           <enum>Qt::VisualMoveStyle</enum>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
-      <item row="1" column="4">
-       <layout class="QVBoxLayout" name="verticalLayout"/>
-      </item>
-      <item row="0" column="2">
-       <layout class="QVBoxLayout" name="verticalLayout_2"/>
-      </item>
-      <item row="1" column="5">
-       <layout class="QGridLayout" name="gridLayout_4"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="LOGO">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-          <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>234</width>
-          <height>89</height>
-         </size>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">image: url(:/new/prefix1/files/logo.png);</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Sunken</enum>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QPushButton" name="b_exit">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Maximum" vsizetype="Ignored">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold ;
-font-size: 20px;
-}
-QPushButton:pressed {
-border:none;
-}
- </string>
-        </property>
-        <property name="text">
-         <string>     EXIT     </string>
-        </property>
-       </widget>
-      </item>
      </layout>
-    </item>
-    <item row="3" column="0">
-     <widget class="QSlider" name="horizontalSlider_tabNavigate">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="cursor">
-       <cursorShape>SizeHorCursor</cursorShape>
-      </property>
-      <property name="mouseTracking">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QSlider::groove:horizontal {
-    
-    height: 10px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #FFFFFF, stop:1 #EEEEEE);
-    margin: 2px 0;
-}
-
-QSlider::handle:horizontal {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #00FF00, stop:1 #EEEEEE);
-   height: 5px;
-    width: 100px;
-    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove* /
-    border-radius: 3px;
-}</string>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
     </item>
     <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
@@ -466,7 +264,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>2</number>
       </property>
       <property name="iconSize">
        <size>
@@ -509,8 +307,8 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>607</width>
-               <height>646</height>
+               <width>432</width>
+               <height>305</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -519,7 +317,7 @@ border-color: rgb(255, 255, 255,255);</string>
                 <item>
                  <widget class="QLCDNumber" name="snap_counter">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -529,7 +327,7 @@ border-color: rgb(255, 255, 255,255);</string>
                 <item>
                  <widget class="QLineEdit" name="lineEdit">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -548,7 +346,7 @@ border-color: rgb(255, 255, 255,255);</string>
                 <item>
                  <widget class="QToolButton" name="b_ledCamera">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -567,7 +365,7 @@ border-color: rgb(255, 255, 255,255);</string>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -609,7 +407,7 @@ border:none;
                 <item>
                  <widget class="myButton" name="b_oneShotCamera">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -622,7 +420,7 @@ border:none;
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -641,7 +439,7 @@ border:none;
                 <item>
                  <widget class="myButton" name="b_reloadCameraAddress">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -654,7 +452,7 @@ border:none;
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -674,7 +472,7 @@ border:none;
                 <item>
                  <widget class="myButton" name="b_camera_reload">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -687,7 +485,7 @@ border:none;
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -710,7 +508,7 @@ border:none;
                 <property name="sizeConstraint">
                  <enum>QLayout::SetFixedSize</enum>
                 </property>
-                <item row="1" column="0" colspan="2">
+                <item row="0" column="0" rowspan="2" colspan="2">
                  <widget class="QWidget" name="widgetCAMERA" native="true">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
@@ -776,7 +574,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -807,7 +605,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -836,7 +634,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -863,7 +661,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -898,7 +696,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -927,7 +725,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -987,7 +785,7 @@ background-color: rgba(170, 0, 0, 10);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -1031,7 +829,7 @@ border:none;
           <property name="styleSheet">
            <string notr="true">
 QPushButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -1291,46 +1089,50 @@ border: none ;</string>
             </item>
            </layout>
           </item>
-          <item row="0" column="8" rowspan="2">
-           <widget class="QPushButton" name="b_sendConsole">
+          <item row="2" column="0" colspan="9">
+           <widget class="QPlainTextEdit" name="txtAnswer">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="minimumSize">
-             <size>
-              <width>75</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="whatsThis">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wyslij  komende na serwer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
+            <property name="font">
+             <font>
+              <family>Consolas</family>
+              <pointsize>10</pointsize>
+             </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold ;
-font-size: 20px;
-}
-QPushButton:pressed {
-border:none;
-}</string>
+             <string notr="true">background-color: transparent;
+color: rgb(255, 255, 255);
+border: none ;</string>
             </property>
-            <property name="text">
-             <string>SEND</string>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
-          <item row="1" column="0" colspan="8">
+          <item row="1" column="0" colspan="7">
            <widget class="QComboBox" name="comboBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1343,7 +1145,6 @@ border:none;
             <property name="styleSheet">
              <string notr="true">QComboBox {
  border-radius: 0px;
-background-color: rgb(158, 158, 158,50);
  border: 1px solid #8f8f91;
 	border-color:grey;
 	color:white;
@@ -1424,1157 +1225,45 @@ QComboBox::down-arrow {
             </item>
            </widget>
           </item>
-          <item row="2" column="0" colspan="9">
-           <widget class="QPlainTextEdit" name="txtAnswer">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
+          <item row="0" column="7" rowspan="2" colspan="2">
+           <widget class="QPushButton" name="b_sendConsole">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <sizepolicy hsizetype="Ignored" vsizetype="Minimum">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="font">
-             <font>
-              <family>Consolas</family>
-              <pointsize>10</pointsize>
-             </font>
+            <property name="minimumSize">
+             <size>
+              <width>75</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wyslij  komende na serwer&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: transparent;
-color: rgb(255, 255, 255);
-border: none ;</string>
+             <string notr="true">QPushButton {
+background:  rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold ;
+font-size: 20px;
+}
+QPushButton:pressed {
+border:none;
+}</string>
             </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAsNeeded</enum>
-            </property>
-            <property name="horizontalScrollBarPolicy">
-             <enum>Qt::ScrollBarAsNeeded</enum>
-            </property>
-            <property name="sizeAdjustPolicy">
-             <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
+            <property name="text">
+             <string>SEND</string>
             </property>
            </widget>
           </item>
          </layout>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_3">
-       <property name="autoFillBackground">
-        <bool>false</bool>
-       </property>
-       <attribute name="title">
-        <string>LED</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_5">
-        <item row="8" column="2">
-         <widget class="QPushButton" name="b_led_13">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
- 
-    padding: 6px;
-background-color: rgb(128, 0, 0);</string>
-          </property>
-          <property name="text">
-           <string>rdzawy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="5">
-         <widget class="QLineEdit" name="lineEditLED">
-          <property name="font">
-           <font>
-            <pointsize>15</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="toolTip">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wynik&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 255, 0);
-background-color: rgba(0, 0, 0, 0);</string>
-          </property>
-          <property name="frame">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="11" column="0" colspan="5">
-         <widget class="QPushButton" name="b_LED_OFF">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-            <italic>false</italic>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
- border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>LED OFF</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="10" column="3">
-         <widget class="QPushButton" name="b_led_24">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(128, 128, 0);</string>
-          </property>
-          <property name="text">
-           <string>oliwkowy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="4" column="3" colspan="2">
-         <widget class="QSlider" name="to_horizontalSlider_2">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="cursor">
-           <cursorShape>SizeHorCursor</cursorShape>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QSlider::groove:horizontal {
-    
-    height: 10px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #007FFF, stop:1 #EEEEEE);
-    margin: 2px 0;
-}
-
-QSlider::handle:horizontal {
- 
-	background-color: rgb(85, 255, 0);
-border: 1px solid gray;
-width: 48px;
-margin: -26px 0;
-border-radius:   23px;
-}</string>
-          </property>
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>60</number>
-          </property>
-          <property name="value">
-           <number>60</number>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="tickPosition">
-           <enum>QSlider::TicksBothSides</enum>
-          </property>
-          <property name="tickInterval">
-           <number>5</number>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="2">
-         <widget class="QPushButton" name="b_led_3">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 255, 0);
- 
- color: rgb(0, 0, 0);
- 
- border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-  /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>zielony</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLCDNumber" name="lcdNumber_fromLED">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 255, 0);</string>
-          </property>
-          <property name="digitCount">
-           <number>2</number>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="1">
-         <widget class="QPushButton" name="b_led_7">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- background-color: rgb(255, 128, 0);
- border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>tycjan</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="10" column="4">
-         <widget class="QPushButton" name="b_led_25">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(207, 47, 47);</string>
-          </property>
-          <property name="text">
-           <string>poziomkowy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="4" column="2">
-         <widget class="QPushButton" name="b_extra_color">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-color: rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-  /* border-radius: 10px;*/
-    border-color: beige;
-
-    padding: 6px;
- </string>
-          </property>
-          <property name="text">
-           <string>SET COLOR</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="7" column="2">
-         <widget class="QPushButton" name="b_led_8">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
- 
-    padding: 6px;
-background-color: rgb(0, 128, 0);</string>
-          </property>
-          <property name="text">
-           <string>ciemny zielony</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="6" column="4">
-         <widget class="QPushButton" name="b_led_5">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- background-color: rgb(255, 0, 128); 
-  
- 
- border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-  /* border-radius: 10px;*/
-    border-color: beige;
-
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>magenta</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="6" column="3">
-         <widget class="QPushButton" name="b_led_4">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- background-color: rgb(254, 254, 51);
- 
- 
- 
- 
- border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-  /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>żółty</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="9" column="1">
-         <widget class="QPushButton" name="b_led_17">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(178, 34, 34);</string>
-          </property>
-          <property name="text">
-           <string>minia</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="8" column="4">
-         <widget class="QPushButton" name="b_led_15">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
-  border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(255, 192, 0);</string>
-          </property>
-          <property name="text">
-           <string>marchewkowy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="10" column="2">
-         <widget class="QPushButton" name="b_led_23">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>8</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(159, 159, 223);
-color: rgb(0, 0, 0);</string>
-          </property>
-          <property name="text">
-           <string>niebieskofioletowy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="9" column="0">
-         <widget class="QPushButton" name="b_led_16">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
-  border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(147, 246, 0);</string>
-          </property>
-          <property name="text">
-           <string>limonkowy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="9" column="2">
-         <widget class="QPushButton" name="b_led_18">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(128, 0, 128);</string>
-          </property>
-          <property name="text">
-           <string>purpurowy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="3" column="2">
-         <widget class="QPushButton" name="b_all_led">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-color: rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-  /* border-radius: 10px;*/
-    border-color: beige;
-
-    padding: 6px;
- </string>
-          </property>
-          <property name="text">
-           <string>ALL LED</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="8" column="1">
-         <widget class="QPushButton" name="b_led_12">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
-  border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(255, 165, 0);</string>
-          </property>
-          <property name="text">
-           <string>pomarańczowy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="9" column="4">
-         <widget class="QPushButton" name="b_led_20">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>8</pointsize>
-            <italic>false</italic>
-            <bold>false</bold>
-            <underline>false</underline>
-            <strikeout>false</strikeout>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(255, 255, 153);</string>
-          </property>
-          <property name="text">
-           <string>słomkowy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="7" column="4">
-         <widget class="QPushButton" name="b_led_10">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
-  border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
- 
-background-color: rgb(204, 93, 43);</string>
-          </property>
-          <property name="text">
-           <string>herbaciany</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="3" column="3">
-         <widget class="QLCDNumber" name="lcdNumber_toLED">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 255, 0);</string>
-          </property>
-          <property name="digitCount">
-           <number>2</number>
-          </property>
-          <property name="intValue" stdset="0">
-           <number>60</number>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QSpinBox" name="spinBox_fromLED">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>21</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #007FFF, stop:1 #EEEEEE);</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="buttonSymbols">
-           <enum>QAbstractSpinBox::PlusMinus</enum>
-          </property>
-          <property name="maximum">
-           <number>59</number>
-          </property>
-          <property name="displayIntegerBase">
-           <number>10</number>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0" colspan="5">
-         <widget class="Line" name="line">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="3">
-         <widget class="QPushButton" name="b_led_19">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">  border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(8, 37, 103);</string>
-          </property>
-          <property name="text">
-           <string>szafirowy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="10" column="0">
-         <widget class="QPushButton" name="b_led_21">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(98, 0, 44);
-</string>
-          </property>
-          <property name="text">
-           <string>buraczkowy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="10" column="1">
-         <widget class="QPushButton" name="b_led_22">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(112, 32, 31);
-
-</string>
-          </property>
-          <property name="text">
-           <string>brunatny</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="3" column="4">
-         <widget class="QSpinBox" name="spinBox_toLED">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>21</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #007FFF, stop:1 #EEEEEE);</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="buttonSymbols">
-           <enum>QAbstractSpinBox::PlusMinus</enum>
-          </property>
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>60</number>
-          </property>
-          <property name="value">
-           <number>60</number>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="0">
-         <widget class="QPushButton" name="b_led_11">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(0, 127, 255);</string>
-          </property>
-          <property name="text">
-           <string>lazurowy</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="7" column="3">
-         <widget class="QPushButton" name="b_led_9">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
-  border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-
-background-color: rgb(0, 255, 255);</string>
-          </property>
-          <property name="text">
-           <string>cyjan</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="6" column="1">
-         <widget class="QPushButton" name="b_led_2">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 0, 255);
- 
- 
- 
- border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-     /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>niebieski</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="6" column="0">
-         <widget class="QPushButton" name="b_led_1">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>8</pointsize>
-            <italic>false</italic>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- background-color: rgb(255, 0, 0);
- border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-  /* border-radius: 10px;*/
-    border-color: beige;
-
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>czerwony</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="4" column="0" colspan="2">
-         <widget class="QSlider" name="from_horizontalSlider">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="cursor">
-           <cursorShape>SizeHorCursor</cursorShape>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QSlider::groove:horizontal {
-    
-    height: 10px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #007FFF, stop:1 #EEEEEE);
-    margin: 2px 0;
-}
-
-QSlider::handle:horizontal {
- 
-	background-color: rgb(85, 255, 0);
-border: 1px solid gray;
-width: 48px;
-margin: -26px 0;
-border-radius:   23px;
-}</string>
-          </property>
-          <property name="maximum">
-           <number>59</number>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="tickPosition">
-           <enum>QSlider::TicksBothSides</enum>
-          </property>
-          <property name="tickInterval">
-           <number>5</number>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="3">
-         <widget class="QPushButton" name="b_led_14">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"> border-style: outset;
-    border-width: 1px;
-border-color: rgb(255, 255, 255);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;
-background-color: rgb(75, 0, 130);</string>
-          </property>
-          <property name="text">
-           <string>indygo</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="7" column="0">
-         <widget class="QPushButton" name="b_led_6">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(0, 0, 0);
- background-color: rgb(255, 255, 255);
- border-style: outset;
-    border-width: 1px;
-border-color: rgb(0, 0, 0);
-   /* border-radius: 10px;*/
-    border-color: beige;
-
- 
-    padding: 6px;</string>
-          </property>
-          <property name="text">
-           <string>biały</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">LDD_BUTTON</string>
-          </attribute>
-         </widget>
         </item>
        </layout>
       </widget>
@@ -2589,25 +1278,150 @@ border-color: rgb(0, 0, 0);
         <string>kokoko</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_11">
-        <item row="5" column="0">
-         <layout class="QGridLayout" name="gridLayout_12">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="b_server">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>20</pointsize>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+        <item row="4" column="2">
+         <widget class="QToolButton" name="b_share_fan">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>link fan on</string>
+          </property>
+          <property name="icon">
+           <iconset resource="ikony.qrc">
+            <normaloff>:/new/prefix1/files/svg/fanON.svg</normaloff>:/new/prefix1/files/svg/fanON.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextUnderIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="2">
+         <widget class="QLabel" name="l_burnGas">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QPushButton" name="b_turnOnSleepMode">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold  ;
+}
+QPushButton:pressed {
+border:none;
+}
+ 
+ 
+ </string>
+          </property>
+          <property name="text">
+           <string>TURN ON
+SLEEP MODE</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QPushButton" name="b_goodBye">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>GOODBYE</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QPushButton" name="b_server">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -2620,108 +1434,29 @@ border:none;
  
  
  </string>
-            </property>
-            <property name="text">
-             <string>SERVER</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+          </property>
+          <property name="text">
+           <string>SERVER</string>
+          </property>
+         </widget>
         </item>
-        <item row="0" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QPushButton" name="b_turnOnSleepMode">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>18</pointsize>
-                <italic>false</italic>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold  ;
-}
-QPushButton:pressed {
-border:none;
-}
- 
- 
- </string>
-              </property>
-              <property name="text">
-               <string>TURN ON
-SLEEP MODE</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="b_put_temperature">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>18</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-
-}
-QPushButton:pressed {
-border:none;
-}
- 
- </string>
-              </property>
-              <property name="text">
-               <string>PUT
-TEMPERATURE</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="b_goodBye">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>18</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>ArrowCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
+        <item row="7" column="2">
+         <widget class="QPushButton" name="b_connect_dicsonnect">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -2729,325 +1464,66 @@ color:white;
 QPushButton:pressed {
 border:none;
 }</string>
-              </property>
-              <property name="text">
-               <string>GOODBYE</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
-        <item row="3" column="0">
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="4" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
-          <item>
-           <widget class="QPushButton" name="b_connect_dicsonnect">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>20</pointsize>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="1" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <item>
-           <widget class="QPushButton" name="b_ttsInfo">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>20</pointsize>
-              <italic>false</italic>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-            </property>
-            <property name="text">
-             <string>READ INFO</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="b_options">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>1</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>20</pointsize>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-            </property>
-            <property name="text">
-             <string>OPTIONS</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="2" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <item>
-           <widget class="QToolButton" name="b_setAlarm">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>20</pointsize>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-}
-QToolButton:pressed {
-border:none;
-}</string>
-            </property>
-            <property name="text">
-             <string>SET ALARM CLOCK</string>
-            </property>
-            <property name="icon">
-             <iconset resource="ikony.qrc">
-              <normaloff>:/new/prefix1/files/svg/analog-clock2.svg</normaloff>:/new/prefix1/files/svg/analog-clock2.svg</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>200</width>
-              <height>200</height>
-             </size>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="popupMode">
-             <enum>QToolButton::DelayedPopup</enum>
-            </property>
-            <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextBesideIcon</enum>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_5">
-       <attribute name="title">
-        <string>TEMPERATURE</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_13">
-        <item row="2" column="1">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="5" column="0">
-         <widget class="QLabel" name="l_burnGas">
-          <property name="autoFillBackground">
-           <bool>false</bool>
           </property>
           <property name="text">
            <string/>
           </property>
-          <property name="scaledContents">
-           <bool>false</bool>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QPushButton" name="b_options">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>1</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>OPTIONS</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="0">
-         <spacer name="horizontalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>2</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
         <item row="4" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <item>
-           <widget class="QPushButton" name="b_share_fan">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
-border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-font: bold 20px ;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-            </property>
-            <property name="text">
-             <string>link fan on</string>
-            </property>
-            <property name="icon">
-             <iconset resource="ikony.qrc">
-              <normaloff>:/new/prefix1/files/svg/fanON.svg</normaloff>:/new/prefix1/files/svg/fanON.svg</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>64</width>
-              <height>64</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="b_showTemperatureCharts">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
-border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-font: bold 20px ;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-            </property>
-            <property name="text">
-             <string>Show Temperature
-and
-Smog Charts</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="4" column="1" rowspan="2">
-         <widget class="QPushButton" name="b_sms">
+         <widget class="QToolButton" name="b_sms">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">QPushButton {
-background-color: rgb(158, 158, 158,50);
-border: 1px solid #8f8f91;
+           <string notr="true">QToolButton {
+background: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
-font: bold 20px ;
+ font: bold 20px;
+
 }
-QPushButton:pressed {
+QToolButton:pressed {
 border:none;
 }</string>
           </property>
@@ -3060,256 +1536,100 @@ border:none;
           </property>
           <property name="iconSize">
            <size>
-            <width>200</width>
+            <width>50</width>
             <height>200</height>
            </size>
           </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextUnderIcon</enum>
+          </property>
          </widget>
         </item>
-        <item row="0" column="0" colspan="2">
-         <layout class="QGridLayout" name="gridLayout_TEMPERATURE">
-          <item row="1" column="0">
-           <layout class="QVBoxLayout" name="myWerIN">
-            <item>
-             <widget class="QLabel" name="label">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>14</pointsize>
-               </font>
-              </property>
-              <property name="layoutDirection">
-               <enum>Qt::LeftToRight</enum>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 255);</string>
-              </property>
-              <property name="text">
-               <string>Inside</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLCDNumber" name="InsideLCD_2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>14</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 255);</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
-              </property>
-              <property name="digitCount">
-               <number>6</number>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="werIN"/>
-            </item>
-           </layout>
-          </item>
-          <item row="1" column="2">
-           <layout class="QVBoxLayout" name="myWerBoiler">
-            <item>
-             <widget class="QLabel" name="label_4">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>14</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 255);</string>
-              </property>
-              <property name="text">
-               <string>Boiler</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLCDNumber" name="boilerLCD">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <family>MS PGothic</family>
-                <pointsize>14</pointsize>
-               </font>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="werBoiler"/>
-            </item>
-           </layout>
-          </item>
-          <item row="1" column="1">
-           <layout class="QVBoxLayout" name="myWerOUT">
-            <item>
-             <widget class="QLabel" name="label_2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>14</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 255);</string>
-              </property>
-              <property name="text">
-               <string>Outside</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLCDNumber" name="OutsideLCD_2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <family>MS PGothic</family>
-                <pointsize>14</pointsize>
-               </font>
-              </property>
-              <property name="layoutDirection">
-               <enum>Qt::LeftToRight</enum>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 255);</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
-              </property>
-              <property name="smallDecimalPoint">
-               <bool>false</bool>
-              </property>
-              <property name="digitCount">
-               <number>6</number>
-              </property>
-              <property name="segmentStyle">
-               <enum>QLCDNumber::Filled</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="werOUT"/>
-            </item>
-           </layout>
-          </item>
-          <item row="1" column="3">
-           <layout class="QVBoxLayout" name="myWerFloor">
-            <item>
-             <widget class="QLabel" name="label_5">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>14</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Floor</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLCDNumber" name="floorLCD">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <family>MS PGothic</family>
-               </font>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="werFloor"/>
-            </item>
-           </layout>
-          </item>
-          <item row="0" column="0" colspan="4">
-           <widget class="QLabel" name="label_3">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <family>Source Code Pro ExtraLight</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>TEMPERATURE</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
+        <item row="4" column="1">
+         <widget class="QToolButton" name="b_setAlarm">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+}
+QToolButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>SET ALARM CLOCK</string>
+          </property>
+          <property name="icon">
+           <iconset resource="ikony.qrc">
+            <normaloff>:/new/prefix1/files/svg/analog-clock2.svg</normaloff>:/new/prefix1/files/svg/analog-clock2.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="popupMode">
+           <enum>QToolButton::DelayedPopup</enum>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextUnderIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="2">
+         <widget class="QPushButton" name="b_ttsInfo">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>READ INFO</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -3328,7 +1648,7 @@ border:none;
           </property>
           <property name="minimumSize">
            <size>
-            <width>500</width>
+            <width>0</width>
             <height>0</height>
            </size>
           </property>
@@ -3349,101 +1669,11 @@ border:none;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>535</width>
-             <height>665</height>
+             <width>434</width>
+             <height>307</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">
-            <item row="0" column="0" colspan="2">
-             <widget class="QToolButton" name="b_KODI">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
-              </property>
-              <property name="text">
-               <string>URUCHOM KODI</string>
-              </property>
-              <property name="icon">
-               <iconset resource="ikony.qrc">
-                <normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>100</width>
-                <height>100</height>
-               </size>
-              </property>
-              <property name="toolButtonStyle">
-               <enum>Qt::ToolButtonTextBesideIcon</enum>
-              </property>
-              <property name="autoRaise">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QToolButton" name="b_heatingBoiler">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
-              </property>
-              <property name="text">
-               <string>zagrzej wode</string>
-              </property>
-              <property name="icon">
-               <iconset resource="ikony.qrc">
-                <normaloff>:/new/prefix1/files/svg/heat-cwu.svg</normaloff>:/new/prefix1/files/svg/heat-cwu.svg</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>100</width>
-                <height>100</height>
-               </size>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-              <property name="popupMode">
-               <enum>QToolButton::DelayedPopup</enum>
-              </property>
-              <property name="toolButtonStyle">
-               <enum>Qt::ToolButtonTextUnderIcon</enum>
-              </property>
-              <property name="autoRaise">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="0">
              <widget class="QToolButton" name="b_circlePump">
               <property name="sizePolicy">
@@ -3454,7 +1684,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3492,6 +1722,51 @@ border:none;
               </property>
              </widget>
             </item>
+            <item row="0" column="0" colspan="2">
+             <widget class="QToolButton" name="b_KODI">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+              </property>
+              <property name="text">
+               <string>URUCHOM KODI</string>
+              </property>
+              <property name="icon">
+               <iconset resource="ikony.qrc">
+                <normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextBesideIcon</enum>
+              </property>
+              <property name="autoRaise">
+               <bool>false</bool>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">LDD_BUTTON</string>
+              </attribute>
+             </widget>
+            </item>
             <item row="5" column="0">
              <widget class="QToolButton" name="b_printer">
               <property name="sizePolicy">
@@ -3502,7 +1777,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3545,49 +1820,6 @@ border:none;
               </property>
              </widget>
             </item>
-            <item row="2" column="0">
-             <widget class="QToolButton" name="b_fan">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="ikony.qrc">
-                <normaloff>:/new/prefix1/files/svg/fanOFF.svg</normaloff>
-                <normalon>:/new/prefix1/files/svg/fanON.svg</normalon>:/new/prefix1/files/svg/fanOFF.svg</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>100</width>
-                <height>100</height>
-               </size>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-              <property name="autoRaise">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
             <item row="5" column="1">
              <widget class="QToolButton" name="b_listwa">
               <property name="sizePolicy">
@@ -3598,7 +1830,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3635,6 +1867,49 @@ border:none;
               </property>
              </widget>
             </item>
+            <item row="2" column="0">
+             <widget class="QToolButton" name="b_fan">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="ikony.qrc">
+                <normaloff>:/new/prefix1/files/svg/fanOFF.svg</normaloff>
+                <normalon>:/new/prefix1/files/svg/fanON.svg</normalon>:/new/prefix1/files/svg/fanOFF.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="autoRaise">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
             <item row="2" column="1">
              <widget class="QToolButton" name="b_lockUnlock_HOME">
               <property name="sizePolicy">
@@ -3645,7 +1920,7 @@ border:none;
               </property>
               <property name="styleSheet">
                <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3672,6 +1947,54 @@ border:none;
               </property>
               <property name="checkable">
                <bool>true</bool>
+              </property>
+              <property name="autoRaise">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QToolButton" name="b_heatingBoiler">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+              </property>
+              <property name="text">
+               <string>zagrzej wode</string>
+              </property>
+              <property name="icon">
+               <iconset resource="ikony.qrc">
+                <normaloff>:/new/prefix1/files/svg/heat-cwu.svg</normaloff>:/new/prefix1/files/svg/heat-cwu.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="popupMode">
+               <enum>QToolButton::DelayedPopup</enum>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
               </property>
               <property name="autoRaise">
                <bool>false</bool>
@@ -3754,7 +2077,7 @@ border:none;
           <property name="styleSheet">
            <string notr="true">QComboBox {
  border-radius: 0px;
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 	border-color:grey;
 	color:black;
@@ -3802,7 +2125,7 @@ QComboBox::down-arrow {
           <property name="styleSheet">
            <string notr="true">QComboBox {
  border-radius: 0px;
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 	border-color:grey;
 	color:black;
@@ -3846,7 +2169,7 @@ QComboBox::down-arrow {
           </property>
           <property name="styleSheet">
            <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3872,7 +2195,7 @@ border:none;
           </property>
           <property name="styleSheet">
            <string notr="true">QToolButton {
-background-color: rgb(158, 158, 158,50);
+background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
@@ -3934,7 +2257,7 @@ border:none;
   <customwidget>
    <class>myButton</class>
    <extends>QPushButton</extends>
-   <header location="global">mybutton/mybutton.h</header>
+   <header>mybutton/mybutton.h</header>
   </customwidget>
  </customwidgets>
  <resources>
@@ -3942,25 +2265,9 @@ border:none;
  </resources>
  <connections>
   <connection>
-   <sender>b_exit</sender>
-   <signal>released()</signal>
-   <receiver>iDom_Client</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>832</x>
-     <y>80</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>585</x>
-     <y>32</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionCloseApp</sender>
+   <sender>actionStop_Server</sender>
    <signal>triggered()</signal>
-   <receiver>b_exit</receiver>
+   <receiver>b_server</receiver>
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -3968,8 +2275,8 @@ border:none;
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>773</x>
-     <y>51</y>
+     <x>427</x>
+     <y>731</y>
     </hint>
    </hints>
   </connection>
@@ -3986,22 +2293,6 @@ border:none;
     <hint type="destinationlabel">
      <x>427</x>
      <y>601</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionStop_Server</sender>
-   <signal>triggered()</signal>
-   <receiver>b_server</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>427</x>
-     <y>731</y>
     </hint>
    </hints>
   </connection>

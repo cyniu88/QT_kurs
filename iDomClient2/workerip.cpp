@@ -51,10 +51,6 @@ void WorkerIP::run()
         if (addresOUT.address == "console"){
             emit answer(buffor);
         }
-        else if(addresOUT.address == "LED")
-        {
-            emit answerLED(buffor);
-        }
         else if (addresOUT.address == "MPD")
         {
             emit answerMPD(buffor);

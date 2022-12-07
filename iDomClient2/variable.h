@@ -21,7 +21,7 @@ struct iDom_CONFIG {
     std::string background_img_a = "/storage/emulated/0/f/background.png";
     std::string serverIP = "";
 
-    quint16 serverPort = 8833;
+    quint16 serverPort = 48833;
     bool goWhile = false;
     std::string command = "OK";
     QList<QString> grepWords = {};

@@ -65,11 +65,6 @@ private:
     QString temperatureString;
     QStringList mpdItems;
 
-    Thermometer termoIN;
-    Thermometer termoOUT;
-    Thermometer termoBoiler;
-    Thermometer termoFloor;
-
     FileDownloader *m_pImgCtrl = nullptr;
     bool cameraWork = false;
     QPixmap pima;
@@ -97,60 +92,21 @@ private:
 private slots:
     void slot_fontSize(QString s);
     void slot_getCommandList(QStringList list);
-    void on_b_exit_released();
     void taskHandler();
     void on_b_sendConsole_released();
     void on_b_play_released();
-    void on_b_LED_OFF_released();
-    void on_b_led_2_released();
-    void on_b_led_3_released();
-    void on_b_led_4_released();
-    void on_b_led_5_released();
-    void on_b_all_led_released();
-    void on_b_led_6_released();
-    void on_b_led_7_released();
-    void on_b_led_8_released();
-    void on_b_led_9_released();
-    void on_b_led_10_released();
-    void on_b_led_11_released();
-    void on_to_horizontalSlider_2_valueChanged();
-    void on_from_horizontalSlider_valueChanged(int value);
-    void on_spinBox_toLED_valueChanged(int value);
-    void on_spinBox_fromLED_valueChanged(int value);
-    void on_b_led_12_released();
-    void on_b_led_13_released();
     void on_b_stop_released();
     void on_b_PREV_released();
     void on_b_Next_released();
     void on_b_pause_released();
     void on_b_volumeUP_released();
     void on_b_volumeDOWN_released();
-    void on_b_exit_pressed();
-    void on_b_led_1_released();
-    void on_b_led_14_released();
-    void on_b_led_15_released();
-    void on_b_led_16_released();
-    void on_b_led_17_released();
-    void on_b_led_18_released();
-    void on_b_led_19_released();
-    void on_b_led_20_released();
-    void on_b_led_25_released();
-    void on_b_led_24_released();
-    void on_b_led_23_released();
-    void on_b_led_22_released();
-    void on_b_led_21_released();
     void on_tabWidget_currentChanged();
     void on_b_setNumberMPD_clicked();
-    void on_comboBox_currentIndexChanged(QString txt);
     void on_b_turnOnSleepMode_clicked();
     void on_b_server_clicked();
-    void on_b_extra_color_clicked();
-    void on_b_put_temperature_clicked();
     void on_b_goodBye_clicked();
     void on_b_ttsInfo_clicked();
-    void on_b_tabRight_clicked();
-    void on_b_tabLeft_clicked();
-    void on_horizontalSlider_tabNavigate_valueChanged(int value);
     void on_b_showTemperatureCharts_clicked();
     void loadImage(QByteArray d);
     void on_b_camera_reload_clicked();
@@ -178,6 +134,10 @@ private slots:
 
     void on_b_light_OFF_clicked();
 
+    void on_b_exit_clicked();
+
+    void on_comboBox_currentTextChanged(const QString &arg1);
+
 public slots:
     void setLcdActual(int c);
     void setLcdAll(int c);
@@ -185,7 +145,6 @@ public slots:
     void odb_toast_msg(QString s);
     void odb_light_msg(QString s);
     void readProgress(int c);
-    void odb_answer_LED(QString s);
     void odb_answer_MPD(QString s);
     void odb_mpd_title (QString s);
     void odb_answer_alarm(QString s);
