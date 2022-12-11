@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>480</width>
-    <height>493</height>
+    <width>567</width>
+    <height>607</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -84,153 +84,126 @@
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <property name="bottomMargin">
-       <number>11</number>
-      </property>
-      <item row="0" column="0">
-       <widget class="QToolButton" name="b_exit">
-        <property name="styleSheet">
-         <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
-        </property>
-        <property name="text">
-         <string>MENU</string>
-        </property>
-        <property name="icon">
-         <iconset resource="ikony.qrc">
-          <normaloff>:/new/prefix1/iDom_client.ico</normaloff>:/new/prefix1/iDom_client.ico</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>50</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="toolButtonStyle">
-         <enum>Qt::ToolButtonTextUnderIcon</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <layout class="QGridLayout" name="gridLayout_14">
-        <item row="1" column="0">
-         <widget class="QLineEdit" name="temperatureTXT">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background:  rgba(158, 158, 158,100);
-color: rgb(85, 170, 0);</string>
-          </property>
-          <property name="frame">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-          <property name="clearButtonEnabled">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="volumeTXT">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background:  rgba(158, 158, 158,100);
-color: rgb(85, 170, 0);</string>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="frame">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="2">
-         <widget class="QLineEdit" name="titleTXT">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background:  rgba(158, 158, 158,100);
-color: rgb(85, 170, 0);</string>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="frame">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-          <property name="cursorMoveStyle">
-           <enum>Qt::VisualMoveStyle</enum>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item row="1" column="0">
+     <widget class="QWidget" name="widget" native="true">
+      <property name="styleSheet">
+       <string notr="true">background:  rgba(158, 158, 158,100);</string>
+      </property>
+      <widget class="QPushButton" name="b_menuCamera">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>80</y>
+         <width>83</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>CAMERA</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="b_menuExit">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>340</y>
+         <width>83</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>EXIT</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="b_menuLight">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>130</y>
+         <width>83</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>LIGHT</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="b_menuMusic">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>180</y>
+         <width>83</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>MUSIC</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="b_menuHome">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>220</y>
+         <width>83</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>HOME</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="b_menuConsole">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>260</y>
+         <width>83</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>CONSOLE</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="b_menuTools">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>300</y>
+         <width>83</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TOOLS</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="1">
      <widget class="QTabWidget" name="tabWidget">
       <property name="enabled">
        <bool>true</bool>
@@ -264,7 +237,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <property name="iconSize">
        <size>
@@ -287,7 +260,7 @@ border-color: rgb(255, 255, 255,255);</string>
       <property name="tabBarAutoHide">
        <bool>true</bool>
       </property>
-      <widget class="QWidget" name="tab_0">
+      <widget class="QWidget" name="CAMERA">
        <property name="autoFillBackground">
         <bool>false</bool>
        </property>
@@ -295,8 +268,23 @@ border-color: rgb(255, 255, 255,255);</string>
         <string>CAMERA</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_9">
+        <property name="topMargin">
+         <number>1</number>
+        </property>
+        <property name="rightMargin">
+         <number>1</number>
+        </property>
+        <property name="bottomMargin">
+         <number>1</number>
+        </property>
+        <property name="spacing">
+         <number>1</number>
+        </property>
         <item row="0" column="0">
          <layout class="QGridLayout" name="gridLayout_8">
+          <property name="spacing">
+           <number>1</number>
+          </property>
           <item row="0" column="0">
            <widget class="QScrollArea" name="scrollArea">
             <property name="widgetResizable">
@@ -307,13 +295,25 @@ border-color: rgb(255, 255, 255,255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>432</width>
-               <height>305</height>
+               <width>537</width>
+               <height>499</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
+              <property name="spacing">
+               <number>1</number>
+              </property>
+              <property name="rightMargin">
+               <number>1</number>
+              </property>
+              <property name="bottomMargin">
+               <number>1</number>
+              </property>
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <property name="spacing">
+                 <number>1</number>
+                </property>
                 <item>
                  <widget class="QLCDNumber" name="snap_counter">
                   <property name="sizePolicy">
@@ -432,7 +432,8 @@ border:none;
 }</string>
                   </property>
                   <property name="text">
-                   <string>Single Shot</string>
+                   <string>Single
+Shot</string>
                   </property>
                  </widget>
                 </item>
@@ -465,7 +466,8 @@ border:none;
  </string>
                   </property>
                   <property name="text">
-                   <string>New Address</string>
+                   <string>New
+Address</string>
                   </property>
                  </widget>
                 </item>
@@ -508,6 +510,9 @@ border:none;
                 <property name="sizeConstraint">
                  <enum>QLayout::SetFixedSize</enum>
                 </property>
+                <property name="spacing">
+                 <number>1</number>
+                </property>
                 <item row="0" column="0" rowspan="2" colspan="2">
                  <widget class="QWidget" name="widgetCAMERA" native="true">
                   <property name="sizePolicy">
@@ -517,6 +522,21 @@ border:none;
                    </sizepolicy>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_10">
+                   <property name="leftMargin">
+                    <number>1</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>1</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>1</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>1</number>
+                   </property>
+                   <property name="spacing">
+                    <number>1</number>
+                   </property>
                    <item row="0" column="0">
                     <widget class="QLabel" name="cameraLabel">
                      <property name="text">
@@ -543,7 +563,7 @@ border:none;
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_1">
+      <widget class="QWidget" name="MUSIC">
        <property name="autoFillBackground">
         <bool>false</bool>
        </property>
@@ -554,6 +574,21 @@ border:none;
         <string>MUSIC</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_6">
+        <property name="leftMargin">
+         <number>8</number>
+        </property>
+        <property name="topMargin">
+         <number>8</number>
+        </property>
+        <property name="rightMargin">
+         <number>8</number>
+        </property>
+        <property name="bottomMargin">
+         <number>8</number>
+        </property>
+        <property name="spacing">
+         <number>8</number>
+        </property>
         <item row="4" column="2">
          <widget class="QPushButton" name="b_volumeDOWN">
           <property name="sizePolicy">
@@ -879,7 +914,7 @@ border:none;
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="CONSOLE">
        <property name="autoFillBackground">
         <bool>false</bool>
        </property>
@@ -887,43 +922,34 @@ border:none;
         <string>CONSOLE</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_5">
+        <property name="spacing">
+         <number>1</number>
+        </property>
+        <property name="leftMargin">
+         <number>1</number>
+        </property>
+        <property name="topMargin">
+         <number>1</number>
+        </property>
+        <property name="rightMargin">
+         <number>1</number>
+        </property>
+        <property name="bottomMargin">
+         <number>1</number>
+        </property>
         <item>
          <layout class="QGridLayout" name="gridLayout_3">
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
-          <item row="3" column="0" colspan="9">
-           <widget class="QProgressBar" name="progressBar">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">
-background-color: rgba(255, 255, 255, 25);
-text-align: center;
-QProgressBar::chunk {
-    background-color: #FFFFFF;
-    width: 10px;
-    margin: 0.5px;
-
-}</string>
-            </property>
-            <property name="minimum">
-             <number>0</number>
-            </property>
-            <property name="value">
-             <number>0</number>
-            </property>
-            <property name="invertedAppearance">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="0" colspan="9">
+          <property name="spacing">
+           <number>1</number>
+          </property>
+          <item row="7" column="0" colspan="8">
            <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <property name="spacing">
+             <number>1</number>
+            </property>
             <item>
              <widget class="QLineEdit" name="messagesToSend">
               <property name="sizePolicy">
@@ -1089,43 +1115,37 @@ border: none ;</string>
             </item>
            </layout>
           </item>
-          <item row="2" column="0" colspan="9">
-           <widget class="QPlainTextEdit" name="txtAnswer">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <family>Consolas</family>
-              <pointsize>10</pointsize>
-             </font>
+          <item row="3" column="0" colspan="8">
+           <widget class="QProgressBar" name="progressBar">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: transparent;
-color: rgb(255, 255, 255);
-border: none ;</string>
+             <string notr="true">
+background-color: rgba(255, 255, 255, 25);
+text-align: center;
+QProgressBar::chunk {
+    background-color: #FFFFFF;
+    width: 10px;
+    margin: 0.5px;
+
+}</string>
             </property>
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAsNeeded</enum>
+            <property name="minimum">
+             <number>0</number>
             </property>
-            <property name="horizontalScrollBarPolicy">
-             <enum>Qt::ScrollBarAsNeeded</enum>
+            <property name="value">
+             <number>0</number>
             </property>
-            <property name="sizeAdjustPolicy">
-             <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
+            <property name="invertedAppearance">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
-          <item row="1" column="0" colspan="7">
+          <item row="1" column="0" colspan="6">
            <widget class="QComboBox" name="comboBox">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -1136,7 +1156,7 @@ border: none ;</string>
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>75</height>
+              <height>54</height>
              </size>
             </property>
             <property name="layoutDirection">
@@ -1149,7 +1169,7 @@ border: none ;</string>
 	border-color:grey;
 	color:white;
     font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  25px;
+    font-size:  15px;
 }
 QComboBox::drop-down {
      width:19px;
@@ -1225,7 +1245,43 @@ QComboBox::down-arrow {
             </item>
            </widget>
           </item>
-          <item row="0" column="7" rowspan="2" colspan="2">
+          <item row="2" column="0" colspan="8">
+           <widget class="QPlainTextEdit" name="txtAnswer">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>Consolas</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: rgb(255, 255, 255);
+border: none ;</string>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="6" colspan="2">
            <widget class="QPushButton" name="b_sendConsole">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Ignored" vsizetype="Minimum">
@@ -1267,7 +1323,7 @@ border:none;
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_4">
+      <widget class="QWidget" name="TOOLS">
        <property name="autoFillBackground">
         <bool>false</bool>
        </property>
@@ -1278,66 +1334,8 @@ border:none;
         <string>kokoko</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_11">
-        <item row="4" column="2">
-         <widget class="QToolButton" name="b_share_fan">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
-          </property>
-          <property name="text">
-           <string>link fan on</string>
-          </property>
-          <property name="icon">
-           <iconset resource="ikony.qrc">
-            <normaloff>:/new/prefix1/files/svg/fanON.svg</normaloff>:/new/prefix1/files/svg/fanON.svg</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>64</width>
-            <height>64</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonTextUnderIcon</enum>
-          </property>
-         </widget>
-        </item>
         <item row="9" column="2">
-         <widget class="QLabel" name="l_burnGas">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="1">
-         <widget class="QPushButton" name="b_turnOnSleepMode">
+         <widget class="QPushButton" name="b_ttsInfo">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
             <horstretch>0</horstretch>
@@ -1346,7 +1344,7 @@ border:none;
           </property>
           <property name="font">
            <font>
-            <pointsize>18</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
            </font>
@@ -1357,55 +1355,17 @@ background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
- font: bold  ;
-}
-QPushButton:pressed {
-border:none;
-}
- 
- 
- </string>
-          </property>
-          <property name="text">
-           <string>TURN ON
-SLEEP MODE</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="0">
-         <widget class="QPushButton" name="b_goodBye">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>18</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="cursor">
-           <cursorShape>ArrowCursor</cursorShape>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
 }
 QPushButton:pressed {
 border:none;
 }</string>
           </property>
           <property name="text">
-           <string>GOODBYE</string>
+           <string>READ INFO</string>
           </property>
          </widget>
         </item>
-        <item row="7" column="0">
+        <item row="6" column="0">
          <widget class="QPushButton" name="b_server">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
@@ -1440,7 +1400,7 @@ border:none;
           </property>
          </widget>
         </item>
-        <item row="7" column="2">
+        <item row="6" column="2">
          <widget class="QPushButton" name="b_connect_dicsonnect">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
@@ -1450,7 +1410,7 @@ border:none;
           </property>
           <property name="font">
            <font>
-            <pointsize>20</pointsize>
+            <pointsize>15</pointsize>
             <bold>true</bold>
            </font>
           </property>
@@ -1467,81 +1427,6 @@ border:none;
           </property>
           <property name="text">
            <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="1">
-         <widget class="QPushButton" name="b_options">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>1</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-          </property>
-          <property name="text">
-           <string>OPTIONS</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QToolButton" name="b_sms">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QToolButton {
-background: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
-          </property>
-          <property name="text">
-           <string>send sms</string>
-          </property>
-          <property name="icon">
-           <iconset resource="ikony.qrc">
-            <normaloff>:/new/prefix1/files/svg/wildecyote-body.png</normaloff>:/new/prefix1/files/svg/wildecyote-body.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>50</width>
-            <height>200</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonTextUnderIcon</enum>
           </property>
          </widget>
         </item>
@@ -1600,8 +1485,8 @@ border:none;
           </property>
          </widget>
         </item>
-        <item row="10" column="2">
-         <widget class="QPushButton" name="b_ttsInfo">
+        <item row="8" column="0">
+         <widget class="QPushButton" name="b_goodBye">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
             <horstretch>0</horstretch>
@@ -1610,8 +1495,110 @@ border:none;
           </property>
           <property name="font">
            <font>
+            <pointsize>18</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>GOODBYE</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="2">
+         <widget class="QLabel" name="l_burnGas">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QToolButton" name="b_share_fan">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>9</width>
+            <height>9</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>link fan on</string>
+          </property>
+          <property name="icon">
+           <iconset resource="ikony.qrc">
+            <normaloff>:/new/prefix1/files/svg/fanON.svg</normaloff>:/new/prefix1/files/svg/fanON.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextUnderIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QPushButton" name="b_options">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>1</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
             <pointsize>20</pointsize>
-            <italic>false</italic>
             <bold>true</bold>
            </font>
           </property>
@@ -1627,17 +1614,107 @@ border:none;
 }</string>
           </property>
           <property name="text">
-           <string>READ INFO</string>
+           <string>OPTIONS</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QPushButton" name="b_turnOnSleepMode">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold  ;
+}
+QPushButton:pressed {
+border:none;
+}
+ 
+ 
+ </string>
+          </property>
+          <property name="text">
+           <string>TURN ON
+SLEEP MODE</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QToolButton" name="b_sms">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QToolButton {
+background: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>send sms</string>
+          </property>
+          <property name="icon">
+           <iconset resource="ikony.qrc">
+            <normaloff>:/new/prefix1/files/svg/wildecyote-body.png</normaloff>:/new/prefix1/files/svg/wildecyote-body.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextUnderIcon</enum>
           </property>
          </widget>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_6">
+      <widget class="QWidget" name="HOME">
        <attribute name="title">
         <string>HOME</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_16">
+        <property name="leftMargin">
+         <number>1</number>
+        </property>
+        <property name="topMargin">
+         <number>1</number>
+        </property>
+        <property name="rightMargin">
+         <number>1</number>
+        </property>
+        <property name="bottomMargin">
+         <number>1</number>
+        </property>
+        <property name="spacing">
+         <number>1</number>
+        </property>
         <item row="0" column="0">
          <widget class="QScrollArea" name="scrollArea_HOME">
           <property name="sizePolicy">
@@ -1669,11 +1746,26 @@ border:none;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>434</width>
-             <height>307</height>
+             <width>549</width>
+             <height>501</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">
+            <property name="leftMargin">
+             <number>7</number>
+            </property>
+            <property name="topMargin">
+             <number>7</number>
+            </property>
+            <property name="rightMargin">
+             <number>7</number>
+            </property>
+            <property name="bottomMargin">
+             <number>7</number>
+            </property>
+            <property name="spacing">
+             <number>7</number>
+            </property>
             <item row="1" column="0">
              <widget class="QToolButton" name="b_circlePump">
               <property name="sizePolicy">
@@ -2007,7 +2099,7 @@ border:none;
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_7">
+      <widget class="QWidget" name="LIGHT">
        <attribute name="title">
         <string>LIGHT</string>
        </attribute>
@@ -2082,7 +2174,7 @@ background-color: rgba(158, 158, 158,50);
 	border-color:grey;
 	color:black;
     font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  25px;
+    font-size: 15px;
 }
 QComboBox::drop-down {
      width:19px;
@@ -2130,7 +2222,7 @@ background-color: rgba(158, 158, 158,50);
 	border-color:grey;
 	color:black;
     font-family:  &quot;Franklin Gothic Medium&quot;;
-    font-size:  25px;
+    font-size:  15px;
 }
 QComboBox::drop-down {
      width:19px;
@@ -2215,6 +2307,170 @@ border:none;
       </widget>
      </widget>
     </item>
+    <item row="0" column="0" colspan="2">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="bottomMargin">
+       <number>1</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>5</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>1</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QToolButton" name="b_exit">
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="ikony.qrc">
+          <normaloff>:/new/prefix1/iDom_client.ico</normaloff>:/new/prefix1/iDom_client.ico</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonIconOnly</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <layout class="QGridLayout" name="gridLayout_14">
+        <property name="spacing">
+         <number>1</number>
+        </property>
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="temperatureTXT">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color: rgb(85, 170, 0);</string>
+          </property>
+          <property name="frame">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="volumeTXT">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color: rgb(85, 170, 0);</string>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="frame">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QLineEdit" name="titleTXT">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color: rgb(85, 170, 0);</string>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="frame">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="cursorMoveStyle">
+           <enum>Qt::VisualMoveStyle</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
    </layout>
   </widget>
   <action name="actionCloseApp">
@@ -2296,7 +2552,27 @@ border:none;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionCloseApp</sender>
+   <signal>triggered()</signal>
+   <receiver>b_goodBye</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>106</x>
+     <y>397</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <signal>cyniu()</signal>
+  <slot>zamykanieApki()</slot>
+ </slots>
  <buttongroups>
   <buttongroup name="LDD_BUTTON"/>
  </buttongroups>

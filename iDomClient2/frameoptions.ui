@@ -110,14 +110,6 @@ border:none;
      </item>
     </layout>
    </item>
-   <item row="0" column="0">
-    <widget class="QTextEdit" name="textEditCommandList">
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255,255);
-background-color: rgb(170, 170, 255);</string>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="0">
     <widget class="QLineEdit" name="serverAddres">
      <property name="sizePolicy">
@@ -279,6 +271,14 @@ QComboBox::down-arrow {
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="4" column="0">
+    <widget class="QTextEdit" name="textEditCommandList">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255,255);
+background-color: rgb(170, 170, 255);</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

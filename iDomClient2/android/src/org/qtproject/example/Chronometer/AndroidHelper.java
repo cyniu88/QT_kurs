@@ -24,9 +24,9 @@ import android.app.PendingIntent;
 import android.graphics.Color;
 import android.graphics.BitmapFactory;
 import android.app.NotificationChannel;
+import android.content.pm.PackageManager;
 
 import android.R;
-
 
 public class AndroidHelper extends org.qtproject.qt.android.bindings.QtActivity
 {
@@ -73,6 +73,13 @@ public static void makeToast(final String s)
               });
     }
 
+public static boolean hasPermission(Context context, String permission) {
+
+    int res = context.checkCallingOrSelfPermission(permission);
+
+    return res == PackageManager.PERMISSION_GRANTED;
+
+}
 
 public static void notify(Context context, String message)
     {

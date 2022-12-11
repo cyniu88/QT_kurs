@@ -6,6 +6,7 @@
 
 #ifdef Q_OS_ANDROID
 #include <QtWebView>
+#include <QtCore/private/qandroidextras_p.h>
 #endif
 
 #include "idom_client.h"
@@ -17,6 +18,7 @@
 
 int main(int argc, char *argv[])
 {
+
     QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::Round);
     auto *infoMPDtimer = new QTimer ();
     auto *infoTemperatureTimer = new QTimer();
@@ -28,9 +30,9 @@ int main(int argc, char *argv[])
     auto * worker = new WorkerIP(&config);
     config.worketPTR  = worker;
     QApplication a(argc, argv);
-
 #ifdef Q_OS_ANDROID
     QtWebView::initialize();
+     QtAndroidPrivate::requestPermission(QtAndroidPrivate::PermissionType::Camera);
 #endif
 
     auto w  = new iDom_Client(&config);

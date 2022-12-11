@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_compile_definitions(IDOM)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets AxContainer SvgWidgets LinguistTools)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets AxContainer SvgWidgets LinguistTools CorePrivate)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network TextToSpeech SvgWidgets LinguistTools WebView Sensors Core)
 
 
@@ -86,6 +86,7 @@ target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::TextToSpeech)
 target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::WebView)
 target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::Sensors)
 target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(iDomClient2 PRIVATE Qt${QT_VERSION_MAJOR}::CorePrivate)
 
 target_include_directories(iDomClient2 PRIVATE "${INCLUDE_DIRECTORIES}")
 

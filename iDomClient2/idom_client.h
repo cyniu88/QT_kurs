@@ -136,7 +136,22 @@ private slots:
 
     void on_b_exit_clicked();
 
-    void on_comboBox_currentTextChanged(const QString &arg1);
+    void on_comboBox_textActivated(const QString &arg1);
+
+
+    void on_b_menuCamera_clicked();
+
+    void on_b_menuLight_clicked();
+
+    void on_b_menuMusic_clicked();
+
+    void on_b_menuHome_clicked();
+
+    void on_b_menuConsole_clicked();
+
+    void on_b_menuTools_clicked();
+
+    void on_b_menuExit_clicked();
 
 public slots:
     void setLcdActual(int c);
@@ -165,6 +180,9 @@ public slots:
     void odb_answer_state(QString s);
     void alarmHasBeenSet(Clock c);
     void screenChanged();
+    void closeApp();
+    void showMenu();
+    void hideMenu();
 signals:
     void sendTCP(std::string addres, std::string s);
 };

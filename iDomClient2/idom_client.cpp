@@ -89,7 +89,7 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
 
     ui->tabWidget->tabBar()->hide();
 
-    ui->b_connect_dicsonnect->setText("Disconnect from iDom");
+    ui->b_connect_dicsonnect->setText("Disconnect\nfrom iDom");
 
     ///////////////////////////// camera part ///////////////////////////////////////
     QSettings settings("cyniu", "iDom");
@@ -114,24 +114,24 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     }
     QObject::connect(&vol ,SIGNAL(setVolumeSingnal(int) ), this, SLOT(setVolumeValueSlot(int) ));
 
-    QObject::connect(&alarmWindow, SIGNAL(alarmSetSignal(Clock)), this, SLOT(alarmHasBeenSet(Clock) ));
-    QObject::connect(&alarmWindow, SIGNAL(messageInfo(QString, QString)),
-                     this, SLOT(makeInfo(QString, QString)  ));
+    QObject::connect(&alarmWindow, SIGNAL(alarmSetSignal(Clock)),             this, SLOT(alarmHasBeenSet(Clock) ));
+    QObject::connect(&alarmWindow, SIGNAL(messageInfo(QString, QString))     ,this, SLOT(makeInfo(QString, QString)  ));
 
     QObject::connect(&optionsWindow, SIGNAL(s_sendCommandList(QStringList )) ,this,SLOT(slot_getCommandList(QStringList))   );
     QObject::connect(&optionsWindow, SIGNAL(s_fontSize(QString))             ,this,SLOT(slot_fontSize(QString))             );
+    //QObject::connect();
 
-
+    //QObject::connect();
     //////////////////////////////// config part ////////////////////////////////////
 
     QString commandString;
-    for( auto i = 0; i < ui->comboBox->count(); i++ )
+    for( auto i = 0; i < ui->comboBox->count(); i++)
     {
         commandString += ui->comboBox->itemText( i );
         commandString += "\n";
     }
     std::string tempCommand;
-    tempCommand = myConfigHandler.readFromFile("config","command.cfg",commandString.toStdString());
+    tempCommand = myConfigHandler.readFromFile("config", "command.cfg", commandString.toStdString());
     ui->comboBox->clear();
     ui->comboBox->addItems(QString::fromStdString(tempCommand).split("\n"));
     setCommandListInOptions();
@@ -157,6 +157,7 @@ void iDom_Client::closeEvent(QCloseEvent *event)
     settings.setValue("geometry", saveGeometry());
     settings.setValue("windowState", saveState());
     QMainWindow::closeEvent(event);
+    qDebug() << "CYYYYCNI!!!!";
 }
 
 void iDom_Client::resizeEvent(QResizeEvent *event)
@@ -199,7 +200,7 @@ void iDom_Client::taskHandler()
     case 0:
         //case 4:
     case 6:
-       //TODO fix
+        //TODO fix
         updateAlarmTime();
         emit sendTCP("state", "state all");
         qDebug() << "aktualny case:"<<ui->tabWidget->currentIndex();
@@ -381,11 +382,11 @@ void iDom_Client::textToSpeachSLOTS(QString s)
 void iDom_Client::connectDisconnectButtonState(bool state)
 {
     if (state == false){
-        ui->b_connect_dicsonnect->setText("Connect to iDom");
+        ui->b_connect_dicsonnect->setText("Connect\nto iDom");
         ui->titleTXT->setText("DISCONNECTED   ");
     }
     else{
-        ui->b_connect_dicsonnect->setText("Disconnect from iDom");
+        ui->b_connect_dicsonnect->setText("Disconnect\nfrom iDom");
         emit sendTCP("console","log INFO - client: "+systemInfo.getSystemInfo().toStdString() );
     }
 }
@@ -698,12 +699,12 @@ void iDom_Client::on_b_connect_dicsonnect_clicked()
 {
     if (config->isConnectedToServer == true){
         config->goWhile =false;
-        ui->b_connect_dicsonnect->setText("Connect to iDom");
+        ui->b_connect_dicsonnect->setText("Connect\nto iDom");
         ui->titleTXT->setText("DISCONNECTED   ");
     }
     else{
         config->worketPTR->start();
-        ui->b_connect_dicsonnect->setText("Disconnect from iDom");
+        ui->b_connect_dicsonnect->setText("Disconnect\from iDom");
     }
 }
 
@@ -826,8 +827,8 @@ void iDom_Client::on_b_sms_clicked()
 {
     droid.sendSMS("506496722","test sms ");
     droid.makeToast("wyslano sms:");
-
-   // droid.updateAndroidNotification("test testo");
+    qDebug() << "uprawnienia: " <<  droid.hasPermission("android.permission.SEND_SMS");
+    // droid.updateAndroidNotification("test testo");
 }
 
 void iDom_Client::on_b_ledCamera_clicked()
@@ -987,9 +988,26 @@ void iDom_Client::screenChanged()
     ui->b_sms->setIconSize(ui->b_sms->size()*0.6);
     ui->b_share_fan->setIconSize(ui->b_share_fan->size()*0.6);
     ui->b_setAlarm->setIconSize(ui->b_setAlarm->size()*0.6);
-//    QFont font = ui->b_setAlarm->font();
-//    font.setPointSize(font.pointSize()-1);
-//    ui->b_setAlarm->setFont(font);
+    //    QFont font = ui->b_setAlarm->font();
+    //    font.setPointSize(font.pointSize()-1);
+    //    ui->b_setAlarm->setFont(font);
+}
+
+void iDom_Client::closeApp()
+{
+    emit sendTCP("console","exit");
+    ui->centralWidget->close();
+    qApp->exit();
+}
+
+void iDom_Client::showMenu()
+{
+    ui->widget->setFixedWidth(100);
+}
+
+void iDom_Client::hideMenu()
+{
+    ui->widget->setFixedWidth(0);
 }
 
 void iDom_Client::on_comboBox_ROOM_currentIndexChanged(int index)
@@ -1053,6 +1071,12 @@ void iDom_Client::on_b_light_OFF_clicked()
 
 void iDom_Client::on_b_exit_clicked()
 {
+    if(ui->b_exit->isChecked())
+        showMenu();
+    else
+        hideMenu();
+
+    /*
     QMessageBox msgBox;
     QPushButton *cameraButton = msgBox.addButton(tr("camera"), QMessageBox::ActionRole);
     QPushButton *musicButton = msgBox.addButton(tr("music"), QMessageBox::ActionRole);
@@ -1071,6 +1095,7 @@ void iDom_Client::on_b_exit_clicked()
     }
     else if (msgBox.clickedButton() == lightButton) {
         ui->tabWidget->setCurrentIndex(5);
+
     }
     else if (msgBox.clickedButton() == homeButton) {
         ui->tabWidget->setCurrentIndex(4);
@@ -1082,16 +1107,63 @@ void iDom_Client::on_b_exit_clicked()
         ui->tabWidget->setCurrentIndex(3);
     }
     else if (msgBox.clickedButton() == exitButton) {
-        emit sendTCP("console","exit");
-        ui->centralWidget->close();
-        qApp->exit();
+        closeApp();
     }
+*/
+
+
 }
 
-void iDom_Client::on_comboBox_currentTextChanged(const QString &arg1)
+void iDom_Client::on_comboBox_textActivated(const QString &arg1)
 {
-    //config->command = txt.toStdString();
-    //emit sendTCP("console",config->command);
     on_b_sendConsole_released();
+}
+
+void iDom_Client::on_b_menuCamera_clicked()
+{
+    ui->tabWidget->setCurrentIndex(0);
+    ui->b_exit->click();
+}
+
+
+void iDom_Client::on_b_menuLight_clicked()
+{
+    ui->tabWidget->setCurrentIndex(5);
+    ui->b_exit->click();
+}
+
+
+void iDom_Client::on_b_menuMusic_clicked()
+{
+    ui->tabWidget->setCurrentIndex(1);
+    ui->b_exit->click();
+}
+
+
+void iDom_Client::on_b_menuHome_clicked()
+{
+    ui->tabWidget->setCurrentIndex(4);
+    ui->b_exit->click();
+}
+
+
+void iDom_Client::on_b_menuConsole_clicked()
+{
+    ui->tabWidget->setCurrentIndex(2);
+    ui->b_exit->click();
+}
+
+
+
+void iDom_Client::on_b_menuTools_clicked()
+{
+    ui->tabWidget->setCurrentIndex(3);
+    ui->b_exit->click();
+}
+
+
+void iDom_Client::on_b_menuExit_clicked()
+{
+    closeApp();
 }
 
