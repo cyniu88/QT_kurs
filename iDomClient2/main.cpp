@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     infoTemperatureTimer->start(60000);
     infoMPDtimer->start(10000);
 
-    a.exec();
+    int ret = a.exec();
 
     config.goWhile = false;
     int i = 0;
@@ -84,14 +84,19 @@ int main(int argc, char *argv[])
             break;
         }
     }
+    qDebug() << "return " << ret;
+    qDebug() << "cyniu 1";
     infoMPDtimer->stop();
+    qDebug() << "cyniu 2";
     infoTemperatureTimer->stop();
+    qDebug() << "cyniu 3";
     worker->terminate();
+    qDebug() << "cyniu 4";
     delete infoMPDtimer;
     delete infoTemperatureTimer;
     delete worker;
     delete w;
 
    qDebug() << "KONIEC" ;
-    return 0;
+    return ret;
 }

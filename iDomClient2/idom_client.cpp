@@ -24,6 +24,10 @@
 #include "idom_client.h"
 #include "ui_idom_client.h"
 #include "workerip.h"
+#include <chrono>
+#include <thread>
+
+using namespace std::chrono_literals;
 
 iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     QMainWindow(parent),
@@ -197,9 +201,9 @@ void iDom_Client::taskHandler()
 
     switch(ui->tabWidget->currentIndex())
     {
-    case 0:
+    case 3:
         //case 4:
-    case 6:
+    case 4:
         //TODO fix
         updateAlarmTime();
         emit sendTCP("state", "state all");
@@ -1002,12 +1006,20 @@ void iDom_Client::closeApp()
 
 void iDom_Client::showMenu()
 {
-    ui->widget->setFixedWidth(100);
+    for(int i = 0 ; i < 101; ++i)
+    {
+        ui->widget->setFixedWidth(i);
+        std::this_thread::sleep_for(500us);
+    }
 }
 
 void iDom_Client::hideMenu()
 {
-    ui->widget->setFixedWidth(0);
+    for(int i = 101 ; i != -1; --i)
+    {
+        ui->widget->setFixedWidth(i);
+        std::this_thread::sleep_for(500us);
+    }
 }
 
 void iDom_Client::on_comboBox_ROOM_currentIndexChanged(int index)
@@ -1068,50 +1080,18 @@ void iDom_Client::on_b_light_OFF_clicked()
         }
     }
 }
-
+#include <thread>
 void iDom_Client::on_b_exit_clicked()
 {
-    if(ui->b_exit->isChecked())
-        showMenu();
+    if(ui->b_exit->isChecked()){
+        std::thread tt = std::thread(&iDom_Client::showMenu, this);
+        tt.detach();
+    }
     else
-        hideMenu();
-
-    /*
-    QMessageBox msgBox;
-    QPushButton *cameraButton = msgBox.addButton(tr("camera"), QMessageBox::ActionRole);
-    QPushButton *musicButton = msgBox.addButton(tr("music"), QMessageBox::ActionRole);
-    QPushButton *lightButton = msgBox.addButton(tr("light"), QMessageBox::ActionRole);
-    QPushButton *homeButton = msgBox.addButton(tr("home"), QMessageBox::ActionRole);
-    QPushButton *consoleButton = msgBox.addButton(tr("console"), QMessageBox::ActionRole);
-    QPushButton *toolsButton = msgBox.addButton(tr("tools"), QMessageBox::ActionRole);
-    QPushButton *exitButton = msgBox.addButton(tr("EXIT"), QMessageBox::ActionRole);
-    msgBox.exec();
-
-    if (msgBox.clickedButton() == cameraButton) {
-        ui->tabWidget->setCurrentIndex(0);
+    {
+        std::thread tt = std::thread(&iDom_Client::hideMenu, this);
+        tt.detach();
     }
-    else if (msgBox.clickedButton() == musicButton) {
-        ui->tabWidget->setCurrentIndex(1);
-    }
-    else if (msgBox.clickedButton() == lightButton) {
-        ui->tabWidget->setCurrentIndex(5);
-
-    }
-    else if (msgBox.clickedButton() == homeButton) {
-        ui->tabWidget->setCurrentIndex(4);
-    }
-    else if (msgBox.clickedButton() == consoleButton) {
-        ui->tabWidget->setCurrentIndex(2);
-    }
-    else if (msgBox.clickedButton() == toolsButton) {
-        ui->tabWidget->setCurrentIndex(3);
-    }
-    else if (msgBox.clickedButton() == exitButton) {
-        closeApp();
-    }
-*/
-
-
 }
 
 void iDom_Client::on_comboBox_textActivated(const QString &arg1)
