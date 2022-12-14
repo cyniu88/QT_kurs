@@ -26,6 +26,7 @@
 #include "workerip.h"
 #include <chrono>
 #include <thread>
+#include "../libs/emoji/emoji.h"
 
 using namespace std::chrono_literals;
 
@@ -348,22 +349,27 @@ void iDom_Client::updateState()
 
 void iDom_Client::odb_temperature(QString s)
 {
-    auto data = s.split(":");
-    if(data.size() < 4){
-        QString msg("problem z pobraniem temperatury");
-        msg.append(" pobrano parametrow:  ");
-        msg.append(QString::number(data.size()));
-        ui->temperatureTXT->setText(msg);
+    nlohmann::json jj;
+    try {
+        jj = nlohmann::json::parse(s.toStdString());
+    } catch (...) {
+        qDebug() << "lipka :(  zły Json";
         return;
     }
-    QString in = data.at(0);
-    QString out = data.at(1);
-    QString boiler = data.at(2);
-    QString floor = data.at(3);
+    QString in = QString::number(jj.at("inside").get<double>());
+    QString out = QString::number(jj.at("outdoor").get<double>());
+    QString boiler = QString::number(jj.at("boiler").get<double>());
+    QString floor = QString::number(jj.at("floor").get<double>());
+    QString flow = QString::number(jj.at("currentFlow").get<double>());
 
     out = out.split("\r")[0];
-    temperatureString = "Temperature Inside: " + in +"\u2103"+ " Outside: "+ out+ "\u2103"+ " ";
+    temperatureString = "Temperature Inside: " + in +"\u2103"+ " Outdoor: "+ out+ "\u2103"+ " ";
     ui->temperatureTXT->setText(temperatureString);
+    ui->bt_inside->setText(QString::fromStdString(EMOJI::emoji(E_emoji::THERMOMETER)) +'\n' + in + "\u2103"+ "\ninside");
+    ui->bt_outside->setText(QString::fromStdString(EMOJI::emoji(E_emoji::THERMOMETER)) +'\n' + out +  "\u2103"+ "\noutdoor");
+    ui->bt_floor->setText(QString::fromStdString(EMOJI::emoji(E_emoji::THERMOMETER)) +'\n' + floor + "\u2103"+ "\nfloor");
+    ui->bt_boiler->setText(QString::fromStdString(EMOJI::emoji(E_emoji::THERMOMETER)) +'\n' + boiler + "\u2103"+ "\nboiler" );
+    ui->bt_flow->setText(QString::fromStdString(EMOJI::emoji(E_emoji::THERMOMETER)) +'\n' + flow + "\u2103"+ "\nflow" );
 }
 
 void iDom_Client::odb_tools(QString s)
@@ -1006,20 +1012,14 @@ void iDom_Client::closeApp()
 
 void iDom_Client::showMenu()
 {
-    for(int i = 0 ; i < 101; ++i)
-    {
-        ui->widget->setFixedWidth(i);
-        std::this_thread::sleep_for(500us);
-    }
+
+    ui->widget->setFixedWidth(100);
+
 }
 
 void iDom_Client::hideMenu()
 {
-    for(int i = 101 ; i != -1; --i)
-    {
-        ui->widget->setFixedWidth(i);
-        std::this_thread::sleep_for(500us);
-    }
+    ui->widget->setFixedWidth(0);
 }
 
 void iDom_Client::on_comboBox_ROOM_currentIndexChanged(int index)
@@ -1084,13 +1084,15 @@ void iDom_Client::on_b_light_OFF_clicked()
 void iDom_Client::on_b_exit_clicked()
 {
     if(ui->b_exit->isChecked()){
-        std::thread tt = std::thread(&iDom_Client::showMenu, this);
-        tt.detach();
+        showMenu();
+        //  std::thread tt = std::thread(&iDom_Client::showMenu, this);
+        //  tt.detach();
     }
     else
     {
-        std::thread tt = std::thread(&iDom_Client::hideMenu, this);
-        tt.detach();
+        hideMenu();
+        // std::thread tt = std::thread(&iDom_Client::hideMenu, this);
+        // tt.detach();
     }
 }
 

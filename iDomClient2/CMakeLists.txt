@@ -18,13 +18,12 @@ set(TS_FILES iDomClient2_pl_PL.ts)
 
 set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/resources/iDomClient2.rc")
 
-set(INCLUDE_DIRECTORIES "mybutton/")
+set(INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/mybutton/" "${CMAKE_CURRENT_SOURCE_DIR}/json2/")
 
 file(GLOB idomClient2_SRC
     "*.h"
     "*.cpp"
     "*.ui"
-    "json2/*.hpp"
     "mybutton/*"
     "blocking_queue/*"
 )
@@ -44,6 +43,7 @@ set(PROJECT_SOURCES
         ../libs/sgvTEST/thermometerSVG/thermometer.cpp
         ../libs/config_files/config_files.cpp
         ../libs/useful/usefull.cpp
+        ../libs/emoji/emoji.cpp
         ${andek}
         ${TS_FILES}
 

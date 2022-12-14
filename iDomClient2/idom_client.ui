@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -99,123 +99,13 @@
     <property name="spacing">
      <number>0</number>
     </property>
-    <item row="1" column="0">
-     <widget class="QWidget" name="widget" native="true">
-      <property name="styleSheet">
-       <string notr="true">background:  rgba(158, 158, 158,100);</string>
-      </property>
-      <widget class="QPushButton" name="b_menuCamera">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>80</y>
-         <width>83</width>
-         <height>29</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>CAMERA</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="b_menuExit">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>340</y>
-         <width>83</width>
-         <height>29</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>EXIT</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="b_menuLight">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>130</y>
-         <width>83</width>
-         <height>29</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>LIGHT</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="b_menuMusic">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>180</y>
-         <width>83</width>
-         <height>29</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>MUSIC</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="b_menuHome">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>220</y>
-         <width>83</width>
-         <height>29</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>HOME</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="b_menuConsole">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>260</y>
-         <width>83</width>
-         <height>29</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>CONSOLE</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="b_menuTools">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>300</y>
-         <width>83</width>
-         <height>29</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TOOLS</string>
-       </property>
-      </widget>
-     </widget>
-    </item>
     <item row="1" column="1">
      <widget class="QTabWidget" name="tabWidget">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -243,7 +133,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>4</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1340,73 +1230,7 @@ border:none;
         <string>kokoko</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_11">
-        <item row="9" column="2">
-         <widget class="QPushButton" name="b_ttsInfo">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>16</pointsize>
-            <italic>false</italic>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-          </property>
-          <property name="text">
-           <string>READ INFO</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="0">
-         <widget class="QPushButton" name="b_server">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-}
-QPushButton:pressed {
-border:none;
-}
-   
- 
- 
- 
- </string>
-          </property>
-          <property name="text">
-           <string>SERVER</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="2">
+        <item row="6" column="3">
          <widget class="QPushButton" name="b_connect_dicsonnect">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
@@ -1437,6 +1261,133 @@ border:none;
          </widget>
         </item>
         <item row="4" column="1">
+         <widget class="QToolButton" name="b_sms">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QToolButton {
+background: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>send sms</string>
+          </property>
+          <property name="icon">
+           <iconset resource="ikony.qrc">
+            <normaloff>:/new/prefix1/files/svg/wildecyote-body.png</normaloff>:/new/prefix1/files/svg/wildecyote-body.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextUnderIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="3">
+         <widget class="QLabel" name="l_burnGas">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QPushButton" name="b_goodBye">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+}
+QPushButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>GOODBYE</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="2">
+         <widget class="QPushButton" name="b_turnOnSleepMode">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold  ;
+}
+QPushButton:pressed {
+border:none;
+}
+ 
+ 
+ </string>
+          </property>
+          <property name="text">
+           <string>TURN ON
+SLEEP MODE</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
          <widget class="QToolButton" name="b_setAlarm">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
@@ -1491,8 +1442,8 @@ border:none;
           </property>
          </widget>
         </item>
-        <item row="8" column="0">
-         <widget class="QPushButton" name="b_goodBye">
+        <item row="6" column="1">
+         <widget class="QPushButton" name="b_server">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
             <horstretch>0</horstretch>
@@ -1501,12 +1452,50 @@ border:none;
           </property>
           <property name="font">
            <font>
-            <pointsize>18</pointsize>
+            <pointsize>20</pointsize>
             <bold>true</bold>
            </font>
           </property>
-          <property name="cursor">
-           <cursorShape>ArrowCursor</cursorShape>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+}
+QPushButton:pressed {
+border:none;
+}
+   
+ 
+ 
+ 
+ </string>
+          </property>
+          <property name="text">
+           <string>SERVER</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QPushButton" name="b_options">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>1</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+            <bold>true</bold>
+           </font>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
@@ -1520,30 +1509,42 @@ border:none;
 }</string>
           </property>
           <property name="text">
-           <string>GOODBYE</string>
+           <string>OPTIONS</string>
           </property>
          </widget>
         </item>
-        <item row="8" column="2">
-         <widget class="QLabel" name="l_burnGas">
+        <item row="9" column="3">
+         <widget class="QPushButton" name="b_ttsInfo">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
+          <property name="font">
+           <font>
+            <pointsize>16</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+}
+QPushButton:pressed {
+border:none;
+}</string>
           </property>
           <property name="text">
-           <string/>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
+           <string>READ INFO</string>
           </property>
          </widget>
         </item>
-        <item row="4" column="2">
+        <item row="4" column="3">
          <widget class="QToolButton" name="b_share_fan">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
@@ -1581,117 +1582,6 @@ border:none;
            <size>
             <width>64</width>
             <height>64</height>
-           </size>
-          </property>
-          <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonTextUnderIcon</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="1">
-         <widget class="QPushButton" name="b_options">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>1</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
-}
-QPushButton:pressed {
-border:none;
-}</string>
-          </property>
-          <property name="text">
-           <string>OPTIONS</string>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="1">
-         <widget class="QPushButton" name="b_turnOnSleepMode">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <italic>false</italic>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold  ;
-}
-QPushButton:pressed {
-border:none;
-}
- 
- 
- </string>
-          </property>
-          <property name="text">
-           <string>TURN ON
-SLEEP MODE</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QToolButton" name="b_sms">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QToolButton {
-background: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
-          </property>
-          <property name="text">
-           <string>send sms</string>
-          </property>
-          <property name="icon">
-           <iconset resource="ikony.qrc">
-            <normaloff>:/new/prefix1/files/svg/wildecyote-body.png</normaloff>:/new/prefix1/files/svg/wildecyote-body.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>50</width>
-            <height>200</height>
            </size>
           </property>
           <property name="toolButtonStyle">
@@ -1772,100 +1662,7 @@ border:none;
             <property name="spacing">
              <number>7</number>
             </property>
-            <item row="1" column="0">
-             <widget class="QToolButton" name="b_circlePump">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
-              </property>
-              <property name="text">
-               <string>pompa obiegowa</string>
-              </property>
-              <property name="icon">
-               <iconset resource="ikony.qrc">
-                <normaloff>:/new/prefix1/files/svg/tap-water.svg</normaloff>:/new/prefix1/files/svg/tap-water.svg</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>100</width>
-                <height>100</height>
-               </size>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-              <property name="popupMode">
-               <enum>QToolButton::DelayedPopup</enum>
-              </property>
-              <property name="toolButtonStyle">
-               <enum>Qt::ToolButtonTextUnderIcon</enum>
-              </property>
-              <property name="autoRaise">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="2">
-             <widget class="QToolButton" name="b_KODI">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
-              </property>
-              <property name="text">
-               <string>URUCHOM KODI</string>
-              </property>
-              <property name="icon">
-               <iconset resource="ikony.qrc">
-                <normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>100</width>
-                <height>100</height>
-               </size>
-              </property>
-              <property name="toolButtonStyle">
-               <enum>Qt::ToolButtonTextBesideIcon</enum>
-              </property>
-              <property name="autoRaise">
-               <bool>false</bool>
-              </property>
-              <attribute name="buttonGroup">
-               <string notr="true">LDD_BUTTON</string>
-              </attribute>
-             </widget>
-            </item>
-            <item row="5" column="0">
+            <item row="7" column="1">
              <widget class="QToolButton" name="b_printer">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
@@ -1888,7 +1685,8 @@ border:none;
 </string>
               </property>
               <property name="text">
-               <string>Gniazdko taras</string>
+               <string>Gniazdko
+taras</string>
               </property>
               <property name="icon">
                <iconset resource="ikony.qrc">
@@ -1918,8 +1716,8 @@ border:none;
               </property>
              </widget>
             </item>
-            <item row="5" column="1">
-             <widget class="QToolButton" name="b_listwa">
+            <item row="0" column="0">
+             <widget class="QToolButton" name="bt_inside">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
                 <horstretch>0</horstretch>
@@ -1937,35 +1735,14 @@ color:white;
 }
 QToolButton:pressed {
 border:none;
-}
-</string>
+}</string>
               </property>
               <property name="text">
-               <string>Listwa zasilania</string>
-              </property>
-              <property name="icon">
-               <iconset resource="ikony.qrc">
-                <normaloff>:/new/prefix1/files/png/surgeProtectorOFF.png</normaloff>
-                <normalon>:/new/prefix1/files/png/surgeProtectorON.png</normalon>:/new/prefix1/files/png/surgeProtectorOFF.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>100</width>
-                <height>100</height>
-               </size>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-              <property name="toolButtonStyle">
-               <enum>Qt::ToolButtonTextUnderIcon</enum>
-              </property>
-              <property name="autoRaise">
-               <bool>false</bool>
+               <string>INSIDE</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="0">
+            <item row="7" column="0">
              <widget class="QToolButton" name="b_fan">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
@@ -2008,50 +1785,7 @@ border:none;
               </property>
              </widget>
             </item>
-            <item row="2" column="1">
-             <widget class="QToolButton" name="b_lockUnlock_HOME">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="ikony.qrc">
-                <normaloff>:/new/prefix1/files/png/unlock.png</normaloff>
-                <normalon>:/new/prefix1/files/png/lock.png</normalon>:/new/prefix1/files/png/unlock.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>100</width>
-                <height>100</height>
-               </size>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-              <property name="autoRaise">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
+            <item row="4" column="3">
              <widget class="QToolButton" name="b_heatingBoiler">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
@@ -2096,6 +1830,296 @@ border:none;
               </property>
               <property name="autoRaise">
                <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="3">
+             <widget class="QToolButton" name="b_lockUnlock_HOME">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="ikony.qrc">
+                <normaloff>:/new/prefix1/files/png/unlock.png</normaloff>
+                <normalon>:/new/prefix1/files/png/lock.png</normalon>:/new/prefix1/files/png/unlock.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="autoRaise">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QToolButton" name="bt_boiler">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+              </property>
+              <property name="text">
+               <string>BOILER</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="2">
+             <widget class="QToolButton" name="b_listwa">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}
+</string>
+              </property>
+              <property name="text">
+               <string>Listwa
+zasilania</string>
+              </property>
+              <property name="icon">
+               <iconset resource="ikony.qrc">
+                <normaloff>:/new/prefix1/files/png/surgeProtectorOFF.png</normaloff>
+                <normalon>:/new/prefix1/files/png/surgeProtectorON.png</normalon>:/new/prefix1/files/png/surgeProtectorOFF.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+              <property name="autoRaise">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QToolButton" name="bt_floor">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+              </property>
+              <property name="text">
+               <string>FLOOR</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QToolButton" name="bt_outside">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+              </property>
+              <property name="text">
+               <string>OUTSIDE</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="QToolButton" name="b_KODI">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+              </property>
+              <property name="text">
+               <string>URUCHOM
+KODI</string>
+              </property>
+              <property name="icon">
+               <iconset resource="ikony.qrc">
+                <normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</normaloff>:/new/prefix1/files/svg/Kodi-top-bottom.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextBesideIcon</enum>
+              </property>
+              <property name="autoRaise">
+               <bool>false</bool>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">LDD_BUTTON</string>
+              </attribute>
+             </widget>
+            </item>
+            <item row="4" column="2">
+             <widget class="QToolButton" name="b_circlePump">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+              </property>
+              <property name="text">
+               <string>pompa
+obiegowa</string>
+              </property>
+              <property name="icon">
+               <iconset resource="ikony.qrc">
+                <normaloff>:/new/prefix1/files/svg/tap-water.svg</normaloff>:/new/prefix1/files/svg/tap-water.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="popupMode">
+               <enum>QToolButton::DelayedPopup</enum>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+              <property name="autoRaise">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QToolButton" name="bt_flow">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+              </property>
+              <property name="text">
+               <string>FLOW</string>
               </property>
              </widget>
             </item>
@@ -2477,9 +2501,145 @@ color: rgb(85, 170, 0);</string>
       </item>
      </layout>
     </item>
+    <item row="1" column="0">
+     <widget class="QWidget" name="widget" native="true">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>-1</x>
+         <y>10</y>
+         <width>161</width>
+         <height>247</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="b_menuLight">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color:white;</string>
+          </property>
+          <property name="text">
+           <string>LIGHT</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="b_menuHome">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color:white;</string>
+          </property>
+          <property name="text">
+           <string>HOME</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="b_menuMusic">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color:white;</string>
+          </property>
+          <property name="text">
+           <string>MUSIC</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="b_menuCamera">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color:white;</string>
+          </property>
+          <property name="text">
+           <string>CAMERA</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="b_menuTools">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color:white;</string>
+          </property>
+          <property name="text">
+           <string>TOOLS</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="b_menuConsole">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color:white;</string>
+          </property>
+          <property name="text">
+           <string>CONSOLE</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="b_menuExit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:  rgba(158, 158, 158,100);
+color:white;</string>
+          </property>
+          <property name="text">
+           <string>EXIT</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
    </layout>
-   <zorder>tabWidget</zorder>
-   <zorder>widget</zorder>
   </widget>
   <action name="actionCloseApp">
    <property name="icon">
@@ -2521,7 +2681,7 @@ color: rgb(85, 170, 0);</string>
   <customwidget>
    <class>myButton</class>
    <extends>QPushButton</extends>
-   <header>mybutton/mybutton.h</header>
+   <header location="global">mybutton.h</header>
   </customwidget>
  </customwidgets>
  <resources>
