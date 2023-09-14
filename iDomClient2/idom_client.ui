@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>567</width>
-    <height>607</height>
+    <width>565</width>
+    <height>659</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -105,7 +105,7 @@
        <bool>true</bool>
       </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -133,7 +133,7 @@ border-color: rgb(255, 255, 255,255);</string>
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>5</number>
       </property>
       <property name="iconSize">
        <size>
@@ -192,7 +192,7 @@ border-color: rgb(255, 255, 255,255);</string>
                <x>0</x>
                <y>0</y>
                <width>537</width>
-               <height>499</height>
+               <height>564</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1142,7 +1142,7 @@ QComboBox::down-arrow {
            </widget>
           </item>
           <item row="2" column="0" colspan="8">
-           <widget class="QPlainTextEdit" name="txtAnswer">
+           <widget class="myQPlainTextEdit" name="txtAnswer">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -1174,6 +1174,9 @@ border: none ;</string>
             </property>
             <property name="readOnly">
              <bool>true</bool>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
             </property>
            </widget>
           </item>
@@ -1572,7 +1575,7 @@ border:none;
 }</string>
           </property>
           <property name="text">
-           <string>link fan on</string>
+           <string>gateway link</string>
           </property>
           <property name="icon">
            <iconset resource="ikony.qrc">
@@ -1642,8 +1645,8 @@ border:none;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>549</width>
-             <height>501</height>
+             <width>547</width>
+             <height>566</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">
@@ -1695,8 +1698,8 @@ taras</string>
               </property>
               <property name="iconSize">
                <size>
-                <width>100</width>
-                <height>100</height>
+                <width>150</width>
+                <height>150</height>
                </size>
               </property>
               <property name="checkable">
@@ -1773,8 +1776,8 @@ border:none;
               </property>
               <property name="iconSize">
                <size>
-                <width>100</width>
-                <height>100</height>
+                <width>150</width>
+                <height>150</height>
                </size>
               </property>
               <property name="checkable">
@@ -1807,7 +1810,8 @@ border:none;
 }</string>
               </property>
               <property name="text">
-               <string>zagrzej wode</string>
+               <string>zagrzej
+wode</string>
               </property>
               <property name="icon">
                <iconset resource="ikony.qrc">
@@ -1815,8 +1819,8 @@ border:none;
               </property>
               <property name="iconSize">
                <size>
-                <width>100</width>
-                <height>100</height>
+                <width>150</width>
+                <height>150</height>
                </size>
               </property>
               <property name="checkable">
@@ -1864,8 +1868,8 @@ border:none;
               </property>
               <property name="iconSize">
                <size>
-                <width>100</width>
-                <height>100</height>
+                <width>150</width>
+                <height>150</height>
                </size>
               </property>
               <property name="checkable">
@@ -1935,8 +1939,8 @@ zasilania</string>
               </property>
               <property name="iconSize">
                <size>
-                <width>100</width>
-                <height>100</height>
+                <width>150</width>
+                <height>150</height>
                </size>
               </property>
               <property name="checkable">
@@ -1947,6 +1951,9 @@ zasilania</string>
               </property>
               <property name="autoRaise">
                <bool>false</bool>
+              </property>
+              <property name="arrowType">
+               <enum>Qt::NoArrow</enum>
               </property>
              </widget>
             </item>
@@ -2079,8 +2086,8 @@ obiegowa</string>
               </property>
               <property name="iconSize">
                <size>
-                <width>100</width>
-                <height>100</height>
+                <width>150</width>
+                <height>150</height>
                </size>
               </property>
               <property name="checkable">
@@ -2134,10 +2141,10 @@ border:none;
         <string>LIGHT</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_17">
-        <item row="0" column="0">
+        <item row="1" column="0">
          <widget class="QLabel" name="label_6">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -2158,31 +2165,33 @@ border:none;
           </property>
          </widget>
         </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="label_7">
+        <item row="3" column="1">
+         <widget class="QToolButton" name="b_light_OFF">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="font">
-           <font>
-            <pointsize>15</pointsize>
-           </font>
+          <property name="styleSheet">
+           <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
           </property>
           <property name="text">
-           <string>bulb</string>
-          </property>
-          <property name="textFormat">
-           <enum>Qt::MarkdownText</enum>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <string>OFF</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
+        <item row="2" column="0">
          <widget class="QComboBox" name="comboBox_ROOM">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
@@ -2230,10 +2239,36 @@ QComboBox::down-arrow {
           </item>
          </widget>
         </item>
-        <item row="1" column="1">
+        <item row="3" column="0">
+         <widget class="QToolButton" name="b_light_ON">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+ font: bold 20px;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+          </property>
+          <property name="text">
+           <string>ON</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
          <widget class="QComboBox" name="comboBox_BULB">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Ignored" vsizetype="Maximum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -2281,57 +2316,979 @@ QComboBox::down-arrow {
           </item>
          </widget>
         </item>
-        <item row="2" column="0">
-         <widget class="QToolButton" name="b_light_ON">
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_7">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="styleSheet">
-           <string notr="true">QToolButton {
-background-color: rgba(158, 158, 158,50);
- border: 1px solid #8f8f91;
-border-radius: 0px;
-color:white;
- font: bold 20px;
-
-}
-QToolButton:pressed {
-border:none;
-}</string>
+          <property name="font">
+           <font>
+            <pointsize>15</pointsize>
+           </font>
           </property>
           <property name="text">
-           <string>ON</string>
+           <string>bulb</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::MarkdownText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <widget class="QToolButton" name="b_light_OFF">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QToolButton {
+        <item row="4" column="0" colspan="2">
+         <layout class="QGridLayout" name="bulbLayout">
+          <item row="0" column="0">
+           <widget class="QToolButton" name="b_lightKuchBar">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
 background-color: rgba(158, 158, 158,50);
  border: 1px solid #8f8f91;
 border-radius: 0px;
 color:white;
- font: bold 20px;
 
 }
 QToolButton:pressed {
 border:none;
 }</string>
-          </property>
-          <property name="text">
-           <string>OFF</string>
-          </property>
-         </widget>
+            </property>
+            <property name="text">
+             <string>Kuchnia
+bar</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QToolButton" name="b_lightPokojW2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Pokój W2</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QToolButton" name="b_lightPokojW1">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Pokój W1</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QToolButton" name="b_lightSalonKink">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Salon
+kinkiet</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QToolButton" name="b_lightLazienkaWejscie">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Łazienka
+wejscie</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QToolButton" name="b_lightSpizarka">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Spiżarka</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QToolButton" name="b_lightLazienkaWanna">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Łazienka
+wanna</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QToolButton" name="b_lightKuchKink">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Kuchnia
+kinkiet</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QToolButton" name="b_lightWiatrolap">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Wiatrołap</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QToolButton" name="b_lightTaras">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Taras</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QToolButton" name="b_lightLazienkaMala">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Łazienka
+mała</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QToolButton" name="b_lightKanciapa">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Kanciapa</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QToolButton" name="b_lightPokojE">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Pokój E</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QToolButton" name="b_lightSalonSto">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Salon
+stół</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QToolButton" name="b_lightPokojN">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Pokój N</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QToolButton" name="b_lightKorytarz">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Korytarz</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QToolButton" name="b_lightWejscie">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Wejście</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QToolButton" name="b_lightKuchFartuch">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Kuchnia
+fartuch</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QToolButton" name="b_lightSypialnia">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Sypialnia</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QToolButton" name="b_lightDomek">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>6</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+background-color: rgba(158, 158, 158,50);
+ border: 1px solid #8f8f91;
+border-radius: 0px;
+color:white;
+
+}
+QToolButton:pressed {
+border:none;
+}</string>
+            </property>
+            <property name="text">
+             <string>Domek</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ikony.qrc">
+              <normaloff>:/new/prefix1/files/svg/light-bulb-OFF.svg</normaloff>
+              <normalon>:/new/prefix1/files/svg/light-bulb-ON.svg</normalon>:/new/prefix1/files/svg/light-bulb-OFF.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -2503,19 +3460,37 @@ color: rgb(85, 170, 0);</string>
     </item>
     <item row="1" column="0">
      <widget class="QWidget" name="widget" native="true">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
       <widget class="QWidget" name="verticalLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>-1</x>
-         <y>10</y>
-         <width>161</width>
-         <height>247</height>
+         <x>0</x>
+         <y>0</y>
+         <width>92</width>
+         <height>331</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <property name="leftMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QPushButton" name="b_menuLight">
           <property name="sizePolicy">
@@ -2682,6 +3657,11 @@ color:white;</string>
    <class>myButton</class>
    <extends>QPushButton</extends>
    <header location="global">mybutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>myQPlainTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header location="global">myqplaintextedit.h</header>
   </customwidget>
  </customwidgets>
  <resources>

@@ -87,14 +87,17 @@ void WorkerIP::run()
         {
             emit answerShareLink(buffor);
         }
-        else if (addresOUT.address =="TTS"){
+        else if (addresOUT.address == "TTS"){
             emit signalFromTTS(buffor);
         }
-        else if (addresOUT.address =="toast"){
+        else if (addresOUT.address == "toast"){
             emit toast_msg(buffor);
         }
-        else if (addresOUT.address =="light"){
+        else if (addresOUT.address == "light"){
             emit light_msg(buffor);
+        }
+        else if (addresOUT.address == "light-info"){
+            emit light_info_msg(buffor);
         }
         pingTimeMilis = pingStart.msecsTo( QDateTime::currentDateTime());
 

@@ -1,6 +1,7 @@
 #ifndef IDOM_CLIENT_H
 #define IDOM_CLIENT_H
 
+#include "mybutton.h"
 #include <iostream>
 #include <stdlib.h>
 #include <sstream>
@@ -18,15 +19,14 @@
 #include <QTime>
 #include <QMenu>
 #include <QTimer>
+#include <QElapsedTimer>
 
 #ifdef Q_OS_WIN
 //#include <QAxWidget>
 #endif
 
 #include "../libs/android_functions/android_interface/android_interface.h"
-#include "workerip.h"
 #include "variable.h"
-#include "../libs/sgvTEST/thermometerSVG/thermometer.h"
 #include "../libs/config_files/config_files.h"
 #include "filedownloader.h"
 #include "volumedialog.h"
@@ -77,8 +77,9 @@ private:
 
     ///  kontener do trzymana konfiguracji zarowek
     QMap<std::string, QVector<QString>> lightConf;
-
+    QMap<int, QToolButton*> lightButton;
 #ifdef Q_OS_ANDROID
+
     // QQuickWidget *viewTemp = NULL;
 #else
     QSystemTrayIcon  trayIcon;
@@ -153,12 +154,53 @@ private slots:
 
     void on_b_menuExit_clicked();
 
+    void on_b_lightKuchBar_clicked();
+
+    void on_b_lightPokojN_clicked();
+
+    void on_b_lightKuchKink_clicked();
+
+    void on_b_lightKuchFartuch_clicked();
+
+    void on_b_lightSalonKink_clicked();
+
+    void on_b_lightSalonSto_clicked();
+
+    void on_b_lightSpizarka_clicked();
+
+    void on_b_lightKorytarz_clicked();
+
+    void on_b_lightLazienkaWejscie_clicked();
+
+    void on_b_lightLazienkaWanna_clicked();
+
+    void on_b_lightWiatrolap_clicked();
+
+    void on_b_lightKanciapa_clicked();
+
+    void on_b_lightWejscie_clicked();
+
+    void on_b_lightPokojE_clicked();
+
+    void on_b_lightLazienkaMala_clicked();
+
+    void on_b_lightTaras_clicked();
+
+    void on_b_lightPokojW1_clicked();
+
+    void on_b_lightPokojW2_clicked();
+
+    void on_b_lightSypialnia_clicked();
+
+    void on_b_lightDomek_clicked();
+
 public slots:
     void setLcdActual(int c);
     void setLcdAll(int c);
     void odb_answer(QString msg);
     void odb_toast_msg(QString s);
     void odb_light_msg(QString s);
+    void odb_light_info_msg(QString s);
     void readProgress(int c);
     void odb_answer_MPD(QString s);
     void odb_mpd_title (QString s);

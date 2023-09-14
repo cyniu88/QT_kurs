@@ -9,7 +9,6 @@ myButton::myButton(QObject *parent)
 
 bool myButton::event(QEvent *e)
 {
-
     switch (e->type()) {
     case QEvent::TouchBegin :
         emit pressed();

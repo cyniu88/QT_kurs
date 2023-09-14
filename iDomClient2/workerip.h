@@ -52,6 +52,7 @@ signals:
     void answer(QString s);
     void toast_msg(QString s);
     void light_msg(QString s);
+    void light_info_msg(QString s);
     void answerMPD(QString s);
     void answerAlarm(QString s);
     void errorInfo(QString tit, QString msg);

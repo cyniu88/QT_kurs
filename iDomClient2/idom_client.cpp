@@ -145,11 +145,33 @@ iDom_Client::iDom_Client(iDom_CONFIG *config, QWidget *parent) :
     systemInfo.kernelType = QSysInfo::kernelType();
     systemInfo.machineHostName = QSysInfo::machineHostName();
     systemInfo.productVersion = QSysInfo::productVersion();
+
+    lightButton[98] = ui->b_lightDomek;
+    lightButton[123] = ui->b_lightKanciapa;
+    lightButton[117] = ui->b_lightKorytarz;
+    lightButton[116] = ui->b_lightKuchBar;
+    lightButton[126] = ui->b_lightKuchKink;
+    lightButton[102] = ui->b_lightLazienkaWanna;
+    lightButton[113] = ui->b_lightLazienkaWejscie;
+    lightButton[129] = ui->b_lightLazienkaMala;
+    lightButton[125] = ui->b_lightPokojE;
+    lightButton[128] = ui->b_lightPokojN;
+    lightButton[110] = ui->b_lightPokojW2;
+    lightButton[109] = ui->b_lightPokojW1;
+    lightButton[101] = ui->b_lightSalonKink;
+    lightButton[121] = ui->b_lightSalonSto;
+    lightButton[105] = ui->b_lightSpizarka;
+    lightButton[111] = ui->b_lightSypialnia;
+    lightButton[103] = ui->b_lightTaras;
+    lightButton[106] = ui->b_lightWejscie;
+    lightButton[130] = ui->b_lightWiatrolap;
+
 }
 
 iDom_Client::~iDom_Client()
 {
     taskHandlerTimer->stop();
+
     delete taskHandlerTimer;
     delete m_pImgCtrl;
     delete ivona;
@@ -202,13 +224,16 @@ void iDom_Client::taskHandler()
 
     switch(ui->tabWidget->currentIndex())
     {
+    case 5:
+        emit sendTCP("light-info", "light info");
+        break;
     case 3:
         //case 4:
     case 4:
         //TODO fix
         updateAlarmTime();
         emit sendTCP("state", "state all");
-        qDebug() << "aktualny case:"<<ui->tabWidget->currentIndex();
+        qDebug() << "aktualny case:" << ui->tabWidget->currentIndex();
         break;
 
     default:
@@ -274,6 +299,26 @@ void iDom_Client::odb_light_msg(QString s)
     for (auto it = lightConf.begin(); it != lightConf.end(); ++it) {
         ui->comboBox_ROOM->addItem(QString::fromStdString(it.key()));
         qDebug() << QString::fromStdString(it.key()) << " I " << it.value() ;
+    }
+
+}
+
+void iDom_Client::odb_light_info_msg(QString s)
+{
+    nlohmann::json jj = nlohmann::json::parse(s.toStdString());
+    for(const auto& data : jj){
+        int id = data["bulb ID"].get<int>();
+        std::string status = data["STATUS"].get<std::string>();
+        if(lightButton.find(id) != lightButton.end()){
+            if(status == "ON")
+            {
+                lightButton[id]->setChecked(true);
+            }
+            else
+            {
+                lightButton[id]->setChecked(false);
+            }
+        }
     }
 }
 
@@ -551,6 +596,9 @@ void iDom_Client::on_tabWidget_currentChanged( )
         break;
     case 3:
         screenChanged();
+        break;
+    case 5:
+        emit sendTCP("light-info", "light info");
         break;
     default:
         break;
@@ -951,7 +999,8 @@ void iDom_Client::on_b_fan_clicked()
 
 void iDom_Client::on_b_share_fan_clicked()
 {
-    emit sendTCP("share","iDom link gateway fan");
+    QString text = "iDom link " + QInputDialog::getText(this,"podaj komende","podaj komende");
+    emit sendTCP("share", text.toStdString());
     droid.vibrate(200);
 }
 
@@ -988,16 +1037,16 @@ void iDom_Client::on_b_KODI_clicked()
 
 void iDom_Client::screenChanged()
 {
-    ui->b_printer->setIconSize((ui->b_printer->size()*0.6));
-    ui->b_listwa->setIconSize(ui->b_listwa->size()*0.6);
-    ui->b_lockUnlock_HOME->setIconSize(ui->b_lockUnlock_HOME->size()*0.6);
-    ui->b_fan->setIconSize(ui->b_fan->size()*0.6);
-    ui->b_heatingBoiler->setIconSize(ui->b_heatingBoiler->size()*0.6);
-    ui->b_circlePump->setIconSize(ui->b_circlePump->size()*0.6);
-    ui->b_KODI->setIconSize(ui->b_KODI->size()*0.6);
-    ui->b_sms->setIconSize(ui->b_sms->size()*0.6);
-    ui->b_share_fan->setIconSize(ui->b_share_fan->size()*0.6);
-    ui->b_setAlarm->setIconSize(ui->b_setAlarm->size()*0.6);
+    //    ui->b_printer->setIconSize((ui->b_printer->size()*0.6));
+    //    ui->b_listwa->setIconSize(ui->b_listwa->size()*0.6);
+    //    ui->b_lockUnlock_HOME->setIconSize(ui->b_lockUnlock_HOME->size()*0.6);
+    //    ui->b_fan->setIconSize(ui->b_fan->size()*0.6);
+    //    ui->b_heatingBoiler->setIconSize(ui->b_heatingBoiler->size()*0.6);
+    //    ui->b_circlePump->setIconSize(ui->b_circlePump->size()*0.6);
+    //    ui->b_KODI->setIconSize(ui->b_KODI->size()*0.6);
+    //    ui->b_sms->setIconSize(ui->b_sms->size()*0.6);
+    //    ui->b_share_fan->setIconSize(ui->b_share_fan->size()*0.6);
+    //    ui->b_setAlarm->setIconSize(ui->b_setAlarm->size()*0.6);
     //    QFont font = ui->b_setAlarm->font();
     //    font.setPointSize(font.pointSize()-1);
     //    ui->b_setAlarm->setFont(font);
@@ -1012,9 +1061,7 @@ void iDom_Client::closeApp()
 
 void iDom_Client::showMenu()
 {
-
     ui->widget->setFixedWidth(100);
-
 }
 
 void iDom_Client::hideMenu()
@@ -1080,19 +1127,15 @@ void iDom_Client::on_b_light_OFF_clicked()
         }
     }
 }
-#include <thread>
+
 void iDom_Client::on_b_exit_clicked()
 {
     if(ui->b_exit->isChecked()){
         showMenu();
-        //  std::thread tt = std::thread(&iDom_Client::showMenu, this);
-        //  tt.detach();
     }
     else
     {
         hideMenu();
-        // std::thread tt = std::thread(&iDom_Client::hideMenu, this);
-        // tt.detach();
     }
 }
 
@@ -1107,13 +1150,11 @@ void iDom_Client::on_b_menuCamera_clicked()
     ui->b_exit->click();
 }
 
-
 void iDom_Client::on_b_menuLight_clicked()
 {
     ui->tabWidget->setCurrentIndex(5);
     ui->b_exit->click();
 }
-
 
 void iDom_Client::on_b_menuMusic_clicked()
 {
@@ -1121,13 +1162,11 @@ void iDom_Client::on_b_menuMusic_clicked()
     ui->b_exit->click();
 }
 
-
 void iDom_Client::on_b_menuHome_clicked()
 {
     ui->tabWidget->setCurrentIndex(4);
     ui->b_exit->click();
 }
-
 
 void iDom_Client::on_b_menuConsole_clicked()
 {
@@ -1135,17 +1174,295 @@ void iDom_Client::on_b_menuConsole_clicked()
     ui->b_exit->click();
 }
 
-
-
 void iDom_Client::on_b_menuTools_clicked()
 {
     ui->tabWidget->setCurrentIndex(3);
     ui->b_exit->click();
 }
 
-
 void iDom_Client::on_b_menuExit_clicked()
 {
+    ui->b_exit->click();
+    ui->tabWidget->setFixedSize(0,0);
     closeApp();
 }
 
+void iDom_Client::on_b_lightKuchBar_clicked()
+{
+    if (ui->b_lightKuchBar->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 116");
+    }
+    if (ui->b_lightKuchBar->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 116");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightPokojN_clicked()
+{
+    if (ui->b_lightPokojN->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 128");
+    }
+    if (ui->b_lightPokojN->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 128");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightKuchKink_clicked()
+{
+    if (ui->b_lightKuchKink->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 126");
+    }
+    if (ui->b_lightKuchKink->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 126");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightKuchFartuch_clicked()
+{
+
+    if (ui->b_lightKuchFartuch->isChecked() == false)
+    {
+        emit sendTCP("console","433MHz switch B OFF");
+    }
+    if (ui->b_lightKuchFartuch->isChecked() == true)
+    {
+        emit sendTCP("console","433MHz switch B ON");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightSalonKink_clicked()
+{
+    if (ui->b_lightSalonKink->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 101");
+    }
+    if (ui->b_lightSalonKink->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 101");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightSalonSto_clicked()
+{
+    if (ui->b_lightSalonSto->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 121");
+    }
+    if (ui->b_lightSalonSto->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 121");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightSpizarka_clicked()
+{
+    if (ui->b_lightSpizarka->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 105");
+    }
+    if (ui->b_lightSpizarka->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 105");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightKorytarz_clicked()
+{
+    if (ui->b_lightKorytarz->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 117");
+    }
+    if (ui->b_lightKorytarz->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 117");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightLazienkaWejscie_clicked()
+{
+    if (ui->b_lightLazienkaWejscie->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 113");
+    }
+    if (ui->b_lightLazienkaWejscie->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 113");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightLazienkaWanna_clicked()
+{
+    if (ui->b_lightLazienkaWanna->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 102");
+    }
+    if (ui->b_lightLazienkaWanna->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 102");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightWiatrolap_clicked()
+{
+    if (ui->b_lightWiatrolap->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 130");
+    }
+    if (ui->b_lightWiatrolap->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 130");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightKanciapa_clicked()
+{
+    if (ui->b_lightKanciapa->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 123");
+    }
+    if (ui->b_lightKanciapa->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 123");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightWejscie_clicked()
+{
+    if (ui->b_lightWejscie->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 106");
+    }
+    if (ui->b_lightWejscie->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 106");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightPokojE_clicked()
+{
+    if (ui->b_lightPokojE->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 125");
+    }
+    if (ui->b_lightPokojE->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 125");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightLazienkaMala_clicked()
+{
+    if (ui->b_lightLazienkaMala->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 129");
+    }
+    if (ui->b_lightLazienkaMala->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 129");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightTaras_clicked()
+{
+    if (ui->b_lightTaras->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 103");
+    }
+    if (ui->b_lightTaras->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 103");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightPokojW1_clicked()
+{
+    if (ui->b_lightPokojW1->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 109");
+    }
+    if (ui->b_lightPokojW1->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 109");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightPokojW2_clicked()
+{
+    if (ui->b_lightPokojW2->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 110");
+    }
+    if (ui->b_lightPokojW2->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 110");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightSypialnia_clicked()
+{
+    if (ui->b_lightSypialnia->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 111");
+    }
+    if (ui->b_lightSypialnia->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 111");
+    }
+    droid.vibrate(200);
+}
+
+
+void iDom_Client::on_b_lightDomek_clicked()
+{
+    if (ui->b_lightDomek->isChecked() == false)
+    {
+        emit sendTCP("console","light bulb off 98");
+    }
+    if (ui->b_lightDomek->isChecked() == true)
+    {
+        emit sendTCP("console","light bulb on 98");
+    }
+    droid.vibrate(200);
+}

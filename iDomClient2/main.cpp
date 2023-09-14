@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 #ifdef Q_OS_ANDROID
     QtWebView::initialize();
-     QtAndroidPrivate::requestPermission(QtAndroidPrivate::PermissionType::Camera);
+    // QtAndroidPrivate::requestPermission(QtAndroidPrivate::PermissionType::Camera);
 #endif
 
     auto w  = new iDom_Client(&config);
@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
     QObject::connect(worker,SIGNAL(answer(QString)),            w,SLOT(odb_answer(QString)));
     QObject::connect(worker,SIGNAL(toast_msg(QString)),         w,SLOT(odb_toast_msg(QString)));
     QObject::connect(worker,SIGNAL(light_msg(QString)),         w,SLOT(odb_light_msg(QString)));
+    QObject::connect(worker,SIGNAL(light_info_msg(QString)),    w,SLOT(odb_light_info_msg(QString)));
     QObject::connect(worker,SIGNAL(progress(int)),              w,SLOT(readProgress(int)));
     QObject::connect(worker,SIGNAL(answerMPD(QString)),         w,SLOT(odb_answer_MPD(QString))  );
     QObject::connect(worker,SIGNAL(answerAlarm(QString)),       w,SLOT(odb_answer_alarm(QString)) );
