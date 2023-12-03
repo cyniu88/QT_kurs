@@ -972,7 +972,7 @@ border: none ;</string>
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 255);
+               <string notr="true">color: rgb(0, 0,0);
 border: none ;</string>
               </property>
               <property name="frameShape">
@@ -1001,7 +1001,7 @@ border: none ;</string>
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 255);
+               <string notr="true">color: rgb(0, 0, 0);
 border: none ;</string>
               </property>
               <property name="digitCount">

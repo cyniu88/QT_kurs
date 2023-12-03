@@ -999,8 +999,13 @@ void iDom_Client::on_b_fan_clicked()
 
 void iDom_Client::on_b_share_fan_clicked()
 {
-    QString text = "iDom link " + QInputDialog::getText(this,"podaj komende","podaj komende");
-    emit sendTCP("share", text.toStdString());
+    droid.vibrate(200);
+    QString text{"iDom link "};
+    QString text2 = text + QInputDialog::getText(this,"podaj komende","podaj komende");
+    if(text != text2){
+        emit sendTCP("share", text2.toStdString());
+        qDebug() << "wysyłam linka iDom gateway!!";
+    }
     droid.vibrate(200);
 }
 
