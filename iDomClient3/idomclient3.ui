@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>iDomClient3</class>
+ <widget class="QMainWindow" name="iDomClient3">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>iDomClient3</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <action name="actionlight">
+   <property name="text">
+    <string>light</string>
+   </property>
+  </action>
+  <action name="actionkk">
+   <property name="text">
+    <string>kk</string>
+   </property>
+  </action>
+  <action name="actionkkk">
+   <property name="text">
+    <string>kkk</string>
+   </property>
+  </action>
+  <action name="actionkokoko">
+   <property name="text">
+    <string>kokoko</string>
+   </property>
+  </action>
+  <action name="actionkkkiik">
+   <property name="text">
+    <string>kkkiik</string>
+   </property>
+  </action>
+  <action name="actionexit">
+   <property name="text">
+    <string>exit</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionexit</sender>
+   <signal>triggered()</signal>
+   <receiver>iDomClient3</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

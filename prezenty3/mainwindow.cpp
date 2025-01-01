@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <random>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,7 +27,8 @@ void MainWindow::on_b_sms_clicked()
         QString tel = userVecotr.at(i).telephone;
         msg = "Witaj ";
         msg.append(userVecotr.at(i).name);
-        msg.append(". Jestem automatem do losowania. Na Swieta 2023 przypadl Ci zaszczyt przygotowania prezentu dla: ");
+       // msg.append(". Jestem automatem do losowania. Na Swieta 2024 przypadl Ci zaszczyt przygotowania prezentu dla: ");
+        msg.append(ui->tresc->toPlainText());
         //  msg.append(". Na Swieta 2018 przypadl Ci zaszczyt kupna prezentu pod choinke dla: ");
         msg.append(userVecotrCopy.at(i).name);
         msg.append(" ");
@@ -85,6 +87,7 @@ void MainWindow::on_b_prepareData_clicked()
         qDebug() << " counter : "  << counter++;
         if(counter > 10000)
         {
+            QMessageBox::warning(this, "Ostrzeżenie", "Losowanie poszło nie tak! nie wysyłaj SMS");
             break;
         }
         for (int i = 0; i < userVecotr.size(); ++i){

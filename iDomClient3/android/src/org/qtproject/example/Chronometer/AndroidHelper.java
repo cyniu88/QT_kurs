@@ -116,7 +116,7 @@ Intent sendIntent = new Intent();
 sendIntent.setAction(Intent.ACTION_SEND);
 sendIntent.putExtra(Intent.EXTRA_TEXT, text);
 sendIntent.setType("text/plain");
-//QtNative.activity().startActivity(sendIntent);
+// QtNative.activity().startActivity(sendIntent);
 
 
 }
