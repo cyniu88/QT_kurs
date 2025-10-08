@@ -24,8 +24,8 @@
 #include "idom_client.h"
 #include "ui_idom_client.h"
 #include "workerip.h"
-#include <chrono>
-#include <thread>
+// #include <chrono>
+// #include <thread>
 #include "../libs/emoji/emoji.h"
 
 using namespace std::chrono_literals;

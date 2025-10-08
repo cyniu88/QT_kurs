@@ -6,7 +6,7 @@
 
 #ifdef Q_OS_ANDROID
 #include <QtWebView>
-#include <QtCore/private/qandroidextras_p.h>
+//#include <QtCore/private/qandroidextras_p.h>
 #endif
 
 #include "idom_client.h"

@@ -14,6 +14,9 @@ add_compile_definitions(IDOM)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets AxContainer SvgWidgets LinguistTools CorePrivate)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network TextToSpeech SvgWidgets LinguistTools WebView Sensors Core)
 
+if(QT_VERSION_MAJOR GREATER_EQUAL 6)
+    qt_policy(SET QTP0002 NEW)
+endif()
 
 set(TS_FILES iDomClient3_pl_PL.ts)
 
@@ -28,6 +31,10 @@ file(GLOB iDomClient3_SRC
     "mybutton/*"
     "blocking_queue/*"
 )
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+endif()
+
 
 if(ANDROID)
     set(andek ../libs/android_functions/androidhelper_cyniu.cpp)
@@ -87,7 +94,7 @@ target_link_libraries(iDomClient3 PRIVATE Qt${QT_VERSION_MAJOR}::TextToSpeech)
 target_link_libraries(iDomClient3 PRIVATE Qt${QT_VERSION_MAJOR}::WebView)
 target_link_libraries(iDomClient3 PRIVATE Qt${QT_VERSION_MAJOR}::Sensors)
 target_link_libraries(iDomClient3 PRIVATE Qt${QT_VERSION_MAJOR}::Core)
-target_link_libraries(iDomClient3 PRIVATE Qt${QT_VERSION_MAJOR}::CorePrivate)
+#target_link_libraries(iDomClient3 PRIVATE Qt${QT_VERSION_MAJOR}::CorePrivate)
 
 target_include_directories(iDomClient3 PRIVATE "${INCLUDE_DIRECTORIES}")
 
